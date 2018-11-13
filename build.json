@@ -1,0 +1,61 @@
+{
+    "skribo": {
+        "contractNameServer": "@skribo/server",
+        "contractNameClient": "@skribo/client",
+        "buildPath": "../",
+        "path": "./",
+        "contracts": {
+            "Scripts": {
+                "path": "./controllers/scripts.ts"
+            },
+            "Embed": {
+                "path": "./controllers/embed.ts"
+            },
+            "Log": {
+                "path": "./controllers/log.ts"
+            },
+            "Serve": {
+                "path": "./controllers/serve.ts"
+            },
+            "Sync": {
+                "path": "./controllers/sync.ts"
+            },
+            "Results": {
+                "path": "./controllers/results.ts"
+            },
+            "User": {
+                "path": "./controllers/user.ts"
+            },
+            "Alexa": {
+                "path": "./controllers/alexa.ts"
+            }
+        },
+        "models": {
+            "ScriptModel": {
+                "path": "./models/script.model.ts"
+            },
+            "EmbedModel": {
+                "path": "./models/embed.model.ts"
+            },
+            "ResultsModel": {
+                "path": "./models/results.model.ts"
+            },
+            "UserAccountModel": {
+                "path": "./models/user-account.model.ts"
+            },
+            "ElectionModel": {
+                "path": "./models/election.model.ts"
+            }
+        },
+        "includes": {
+            "VariableModel": {
+                "path": "./models/variable.model.ts"
+            },
+            "ResultsDescriptor": {
+                "path": "./models/resultsDescriptor.model.ts"
+            }
+        },
+        "dependencies": {},
+        "bindings": {}
+    }
+}
