@@ -8,13 +8,14 @@ export * from './models/';
 import * as path from 'path';
 import { DBHandler } from '@methodus/data';
 import { configuration } from './db/config';
-import { SignNature } from './controllers/sign-nature';
+import { SignNature, User } from './controllers/';
 
 DBHandler.config = configuration;
 
 @ServerConfiguration(ServerType.Express, { port: process.env.PORT || 6299 })
 @PluginConfiguration('@methodus/describe')
 @PluginConfiguration(path.join(__dirname, 'static'), { path: '/sign-nature' })
+@ClientConfiguration(User, MethodType.Local, ServerType.Express)
 @ClientConfiguration(SignNature, MethodType.Local, ServerType.Express)
 class SetupServer extends ConfiguredServer {
 
