@@ -7,7 +7,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "R | local skribo server",
+            "name": "R | local signnature server",
             "program": "${workspaceRoot}\\index.js",
             "cwd": "${workspaceRoot}\\",
             "console": "internalConsole",
@@ -21,7 +21,7 @@
                 "NODE_CONFIG_DIR": "${workspaceRoot}/config/",
                 "NODE_LOG_DIR": "./logs",
                 "NODE_CONFIG_VAR": "vars.json",
-                "MONGO_NAME": "skribo",
+                "MONGO_NAME": "signnature",
                 "MONGO_PASSWORD": "Kardigan24%24",
                 "PORT": "6200"
             }
@@ -29,7 +29,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "R | prod skribo server",
+            "name": "R | prod signnature server",
             "program": "${workspaceRoot}\\index.js",
             "cwd": "${workspaceRoot}\\",
             "console": "internalConsole",
@@ -43,7 +43,7 @@
                 "NODE_CONFIG_DIR": "${workspaceRoot}/config/",
                 "NODE_LOG_DIR": "./logs",
                 "NODE_CONFIG_VAR": "vars.json",
-                "MONGO_NAME": "skribo",
+                "MONGO_NAME": "signnature",
                 "MONGO_PASSWORD": "Kardigan24%24",
                 "PORT": "6200"
             }
@@ -53,7 +53,7 @@
             "request": "launch",
             "console": "internalConsole",
             // Name of configuration; appears in the launch configuration drop down menu.
-            "name": "T | Run skribo tests",
+            "name": "T | Run signnature tests",
             // Type of configuration. Possible values: "node", "mono".
             "type": "node",
             // Workspace relative or absolute path to the program.
