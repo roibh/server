@@ -25,7 +25,7 @@ export class User {
         }
     }
 
-    @MethodMock(UserMock.list)
+    @MethodMock(UserMock.get)
     @Method(Verbs.Get, '/users/userid/:user_id')
     public static async get(@Param('user_id') userId: string):
         Promise<MethodResult<UserModel>> {
