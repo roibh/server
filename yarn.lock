@@ -190,10 +190,10 @@
   resolved "https://registry.npmjs.org/@methodus/client/-/client-0.0.9.tgz#9ba2b2227177280e23fe427e0f7668c6681b1bfd"
   integrity sha512-Pa93ZNsL5x+CKrj/34KE0iRxXRhSW8CwcWABP9O9H3Tnd5Xgarvj+RehDsKxLvCkyraBIDUvj2n0DJoTiQn/7Q==
 
-"@methodus/contracts@^0.0.13":
-  version "0.0.13"
-  resolved "https://registry.npmjs.org/@methodus/contracts/-/contracts-0.0.13.tgz#5122f33fddec2db8c1f489bccb629aaad0a3330e"
-  integrity sha512-5ixK/jHnyLFHPLqdR0HP/ONkNGCFHvA6qAJf7oPJKTSq+N0Ugqh4UzuyvK2RtSdgAonoS7YgAoEiO8zvnUyvYQ==
+"@methodus/contracts@0.0.17":
+  version "0.0.17"
+  resolved "https://registry.npmjs.org/@methodus/contracts/-/contracts-0.0.17.tgz#a6def51aa1059392008d92c1f6d778fd425e01e4"
+  integrity sha512-ZUkZuSTgttY8eMwZrhi1ctBTXBwfR/D5TB/eqOuqfBb+j3GV0HXizac0Fk2XRF1cdf/1J/HFKttAUdCqEgoTTw==
   dependencies:
     "@methodus/client" "^0.0.8"
     "@methodus/server" "^0.0.18"
