@@ -14,7 +14,7 @@ import { UserMock } from '../mocks/';
 @MethodConfig('UserController')
 export class User {
     @MethodMock(UserMock.list)
-    @Method(Verbs.Get, '/users/list')
+    @Method(Verbs.Get, '/api/users/list')
     public static async list():
         Promise<MethodResult<UserModel[]>> {
         try {
@@ -26,7 +26,7 @@ export class User {
     }
 
     @MethodMock(UserMock.get)
-    @Method(Verbs.Get, '/users/userid/:user_id')
+    @Method(Verbs.Get, '/api/users/userid/:user_id')
     public static async get(@Param('user_id') userId: string):
         Promise<MethodResult<UserModel>> {
         try {
