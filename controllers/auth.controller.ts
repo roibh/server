@@ -59,7 +59,7 @@ export class Auth {
     }
 
     @Method(Verbs.Get, '/auth/verify')
-    public static async decode(@Body('token') token): Promise<MethodResult<any>> {
+    public static async decode(@Body('token') token: string): Promise<MethodResult<any>> {
         try {
             return new MethodResult(jwt.decode(token, { complete: true }));
         } catch (error) {
