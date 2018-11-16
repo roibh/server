@@ -36,8 +36,7 @@ const publicKEY = fs.readFileSync('./certs/public.key', 'utf8');
 export class Auth {
 
     @Method(Verbs.Post, '/auth/token')
-    public static async token(@Body('userOptions') userOptions: any):
-        Promise<MethodResult<any>> {
+    public static async token(@Body('userOptions') userOptions: any): Promise<MethodResult<any>> {
         try {
             const query = new DataQuery(UserModel);
             query.filter({ Email: userOptions.email, Password: userOptions.password });
@@ -49,8 +48,7 @@ export class Auth {
     }
 
     @Method(Verbs.Get, '/auth/verify')
-    public static async verify():
-        Promise<MethodResult<any>> {
+    public static async verify(): Promise<MethodResult<any>> {
         try {
             const token = jwt.verify(payload, privateKEY, signOptions);
 
@@ -61,8 +59,7 @@ export class Auth {
     }
 
     @Method(Verbs.Get, '/auth/verify')
-    public static async decode(@Body('token') token):
-        Promise<MethodResult<any>> {
+    public static async decode(@Body('token') token): Promise<MethodResult<any>> {
         try {
             return new MethodResult(jwt.decode(token, { complete: true }));
         } catch (error) {
