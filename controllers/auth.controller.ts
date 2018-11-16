@@ -35,7 +35,7 @@ const publicKEY = fs.readFileSync('./certs/public.key', 'utf8');
 @MethodConfig('AuthController')
 export class Auth {
 
-    @Method(Verbs.Post, '/auth/token')
+    @Method(Verbs.Post, '/api/auth/token')
     public static async token(@Body('userOptions') userOptions: any): Promise<MethodResult<any>> {
         try {
             const query = new DataQuery(UserModel);
