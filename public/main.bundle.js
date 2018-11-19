@@ -250,7 +250,7 @@ var AppModule = /** @class */ (function () {
                         deps: [__WEBPACK_IMPORTED_MODULE_22__angular_common_http__["b" /* HttpClient */]]
                     }
                 }),
-                __WEBPACK_IMPORTED_MODULE_13__angular_router__["c" /* RouterModule */].forRoot(appRoutes, { enableTracing: true } // <-- debugging purposes only
+                __WEBPACK_IMPORTED_MODULE_13__angular_router__["c" /* RouterModule */].forRoot(appRoutes, { enableTracing: false, useHash: true } // <-- debugging purposes only
                 ),
                 __WEBPACK_IMPORTED_MODULE_5_ngx_super_table__["a" /* SuperTableModule */],
                 __WEBPACK_IMPORTED_MODULE_12__swimlane_ngx_charts__["NgxChartsModule"],
