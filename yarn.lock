@@ -223,14 +223,12 @@
     reflect-metadata "^0.1.10"
 
 "@methodus/describe@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.npmjs.org/@methodus/describe/-/describe-1.1.1.tgz#c9f7396844a979de704108c4d60c4012a374d1d3"
-  integrity sha512-h0+Fu7mXLUVSBtL0T/W9w1nOfRWuleK+c1MV64xOJv8o8Z6lSoBb/8iPlAOSE+elQgck2CPyahlYP2eH9COg2A==
+  version "1.1.2"
+  resolved "https://registry.npmjs.org/@methodus/describe/-/describe-1.1.2.tgz#dc5e0f23a97dd5c14f96cf539a7510a80eeab821"
+  integrity sha512-bbTaenDvS2AJZJKFaTa0SWWgXlYC+zWheLh7Lle0GgpH0SK3mfllrTfFwM2LQ4xn28rmhdT6vQlJ2exrMI8ULQ==
   dependencies:
     "@methodus/client" "^0.0.9"
-    "@methodus/server" "^1.1.0"
     ejs "^2.5.7"
-    express "^4.16.2"
     http-proxy-middleware "^0.17.4"
     jquery.json-viewer "^1.1.0"
     read-last-lines "^1.6.0"
@@ -1463,7 +1461,7 @@ expect.js@^0.3.1:
   resolved "https://registry.npmjs.org/expect.js/-/expect.js-0.3.1.tgz#b0a59a0d2eff5437544ebf0ceaa6015841d09b5b"
   integrity sha1-sKWaDS7/VDdUTr8M6qYBWEHQm1s=
 
-express@^4.15.3, express@^4.16.2:
+express@^4.15.3:
   version "4.16.4"
   resolved "https://registry.npmjs.org/express/-/express-4.16.4.tgz#fddef61926109e24c515ea97fd2f1bdbf62df12e"
   integrity sha512-j12Uuyb4FMrd/qQAm6uCHAkPtO8FDTRJZBDd5D2KOL2eLaz1yUNdUB/NOIyq0iU4q4cFarsUCrnFDPBcnksuOg==

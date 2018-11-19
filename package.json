@@ -18,7 +18,6 @@
   "author": "DO",
   "license": "ISC",
   "dependencies": {
-    "@methodus/contracts": "0.0.17",
     "@methodus/data": "^1.0.1",
     "@methodus/describe": "^1.1.1",
     "@methodus/server": "^1.1.0",
@@ -29,6 +28,7 @@
     "uuid": "^3.2.1"
   },
   "devDependencies": {
+    "@methodus/contracts": "0.0.17",
     "chrome-bridge": "^0.1.2",
     "@types/node": "^10.0.4",
     "alsatian": "^2.3.0",
