@@ -12,7 +12,7 @@ export function init(config, pluginOptions) {
                     res.set('x-timestamp', Date.now());
                 },
             };
-            const clientDir = path.resolve(path.join(__dirname, pluginOptions.path));
+            const clientDir = path.resolve(path.join(__dirname, pluginOptions.clientPath));
             instance.use(pluginOptions.path, express.static(clientDir, options));
         },
     });

@@ -15,7 +15,7 @@ DBHandler.config = configuration;
 
 @ServerConfiguration(ServerType.Express, { port: process.env.PORT || 6299 })
 @PluginConfiguration('@methodus/describe')
-@PluginConfiguration(path.join(__dirname, 'public'), { path: '/' })
+@PluginConfiguration(path.join(__dirname, 'static'), { path: '/', clientPath: '/public' })
 @ClientConfiguration(UserController, MethodType.Local, ServerType.Express)
 @ClientConfiguration(SignNature, MethodType.Local, ServerType.Express)
 @ClientConfiguration(Auth, MethodType.Local, ServerType.Express)
