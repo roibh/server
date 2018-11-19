@@ -222,13 +222,13 @@
     object-diff "0.0.4"
     reflect-metadata "^0.1.10"
 
-"@methodus/describe@^1.0.8":
-  version "1.0.8"
-  resolved "https://registry.npmjs.org/@methodus/describe/-/describe-1.0.8.tgz#2b392b137d61674de75da80319d39f7dacbaf091"
-  integrity sha512-n7PsWDNo2u6Puod1XpOzW5AMSiPYB9h7i6PdxeJak4bjwhbE8qQJ5s5cNOH0T+sTR8ocUA3NoH2yRgINsKuYnw==
+"@methodus/describe@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/@methodus/describe/-/describe-1.1.1.tgz#c9f7396844a979de704108c4d60c4012a374d1d3"
+  integrity sha512-h0+Fu7mXLUVSBtL0T/W9w1nOfRWuleK+c1MV64xOJv8o8Z6lSoBb/8iPlAOSE+elQgck2CPyahlYP2eH9COg2A==
   dependencies:
     "@methodus/client" "^0.0.9"
-    "@methodus/server" "^0.0.25"
+    "@methodus/server" "^1.1.0"
     ejs "^2.5.7"
     express "^4.16.2"
     http-proxy-middleware "^0.17.4"
@@ -239,47 +239,6 @@
   version "0.0.18"
   resolved "https://registry.npmjs.org/@methodus/server/-/server-0.0.18.tgz#8267e771a8427f0e81bcfad87a2cde5defdb0acf"
   integrity sha512-lp1wM8eJh0T95VjLk1DdbhERlteqmY+O8viAuRdAT860pLw4WMn7OSc+CqLi2YvVMgF/AjaKLvmhh4ZHX3lp3g==
-  dependencies:
-    amqplib "^0.5.1"
-    child-process-debug "0.0.7"
-    colors "^1.1.2"
-    consolidate "^0.15.0"
-    correlation-id "^2.0.0"
-    debug "^2.6.8"
-    ejs "^2.5.7"
-    errorhandler "^1.5.0"
-    figlet "^1.2.0"
-    js-yaml "^3.9.0"
-    kafka-node "^2.2.0"
-    log "^1.4.0"
-    logelas "^1.0.20"
-    method-override "^2.3.9"
-    mkdirp "^0.5.1"
-    mock-require "^2.0.2"
-    nedb "^1.8.0"
-    nedb-promise "^2.0.1"
-    redis "^2.7.1"
-    reflect-metadata "^0.1.10"
-    request "^2.81.0"
-    request-promise-native "^1.0.4"
-    shortid "^2.2.8"
-    sinon "^4.0.0"
-    socket.io "^2.0.3"
-    socket.io-client "^2.0.3"
-    stream-from-promise "^1.0.0"
-    supertest "^3.0.0"
-    uuid "^3.1.0"
-    whatwg-fetch "^2.0.3"
-  optionalDependencies:
-    body-parser "^1.17.2"
-    compression "^1.7.0"
-    cookie-parser "^1.4.3"
-    express "^4.15.3"
-
-"@methodus/server@^0.0.25":
-  version "0.0.25"
-  resolved "https://registry.npmjs.org/@methodus/server/-/server-0.0.25.tgz#5a8a36452a13bb03b103991731929f63320d22c1"
-  integrity sha512-r0OiJL9TvPUPKw+1ePIW5Kqs1353pgUuKK5Lq1i64EzfEOAg7wKCiMeU5qt8kX8V8EpQ30lM96ZehHK6OH8Kcw==
   dependencies:
     amqplib "^0.5.1"
     child-process-debug "0.0.7"
@@ -403,14 +362,14 @@
     "@types/node" "*"
 
 "@types/node@*", "@types/node@>=0.0.2", "@types/node@>=4.0.0", "@types/node@^10.0.4":
-  version "10.12.6"
-  resolved "https://registry.npmjs.org/@types/node/-/node-10.12.6.tgz#7fc213c1b811c90fc9a3edb6206742b95d697678"
-  integrity sha512-+ZWB5Ec1iki99xQFzBlivlKxSZQ+fuUKBott8StBOnLN4dWbRHlgdg1XknpW6g0tweniN5DcOqA64CJyOUPSAw==
+  version "10.12.9"
+  resolved "https://registry.npmjs.org/@types/node/-/node-10.12.9.tgz#a07bfa74331471e1dc22a47eb72026843f7b95c8"
+  integrity sha512-eajkMXG812/w3w4a1OcBlaTwsFPO5F7fJ/amy+tieQxEMWBlbV1JGSjkFM+zkHNf81Cad+dfIRA+IBkvmvdAeA==
 
 "@types/node@^8.0.31":
-  version "8.10.37"
-  resolved "https://registry.npmjs.org/@types/node/-/node-8.10.37.tgz#d2db49dc6a4e087c3245f22b92061f22494771e5"
-  integrity sha512-Jp39foY8Euv/PG4OGPyzxis82mnjcUtXLEMA8oFMCE4ilmuJgZPdV2nZNV1moz+99EJTtcpOSgDCgATUwABKig==
+  version "8.10.38"
+  resolved "https://registry.npmjs.org/@types/node/-/node-8.10.38.tgz#e05c201a668492e534b48102aca0294898f449f6"
+  integrity sha512-EibsnbJerd0hBFaDjJStFrVbVBAtOy4dgL8zZFw0uOvPqzBAX59Ci8cgjg3+RgJIWhsB5A4c+pi+D4P9tQQh/A==
 
 "@types/pino@^4.16.0":
   version "4.16.1"
@@ -735,7 +694,7 @@ bindings@^1.3.0:
 
 bitsyntax@~0.0.4:
   version "0.0.4"
-  resolved "https://registry.npmjs.org/bitsyntax/-/bitsyntax-0.0.4.tgz#eb10cc6f82b8c490e3e85698f07e83d46e0cba82"
+  resolved "http://registry.npmjs.org/bitsyntax/-/bitsyntax-0.0.4.tgz#eb10cc6f82b8c490e3e85698f07e83d46e0cba82"
   integrity sha1-6xDMb4K4xJDj6FaY8H6D1G4MuoI=
   dependencies:
     buffer-more-ints "0.0.2"
@@ -2739,9 +2698,9 @@ logelas@^1.0.20:
     mkdirp "^0.5.1"
 
 logelas@^3.0.4:
-  version "3.0.4"
-  resolved "https://registry.npmjs.org/logelas/-/logelas-3.0.4.tgz#0b9b2fda75442b34b025ce97b2d8e6c49f19173a"
-  integrity sha512-GnUUfEJLF2/hfrqfLTEWt6+lFeFvqYP5rbmoENv9vMVFw+tZ541NH8fuvuPjBJw3af0nqUBlqCI3C8GzXvRciw==
+  version "3.0.5"
+  resolved "https://registry.npmjs.org/logelas/-/logelas-3.0.5.tgz#5b57228e815ba1273bcce39e4e30bd72ebc4d08c"
+  integrity sha512-HZGrEJ3Bx2zuJXEQedPWFVqoJk3H1MX436q0ZpAyHFoOMjadlY+vOImmSBdtS2wbJaGHakoGkgiHVXYa9xQBUQ==
   dependencies:
     debug "^3.0.1"
     lodash "^4.17.11"
@@ -2991,10 +2950,10 @@ mock-require@^2.0.2:
   dependencies:
     caller-id "^0.1.0"
 
-mongodb-core@3.1.8:
-  version "3.1.8"
-  resolved "https://registry.npmjs.org/mongodb-core/-/mongodb-core-3.1.8.tgz#696cd5581c17d4f44f911b9cd089239e3e687b0e"
-  integrity sha512-reWCqIRNehyuLaqaz5JMOmh3Xd8JIjNX34o8mnewXLK2Fyt/Ky6BZbU+X0OPzy8qbX+JZrOtnuay7ASCieTYZw==
+mongodb-core@3.1.9:
+  version "3.1.9"
+  resolved "https://registry.npmjs.org/mongodb-core/-/mongodb-core-3.1.9.tgz#c31ee407bf932b0149eaed775c17ee09974e4ca3"
+  integrity sha512-MJpciDABXMchrZphh3vMcqu8hkNf/Mi+Gk6btOimVg1XMxLXh87j6FAvRm+KmwD1A9fpu3qRQYcbQe4egj23og==
   dependencies:
     bson "^1.1.0"
     require_optional "^1.0.1"
@@ -3003,11 +2962,11 @@ mongodb-core@3.1.8:
     saslprep "^1.0.0"
 
 mongodb@^3.1.4:
-  version "3.1.9"
-  resolved "https://registry.npmjs.org/mongodb/-/mongodb-3.1.9.tgz#9bd205b36b6ddf4bd1fb6c3c31641e1994b62075"
-  integrity sha512-f+Og32wK/ovzVlC1S6Ft7yjVTvNsAOs6pBpDrPd2/3wPO9ijNsQrTNntuECjOSxGZpPVl0aRqgHzF1e9e+KvnQ==
+  version "3.1.10"
+  resolved "https://registry.npmjs.org/mongodb/-/mongodb-3.1.10.tgz#45ad9b74ea376f4122d0881b75e5489b9e504ed7"
+  integrity sha512-Uml42GeFxhTGQVml1XQ4cD0o/rp7J2ROy0fdYUcVitoE7vFqEhKH4TYVqRDpQr/bXtCJVxJdNQC1ntRxNREkPQ==
   dependencies:
-    mongodb-core "3.1.8"
+    mongodb-core "3.1.9"
     safe-buffer "^5.1.2"
 
 ms@2.0.0:
