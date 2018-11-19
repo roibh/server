@@ -8,8 +8,7 @@ export * from './models/';
 import * as path from 'path';
 import { DBHandler } from '@methodus/data';
 import { configuration } from './db/config';
-import { SignNature, UserController, ScreensDataController } from './controllers/';
-import { Auth } from './controllers/auth.controller';
+import { Auth, UserController, ScreensDataController } from './controllers/';
 
 DBHandler.config = configuration;
 
@@ -17,7 +16,6 @@ DBHandler.config = configuration;
 @PluginConfiguration('@methodus/describe')
 @PluginConfiguration(path.join(__dirname, 'static'), { path: '/', clientPath: '/public' })
 @ClientConfiguration(UserController, MethodType.Local, ServerType.Express)
-@ClientConfiguration(SignNature, MethodType.Local, ServerType.Express)
 @ClientConfiguration(Auth, MethodType.Local, ServerType.Express)
 @ClientConfiguration(ScreensDataController, MethodType.Local, ServerType.Express)
 class SetupServer extends ConfiguredServer {
