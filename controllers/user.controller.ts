@@ -11,7 +11,6 @@ import { UserModel } from '../models/user.model';
 import { UserMock } from '../mocks/';
 import { DataController } from './data.controller';
 
-    @MethodMock(UserMock.list)
 
 @MethodConfig('User', [], UserModel)
 export class UserController extends DataController {
