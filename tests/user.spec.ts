@@ -17,7 +17,7 @@ DBHandler.config = {
     },
 
 };
-import { User } from '../controllers/user.controller';
+import { UserController } from '../controllers/user.controller';
 
 @TestFixture('Test Embeds')
 export class TestsOfUsers {
@@ -26,7 +26,7 @@ export class TestsOfUsers {
     @AsyncTest('user_list')
     @Timeout(10000)
     public async user_list() {
-        const result = await User.list();
+        const result = await UserController.query({});
         Expect(result).toBeDefined();
     }
 

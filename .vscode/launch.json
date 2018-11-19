@@ -44,7 +44,7 @@
                 "NODE_LOG_DIR": "./logs",
                 "NODE_CONFIG_VAR": "vars.json",
                 "MONGO_NAME": "signnature",
-                "MONGO_PASSWORD": "Kardigan24%24",
+                "MONGO_PASSWORD": "Kardigan24%25",
                 "PORT": "6200"
             }
         },
@@ -72,7 +72,7 @@
             // Environment variables passed to the program.
             "env": {
                 "PORT": "2092",
-                "DEBUG": "tmla",
+              
                 "NODE_ENV": "debug",
                 "NODE_CONFIG_ENV": "local",
                 "NODE_LOG_LEVEL": "trace",
@@ -92,7 +92,7 @@
             "console": "internalConsole",
             "sourceMaps": true,
             "env": {
-                "DEBUG": "tmla",
+                
                 "NODE_ENV": "debug",
                 "NODE_LOG_LEVEL": "debug",
                 "NODE_CONFIG_ENV": "local",

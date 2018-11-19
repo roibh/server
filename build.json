@@ -7,6 +7,9 @@
         "contracts": {
             "User": {
                 "path": "./controllers/user.controller.ts"
+            },
+            "Auth": {
+                "path": "./controllers/auth.controller.ts"
             }
         },
         "models": {
