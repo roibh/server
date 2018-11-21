@@ -5,16 +5,25 @@
         "buildPath": "../",
         "path": "./",
         "contracts": {
-            "User": {
-                "path": "./controllers/user.controller.ts"
+            "DataController": {
+                "path": "./controllers/data.controller.ts"
+            },
+            "UserController": {
+                "path": "./controllers/user.data.controller.ts"
             },
             "Auth": {
                 "path": "./controllers/auth.controller.ts"
+            },
+            "ScreensDataController": {
+                "path": "./controllers/screen.data.controller.ts"
             }
         },
         "models": {
             "UserModel": {
                 "path": "./models/user.model.ts"
+            },
+            "ScreenModel": {
+                "path": "./models/screen.model.ts"
             }
         },
         "includes": {
