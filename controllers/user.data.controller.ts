@@ -4,7 +4,9 @@ import { Body, Method, MethodConfig, Param, Query, Verbs, MethodError, MethodRes
 import { Query as DataQuery } from '@methodus/data';
 import { UserModel } from '../models/user.model';
 import { UserMock } from '../mocks/';
-import { DataController } from './data.controller';
+/*start custom*/
+import { DataController } from './datacontroller';
+/*end custom*/
 
 @MethodConfig('User', [], UserModel)
 export class UserController extends DataController {

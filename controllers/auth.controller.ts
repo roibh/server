@@ -5,8 +5,6 @@ import * as jwt from 'jsonwebtoken';
 import * as fs from 'fs';
 import { UserModel } from '..';
 
-
-
 // PAYLOAD
 const payload = {
     data1: 'Data 1',
@@ -16,16 +14,16 @@ const payload = {
 };
 // PRIVATE and PUBLIC key
 
-const i = 'Mysoft corp';          // Issuer 
-const s = 'some@user.com';        // Subject 
+const i = 'Mysoft corp';          // Issuer
+const s = 'some@user.com';        // Subject
 const a = 'http://mysoftcorp.in'; // Audience
 // SIGNING OPTIONS
 const signOptions = {
-    issuer: i,
-    subject: s,
+    algorithm: 'RS256',
     audience: a,
     expiresIn: '12h',
-    algorithm: 'RS256'
+    issuer: i,
+    subject: s,
 };
 
 const privateKEY = fs.readFileSync('./certs/private.key', 'utf8');
@@ -33,25 +31,43 @@ const publicKEY = fs.readFileSync('./certs/public.key', 'utf8');
 
 @MethodConfig('AuthController')
 export class Auth {
-
-    @Method(Verbs.Post, '/api/auth/token')
-    public static async token(@Body('userOptions') userOptions: any): Promise<any> {
+    @Method(Verbs.Post, '/api/auth/signup')
+    public static async signup(@Body('userOptions') userOptions: any): Promise<MethodResult<any>> {
         try {
-
             const query = new DataQuery(UserModel);
             const logedInUser = await query.filter({
                 Email: userOptions.userName,
-                Password: userOptions.password
+
+            }).run(ReturnType.Single);
+            if (logedInUser) {
+                throw new MethodError(`user exists`, 403);
+            } else {
+                // insert into user collection
+                const result = await UserModel.insert(userOptions);
+                return new MethodResult(result);
+            }
+        } catch (error) {
+            throw new MethodError(error, 500);
+        }
+    }
+
+    @Method(Verbs.Post, '/api/auth/token')
+    public static async token(@Body('userOptions') userOptions: any): Promise<MethodResult<any>> {
+        try {
+            const query = new DataQuery(UserModel);
+            const logedInUser = await query.filter({
+                Email: userOptions.userName,
+                Password: userOptions.password,
             }).run(ReturnType.Single);
             if (logedInUser) {
                 const token = jwt.sign(payload, privateKEY, signOptions);
                 return new MethodResult({ token });
             } else {
-                return new MethodResultStatus({ message: 'user not found' }, 404);
+                return new MethodResultStatus({ message: 'user not found' }, 404) as MethodResult;
             }
 
         } catch (error) {
-
+            throw new MethodError(error, 500);
         }
     }
 
@@ -62,7 +78,7 @@ export class Auth {
 
             return new MethodResult(token);
         } catch (error) {
-
+            throw new MethodError(error, 500);
         }
     }
 
@@ -71,10 +87,8 @@ export class Auth {
         try {
             return new MethodResult(jwt.decode(token, { complete: true }));
         } catch (error) {
-
+            throw new MethodError(error, 500);
         }
     }
-
-
-
 }
+

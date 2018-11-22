@@ -17,7 +17,7 @@ DBHandler.config = {
     },
 
 };
-import { UserController } from '../controllers/user.controller';
+import { UserController } from '../controllers/user.data.controller';
 
 @TestFixture('Test Embeds')
 export class TestsOfUsers {
