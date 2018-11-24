@@ -222,10 +222,10 @@
     object-diff "0.0.4"
     reflect-metadata "^0.1.10"
 
-"@methodus/describe@^1.1.4":
-  version "1.1.4"
-  resolved "https://registry.npmjs.org/@methodus/describe/-/describe-1.1.4.tgz#14becad44ae1e4674816b8446a2cca48a0c232c6"
-  integrity sha512-d2f6ZFIPt2WAwfpo32ts9eF9715UW/5thX094IQAPECEqhyNirztJBNAO0odMhKUkOZoiKl/PUhiGd1TwnvGhA==
+"@methodus/describe@^1.1.6":
+  version "1.1.6"
+  resolved "https://registry.npmjs.org/@methodus/describe/-/describe-1.1.6.tgz#16ebbcd767e331b3ebe1cbeb362493a9ca98231f"
+  integrity sha512-bp9K6yWRlkpJ8zW1guTBEzmbi0g4Eq9DsblPZDfT/SHNHanCVihWF+ikzVX/yWh7OwTb+zjze0hz6/jUHTKcOw==
   dependencies:
     "@methodus/client" "^0.0.9"
     ejs "^2.5.7"
@@ -274,10 +274,10 @@
     cookie-parser "^1.4.3"
     express "^4.15.3"
 
-"@methodus/server@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/@methodus/server/-/server-1.1.0.tgz#dfebb2bd865fa3499254bf437b294b79efdf8d13"
-  integrity sha512-uiiOYXaNzS54IESiwefAyxeKKvvwmqE2n1xHNzqInEqhCAjrrcGxuxOSTB9QNVQhPYm3MdPg1SvhanYGHVur1w==
+"@methodus/server@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.npmjs.org/@methodus/server/-/server-1.1.2.tgz#cbc559f07cf689bebe2ea14fda3682461fa0e74d"
+  integrity sha512-5/SZgypH8K59CWuljzSHYP/6nDWZOj+X8TQ9ZRd1iS3lfg2A6gsvuHwVEOEtSyNHGTJ0j1u3EpjNZEuX2xHZCg==
   dependencies:
     amqplib "^0.5.1"
     child-process-debug "0.0.7"
