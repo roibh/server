@@ -19,7 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "@methodus/data": "^1.0.1",
-    "@methodus/describe": "^1.1.6",
+    "@methodus/describe": "^1.1.7",
     "@methodus/server": "^1.1.2",
     "@types/node": "^10.0.4",
     "alsatian": "^2.3.0",

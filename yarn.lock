@@ -222,10 +222,10 @@
     object-diff "0.0.4"
     reflect-metadata "^0.1.10"
 
-"@methodus/describe@^1.1.6":
-  version "1.1.6"
-  resolved "https://registry.npmjs.org/@methodus/describe/-/describe-1.1.6.tgz#16ebbcd767e331b3ebe1cbeb362493a9ca98231f"
-  integrity sha512-bp9K6yWRlkpJ8zW1guTBEzmbi0g4Eq9DsblPZDfT/SHNHanCVihWF+ikzVX/yWh7OwTb+zjze0hz6/jUHTKcOw==
+"@methodus/describe@^1.1.7":
+  version "1.1.7"
+  resolved "https://registry.npmjs.org/@methodus/describe/-/describe-1.1.7.tgz#f6fa00ccda8e01dae8fc20f2ee8a3e3c7413e192"
+  integrity sha512-M+vZnJRddr5sEwvoVeVV2Xj0mRh/l0WcFtexr7pXFrOFQnEYr+/0cJns5lJavZNMkjSE98Km4tG4SuOAD8p4jw==
   dependencies:
     "@methodus/client" "^0.0.9"
     ejs "^2.5.7"
