@@ -19,8 +19,8 @@
   "license": "ISC",
   "dependencies": {
     "@methodus/data": "^1.0.1",
-    "@methodus/describe": "^1.1.4",
-    "@methodus/server": "^1.1.0",
+    "@methodus/describe": "^1.1.6",
+    "@methodus/server": "^1.1.2",
     "@types/node": "^10.0.4",
     "alsatian": "^2.3.0",
     "chrome-bridge": "^0.1.2",

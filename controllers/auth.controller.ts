@@ -36,7 +36,7 @@ export class Auth {
         try {
             const query = new DataQuery(UserModel);
             const logedInUser = await query.filter({
-                Email: userOptions.userName,
+                Email: userOptions.Email,
 
             }).run(ReturnType.Single);
             if (logedInUser) {
@@ -56,8 +56,8 @@ export class Auth {
         try {
             const query = new DataQuery(UserModel);
             const logedInUser = await query.filter({
-                Email: userOptions.userName,
-                Password: userOptions.password,
+                Email: userOptions.Email,
+                Password: userOptions.Password,
             }).run(ReturnType.Single);
             if (logedInUser) {
                 const token = jwt.sign(payload, privateKEY, signOptions);
