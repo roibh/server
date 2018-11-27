@@ -1,3 +1,20 @@
 {
-  "MY_SPECIAL_WAY": "My special way"
+  "LOGIN": {
+    "TITLE": "Login",
+    "INSERT_USERNAME": "Please enter a username",
+    "PASSWORD": "Password",
+    "USERNAME": "Username",
+    "INSERT_PASSWORD": "Please enter a password",
+    "INVALID_USERNAME_OR_PASSWORD": "Username or password not found",
+    "REMEMBER_ME": "Remember me",
+    "LOGIN_BTN": "Login"
+  },
+  "SIGNUP": {
+    "TITLE": "Signup",
+    "INSERT_USERNAME": "Please enter a username",
+    "PASSWORD": "Password",
+    "USERNAME": "Username",
+    "INSERT_PASSWORD": "Please enter a password",
+    "SIGNUP_BTN": "Signup"
+  }
 }
