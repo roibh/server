@@ -23,6 +23,7 @@
     "@methodus/server": "^1.1.2",
     "@types/node": "^10.0.4",
     "alsatian": "^2.3.0",
+    "aws-sdk": "^2.368.0",
     "chrome-bridge": "^0.1.2",
     "jsonwebtoken": "^8.4.0",
     "logelas": "^3.0.4",

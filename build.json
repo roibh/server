@@ -16,6 +16,9 @@
             },
             "ScreensDataController": {
                 "path": "./controllers/screen.data.controller.ts"
+            },
+            "LibraryDataController": {
+                "path": "./controllers/library.data.controller.ts"
             }
         },
         "models": {
@@ -24,6 +27,9 @@
             },
             "ScreenModel": {
                 "path": "./models/screen.model.ts"
+            },
+            "LibraryModel": {
+                "path": "./models/library.model.ts"
             }
         },
         "includes": {

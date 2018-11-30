@@ -1,4 +1,12 @@
 {
+  "NAVBAR": {
+    "HOME": "Home",
+    "SCREENS": "Screens",
+    "LIBRARY": "Library",
+    "PLAYLISTS": "Playlists",
+    "SCHEDULES": "Schedules",
+    "SETTINGS": "Settings"
+  },
   "LOGIN": {
     "TITLE": "Login",
     "INSERT_USERNAME": "Please enter a username",
@@ -16,5 +24,15 @@
     "USERNAME": "Username",
     "INSERT_PASSWORD": "Please enter a password",
     "SIGNUP_BTN": "Signup"
+  },
+  "SCREENS": {
+    "NAME": "Name your screen",
+    "NAME_HELP": "Try using a meaningful name",
+    "TOKEN": "Token",
+    "TYPE": "Type",
+    "STATUS": "Status",
+    "LAST_DATE": "Last active date",
+    "CREATE": "Create",
+    "UPDATE": "Update"
   }
 }

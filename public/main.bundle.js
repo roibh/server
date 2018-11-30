@@ -17,7 +17,14 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy re
 
 /***/ }),
 
-/***/ "../../../../../src/app/app.component.css":
+/***/ "../../../../../src/app/app.component.html":
+/***/ (function(module, exports) {
+
+module.exports = " \r\n<div>\r\n\r\n\r\n<!-- <nav class=\"navbar  navbar-light bg-light\">\r\n  <div class=\"pull-left navbar-header\">\r\n    <a class=\"navbar-brand\" href=\"#\">\r\n      <img src=\"assets/discount.png\" width=\"30\" height=\"30\" class=\"d-inline-block align-top\" alt=\"\"> SignNature</a>\r\n\r\n  </div>\r\n  <div id=\"navbarSupportedContent\" class=\"pull-right navbar-header\">\r\n    <ul class=\"navbar-nav\">\r\n      <li>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink=\"/dashboard\">dashboard</a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav> -->\r\n <router-outlet></router-outlet>\r\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/app.component.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
@@ -25,20 +32,13 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".white {color: white;}", ""]);
+exports.push([module.i, ".white {\n  color: white; }\n", ""]);
 
 // exports
 
 
 /*** EXPORTS FROM exports-loader ***/
 module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/app.component.html":
-/***/ (function(module, exports) {
-
-module.exports = " \r\n<div>\r\n\r\n\r\n<!-- <nav class=\"navbar  navbar-light bg-light\">\r\n  <div class=\"pull-left navbar-header\">\r\n    <a class=\"navbar-brand\" href=\"#\">\r\n      <img src=\"assets/discount.png\" width=\"30\" height=\"30\" class=\"d-inline-block align-top\" alt=\"\"> SignNature</a>\r\n\r\n  </div>\r\n  <div id=\"navbarSupportedContent\" class=\"pull-right navbar-header\">\r\n    <ul class=\"navbar-nav\">\r\n      <li>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink=\"/dashboard\">dashboard</a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav> -->\r\n <router-outlet></router-outlet>\r\n</div>"
 
 /***/ }),
 
@@ -62,19 +62,19 @@ var user_context_service_1 = __webpack_require__("../../../../../src/app/user.co
 var core_2 = __webpack_require__("../../../../@ngx-translate/core/fesm5/ngx-translate-core.js");
 var AppComponent = /** @class */ (function () {
     function AppComponent(userService, translate) {
+        // this.translate.setDefaultLang('he');
         this.userService = userService;
         this.translate = translate;
         this.title = 'SignNature';
-        this.translate.setDefaultLang('he');
         // the lang to use, if the lang isn't available, it will use the current loader to get them
-        this.translate.use('he');
+        //this.translate.use('he');
         this.userCheck = userService.getUser();
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app-root',
             template: __webpack_require__("../../../../../src/app/app.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/app.component.css")]
+            styles: [__webpack_require__("../../../../../src/app/app.component.scss")]
         }),
         __metadata("design:paramtypes", [user_context_service_1.UserService, core_2.TranslateService])
     ], AppComponent);
@@ -103,23 +103,18 @@ var animations_1 = __webpack_require__("../../../platform-browser/fesm5/animatio
 // import { DynamicFormsCoreModule } from '@ng-dynamic-forms/core';
 var forms_1 = __webpack_require__("../../../forms/fesm5/forms.js");
 var ngx_toastr_1 = __webpack_require__("../../../../ngx-toastr/fesm5/ngx-toastr.js");
-var ngx_super_table_1 = __webpack_require__("../../../../ngx-super-table/index.js");
 var ui_bootstrap_1 = __webpack_require__("../../../../@ng-dynamic-forms/ui-bootstrap/fesm5/ui-bootstrap.js");
 var sortable_1 = __webpack_require__("../../../../ngx-bootstrap/sortable/index.js");
 var modal_1 = __webpack_require__("../../../../ngx-bootstrap/modal/index.js");
 var tabs_1 = __webpack_require__("../../../../ngx-bootstrap/tabs/index.js");
 var app_component_1 = __webpack_require__("../../../../../src/app/app.component.ts");
 var forms_2 = __webpack_require__("../../../forms/fesm5/forms.js");
-var ngx_datatable_1 = __webpack_require__("../../../../@swimlane/ngx-datatable/release/index.js");
 var ngx_charts_1 = __webpack_require__("../../../../@swimlane/ngx-charts/release/index.js");
 var router_1 = __webpack_require__("../../../router/fesm5/router.js");
-var ng2_table_1 = __webpack_require__("../../../../ng2-table/ng2-table.js");
 var angular2_loaders_css_1 = __webpack_require__("../../../../angular2-loaders-css/index.js");
 var loader_component_1 = __webpack_require__("../../../../../src/app/loader/loader.component.ts");
-var ng2_ace_editor_1 = __webpack_require__("../../../../ng2-ace-editor/index.js");
 var manage_component_1 = __webpack_require__("../../../../../src/app/manage/manage.component.ts");
 var angular_jwt_1 = __webpack_require__("../../../../@auth0/angular-jwt/index.js");
-var ngx_select_dropdown_1 = __webpack_require__("../../../../ngx-select-dropdown/dist/index.js");
 var angularx_social_login_1 = __webpack_require__("../../../../angularx-social-login/angularx-social-login.es5.js");
 var http_1 = __webpack_require__("../../../common/fesm5/http.js");
 var auth_intercepter_1 = __webpack_require__("../../../../../src/app/auth/auth.intercepter.ts");
@@ -146,6 +141,7 @@ var user_context_service_1 = __webpack_require__("../../../../../src/app/user.co
 var user_info_component_1 = __webpack_require__("../../../../../src/app/user-info/user-info.component.ts");
 var adapt_height_1 = __webpack_require__("../../../../../src/app/directives/adapt-height.ts");
 var ngx_order_pipe_1 = __webpack_require__("../../../../ngx-order-pipe/ngx-order-pipe.es5.js");
+var shared_module_1 = __webpack_require__("../../../../../src/app/shared.module.ts");
 var dashboard_component_1 = __webpack_require__("../../../../../src/app/dashboard/dashboard.component.ts");
 var core_2 = __webpack_require__("../../../../@ngx-translate/core/fesm5/ngx-translate-core.js");
 var http_loader_1 = __webpack_require__("../../../../@ngx-translate/http-loader/esm5/ngx-translate-http-loader.js");
@@ -159,6 +155,8 @@ var library_component_1 = __webpack_require__("../../../../../src/app/library/li
 var schedules_component_1 = __webpack_require__("../../../../../src/app/schedules/schedules.component.ts");
 var settings_component_1 = __webpack_require__("../../../../../src/app/settings/settings.component.ts");
 var language_bar_component_1 = __webpack_require__("../../../../../src/app/language-bar/language-bar.component.ts");
+var dialog_component_1 = __webpack_require__("../../../../../src/app/dialog/dialog.component.ts");
+var language_service_1 = __webpack_require__("../../../../../src/app/language.service.ts");
 var appRoutes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'signin', component: login_component_1.LoginComponent },
@@ -228,6 +226,7 @@ var AppModule = /** @class */ (function () {
                 schedules_component_1.SchedulesComponent,
                 settings_component_1.SettingsComponent,
                 language_bar_component_1.LanguageBarComponent,
+                dialog_component_1.DialogComponent,
             ],
             imports: [
                 http_2.HttpClientModule,
@@ -238,22 +237,18 @@ var AppModule = /** @class */ (function () {
                         deps: [http_2.HttpClient]
                     }
                 }),
+                shared_module_1.SharedModule,
                 router_1.RouterModule.forRoot(appRoutes, { enableTracing: false, useHash: true } // <-- debugging purposes only
                 ),
-                ngx_super_table_1.SuperTableModule,
                 ngx_charts_1.NgxChartsModule,
-                ngx_select_dropdown_1.SelectDropDownModule,
-                ngx_datatable_1.NgxDatatableModule,
                 tabs_1.TabsModule.forRoot(),
                 modal_1.ModalModule.forRoot(),
-                ng2_table_1.Ng2TableModule,
                 sortable_1.SortableModule.forRoot(),
                 ngx_toastr_1.ToastrModule.forRoot(),
                 angular2_loaders_css_1.LoadersCssModule,
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
                 forms_2.ReactiveFormsModule,
-                ng2_ace_editor_1.AceEditorModule,
                 ngx_order_pipe_1.OrderModule,
                 ui_bootstrap_1.DynamicFormsBootstrapUIModule,
                 animations_1.BrowserAnimationsModule,
@@ -265,7 +260,7 @@ var AppModule = /** @class */ (function () {
                     }
                 })
             ],
-            providers: [user_context_service_1.UserService, auth_guard_service_1.AuthGuardService, {
+            providers: [user_context_service_1.UserService, language_service_1.LanguageService, auth_guard_service_1.AuthGuardService, {
                     provide: angularx_social_login_1.AuthServiceConfig,
                     useFactory: provideConfig
                 },
@@ -363,7 +358,14 @@ exports.AuthInterceptor = AuthInterceptor;
 
 /***/ }),
 
-/***/ "../../../../../src/app/dashboard/dashboard.component.css":
+/***/ "../../../../../src/app/dashboard/dashboard.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"wrapper\">\n    <!-- Sidebar  -->\n    <nav id=\"sidebar\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <strong>BS</strong>\n        </div>\n\n        <ul class=\"list-unstyled components\">\n            <li class=\"active\">\n                <a href=\"#homeSubmenu\" data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-home\"></i>\n                    {{\"NAVBAR.HOME\" | translate}}\n                </a>             \n            </li>\n              <li>\n                <a routerLink=\"screens\">\n                    <i class=\"fas fa-desktop\"></i>\n                      {{\"NAVBAR.SCREENS\" | translate}}\n                     \n                </a></li>\n            <li>\n             \n                <a href=\"#LibrarySubmenu\" data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-copy\"></i>\n                      {{\"NAVBAR.LIBRARY\" | translate}}\n                     \n                </a>\n                <ul class=\"collapse list-unstyled\" id=\"LibrarySubmenu\">\n                    <li>\n                        <a href=\"#\">Page 1</a>\n                    </li>\n                    <li>\n                        <a href=\"#\">Page 2</a>\n                    </li>\n                    <li>\n                        <a href=\"#\">Page 3</a>\n                    </li>\n                </ul>\n\n            </li>\n              <li>\n                <a routerLink=\"playlists\">\n                    <i class=\"fas fa-step-forward\"></i>\n                      {{\"NAVBAR.PLAYLISTS\" | translate}}\n                     \n                </a></li>\n\n                  <li>\n                <a routerLink=\"schedules\">\n                    <i class=\"fas fa-calendar-alt\"></i>\n                      {{\"NAVBAR.SCHEDULES\" | translate}}\n                    \n                </a></li>\n\n                  <li>\n                <a routerLink=\"settings\">\n                    <i class=\"fas fa-cogs\"></i>\n                      {{\"NAVBAR.SETTINGS\" | translate}}\n                  \n                </a></li>\n\n        </ul>\n\n    </nav>\n\n    <!-- Page Content  -->\n    <div id=\"content\">\n\n \n    <nav class=\"navbar navbar-default navbar-fixed-top\">\n        <div class=\"container\">\n            <ul class=\"mr-auto\">\n                <li class=\"nav-item\"><button type=\"button\" id=\"sidebarCollapse\" class=\"btn btn-info\">\n                    <i class=\"fas fa-align-left\"></i>                  \n                </button></li>\n             \n                <li class=\"nav-item\"> <app-language-bar></app-language-bar></li>\n            </ul>\n        </div>\n    </nav>\n\n\n  \n \n\n \n\n<div id=\"scroller\">\n\n        \n         <router-outlet></router-outlet>\n         </div>\n    </div>\n</div>\n\n\n\n\n "
+
+/***/ }),
+
+/***/ "../../../../../src/app/dashboard/dashboard.component.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
@@ -378,13 +380,6 @@ exports.push([module.i, "", ""]);
 
 /*** EXPORTS FROM exports-loader ***/
 module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/dashboard/dashboard.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"wrapper\">\n    <!-- Sidebar  -->\n    <nav id=\"sidebar\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <strong>BS</strong>\n        </div>\n\n        <ul class=\"list-unstyled components\">\n            <li class=\"active\">\n                <a href=\"#homeSubmenu\" data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-home\"></i>\n                    Home\n                </a>             \n            </li>\n              <li>\n                <a routerLink=\"screens\">\n                    <i class=\"fas fa-desktop\"></i>\n                    Screens\n                </a></li>\n            <li>\n             \n                <a href=\"#LibrarySubmenu\" data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-copy\"></i>\n                    Library\n                </a>\n                <ul class=\"collapse list-unstyled\" id=\"LibrarySubmenu\">\n                    <li>\n                        <a href=\"#\">Page 1</a>\n                    </li>\n                    <li>\n                        <a href=\"#\">Page 2</a>\n                    </li>\n                    <li>\n                        <a href=\"#\">Page 3</a>\n                    </li>\n                </ul>\n\n            </li>\n              <li>\n                <a routerLink=\"playlists\">\n                    <i class=\"fas fa-step-forward\"></i>\n                    Playlists\n                </a></li>\n\n                  <li>\n                <a routerLink=\"schedules\">\n                    <i class=\"fas fa-calendar-alt\"></i>\n                    Schedules\n                </a></li>\n\n                  <li>\n                <a routerLink=\"settings\">\n                    <i class=\"fas fa-cogs\"></i>\n                    Settings\n                </a></li>\n\n        </ul>\n\n    </nav>\n\n    <!-- Page Content  -->\n    <div id=\"content\">\n\n \n    <nav class=\"navbar navbar-default navbar-fixed-top\">\n        <div class=\"container\">\n            <ul class=\"navbar-nav mr-auto\">\n                <li class=\"nav-item\"><button type=\"button\" id=\"sidebarCollapse\" class=\"btn btn-info\">\n                    <i class=\"fas fa-align-left\"></i>                  \n                </button></li>\n                <li class=\"nav-item\"><a href=\"../navbar-static-top/\">Static top</a></li>\n                <li class=\"nav-item\"> <app-language-bar></app-language-bar></li>\n            </ul>\n        </div>\n    </nav>\n\n\n  \n \n\n \n\n\n\n        \n         <router-outlet></router-outlet>\n    </div>\n</div>\n\n\n\n\n "
 
 /***/ }),
 
@@ -413,13 +408,88 @@ var DashboardComponent = /** @class */ (function () {
         core_1.Component({
             selector: 'app-dashboard',
             template: __webpack_require__("../../../../../src/app/dashboard/dashboard.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/dashboard/dashboard.component.css")]
+            styles: [__webpack_require__("../../../../../src/app/dashboard/dashboard.component.scss")]
         }),
         __metadata("design:paramtypes", [])
     ], DashboardComponent);
     return DashboardComponent;
 }());
 exports.DashboardComponent = DashboardComponent;
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/dialog/dialog.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/dialog/dialog.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<dialog class=\"my-dialog\" (close)=\"handleClose($event)\" #leDialog>\n  <h3>{{notification.title}}</h3>\n  <p>{{notification.message}}</p>\n  <div class=\"inline-components\">\n    <button class=\"btn\" (click)=\"okClicked()\">ok</button>\n    <button class=\"btn\" (click)=\"cancelClicked()\">cancel</button>\n  </div>\n</dialog>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/dialog/dialog.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/fesm5/core.js");
+var DialogComponent = /** @class */ (function () {
+    function DialogComponent() {
+        this.close = new core_1.EventEmitter();
+    }
+    DialogComponent.prototype.ngOnInit = function () {
+        this.nativeDialogElement = this.dialogElement.nativeElement;
+        this.nativeDialogElement.showModal();
+    };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Notification)
+    ], DialogComponent.prototype, "notification", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", core_1.EventEmitter)
+    ], DialogComponent.prototype, "close", void 0);
+    __decorate([
+        core_1.ViewChild('leDialog'),
+        __metadata("design:type", core_1.ElementRef)
+    ], DialogComponent.prototype, "dialogElement", void 0);
+    DialogComponent = __decorate([
+        core_1.Component({
+            selector: 'app-dialog',
+            template: __webpack_require__("../../../../../src/app/dialog/dialog.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/dialog/dialog.component.css")]
+        })
+    ], DialogComponent);
+    return DialogComponent;
+}());
+exports.DialogComponent = DialogComponent;
 
 
 /***/ }),
@@ -536,7 +606,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/language-bar/language-bar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<select [(ngModel)]=\"selectedLanguage\" (change)=\"selectLanguage()\">\n  <option *ngFor=\"let c of languages\" [ngValue]=\"c\">{{c.name}}</option>\n</select>"
+module.exports = "<link rel=\"stylesheet\" [href]='sanitizer.bypassSecurityTrustResourceUrl(this.languageService.cssUrl)' />\n\n<select [(ngModel)]=\"selectedLanguage\" (change)=\"selectLanguage()\">\n  <option *ngFor=\"let c of languages\" [ngValue]=\"c\">{{c.name}}</option>\n</select>"
 
 /***/ }),
 
@@ -557,18 +627,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/fesm5/core.js");
 var core_2 = __webpack_require__("../../../../@ngx-translate/core/fesm5/ngx-translate-core.js");
+var language_service_1 = __webpack_require__("../../../../../src/app/language.service.ts");
 var LanguageBarComponent = /** @class */ (function () {
-    function LanguageBarComponent(translate) {
+    function LanguageBarComponent(translate, languageService, sanitizer) {
         this.translate = translate;
+        this.languageService = languageService;
+        this.sanitizer = sanitizer;
     }
     LanguageBarComponent.prototype.ngOnInit = function () {
-        this.languages = [];
-        this.languages.push({ key: 'he', lcid: 1037, name: 'עברית', dir: 'rtl' });
-        this.languages.push({ key: 'en', lcid: 1025, name: 'English', dir: 'ltr' });
-        this.languages.push({ key: 'de', lcid: 1037, name: 'Dutche', dir: 'ltr' });
+        this.languages = this.languageService.languages;
     };
     LanguageBarComponent.prototype.selectLanguage = function () {
-        this.translate.use(this.selectedLanguage.key);
+        this.languageService.setLanguage(this.selectedLanguage);
     };
     LanguageBarComponent = __decorate([
         core_1.Component({
@@ -576,11 +646,65 @@ var LanguageBarComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/language-bar/language-bar.component.html"),
             styles: [__webpack_require__("../../../../../src/app/language-bar/language-bar.component.css")]
         }),
-        __metadata("design:paramtypes", [core_2.TranslateService])
+        __metadata("design:paramtypes", [core_2.TranslateService, language_service_1.LanguageService, core_1.Sanitizer])
     ], LanguageBarComponent);
     return LanguageBarComponent;
 }());
 exports.LanguageBarComponent = LanguageBarComponent;
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/language.service.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/fesm5/core.js");
+var core_2 = __webpack_require__("../../../../@ngx-translate/core/fesm5/ngx-translate-core.js");
+var LanguageService = /** @class */ (function () {
+    function LanguageService(translate) {
+        this.translate = translate;
+        this.languages = [];
+        this.languages.push({ key: 'en', lcid: 1025, name: 'English', dir: 'ltr' });
+        this.languages.push({ key: 'he', lcid: 1037, name: 'עברית', dir: 'rtl' });
+        this.languages.push({ key: 'de', lcid: 1037, name: 'Dutche', dir: 'ltr' });
+        var lngstr = localStorage.getItem('lng');
+        if (lngstr) {
+            this.language = JSON.parse(lngstr);
+        }
+        else {
+            this.language = this.languages[0];
+        }
+        document.getElementsByTagName('body')[0].className = this.language.dir;
+        this.cssUrl = "/assets/i18n/" + this.language.dir + ".css?k=" + Math.random();
+        // the lang to use, if the lang isn't available, it will use the current loader to get them
+        translate.use(this.language.key);
+    }
+    LanguageService.prototype.setLanguage = function (language) {
+        this.language = language;
+        localStorage.setItem('lng', JSON.stringify(language));
+        this.translate.use(language.key);
+        document.getElementsByTagName('body')[0].className = language.dir;
+        this.cssUrl = "/assets/i18n/" + language.dir + ".css?k=" + Math.random();
+    };
+    LanguageService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [core_2.TranslateService])
+    ], LanguageService);
+    return LanguageService;
+}());
+exports.LanguageService = LanguageService;
 
 
 /***/ }),
@@ -732,7 +856,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n<app-language-bar></app-language-bar>\n\t<div class=\"limiter\">\n\t\t<div class=\"container-login100\">\n\t\t\t<div class=\"wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30\">\n\t\t\t\t<form class=\"login100-form validate-form\">\n\t\t\t\t\t<span class=\"login100-form-title p-b-55\">\n\t\t\t\t\t\t{{\"LOGIN.TITLE\" | translate}}\n\t\t\t\t\t</span>\n\n\t\t\t\t\t<div class=\"wrap-input100 validate-input m-b-16\" [attr.data-validate]=\"'LOGIN.INSERT_USERNAME' | translate\">\n\t\t\t\t\t\t<input class=\"input100\" type=\"text\" name=\"userName\" placeholder=\"Email\" [(ngModel)]=\"userName\">\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t\t<span class=\"symbol-input100\">\n\t\t\t\t\t\t\t<span class=\"lnr lnr-envelope\"></span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class=\"wrap-input100 validate-input m-b-16\" >\n\t\t\t\t\t\t<input class=\"input100\" type=\"password\" name=\"password\" placeholder=\"Password\" [(ngModel)]=\"password\">\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t\t<span class=\"symbol-input100\">\n\t\t\t\t\t\t\t<span class=\"lnr lnr-lock\"></span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class=\"contact100-form-checkbox m-l-4\">\n\t\t\t\t\t\t<input class=\"input-checkbox100\" id=\"ckb1\" type=\"checkbox\" name=\"remember-me\">\n\t\t\t\t\t\t<label class=\"label-checkbox100\" for=\"ckb1\">\n\t\t\t\t\t\t\t{{\"LOGIN.REMEMBER_ME\" | translate}}\n\t\t\t\t\t\t</label>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"container-login100-form-btn p-t-25\">\n\t\t\t\t\t\t<button class=\"login100-form-btn\" (click)=\"tryLogin()\">\n\t\t\t\t\t\t\t\t{{\"LOGIN.LOGIN_BTN\" | translate}}\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</div>\n \n\t\t\t\t\t<div class=\"text-center w-full p-t-25\">\n\t\t\t\t\t\t<span class=\"txt1\">\n\t\t\t\t\t\t\tNot a member?\n\t\t\t\t\t\t</span>\n\n\t\t\t\t\t\t<a class=\"txt1 bo1 hov1\" href=\"#\"  routerLink=\"/signup\">\n\t\t\t\t\t\t\tSign up now\t\t\t\t\t\t\t\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t</form>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\n\n\n\n\n\n\n\n<!-- Simple pop-up dialog box containing a form -->\n<dialog id=\"favDialog\">\n  <form method=\"dialog\">\n    <p><label>Favorite animal:\n      <select>\n        <option></option>\n        <option>Brine shrimp</option>\n        <option>Red panda</option>\n        <option>Spider monkey</option>\n      </select>\n    </label></p>\n    <menu>\n      <button>Cancel</button>\n      <button>Confirm</button>\n    </menu>\n  </form>\n</dialog>\n\n<menu>\n  <button id=\"updateDetails\">Update details</button>\n</menu>\n\n<div id=\"output\"></div>\n\n<script>\n(function() {\n  var updateButton = document.getElementById('updateDetails');\n  var favDialog = document.getElementById('favDialog');\n  var outputBox = document.getElementById(\"output\");\n\n  // “Update details” button opens the <dialog> modally\n  updateButton.addEventListener('click', function() {\n    favDialog.showModal();\n    output.innerHTML += \"<div>\" + favDialog.returnValue + \" button clicked!</div>\";\n  });\n})();\n</script>\n \n\n    <ng-template #share>\n        <div class=\"modal-body text-center\">\n\n            <p>Share your group.</p>\n            <pre>{{group.GroupId}}</pre>\n            <a type=\"button\" class=\"btn btn-primary\" (click)=\"decline()\">Cancel</a>\n        </div>\n    </ng-template>\n\n    <ng-template #join>\n        <div class=\"modal-body text-center\">\n            <p>Join a group.</p>\n            <div>\n                <label>Group code</label>\n                <input type=\"text\" class=\"form-control\" #group_code />\n            </div>\n            <a type=\"button\" class=\"btn btn-primary\" (click)=\"JoinConfirm(group_code.value)\">Join</a>\n            <a type=\"button\" class=\"btn btn-default\" (click)=\"decline()\">Cancel</a>\n        </div>\n    </ng-template>\n\n    <div class=\"float-left dropdown\" *ngIf=\"userData && group\">\n        <a class=\"btn btn-secondary dropdown-toggle white\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\n            aria-expanded=\"false\">\n            {{group.Name}}\n        </a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"position: absolute\">\n            <a class=\"dropdown-item\" (click)=\"setGroup(item)\" *ngFor=\"let item of userData.groups\">{{item.Name}}</a>\n\n            <a class=\"dropdown-item\" (click)=\"JoinGroup(join)\">Join group</a>\n            <a class=\"dropdown-item\" (click)=\"ShareGroup(share)\">Share group</a>\n        </div>\n\n    </div>\n</div>"
+module.exports = "<div>\n\t<div class=\"limiter\">\n\t\t<div class=\"container-login100\">\n      \n\n\t\t\t<div class=\"wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30\">\n              <div><app-language-bar></app-language-bar></div>\n\t\t\t\t<form class=\"login100-form validate-form\">\n\t\t\t\t\t<span class=\"login100-form-title p-b-55\">\n\t\t\t\t\t\t{{\"LOGIN.TITLE\" | translate}}\n\t\t\t\t\t</span>\n\n\t\t\t\t\t<div class=\"wrap-input100 validate-input m-b-16\" [attr.data-validate]=\"'LOGIN.INSERT_USERNAME' | translate\">\n\t\t\t\t\t\t<input class=\"input100\" type=\"text\" name=\"userName\" placeholder=\"Email\" [(ngModel)]=\"userName\">\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t\t<span class=\"symbol-input100\">\n\t\t\t\t\t\t\t<span class=\"lnr lnr-envelope\"></span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class=\"wrap-input100 validate-input m-b-16\" >\n\t\t\t\t\t\t<input class=\"input100\" type=\"password\" name=\"password\" placeholder=\"Password\" [(ngModel)]=\"password\">\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t\t<span class=\"symbol-input100\">\n\t\t\t\t\t\t\t<span class=\"lnr lnr-lock\"></span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class=\"contact100-form-checkbox m-l-4\">\n\t\t\t\t\t\t<input class=\"input-checkbox100\" id=\"ckb1\" type=\"checkbox\" name=\"remember-me\">\n\t\t\t\t\t\t<label class=\"label-checkbox100\" for=\"ckb1\">\n\t\t\t\t\t\t\t{{\"LOGIN.REMEMBER_ME\" | translate}}\n\t\t\t\t\t\t</label>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"container-login100-form-btn p-t-25\">\n\t\t\t\t\t\t<button class=\"login100-form-btn\" (click)=\"tryLogin()\">\n\t\t\t\t\t\t\t\t{{\"LOGIN.LOGIN_BTN\" | translate}}\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</div>\n \n\t\t\t\t\t<div class=\"text-center w-full p-t-25\">\n\t\t\t\t\t\t<span class=\"txt1\">\n\t\t\t\t\t\t\tNot a member?\n\t\t\t\t\t\t</span>\n\n\t\t\t\t\t\t<a class=\"txt1 bo1 hov1\" href=\"#\"  routerLink=\"/signup\">\n\t\t\t\t\t\t\tSign up now\t\t\t\t\t\t\t\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t</form>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\n\n\n\n\n\n\n\n<!-- Simple pop-up dialog box containing a form -->\n<dialog id=\"favDialog\">\n  <form method=\"dialog\">\n    <p><label>Favorite animal:\n      <select>\n        <option></option>\n        <option>Brine shrimp</option>\n        <option>Red panda</option>\n        <option>Spider monkey</option>\n      </select>\n    </label></p>\n    <menu>\n      <button>Cancel</button>\n      <button>Confirm</button>\n    </menu>\n  </form>\n</dialog>\n\n<menu>\n  <button id=\"updateDetails\">Update details</button>\n</menu>\n\n<div id=\"output\"></div>\n\n<script>\n(function() {\n  var updateButton = document.getElementById('updateDetails');\n  var favDialog = document.getElementById('favDialog');\n  var outputBox = document.getElementById(\"output\");\n\n  // “Update details” button opens the <dialog> modally\n  updateButton.addEventListener('click', function() {\n    favDialog.showModal();\n    output.innerHTML += \"<div>\" + favDialog.returnValue + \" button clicked!</div>\";\n  });\n})();\n</script>\n \n\n    <ng-template #share>\n        <div class=\"modal-body text-center\">\n\n            <p>Share your group.</p>\n            <pre>{{group.GroupId}}</pre>\n            <a type=\"button\" class=\"btn btn-primary\" (click)=\"decline()\">Cancel</a>\n        </div>\n    </ng-template>\n\n    <ng-template #join>\n        <div class=\"modal-body text-center\">\n            <p>Join a group.</p>\n            <div>\n                <label>Group code</label>\n                <input type=\"text\" class=\"form-control\" #group_code />\n            </div>\n            <a type=\"button\" class=\"btn btn-primary\" (click)=\"JoinConfirm(group_code.value)\">Join</a>\n            <a type=\"button\" class=\"btn btn-default\" (click)=\"decline()\">Cancel</a>\n        </div>\n    </ng-template>\n\n    <div class=\"float-left dropdown\" *ngIf=\"userData && group\">\n        <a class=\"btn btn-secondary dropdown-toggle white\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\n            aria-expanded=\"false\">\n            {{group.Name}}\n        </a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"position: absolute\">\n            <a class=\"dropdown-item\" (click)=\"setGroup(item)\" *ngFor=\"let item of userData.groups\">{{item.Name}}</a>\n\n            <a class=\"dropdown-item\" (click)=\"JoinGroup(join)\">Join group</a>\n            <a class=\"dropdown-item\" (click)=\"ShareGroup(share)\">Share group</a>\n        </div>\n\n    </div>\n</div>"
 
 /***/ }),
 
@@ -1305,7 +1429,14 @@ exports.ScreenComponent = ScreenComponent;
 
 /***/ }),
 
-/***/ "../../../../../src/app/screens/screens.component.css":
+/***/ "../../../../../src/app/screens/screens.component.html":
+/***/ (function(module, exports) {
+
+module.exports = " \n \n<div class=\"container\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"modalNew()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let screen of screens\" class=\"sqr shadow\" (click)=\"modalNew(screen)\">\n\n    <i class=\"fas fa-desktop\"></i>\n\n    {{screen.Name}}</div>    \n</div>\n\n \n<div class=\"slider-container {{displayModalNew}} shadow\">\n<dialog open={{displayModalNew}}>\n\n <form *ngIf=\"screen\">\n  <div class=\"form-group\">\n    <label for=\"screenName\">{{ \"SCREENS.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"screenName\"  class=\"form-control\" id=\"screenName\"   [(ngModel)]=\"screen.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"exampleInputPassword1\">{{ \"SCREENS.TOKEN\" | translate }}</label>\n    <input type=\"text\" [(ngModel)]=\"screen.Token\" name=\"txtToken\" class=\"form-control\" id=\"txtToken\" placeholder=\"{{'SCREENS.TOKEN' | translate}}\">\n  </div>\n  \n  <button   *ngIf=\"screen._id\" class=\"btn btn-primary\" (click)=\"updateScreen()\">{{ \"SCREENS.UPDATE\" | translate }}</button>\n\n   <button   *ngIf=\"!screen._id\" class=\"btn btn-primary\" (click)=\"createScreen()\">{{ \"SCREENS.CREATE\" | translate }}</button>\n\n</form>\n</dialog>\n</div>\n\n<!--\n<table class=\"table\">\n  <thead class=\"thead-dark\">\n    <tr>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">First</th>\n      <th scope=\"col\">Last</th>\n      <th scope=\"col\">Handle</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th scope=\"row\">1</th>\n      <td>Mark</td>\n      <td>Otto</td>\n      <td>@mdo</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">2</th>\n      <td>Jacob</td>\n      <td>Thornton</td>\n      <td>@fat</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">3</th>\n      <td>Larry</td>\n      <td>the Bird</td>\n      <td>@twitter</td>\n    </tr>\n  </tbody>\n</table>\n\n<table class=\"table\">\n  <thead class=\"thead-light\">\n    <tr>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">First</th>\n      <th scope=\"col\">Last</th>\n      <th scope=\"col\">Handle</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th scope=\"row\">1</th>\n      <td>Mark</td>\n      <td>Otto</td>\n      <td>@mdo</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">2</th>\n      <td>Jacob</td>\n      <td>Thornton</td>\n      <td>@fat</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">3</th>\n      <td>Larry</td>\n      <td>the Bird</td>\n      <td>@twitter</td>\n    </tr>\n  </tbody>\n</table>\n-->"
+
+/***/ }),
+
+/***/ "../../../../../src/app/screens/screens.component.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
@@ -1313,20 +1444,13 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".container {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: horizontal;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-flow: row wrap;\r\n            flex-flow: row wrap;\r\n    width: 100%;\r\n    background: blue;\r\n}\r\n.container div {\r\n    width: 24.25%;\r\n    height: 2.5em;\r\n    background-color: red;\r\n    margin-right: 1%;\r\n    margin-bottom: 1em;\r\n    -webkit-box-sizing: border-box;\r\n            box-sizing: border-box;\r\n}\r\n.container div:nth-child(4n) {\r\n    margin-right:0;\r\n}\r\n.modal{\r\n    margin: auto;\r\n    width: 50%;\r\n    height: 50%;\r\n}", ""]);
+exports.push([module.i, ".container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-flow: row wrap;\n          flex-flow: row wrap;\n  width: 100%; }\n\n.container div {\n  width: 24.25%;\n  margin-right: 1%;\n  margin-bottom: 1em;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  padding: 15px 10px;\n  background: #fff;\n  border: none;\n  border-radius: 0;\n  margin-bottom: 40px;\n  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);\n  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); }\n\n.container div:nth-child(4n) {\n  margin-right: 0; }\n\n.modal {\n  margin: auto;\n  width: 50%;\n  height: 50%; }\n\n.ltr .slider-container.active {\n  right: 0;\n  overflow-y: hidden;\n  max-width: 80%;\n  /* approximate max height */\n  -webkit-transition-property: all;\n  transition-property: all;\n  -webkit-transition-duration: .5s;\n          transition-duration: .5s;\n  -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);\n          transition-timing-function: cubic-bezier(0, 1, 0.5, 1); }\n\n.ltr .slider-container {\n  max-width: 0;\n  padding: 15px;\n  height: 100%;\n  position: fixed;\n  top: 10px;\n  bottom: 40px;\n  right: -50%; }\n\n.rtl .slider-container.active {\n  left: 0;\n  overflow-y: hidden;\n  max-width: 80%;\n  /* approximate max height */\n  -webkit-transition-property: all;\n  transition-property: all;\n  -webkit-transition-duration: .5s;\n          transition-duration: .5s;\n  -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);\n          transition-timing-function: cubic-bezier(0, 1, 0.5, 1); }\n\n.rtl .slider-container {\n  background-color: black;\n  max-width: 0;\n  padding: 15px;\n  height: 100%;\n  position: fixed;\n  top: 10px;\n  bottom: 40px;\n  left: -50%; }\n", ""]);
 
 // exports
 
 
 /*** EXPORTS FROM exports-loader ***/
 module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/screens/screens.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  screens works!\n</p>\n\n\n<button (click)=\"modalNew()\">+</button>\n{{displayModalNew}}\n\n\n\n<dialog  class=\"modal\">\n<div class=\"container\">\ndialog</div>\n</dialog>\n\n\n<div class=\"container\">\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n    <div></div>\n</div>\n\n\n<!--\n<table class=\"table\">\n  <thead class=\"thead-dark\">\n    <tr>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">First</th>\n      <th scope=\"col\">Last</th>\n      <th scope=\"col\">Handle</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th scope=\"row\">1</th>\n      <td>Mark</td>\n      <td>Otto</td>\n      <td>@mdo</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">2</th>\n      <td>Jacob</td>\n      <td>Thornton</td>\n      <td>@fat</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">3</th>\n      <td>Larry</td>\n      <td>the Bird</td>\n      <td>@twitter</td>\n    </tr>\n  </tbody>\n</table>\n\n<table class=\"table\">\n  <thead class=\"thead-light\">\n    <tr>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">First</th>\n      <th scope=\"col\">Last</th>\n      <th scope=\"col\">Handle</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th scope=\"row\">1</th>\n      <td>Mark</td>\n      <td>Otto</td>\n      <td>@mdo</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">2</th>\n      <td>Jacob</td>\n      <td>Thornton</td>\n      <td>@fat</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">3</th>\n      <td>Larry</td>\n      <td>the Bird</td>\n      <td>@twitter</td>\n    </tr>\n  </tbody>\n</table>\n-->"
 
 /***/ }),
 
@@ -1392,7 +1516,6 @@ var ScreensComponent = /** @class */ (function () {
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
-                        debugger;
                         _a = this;
                         return [4 /*yield*/, client_1.ScreensDataController.query({})];
                     case 1:
@@ -1402,12 +1525,52 @@ var ScreensComponent = /** @class */ (function () {
             });
         });
     };
-    ScreensComponent.prototype.modalNew = function () {
+    ScreensComponent.prototype.updateScreen = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var result;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.screen.Date = new Date();
+                        return [4 /*yield*/, client_1.ScreensDataController.update(this.screen._id, this.screen)];
+                    case 1:
+                        result = _a.sent();
+                        // this.screens = await ScreensDataController.query({});
+                        this.displayModalNew = '';
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ScreensComponent.prototype.createScreen = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var result, _a;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, client_1.ScreensDataController.create(this.screen)];
+                    case 1:
+                        result = _b.sent();
+                        _a = this;
+                        return [4 /*yield*/, client_1.ScreensDataController.query({})];
+                    case 2:
+                        _a.screens = _b.sent();
+                        this.displayModalNew = '';
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ScreensComponent.prototype.modalNew = function (screen) {
         var _this = this;
         this._ngZone.run(function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                debugger;
-                this.displayModalNew = true;
+                if (screen) {
+                    this.screen = screen;
+                }
+                else {
+                    this.screen = {};
+                }
+                this.displayModalNew = 'active';
                 return [2 /*return*/];
             });
         }); });
@@ -1416,7 +1579,7 @@ var ScreensComponent = /** @class */ (function () {
         core_1.Component({
             selector: 'app-screens',
             template: __webpack_require__("../../../../../src/app/screens/screens.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/screens/screens.component.css")]
+            styles: [__webpack_require__("../../../../../src/app/screens/screens.component.scss")]
         }),
         __metadata("design:paramtypes", [core_1.NgZone])
     ], ScreensComponent);
@@ -1445,13 +1608,17 @@ var screens_component_1 = __webpack_require__("../../../../../src/app/screens/sc
 var screens_component_2 = __webpack_require__("../../../../../src/app/screens/screens.component.ts");
 exports.ScreensComponent = screens_component_2.ScreensComponent;
 var screen_component_1 = __webpack_require__("../../../../../src/app/screens/screen/screen.component.ts");
+var shared_module_1 = __webpack_require__("../../../../../src/app/shared.module.ts");
+var forms_1 = __webpack_require__("../../../forms/fesm5/forms.js");
 var ScreensModule = /** @class */ (function () {
     function ScreensModule() {
     }
     ScreensModule = __decorate([
         core_1.NgModule({
             imports: [
-                common_1.CommonModule
+                shared_module_1.SharedModule,
+                common_1.CommonModule,
+                forms_1.FormsModule
             ],
             declarations: [screens_component_1.ScreensComponent, screen_component_1.ScreenComponent],
             entryComponents: [screens_component_1.ScreensComponent],
@@ -1461,6 +1628,61 @@ var ScreensModule = /** @class */ (function () {
     return ScreensModule;
 }());
 exports.ScreensModule = ScreensModule;
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/language/dictionary.service.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/fesm5/core.js");
+var core_2 = __webpack_require__("../../../../@ngx-translate/core/fesm5/ngx-translate-core.js");
+var DictionaryService = /** @class */ (function () {
+    function DictionaryService(translate) {
+        this.translate = translate;
+    }
+    DictionaryService.prototype.generateDictionary = function (objectWithKeys, options) {
+        var _this = this;
+        var keys = Object.keys(objectWithKeys);
+        if (options && options.ns) {
+            keys = keys.map(function (key) { return options.ns + "." + key; });
+        }
+        return new Promise(function (resolve, reject) {
+            var dictionary = {};
+            _this.translate.get(keys).subscribe(function (strings) {
+                if (options && options.ns) {
+                    keys.forEach(function (key) {
+                        dictionary[key.replace(options.ns + ".", '')] = strings[key];
+                    });
+                }
+                else {
+                    keys.forEach(function (key) {
+                        dictionary[key] = strings[key];
+                    });
+                }
+                resolve(dictionary);
+            });
+        });
+    };
+    DictionaryService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [core_2.TranslateService])
+    ], DictionaryService);
+    return DictionaryService;
+}());
+exports.DictionaryService = DictionaryService;
 
 
 /***/ }),
@@ -1522,6 +1744,53 @@ var SettingsComponent = /** @class */ (function () {
     return SettingsComponent;
 }());
 exports.SettingsComponent = SettingsComponent;
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared.module.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/fesm5/core.js");
+var core_2 = __webpack_require__("../../../../@ngx-translate/core/fesm5/ngx-translate-core.js");
+var dictionary_service_1 = __webpack_require__("../../../../../src/app/services/language/dictionary.service.ts");
+var SharedModule = /** @class */ (function () {
+    function SharedModule(translate) {
+        // this language will be used as a fallback when a translation isn't found in the current language
+        translate.setDefaultLang('he');
+    }
+    SharedModule_1 = SharedModule;
+    SharedModule.forRoot = function (loader) {
+        return {
+            ngModule: SharedModule_1,
+            providers: [],
+        };
+    };
+    var SharedModule_1;
+    SharedModule = SharedModule_1 = __decorate([
+        core_1.NgModule({
+            imports: [core_2.TranslateModule.forChild()],
+            declarations: [],
+            providers: [core_2.TranslateService, dictionary_service_1.DictionaryService],
+            exports: [core_2.TranslateModule],
+        }),
+        __metadata("design:paramtypes", [core_2.TranslateService])
+    ], SharedModule);
+    return SharedModule;
+}());
+exports.SharedModule = SharedModule;
 
 
 /***/ }),
