@@ -1,4 +1,4 @@
-import { MethodConfig, Method, Param, MethodResult, Body } from '@methodus/server';
+import { MethodConfig, Method, Param, MethodResult, Body, SecurityContext } from '@methodus/server';
 import { Verbs } from '@methodus/server/src/rest';
 import { Query as DataQuery } from '@methodus/data';
 
@@ -13,8 +13,11 @@ export class DataController {
     }
 
     @Method(Verbs.Post, '/insert')
-    public static async create(@Body('record') record: any): Promise<MethodResult<any>> {
+    public static async create(
+        @Body('record') record: any,
+        @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
         const repo = (this as any).methodus.repository;
+        record.user_id = securityContext._id;
         const item = await repo.insert(record);
         return new MethodResult(item);
     }

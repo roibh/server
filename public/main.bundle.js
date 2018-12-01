@@ -149,14 +149,15 @@ var http_2 = __webpack_require__("../../../common/fesm5/http.js");
 var auth_guard_service_1 = __webpack_require__("../../../../../src/app/auth/auth-guard.service.ts");
 var signup_component_1 = __webpack_require__("../../../../../src/app/signup/signup.component.ts");
 var screens_module_1 = __webpack_require__("../../../../../src/app/screens/screens.module.ts");
+var library_module_1 = __webpack_require__("../../../../../src/app/library/library.module.ts");
 var timelines_component_1 = __webpack_require__("../../../../../src/app/timelines/timelines.component.ts");
 var playlists_component_1 = __webpack_require__("../../../../../src/app/playlists/playlists.component.ts");
-var library_component_1 = __webpack_require__("../../../../../src/app/library/library.component.ts");
 var schedules_component_1 = __webpack_require__("../../../../../src/app/schedules/schedules.component.ts");
 var settings_component_1 = __webpack_require__("../../../../../src/app/settings/settings.component.ts");
 var language_bar_component_1 = __webpack_require__("../../../../../src/app/language-bar/language-bar.component.ts");
 var dialog_component_1 = __webpack_require__("../../../../../src/app/dialog/dialog.component.ts");
 var language_service_1 = __webpack_require__("../../../../../src/app/language.service.ts");
+var library_component_1 = __webpack_require__("../../../../../src/app/library/library.component.ts");
 var appRoutes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'signin', component: login_component_1.LoginComponent },
@@ -166,17 +167,13 @@ var appRoutes = [
             {
                 path: '',
                 component: timelines_component_1.TimelinesComponent,
-                canActivate: [auth_guard_service_1.AuthGuardService],
             },
             {
                 path: 'screens',
                 component: screens_module_1.ScreensComponent,
-                canActivate: [auth_guard_service_1.AuthGuardService],
-            },
-            {
-                path: 'library',
-                component: library_component_1.LibraryComponent,
-                canActivate: [auth_guard_service_1.AuthGuardService],
+            }, {
+                path: 'library', component: library_component_1.LibraryComponent,
+                children: library_module_1.libraryRoutes.slice()
             },
             {
                 path: 'playlists',
@@ -186,12 +183,10 @@ var appRoutes = [
             {
                 path: 'schedules',
                 component: schedules_component_1.SchedulesComponent,
-                canActivate: [auth_guard_service_1.AuthGuardService],
             },
             {
                 path: 'settings',
                 component: settings_component_1.SettingsComponent,
-                canActivate: [auth_guard_service_1.AuthGuardService],
             },
         ]
     },
@@ -222,7 +217,6 @@ var AppModule = /** @class */ (function () {
                 signup_component_1.SignupComponent,
                 timelines_component_1.TimelinesComponent,
                 playlists_component_1.PlaylistsComponent,
-                library_component_1.LibraryComponent,
                 schedules_component_1.SchedulesComponent,
                 settings_component_1.SettingsComponent,
                 language_bar_component_1.LanguageBarComponent,
@@ -254,6 +248,7 @@ var AppModule = /** @class */ (function () {
                 animations_1.BrowserAnimationsModule,
                 angularx_social_login_1.SocialLoginModule,
                 screens_module_1.ScreensModule,
+                library_module_1.LibraryModule,
                 angular_jwt_1.JwtModule.forRoot({
                     config: {
                         tokenGetter: tokenGetter
@@ -333,11 +328,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/fesm5/core.js");
+var client_1 = __webpack_require__("../../../../@methodus/client/dist/methodus-client.js");
+client_1.Rest.intercept(function (req) {
+    var idToken = localStorage.getItem('token');
+    if (idToken) {
+        req.headers['Authorization'] = 'Bearer ' + idToken;
+    }
+    return req;
+});
 var AuthInterceptor = /** @class */ (function () {
     function AuthInterceptor() {
     }
     AuthInterceptor.prototype.intercept = function (req, next) {
-        var idToken = localStorage.getItem('id_token');
+        var idToken = localStorage.getItem('token');
         if (idToken) {
             var cloned = req.clone({
                 headers: req.headers.set('Authorization', 'Bearer ' + idToken)
@@ -361,7 +364,7 @@ exports.AuthInterceptor = AuthInterceptor;
 /***/ "../../../../../src/app/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper\">\n    <!-- Sidebar  -->\n    <nav id=\"sidebar\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <strong>BS</strong>\n        </div>\n\n        <ul class=\"list-unstyled components\">\n            <li class=\"active\">\n                <a href=\"#homeSubmenu\" data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-home\"></i>\n                    {{\"NAVBAR.HOME\" | translate}}\n                </a>             \n            </li>\n              <li>\n                <a routerLink=\"screens\">\n                    <i class=\"fas fa-desktop\"></i>\n                      {{\"NAVBAR.SCREENS\" | translate}}\n                     \n                </a></li>\n            <li>\n             \n                <a href=\"#LibrarySubmenu\" data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-copy\"></i>\n                      {{\"NAVBAR.LIBRARY\" | translate}}\n                     \n                </a>\n                <ul class=\"collapse list-unstyled\" id=\"LibrarySubmenu\">\n                    <li>\n                        <a href=\"#\">Page 1</a>\n                    </li>\n                    <li>\n                        <a href=\"#\">Page 2</a>\n                    </li>\n                    <li>\n                        <a href=\"#\">Page 3</a>\n                    </li>\n                </ul>\n\n            </li>\n              <li>\n                <a routerLink=\"playlists\">\n                    <i class=\"fas fa-step-forward\"></i>\n                      {{\"NAVBAR.PLAYLISTS\" | translate}}\n                     \n                </a></li>\n\n                  <li>\n                <a routerLink=\"schedules\">\n                    <i class=\"fas fa-calendar-alt\"></i>\n                      {{\"NAVBAR.SCHEDULES\" | translate}}\n                    \n                </a></li>\n\n                  <li>\n                <a routerLink=\"settings\">\n                    <i class=\"fas fa-cogs\"></i>\n                      {{\"NAVBAR.SETTINGS\" | translate}}\n                  \n                </a></li>\n\n        </ul>\n\n    </nav>\n\n    <!-- Page Content  -->\n    <div id=\"content\">\n\n \n    <nav class=\"navbar navbar-default navbar-fixed-top\">\n        <div class=\"container\">\n            <ul class=\"mr-auto\">\n                <li class=\"nav-item\"><button type=\"button\" id=\"sidebarCollapse\" class=\"btn btn-info\">\n                    <i class=\"fas fa-align-left\"></i>                  \n                </button></li>\n             \n                <li class=\"nav-item\"> <app-language-bar></app-language-bar></li>\n            </ul>\n        </div>\n    </nav>\n\n\n  \n \n\n \n\n<div id=\"scroller\">\n\n        \n         <router-outlet></router-outlet>\n         </div>\n    </div>\n</div>\n\n\n\n\n "
+module.exports = "<div class=\"wrapper\">\n    <!-- Sidebar  -->\n    <nav id=\"sidebar\" [class]=\"activeClass\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <strong>BS</strong>\n        </div>\n\n        <ul class=\"list-unstyled components\">\n            <li class=\"active\">\n                <a href=\"#homeSubmenu\" data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-home\"></i>\n                    {{\"NAVBAR.HOME\" | translate}}\n                </a>             \n            </li>\n              <li>\n                <a routerLink=\"screens\">\n                    <i class=\"fas fa-desktop\"></i>\n                      {{\"NAVBAR.SCREENS\" | translate}}\n                     \n                </a></li>\n            <li>\n             \n                <a href=\"#LibrarySubmenu\" (click)=\"toggleSubmenu()\"    routerLink=\"library\" data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-copy\"></i>\n                      {{\"NAVBAR.LIBRARY\" | translate}}\n                     \n                </a>\n                <ul class=\"{{subMenuState}} list-unstyled\" id=\"LibrarySubmenu\">\n                    <li>\n                        <a    routerLink=\"library/images\">  {{\"NAVBAR.IMAGES\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a   routerLink=\"library/videos\">  {{\"NAVBAR.VIDEOS\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/sounds\">  {{\"NAVBAR.SOUNDS\" | translate}}</a>\n                    </li>\n                     <li>\n                        <a routerLink=\"library/slides\">  {{\"NAVBAR.SLIDES\" | translate}}</a>\n                    </li>\n                </ul>\n\n            </li>\n              <li>\n                <a routerLink=\"playlists\">\n                    <i class=\"fas fa-step-forward\"></i>\n                      {{\"NAVBAR.PLAYLISTS\" | translate}}\n                     \n                </a></li>\n\n                  <li>\n                <a routerLink=\"schedules\">\n                    <i class=\"fas fa-calendar-alt\"></i>\n                      {{\"NAVBAR.SCHEDULES\" | translate}}\n                    \n                </a></li>\n\n                  <li>\n                <a routerLink=\"settings\">\n                    <i class=\"fas fa-cogs\"></i>\n                      {{\"NAVBAR.SETTINGS\" | translate}}\n                  \n                </a></li>\n\n        </ul>\n\n    </nav>\n\n    <!-- Page Content  -->\n    <div id=\"content\">\n\n \n    <nav class=\"navbar-fixed-top dashboard-nav\">\n        <div class=\"container no-margin\">\n            <ul class=\"mr-auto\">\n                <li class=\"nav-item\"><button type=\"button\" (click)=\"toggleSidebar()\" id=\"sidebarCollapse\" class=\"btn btn-sm btn-info\">\n                    <i class=\"fas fa-align-left\"></i>                  \n                </button></li>\n             \n                <li class=\"nav-item\">\n                 <app-language-bar></app-language-bar>\n                 </li>\n            </ul>\n        </div>\n    </nav>\n\n\n  \n \n\n \n\n<div id=\"scroller\">\n\n        \n         <router-outlet></router-outlet>\n         </div>\n    </div>\n     <footer class=\"footer closed\">\n     {{'DASHBOARD.FOOTER' | translate}}\n     </footer>\n</div>\n\n\n\n\n "
 
 /***/ }),
 
@@ -401,8 +404,28 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/fesm5/core.js");
 var DashboardComponent = /** @class */ (function () {
     function DashboardComponent() {
+        this.subMenuState = 'collapse';
+        this.toggled = false;
+        this.activeClass = '';
     }
     DashboardComponent.prototype.ngOnInit = function () {
+    };
+    DashboardComponent.prototype.toggleSubmenu = function () {
+        if (this.subMenuState) {
+            this.subMenuState = '';
+        }
+        else {
+            this.subMenuState = 'collapse';
+        }
+    };
+    DashboardComponent.prototype.toggleSidebar = function () {
+        this.toggled = !this.toggled;
+        if (this.toggled) {
+            this.activeClass = 'active';
+        }
+        else {
+            this.activeClass = '';
+        }
     };
     DashboardComponent = __decorate([
         core_1.Component({
@@ -709,6 +732,67 @@ exports.LanguageService = LanguageService;
 
 /***/ }),
 
+/***/ "../../../../../src/app/library/images/images.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  images works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/images/images.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/images/images.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/fesm5/core.js");
+var ImagesComponent = /** @class */ (function () {
+    function ImagesComponent() {
+    }
+    ImagesComponent.prototype.ngOnInit = function () {
+    };
+    ImagesComponent = __decorate([
+        core_1.Component({
+            selector: 'app-images',
+            template: __webpack_require__("../../../../../src/app/library/images/images.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/library/images/images.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], ImagesComponent);
+    return ImagesComponent;
+}());
+exports.ImagesComponent = ImagesComponent;
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/library/library.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -730,7 +814,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/library/library.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  library works!\n</p>\n"
+module.exports = "<p>\n  library works!\n</p>\n  <router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -766,6 +850,301 @@ var LibraryComponent = /** @class */ (function () {
     return LibraryComponent;
 }());
 exports.LibraryComponent = LibraryComponent;
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/library.module.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/fesm5/core.js");
+var common_1 = __webpack_require__("../../../common/fesm5/common.js");
+var router_1 = __webpack_require__("../../../router/fesm5/router.js");
+var images_component_1 = __webpack_require__("../../../../../src/app/library/images/images.component.ts");
+var videos_component_1 = __webpack_require__("../../../../../src/app/library/videos/videos.component.ts");
+var sounds_component_1 = __webpack_require__("../../../../../src/app/library/sounds/sounds.component.ts");
+var slides_component_1 = __webpack_require__("../../../../../src/app/library/slides/slides.component.ts");
+var library_component_1 = __webpack_require__("../../../../../src/app/library/library.component.ts");
+__export(__webpack_require__("../../../../../src/app/library/main/main.component.ts"));
+exports.libraryRoutes = [
+    { path: 'images', component: images_component_1.ImagesComponent },
+    { path: 'videos', component: videos_component_1.VideosComponent },
+    { path: 'sounds', component: sounds_component_1.SoundsComponent },
+    { path: 'slides', component: slides_component_1.SlidesComponent },
+];
+var LibraryModule = /** @class */ (function () {
+    function LibraryModule() {
+    }
+    LibraryModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                router_1.RouterModule,
+                common_1.CommonModule
+            ],
+            exports: [library_component_1.LibraryComponent, router_1.RouterModule],
+            entryComponents: [library_component_1.LibraryComponent],
+            declarations: [images_component_1.ImagesComponent, videos_component_1.VideosComponent, sounds_component_1.SoundsComponent, slides_component_1.SlidesComponent, library_component_1.LibraryComponent]
+        })
+    ], LibraryModule);
+    return LibraryModule;
+}());
+exports.LibraryModule = LibraryModule;
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/main/main.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  main works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/main/main.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/main/main.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/fesm5/core.js");
+var MainComponent = /** @class */ (function () {
+    function MainComponent() {
+    }
+    MainComponent.prototype.ngOnInit = function () {
+    };
+    MainComponent = __decorate([
+        core_1.Component({
+            selector: 'app-main',
+            template: __webpack_require__("../../../../../src/app/library/main/main.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/library/main/main.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], MainComponent);
+    return MainComponent;
+}());
+exports.MainComponent = MainComponent;
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/slides/slides.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  slides works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/slides/slides.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/slides/slides.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/fesm5/core.js");
+var SlidesComponent = /** @class */ (function () {
+    function SlidesComponent() {
+    }
+    SlidesComponent.prototype.ngOnInit = function () {
+    };
+    SlidesComponent = __decorate([
+        core_1.Component({
+            selector: 'app-slides',
+            template: __webpack_require__("../../../../../src/app/library/slides/slides.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/library/slides/slides.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], SlidesComponent);
+    return SlidesComponent;
+}());
+exports.SlidesComponent = SlidesComponent;
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/sounds/sounds.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  sounds works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/sounds/sounds.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/sounds/sounds.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/fesm5/core.js");
+var SoundsComponent = /** @class */ (function () {
+    function SoundsComponent() {
+    }
+    SoundsComponent.prototype.ngOnInit = function () {
+    };
+    SoundsComponent = __decorate([
+        core_1.Component({
+            selector: 'app-sounds',
+            template: __webpack_require__("../../../../../src/app/library/sounds/sounds.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/library/sounds/sounds.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], SoundsComponent);
+    return SoundsComponent;
+}());
+exports.SoundsComponent = SoundsComponent;
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/videos/videos.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  videos works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/videos/videos.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/videos/videos.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/fesm5/core.js");
+var VideosComponent = /** @class */ (function () {
+    function VideosComponent() {
+    }
+    VideosComponent.prototype.ngOnInit = function () {
+    };
+    VideosComponent = __decorate([
+        core_1.Component({
+            selector: 'app-videos',
+            template: __webpack_require__("../../../../../src/app/library/videos/videos.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/library/videos/videos.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], VideosComponent);
+    return VideosComponent;
+}());
+exports.VideosComponent = VideosComponent;
 
 
 /***/ }),
@@ -1432,7 +1811,7 @@ exports.ScreenComponent = ScreenComponent;
 /***/ "../../../../../src/app/screens/screens.component.html":
 /***/ (function(module, exports) {
 
-module.exports = " \n \n<div class=\"container\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"modalNew()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let screen of screens\" class=\"sqr shadow\" (click)=\"modalNew(screen)\">\n\n    <i class=\"fas fa-desktop\"></i>\n\n    {{screen.Name}}</div>    \n</div>\n\n \n<div class=\"slider-container {{displayModalNew}} shadow\">\n<dialog open={{displayModalNew}}>\n\n <form *ngIf=\"screen\">\n  <div class=\"form-group\">\n    <label for=\"screenName\">{{ \"SCREENS.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"screenName\"  class=\"form-control\" id=\"screenName\"   [(ngModel)]=\"screen.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"exampleInputPassword1\">{{ \"SCREENS.TOKEN\" | translate }}</label>\n    <input type=\"text\" [(ngModel)]=\"screen.Token\" name=\"txtToken\" class=\"form-control\" id=\"txtToken\" placeholder=\"{{'SCREENS.TOKEN' | translate}}\">\n  </div>\n  \n  <button   *ngIf=\"screen._id\" class=\"btn btn-primary\" (click)=\"updateScreen()\">{{ \"SCREENS.UPDATE\" | translate }}</button>\n\n   <button   *ngIf=\"!screen._id\" class=\"btn btn-primary\" (click)=\"createScreen()\">{{ \"SCREENS.CREATE\" | translate }}</button>\n\n</form>\n</dialog>\n</div>\n\n<!--\n<table class=\"table\">\n  <thead class=\"thead-dark\">\n    <tr>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">First</th>\n      <th scope=\"col\">Last</th>\n      <th scope=\"col\">Handle</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th scope=\"row\">1</th>\n      <td>Mark</td>\n      <td>Otto</td>\n      <td>@mdo</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">2</th>\n      <td>Jacob</td>\n      <td>Thornton</td>\n      <td>@fat</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">3</th>\n      <td>Larry</td>\n      <td>the Bird</td>\n      <td>@twitter</td>\n    </tr>\n  </tbody>\n</table>\n\n<table class=\"table\">\n  <thead class=\"thead-light\">\n    <tr>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">First</th>\n      <th scope=\"col\">Last</th>\n      <th scope=\"col\">Handle</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th scope=\"row\">1</th>\n      <td>Mark</td>\n      <td>Otto</td>\n      <td>@mdo</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">2</th>\n      <td>Jacob</td>\n      <td>Thornton</td>\n      <td>@fat</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">3</th>\n      <td>Larry</td>\n      <td>the Bird</td>\n      <td>@twitter</td>\n    </tr>\n  </tbody>\n</table>\n-->"
+module.exports = " \n \n<div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editScreen()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let screen of screens\" class=\"sqr shadow\" >\n\n    <i class=\"fas fa-desktop\"></i>\n\n    {{screen.Name}}\n    \n    \n    <ul class=\"sqr-toolbar\">\n    \n    <li>\n    <button class=\"btn btn-xs btn-danger\" (click)=\"deleteScreen(screen);\"> <i class=\"fas fa-trash\"></i> </button>\n</li>\n    <li>\n    <button class=\"btn btn-xs btn-primary\" (click)=\"editScreen(screen);\"> <i class=\"fas fa-edit\"></i> </button>\n</li>\n\n</ul>\n   \n\n \n\n\n    \n    </div>    \n</div>\n\n \n<div class=\"slider-container {{displayModalNew}} shadow\">\n<dialog open={{displayModalNew}}>\n\n <form *ngIf=\"screen\">\n  <div class=\"form-group\">\n    <label for=\"screenName\">{{ \"SCREENS.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"screenName\"  class=\"form-control\" id=\"screenName\"   [(ngModel)]=\"screen.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"exampleInputPassword1\">{{ \"SCREENS.TOKEN\" | translate }}</label>\n    <input type=\"text\" [(ngModel)]=\"screen.Token\" name=\"txtToken\" class=\"form-control\" id=\"txtToken\" placeholder=\"{{'SCREENS.TOKEN' | translate}}\">\n  </div>\n  \n  <button   *ngIf=\"screen._id\" class=\"btn btn-primary\" (click)=\"updateScreen()\">{{ \"SCREENS.UPDATE\" | translate }}</button>\n\n   <button   *ngIf=\"!screen._id\" class=\"btn btn-primary\" (click)=\"createScreen()\">{{ \"SCREENS.CREATE\" | translate }}</button>\n\n</form>\n</dialog>\n</div>\n\n<!--\n<table class=\"table\">\n  <thead class=\"thead-dark\">\n    <tr>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">First</th>\n      <th scope=\"col\">Last</th>\n      <th scope=\"col\">Handle</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th scope=\"row\">1</th>\n      <td>Mark</td>\n      <td>Otto</td>\n      <td>@mdo</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">2</th>\n      <td>Jacob</td>\n      <td>Thornton</td>\n      <td>@fat</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">3</th>\n      <td>Larry</td>\n      <td>the Bird</td>\n      <td>@twitter</td>\n    </tr>\n  </tbody>\n</table>\n\n<table class=\"table\">\n  <thead class=\"thead-light\">\n    <tr>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">First</th>\n      <th scope=\"col\">Last</th>\n      <th scope=\"col\">Handle</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th scope=\"row\">1</th>\n      <td>Mark</td>\n      <td>Otto</td>\n      <td>@mdo</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">2</th>\n      <td>Jacob</td>\n      <td>Thornton</td>\n      <td>@fat</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">3</th>\n      <td>Larry</td>\n      <td>the Bird</td>\n      <td>@twitter</td>\n    </tr>\n  </tbody>\n</table>\n-->"
 
 /***/ }),
 
@@ -1444,7 +1823,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-flow: row wrap;\n          flex-flow: row wrap;\n  width: 100%; }\n\n.container div {\n  width: 24.25%;\n  margin-right: 1%;\n  margin-bottom: 1em;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  padding: 15px 10px;\n  background: #fff;\n  border: none;\n  border-radius: 0;\n  margin-bottom: 40px;\n  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);\n  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); }\n\n.container div:nth-child(4n) {\n  margin-right: 0; }\n\n.modal {\n  margin: auto;\n  width: 50%;\n  height: 50%; }\n\n.ltr .slider-container.active {\n  right: 0;\n  overflow-y: hidden;\n  max-width: 80%;\n  /* approximate max height */\n  -webkit-transition-property: all;\n  transition-property: all;\n  -webkit-transition-duration: .5s;\n          transition-duration: .5s;\n  -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);\n          transition-timing-function: cubic-bezier(0, 1, 0.5, 1); }\n\n.ltr .slider-container {\n  max-width: 0;\n  padding: 15px;\n  height: 100%;\n  position: fixed;\n  top: 10px;\n  bottom: 40px;\n  right: -50%; }\n\n.rtl .slider-container.active {\n  left: 0;\n  overflow-y: hidden;\n  max-width: 80%;\n  /* approximate max height */\n  -webkit-transition-property: all;\n  transition-property: all;\n  -webkit-transition-duration: .5s;\n          transition-duration: .5s;\n  -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);\n          transition-timing-function: cubic-bezier(0, 1, 0.5, 1); }\n\n.rtl .slider-container {\n  background-color: black;\n  max-width: 0;\n  padding: 15px;\n  height: 100%;\n  position: fixed;\n  top: 10px;\n  bottom: 40px;\n  left: -50%; }\n", ""]);
+exports.push([module.i, ".container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-flow: row wrap;\n          flex-flow: row wrap;\n  width: 100%; }\n\n.container div {\n  margin-right: 8px;\n  margin-bottom: 1em;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  padding: 15px 10px;\n  background: #fff;\n  border: none;\n  border-radius: 0;\n  margin-bottom: 40px;\n  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);\n  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); }\n\n.modal {\n  margin: auto;\n  width: 50%;\n  height: 50%; }\n\n.ltr .slider-container.active {\n  right: 0;\n  overflow-y: hidden;\n  max-width: 80%;\n  /* approximate max height */\n  -webkit-transition-property: all;\n  transition-property: all;\n  -webkit-transition-duration: .5s;\n          transition-duration: .5s;\n  -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);\n          transition-timing-function: cubic-bezier(0, 1, 0.5, 1); }\n\n.ltr .slider-container {\n  max-width: 0;\n  padding: 15px;\n  height: 100%;\n  position: fixed;\n  top: 10px;\n  bottom: 40px;\n  right: -50%; }\n\n.rtl .slider-container.active {\n  left: 0;\n  overflow-y: hidden;\n  max-width: 80%;\n  /* approximate max height */\n  -webkit-transition-property: all;\n  transition-property: all;\n  -webkit-transition-duration: .5s;\n          transition-duration: .5s;\n  -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);\n          transition-timing-function: cubic-bezier(0, 1, 0.5, 1); }\n\n.rtl .slider-container {\n  background-color: black;\n  max-width: 0;\n  padding: 15px;\n  height: 100%;\n  position: fixed;\n  top: 10px;\n  bottom: 40px;\n  left: -50%; }\n", ""]);
 
 // exports
 
@@ -1512,16 +1891,9 @@ var ScreensComponent = /** @class */ (function () {
     }
     ScreensComponent.prototype.ngOnInit = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var _a;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
-                    case 0:
-                        _a = this;
-                        return [4 /*yield*/, client_1.ScreensDataController.query({})];
-                    case 1:
-                        _a.screens = _b.sent();
-                        return [2 /*return*/];
-                }
+            return __generator(this, function (_a) {
+                this.loadScreens();
+                return [2 /*return*/];
             });
         });
     };
@@ -1542,25 +1914,54 @@ var ScreensComponent = /** @class */ (function () {
             });
         });
     };
-    ScreensComponent.prototype.createScreen = function () {
+    ScreensComponent.prototype.loadScreens = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var result, _a;
+            var _a;
             return __generator(this, function (_b) {
                 switch (_b.label) {
-                    case 0: return [4 /*yield*/, client_1.ScreensDataController.create(this.screen)];
-                    case 1:
-                        result = _b.sent();
+                    case 0:
                         _a = this;
                         return [4 /*yield*/, client_1.ScreensDataController.query({})];
-                    case 2:
+                    case 1:
                         _a.screens = _b.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ScreensComponent.prototype.deleteScreen = function (screen) {
+        return __awaiter(this, void 0, void 0, function () {
+            var result;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (!confirm('delete')) return [3 /*break*/, 2];
+                        return [4 /*yield*/, client_1.ScreensDataController.delete(screen._id)];
+                    case 1:
+                        result = _a.sent();
+                        this.loadScreens();
+                        _a.label = 2;
+                    case 2: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ScreensComponent.prototype.createScreen = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var result;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, client_1.ScreensDataController.create(this.screen)];
+                    case 1:
+                        result = _a.sent();
+                        this.loadScreens();
                         this.displayModalNew = '';
                         return [2 /*return*/];
                 }
             });
         });
     };
-    ScreensComponent.prototype.modalNew = function (screen) {
+    ScreensComponent.prototype.editScreen = function (screen) {
         var _this = this;
         this._ngZone.run(function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {

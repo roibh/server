@@ -5,7 +5,11 @@
     "LIBRARY": "ספרייה",
     "PLAYLISTS": "אוספים",
     "SCHEDULES": "תזמון",
-    "SETTINGS": "הגדרות"
+    "SETTINGS": "הגדרות",
+    "IMAGES": "תמונות",
+    "VIDEOS": "סרטונים",
+    "SOUNDS": "צלילים",
+    "SLIDES": "שקפים"
   },
   "LOGIN": {
     "TITLE": "כניסה",
@@ -29,13 +33,16 @@
   },
   "SCREENS": {
     "NAME": "שם למסך",
-    "NAME_HELP":"כדאי לבחור שם בעל משמעות.",
+    "NAME_HELP": "כדאי לבחור שם בעל משמעות.",
     "TOKEN": "קוד זיהוי",
     "TYPE": "סוג",
     "STATUS": "מצב",
     "LAST_DATE": "תאריך שימוש אחרון",
     "CREATE": "הוספה",
     "UPDATE": "עידכון"
+  },
+  "DASHBOARD": {
+    "FOOTER": "כל הזכויות שמורות 2018 ©"
   },
   "xxxxx": {
     "xxxx": "xxxx"

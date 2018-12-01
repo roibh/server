@@ -5,7 +5,11 @@
     "LIBRARY": "Library",
     "PLAYLISTS": "Playlists",
     "SCHEDULES": "Schedules",
-    "SETTINGS": "Settings"
+    "SETTINGS": "Settings",
+    "IMAGES": "Images",
+    "VIDEOS": "Videos",
+    "SOUNDS": "Sounds",
+    "SLIDES": "Slides"
   },
   "LOGIN": {
     "TITLE": "Login",
@@ -34,5 +38,8 @@
     "LAST_DATE": "Last active date",
     "CREATE": "Create",
     "UPDATE": "Update"
+  },
+  "DASHBOARD": {
+    "FOOTER": "All rights reserved ©"
   }
 }

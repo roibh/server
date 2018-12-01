@@ -1,29 +1,24 @@
 
-import { Body, Method, MethodConfig, Param, Query, Verbs, MethodError, MethodResult, MethodMock, MethodResultStatus } from '@methodus/server';
+import { Body, Method, MethodConfig, Verbs, MethodError, MethodResult, MethodResultStatus } from '@methodus/server';
 import { Query as DataQuery, ReturnType } from '@methodus/data';
 import * as jwt from 'jsonwebtoken';
 import * as fs from 'fs';
 import { UserModel } from '..';
 
-// PAYLOAD
-const payload = {
-    data1: 'Data 1',
-    data2: 'Data 2',
-    data3: 'Data 3',
-    data4: 'Data 4',
-};
 // PRIVATE and PUBLIC key
+const enum SignOptions {
+    Issuer = 'SignNature inc.',
+    Subject = 'info@signnature.com',
+    Audience = 'https://signnature.herokuapps.com',
+}
 
-const i = 'Mysoft corp';          // Issuer
-const s = 'some@user.com';        // Subject
-const a = 'http://mysoftcorp.in'; // Audience
 // SIGNING OPTIONS
 const signOptions = {
     algorithm: 'RS256',
-    audience: a,
+    audience: SignOptions.Audience,
     expiresIn: '12h',
-    issuer: i,
-    subject: s,
+    issuer: SignOptions.Issuer,
+    subject: SignOptions.Subject,
 };
 
 const privateKEY = fs.readFileSync('./certs/private.key', 'utf8');
@@ -60,7 +55,7 @@ export class Auth {
                 Password: userOptions.Password,
             }).run(ReturnType.Single);
             if (logedInUser) {
-                const token = jwt.sign(payload, privateKEY, signOptions);
+                const token = jwt.sign(logedInUser, privateKEY, signOptions);
                 return new MethodResult({ token });
             } else {
                 return new MethodResultStatus({ message: 'user not found' }, 404) as MethodResult;
@@ -71,16 +66,16 @@ export class Auth {
         }
     }
 
-    @Method(Verbs.Get, '/auth/verify')
-    public static async verify(): Promise<MethodResult<any>> {
-        try {
-            const token = jwt.verify(payload, privateKEY, signOptions);
+    // @Method(Verbs.Get, '/auth/verify')
+    // public static async verify(): Promise<MethodResult<any>> {
+    //     try {
+    //         const token = jwt.verify(payload, privateKEY, signOptions);
 
-            return new MethodResult(token);
-        } catch (error) {
-            throw new MethodError(error, 500);
-        }
-    }
+    //         return new MethodResult(token);
+    //     } catch (error) {
+    //         throw new MethodError(error, 500);
+    //     }
+    // }
 
     @Method(Verbs.Get, '/api/auth/verify')
     public static async decode(@Body('token') token: string): Promise<MethodResult<any>> {
@@ -91,4 +86,3 @@ export class Auth {
         }
     }
 }
-
