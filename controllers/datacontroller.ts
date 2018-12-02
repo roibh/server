@@ -1,8 +1,8 @@
-import { MethodConfig, Method, Param, MethodResult, Body, SecurityContext } from '@methodus/server';
+import { MethodConfigBase, Method, Param, MethodResult, Body, SecurityContext } from '@methodus/server';
 import { Verbs } from '@methodus/server/src/rest';
 import { Query as DataQuery } from '@methodus/data';
 
-@MethodConfig('Data')
+@MethodConfigBase('Data')
 export class DataController {
 
     @Method(Verbs.Get, '/id/:id')
@@ -13,9 +13,7 @@ export class DataController {
     }
 
     @Method(Verbs.Post, '/insert')
-    public static async create(
-        @Body('record') record: any,
-        @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
+    public static async create(@Body('record') record: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
         const repo = (this as any).methodus.repository;
         record.user_id = securityContext._id;
         const item = await repo.insert(record);
@@ -37,10 +35,10 @@ export class DataController {
     }
 
     @Method(Verbs.Post, '/query')
-    public static async query(@Body('query') queryObject: any): Promise<MethodResult<any>> {
+    public static async query(@Body('query') queryObject: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
         const repo = (this as any).methodus.repository;
         const query = new DataQuery(repo.odm.collectionName);
-        query.filter(queryObject);
+        query.filter(queryObject).filter({ user_id: securityContext._id });
         const item = await repo.query(query);
         return new MethodResult(item);
     }

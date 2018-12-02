@@ -1,4 +1,4 @@
-import { MethodConfig, Method, Verbs, MethodError } from '@methodus/server';
+import { MethodConfig, Method, Verbs, MethodError, MethodResult } from '@methodus/server';
 import { LibraryModel } from '../models/library.model';
 import * as aws from 'aws-sdk';
 import { AuthMiddleware } from './auth.middleware';
@@ -11,7 +11,7 @@ const S3_BUCKET = process.env.S3_BUCKET;
 export class LibraryDataController extends DataController {
 
     @Method(Verbs.Post, '/upload')
-    public static async capture(data: any, actionGuid: string) {
+    public static async capture(data: any, actionGuid: string): Promise<MethodResult<any>> {
 
         if (!data) {
             throw (new MethodError('no data'));

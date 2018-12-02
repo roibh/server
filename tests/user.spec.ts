@@ -26,7 +26,7 @@ export class TestsOfUsers {
     @AsyncTest('user_list')
     @Timeout(10000)
     public async user_list() {
-        const result = await UserController.query({});
+        const result = await UserController.query({}, {});
         Expect(result).toBeDefined();
     }
 
