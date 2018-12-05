@@ -8,7 +8,7 @@ export * from './models/';
 import * as path from 'path';
 import { DBHandler } from '@methodus/data';
 import { configuration } from './db/config';
-import { Auth, UserController, ScreensDataController } from './controllers/';
+import { AuthController, UserController, ScreensDataController } from './controllers/';
 
 DBHandler.config = configuration;
 
@@ -16,7 +16,7 @@ DBHandler.config = configuration;
 @PluginConfiguration('@methodus/describe')
 @PluginConfiguration(path.join(__dirname, 'static'), { path: '/', clientPath: '/public' })
 @ClientConfiguration(UserController, MethodType.Local, ServerType.Express)
-@ClientConfiguration(Auth, MethodType.Local, ServerType.Express)
+@ClientConfiguration(AuthController, MethodType.Local, ServerType.Express)
 @ClientConfiguration(ScreensDataController, MethodType.Local, ServerType.Express)
 class SetupServer extends ConfiguredServer {
     constructor() {

@@ -11,7 +11,7 @@
             "UserController": {
                 "path": "./controllers/user.data.controller.ts"
             },
-            "Auth": {
+            "AuthController": {
                 "path": "./controllers/auth.controller.ts"
             },
             "ScreensDataController": {

@@ -2,7 +2,7 @@ import { MethodConfigBase, Method, Param, MethodResult, Body, SecurityContext } 
 import { Verbs } from '@methodus/server/src/rest';
 import { Query as DataQuery } from '@methodus/data';
 
-@MethodConfigBase('Data')
+@MethodConfigBase('DataController')
 export class DataController {
 
     @Method(Verbs.Get, '/id/:id')

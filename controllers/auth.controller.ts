@@ -25,7 +25,7 @@ const privateKEY = fs.readFileSync('./certs/private.key', 'utf8');
 const publicKEY = fs.readFileSync('./certs/public.key', 'utf8');
 
 @MethodConfig('AuthController')
-export class Auth {
+export class AuthController {
     @Method(Verbs.Post, '/api/auth/signup')
     public static async signup(@Body('userOptions') userOptions: any): Promise<MethodResult<any>> {
         try {

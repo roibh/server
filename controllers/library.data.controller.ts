@@ -1,4 +1,4 @@
-import { MethodConfig, Method, Verbs, MethodError, MethodResult } from '@methodus/server';
+import { MethodConfig, Method, Verbs, MethodError, MethodResult, MethodConfigExtend } from '@methodus/server';
 import { LibraryModel } from '../models/library.model';
 import * as aws from 'aws-sdk';
 import { AuthMiddleware } from './auth.middleware';
@@ -8,6 +8,7 @@ import { DataController } from './datacontroller';
 const S3_BUCKET = process.env.S3_BUCKET;
 
 @MethodConfig('Library', [AuthMiddleware], LibraryModel)
+@MethodConfigExtend(DataController)
 export class LibraryDataController extends DataController {
 
     @Method(Verbs.Post, '/upload')

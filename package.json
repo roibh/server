@@ -20,7 +20,7 @@
   "dependencies": {
     "@methodus/data": "^1.0.1",
     "@methodus/describe": "^1.1.7",
-    "@methodus/server": "^1.1.8",
+    "@methodus/server": "latest",
     "@types/node": "^10.0.4",
     "aws-sdk": "^2.368.0",
     "chrome-bridge": "^0.1.2",
@@ -33,6 +33,6 @@
     "uuid": "^3.2.1"
   },
   "devDependencies": {
-    "@methodus/contracts": "0.0.17"
+    "@methodus/contracts": "latest"
   }
 }
