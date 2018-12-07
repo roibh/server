@@ -17,12 +17,12 @@
                 "DEBUG": "none",
                 "NODE_ENV": "debug",
                 "NODE_LOG_LEVEL": "trace",
-                "NODE_CONFIG_ENV": "prod",
+                "NODE_CONFIG_ENV": "local",
                 "NODE_CONFIG_DIR": "${workspaceRoot}/config/",
                 "NODE_LOG_DIR": "./logs",
                 "NODE_CONFIG_VAR": "vars.json",
                 "MONGO_NAME": "signnature",
-                "MONGO_PASSWORD": "Kardigan24%24",
+                "MONGO_PATH": "localhost:27017",
                 "PORT": "6200"
             }
         },
@@ -36,7 +36,7 @@
             "outFiles": [],
             "sourceMaps": true,
             "env": {
-                "DEBUG": "none",
+                "DEBUG": "express:*",
                 "NODE_ENV": "debug",
                 "NODE_LOG_LEVEL": "trace",
                 "NODE_CONFIG_ENV": "prod",

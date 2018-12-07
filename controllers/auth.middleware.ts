@@ -15,11 +15,11 @@ import * as fs from 'fs';
 //     subject: SignOptions.Subject,
 // };
 
-export function AuthMiddleware(req, res, next) {
+export async function AuthMiddleware(req, res, next) {
     const decoded = jwt.decode(req.headers.authorization.replace('Bearer ', ''), { complete: true });
     if (decoded) {
         req.security_context = decoded.payload;
-        next();
+        return next();
     }
-    next();
+    await next();
 }

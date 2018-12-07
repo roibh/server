@@ -19,6 +19,9 @@
             },
             "LibraryDataController": {
                 "path": "./controllers/library.data.controller.ts"
+            },
+            "Playlist": {
+                "path": "./controllers/playlist.data.controller.ts"
             }
         },
         "models": {
@@ -30,6 +33,9 @@
             },
             "LibraryModel": {
                 "path": "./models/library.model.ts"
+            },
+            "PlaylistModel": {
+                "path": "./models/playlist.model.ts"
             }
         },
         "includes": {
