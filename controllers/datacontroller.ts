@@ -38,7 +38,7 @@ export class DataController {
     }
 
     @Method(Verbs.Post, '/query')
-    public static async query(@Body('query') queryObject: any, @SecurityContext() securityContext: any): Promise<any> {
+    public static async query(@Body('query') queryObject: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
         // extract repository
         const repo = (this as any).methodus[this.name].repository;
         const queryX = new DataQuery(repo.odm.collectionName);
@@ -46,7 +46,7 @@ export class DataController {
         try {
             const results = await queryX.run();
             return new MethodResult(results);
-        } catch (error) {
+        } catch(error) {
             throw (new MethodError(error));
         }
     }
