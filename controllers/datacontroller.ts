@@ -42,11 +42,11 @@ export class DataController {
         // extract repository
         const repo = (this as any).methodus[this.name].repository;
         const queryX = new DataQuery(repo.odm.collectionName);
-        queryX.filter(queryObject).filter({}); // user_id: securityContext._id 
+        queryX.filter(queryObject).filter({ user_id: securityContext._id });
         try {
             const results = await queryX.run();
             return new MethodResult(results);
-        } catch(error) {
+        } catch (error) {
             throw (new MethodError(error));
         }
     }
