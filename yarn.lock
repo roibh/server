@@ -141,9 +141,9 @@
     read-last-lines "^1.6.0"
 
 "@methodus/server@latest":
-  version "2.0.1"
-  resolved "https://registry.npmjs.org/@methodus/server/-/server-2.0.1.tgz#a9aea88f951abfbc814be667980296d8765d891a"
-  integrity sha512-q8xwWcTwrYSjJQZwgOTxWrfI+OcuArsXqMB/Rcpfv5yVFgVKZV6qY4JxxN6tROLtJJAIpao4w7KcYQlxA8xuhQ==
+  version "2.0.2"
+  resolved "https://registry.npmjs.org/@methodus/server/-/server-2.0.2.tgz#a0b020a3604a183389627fb147d21f26abce5d22"
+  integrity sha512-LL8wz4b5dt8WmT/gI0a9oA7Wgu4JooXrCduVhb22PMUqa4iTm4iBCEEE1JSlb5ISFC+yUnuX6l7tTeg+NtzNmQ==
   dependencies:
     amqplib "^0.5.1"
     child-process-debug "0.0.7"
