@@ -1,5 +1,6 @@
 *.js
 !config/local.js
+!config/prod.js
 !public/inline.bundle.js
 !public/*
 coverage/
