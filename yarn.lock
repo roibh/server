@@ -92,10 +92,12 @@
     lodash "^4.17.5"
     to-fast-properties "^2.0.0"
 
-"@methodus/client@^0.0.9":
-  version "0.0.9"
-  resolved "https://registry.npmjs.org/@methodus/client/-/client-0.0.9.tgz#9ba2b2227177280e23fe427e0f7668c6681b1bfd"
-  integrity sha512-Pa93ZNsL5x+CKrj/34KE0iRxXRhSW8CwcWABP9O9H3Tnd5Xgarvj+RehDsKxLvCkyraBIDUvj2n0DJoTiQn/7Q==
+"@methodus/client@latest":
+  version "2.0.7"
+  resolved "https://registry.npmjs.org/@methodus/client/-/client-2.0.7.tgz#14dd85bb9f870611caafabb5d490609b6c6cf318"
+  integrity sha512-dBnrmVBfzIDGlJTDpxHMVsZkCu203CE1io+/RCZikz0Hug+yvTBMGCk54+bxv9rSS4nMkISSmiYZPM/nTQFZnw==
+  dependencies:
+    reflect-metadata "^0.1.10"
 
 "@methodus/contracts@latest":
   version "1.0.2"
@@ -129,18 +131,18 @@
     object-diff "0.0.4"
     reflect-metadata "^0.1.10"
 
-"@methodus/describe@^1.1.7":
-  version "1.1.7"
-  resolved "https://registry.npmjs.org/@methodus/describe/-/describe-1.1.7.tgz#f6fa00ccda8e01dae8fc20f2ee8a3e3c7413e192"
-  integrity sha512-M+vZnJRddr5sEwvoVeVV2Xj0mRh/l0WcFtexr7pXFrOFQnEYr+/0cJns5lJavZNMkjSE98Km4tG4SuOAD8p4jw==
+"@methodus/describe@^2.0.0":
+  version "2.0.1"
+  resolved "https://registry.npmjs.org/@methodus/describe/-/describe-2.0.1.tgz#69c343497ec0eb1219317622e12641a127db4a6e"
+  integrity sha512-f7GfwYCdofEptG3pDryCoJV0Hd0uyNaMkI4liFxFc+DrKockVR6EYjwVpfxcyXId5iZqR5pDw3SJlcOvnCL/xQ==
   dependencies:
-    "@methodus/client" "^0.0.9"
+    "@methodus/client" latest
     ejs "^2.5.7"
     http-proxy-middleware "^0.17.4"
     jquery.json-viewer "^1.1.0"
     read-last-lines "^1.6.0"
 
-"@methodus/server@latest":
+"@methodus/server@^2.0.0":
   version "2.0.2"
   resolved "https://registry.npmjs.org/@methodus/server/-/server-2.0.2.tgz#a0b020a3604a183389627fb147d21f26abce5d22"
   integrity sha512-LL8wz4b5dt8WmT/gI0a9oA7Wgu4JooXrCduVhb22PMUqa4iTm4iBCEEE1JSlb5ISFC+yUnuX6l7tTeg+NtzNmQ==
@@ -2475,9 +2477,9 @@ log@^1.4.0:
   integrity sha1-S6HYkP3iSbAx3KA7w36q8yVlbxw=
 
 logelas@^3.0.10:
-  version "3.0.10"
-  resolved "https://registry.npmjs.org/logelas/-/logelas-3.0.10.tgz#d3acadbf40ea1b2bfd9fc274476bf14251900fa6"
-  integrity sha512-Nf2s001JO+H26XLBDcD6HcDrhWo7Gj25lKlvOFEkfNdFA1vvI+bW3WuFjzw/w52rbHRF4COxN3qFn2bQm6+Z/Q==
+  version "3.0.11"
+  resolved "https://registry.npmjs.org/logelas/-/logelas-3.0.11.tgz#3ca8aa538c9a9a232b4709d09aebeece1b2ed83d"
+  integrity sha512-B2wCQWjGRHtfmdQR5dJSrDeQwuJAjVYNE27zeKk6j98LpQwxA063h291VUgjVVbY/2X8aVhQzuFCqJNjJrNfpA==
   dependencies:
     debug "^3.0.1"
     lodash "^4.17.11"

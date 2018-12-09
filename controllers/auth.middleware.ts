@@ -16,10 +16,13 @@ import * as fs from 'fs';
 // };
 
 export async function AuthMiddleware(req, res, next) {
-    const decoded = jwt.decode(req.headers.authorization.replace('Bearer ', ''), { complete: true });
-    if (decoded) {
-        req.security_context = decoded.payload;
-        return next();
+    if (req.headers.authorization) {
+        const decoded = jwt.decode(req.headers.authorization.replace('Bearer ', ''), { complete: true });
+        if (decoded) {
+            req.security_context = decoded.payload;
+            return next();
+        }
     }
+
     await next();
 }

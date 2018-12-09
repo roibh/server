@@ -7,7 +7,7 @@ import { DataController } from './datacontroller';
 /*end custom*/
 const S3_BUCKET = process.env.S3_BUCKET;
 
-@MethodConfig('Library', [AuthMiddleware], LibraryModel)
+@MethodConfig('LibraryDataController', [AuthMiddleware], LibraryModel)
 @MethodConfigExtend(DataController)
 export class LibraryDataController extends DataController {
 

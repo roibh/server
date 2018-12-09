@@ -487,15 +487,13 @@ var DataComponent = /** @class */ (function () {
     }
     DataComponent.prototype.updateScreen = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         this.item.Date = new Date();
                         return [4 /*yield*/, this.DataController.update(this.item._id, this.item)];
                     case 1:
-                        result = _a.sent();
-                        // this.screens = await ScreensDataController.query({});
+                        _a.sent();
                         this.displayModalNew = '';
                         return [2 /*return*/];
                 }
@@ -512,7 +510,6 @@ var DataComponent = /** @class */ (function () {
                         return [4 /*yield*/, this.DataController.query({})];
                     case 1:
                         _a.items = _b.sent();
-                        debugger;
                         return [2 /*return*/];
                 }
             });
@@ -520,14 +517,13 @@ var DataComponent = /** @class */ (function () {
     };
     DataComponent.prototype.deleteScreen = function (item) {
         return __awaiter(this, void 0, void 0, function () {
-            var result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         if (!confirm('delete')) return [3 /*break*/, 2];
                         return [4 /*yield*/, this.DataController.delete(item._id)];
                     case 1:
-                        result = _a.sent();
+                        _a.sent();
                         this.loadItems();
                         _a.label = 2;
                     case 2: return [2 /*return*/];
@@ -537,12 +533,11 @@ var DataComponent = /** @class */ (function () {
     };
     DataComponent.prototype.createItem = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.DataController.create(this.item)];
                     case 1:
-                        result = _a.sent();
+                        _a.sent();
                         return [4 /*yield*/, this.loadItems()];
                     case 2:
                         _a.sent();
@@ -867,7 +862,7 @@ exports.LanguageService = LanguageService;
 /***/ "../../../../../src/app/library/images/images.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  images works!\n</p>\n"
+module.exports = " <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow\" >\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}}    \n      <ul class=\"sqr-toolbar\">    \n        <li>\n          <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n        </li>\n        <li>\n          <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>    \n</div>\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n<dialog open={{displayModalNew}}>\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"screenName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"screenName\"  class=\"form-control\" id=\"screenName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"libraryFile\">{{ \"LIBRARY.TOKEN\" | translate }}</label>\n    <input type=\"file\" name=\"libraryFile\">\n  \n  </div>  \n  <button   *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"LIBRARY.UPDATE\" | translate }}</button>\n  <button   *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"LIBRARY.CREATE\" | translate }}</button>\n</form>\n</dialog>\n</div>\n "
 
 /***/ }),
 
@@ -894,6 +889,16 @@ module.exports = module.exports.toString();
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -903,12 +908,61 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/fesm5/core.js");
-var ImagesComponent = /** @class */ (function () {
-    function ImagesComponent() {
+var data_component_1 = __webpack_require__("../../../../../src/app/data.component.ts");
+var client_1 = __webpack_require__("../../../../@signnature/client/index.js");
+var ImagesComponent = /** @class */ (function (_super) {
+    __extends(ImagesComponent, _super);
+    function ImagesComponent(_ngZone) {
+        var _this = _super.call(this, _ngZone) || this;
+        _this._ngZone = _ngZone;
+        _this.DataController = client_1.LibraryDataController;
+        return _this;
+        // this.DataModel = PlaylistModel;
     }
     ImagesComponent.prototype.ngOnInit = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                this.loadItems();
+                return [2 /*return*/];
+            });
+        });
     };
     ImagesComponent = __decorate([
         core_1.Component({
@@ -916,10 +970,10 @@ var ImagesComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/library/images/images.component.html"),
             styles: [__webpack_require__("../../../../../src/app/library/images/images.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [core_1.NgZone])
     ], ImagesComponent);
     return ImagesComponent;
-}());
+}(data_component_1.DataComponent));
 exports.ImagesComponent = ImagesComponent;
 
 
@@ -1004,11 +1058,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/fesm5/core.js");
 var common_1 = __webpack_require__("../../../common/fesm5/common.js");
 var router_1 = __webpack_require__("../../../router/fesm5/router.js");
+var shared_module_1 = __webpack_require__("../../../../../src/app/shared.module.ts");
 var images_component_1 = __webpack_require__("../../../../../src/app/library/images/images.component.ts");
 var videos_component_1 = __webpack_require__("../../../../../src/app/library/videos/videos.component.ts");
 var sounds_component_1 = __webpack_require__("../../../../../src/app/library/sounds/sounds.component.ts");
 var slides_component_1 = __webpack_require__("../../../../../src/app/library/slides/slides.component.ts");
 var library_component_1 = __webpack_require__("../../../../../src/app/library/library.component.ts");
+var forms_1 = __webpack_require__("../../../forms/fesm5/forms.js");
 __export(__webpack_require__("../../../../../src/app/library/main/main.component.ts"));
 exports.libraryRoutes = [
     { path: 'images', component: images_component_1.ImagesComponent },
@@ -1023,7 +1079,9 @@ var LibraryModule = /** @class */ (function () {
         core_1.NgModule({
             imports: [
                 router_1.RouterModule,
-                common_1.CommonModule
+                common_1.CommonModule,
+                shared_module_1.SharedModule,
+                forms_1.FormsModule
             ],
             exports: [library_component_1.LibraryComponent, router_1.RouterModule],
             entryComponents: [library_component_1.LibraryComponent],
