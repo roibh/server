@@ -8,6 +8,9 @@
             "DataController": {
                 "path": "./controllers/datacontroller.ts"
             },
+            "Upload": {
+                "path": "./controllers/upload.controller.ts"
+            },
             "UserController": {
                 "path": "./controllers/user.data.controller.ts"
             },
@@ -22,6 +25,9 @@
             },
             "Playlist": {
                 "path": "./controllers/playlist.data.controller.ts"
+            },
+            "SlidesDataController": {
+                "path": "./controllers/slides.data.controller.ts"
             }
         },
         "models": {
@@ -36,6 +42,9 @@
             },
             "PlaylistModel": {
                 "path": "./models/playlist.model.ts"
+            },
+            "SlideModel": {
+                "path": "./models/slide.model.ts"
             }
         },
         "includes": {

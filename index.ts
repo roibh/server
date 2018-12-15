@@ -10,7 +10,10 @@ export * from './models/';
 import * as path from 'path';
 import { DBHandler } from '@methodus/data';
 import { configuration } from './db/config';
-import { LibraryDataController, Playlist, AuthController, UserController, ScreensDataController } from './controllers/';
+import {
+    LibraryDataController, Playlist, AuthController, UserController,
+    ScreensDataController, Upload,SlidesDataController,
+} from './controllers/';
  
 DBHandler.config = configuration;
 
@@ -22,6 +25,8 @@ DBHandler.config = configuration;
 @ClientConfiguration(Playlist, MethodType.Local, ServerType.Express)
 @ClientConfiguration(ScreensDataController, MethodType.Local, ServerType.Express)
 @ClientConfiguration(LibraryDataController, MethodType.Local, ServerType.Express)
+@ClientConfiguration(Upload, MethodType.Local, ServerType.Express)
+@ClientConfiguration(SlidesDataController, MethodType.Local, ServerType.Express)
 class SetupServer extends ConfiguredServer {
     constructor() {
         super(SetupServer);

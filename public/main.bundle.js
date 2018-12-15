@@ -1,5 +1,1461 @@
 webpackJsonp(["main"],{
 
+/***/ "../../../../../../../methodus/methodus-client/dist/methodus-client.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else {
+		var a = factory();
+		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
+	}
+})(typeof self !== 'undefined' ? self : this, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+__export(__webpack_require__(10));
+__export(__webpack_require__(11));
+__export(__webpack_require__(12));
+__export(__webpack_require__(13));
+__export(__webpack_require__(14));
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var Rest = /** @class */ (function () {
+    function Rest(uri, verb, paramsMap, args) {
+        this.options = {};
+        this.uri = uri;
+        this.options = this.parse(verb, paramsMap, args);
+        if (Rest.interceptor) {
+            this.options = Rest.interceptor(this.options);
+        }
+        this.request = new Request(this.uri);
+    }
+    Rest.intercept = function (interceptor) {
+        this.interceptor = interceptor;
+    };
+    Rest.prototype.prepare = function (url, method, params, body, query, headers) {
+        if (params && url) {
+            params.forEach(function (param) {
+                if (url) {
+                    url = url.replace(":" + param.id, param.value);
+                }
+            });
+        }
+        if (query && query.length > 0) {
+            url = url + "?" + query.join("&");
+        }
+        var formData = new FormData();
+        Object.keys(body).forEach(function (key) {
+            formData.append(key, body[key]);
+        });
+        if (window.RELATIVE_CONTRACTS) {
+            url = '.' + url;
+        }
+        this.uri = url;
+        this.request = new Request(url);
+        var options = {
+            cache: "default",
+            credentials: "include",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: method,
+            mode: "cors",
+        };
+        if (body && Object.keys(body).length > 0) {
+            Object.assign(options, { body: JSON.stringify(body) });
+        }
+        return options;
+    };
+    Rest.prototype.parse = function (verb, paramsMap, args) {
+        var _this = this;
+        var queryString = [];
+        var body = {};
+        var formData;
+        var headers = {};
+        var options = {
+            cache: "default",
+            credentials: "include",
+            headers: Object.assign(headers, {
+                "Content-Type": "application/json",
+            }),
+            method: verb,
+            mode: "cors",
+            redirect: "follow",
+        };
+        paramsMap.forEach(function (param) {
+            if (param.index !== undefined) {
+                switch (param.from) {
+                    case "params":
+                        if (_this.uri) {
+                            _this.uri = _this.uri.replace(":" + param.name, args[param.index]);
+                        }
+                        break;
+                    case "query":
+                        if (param.name) {
+                            queryString.push({ name: param.name, value: args[param.index] });
+                        }
+                        else {
+                            var queryObject_1 = args[param.index];
+                            Object.keys(queryObject_1).forEach(function (key) {
+                                if (Array.isArray(queryObject_1[key])) {
+                                    queryObject_1[key].forEach(function (item) {
+                                        queryString.push({ name: key, value: item });
+                                    });
+                                }
+                                else {
+                                    queryString.push({ name: key, value: queryObject_1[key] });
+                                }
+                            });
+                        }
+                        break;
+                    case "body":
+                        if (param.name) {
+                            body[param.name] = args[param.index];
+                        }
+                        else {
+                            Object.assign(body, args[param.index]);
+                        }
+                        break;
+                    case "files":
+                        // create a new multipart-form for every file
+                        var formData_1 = new FormData();
+                        var argus = args[param.index];
+                        if (!Array.isArray(args[param.index])) {
+                            argus = [args[param.index]];
+                        }
+                        argus.forEach(function (file) {
+                            formData_1.append(param.name || 'files', file, file.name);
+                        });
+                        Object.assign(options, { body: formData_1 });
+                        delete options.headers['Content-Type'];
+                        break;
+                    case "headers":
+                        if (param.name) {
+                            headers[param.name] = args[param.index];
+                        }
+                        else {
+                            Object.assign(headers, args[param.index]);
+                        }
+                        break;
+                }
+            }
+        });
+        if (queryString.length > 0) {
+            this.uri = this.uri + "?" + queryString.map(function (item) {
+                if (typeof item.value === "object") {
+                    return item.name + "=" + encodeURIComponent(JSON.stringify(item.value));
+                }
+                else {
+                    return item.name + "=" + encodeURIComponent(item.value);
+                }
+            }).join("&");
+        }
+        if (body && Object.keys(body).length > 0) {
+            Object.assign(options, { body: JSON.stringify(body) });
+        }
+        return options;
+    };
+    Rest.prototype.send = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, fetch(this.request, this.options)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, response.json()];
+                }
+            });
+        });
+    };
+    Rest.prototype.execute = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, fetch(this.request, this.options)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, response.json()];
+                }
+            });
+        });
+    };
+    return Rest;
+}());
+exports.Rest = Rest;
+//# sourceMappingURL=rest.js.map
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib___ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib____default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__lib___);
+/* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__lib___) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__lib___[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+__export(__webpack_require__(4));
+__export(__webpack_require__(15));
+__export(__webpack_require__(20));
+__export(__webpack_require__(0));
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+__export(__webpack_require__(5));
+__export(__webpack_require__(6));
+__export(__webpack_require__(7));
+__export(__webpack_require__(8));
+__export(__webpack_require__(9));
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+/** the MethodConfig decorator registers the controller as a router
+ *  @param {string} name - the identifier of the controller in the resolver.
+ *  @param {Function[]} middlewares - an array of middlewares to apply to this controller}
+ */
+function MethodConfigBase(name) {
+    return function (target) {
+        var proto = target.prototype || target.__proto__;
+        // means its a static class , no prototype
+        if (target.methodus) {
+            proto = target;
+        }
+        proto.methodus_base = JSON.parse(JSON.stringify(target.methodus[name]));
+    };
+}
+exports.MethodConfigBase = MethodConfigBase;
+//# sourceMappingURL=method-config-base.js.map
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/** the MethodConfig decorator registers the controller as a router
+ *  @param {string} name - the identifier of the controller in the resolver.
+ *  @param {Function[]} middlewares - an array of middlewares to apply to this controller}
+ */
+function MethodConfigExtend(extendTarget) {
+    var _this = this;
+    return function (target) {
+        var filterKeys = ['length', 'prototype', 'name', 'methodus', 'methodus_base'];
+        target.methodus[target.name] = JSON.parse(JSON.stringify(extendTarget.methodus_base));
+        Object.getOwnPropertyNames(extendTarget.prototype.constructor).forEach(function (key) {
+            if (filterKeys.indexOf(key) === -1) {
+                var func = function () {
+                    var args = [];
+                    for (var _i = 0; _i < arguments.length; _i++) {
+                        args[_i] = arguments[_i];
+                    }
+                    return __awaiter(_this, void 0, void 0, function () {
+                        return __generator(this, function (_a) {
+                            switch (_a.label) {
+                                case 0:
+                                    args.push({ target: target, instruct: true });
+                                    return [4 /*yield*/, extendTarget.prototype.constructor[key].apply(target, args)];
+                                case 1: return [2 /*return*/, _a.sent()];
+                            }
+                        });
+                    });
+                };
+                target.prototype.constructor[key] = func.bind(target);
+            }
+        });
+        var mTarget = target.methodus[target.name];
+        var routePrefix = target.name.toLocaleLowerCase();
+        Object.keys(mTarget._descriptors).forEach(function (desciptorKey) {
+            var route = mTarget._descriptors[desciptorKey].route;
+            mTarget._descriptors[desciptorKey].route = '/' + routePrefix + route;
+        });
+    };
+}
+exports.MethodConfigExtend = MethodConfigExtend;
+//# sourceMappingURL=method-config-extend.js.map
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+/** the MethodConfig decorator registers the controller as a router
+ *  @param {string} name - the identifier of the controller in the resolver.
+ *  @param {Function[]} middlewares - an array of middlewares to apply to this controller}
+ */
+function MethodConfig(name) {
+    return function (target) {
+        var proto = target.prototype || target.__proto__;
+        // means its a static class , no prototype
+        if (target.methodus) {
+            proto = target;
+        }
+        target.methodus[name] = target.methodus[name] || { _events: {}, _descriptors: {} };
+        proto.methodus[name].name = name;
+    };
+}
+exports.MethodConfig = MethodConfig;
+//# sourceMappingURL=method-config.js.map
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+function pushParams(target, propertyKey, param) {
+    // const methodus = fp.maybeMethodus(target);
+    target.methodus = target.methodus || {};
+    var name = target.name || target.constructor.name;
+    target.methodus[name] = target.methodus[name] || { _events: {}, _descriptors: {} };
+    var mTarget = target.methodus[name];
+    mTarget._descriptors[propertyKey] = mTarget._descriptors[propertyKey] || { params: [] };
+    mTarget._descriptors[propertyKey].params.push(Object.assign({}, param, { type: "any" }));
+}
+function build(from, name, type) {
+    return function (target, propertyKey, parameterIndex) {
+        if (name) {
+            pushParams(target, propertyKey, {
+                from: from, index: parameterIndex,
+                name: name,
+            });
+        }
+        else {
+            pushParams(target, propertyKey, { from: from, index: parameterIndex });
+        }
+    };
+}
+function Body(name, type) {
+    return build("body", name, type);
+}
+exports.Body = Body;
+function Param(name) {
+    return build("params", name);
+}
+exports.Param = Param;
+function Files(name) {
+    return build("files", name);
+}
+exports.Files = Files;
+function Headers(name) {
+    return build("headers", name);
+}
+exports.Headers = Headers;
+function Cookies(name) {
+    return build("cookies", name);
+}
+exports.Cookies = Cookies;
+function Query(name) {
+    return build("query", name);
+}
+exports.Query = Query;
+function Request(name) {
+    return function () { return false; };
+}
+exports.Request = Request;
+function Response(name) {
+    return function () { return false; };
+}
+exports.Response = Response;
+//# sourceMappingURL=params.js.map
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var excludedProps = ["constructor"];
+var _1 = __webpack_require__(0);
+var rest_1 = __webpack_require__(1);
+var methodMetadataKey = "methodus";
+var metadataKey = "params";
+/** the @Method decorator registers the model with the odm
+ *  @param {Verbs} verb - the HTTP verb for the route.
+ *  @param {string} route - express route string.
+ *  @param {Function[]} middlewares - an array of middlewares to apply to this function}
+ */
+var METHODLOG = "methodus::Method";
+function Method(verb, route) {
+    var _this = this;
+    return function (target, propertyKey, descriptor) {
+        target.methodus = target.methodus || {};
+        var name = target.name || target.constructor.name;
+        target.methodus[name] = target.methodus[name] || { _events: {}, _descriptors: {} };
+        var mTarget = target.methodus[name];
+        var metaObject = Object.assign({}, { verb: verb, route: route, propertyKey: propertyKey, params: [] });
+        if (mTarget._descriptors[propertyKey]) {
+            metaObject = Object.assign(metaObject, { params: mTarget._descriptors[propertyKey].params });
+        }
+        mTarget._descriptors[propertyKey] = metaObject; // as MethodDescriptor;
+        var paramsMap;
+        if (metaObject.params) {
+            paramsMap = metaObject.params;
+            paramsMap.sort(function (a, b) {
+                return a.index - b.index;
+            });
+        }
+        var originalMethod = descriptor.value;
+        descriptor.value = function () {
+            var args = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                args[_i] = arguments[_i];
+            }
+            return __awaiter(_this, void 0, void 0, function () {
+                var config, methodus, completeConfiguration, _a, finalRoute, request, result;
+                return __generator(this, function (_b) {
+                    switch (_b.label) {
+                        case 0:
+                            config = { methodType: _1.MethodType.Http };
+                            if (window.METHODUS_CONFIG) {
+                                config = window.METHODUS_CONFIG;
+                            }
+                            if (args && args[args.length - 1] && args[args.length - 1].instruct) {
+                                target = args[args.length - 1].target;
+                                target.methodus = target.methodus || {};
+                                name = target.name || target.constructor.name;
+                                target.methodus[name] = target.methodus[name] || { _events: {}, _descriptors: {} };
+                                mTarget = target.methodus[name];
+                                metaObject = mTarget._descriptors[propertyKey];
+                                paramsMap = metaObject.params;
+                                paramsMap.sort(function (a, b) {
+                                    return a.index - b.index;
+                                });
+                            }
+                            methodus = mTarget;
+                            // merge the configuration object
+                            Object.assign(methodus, methodus._descriptors[propertyKey]);
+                            completeConfiguration = Object.assign({}, methodus, config);
+                            _a = config.methodType;
+                            switch (_a) {
+                                case _1.MethodType.Mock: return [3 /*break*/, 1];
+                                case _1.MethodType.Http: return [3 /*break*/, 3];
+                            }
+                            return [3 /*break*/, 5];
+                        case 1: return [4 /*yield*/, originalMethod.apply(target, args)];
+                        case 2: return [2 /*return*/, _b.sent()];
+                        case 3:
+                            finalRoute = completeConfiguration.route;
+                            if (target.base !== undefined) {
+                                finalRoute = target.base + finalRoute;
+                            }
+                            else if (window.RELATIVE_CONTRACTS) {
+                                finalRoute = '.' + finalRoute;
+                            }
+                            request = new rest_1.Rest(finalRoute, completeConfiguration.verb, paramsMap, args);
+                            return [4 /*yield*/, request.send()];
+                        case 4:
+                            result = _b.sent();
+                            return [2 /*return*/, result];
+                        case 5: return [2 /*return*/];
+                    }
+                });
+            });
+        };
+        return descriptor;
+    };
+}
+exports.Method = Method;
+//# sourceMappingURL=method.js.map
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Verbs;
+(function (Verbs) {
+    Verbs["Get"] = "GET";
+    Verbs["Post"] = "POST";
+    Verbs["Put"] = "PUT";
+    Verbs["Patch"] = "PATCH";
+    Verbs["Head"] = "HEAD";
+    Verbs["Delete"] = "DELETE";
+})(Verbs = exports.Verbs || (exports.Verbs = {}));
+var MethodType;
+(function (MethodType) {
+    MethodType["Local"] = "Local";
+    MethodType["Http"] = "Http";
+    MethodType["MQ"] = "MQ";
+    MethodType["Redis"] = "Redis";
+    MethodType["Socket"] = "Socket";
+    MethodType["Kafka"] = "Kafka";
+    MethodType["Mock"] = "Mock";
+})(MethodType = exports.MethodType || (exports.MethodType = {}));
+//# sourceMappingURL=enums.js.map
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Prototyped = /** @class */ (function () {
+    function Prototyped() {
+    }
+    return Prototyped;
+}());
+exports.Prototyped = Prototyped;
+//# sourceMappingURL=prototyped.js.map
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var MethodDescriptor = /** @class */ (function () {
+    function MethodDescriptor() {
+    }
+    return MethodDescriptor;
+}());
+exports.MethodDescriptor = MethodDescriptor;
+//# sourceMappingURL=method-descriptor.js.map
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var MethodusClass = /** @class */ (function () {
+    function MethodusClass() {
+    }
+    return MethodusClass;
+}());
+exports.MethodusClass = MethodusClass;
+//# sourceMappingURL=methodus-class.js.map
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var ParamsMap = /** @class */ (function () {
+    function ParamsMap() {
+    }
+    return ParamsMap;
+}());
+exports.ParamsMap = ParamsMap;
+//# sourceMappingURL=params-map.js.map
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+__export(__webpack_require__(16));
+__export(__webpack_require__(17));
+__export(__webpack_require__(18));
+__export(__webpack_require__(19));
+function generateUuid() {
+    return Math.random().toString() +
+        Math.random().toString() +
+        Math.random().toString();
+}
+exports.generateUuid = generateUuid;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var MethodError = /** @class */ (function (_super) {
+    __extends(MethodError, _super);
+    function MethodError(error, statusCode, additional) {
+        var _this = this;
+        var message = error;
+        if (typeof error === "object") {
+            message = error.message;
+        }
+        _this = _super.call(this, message) || this;
+        _this.error = error;
+        _this.statusCode = statusCode || 500;
+        if (additional) {
+            _this.additional = additional;
+        }
+        return _this;
+    }
+    return MethodError;
+}(Error));
+exports.MethodError = MethodError;
+//# sourceMappingURL=methodError.js.map
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var MethodEvent = /** @class */ (function () {
+    function MethodEvent(name, value, exchangeName) {
+        this.value = value;
+        this.name = name;
+        if (exchangeName) {
+            this.exchanges = Array.isArray(exchangeName) ? (exchangeName) : [exchangeName];
+        }
+    }
+    MethodEvent.emit = function (name, value, exchangeName) {
+        var eventResult = new MethodEvent(name, value, exchangeName);
+        eventResult.result = eventResult;
+    };
+    return MethodEvent;
+}());
+exports.MethodEvent = MethodEvent;
+//# sourceMappingURL=methodEvent.js.map
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var MethodResult = /** @class */ (function () {
+    function MethodResult(result, total, page) {
+        this.result = result;
+        if (total) {
+            this.total = total;
+        }
+        if (page) {
+            this.page = page;
+        }
+    }
+    MethodResult.prototype.pipe = function (streamToPipe) {
+        this.stream = streamToPipe;
+    };
+    return MethodResult;
+}());
+exports.MethodResult = MethodResult;
+//# sourceMappingURL=methodResult.js.map
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var MethodMessage = /** @class */ (function () {
+    function MethodMessage(to, message, metadata, args, correlationId) {
+        this.to = to;
+        this.message = message;
+        this.metadata = metadata;
+        this.args = args;
+        this.correlationId = correlationId;
+    }
+    return MethodMessage;
+}());
+exports.MethodMessage = MethodMessage;
+//# sourceMappingURL=methodMessage.js.map
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+__export(__webpack_require__(1));
+//# sourceMappingURL=index.js.map
+
+/***/ })
+/******/ ]);
+});
+
+/***/ }),
+
+/***/ "../../../../../../@signnature/client/contracts/authcontroller.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// TMLA methodus contract.
+// Generated at: Sat Dec 15 2018 17:51:41 GMT+0200 (Israel Standard Time)
+var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
+var AuthController = /** @class */ (function () {
+    function AuthController() {
+    }
+    AuthController.signup = function (userOptions) {
+        return {};
+    };
+    AuthController.token = function (userOptions) {
+        return {};
+    };
+    AuthController.verify = function () {
+        return {};
+    };
+    AuthController.decode = function (token) {
+        return {};
+    };
+    __decorate([
+        M.Method(M.Verbs.Post, '/api/auth/signup'),
+        __param(0, M.Body('userOptions')),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Promise)
+    ], AuthController, "signup", null);
+    __decorate([
+        M.Method(M.Verbs.Post, '/api/auth/token'),
+        __param(0, M.Body('userOptions')),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Promise)
+    ], AuthController, "token", null);
+    __decorate([
+        M.Method(M.Verbs.Get, '/auth/verify'),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", Promise)
+    ], AuthController, "verify", null);
+    __decorate([
+        M.Method(M.Verbs.Get, '/api/auth/verify'),
+        __param(0, M.Body('token')),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [String]),
+        __metadata("design:returntype", Promise)
+    ], AuthController, "decode", null);
+    AuthController = __decorate([
+        M.MethodConfig('AuthController')
+    ], AuthController);
+    return AuthController;
+}());
+exports.AuthController = AuthController;
+//# sourceMappingURL=authcontroller.js.map
+
+/***/ }),
+
+/***/ "../../../../../../@signnature/client/contracts/datacontroller.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// TMLA methodus contract.
+// Generated at: Sat Dec 15 2018 17:51:41 GMT+0200 (Israel Standard Time)
+var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
+var DataController = /** @class */ (function () {
+    function DataController() {
+    }
+    DataController.get = function (id) {
+        return {};
+    };
+    DataController.create = function (record) {
+        return {};
+    };
+    DataController.update = function (id, record) {
+        return {};
+    };
+    DataController.delete = function (id) {
+        return {};
+    };
+    DataController.query = function (queryObject) {
+        return {};
+    };
+    __decorate([
+        M.Method(M.Verbs.Get, '/id/:id'),
+        __param(0, M.Param('id')),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [String]),
+        __metadata("design:returntype", Promise)
+    ], DataController, "get", null);
+    __decorate([
+        M.Method(M.Verbs.Post, '/insert'),
+        __param(0, M.Body('record')),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Promise)
+    ], DataController, "create", null);
+    __decorate([
+        M.Method(M.Verbs.Post, '/id/:id'),
+        __param(0, M.Param('id')), __param(1, M.Body('record')),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [String, Object]),
+        __metadata("design:returntype", Promise)
+    ], DataController, "update", null);
+    __decorate([
+        M.Method(M.Verbs.Delete, '/id/:id'),
+        __param(0, M.Param('id')),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [String]),
+        __metadata("design:returntype", Promise)
+    ], DataController, "delete", null);
+    __decorate([
+        M.Method(M.Verbs.Post, '/query'),
+        __param(0, M.Body('query')),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Promise)
+    ], DataController, "query", null);
+    DataController = __decorate([
+        M.MethodConfigBase('DataController')
+    ], DataController);
+    return DataController;
+}());
+exports.DataController = DataController;
+//# sourceMappingURL=datacontroller.js.map
+
+/***/ }),
+
+/***/ "../../../../../../@signnature/client/contracts/librarydatacontroller.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// TMLA methodus contract.
+// Generated at: Sat Dec 15 2018 17:51:41 GMT+0200 (Israel Standard Time)
+var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
+/*start custom*/
+var datacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/datacontroller.js");
+var LibraryDataController = /** @class */ (function (_super) {
+    __extends(LibraryDataController, _super);
+    function LibraryDataController() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    LibraryDataController.capture = function (files, actionGuid) {
+        return {};
+    };
+    __decorate([
+        M.Method(M.Verbs.Post, '/upload'),
+        __param(0, M.Files()),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object, String]),
+        __metadata("design:returntype", Promise)
+    ], LibraryDataController, "capture", null);
+    LibraryDataController = __decorate([
+        M.MethodConfig('LibraryDataController'),
+        M.MethodConfigExtend(datacontroller_1.DataController)
+    ], LibraryDataController);
+    return LibraryDataController;
+}(datacontroller_1.DataController));
+exports.LibraryDataController = LibraryDataController;
+//# sourceMappingURL=librarydatacontroller.js.map
+
+/***/ }),
+
+/***/ "../../../../../../@signnature/client/contracts/playlist.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// TMLA methodus contract.
+// Generated at: Sat Dec 15 2018 17:51:41 GMT+0200 (Israel Standard Time)
+var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
+/*start custom*/
+var datacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/datacontroller.js");
+var Playlist = /** @class */ (function (_super) {
+    __extends(Playlist, _super);
+    function Playlist() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Playlist = __decorate([
+        M.MethodConfig('Playlist'),
+        M.MethodConfigExtend(datacontroller_1.DataController)
+    ], Playlist);
+    return Playlist;
+}(datacontroller_1.DataController));
+exports.Playlist = Playlist;
+//# sourceMappingURL=playlist.js.map
+
+/***/ }),
+
+/***/ "../../../../../../@signnature/client/contracts/screensdatacontroller.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// TMLA methodus contract.
+// Generated at: Sat Dec 15 2018 17:51:41 GMT+0200 (Israel Standard Time)
+var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
+/*start custom*/
+var datacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/datacontroller.js");
+var ScreensDataController = /** @class */ (function (_super) {
+    __extends(ScreensDataController, _super);
+    function ScreensDataController() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ScreensDataController = __decorate([
+        M.MethodConfig('ScreensDataController'),
+        M.MethodConfigExtend(datacontroller_1.DataController)
+    ], ScreensDataController);
+    return ScreensDataController;
+}(datacontroller_1.DataController));
+exports.ScreensDataController = ScreensDataController;
+//# sourceMappingURL=screensdatacontroller.js.map
+
+/***/ }),
+
+/***/ "../../../../../../@signnature/client/contracts/slidesdatacontroller.ts":
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "../../../../../../@signnature/client/contracts/upload.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// TMLA methodus contract.
+// Generated at: Sat Dec 15 2018 17:51:41 GMT+0200 (Israel Standard Time)
+var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
+var Upload = /** @class */ (function () {
+    function Upload() {
+    }
+    Upload.capture = function (files) {
+        return {};
+    };
+    __decorate([
+        M.Method(M.Verbs.Post, '/upload'),
+        __param(0, M.Files('files')),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Promise)
+    ], Upload, "capture", null);
+    Upload = __decorate([
+        M.MethodConfig('Upload')
+    ], Upload);
+    return Upload;
+}());
+exports.Upload = Upload;
+//# sourceMappingURL=upload.js.map
+
+/***/ }),
+
+/***/ "../../../../../../@signnature/client/contracts/usercontroller.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// TMLA methodus contract.
+// Generated at: Sat Dec 15 2018 17:51:41 GMT+0200 (Israel Standard Time)
+var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
+/*start custom*/
+var datacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/datacontroller.js");
+var UserController = /** @class */ (function (_super) {
+    __extends(UserController, _super);
+    function UserController() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    UserController = __decorate([
+        M.MethodConfig('UserController'),
+        M.MethodConfigExtend(datacontroller_1.DataController)
+    ], UserController);
+    return UserController;
+}(datacontroller_1.DataController));
+exports.UserController = UserController;
+//# sourceMappingURL=usercontroller.js.map
+
+/***/ }),
+
+/***/ "../../../../../../@signnature/client/includes/usermock.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var UserMock = /** @class */ (function () {
+    function UserMock() {
+    }
+    UserMock.list = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var results, i, user;
+            return __generator(this, function (_a) {
+                results = [];
+                for (i = 0; i < 10; i++) {
+                    user = new Object();
+                    user.Email = 'info@gmail.com';
+                    user.FirstName = 'First name';
+                    user.LastName = 'Last name';
+                    user.Password = '********';
+                    results.push(user);
+                }
+                return [2 /*return*/, results];
+            });
+        });
+    };
+    UserMock.get = function (userId) {
+        return __awaiter(this, void 0, void 0, function () {
+            var user;
+            return __generator(this, function (_a) {
+                user = new Object();
+                user.Email = 'info@gmail.com';
+                user.FirstName = 'First name';
+                user.LastName = 'Last name';
+                user.Password = '********';
+                return [2 /*return*/, user];
+            });
+        });
+    };
+    return UserMock;
+}());
+exports.UserMock = UserMock;
+//# sourceMappingURL=usermock.js.map
+
+/***/ }),
+
+/***/ "../../../../../../@signnature/client/index.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+// TMLA methodus contract.
+// Generated at: Sat Dec 15 2018 17:51:41 GMT+0200 (Israel Standard Time)
+/**/
+var usermock_1 = __webpack_require__("../../../../../../@signnature/client/includes/usermock.js");
+exports.UserMock = usermock_1.UserMock;
+var datacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/datacontroller.js");
+var datacontroller_2 = __webpack_require__("../../../../../../@signnature/client/contracts/datacontroller.js");
+exports.DataController = datacontroller_2.DataController;
+var upload_1 = __webpack_require__("../../../../../../@signnature/client/contracts/upload.js");
+var upload_2 = __webpack_require__("../../../../../../@signnature/client/contracts/upload.js");
+exports.Upload = upload_2.Upload;
+var usercontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/usercontroller.js");
+var usercontroller_2 = __webpack_require__("../../../../../../@signnature/client/contracts/usercontroller.js");
+exports.UserController = usercontroller_2.UserController;
+var authcontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/authcontroller.js");
+var authcontroller_2 = __webpack_require__("../../../../../../@signnature/client/contracts/authcontroller.js");
+exports.AuthController = authcontroller_2.AuthController;
+var screensdatacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/screensdatacontroller.js");
+var screensdatacontroller_2 = __webpack_require__("../../../../../../@signnature/client/contracts/screensdatacontroller.js");
+exports.ScreensDataController = screensdatacontroller_2.ScreensDataController;
+var librarydatacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/librarydatacontroller.js");
+var librarydatacontroller_2 = __webpack_require__("../../../../../../@signnature/client/contracts/librarydatacontroller.js");
+exports.LibraryDataController = librarydatacontroller_2.LibraryDataController;
+var playlist_1 = __webpack_require__("../../../../../../@signnature/client/contracts/playlist.js");
+var playlist_2 = __webpack_require__("../../../../../../@signnature/client/contracts/playlist.js");
+exports.Playlist = playlist_2.Playlist;
+var slidesdatacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/slidesdatacontroller.ts");
+var slidesdatacontroller_2 = __webpack_require__("../../../../../../@signnature/client/contracts/slidesdatacontroller.ts");
+exports.SlidesDataController = slidesdatacontroller_2.SlidesDataController;
+function getAll() {
+    return ['DataController', 'Upload', 'UserController', 'AuthController', 'ScreensDataController', 'LibraryDataController', 'Playlist', 'SlidesDataController'];
+}
+exports.getAll = getAll;
+function get(contractName) {
+    switch (contractName) {
+        case 'DataController':
+            return datacontroller_1.DataController;
+        case 'Upload':
+            return upload_1.Upload;
+        case 'UserController':
+            return usercontroller_1.UserController;
+        case 'AuthController':
+            return authcontroller_1.AuthController;
+        case 'ScreensDataController':
+            return screensdatacontroller_1.ScreensDataController;
+        case 'LibraryDataController':
+            return librarydatacontroller_1.LibraryDataController;
+        case 'Playlist':
+            return playlist_1.Playlist;
+        case 'SlidesDataController':
+            return slidesdatacontroller_1.SlidesDataController;
+    }
+}
+exports.get = get;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/$$_lazy_route_resource lazy recursive":
 /***/ (function(module, exports) {
 
@@ -326,7 +1782,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/fesm5/core.js");
-var client_1 = __webpack_require__("../../../../@methodus/client/dist/methodus-client.js");
+var client_1 = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
 client_1.Rest.intercept(function (req) {
     var idToken = localStorage.getItem('token');
     if (idToken) {
@@ -485,7 +1941,16 @@ var DataComponent = /** @class */ (function () {
     function DataComponent(_ngZone) {
         this._ngZone = _ngZone;
     }
-    DataComponent.prototype.updateScreen = function () {
+    DataComponent.prototype.closeSlider = function () {
+        var _this = this;
+        this._ngZone.run(function () { return __awaiter(_this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                this.displayModalNew = 'closing';
+                return [2 /*return*/];
+            });
+        }); });
+    };
+    DataComponent.prototype.updateItem = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -515,7 +1980,7 @@ var DataComponent = /** @class */ (function () {
             });
         });
     };
-    DataComponent.prototype.deleteScreen = function (item) {
+    DataComponent.prototype.deleteItem = function (item) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -862,7 +2327,7 @@ exports.LanguageService = LanguageService;
 /***/ "../../../../../src/app/library/images/images.component.html":
 /***/ (function(module, exports) {
 
-module.exports = " <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow\" >\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}}    \n      <ul class=\"sqr-toolbar\">    \n        <li>\n          <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n        </li>\n        <li>\n          <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>    \n</div>\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n<dialog open={{displayModalNew}}>\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"screenName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"screenName\"  class=\"form-control\" id=\"screenName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"libraryFile\">{{ \"LIBRARY.TOKEN\" | translate }}</label>\n    <input type=\"file\" name=\"libraryFile\">\n  \n  </div>  \n  <button   *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"LIBRARY.UPDATE\" | translate }}</button>\n  <button   *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"LIBRARY.CREATE\" | translate }}</button>\n</form>\n</dialog>\n</div>\n "
+module.exports = " <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\" >\n    {{item.Name}}\n      <ul class=\"sqr-toolbar\">\n        <li>\n          <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n        </li>\n        <li>\n          <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>\n</div>\n<div class=\"slider-container {{displayModalNew}} shadow \">\n<dialog open={{displayModalNew}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n<div class=\"scroller\">\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"libraryName\"  class=\"form-control\" id=\"screenName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"libraryFile\">{{ \"LIBRARY.RESOURCE\" | translate }}</label>\n<div (click)=\"addFiles()\" class=\"btn btn-default\">\n    <file-drop headertext=\"Drop files here\" customstyle=\"dropzone\" (onFileDrop)=\"dropped($event)\">\n    </file-drop>\n    </div>\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.RESOURCE_DESCRIPTION\" | translate }}</small>\n<input type=\"file\" #file style=\"display: none\" (change)=\"selected()\" />  \n  <div class=\"loader\" *ngIf=\"loading\">Loading...</div>\n  <img [src]=\"item.thumb\" (load)=\"clearUpload()\" #imgIndicator id=\"imgIndicator\" />\n  {{loading}}\n  <div *ngIf=\"item.resource && !loading\" [ngStyle]=\"{'background-image': 'url(' + item.resource + ')'}\" class=\"fancy-image\"></div>\n</div> \n</form>\n </div>\n  <button   *ngIf=\"item && item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"LIBRARY.UPDATE\" | translate }}</button>\n  <button   *ngIf=\"!item || !item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"LIBRARY.CREATE\" | translate }}</button>\n</dialog>\n</div>\n "
 
 /***/ }),
 
@@ -874,7 +2339,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".loader,\n.loader:before,\n.loader:after {\n  border-radius: 50%;\n  width: 2.5em;\n  height: 2.5em;\n  -webkit-animation-fill-mode: both;\n  animation-fill-mode: both;\n  -webkit-animation: load7 1.8s infinite ease-in-out;\n  animation: load7 1.8s infinite ease-in-out; }\n\n.loader {\n  color: #ca2e2e;\n  font-size: 10px;\n  margin: 80px auto;\n  position: relative;\n  text-indent: -9999em;\n  -webkit-transform: translateZ(0);\n  transform: translateZ(0);\n  -webkit-animation-delay: -0.16s;\n  animation-delay: -0.16s; }\n\n.loader:before,\n.loader:after {\n  content: '';\n  position: absolute;\n  top: 0; }\n\n.loader:before {\n  left: -3.5em;\n  -webkit-animation-delay: -0.32s;\n  animation-delay: -0.32s; }\n\n.loader:after {\n  left: 3.5em; }\n\n@-webkit-keyframes load7 {\n  0%,\n  80%,\n  100% {\n    -webkit-box-shadow: 0 2.5em 0 -1.3em;\n            box-shadow: 0 2.5em 0 -1.3em; }\n  40% {\n    -webkit-box-shadow: 0 2.5em 0 0;\n            box-shadow: 0 2.5em 0 0; } }\n\n@keyframes load7 {\n  0%,\n  80%,\n  100% {\n    -webkit-box-shadow: 0 2.5em 0 -1.3em;\n            box-shadow: 0 2.5em 0 -1.3em; }\n  40% {\n    -webkit-box-shadow: 0 2.5em 0 0;\n            box-shadow: 0 2.5em 0 0; } }\n\n.dropzone {\n  height: 30px; }\n\n.dropzone .content {\n    height: 30px; }\n\n#imgIndicator {\n  visibility: hidden;\n  width: 1px;\n  height: 1px; }\n\n.fancy-image {\n  width: 100%;\n  height: 250px;\n  background-size: cover !important;\n  background-repeat: no-repeat !important; }\n\n.fancy-thumb {\n  background-position: 50%;\n  background-repeat: no-repeat !important; }\n", ""]);
 
 // exports
 
@@ -946,16 +2411,108 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/fesm5/core.js");
 var data_component_1 = __webpack_require__("../../../../../src/app/data.component.ts");
-var client_1 = __webpack_require__("../../../../@signnature/client/index.js");
+var client_1 = __webpack_require__("../../../../../../@signnature/client/index.js");
 var ImagesComponent = /** @class */ (function (_super) {
     __extends(ImagesComponent, _super);
     function ImagesComponent(_ngZone) {
         var _this = _super.call(this, _ngZone) || this;
         _this._ngZone = _ngZone;
+        _this.files = new Set();
+        _this.uploadComplete = false;
         _this.DataController = client_1.LibraryDataController;
         return _this;
         // this.DataModel = PlaylistModel;
     }
+    ImagesComponent.prototype.addFiles = function () {
+        this.file.nativeElement.click();
+    };
+    ImagesComponent.prototype.clearUpload = function () {
+        var _this = this;
+        this._ngZone.run(function () { return __awaiter(_this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                this.uploadComplete = true;
+                this.loading = false;
+                return [2 /*return*/];
+            });
+        }); });
+    };
+    ImagesComponent.prototype.waitUpload = function (src) {
+        var _this = this;
+        this._ngZone.run(function () { return __awaiter(_this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                if (!this.uploadComplete) {
+                    this.loading = true;
+                    if (this.imgIndicator.nativeElement && src) {
+                        this.imgIndicator.nativeElement.src = src;
+                    }
+                    else {
+                        this.imgIndicator.src = src;
+                    }
+                    setTimeout(function () { _this.waitUpload(src); }, 1000);
+                }
+                return [2 /*return*/];
+            });
+        }); });
+    };
+    ImagesComponent.prototype.selected = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var files, _a, _b, _i, key, s3Path;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        files = this.file.nativeElement.files;
+                        _a = [];
+                        for (_b in files)
+                            _a.push(_b);
+                        _i = 0;
+                        _c.label = 1;
+                    case 1:
+                        if (!(_i < _a.length)) return [3 /*break*/, 4];
+                        key = _a[_i];
+                        if (!!isNaN(parseInt(key, 2))) return [3 /*break*/, 3];
+                        this.uploadComplete = false;
+                        return [4 /*yield*/, client_1.Upload.capture(files[key])];
+                    case 2:
+                        s3Path = _c.sent();
+                        this.item.resource = s3Path.url;
+                        this.item.thumb = s3Path.thumb;
+                        this.waitUpload(s3Path.thumb);
+                        _c.label = 3;
+                    case 3:
+                        _i++;
+                        return [3 /*break*/, 1];
+                    case 4: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ImagesComponent.prototype.dropped = function (event) {
+        var _this = this;
+        for (var _i = 0, _a = event.files; _i < _a.length; _i++) {
+            var droppedFile = _a[_i];
+            // Is it a file?
+            if (droppedFile.fileEntry.isFile) {
+                var fileEntry = droppedFile.fileEntry;
+                fileEntry.file(function (file) { return __awaiter(_this, void 0, void 0, function () {
+                    var s3Path;
+                    return __generator(this, function (_a) {
+                        switch (_a.label) {
+                            case 0:
+                                this.uploadComplete = false;
+                                return [4 /*yield*/, client_1.Upload.capture(file)];
+                            case 1:
+                                s3Path = _a.sent();
+                                this.item.resource = s3Path.url;
+                                this.item.thumb = s3Path.thumb;
+                                this.waitUpload(s3Path.thumb);
+                                return [2 /*return*/];
+                        }
+                    });
+                }); });
+            }
+        }
+    };
     ImagesComponent.prototype.ngOnInit = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
@@ -964,6 +2521,14 @@ var ImagesComponent = /** @class */ (function (_super) {
             });
         });
     };
+    __decorate([
+        core_1.ViewChild('file'),
+        __metadata("design:type", Object)
+    ], ImagesComponent.prototype, "file", void 0);
+    __decorate([
+        core_1.ViewChild('imgIndicator'),
+        __metadata("design:type", Object)
+    ], ImagesComponent.prototype, "imgIndicator", void 0);
     ImagesComponent = __decorate([
         core_1.Component({
             selector: 'app-images',
@@ -1159,7 +2724,7 @@ exports.MainComponent = MainComponent;
 /***/ "../../../../../src/app/library/slides/slides.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  slides works!\n</p>\n"
+module.exports = " <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow\" >\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}}    \n      <ul class=\"sqr-toolbar\">    \n        <li>\n          <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n        </li>\n        <li>\n          <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>    \n</div>\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n<dialog open={{displayModalNew}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"screenName\">{{ \"SCREENS.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"screenName\"  class=\"form-control\" id=\"screenName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"exampleInputPassword1\">{{ \"SCREENS.TOKEN\" | translate }}</label>\n    <input type=\"text\" [(ngModel)]=\"item.Token\" name=\"txtToken\" class=\"form-control\" id=\"txtToken\" placeholder=\"{{'SCREENS.TOKEN' | translate}}\">\n  </div>  \n  <button   *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"SCREENS.UPDATE\" | translate }}</button>\n  <button   *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"SCREENS.CREATE\" | translate }}</button>\n</form>\n</dialog>\n</div>\n\n<!--\n<table class=\"table\">\n  <thead class=\"thead-dark\">\n    <tr>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">First</th>\n      <th scope=\"col\">Last</th>\n      <th scope=\"col\">Handle</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th scope=\"row\">1</th>\n      <td>Mark</td>\n      <td>Otto</td>\n      <td>@mdo</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">2</th>\n      <td>Jacob</td>\n      <td>Thornton</td>\n      <td>@fat</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">3</th>\n      <td>Larry</td>\n      <td>the Bird</td>\n      <td>@twitter</td>\n    </tr>\n  </tbody>\n</table>\n\n<table class=\"table\">\n  <thead class=\"thead-light\">\n    <tr>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">First</th>\n      <th scope=\"col\">Last</th>\n      <th scope=\"col\">Handle</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th scope=\"row\">1</th>\n      <td>Mark</td>\n      <td>Otto</td>\n      <td>@mdo</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">2</th>\n      <td>Jacob</td>\n      <td>Thornton</td>\n      <td>@fat</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">3</th>\n      <td>Larry</td>\n      <td>the Bird</td>\n      <td>@twitter</td>\n    </tr>\n  </tbody>\n</table>\n-->"
 
 /***/ }),
 
@@ -1186,6 +2751,16 @@ module.exports = module.exports.toString();
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1195,12 +2770,60 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/fesm5/core.js");
-var SlidesComponent = /** @class */ (function () {
-    function SlidesComponent() {
+var data_component_1 = __webpack_require__("../../../../../src/app/data.component.ts");
+var SlidesComponent = /** @class */ (function (_super) {
+    __extends(SlidesComponent, _super);
+    function SlidesComponent(_ngZone) {
+        var _this = _super.call(this, _ngZone) || this;
+        _this._ngZone = _ngZone;
+        _this.DataController = Slides;
+        return _this;
+        // this.DataModel = PlaylistModel;
     }
     SlidesComponent.prototype.ngOnInit = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                this.loadItems();
+                return [2 /*return*/];
+            });
+        });
     };
     SlidesComponent = __decorate([
         core_1.Component({
@@ -1208,10 +2831,10 @@ var SlidesComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/library/slides/slides.component.html"),
             styles: [__webpack_require__("../../../../../src/app/library/slides/slides.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [core_1.NgZone])
     ], SlidesComponent);
     return SlidesComponent;
-}());
+}(data_component_1.DataComponent));
 exports.SlidesComponent = SlidesComponent;
 
 
@@ -1481,7 +3104,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/fesm5/core.js");
 var user_context_service_1 = __webpack_require__("../../../../../src/app/user.context.service.ts");
-var client_1 = __webpack_require__("../../../../@signnature/client/index.js");
+var client_1 = __webpack_require__("../../../../../../@signnature/client/index.js");
 var router_1 = __webpack_require__("../../../router/fesm5/router.js");
 var modal_1 = __webpack_require__("../../../../ngx-bootstrap/modal/index.js");
 var angularx_social_login_1 = __webpack_require__("../../../../angularx-social-login/angularx-social-login.es5.js");
@@ -1818,7 +3441,7 @@ exports.ManageComponent = ManageComponent;
 /***/ "../../../../../src/app/playlists/playlists.component.html":
 /***/ (function(module, exports) {
 
-module.exports = " <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow\" >\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}}    \n      <ul class=\"sqr-toolbar\">    \n        <li>\n          <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n        </li>\n        <li>\n          <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>    \n</div>\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n<dialog open={{displayModalNew}}>\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"screenName\">{{ \"SCREENS.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"screenName\"  class=\"form-control\" id=\"screenName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"exampleInputPassword1\">{{ \"SCREENS.TOKEN\" | translate }}</label>\n    <input type=\"text\" [(ngModel)]=\"item.Token\" name=\"txtToken\" class=\"form-control\" id=\"txtToken\" placeholder=\"{{'SCREENS.TOKEN' | translate}}\">\n  </div>  \n  <button   *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"SCREENS.UPDATE\" | translate }}</button>\n  <button   *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"SCREENS.CREATE\" | translate }}</button>\n</form>\n</dialog>\n</div>\n\n<!--\n<table class=\"table\">\n  <thead class=\"thead-dark\">\n    <tr>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">First</th>\n      <th scope=\"col\">Last</th>\n      <th scope=\"col\">Handle</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th scope=\"row\">1</th>\n      <td>Mark</td>\n      <td>Otto</td>\n      <td>@mdo</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">2</th>\n      <td>Jacob</td>\n      <td>Thornton</td>\n      <td>@fat</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">3</th>\n      <td>Larry</td>\n      <td>the Bird</td>\n      <td>@twitter</td>\n    </tr>\n  </tbody>\n</table>\n\n<table class=\"table\">\n  <thead class=\"thead-light\">\n    <tr>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">First</th>\n      <th scope=\"col\">Last</th>\n      <th scope=\"col\">Handle</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th scope=\"row\">1</th>\n      <td>Mark</td>\n      <td>Otto</td>\n      <td>@mdo</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">2</th>\n      <td>Jacob</td>\n      <td>Thornton</td>\n      <td>@fat</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">3</th>\n      <td>Larry</td>\n      <td>the Bird</td>\n      <td>@twitter</td>\n    </tr>\n  </tbody>\n</table>\n-->"
+module.exports = " <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow\" >\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}}    \n      <ul class=\"sqr-toolbar\">    \n        <li>\n          <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n        </li>\n        <li>\n          <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>    \n</div>\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n<dialog open={{displayModalNew}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"screenName\">{{ \"SCREENS.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"screenName\"  class=\"form-control\" id=\"screenName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"exampleInputPassword1\">{{ \"SCREENS.TOKEN\" | translate }}</label>\n    <input type=\"text\" [(ngModel)]=\"item.Token\" name=\"txtToken\" class=\"form-control\" id=\"txtToken\" placeholder=\"{{'SCREENS.TOKEN' | translate}}\">\n  </div>  \n  <button   *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"SCREENS.UPDATE\" | translate }}</button>\n  <button   *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"SCREENS.CREATE\" | translate }}</button>\n</form>\n</dialog>\n</div>\n\n<!--\n<table class=\"table\">\n  <thead class=\"thead-dark\">\n    <tr>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">First</th>\n      <th scope=\"col\">Last</th>\n      <th scope=\"col\">Handle</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th scope=\"row\">1</th>\n      <td>Mark</td>\n      <td>Otto</td>\n      <td>@mdo</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">2</th>\n      <td>Jacob</td>\n      <td>Thornton</td>\n      <td>@fat</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">3</th>\n      <td>Larry</td>\n      <td>the Bird</td>\n      <td>@twitter</td>\n    </tr>\n  </tbody>\n</table>\n\n<table class=\"table\">\n  <thead class=\"thead-light\">\n    <tr>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">First</th>\n      <th scope=\"col\">Last</th>\n      <th scope=\"col\">Handle</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th scope=\"row\">1</th>\n      <td>Mark</td>\n      <td>Otto</td>\n      <td>@mdo</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">2</th>\n      <td>Jacob</td>\n      <td>Thornton</td>\n      <td>@fat</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">3</th>\n      <td>Larry</td>\n      <td>the Bird</td>\n      <td>@twitter</td>\n    </tr>\n  </tbody>\n</table>\n-->"
 
 /***/ }),
 
@@ -1901,7 +3524,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/fesm5/core.js");
-var client_1 = __webpack_require__("../../../../@signnature/client/index.js");
+var client_1 = __webpack_require__("../../../../../../@signnature/client/index.js");
 var data_component_1 = __webpack_require__("../../../../../src/app/data.component.ts");
 var PlaylistsComponent = /** @class */ (function (_super) {
     __extends(PlaylistsComponent, _super);
@@ -1999,7 +3622,7 @@ exports.SchedulesComponent = SchedulesComponent;
 /***/ "../../../../../src/app/screens/screens.component.html":
 /***/ (function(module, exports) {
 
-module.exports = " <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow\" >\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}}\n       \n    <ul class=\"sqr-toolbar\">\n        <li>\n    <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n</li>\n    <li>\n    <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n</li>\n</ul>\n    \n    </div>    \n</div>\n\n \n<div class=\"slider-container {{displayModalNew}} shadow\">\n<dialog open={{displayModalNew}}>\n\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"screenName\">{{ \"SCREENS.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"screenName\"  class=\"form-control\" id=\"screenName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"exampleInputPassword1\">{{ \"SCREENS.TOKEN\" | translate }}</label>\n    <input type=\"text\" [(ngModel)]=\"item.Token\" name=\"txtToken\" class=\"form-control\" id=\"txtToken\" placeholder=\"{{'SCREENS.TOKEN' | translate}}\">\n  </div>\n  \n  <button   *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"SCREENS.UPDATE\" | translate }}</button>\n\n   <button   *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"SCREENS.CREATE\" | translate }}</button>\n\n</form>\n</dialog>\n</div>\n "
+module.exports = " <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow\" >\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}}\n       \n    <ul class=\"sqr-toolbar\">\n        <li>\n    <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n</li>\n    <li>\n    <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n</li>\n</ul>\n    \n    </div>    \n</div>\n\n \n<div class=\"slider-container {{displayModalNew}} shadow\">\n<dialog open={{displayModalNew}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"screenName\">{{ \"SCREENS.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"screenName\"  class=\"form-control\" id=\"screenName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"exampleInputPassword1\">{{ \"SCREENS.TOKEN\" | translate }}</label>\n    <input type=\"text\" [(ngModel)]=\"item.Token\" name=\"txtToken\" class=\"form-control\" id=\"txtToken\" placeholder=\"{{'SCREENS.TOKEN' | translate}}\">\n  </div>\n  \n  <button   *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"SCREENS.UPDATE\" | translate }}</button>\n\n   <button   *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"SCREENS.CREATE\" | translate }}</button>\n\n</form>\n</dialog>\n</div>\n "
 
 /***/ }),
 
@@ -2082,7 +3705,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/fesm5/core.js");
-var client_1 = __webpack_require__("../../../../@signnature/client/index.js");
+var client_1 = __webpack_require__("../../../../../../@signnature/client/index.js");
 var data_component_1 = __webpack_require__("../../../../../src/app/data.component.ts");
 var ScreensComponent = /** @class */ (function (_super) {
     __extends(ScreensComponent, _super);
@@ -2290,6 +3913,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/fesm5/core.js");
 var core_2 = __webpack_require__("../../../../@ngx-translate/core/fesm5/ngx-translate-core.js");
 var dictionary_service_1 = __webpack_require__("../../../../../src/app/services/language/dictionary.service.ts");
+var ngx_file_drop_1 = __webpack_require__("../../../../ngx-file-drop/fesm5/ngx-file-drop.js");
 var SharedModule = /** @class */ (function () {
     function SharedModule(translate) {
         // this language will be used as a fallback when a translation isn't found in the current language
@@ -2305,10 +3929,10 @@ var SharedModule = /** @class */ (function () {
     var SharedModule_1;
     SharedModule = SharedModule_1 = __decorate([
         core_1.NgModule({
-            imports: [core_2.TranslateModule.forChild()],
+            imports: [core_2.TranslateModule.forChild(), ngx_file_drop_1.FileDropModule],
             declarations: [],
             providers: [core_2.TranslateService, dictionary_service_1.DictionaryService],
-            exports: [core_2.TranslateModule],
+            exports: [core_2.TranslateModule, ngx_file_drop_1.FileDropModule],
         }),
         __metadata("design:paramtypes", [core_2.TranslateService])
     ], SharedModule);
@@ -2395,7 +4019,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/fesm5/core.js");
-var client_1 = __webpack_require__("../../../../@signnature/client/index.js");
+var client_1 = __webpack_require__("../../../../../../@signnature/client/index.js");
 var user_context_service_1 = __webpack_require__("../../../../../src/app/user.context.service.ts");
 var router_1 = __webpack_require__("../../../router/fesm5/router.js");
 var SignupComponent = /** @class */ (function () {
@@ -2715,7 +4339,7 @@ exports.environment = {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var client_1 = __webpack_require__("../../../../@methodus/client/dist/methodus-client.js");
+var client_1 = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
 window.METHODUS_CONFIG = { methodType: client_1.MethodType.Http };
 var core_1 = __webpack_require__("../../../core/fesm5/core.js");
 var platform_browser_dynamic_1 = __webpack_require__("../../../platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
