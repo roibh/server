@@ -116,8 +116,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
         while (_) try {
-            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [0, t.value];
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
                 case 0: case 1: t = op; break;
                 case 4: _.label++; return { value: op[1], done: false };
@@ -394,8 +394,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
         while (_) try {
-            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [0, t.value];
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
                 case 0: case 1: t = op; break;
                 case 4: _.label++; return { value: op[1], done: false };
@@ -565,8 +565,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
         while (_) try {
-            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [0, t.value];
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
                 case 0: case 1: t = op; break;
                 case 4: _.label++; return { value: op[1], done: false };
@@ -587,7 +587,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var excludedProps = ["constructor"];
-var _1 = __webpack_require__(0);
+var commons_1 = __webpack_require__(0);
 var rest_1 = __webpack_require__(1);
 var methodMetadataKey = "methodus";
 var metadataKey = "params";
@@ -627,7 +627,7 @@ function Method(verb, route) {
                 return __generator(this, function (_b) {
                     switch (_b.label) {
                         case 0:
-                            config = { methodType: _1.MethodType.Http };
+                            config = { methodType: commons_1.MethodType.Http };
                             if (window.METHODUS_CONFIG) {
                                 config = window.METHODUS_CONFIG;
                             }
@@ -649,8 +649,8 @@ function Method(verb, route) {
                             completeConfiguration = Object.assign({}, methodus, config);
                             _a = config.methodType;
                             switch (_a) {
-                                case _1.MethodType.Mock: return [3 /*break*/, 1];
-                                case _1.MethodType.Http: return [3 /*break*/, 3];
+                                case commons_1.MethodType.Mock: return [3 /*break*/, 1];
+                                case commons_1.MethodType.Http: return [3 /*break*/, 3];
                             }
                             return [3 /*break*/, 5];
                         case 1: return [4 /*yield*/, originalMethod.apply(target, args)];
@@ -934,7 +934,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sat Dec 15 2018 17:51:41 GMT+0200 (Israel Standard Time)
+// Generated at: Sat Dec 15 2018 18:07:03 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
 var AuthController = /** @class */ (function () {
     function AuthController() {
@@ -1007,7 +1007,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sat Dec 15 2018 17:51:41 GMT+0200 (Israel Standard Time)
+// Generated at: Sat Dec 15 2018 18:07:03 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
 var DataController = /** @class */ (function () {
     function DataController() {
@@ -1101,7 +1101,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sat Dec 15 2018 17:51:41 GMT+0200 (Israel Standard Time)
+// Generated at: Sat Dec 15 2018 18:07:03 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
 /*start custom*/
 var datacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/datacontroller.js");
@@ -1154,7 +1154,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sat Dec 15 2018 17:51:41 GMT+0200 (Israel Standard Time)
+// Generated at: Sat Dec 15 2018 18:07:03 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
 /*start custom*/
 var datacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/datacontroller.js");
@@ -1197,7 +1197,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sat Dec 15 2018 17:51:41 GMT+0200 (Israel Standard Time)
+// Generated at: Sat Dec 15 2018 18:07:03 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
 /*start custom*/
 var datacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/datacontroller.js");
@@ -1217,10 +1217,46 @@ exports.ScreensDataController = ScreensDataController;
 
 /***/ }),
 
-/***/ "../../../../../../@signnature/client/contracts/slidesdatacontroller.ts":
-/***/ (function(module, exports) {
+/***/ "../../../../../../@signnature/client/contracts/slidesdatacontroller.js":
+/***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// TMLA methodus contract.
+// Generated at: Sat Dec 15 2018 18:07:03 GMT+0200 (Israel Standard Time)
+var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
+/*start custom*/
+var datacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/datacontroller.js");
+var SlidesDataController = /** @class */ (function (_super) {
+    __extends(SlidesDataController, _super);
+    function SlidesDataController() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    SlidesDataController = __decorate([
+        M.MethodConfig('SlidesDataController'),
+        M.MethodConfigExtend(datacontroller_1.DataController)
+    ], SlidesDataController);
+    return SlidesDataController;
+}(datacontroller_1.DataController));
+exports.SlidesDataController = SlidesDataController;
+//# sourceMappingURL=slidesdatacontroller.js.map
 
 /***/ }),
 
@@ -1243,7 +1279,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sat Dec 15 2018 17:51:41 GMT+0200 (Israel Standard Time)
+// Generated at: Sat Dec 15 2018 18:07:03 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
 var Upload = /** @class */ (function () {
     function Upload() {
@@ -1291,7 +1327,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sat Dec 15 2018 17:51:41 GMT+0200 (Israel Standard Time)
+// Generated at: Sat Dec 15 2018 18:07:03 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
 /*start custom*/
 var datacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/datacontroller.js");
@@ -1399,7 +1435,7 @@ exports.UserMock = UserMock;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sat Dec 15 2018 17:51:41 GMT+0200 (Israel Standard Time)
+// Generated at: Sat Dec 15 2018 18:07:03 GMT+0200 (Israel Standard Time)
 /**/
 var usermock_1 = __webpack_require__("../../../../../../@signnature/client/includes/usermock.js");
 exports.UserMock = usermock_1.UserMock;
@@ -1424,8 +1460,8 @@ exports.LibraryDataController = librarydatacontroller_2.LibraryDataController;
 var playlist_1 = __webpack_require__("../../../../../../@signnature/client/contracts/playlist.js");
 var playlist_2 = __webpack_require__("../../../../../../@signnature/client/contracts/playlist.js");
 exports.Playlist = playlist_2.Playlist;
-var slidesdatacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/slidesdatacontroller.ts");
-var slidesdatacontroller_2 = __webpack_require__("../../../../../../@signnature/client/contracts/slidesdatacontroller.ts");
+var slidesdatacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/slidesdatacontroller.js");
+var slidesdatacontroller_2 = __webpack_require__("../../../../../../@signnature/client/contracts/slidesdatacontroller.js");
 exports.SlidesDataController = slidesdatacontroller_2.SlidesDataController;
 function getAll() {
     return ['DataController', 'Upload', 'UserController', 'AuthController', 'ScreensDataController', 'LibraryDataController', 'Playlist', 'SlidesDataController'];
@@ -1952,14 +1988,19 @@ var DataComponent = /** @class */ (function () {
     };
     DataComponent.prototype.updateItem = function () {
         return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        this.updateItemRunning = true;
                         this.item.Date = new Date();
                         return [4 /*yield*/, this.DataController.update(this.item._id, this.item)];
                     case 1:
                         _a.sent();
                         this.displayModalNew = '';
+                        setTimeout(function () {
+                            _this.updateItemRunning = false;
+                        }, 500);
                         return [2 /*return*/];
                 }
             });
@@ -2324,10 +2365,252 @@ exports.LanguageService = LanguageService;
 
 /***/ }),
 
+/***/ "../../../../../src/app/library/contenteditable.directive.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/fesm5/core.js");
+var forms_1 = __webpack_require__("../../../forms/fesm5/forms.js");
+var ContenteditableDirective = /** @class */ (function () {
+    function ContenteditableDirective(elementRef, renderer) {
+        this.elementRef = elementRef;
+        this.renderer = renderer;
+        this.propValueAccessor = 'textContent';
+    }
+    ContenteditableDirective_1 = ContenteditableDirective;
+    ContenteditableDirective.prototype.callOnChange = function () {
+        if (typeof this.onChange === 'function') {
+            this.onChange(this.elementRef.nativeElement[this.propValueAccessor]);
+        }
+    };
+    ContenteditableDirective.prototype.callOnTouched = function () {
+        if (typeof this.onTouched === 'function') {
+            this.onTouched();
+        }
+    };
+    /**
+     * Writes a new value to the element.
+     * This method will be called by the forms API to write
+     * to the view when programmatic (model -> view) changes are requested.
+     *
+     * See: [ControlValueAccessor](https://angular.io/api/forms/ControlValueAccessor#members)
+     */
+    ContenteditableDirective.prototype.writeValue = function (value) {
+        var normalizedValue = value == null ? '' : value;
+        this.renderer.setProperty(this.elementRef.nativeElement, this.propValueAccessor, normalizedValue);
+    };
+    /**
+     * Registers a callback function that should be called when
+     * the control's value changes in the UI.
+     *
+     * This is called by the forms API on initialization so it can update
+     * the form model when values propagate from the view (view -> model).
+     */
+    ContenteditableDirective.prototype.registerOnChange = function (fn) {
+        this.onChange = fn;
+    };
+    /**
+     * Registers a callback function that should be called when the control receives a blur event.
+     * This is called by the forms API on initialization so it can update the form model on blur.
+     */
+    ContenteditableDirective.prototype.registerOnTouched = function (fn) {
+        this.onTouched = fn;
+    };
+    /**
+     * This function is called by the forms API when the control status changes to or from "DISABLED".
+     * Depending on the value, it should enable or disable the appropriate DOM element.
+     */
+    ContenteditableDirective.prototype.setDisabledState = function (isDisabled) {
+        if (isDisabled) {
+            this.renderer.setAttribute(this.elementRef.nativeElement, 'disabled', 'true');
+            this.removeDisabledState = this.renderer.listen(this.elementRef.nativeElement, 'keydown', this.listenerDisabledState);
+        }
+        else {
+            if (this.removeDisabledState) {
+                this.renderer.removeAttribute(this.elementRef.nativeElement, 'disabled');
+                this.removeDisabledState();
+            }
+        }
+    };
+    ContenteditableDirective.prototype.listenerDisabledState = function (e) {
+        e.preventDefault();
+    };
+    var ContenteditableDirective_1;
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], ContenteditableDirective.prototype, "propValueAccessor", void 0);
+    __decorate([
+        core_1.HostListener('input'),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], ContenteditableDirective.prototype, "callOnChange", null);
+    __decorate([
+        core_1.HostListener('blur'),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], ContenteditableDirective.prototype, "callOnTouched", null);
+    ContenteditableDirective = ContenteditableDirective_1 = __decorate([
+        core_1.Directive({
+            selector: '[contenteditable]',
+            providers: [
+                { provide: forms_1.NG_VALUE_ACCESSOR, useExisting: core_1.forwardRef(function () { return ContenteditableDirective_1; }), multi: true }
+            ]
+        }),
+        __metadata("design:paramtypes", [core_1.ElementRef, core_1.Renderer2])
+    ], ContenteditableDirective);
+    return ContenteditableDirective;
+}());
+exports.ContenteditableDirective = ContenteditableDirective;
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/element/element.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div *ngIf=\"element.position\" ngDraggable [zIndex]=\"element.zIndex\" [handle]=\"ElementHandle\" [position]=\"element.position\"\n  class=\"drag-block element\" (edge)=\"checkEdge($event)\" [bounds]=\"myBounds\" [inBounds]=\"inBounds\" (started)=\"onStart($event)\"\n  (stopped)=\"onStop($event)\" (movingOffset)=\"onMoving($event)\" [preventDefaultEvent]=\"true\" (endOffset)=\"onMoveEnd($event)\">\n   <span\n    contenteditable=\"true\"   \n    [(ngModel)]=\"element.name\"\n    ></span>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/element/element.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".drag-block {\n  background-color: #000000;\n  padding: 15px;\n  cursor: crosshair;\n  position: relative; }\n  .drag-block span {\n    cursor: text;\n    display: inline;\n    position: relative; }\n  .element {\n  min-width: 150px; }\n  .element .active {\n    border: 1px solid black; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/element/element.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/fesm5/core.js");
+var ElementComponent = /** @class */ (function () {
+    function ElementComponent(_ngZone) {
+        this._ngZone = _ngZone;
+        this.inBounds = true;
+        this.edge = {
+            top: true,
+            bottom: true,
+            left: true,
+            right: true
+        };
+    }
+    ElementComponent.prototype.ngOnInit = function () {
+    };
+    ElementComponent.prototype.onStart = function (event) {
+    };
+    ElementComponent.prototype.checkEdge = function (event) {
+        this.edge = event;
+        console.log('edge:', event);
+    };
+    ElementComponent.prototype.onStop = function (event) {
+    };
+    ElementComponent.prototype.onMoving = function (event) {
+        var _this = this;
+        this._ngZone.run(function () { return __awaiter(_this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                this.position = event;
+                return [2 /*return*/];
+            });
+        }); });
+    };
+    ElementComponent.prototype.onMoveEnd = function (event) {
+        this.element.position = event;
+    };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], ElementComponent.prototype, "element", void 0);
+    ElementComponent = __decorate([
+        core_1.Component({
+            selector: 'app-element',
+            template: __webpack_require__("../../../../../src/app/library/element/element.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/library/element/element.component.scss")]
+        }),
+        __metadata("design:paramtypes", [core_1.NgZone])
+    ], ElementComponent);
+    return ElementComponent;
+}());
+exports.ElementComponent = ElementComponent;
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/library/images/images.component.html":
 /***/ (function(module, exports) {
 
-module.exports = " <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\" >\n    {{item.Name}}\n      <ul class=\"sqr-toolbar\">\n        <li>\n          <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n        </li>\n        <li>\n          <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>\n</div>\n<div class=\"slider-container {{displayModalNew}} shadow \">\n<dialog open={{displayModalNew}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n<div class=\"scroller\">\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"libraryName\"  class=\"form-control\" id=\"screenName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"libraryFile\">{{ \"LIBRARY.RESOURCE\" | translate }}</label>\n<div (click)=\"addFiles()\" class=\"btn btn-default\">\n    <file-drop headertext=\"Drop files here\" customstyle=\"dropzone\" (onFileDrop)=\"dropped($event)\">\n    </file-drop>\n    </div>\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.RESOURCE_DESCRIPTION\" | translate }}</small>\n<input type=\"file\" #file style=\"display: none\" (change)=\"selected()\" />  \n  <div class=\"loader\" *ngIf=\"loading\">Loading...</div>\n  <img [src]=\"item.thumb\" (load)=\"clearUpload()\" #imgIndicator id=\"imgIndicator\" />\n  {{loading}}\n  <div *ngIf=\"item.resource && !loading\" [ngStyle]=\"{'background-image': 'url(' + item.resource + ')'}\" class=\"fancy-image\"></div>\n</div> \n</form>\n </div>\n  <button   *ngIf=\"item && item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"LIBRARY.UPDATE\" | translate }}</button>\n  <button   *ngIf=\"!item || !item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"LIBRARY.CREATE\" | translate }}</button>\n</dialog>\n</div>\n "
+module.exports = " <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\" >\n    {{item.Name}}\n      <ul class=\"sqr-toolbar\">\n        <li>\n          <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n        </li>\n        <li>\n          <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>\n</div>\n<div class=\"slider-container {{displayModalNew}} shadow \">\n<dialog open={{displayModalNew}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n<div class=\"scroller\">\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"libraryName\"  class=\"form-control\" id=\"screenName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"libraryFile\">{{ \"LIBRARY.RESOURCE\" | translate }}</label>\n<app-upload [item]=\"item\"></app-upload>\n</div>\n   \n</form>\n </div>\n  <button   *ngIf=\"item && item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"LIBRARY.UPDATE\" | translate }}</button>\n  <button   *ngIf=\"!item || !item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"LIBRARY.CREATE\" | translate }}</button>\n</dialog>\n</div>\n "
 
 /***/ }),
 
@@ -2339,7 +2622,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".loader,\n.loader:before,\n.loader:after {\n  border-radius: 50%;\n  width: 2.5em;\n  height: 2.5em;\n  -webkit-animation-fill-mode: both;\n  animation-fill-mode: both;\n  -webkit-animation: load7 1.8s infinite ease-in-out;\n  animation: load7 1.8s infinite ease-in-out; }\n\n.loader {\n  color: #ca2e2e;\n  font-size: 10px;\n  margin: 80px auto;\n  position: relative;\n  text-indent: -9999em;\n  -webkit-transform: translateZ(0);\n  transform: translateZ(0);\n  -webkit-animation-delay: -0.16s;\n  animation-delay: -0.16s; }\n\n.loader:before,\n.loader:after {\n  content: '';\n  position: absolute;\n  top: 0; }\n\n.loader:before {\n  left: -3.5em;\n  -webkit-animation-delay: -0.32s;\n  animation-delay: -0.32s; }\n\n.loader:after {\n  left: 3.5em; }\n\n@-webkit-keyframes load7 {\n  0%,\n  80%,\n  100% {\n    -webkit-box-shadow: 0 2.5em 0 -1.3em;\n            box-shadow: 0 2.5em 0 -1.3em; }\n  40% {\n    -webkit-box-shadow: 0 2.5em 0 0;\n            box-shadow: 0 2.5em 0 0; } }\n\n@keyframes load7 {\n  0%,\n  80%,\n  100% {\n    -webkit-box-shadow: 0 2.5em 0 -1.3em;\n            box-shadow: 0 2.5em 0 -1.3em; }\n  40% {\n    -webkit-box-shadow: 0 2.5em 0 0;\n            box-shadow: 0 2.5em 0 0; } }\n\n.dropzone {\n  height: 30px; }\n\n.dropzone .content {\n    height: 30px; }\n\n#imgIndicator {\n  visibility: hidden;\n  width: 1px;\n  height: 1px; }\n\n.fancy-image {\n  width: 100%;\n  height: 250px;\n  background-size: cover !important;\n  background-repeat: no-repeat !important; }\n\n.fancy-thumb {\n  background-position: 50%;\n  background-repeat: no-repeat !important; }\n", ""]);
+exports.push([module.i, ".fancy-thumb {\n  background-position: 50%;\n  background-repeat: no-repeat !important; }\n", ""]);
 
 // exports
 
@@ -2417,102 +2700,10 @@ var ImagesComponent = /** @class */ (function (_super) {
     function ImagesComponent(_ngZone) {
         var _this = _super.call(this, _ngZone) || this;
         _this._ngZone = _ngZone;
-        _this.files = new Set();
-        _this.uploadComplete = false;
         _this.DataController = client_1.LibraryDataController;
         return _this;
         // this.DataModel = PlaylistModel;
     }
-    ImagesComponent.prototype.addFiles = function () {
-        this.file.nativeElement.click();
-    };
-    ImagesComponent.prototype.clearUpload = function () {
-        var _this = this;
-        this._ngZone.run(function () { return __awaiter(_this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                this.uploadComplete = true;
-                this.loading = false;
-                return [2 /*return*/];
-            });
-        }); });
-    };
-    ImagesComponent.prototype.waitUpload = function (src) {
-        var _this = this;
-        this._ngZone.run(function () { return __awaiter(_this, void 0, void 0, function () {
-            var _this = this;
-            return __generator(this, function (_a) {
-                if (!this.uploadComplete) {
-                    this.loading = true;
-                    if (this.imgIndicator.nativeElement && src) {
-                        this.imgIndicator.nativeElement.src = src;
-                    }
-                    else {
-                        this.imgIndicator.src = src;
-                    }
-                    setTimeout(function () { _this.waitUpload(src); }, 1000);
-                }
-                return [2 /*return*/];
-            });
-        }); });
-    };
-    ImagesComponent.prototype.selected = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var files, _a, _b, _i, key, s3Path;
-            return __generator(this, function (_c) {
-                switch (_c.label) {
-                    case 0:
-                        files = this.file.nativeElement.files;
-                        _a = [];
-                        for (_b in files)
-                            _a.push(_b);
-                        _i = 0;
-                        _c.label = 1;
-                    case 1:
-                        if (!(_i < _a.length)) return [3 /*break*/, 4];
-                        key = _a[_i];
-                        if (!!isNaN(parseInt(key, 2))) return [3 /*break*/, 3];
-                        this.uploadComplete = false;
-                        return [4 /*yield*/, client_1.Upload.capture(files[key])];
-                    case 2:
-                        s3Path = _c.sent();
-                        this.item.resource = s3Path.url;
-                        this.item.thumb = s3Path.thumb;
-                        this.waitUpload(s3Path.thumb);
-                        _c.label = 3;
-                    case 3:
-                        _i++;
-                        return [3 /*break*/, 1];
-                    case 4: return [2 /*return*/];
-                }
-            });
-        });
-    };
-    ImagesComponent.prototype.dropped = function (event) {
-        var _this = this;
-        for (var _i = 0, _a = event.files; _i < _a.length; _i++) {
-            var droppedFile = _a[_i];
-            // Is it a file?
-            if (droppedFile.fileEntry.isFile) {
-                var fileEntry = droppedFile.fileEntry;
-                fileEntry.file(function (file) { return __awaiter(_this, void 0, void 0, function () {
-                    var s3Path;
-                    return __generator(this, function (_a) {
-                        switch (_a.label) {
-                            case 0:
-                                this.uploadComplete = false;
-                                return [4 /*yield*/, client_1.Upload.capture(file)];
-                            case 1:
-                                s3Path = _a.sent();
-                                this.item.resource = s3Path.url;
-                                this.item.thumb = s3Path.thumb;
-                                this.waitUpload(s3Path.thumb);
-                                return [2 /*return*/];
-                        }
-                    });
-                }); });
-            }
-        }
-    };
     ImagesComponent.prototype.ngOnInit = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
@@ -2521,14 +2712,6 @@ var ImagesComponent = /** @class */ (function (_super) {
             });
         });
     };
-    __decorate([
-        core_1.ViewChild('file'),
-        __metadata("design:type", Object)
-    ], ImagesComponent.prototype, "file", void 0);
-    __decorate([
-        core_1.ViewChild('imgIndicator'),
-        __metadata("design:type", Object)
-    ], ImagesComponent.prototype, "imgIndicator", void 0);
     ImagesComponent = __decorate([
         core_1.Component({
             selector: 'app-images',
@@ -2540,6 +2723,145 @@ var ImagesComponent = /** @class */ (function (_super) {
     return ImagesComponent;
 }(data_component_1.DataComponent));
 exports.ImagesComponent = ImagesComponent;
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/inline-edit/inline-edit.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".bold {\n  font-weight: 700;\n}\n\n.block {\n  display: inline-block;\n}\n\ndiv.inline-edit {\n  text-decoration: none;\n  border-bottom: #A8B9CE dashed 1px;\n  cursor: pointer;\n  text-align: left;\n  padding: .5em 0;\n  color: #444 !important;\n  width: auto;\n}\n\ninput {\n  border: 1px solid #ccc;\n  border-radius: 2px;\n  padding: 4px 10px;\n}\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/inline-edit/inline-edit.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div>\n  <div *ngIf=\"editing\">\n    <input #inlineEditControl [required]=\"required\" (blur)=\"onBlur($event)\" [name]=\"value\" [(ngModel)]=\"value\" [type]=\"type\" [placeholder]=\"label\" />\n  </div>\n  <div *ngIf=\"!editing\">\n    <label class=\"block bold\">{{label}}</label>\n    <div title=\"Click to edit\" (click)=\"edit(value)\" (focus)=\"edit(value);\" tabindex=\"0\" class=\"inline-edit\">{{value}}&nbsp;</div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/inline-edit/inline-edit.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/fesm5/core.js");
+var forms_1 = __webpack_require__("../../../forms/fesm5/forms.js");
+var INLINE_EDIT_CONTROL_VALUE_ACCESSOR = {
+    provide: forms_1.NG_VALUE_ACCESSOR,
+    useExisting: core_1.forwardRef(function () { return InlineEditComponent; }),
+    multi: true
+};
+var InlineEditComponent = /** @class */ (function () {
+    function InlineEditComponent(element, _renderer) {
+        this._renderer = _renderer;
+        this.label = ''; // Label value for input element
+        this.type = 'text'; // The type of input element
+        this.required = false; // Is input requried?
+        this.disabled = false; // Is input disabled?
+        this._value = ''; // Private variable for input value
+        this.preValue = ''; // The value before clicking to edit
+        this.editing = false; // Is Component in edit mode?
+        this.onChange = Function.prototype; // Trascend the onChange event
+        this.onTouched = Function.prototype; // Trascend the onTouch event
+    }
+    Object.defineProperty(InlineEditComponent.prototype, "value", {
+        // Control Value Accessors for ngModel
+        get: function () {
+            return this._value;
+        },
+        set: function (v) {
+            if (v !== this._value) {
+                this._value = v;
+                this.onChange(v);
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    // Required for ControlValueAccessor interface
+    InlineEditComponent.prototype.writeValue = function (value) {
+        this._value = value;
+    };
+    // Required forControlValueAccessor interface
+    InlineEditComponent.prototype.registerOnChange = function (fn) {
+        this.onChange = fn;
+    };
+    // Required forControlValueAccessor interface
+    InlineEditComponent.prototype.registerOnTouched = function (fn) {
+        this.onTouched = fn;
+    };
+    // Do stuff when the input element loses focus
+    InlineEditComponent.prototype.onBlur = function ($event) {
+        this.editing = false;
+    };
+    // Start the editting process for the input element
+    InlineEditComponent.prototype.edit = function (value) {
+        var _this = this;
+        if (this.disabled) {
+            return;
+        }
+        this.preValue = value;
+        this.editing = true;
+        // Focus on the input element just as the editing begins
+        setTimeout(function (_) { return _this._renderer.invokeElementMethod(_this.inlineEditControl, 'focus', []); });
+    };
+    InlineEditComponent.prototype.ngOnInit = function () {
+    };
+    __decorate([
+        core_1.ViewChild('inlineEditControl'),
+        __metadata("design:type", core_1.ElementRef)
+    ], InlineEditComponent.prototype, "inlineEditControl", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], InlineEditComponent.prototype, "label", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], InlineEditComponent.prototype, "type", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], InlineEditComponent.prototype, "required", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], InlineEditComponent.prototype, "disabled", void 0);
+    InlineEditComponent = __decorate([
+        core_1.Component({
+            selector: 'app-inline-edit',
+            template: __webpack_require__("../../../../../src/app/library/inline-edit/inline-edit.component.html"),
+            providers: [INLINE_EDIT_CONTROL_VALUE_ACCESSOR],
+            styles: [__webpack_require__("../../../../../src/app/library/inline-edit/inline-edit.component.css")]
+        }),
+        __metadata("design:paramtypes", [core_1.ElementRef, core_1.Renderer])
+    ], InlineEditComponent);
+    return InlineEditComponent;
+}());
+exports.InlineEditComponent = InlineEditComponent;
 
 
 /***/ }),
@@ -2630,12 +2952,18 @@ var sounds_component_1 = __webpack_require__("../../../../../src/app/library/sou
 var slides_component_1 = __webpack_require__("../../../../../src/app/library/slides/slides.component.ts");
 var library_component_1 = __webpack_require__("../../../../../src/app/library/library.component.ts");
 var forms_1 = __webpack_require__("../../../forms/fesm5/forms.js");
+var upload_component_1 = __webpack_require__("../../../../../src/app/library/upload/upload.component.ts");
+var element_component_1 = __webpack_require__("../../../../../src/app/library/element/element.component.ts");
+var contenteditable_directive_1 = __webpack_require__("../../../../../src/app/library/contenteditable.directive.ts");
+var slide_editor_component_1 = __webpack_require__("../../../../../src/app/library/slide-editor/slide-editor.component.ts");
+var inline_edit_component_1 = __webpack_require__("../../../../../src/app/library/inline-edit/inline-edit.component.ts");
 __export(__webpack_require__("../../../../../src/app/library/main/main.component.ts"));
 exports.libraryRoutes = [
     { path: 'images', component: images_component_1.ImagesComponent },
     { path: 'videos', component: videos_component_1.VideosComponent },
     { path: 'sounds', component: sounds_component_1.SoundsComponent },
     { path: 'slides', component: slides_component_1.SlidesComponent },
+    { path: 'slides/:id', component: slide_editor_component_1.SlideEditorComponent },
 ];
 var LibraryModule = /** @class */ (function () {
     function LibraryModule() {
@@ -2650,7 +2978,8 @@ var LibraryModule = /** @class */ (function () {
             ],
             exports: [library_component_1.LibraryComponent, router_1.RouterModule],
             entryComponents: [library_component_1.LibraryComponent],
-            declarations: [images_component_1.ImagesComponent, videos_component_1.VideosComponent, sounds_component_1.SoundsComponent, slides_component_1.SlidesComponent, library_component_1.LibraryComponent]
+            declarations: [inline_edit_component_1.InlineEditComponent, contenteditable_directive_1.ContenteditableDirective, images_component_1.ImagesComponent, slide_editor_component_1.SlideEditorComponent,
+                videos_component_1.VideosComponent, sounds_component_1.SoundsComponent, slides_component_1.SlidesComponent, library_component_1.LibraryComponent, upload_component_1.UploadComponent, element_component_1.ElementComponent, slide_editor_component_1.SlideEditorComponent]
         })
     ], LibraryModule);
     return LibraryModule;
@@ -2721,10 +3050,172 @@ exports.MainComponent = MainComponent;
 
 /***/ }),
 
+/***/ "../../../../../src/app/library/slide-editor/slide-editor.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div *ngIf=\"item\">\n  <div>\n    <div class=\"btn-group btn-group-toggle\" data-toggle=\"buttons\">\n      <label class=\"btn btn-secondary\" (click)=\"setEditorMode('Designer');\">\n        <input type=\"radio\" name=\"options\" id=\"designer\" autocomplete=\"off\" checked> Designer\n      </label>\n      <label class=\"btn btn-secondary\" (click)=\"setEditorMode('Source');\">\n        <input type=\"radio\" name=\"options\" id=\"source\" autocomplete=\"off\"> Source\n      </label>\n    </div>\n  </div>\n  <div *ngIf=\"editorMode==='Designer'\">\n    <button class=\"btn btn-primary\" (click)=\"resetItem()\">{{ \"SLIDES.RESET\" | translate }}</button>\n    <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">\n      <div class=\"btn-spinner-host\"> <i class=\"btn-spinner\" *ngIf=\"updateItemRunning\"></i> {{ \"SLIDES.UPDATE\" | translate }} </div>\n    </button>\n    <button *ngIf=\"!item._id\" class=\"btn btn-primary btn-spinner-host\" (click)=\"createItem()\"><i class=\"btn-spinner\"></i>\n      {{ \"SLIDES.CREATE\" | translate }}</button>\n\n    <button (click)=\"newBlockElement()\">New</button>\n \n  <p\n    contenteditable=\"true\"\n   \n    [(ngModel)]=\"item.name\"\n    ></p>\n    \n\n    <div class=\"row slide-editor\">\n      <div class=\"col-md-9\">\n        <div class=\"slide-canvas drag-boundary\" class=\"drag-boundary\" [ngClass]=\"{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }\"\n          #myBounds>\n          <app-element *ngFor=\"let el of item.elements\" (click)=\"designerFocus($event)\" [element]=\"el\"></app-element>\n        </div>\n      </div>\n      <div class=\"col-md-3\">\n        <ul class=\"list-group\">\n          <ol class=\"list-group-item\" *ngFor=\"let el of item.elements\">\n            <app-inline-edit [(ngModel)]=\"el.name\" label=\"Name\" [required]=\"true\" type=\"text\">\n            </app-inline-edit>\n          </ol>\n        </ul>\n      </div>\n    </div>\n  </div>\n  <div *ngIf=\"editorMode==='Source'\">\n    <pre> {{item.elements | json}}</pre>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/slide-editor/slide-editor.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".slide-editor {\n  width: 100%;\n  border: 1px solid black; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/slide-editor/slide-editor.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/fesm5/core.js");
+var router_1 = __webpack_require__("../../../router/fesm5/router.js");
+var data_component_1 = __webpack_require__("../../../../../src/app/data.component.ts");
+var client_1 = __webpack_require__("../../../../../../@signnature/client/index.js");
+var SlideEditorComponent = /** @class */ (function (_super) {
+    __extends(SlideEditorComponent, _super);
+    function SlideEditorComponent(_ngZone, route) {
+        var _this = _super.call(this, _ngZone) || this;
+        _this._ngZone = _ngZone;
+        _this.route = route;
+        _this.editorMode = 'Designer';
+        _this.DataController = client_1.SlidesDataController;
+        return _this;
+    }
+    SlideEditorComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        if (!this.item) {
+            this.route.params.subscribe(function (data) { return __awaiter(_this, void 0, void 0, function () {
+                var _a;
+                return __generator(this, function (_b) {
+                    switch (_b.label) {
+                        case 0:
+                            _a = this;
+                            return [4 /*yield*/, client_1.SlidesDataController.get(data.id)];
+                        case 1:
+                            _a.item = _b.sent();
+                            return [2 /*return*/];
+                    }
+                });
+            }); });
+        }
+    };
+    SlideEditorComponent.prototype.resetItem = function () {
+        this.item = { name: this.item.name, _id: this.item._id };
+        this.item.elements = [];
+    };
+    SlideEditorComponent.prototype.newBlockElement = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                if (!this.item) {
+                    this.item = [];
+                }
+                if (!this.item.elements) {
+                    this.item.elements = [];
+                }
+                this.item.elements.push({ position: { x: 0, y: 0 }, class: 'h1', zIndex: 1000 + this.item.elements.length + 1 });
+                return [2 /*return*/];
+            });
+        });
+    };
+    SlideEditorComponent.prototype.setEditorMode = function (editorMode) {
+        this.editorMode = editorMode;
+    };
+    SlideEditorComponent.prototype.designerFocus = function (element) {
+        document.querySelector('.element'); // .removeClass('active');
+        // window.$('.element').removeClass('active');
+        // window.$(element).addClass('active');
+    };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], SlideEditorComponent.prototype, "item", void 0);
+    SlideEditorComponent = __decorate([
+        core_1.Component({
+            selector: 'app-slide-editor',
+            template: __webpack_require__("../../../../../src/app/library/slide-editor/slide-editor.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/library/slide-editor/slide-editor.component.scss")]
+        }),
+        __metadata("design:paramtypes", [core_1.NgZone, router_1.ActivatedRoute])
+    ], SlideEditorComponent);
+    return SlideEditorComponent;
+}(data_component_1.DataComponent));
+exports.SlideEditorComponent = SlideEditorComponent;
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/library/slides/slides.component.html":
 /***/ (function(module, exports) {
 
-module.exports = " <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow\" >\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}}    \n      <ul class=\"sqr-toolbar\">    \n        <li>\n          <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n        </li>\n        <li>\n          <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>    \n</div>\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n<dialog open={{displayModalNew}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"screenName\">{{ \"SCREENS.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"screenName\"  class=\"form-control\" id=\"screenName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"exampleInputPassword1\">{{ \"SCREENS.TOKEN\" | translate }}</label>\n    <input type=\"text\" [(ngModel)]=\"item.Token\" name=\"txtToken\" class=\"form-control\" id=\"txtToken\" placeholder=\"{{'SCREENS.TOKEN' | translate}}\">\n  </div>  \n  <button   *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"SCREENS.UPDATE\" | translate }}</button>\n  <button   *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"SCREENS.CREATE\" | translate }}</button>\n</form>\n</dialog>\n</div>\n\n<!--\n<table class=\"table\">\n  <thead class=\"thead-dark\">\n    <tr>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">First</th>\n      <th scope=\"col\">Last</th>\n      <th scope=\"col\">Handle</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th scope=\"row\">1</th>\n      <td>Mark</td>\n      <td>Otto</td>\n      <td>@mdo</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">2</th>\n      <td>Jacob</td>\n      <td>Thornton</td>\n      <td>@fat</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">3</th>\n      <td>Larry</td>\n      <td>the Bird</td>\n      <td>@twitter</td>\n    </tr>\n  </tbody>\n</table>\n\n<table class=\"table\">\n  <thead class=\"thead-light\">\n    <tr>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">First</th>\n      <th scope=\"col\">Last</th>\n      <th scope=\"col\">Handle</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th scope=\"row\">1</th>\n      <td>Mark</td>\n      <td>Otto</td>\n      <td>@mdo</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">2</th>\n      <td>Jacob</td>\n      <td>Thornton</td>\n      <td>@fat</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">3</th>\n      <td>Larry</td>\n      <td>the Bird</td>\n      <td>@twitter</td>\n    </tr>\n  </tbody>\n</table>\n-->"
+module.exports = "<div class=\"container no-margin\">\n  <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}}\n    <ul class=\"sqr-toolbar\">\n      <li>\n        <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-xs btn-primary\" [routerLink]=\"[item._id]\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n    </ul>\n  </div>\n</div>\n<div class=\"slider-container-wide {{displayModalNew}} shadow\">\n  <dialog open= {{displayModalNew}}>\n    <a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\"></i></a>\n    <form *ngIf=\"item\">\n      <div class=\"form-group\">\n        <label for=\"screenName\">{{ \"SLIDES.NAME\" | translate }}:</label>\n        <input type=\"text\" name=\"slideName\" class=\"form-control\" id=\"screenName\" [(ngModel)]=\"item.Name\">\n        <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SLIDES.NAME_HELP\" | translate }}</small>\n      </div>\n      <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"SCREENS.UPDATE\" | translate }}</button>\n      <button *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"SCREENS.CREATE\" | translate }}</button>\n      <div class=\"form-group\">\n\n        <app-slide-editor></app-slide-editor>\n\n\n      </div>\n    </form>\n  </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -2736,7 +3227,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".slide-canvas {\n  position: absolute;\n  border: 2px solid black; }\n\n.h1 {\n  font-size: 24px;\n  font-weight: bold; }\n", ""]);
 
 // exports
 
@@ -2808,12 +3299,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/fesm5/core.js");
 var data_component_1 = __webpack_require__("../../../../../src/app/data.component.ts");
+var client_1 = __webpack_require__("../../../../../../@signnature/client/index.js");
 var SlidesComponent = /** @class */ (function (_super) {
     __extends(SlidesComponent, _super);
     function SlidesComponent(_ngZone) {
         var _this = _super.call(this, _ngZone) || this;
         _this._ngZone = _ngZone;
-        _this.DataController = Slides;
+        _this.DataController = client_1.SlidesDataController;
         return _this;
         // this.DataModel = PlaylistModel;
     }
@@ -2897,6 +3389,208 @@ var SoundsComponent = /** @class */ (function () {
     return SoundsComponent;
 }());
 exports.SoundsComponent = SoundsComponent;
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/upload/upload.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div (click)=\"addFiles()\" class=\"btn btn-default\">\n    <file-drop headertext=\"Drop files here\" customstyle=\"dropzone\" (onFileDrop)=\"dropped($event)\">\n    </file-drop>\n    </div>\n <input type=\"file\" #file style=\"display: none\" (change)=\"selected()\" />  \n     <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.RESOURCE_DESCRIPTION\" | translate }}</small>\n<div *ngIf=\"item\"> \n  <div class=\"loader\" *ngIf=\"loading\">Loading...</div>\n  <img [src]=\"item.thumb\" (load)=\"clearUpload()\" #imgIndicator id=\"imgIndicator\" /> \n  <div *ngIf=\"item.resource && !loading\" [ngStyle]=\"{'background-image': 'url(' + item.resource + ')'}\" class=\"fancy-image\"></div>\n </div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/upload/upload.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".loader,\n.loader:before,\n.loader:after {\n  border-radius: 50%;\n  width: 2.5em;\n  height: 2.5em;\n  -webkit-animation-fill-mode: both;\n  animation-fill-mode: both;\n  -webkit-animation: load7 1.8s infinite ease-in-out;\n  animation: load7 1.8s infinite ease-in-out; }\n\n.loader {\n  color: #ca2e2e;\n  font-size: 10px;\n  margin: 80px auto;\n  position: relative;\n  text-indent: -9999em;\n  -webkit-transform: translateZ(0);\n  transform: translateZ(0);\n  -webkit-animation-delay: -0.16s;\n  animation-delay: -0.16s; }\n\n.loader:before,\n.loader:after {\n  content: '';\n  position: absolute;\n  top: 0; }\n\n.loader:before {\n  left: -3.5em;\n  -webkit-animation-delay: -0.32s;\n  animation-delay: -0.32s; }\n\n.loader:after {\n  left: 3.5em; }\n\n@-webkit-keyframes load7 {\n  0%,\n  80%,\n  100% {\n    -webkit-box-shadow: 0 2.5em 0 -1.3em;\n            box-shadow: 0 2.5em 0 -1.3em; }\n  40% {\n    -webkit-box-shadow: 0 2.5em 0 0;\n            box-shadow: 0 2.5em 0 0; } }\n\n@keyframes load7 {\n  0%,\n  80%,\n  100% {\n    -webkit-box-shadow: 0 2.5em 0 -1.3em;\n            box-shadow: 0 2.5em 0 -1.3em; }\n  40% {\n    -webkit-box-shadow: 0 2.5em 0 0;\n            box-shadow: 0 2.5em 0 0; } }\n\n.dropzone {\n  height: 30px; }\n\n.dropzone .content {\n    height: 30px; }\n\n#imgIndicator {\n  visibility: hidden;\n  width: 1px;\n  height: 1px; }\n\n.fancy-image {\n  width: 100%;\n  height: 250px;\n  background-size: cover !important;\n  background-repeat: no-repeat !important; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/upload/upload.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/fesm5/core.js");
+var client_1 = __webpack_require__("../../../../../../@signnature/client/index.js");
+var UploadComponent = /** @class */ (function () {
+    function UploadComponent(_ngZone) {
+        this._ngZone = _ngZone;
+        this.files = new Set();
+        this.uploadComplete = false;
+    }
+    UploadComponent.prototype.ngOnInit = function () {
+    };
+    UploadComponent.prototype.addFiles = function () {
+        this.file.nativeElement.click();
+    };
+    UploadComponent.prototype.clearUpload = function () {
+        var _this = this;
+        this._ngZone.run(function () { return __awaiter(_this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                this.uploadComplete = true;
+                this.loading = false;
+                return [2 /*return*/];
+            });
+        }); });
+    };
+    UploadComponent.prototype.waitUpload = function (src) {
+        var _this = this;
+        this._ngZone.run(function () { return __awaiter(_this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                if (!this.uploadComplete) {
+                    this.loading = true;
+                    if (this.imgIndicator.nativeElement && src) {
+                        this.imgIndicator.nativeElement.src = src;
+                    }
+                    else {
+                        this.imgIndicator.src = src;
+                    }
+                    setTimeout(function () { _this.waitUpload(src); }, 1000);
+                }
+                return [2 /*return*/];
+            });
+        }); });
+    };
+    UploadComponent.prototype.selected = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var files, _a, _b, _i, key, s3Path;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        files = this.file.nativeElement.files;
+                        _a = [];
+                        for (_b in files)
+                            _a.push(_b);
+                        _i = 0;
+                        _c.label = 1;
+                    case 1:
+                        if (!(_i < _a.length)) return [3 /*break*/, 4];
+                        key = _a[_i];
+                        if (!!isNaN(parseInt(key, 2))) return [3 /*break*/, 3];
+                        this.uploadComplete = false;
+                        return [4 /*yield*/, client_1.Upload.capture(files[key])];
+                    case 2:
+                        s3Path = _c.sent();
+                        this.item.resource = s3Path.url;
+                        this.item.thumb = s3Path.thumb;
+                        this.waitUpload(s3Path.thumb);
+                        _c.label = 3;
+                    case 3:
+                        _i++;
+                        return [3 /*break*/, 1];
+                    case 4: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    UploadComponent.prototype.dropped = function (event) {
+        var _this = this;
+        for (var _i = 0, _a = event.files; _i < _a.length; _i++) {
+            var droppedFile = _a[_i];
+            // Is it a file?
+            if (droppedFile.fileEntry.isFile) {
+                var fileEntry = droppedFile.fileEntry;
+                fileEntry.file(function (file) { return __awaiter(_this, void 0, void 0, function () {
+                    var s3Path;
+                    return __generator(this, function (_a) {
+                        switch (_a.label) {
+                            case 0:
+                                this.uploadComplete = false;
+                                return [4 /*yield*/, client_1.Upload.capture(file)];
+                            case 1:
+                                s3Path = _a.sent();
+                                this.item.resource = s3Path.url;
+                                this.item.thumb = s3Path.thumb;
+                                this.waitUpload(s3Path.thumb);
+                                return [2 /*return*/];
+                        }
+                    });
+                }); });
+            }
+        }
+    };
+    __decorate([
+        core_1.ViewChild('file'),
+        __metadata("design:type", Object)
+    ], UploadComponent.prototype, "file", void 0);
+    __decorate([
+        core_1.ViewChild('imgIndicator'),
+        __metadata("design:type", Object)
+    ], UploadComponent.prototype, "imgIndicator", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], UploadComponent.prototype, "item", void 0);
+    UploadComponent = __decorate([
+        core_1.Component({
+            selector: 'app-upload',
+            template: __webpack_require__("../../../../../src/app/library/upload/upload.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/library/upload/upload.component.scss")]
+        }),
+        __metadata("design:paramtypes", [core_1.NgZone])
+    ], UploadComponent);
+    return UploadComponent;
+}());
+exports.UploadComponent = UploadComponent;
 
 
 /***/ }),
@@ -3914,6 +4608,8 @@ var core_1 = __webpack_require__("../../../core/fesm5/core.js");
 var core_2 = __webpack_require__("../../../../@ngx-translate/core/fesm5/ngx-translate-core.js");
 var dictionary_service_1 = __webpack_require__("../../../../../src/app/services/language/dictionary.service.ts");
 var ngx_file_drop_1 = __webpack_require__("../../../../ngx-file-drop/fesm5/ngx-file-drop.js");
+var angular_draggable_droppable_1 = __webpack_require__("../../../../angular-draggable-droppable/fesm5/angular-draggable-droppable.js");
+var angular2_draggable_1 = __webpack_require__("../../../../angular2-draggable/fesm5/angular2-draggable.js");
 var SharedModule = /** @class */ (function () {
     function SharedModule(translate) {
         // this language will be used as a fallback when a translation isn't found in the current language
@@ -3929,10 +4625,10 @@ var SharedModule = /** @class */ (function () {
     var SharedModule_1;
     SharedModule = SharedModule_1 = __decorate([
         core_1.NgModule({
-            imports: [core_2.TranslateModule.forChild(), ngx_file_drop_1.FileDropModule],
+            imports: [core_2.TranslateModule.forChild(), ngx_file_drop_1.FileDropModule, angular_draggable_droppable_1.DragAndDropModule, angular2_draggable_1.AngularDraggableModule],
             declarations: [],
             providers: [core_2.TranslateService, dictionary_service_1.DictionaryService],
-            exports: [core_2.TranslateModule, ngx_file_drop_1.FileDropModule],
+            exports: [core_2.TranslateModule, ngx_file_drop_1.FileDropModule, angular_draggable_droppable_1.DragAndDropModule, angular2_draggable_1.AngularDraggableModule],
         }),
         __metadata("design:paramtypes", [core_2.TranslateService])
     ], SharedModule);

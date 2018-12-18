@@ -42,10 +42,20 @@
   "DASHBOARD": {
     "FOOTER": "All rights reserved ©"
   },
-  "LIBRARY":{
-    "NAME":"Name",
+  "LIBRARY": {
+    "NAME": "Name",
     "RESOURCE": "Resource",
     "RESOURCE_DESCRIPTION": "Images (jpg,gif) videos (mp4) audio (mp3)",
+    "CREATE": "Create",
+    "UPDATE": "Update"
+  },
+  "SLIDES": {
+    "NAME": "Name your slide",
+    "NAME_HELP": "Try using a meaningful name",
+    "TYPE": "Type",
+    "STATUS": "Status",
+    "LAST_DATE": "Last active date",
+    "RESET": "Reset",
     "CREATE": "Create",
     "UPDATE": "Update"
   }
