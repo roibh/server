@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && node index.js",
+    "start": "node index.js",
+    "postinstall": "tsc",
     "build": "tsc",
     "test": "nyc --reporter=lcov --reporter=html npm run xtest && nyc report",
     "xtest": "alsatian tests/*.spec.js",
@@ -22,18 +23,18 @@
     "@methodus/describe": "^2.0.0",
     "@methodus/server": "^2.0.0",
     "@types/node": "^10.0.4",
-    "alsatian": "^2.3.0",
     "aws-sdk": "^2.368.0",
     "chrome-bridge": "^0.1.2",
     "jsonwebtoken": "^8.4.0",
     "logelas": "^3.0.10",
     "moment": "^2.22.2",
-    "nyc": "^12.0.2",
     "object-hash": "^1.3.0",
-    "tslint": "^5.11.0",
     "uuid": "^3.2.1"
   },
   "devDependencies": {
+    "nyc": "^12.0.2",
+    "alsatian": "^2.3.0",
+    "tslint": "^5.11.0",
     "typescript": "^3.1.3",
     "@methodus/contracts": "latest"
   }
