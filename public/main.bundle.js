@@ -2482,7 +2482,7 @@ exports.ContenteditableDirective = ContenteditableDirective;
 /***/ "../../../../../src/app/library/element/element.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"element.position\" ngDraggable [zIndex]=\"element.zIndex\" [handle]=\"ElementHandle\" [position]=\"element.position\"\n  class=\"drag-block element\" (edge)=\"checkEdge($event)\" [bounds]=\"myBounds\" [inBounds]=\"inBounds\" (started)=\"onStart($event)\"\n  (stopped)=\"onStop($event)\" (movingOffset)=\"onMoving($event)\" [preventDefaultEvent]=\"true\" (endOffset)=\"onMoveEnd($event)\"\n  >   \n  \n  <span\n    contenteditable=\"true\"   \n    [(ngModel)]=\"element.name\"\n    *ngIf=\"element.type === 'text'\"></span> \n   <img [src]=\"element.src\" *ngIf=\"element.type === 'image'\"     />    \n</div>\n"
+module.exports = "<div *ngIf=\"element.position\"  ngDraggable [zIndex]=\"element.zIndex\" [handle]=\"ElementHandle\" [position]=\"element.position\"\n  class=\"drag-block element\" (edge)=\"checkEdge($event)\" [bounds]=\"myBounds\" [inBounds]=\"inBounds\" (started)=\"onStart($event)\"\n  (stopped)=\"onStop($event)\" (movingOffset)=\"onMoving($event)\" [preventDefaultEvent]=\"false\" (endOffset)=\"onMoveEnd($event)\"\n  (click)=\"focus($event)\" >   \n \n    <span\n      contenteditable=\"true\"   \n      [(ngModel)]=\"element.name\"\n      *ngIf=\"element.type === 'text'\"></span> \n    <img [src]=\"element.src\" *ngIf=\"element.type === 'image'\"     />    \n  \n</div>\n"
 
 /***/ }),
 
@@ -2555,9 +2555,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/fesm5/core.js");
+var selection_service_1 = __webpack_require__("../../../../../src/app/library/selection.service.ts");
 var ElementComponent = /** @class */ (function () {
-    function ElementComponent(_ngZone) {
+    function ElementComponent(_ngZone, _selectionService) {
         this._ngZone = _ngZone;
+        this._selectionService = _selectionService;
         this.inBounds = true;
         this.edge = {
             top: true,
@@ -2569,6 +2571,9 @@ var ElementComponent = /** @class */ (function () {
     ElementComponent.prototype.ngOnInit = function () {
     };
     ElementComponent.prototype.onStart = function (event) {
+    };
+    ElementComponent.prototype.focus = function (element) {
+        this._selectionService.focus(element);
     };
     ElementComponent.prototype.checkEdge = function (event) {
         this.edge = event;
@@ -2598,11 +2603,90 @@ var ElementComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/library/element/element.component.html"),
             styles: [__webpack_require__("../../../../../src/app/library/element/element.component.scss")]
         }),
-        __metadata("design:paramtypes", [core_1.NgZone])
+        __metadata("design:paramtypes", [core_1.NgZone, selection_service_1.SelectionService])
     ], ElementComponent);
     return ElementComponent;
 }());
 exports.ElementComponent = ElementComponent;
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/finder/finder.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div>\n\n\n<input type=\"text\" name=\"searchPhrase\" /><button class=\"btn btn-primary\"></button>\n\n\n <div class=\"container no-margin\"> \n    <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\" >\n    {{item.Name}}\n      <ul class=\"sqr-toolbar\">\n        <li>\n          <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n        </li>\n        <li>\n          <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>\n</div>\n\n \n\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/finder/finder.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/finder/finder.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/fesm5/core.js");
+var data_component_1 = __webpack_require__("../../../../../src/app/data.component.ts");
+var client_1 = __webpack_require__("../../../../../../@signnature/client/index.js");
+var FinderComponent = /** @class */ (function (_super) {
+    __extends(FinderComponent, _super);
+    function FinderComponent(_ngZone) {
+        var _this = _super.call(this, _ngZone) || this;
+        _this._ngZone = _ngZone;
+        _this.DataController = client_1.LibraryDataController;
+        return _this;
+    }
+    FinderComponent.prototype.ngOnInit = function () {
+        this.loadItems();
+    };
+    FinderComponent = __decorate([
+        core_1.Component({
+            selector: 'app-finder',
+            template: __webpack_require__("../../../../../src/app/library/finder/finder.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/library/finder/finder.component.scss")]
+        }),
+        __metadata("design:paramtypes", [core_1.NgZone])
+    ], FinderComponent);
+    return FinderComponent;
+}(data_component_1.DataComponent));
+exports.FinderComponent = FinderComponent;
 
 
 /***/ }),
@@ -2957,6 +3041,8 @@ var element_component_1 = __webpack_require__("../../../../../src/app/library/el
 var contenteditable_directive_1 = __webpack_require__("../../../../../src/app/library/contenteditable.directive.ts");
 var slide_editor_component_1 = __webpack_require__("../../../../../src/app/library/slide-editor/slide-editor.component.ts");
 var inline_edit_component_1 = __webpack_require__("../../../../../src/app/library/inline-edit/inline-edit.component.ts");
+var finder_component_1 = __webpack_require__("../../../../../src/app/library/finder/finder.component.ts");
+var selection_service_1 = __webpack_require__("../../../../../src/app/library/selection.service.ts");
 __export(__webpack_require__("../../../../../src/app/library/main/main.component.ts"));
 exports.libraryRoutes = [
     { path: 'images', component: images_component_1.ImagesComponent },
@@ -2978,8 +3064,12 @@ var LibraryModule = /** @class */ (function () {
             ],
             exports: [library_component_1.LibraryComponent, router_1.RouterModule],
             entryComponents: [library_component_1.LibraryComponent],
-            declarations: [inline_edit_component_1.InlineEditComponent, contenteditable_directive_1.ContenteditableDirective, images_component_1.ImagesComponent, slide_editor_component_1.SlideEditorComponent,
-                videos_component_1.VideosComponent, sounds_component_1.SoundsComponent, slides_component_1.SlidesComponent, library_component_1.LibraryComponent, upload_component_1.UploadComponent, element_component_1.ElementComponent, slide_editor_component_1.SlideEditorComponent]
+            declarations: [inline_edit_component_1.InlineEditComponent, contenteditable_directive_1.ContenteditableDirective, images_component_1.ImagesComponent,
+                slide_editor_component_1.SlideEditorComponent,
+                videos_component_1.VideosComponent, sounds_component_1.SoundsComponent, slides_component_1.SlidesComponent,
+                library_component_1.LibraryComponent, upload_component_1.UploadComponent, element_component_1.ElementComponent,
+                slide_editor_component_1.SlideEditorComponent, finder_component_1.FinderComponent],
+            providers: [selection_service_1.SelectionService]
         })
     ], LibraryModule);
     return LibraryModule;
@@ -3050,10 +3140,48 @@ exports.MainComponent = MainComponent;
 
 /***/ }),
 
+/***/ "../../../../../src/app/library/selection.service.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/fesm5/core.js");
+var SelectionService = /** @class */ (function () {
+    function SelectionService() {
+        this.selection = [];
+    }
+    SelectionService.prototype.focus = function (element) {
+        var all = document.querySelectorAll('.element');
+        for (var i = 0; i < all.length; i++) {
+            all[i].className = all[i].className.replace('selected', '');
+        }
+        element.currentTarget.className = element.currentTarget.className + ' selected';
+    };
+    SelectionService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [])
+    ], SelectionService);
+    return SelectionService;
+}());
+exports.SelectionService = SelectionService;
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/library/slide-editor/slide-editor.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"item\">\n  <div>\n    <div class=\"btn-group btn-group-toggle\" data-toggle=\"buttons\">\n      <label class=\"btn btn-secondary\" (click)=\"setEditorMode('Designer');\">\n        <input type=\"radio\" name=\"options\" id=\"designer\" autocomplete=\"off\" checked> Designer\n      </label>\n      <label class=\"btn btn-secondary\" (click)=\"setEditorMode('Source');\">\n        <input type=\"radio\" name=\"options\" id=\"source\" autocomplete=\"off\"> Source\n      </label>\n    </div>\n  </div>\n  <div *ngIf=\"editorMode==='Designer'\">\n    <button class=\"btn btn-primary\" (click)=\"resetItem()\">{{ \"SLIDES.RESET\" | translate }}</button>\n    <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">\n      <div class=\"btn-spinner-host\"> <i class=\"btn-spinner\" *ngIf=\"updateItemRunning\"></i> {{ \"SLIDES.UPDATE\" | translate }} </div>\n    </button>\n    <button *ngIf=\"!item._id\" class=\"btn btn-primary btn-spinner-host\" (click)=\"createItem()\"><i class=\"btn-spinner\"></i>\n      {{ \"SLIDES.CREATE\" | translate }}</button>\n\n    <button (click)=\"newTextBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"fas fa-font\"></i></button>\n    <button (click)=\"newImageBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"far fa-image\"></i></button>\n    <button (click)=\"newVideoBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"fas fa-video\"></i></button>\n  <button (click)=\"newPluginBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"fas fa-plug\"></i></button>\n  <p\n    contenteditable=\"true\"\n   \n    [(ngModel)]=\"item.name\"\n    ></p>\n    \n\n    <div class=\"row slide-editor\">\n      <div class=\"col-md-9\">\n        <div class=\"slide-canvas drag-boundary\" class=\"drag-boundary\" [ngClass]=\"{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }\"\n          #myBounds>\n          <app-element *ngFor=\"let el of item.elements\" (click)=\"designerFocus($event)\" [element]=\"el\"></app-element>\n        </div>\n      </div>\n      <div class=\"col-md-3\">\n        <ul class=\"list-group\">\n          <ol class=\"list-group-item\" *ngFor=\"let el of item.elements\">\n            <app-inline-edit [(ngModel)]=\"el.name\" label=\"Name\" [required]=\"true\" type=\"text\">\n            </app-inline-edit>\n          </ol>\n        </ul>\n      </div>\n    </div>\n  </div>\n  <div *ngIf=\"editorMode==='Source'\">\n    <pre> {{item.elements | json}}</pre>\n  </div>\n</div>\n"
+module.exports = "<div *ngIf=\"item\">\n  <div>\n    <div class=\"btn-group btn-group-toggle\" data-toggle=\"buttons\">\n      <label class=\"btn btn-secondary\" (click)=\"setEditorMode('Designer');\">\n        <input type=\"radio\" name=\"options\" id=\"designer\" autocomplete=\"off\" checked> Designer\n      </label>\n      <label class=\"btn btn-secondary\" (click)=\"setEditorMode('Source');\">\n        <input type=\"radio\" name=\"options\" id=\"source\" autocomplete=\"off\"> Source\n      </label>\n    </div>\n  </div>\n  <div *ngIf=\"editorMode==='Designer'\">\n    <button class=\"btn btn-primary\" (click)=\"resetItem()\">{{ \"SLIDES.RESET\" | translate }}</button>\n    <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">\n      <div class=\"btn-spinner-host\"> <i class=\"btn-spinner\" *ngIf=\"updateItemRunning\"></i> {{ \"SLIDES.UPDATE\" | translate }} </div>\n    </button>\n    <button *ngIf=\"!item._id\" class=\"btn btn-primary btn-spinner-host\" (click)=\"createItem()\"><i class=\"btn-spinner\"></i>\n      {{ \"SLIDES.CREATE\" | translate }}</button>\n\n    <button (click)=\"newTextBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"fas fa-font\"></i></button>\n    <button (click)=\"newImageBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"far fa-image\"></i></button>\n    <button (click)=\"newVideoBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"fas fa-video\"></i></button>\n  <button (click)=\"newPluginBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"fas fa-plug\"></i></button>\n  <p\n    contenteditable=\"true\"\n   \n    [(ngModel)]=\"item.name\"\n    ></p>\n    \n\n    <div class=\"row slide-editor\">\n      <div class=\"col-md-9\">\n        <div class=\"slide-canvas drag-boundary\" class=\"drag-boundary\" [ngClass]=\"{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }\"\n          #myBounds>\n          <app-element *ngFor=\"let el of item.elements\" (click)=\"designerFocus($event)\" [element]=\"el\"></app-element>\n        </div>\n      </div>\n      <div class=\"col-md-3\">\n        <ul class=\"list-group\">\n          <ol class=\"list-group-item\" *ngFor=\"let el of item.elements\">\n            <app-inline-edit [(ngModel)]=\"el.name\" label=\"Name\" [required]=\"true\" type=\"text\">\n            </app-inline-edit>\n          </ol>\n        </ul>\n      </div>\n    </div>\n  </div>\n  <div *ngIf=\"editorMode==='Source'\">\n    <pre> {{item.elements | json}}</pre>\n  </div>\n</div>\n<app-finder></app-finder>\n"
 
 /***/ }),
 
