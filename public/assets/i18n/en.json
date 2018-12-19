@@ -19,7 +19,9 @@
     "INSERT_PASSWORD": "Please enter a password",
     "INVALID_USERNAME_OR_PASSWORD": "Username or password not found",
     "REMEMBER_ME": "Remember me",
-    "LOGIN_BTN": "Login"
+    "LOGIN_BTN": "Login",
+    "NOTAMEMBER": "Not a member?",
+    "SIGNUP": "Sign up now"
   },
   "SIGNUP": {
     "TITLE": "Signup",
@@ -27,7 +29,10 @@
     "PASSWORD": "Password",
     "USERNAME": "Username",
     "INSERT_PASSWORD": "Please enter a password",
-    "SIGNUP_BTN": "Signup"
+    "SIGNUP_BTN": "Signup",
+    "SIGNIN": "Sign in now",
+    "ALREADYMEMBER": "Already a member?",
+    "RPTPASSWORD": "Repeat password"
   },
   "SCREENS": {
     "NAME": "Name your screen",
@@ -58,5 +63,8 @@
     "RESET": "Reset",
     "CREATE": "Create",
     "UPDATE": "Update"
+  },
+  "DATA": {
+    "CONFIRM_DELETE": "Please confirm the delete."
   }
 }

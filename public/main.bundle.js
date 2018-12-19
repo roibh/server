@@ -1649,6 +1649,7 @@ var language_bar_component_1 = __webpack_require__("../../../../../src/app/langu
 var dialog_component_1 = __webpack_require__("../../../../../src/app/dialog/dialog.component.ts");
 var language_service_1 = __webpack_require__("../../../../../src/app/language.service.ts");
 var library_component_1 = __webpack_require__("../../../../../src/app/library/library.component.ts");
+var editor_toolbar_component_1 = __webpack_require__("../../../../../src/app/library/editor-toolbar/editor-toolbar.component.ts");
 var appRoutes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'signin', component: login_component_1.LoginComponent },
@@ -1665,8 +1666,7 @@ var appRoutes = [
             }, {
                 path: 'library', component: library_component_1.LibraryComponent,
                 children: library_module_1.libraryRoutes.slice()
-            },
-            {
+            }, {
                 path: 'playlists',
                 component: playlists_component_1.PlaylistsComponent,
                 canActivate: [auth_guard_service_1.AuthGuardService],
@@ -1708,6 +1708,7 @@ var AppModule = /** @class */ (function () {
                 signup_component_1.SignupComponent,
                 timelines_component_1.TimelinesComponent,
                 playlists_component_1.PlaylistsComponent,
+                editor_toolbar_component_1.EditorToolbarComponent,
                 schedules_component_1.SchedulesComponent,
                 settings_component_1.SettingsComponent,
                 language_bar_component_1.LanguageBarComponent,
@@ -1854,7 +1855,7 @@ exports.AuthInterceptor = AuthInterceptor;
 /***/ "../../../../../src/app/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper\">\n    <!-- Sidebar  -->\n    <nav id=\"sidebar\" [class]=\"activeClass\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <strong>BS</strong>\n        </div>\n\n        <ul class=\"list-unstyled components\">\n            <li class=\"active\">\n                <a href=\"#homeSubmenu\" data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-home\"></i>\n                    {{\"NAVBAR.HOME\" | translate}}\n                </a>             \n            </li>\n              <li>\n                <a routerLink=\"screens\">\n                    <i class=\"fas fa-desktop\"></i>\n                      {{\"NAVBAR.SCREENS\" | translate}}\n                     \n                </a></li>\n            <li>\n             \n                <a href=\"#LibrarySubmenu\" (click)=\"toggleSubmenu()\"    routerLink=\"library\" data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-copy\"></i>\n                      {{\"NAVBAR.LIBRARY\" | translate}}\n                     \n                </a>\n                <ul class=\"{{subMenuState}} list-unstyled\" id=\"LibrarySubmenu\">\n                    <li>\n                        <a    routerLink=\"library/images\">  {{\"NAVBAR.IMAGES\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a   routerLink=\"library/videos\">  {{\"NAVBAR.VIDEOS\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/sounds\">  {{\"NAVBAR.SOUNDS\" | translate}}</a>\n                    </li>\n                     <li>\n                        <a routerLink=\"library/slides\">  {{\"NAVBAR.SLIDES\" | translate}}</a>\n                    </li>\n                </ul>\n\n            </li>\n              <li>\n                <a routerLink=\"playlists\">\n                    <i class=\"fas fa-step-forward\"></i>\n                      {{\"NAVBAR.PLAYLISTS\" | translate}}\n                     \n                </a></li>\n\n                  <li>\n                <a routerLink=\"schedules\">\n                    <i class=\"fas fa-calendar-alt\"></i>\n                      {{\"NAVBAR.SCHEDULES\" | translate}}\n                    \n                </a></li>\n\n                  <li>\n                <a routerLink=\"settings\">\n                    <i class=\"fas fa-cogs\"></i>\n                      {{\"NAVBAR.SETTINGS\" | translate}}\n                  \n                </a></li>\n\n        </ul>\n\n    </nav>\n\n    <!-- Page Content  -->\n    <div id=\"content\">\n\n \n    <nav class=\"navbar-fixed-top dashboard-nav\">\n        <div class=\"container no-margin\">\n            <ul class=\"mr-auto\">\n                <li class=\"nav-item\"><button type=\"button\" (click)=\"toggleSidebar()\" id=\"sidebarCollapse\" class=\"btn btn-sm btn-info\">\n                    <i class=\"fas fa-align-left\"></i>                  \n                </button></li>\n             \n                <li class=\"nav-item\">\n                 <app-language-bar></app-language-bar>\n                 </li>\n            </ul>\n        </div>\n    </nav>\n\n\n  \n \n\n \n\n<div id=\"scroller\">\n\n        \n         <router-outlet></router-outlet>\n         </div>\n    </div>\n     <footer class=\"footer closed\">\n     {{'DASHBOARD.FOOTER' | translate}}\n     </footer>\n</div>\n\n\n\n\n "
+module.exports = "<div class=\"wrapper\">\n    <!-- Sidebar  -->\n    <nav id=\"sidebar\" [class]=\"activeClass\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <strong>BS</strong>\n        </div>\n\n        <ul class=\"list-unstyled components\">\n            <li class=\"active\">\n                <a href=\"#homeSubmenu\" data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-home\"></i>\n                    {{\"NAVBAR.HOME\" | translate}}\n                </a>             \n            </li>\n              <li>\n                <a routerLink=\"screens\">\n                    <i class=\"fas fa-desktop\"></i>\n                      {{\"NAVBAR.SCREENS\" | translate}}\n                     \n                </a></li>\n            <li>\n             \n                <a href=\"#LibrarySubmenu\" (click)=\"toggleSubmenu()\"    routerLink=\"library\" data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-copy\"></i>\n                      {{\"NAVBAR.LIBRARY\" | translate}}\n                     \n                </a>\n                <ul class=\"{{subMenuState}} list-unstyled\" id=\"LibrarySubmenu\">\n                    <li>\n                        <a    routerLink=\"library/images\">  {{\"NAVBAR.IMAGES\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a   routerLink=\"library/videos\">  {{\"NAVBAR.VIDEOS\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/sounds\">  {{\"NAVBAR.SOUNDS\" | translate}}</a>\n                    </li>\n                     <li>\n                        <a routerLink=\"library/slides\">  {{\"NAVBAR.SLIDES\" | translate}}</a>\n                    </li>\n                </ul>\n\n            </li>\n              <li>\n                <a routerLink=\"playlists\">\n                    <i class=\"fas fa-step-forward\"></i>\n                      {{\"NAVBAR.PLAYLISTS\" | translate}}\n                     \n                </a></li>\n\n                  <li>\n                <a routerLink=\"schedules\">\n                    <i class=\"fas fa-calendar-alt\"></i>\n                      {{\"NAVBAR.SCHEDULES\" | translate}}\n                    \n                </a></li>\n\n                  <li>\n                <a routerLink=\"settings\">\n                    <i class=\"fas fa-cogs\"></i>\n                      {{\"NAVBAR.SETTINGS\" | translate}}\n                  \n                </a></li>\n\n        </ul>\n\n    </nav>\n\n    <!-- Page Content  -->\n    <div id=\"content\">\n\n \n    <nav class=\"navbar-fixed-top dashboard-nav\">\n        <div class=\"container no-margin\">\n            <ul class=\"mr-auto\">\n                <li class=\"nav-item\"><button type=\"button\" (click)=\"toggleSidebar()\" id=\"sidebarCollapse\" class=\"btn btn-sm btn-info\">\n                    <i class=\"fas fa-align-left\"></i>                  \n                </button></li>\n             \n                <li class=\"nav-item\">\n                 <app-language-bar></app-language-bar>\n                 </li>\n            </ul> \n\n            <app-editor-toolbar></app-editor-toolbar>\n        </div>\n     \n\n    </nav>\n\n\n  \n \n\n \n\n<div id=\"scroller\">\n\n        \n         <router-outlet></router-outlet>\n         </div>\n    </div>\n     <footer class=\"footer closed\">\n     {{'DASHBOARD.FOOTER' | translate}}\n     </footer>\n</div>\n\n\n\n\n "
 
 /***/ }),
 
@@ -1974,8 +1975,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var DataComponent = /** @class */ (function () {
-    function DataComponent(_ngZone) {
+    function DataComponent(_ngZone, translateService) {
         this._ngZone = _ngZone;
+        this.translateService = translateService;
     }
     DataComponent.prototype.closeSlider = function () {
         var _this = this;
@@ -2023,17 +2025,24 @@ var DataComponent = /** @class */ (function () {
     };
     DataComponent.prototype.deleteItem = function (item) {
         return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
             return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        if (!confirm('delete')) return [3 /*break*/, 2];
-                        return [4 /*yield*/, this.DataController.delete(item._id)];
-                    case 1:
-                        _a.sent();
-                        this.loadItems();
-                        _a.label = 2;
-                    case 2: return [2 /*return*/];
-                }
+                debugger;
+                this.translateService.get('DATA.CONFIRM_DELETE').subscribe(function (confirmMessage) { return __awaiter(_this, void 0, void 0, function () {
+                    return __generator(this, function (_a) {
+                        switch (_a.label) {
+                            case 0:
+                                if (!confirm("" + confirmMessage)) return [3 /*break*/, 2];
+                                return [4 /*yield*/, this.DataController.delete(item._id)];
+                            case 1:
+                                _a.sent();
+                                this.loadItems();
+                                _a.label = 2;
+                            case 2: return [2 /*return*/];
+                        }
+                    });
+                }); });
+                return [2 /*return*/];
             });
         });
     };
@@ -2365,6 +2374,67 @@ exports.LanguageService = LanguageService;
 
 /***/ }),
 
+/***/ "../../../../../src/app/library/alloy/alloy.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  alloy works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/alloy/alloy.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/alloy/alloy.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/fesm5/core.js");
+var AlloyComponent = /** @class */ (function () {
+    function AlloyComponent() {
+    }
+    AlloyComponent.prototype.ngOnInit = function () {
+    };
+    AlloyComponent = __decorate([
+        core_1.Component({
+            selector: 'app-alloy',
+            template: __webpack_require__("../../../../../src/app/library/alloy/alloy.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/library/alloy/alloy.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], AlloyComponent);
+    return AlloyComponent;
+}());
+exports.AlloyComponent = AlloyComponent;
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/library/contenteditable.directive.ts":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2479,10 +2549,89 @@ exports.ContenteditableDirective = ContenteditableDirective;
 
 /***/ }),
 
+/***/ "../../../../../src/app/library/editor-toolbar/editor-toolbar.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "\n<div> \n  <button (click)=\"newTextBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"fas fa-font\"></i></button>\n  <button (click)=\"newImageBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"far fa-image\"></i></button>\n  <button (click)=\"newVideoBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"fas fa-video\"></i></button>\n  <button (click)=\"newPluginBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"fas fa-plug\"></i></button>\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/editor-toolbar/editor-toolbar.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/library/editor-toolbar/editor-toolbar.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/fesm5/core.js");
+var selection_service_1 = __webpack_require__("../../../../../src/app/library/selection.service.ts");
+var EditorToolbarComponent = /** @class */ (function () {
+    function EditorToolbarComponent(selectionService) {
+        this.selectionService = selectionService;
+    }
+    EditorToolbarComponent.prototype.ngOnInit = function () {
+    };
+    EditorToolbarComponent.prototype.newTextBlockElement = function () {
+        var textBlock = {
+            type: 'text',
+            position: { x: 0, y: 0 }, class: 'h1',
+        };
+        this.selectionService.newBlockElement(textBlock);
+    };
+    EditorToolbarComponent.prototype.newImageBlockElement = function () {
+        var imageBlock = {
+            type: 'image',
+            position: { x: 0, y: 0 },
+            src: 'https://www.publicengagement.ac.uk/sites/default/files/styles/content_width/public/hero/large-crowd-of-people-small.jpg',
+            class: 'img',
+        };
+        this.selectionService.newBlockElement(imageBlock);
+    };
+    EditorToolbarComponent = __decorate([
+        core_1.Component({
+            selector: 'app-editor-toolbar',
+            template: __webpack_require__("../../../../../src/app/library/editor-toolbar/editor-toolbar.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/library/editor-toolbar/editor-toolbar.component.scss")]
+        }),
+        __metadata("design:paramtypes", [selection_service_1.SelectionService])
+    ], EditorToolbarComponent);
+    return EditorToolbarComponent;
+}());
+exports.EditorToolbarComponent = EditorToolbarComponent;
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/library/element/element.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"element.position\"  ngDraggable [zIndex]=\"element.zIndex\" [handle]=\"ElementHandle\" [position]=\"element.position\"\n  class=\"drag-block element\" (edge)=\"checkEdge($event)\" [bounds]=\"myBounds\" [inBounds]=\"inBounds\" (started)=\"onStart($event)\"\n  (stopped)=\"onStop($event)\" (movingOffset)=\"onMoving($event)\" [preventDefaultEvent]=\"false\" (endOffset)=\"onMoveEnd($event)\"\n  (click)=\"focus($event)\" >   \n \n    <span\n      contenteditable=\"true\"   \n      [(ngModel)]=\"element.name\"\n      *ngIf=\"element.type === 'text'\"></span> \n    <img [src]=\"element.src\" *ngIf=\"element.type === 'image'\"     />    \n  \n</div>\n"
+module.exports = "<div *ngIf=\"element.position\"  ngDraggable [zIndex]=\"element.zIndex\" [handle]=\"ElementHandle\" [position]=\"element.position\"\n  class=\"drag-block element\" (edge)=\"checkEdge($event)\" [bounds]=\"myBounds\" [inBounds]=\"inBounds\" (started)=\"onStart($event)\"\n  (stopped)=\"onStop($event)\" (movingOffset)=\"onMoving($event)\" [preventDefaultEvent]=\"false\" (endOffset)=\"onMoveEnd($event)\"\n  (click)=\"focus($event, element)\" >   \n \n<div *ngIf=\"element.type === 'text' && element.selected\">\n\n<select [(ngModel)]=\"font\">\n  <option *ngFor=\"let c of fonts\" [ngValue]=\"c\">{{c.name}}</option>\n</select>\n\n<select [(ngModel)]=\"fontSize\">\n  <option *ngFor=\"let c of sizes\" [ngValue]=\"c\">{{c}}</option>\n</select>\n\n\n</div>\n\n    <span [ngStyle]=\"{'font-family': font.id, 'font-size': fontSize +'px' }\"\n      contenteditable=\"true\"   \n      [(ngModel)]=\"element.name\"\n      *ngIf=\"element.type === 'text'\"></span> \n\n    <img [src]=\"element.src\" *ngIf=\"element.type === 'image'\"     />    \n  \n</div>\n"
 
 /***/ }),
 
@@ -2567,13 +2716,22 @@ var ElementComponent = /** @class */ (function () {
             left: true,
             right: true
         };
+        this.sizes = [10, 12, 14, 16, 18, 20, 22, 24, 40, 58, 72, 120];
+        this.fonts = [{ id: 'arial', name: 'arial' },
+            { id: 'Times New Roman', name: 'Times New Roman' },
+            { id: 'david', name: 'david' }];
     }
     ElementComponent.prototype.ngOnInit = function () {
+        if (this.element && !this.element.style) {
+            this.element.style = { font: '' };
+        }
+        this.font = this.element.style.font;
+        this.fontSize = this.element.style.fontSize;
     };
     ElementComponent.prototype.onStart = function (event) {
     };
-    ElementComponent.prototype.focus = function (element) {
-        this._selectionService.focus(element);
+    ElementComponent.prototype.focus = function (event, element) {
+        this._selectionService.focus(event, element);
     };
     ElementComponent.prototype.checkEdge = function (event) {
         this.edge = event;
@@ -2665,11 +2823,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/fesm5/core.js");
 var data_component_1 = __webpack_require__("../../../../../src/app/data.component.ts");
 var client_1 = __webpack_require__("../../../../../../@signnature/client/index.js");
+var core_2 = __webpack_require__("../../../../@ngx-translate/core/fesm5/ngx-translate-core.js");
 var FinderComponent = /** @class */ (function (_super) {
     __extends(FinderComponent, _super);
-    function FinderComponent(_ngZone) {
-        var _this = _super.call(this, _ngZone) || this;
+    function FinderComponent(_ngZone, translateService) {
+        var _this = _super.call(this, _ngZone, translateService) || this;
         _this._ngZone = _ngZone;
+        _this.translateService = translateService;
         _this.DataController = client_1.LibraryDataController;
         return _this;
     }
@@ -2682,7 +2842,7 @@ var FinderComponent = /** @class */ (function (_super) {
             template: __webpack_require__("../../../../../src/app/library/finder/finder.component.html"),
             styles: [__webpack_require__("../../../../../src/app/library/finder/finder.component.scss")]
         }),
-        __metadata("design:paramtypes", [core_1.NgZone])
+        __metadata("design:paramtypes", [core_1.NgZone, core_2.TranslateService])
     ], FinderComponent);
     return FinderComponent;
 }(data_component_1.DataComponent));
@@ -2779,11 +2939,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/fesm5/core.js");
 var data_component_1 = __webpack_require__("../../../../../src/app/data.component.ts");
 var client_1 = __webpack_require__("../../../../../../@signnature/client/index.js");
+var core_2 = __webpack_require__("../../../../@ngx-translate/core/fesm5/ngx-translate-core.js");
 var ImagesComponent = /** @class */ (function (_super) {
     __extends(ImagesComponent, _super);
-    function ImagesComponent(_ngZone) {
-        var _this = _super.call(this, _ngZone) || this;
+    function ImagesComponent(_ngZone, translateService) {
+        var _this = _super.call(this, _ngZone, translateService) || this;
         _this._ngZone = _ngZone;
+        _this.translateService = translateService;
         _this.DataController = client_1.LibraryDataController;
         return _this;
         // this.DataModel = PlaylistModel;
@@ -2802,7 +2964,7 @@ var ImagesComponent = /** @class */ (function (_super) {
             template: __webpack_require__("../../../../../src/app/library/images/images.component.html"),
             styles: [__webpack_require__("../../../../../src/app/library/images/images.component.scss")]
         }),
-        __metadata("design:paramtypes", [core_1.NgZone])
+        __metadata("design:paramtypes", [core_1.NgZone, core_2.TranslateService])
     ], ImagesComponent);
     return ImagesComponent;
 }(data_component_1.DataComponent));
@@ -2971,7 +3133,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/library/library.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  library works!\n</p>\n  <router-outlet></router-outlet>"
+module.exports = "<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -3043,6 +3205,7 @@ var slide_editor_component_1 = __webpack_require__("../../../../../src/app/libra
 var inline_edit_component_1 = __webpack_require__("../../../../../src/app/library/inline-edit/inline-edit.component.ts");
 var finder_component_1 = __webpack_require__("../../../../../src/app/library/finder/finder.component.ts");
 var selection_service_1 = __webpack_require__("../../../../../src/app/library/selection.service.ts");
+var alloy_component_1 = __webpack_require__("../../../../../src/app/library/alloy/alloy.component.ts");
 __export(__webpack_require__("../../../../../src/app/library/main/main.component.ts"));
 exports.libraryRoutes = [
     { path: 'images', component: images_component_1.ImagesComponent },
@@ -3068,7 +3231,7 @@ var LibraryModule = /** @class */ (function () {
                 slide_editor_component_1.SlideEditorComponent,
                 videos_component_1.VideosComponent, sounds_component_1.SoundsComponent, slides_component_1.SlidesComponent,
                 library_component_1.LibraryComponent, upload_component_1.UploadComponent, element_component_1.ElementComponent,
-                slide_editor_component_1.SlideEditorComponent, finder_component_1.FinderComponent],
+                slide_editor_component_1.SlideEditorComponent, finder_component_1.FinderComponent, alloy_component_1.AlloyComponent],
             providers: [selection_service_1.SelectionService]
         })
     ], LibraryModule);
@@ -3159,13 +3322,25 @@ var core_1 = __webpack_require__("../../../core/fesm5/core.js");
 var SelectionService = /** @class */ (function () {
     function SelectionService() {
         this.selection = [];
+        this.elements = [];
     }
-    SelectionService.prototype.focus = function (element) {
+    SelectionService.prototype.focus = function (eventElement, elementItem) {
         var all = document.querySelectorAll('.element');
         for (var i = 0; i < all.length; i++) {
             all[i].className = all[i].className.replace('selected', '');
         }
-        element.currentTarget.className = element.currentTarget.className + ' selected';
+        this.elements.forEach(function (item) { return item.selected = false; });
+        elementItem.selected = true;
+        eventElement.currentTarget.className = eventElement.currentTarget.className + ' selected';
+    };
+    SelectionService.prototype.load = function (elements) {
+        this.elements = elements;
+    };
+    SelectionService.prototype.reset = function () {
+        this.elements = [];
+    };
+    SelectionService.prototype.newBlockElement = function (newElement) {
+        this.elements.push(newElement);
     };
     SelectionService = __decorate([
         core_1.Injectable(),
@@ -3181,7 +3356,7 @@ exports.SelectionService = SelectionService;
 /***/ "../../../../../src/app/library/slide-editor/slide-editor.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"item\">\n  <div>\n    <div class=\"btn-group btn-group-toggle\" data-toggle=\"buttons\">\n      <label class=\"btn btn-secondary\" (click)=\"setEditorMode('Designer');\">\n        <input type=\"radio\" name=\"options\" id=\"designer\" autocomplete=\"off\" checked> Designer\n      </label>\n      <label class=\"btn btn-secondary\" (click)=\"setEditorMode('Source');\">\n        <input type=\"radio\" name=\"options\" id=\"source\" autocomplete=\"off\"> Source\n      </label>\n    </div>\n  </div>\n  <div *ngIf=\"editorMode==='Designer'\">\n    <button class=\"btn btn-primary\" (click)=\"resetItem()\">{{ \"SLIDES.RESET\" | translate }}</button>\n    <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">\n      <div class=\"btn-spinner-host\"> <i class=\"btn-spinner\" *ngIf=\"updateItemRunning\"></i> {{ \"SLIDES.UPDATE\" | translate }} </div>\n    </button>\n    <button *ngIf=\"!item._id\" class=\"btn btn-primary btn-spinner-host\" (click)=\"createItem()\"><i class=\"btn-spinner\"></i>\n      {{ \"SLIDES.CREATE\" | translate }}</button>\n\n    <button (click)=\"newTextBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"fas fa-font\"></i></button>\n    <button (click)=\"newImageBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"far fa-image\"></i></button>\n    <button (click)=\"newVideoBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"fas fa-video\"></i></button>\n  <button (click)=\"newPluginBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"fas fa-plug\"></i></button>\n  <p\n    contenteditable=\"true\"\n   \n    [(ngModel)]=\"item.name\"\n    ></p>\n    \n\n    <div class=\"row slide-editor\">\n      <div class=\"col-md-9\">\n        <div class=\"slide-canvas drag-boundary\" class=\"drag-boundary\" [ngClass]=\"{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }\"\n          #myBounds>\n          <app-element *ngFor=\"let el of item.elements\" (click)=\"designerFocus($event)\" [element]=\"el\"></app-element>\n        </div>\n      </div>\n      <div class=\"col-md-3\">\n        <ul class=\"list-group\">\n          <ol class=\"list-group-item\" *ngFor=\"let el of item.elements\">\n            <app-inline-edit [(ngModel)]=\"el.name\" label=\"Name\" [required]=\"true\" type=\"text\">\n            </app-inline-edit>\n          </ol>\n        </ul>\n      </div>\n    </div>\n  </div>\n  <div *ngIf=\"editorMode==='Source'\">\n    <pre> {{item.elements | json}}</pre>\n  </div>\n</div>\n<app-finder></app-finder>\n"
+module.exports = "<div *ngIf=\"item\">\n  <div>\n    <div class=\"btn-group btn-group-toggle\" data-toggle=\"buttons\">\n      <label class=\"btn btn-secondary\" (click)=\"setEditorMode('Designer');\">\n        <input type=\"radio\" name=\"options\" id=\"designer\" autocomplete=\"off\" checked> Designer\n      </label>\n      <label class=\"btn btn-secondary\" (click)=\"setEditorMode('Source');\">\n        <input type=\"radio\" name=\"options\" id=\"source\" autocomplete=\"off\"> Source\n      </label>\n    </div>\n  </div>\n  <div *ngIf=\"editorMode==='Designer'\">\n    <button class=\"btn btn-primary\" (click)=\"resetItem()\">{{ \"SLIDES.RESET\" | translate }}</button>\n    <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">\n      <div class=\"btn-spinner-host\"> <i class=\"btn-spinner\" *ngIf=\"updateItemRunning\"></i> {{ \"SLIDES.UPDATE\" | translate }} </div>\n    </button>\n    <button *ngIf=\"!item._id\" class=\"btn btn-primary btn-spinner-host\" (click)=\"createItem()\"><i class=\"btn-spinner\"></i>\n      {{ \"SLIDES.CREATE\" | translate }}</button>\n\n  \n  \n  <p\n    contenteditable=\"true\"\n   \n    [(ngModel)]=\"item.name\"\n    ></p>\n    \n    <app-alloy></app-alloy>\n    \n\n    <div class=\"row slide-editor\">\n      <div class=\"col-md-9\">\n        <div class=\"slide-canvas drag-boundary\" class=\"drag-boundary\" [ngClass]=\"{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }\"\n          #myBounds>\n          <app-element *ngFor=\"let el of selectionService.elements\" \n          (click)=\"designerFocus($event)\"\n           [element]=\"el\"></app-element>\n        </div>\n      </div>\n      <div class=\"col-md-3\">\n        <ul class=\"list-group\">\n          <ol class=\"list-group-item\" *ngFor=\"let el of selectionService.elements\">\n            <app-inline-edit [(ngModel)]=\"el.name\" label=\"Name\" [required]=\"true\" type=\"text\">\n            </app-inline-edit>\n          </ol>\n        </ul>\n      </div>\n    </div>\n  </div>\n  <div *ngIf=\"editorMode==='Source'\">\n    <pre> {{item.elements | json}}</pre>\n  </div>\n\n</div>\n<div class=\"slider-container-wide {{displayModalNew}} shadow\">\n<app-finder></app-finder>\n</div>\n"
 
 /***/ }),
 
@@ -3267,11 +3442,15 @@ var core_1 = __webpack_require__("../../../core/fesm5/core.js");
 var router_1 = __webpack_require__("../../../router/fesm5/router.js");
 var data_component_1 = __webpack_require__("../../../../../src/app/data.component.ts");
 var client_1 = __webpack_require__("../../../../../../@signnature/client/index.js");
+var core_2 = __webpack_require__("../../../../@ngx-translate/core/fesm5/ngx-translate-core.js");
+var selection_service_1 = __webpack_require__("../../../../../src/app/library/selection.service.ts");
 var SlideEditorComponent = /** @class */ (function (_super) {
     __extends(SlideEditorComponent, _super);
-    function SlideEditorComponent(_ngZone, route) {
-        var _this = _super.call(this, _ngZone) || this;
+    function SlideEditorComponent(_ngZone, translateService, selectionService, route) {
+        var _this = _super.call(this, _ngZone, translateService) || this;
         _this._ngZone = _ngZone;
+        _this.translateService = translateService;
+        _this.selectionService = selectionService;
         _this.route = route;
         _this.editorMode = 'Designer';
         _this.DataController = client_1.SlidesDataController;
@@ -3289,6 +3468,7 @@ var SlideEditorComponent = /** @class */ (function (_super) {
                             return [4 /*yield*/, client_1.SlidesDataController.get(data.id)];
                         case 1:
                             _a.item = _b.sent();
+                            this.selectionService.load(this.item.elements);
                             return [2 /*return*/];
                     }
                 });
@@ -3298,6 +3478,7 @@ var SlideEditorComponent = /** @class */ (function (_super) {
     SlideEditorComponent.prototype.resetItem = function () {
         this.item = { name: this.item.name, _id: this.item._id };
         this.item.elements = [];
+        this.selectionService.reset();
     };
     SlideEditorComponent.prototype.newTextBlockElement = function () {
         var textBlock = {
@@ -3347,7 +3528,9 @@ var SlideEditorComponent = /** @class */ (function (_super) {
             template: __webpack_require__("../../../../../src/app/library/slide-editor/slide-editor.component.html"),
             styles: [__webpack_require__("../../../../../src/app/library/slide-editor/slide-editor.component.scss")]
         }),
-        __metadata("design:paramtypes", [core_1.NgZone, router_1.ActivatedRoute])
+        __metadata("design:paramtypes", [core_1.NgZone, core_2.TranslateService,
+            selection_service_1.SelectionService,
+            router_1.ActivatedRoute])
     ], SlideEditorComponent);
     return SlideEditorComponent;
 }(data_component_1.DataComponent));
@@ -3444,11 +3627,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/fesm5/core.js");
 var data_component_1 = __webpack_require__("../../../../../src/app/data.component.ts");
 var client_1 = __webpack_require__("../../../../../../@signnature/client/index.js");
+var core_2 = __webpack_require__("../../../../@ngx-translate/core/fesm5/ngx-translate-core.js");
 var SlidesComponent = /** @class */ (function (_super) {
     __extends(SlidesComponent, _super);
-    function SlidesComponent(_ngZone) {
-        var _this = _super.call(this, _ngZone) || this;
+    function SlidesComponent(_ngZone, translateService) {
+        var _this = _super.call(this, _ngZone, translateService) || this;
         _this._ngZone = _ngZone;
+        _this.translateService = translateService;
         _this.DataController = client_1.SlidesDataController;
         return _this;
         // this.DataModel = PlaylistModel;
@@ -3467,7 +3652,7 @@ var SlidesComponent = /** @class */ (function (_super) {
             template: __webpack_require__("../../../../../src/app/library/slides/slides.component.html"),
             styles: [__webpack_require__("../../../../../src/app/library/slides/slides.component.scss")]
         }),
-        __metadata("design:paramtypes", [core_1.NgZone])
+        __metadata("design:paramtypes", [core_1.NgZone, core_2.TranslateService])
     ], SlidesComponent);
     return SlidesComponent;
 }(data_component_1.DataComponent));
@@ -3886,7 +4071,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n\t<div class=\"limiter\">\n\t\t<div class=\"container-login100\">\n      \n\n\t\t\t<div class=\"wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30\">\n              <div><app-language-bar></app-language-bar></div>\n\t\t\t\t<form class=\"login100-form validate-form\">\n\t\t\t\t\t<span class=\"login100-form-title p-b-55\">\n\t\t\t\t\t\t{{\"LOGIN.TITLE\" | translate}}\n\t\t\t\t\t</span>\n\n\t\t\t\t\t<div class=\"wrap-input100 validate-input m-b-16\" [attr.data-validate]=\"'LOGIN.INSERT_USERNAME' | translate\">\n\t\t\t\t\t\t<input class=\"input100\" type=\"text\" name=\"userName\" placeholder=\"Email\" [(ngModel)]=\"userName\">\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t\t<span class=\"symbol-input100\">\n\t\t\t\t\t\t\t<span class=\"lnr lnr-envelope\"></span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class=\"wrap-input100 validate-input m-b-16\" >\n\t\t\t\t\t\t<input class=\"input100\" type=\"password\" name=\"password\" placeholder=\"Password\" [(ngModel)]=\"password\">\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t\t<span class=\"symbol-input100\">\n\t\t\t\t\t\t\t<span class=\"lnr lnr-lock\"></span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class=\"contact100-form-checkbox m-l-4\">\n\t\t\t\t\t\t<input class=\"input-checkbox100\" id=\"ckb1\" type=\"checkbox\" name=\"remember-me\">\n\t\t\t\t\t\t<label class=\"label-checkbox100\" for=\"ckb1\">\n\t\t\t\t\t\t\t{{\"LOGIN.REMEMBER_ME\" | translate}}\n\t\t\t\t\t\t</label>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"container-login100-form-btn p-t-25\">\n\t\t\t\t\t\t<button class=\"login100-form-btn\" (click)=\"tryLogin()\">\n\t\t\t\t\t\t\t\t{{\"LOGIN.LOGIN_BTN\" | translate}}\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</div>\n \n\t\t\t\t\t<div class=\"text-center w-full p-t-25\">\n\t\t\t\t\t\t<span class=\"txt1\">\n\t\t\t\t\t\t\tNot a member?\n\t\t\t\t\t\t</span>\n\n\t\t\t\t\t\t<a class=\"txt1 bo1 hov1\" href=\"#\"  routerLink=\"/signup\">\n\t\t\t\t\t\t\tSign up now\t\t\t\t\t\t\t\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t</form>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\n\n\n\n\n\n\n\n<!-- Simple pop-up dialog box containing a form -->\n<dialog id=\"favDialog\">\n  <form method=\"dialog\">\n    <p><label>Favorite animal:\n      <select>\n        <option></option>\n        <option>Brine shrimp</option>\n        <option>Red panda</option>\n        <option>Spider monkey</option>\n      </select>\n    </label></p>\n    <menu>\n      <button>Cancel</button>\n      <button>Confirm</button>\n    </menu>\n  </form>\n</dialog>\n\n<menu>\n  <button id=\"updateDetails\">Update details</button>\n</menu>\n\n<div id=\"output\"></div>\n\n<script>\n(function() {\n  var updateButton = document.getElementById('updateDetails');\n  var favDialog = document.getElementById('favDialog');\n  var outputBox = document.getElementById(\"output\");\n\n  // “Update details” button opens the <dialog> modally\n  updateButton.addEventListener('click', function() {\n    favDialog.showModal();\n    output.innerHTML += \"<div>\" + favDialog.returnValue + \" button clicked!</div>\";\n  });\n})();\n</script>\n \n\n    <ng-template #share>\n        <div class=\"modal-body text-center\">\n\n            <p>Share your group.</p>\n            <pre>{{group.GroupId}}</pre>\n            <a type=\"button\" class=\"btn btn-primary\" (click)=\"decline()\">Cancel</a>\n        </div>\n    </ng-template>\n\n    <ng-template #join>\n        <div class=\"modal-body text-center\">\n            <p>Join a group.</p>\n            <div>\n                <label>Group code</label>\n                <input type=\"text\" class=\"form-control\" #group_code />\n            </div>\n            <a type=\"button\" class=\"btn btn-primary\" (click)=\"JoinConfirm(group_code.value)\">Join</a>\n            <a type=\"button\" class=\"btn btn-default\" (click)=\"decline()\">Cancel</a>\n        </div>\n    </ng-template>\n\n    <div class=\"float-left dropdown\" *ngIf=\"userData && group\">\n        <a class=\"btn btn-secondary dropdown-toggle white\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\n            aria-expanded=\"false\">\n            {{group.Name}}\n        </a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"position: absolute\">\n            <a class=\"dropdown-item\" (click)=\"setGroup(item)\" *ngFor=\"let item of userData.groups\">{{item.Name}}</a>\n\n            <a class=\"dropdown-item\" (click)=\"JoinGroup(join)\">Join group</a>\n            <a class=\"dropdown-item\" (click)=\"ShareGroup(share)\">Share group</a>\n        </div>\n\n    </div>\n</div>"
+module.exports = "<div>\n\t<div class=\"limiter\">\n\t\t<div class=\"container-login100\">\n      \n\n\t\t\t<div class=\"wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30\">\n              <div><app-language-bar></app-language-bar></div>\n\t\t\t\t<form class=\"login100-form validate-form\">\n\t\t\t\t\t<span class=\"login100-form-title p-b-55\">\n\t\t\t\t\t\t{{\"LOGIN.TITLE\" | translate}}\n\t\t\t\t\t</span>\n\n\t\t\t\t\t<div class=\"wrap-input100 validate-input m-b-16\" [attr.data-validate]=\"'LOGIN.INSERT_USERNAME' | translate\">\n\t\t\t\t\t\t<input class=\"input100\" type=\"text\" name=\"userName\" placeholder=\"{{'LOGIN.USERNAME' | translate}}\" [(ngModel)]=\"userName\">\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t\t<span class=\"symbol-input100\">\n\t\t\t\t\t\t\t<span class=\"lnr lnr-envelope\"></span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class=\"wrap-input100 validate-input m-b-16\" >\n\t\t\t\t\t\t<input class=\"input100\" type=\"password\" name=\"password\" placeholder=\"{{'LOGIN.PASSWORD' | translate}}\" [(ngModel)]=\"password\">\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t\t<span class=\"symbol-input100\">\n\t\t\t\t\t\t\t<span class=\"lnr lnr-lock\"></span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class=\"contact100-form-checkbox m-l-4\">\n\t\t\t\t\t\t<input class=\"input-checkbox100\" id=\"ckb1\" type=\"checkbox\" name=\"remember-me\">\n\t\t\t\t\t\t<label class=\"label-checkbox100\" for=\"ckb1\">\n\t\t\t\t\t\t\t{{\"LOGIN.REMEMBER_ME\" | translate}}\n\t\t\t\t\t\t</label>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"container-login100-form-btn p-t-25\">\n\t\t\t\t\t\t<button class=\"login100-form-btn\" (click)=\"tryLogin()\">\n\t\t\t\t\t\t\t\t{{\"LOGIN.LOGIN_BTN\" | translate}}\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</div>\n \n\t\t\t\t\t<div class=\"text-center w-full p-t-25\">\n\t\t\t\t\t\t<span class=\"txt1\">\n\t\t\t\t\t\t{{'LOGIN.NOTAMEMBER' | translate}}\t\n\t\t\t\t\t\t</span>\n\n\t\t\t\t\t\t<a class=\"txt1 bo1 hov1\" href=\"#\"  routerLink=\"/signup\">\n\t\t\t\t\t\t{{'LOGIN.SIGNUP' | translate}}\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t</form>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\n\n\n\n\n\n\n\n<!-- Simple pop-up dialog box containing a form -->\n<dialog id=\"favDialog\">\n  <form method=\"dialog\">\n    <p><label>Favorite animal:\n      <select>\n        <option></option>\n        <option>Brine shrimp</option>\n        <option>Red panda</option>\n        <option>Spider monkey</option>\n      </select>\n    </label></p>\n    <menu>\n      <button>Cancel</button>\n      <button>Confirm</button>\n    </menu>\n  </form>\n</dialog>\n\n<menu>\n  <button id=\"updateDetails\">Update details</button>\n</menu>\n\n<div id=\"output\"></div>\n\n<script>\n(function() {\n  var updateButton = document.getElementById('updateDetails');\n  var favDialog = document.getElementById('favDialog');\n  var outputBox = document.getElementById(\"output\");\n\n  // “Update details” button opens the <dialog> modally\n  updateButton.addEventListener('click', function() {\n    favDialog.showModal();\n    output.innerHTML += \"<div>\" + favDialog.returnValue + \" button clicked!</div>\";\n  });\n})();\n</script>\n \n\n    <ng-template #share>\n        <div class=\"modal-body text-center\">\n\n            <p>Share your group.</p>\n            <pre>{{group.GroupId}}</pre>\n            <a type=\"button\" class=\"btn btn-primary\" (click)=\"decline()\">Cancel</a>\n        </div>\n    </ng-template>\n\n    <ng-template #join>\n        <div class=\"modal-body text-center\">\n            <p>Join a group.</p>\n            <div>\n                <label>Group code</label>\n                <input type=\"text\" class=\"form-control\" #group_code />\n            </div>\n            <a type=\"button\" class=\"btn btn-primary\" (click)=\"JoinConfirm(group_code.value)\">Join</a>\n            <a type=\"button\" class=\"btn btn-default\" (click)=\"decline()\">Cancel</a>\n        </div>\n    </ng-template>\n\n    <div class=\"float-left dropdown\" *ngIf=\"userData && group\">\n        <a class=\"btn btn-secondary dropdown-toggle white\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\n            aria-expanded=\"false\">\n            {{group.Name}}\n        </a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"position: absolute\">\n            <a class=\"dropdown-item\" (click)=\"setGroup(item)\" *ngFor=\"let item of userData.groups\">{{item.Name}}</a>\n\n            <a class=\"dropdown-item\" (click)=\"JoinGroup(join)\">Join group</a>\n            <a class=\"dropdown-item\" (click)=\"ShareGroup(share)\">Share group</a>\n        </div>\n\n    </div>\n</div>"
 
 /***/ }),
 
@@ -4364,11 +4549,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/fesm5/core.js");
 var client_1 = __webpack_require__("../../../../../../@signnature/client/index.js");
 var data_component_1 = __webpack_require__("../../../../../src/app/data.component.ts");
+var core_2 = __webpack_require__("../../../../@ngx-translate/core/fesm5/ngx-translate-core.js");
 var PlaylistsComponent = /** @class */ (function (_super) {
     __extends(PlaylistsComponent, _super);
-    function PlaylistsComponent(_ngZone) {
-        var _this = _super.call(this, _ngZone) || this;
+    function PlaylistsComponent(_ngZone, translateService) {
+        var _this = _super.call(this, _ngZone, translateService) || this;
         _this._ngZone = _ngZone;
+        _this.translateService = translateService;
         _this.DataController = client_1.Playlist;
         return _this;
         // this.DataModel = PlaylistModel;
@@ -4387,7 +4574,7 @@ var PlaylistsComponent = /** @class */ (function (_super) {
             template: __webpack_require__("../../../../../src/app/playlists/playlists.component.html"),
             styles: [__webpack_require__("../../../../../src/app/playlists/playlists.component.scss")]
         }),
-        __metadata("design:paramtypes", [core_1.NgZone])
+        __metadata("design:paramtypes", [core_1.NgZone, core_2.TranslateService])
     ], PlaylistsComponent);
     return PlaylistsComponent;
 }(data_component_1.DataComponent));
@@ -4545,11 +4732,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/fesm5/core.js");
 var client_1 = __webpack_require__("../../../../../../@signnature/client/index.js");
 var data_component_1 = __webpack_require__("../../../../../src/app/data.component.ts");
+var core_2 = __webpack_require__("../../../../@ngx-translate/core/fesm5/ngx-translate-core.js");
 var ScreensComponent = /** @class */ (function (_super) {
     __extends(ScreensComponent, _super);
-    function ScreensComponent(_ngZone) {
-        var _this = _super.call(this, _ngZone) || this;
+    function ScreensComponent(_ngZone, translateService) {
+        var _this = _super.call(this, _ngZone, translateService) || this;
         _this._ngZone = _ngZone;
+        _this.translateService = translateService;
         _this.DataController = client_1.ScreensDataController;
         return _this;
     }
@@ -4567,7 +4756,7 @@ var ScreensComponent = /** @class */ (function (_super) {
             template: __webpack_require__("../../../../../src/app/screens/screens.component.html"),
             styles: [__webpack_require__("../../../../../src/app/screens/screens.component.scss")]
         }),
-        __metadata("design:paramtypes", [core_1.NgZone])
+        __metadata("design:paramtypes", [core_1.NgZone, core_2.TranslateService])
     ], ScreensComponent);
     return ScreensComponent;
 }(data_component_1.DataComponent));
@@ -4804,7 +4993,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/signup/signup.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n<app-language-bar></app-language-bar>\n\t<div class=\"limiter\">\n\t\t<div class=\"container-login100\">\n\t\t\t<div class=\"wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30\">\n\t\t\t\t<form class=\"login100-form validate-form\">\n\t\t\t\t\t<span class=\"login100-form-title p-b-55\">\n\t\t\t\t\t\t{{\"SIGNUP.TITLE\" | translate}}\n\t\t\t\t\t</span>\n\n\t\t\t\t\t<div class=\"wrap-input100 validate-input m-b-16\" [attr.data-validate]=\"'SIGNUP.INSERT_USERNAME' | translate\">\n\t\t\t\t\t\t<input class=\"input100\" type=\"text\" name=\"userName\" placeholder=\"Email\" [(ngModel)]=\"userName\">\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t\t<span class=\"symbol-input100\">\n\t\t\t\t\t\t\t<span class=\"lnr lnr-envelope\"></span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class=\"wrap-input100 validate-input m-b-16\" >\n\t\t\t\t\t\t<input class=\"input100\" type=\"password\" name=\"password\" placeholder=\"Password\" [(ngModel)]=\"password\">\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t\t<span class=\"symbol-input100\">\n\t\t\t\t\t\t\t<span class=\"lnr lnr-lock\"></span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</div>\n\n\n\t                <div class=\"wrap-input100 validate-input m-b-16\" >\n\t\t\t\t\t\t<input class=\"input100\" type=\"password\" name=\"passwordRepeat\" placeholder=\"Repeat password\" [(ngModel)]=\"passwordRepeat\">\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t\t<span class=\"symbol-input100\">\n\t\t\t\t\t\t\t<span class=\"lnr lnr-lock\"></span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</div>\n\n\t\t\t\t \n\t\t\t\t\t\n\t\t\t\t\t<div class=\"container-login100-form-btn p-t-25\">\n\t\t\t\t\t\t<button class=\"login100-form-btn\" (click)=\"trySignup()\">\n\t\t\t\t\t\t\t\t{{\"SIGNUP.SIGNUP_BTN\" | translate}}\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</div>\n \n\n\t\t\t\t<div class=\"text-center w-full p-t-25\">\n\t\t\t\t\t\t<span class=\"txt1\">\n\t\t\t\t\t\t\tAlready a member?\n\t\t\t\t\t\t</span>\n\n\t\t\t\t\t\t<a class=\"txt1 bo1 hov1\" href=\"#\"  routerLink=\"/signin\">\n\t\t\t\t\t\t\tSign in now\t\t\t\t\t\t\t\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t</form>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\n\n\n\n\n\n\n\n<!-- Simple pop-up dialog box containing a form -->\n<dialog id=\"favDialog\">\n  <form method=\"dialog\">\n    <p><label>Favorite animal:\n      <select>\n        <option></option>\n        <option>Brine shrimp</option>\n        <option>Red panda</option>\n        <option>Spider monkey</option>\n      </select>\n    </label></p>\n    <menu>\n      <button>Cancel</button>\n      <button>Confirm</button>\n    </menu>\n  </form>\n</dialog>\n\n<menu>\n  <button id=\"updateDetails\">Update details</button>\n</menu>\n\n<div id=\"output\"></div>\n\n<script>\n(function() {\n  var updateButton = document.getElementById('updateDetails');\n  var favDialog = document.getElementById('favDialog');\n  var outputBox = document.getElementById(\"output\");\n\n  // “Update details” button opens the <dialog> modally\n  updateButton.addEventListener('click', function() {\n    favDialog.showModal();\n    output.innerHTML += \"<div>\" + favDialog.returnValue + \" button clicked!</div>\";\n  });\n})();\n</script>\n \n\n    <ng-template #share>\n        <div class=\"modal-body text-center\">\n\n            <p>Share your group.</p>\n            <pre>{{group.GroupId}}</pre>\n            <a type=\"button\" class=\"btn btn-primary\" (click)=\"decline()\">Cancel</a>\n        </div>\n    </ng-template>\n\n    <ng-template #join>\n        <div class=\"modal-body text-center\">\n            <p>Join a group.</p>\n            <div>\n                <label>Group code</label>\n                <input type=\"text\" class=\"form-control\" #group_code />\n            </div>\n            <a type=\"button\" class=\"btn btn-primary\" (click)=\"JoinConfirm(group_code.value)\">Join</a>\n            <a type=\"button\" class=\"btn btn-default\" (click)=\"decline()\">Cancel</a>\n        </div>\n    </ng-template>\n\n    <div class=\"float-left dropdown\" *ngIf=\"userData && group\">\n        <a class=\"btn btn-secondary dropdown-toggle white\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\n            aria-expanded=\"false\">\n            {{group.Name}}\n        </a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"position: absolute\">\n            <a class=\"dropdown-item\" (click)=\"setGroup(item)\" *ngFor=\"let item of userData.groups\">{{item.Name}}</a>\n\n            <a class=\"dropdown-item\" (click)=\"JoinGroup(join)\">Join group</a>\n            <a class=\"dropdown-item\" (click)=\"ShareGroup(share)\">Share group</a>\n        </div>\n\n    </div>\n</div>"
+module.exports = "<div>\n<app-language-bar></app-language-bar>\n\t<div class=\"limiter\">\n\t\t<div class=\"container-login100\">\n\t\t\t<div class=\"wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30\">\n\t\t\t\t<form class=\"login100-form validate-form\">\n\t\t\t\t\t<span class=\"login100-form-title p-b-55\">\n\t\t\t\t\t\t{{\"SIGNUP.TITLE\" | translate}}\n\t\t\t\t\t</span>\n\n\t\t\t\t\t<div class=\"wrap-input100 validate-input m-b-16\" [attr.data-validate]=\"'SIGNUP.INSERT_USERNAME' | translate\">\n\t\t\t\t\t\t<input class=\"input100\" type=\"text\" name=\"userName\" placeholder=\"{{'SIGNUP.USERNAME' | translate}}\" [(ngModel)]=\"userName\">\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t\t<span class=\"symbol-input100\">\n\t\t\t\t\t\t\t<span class=\"lnr lnr-envelope\"></span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class=\"wrap-input100 validate-input m-b-16\" >\n\t\t\t\t\t\t<input class=\"input100\" type=\"password\" name=\"password\" placeholder=\"{{'SIGNUP.PASSWORD' | translate}}\" [(ngModel)]=\"password\">\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t\t<span class=\"symbol-input100\">\n\t\t\t\t\t\t\t<span class=\"lnr lnr-lock\"></span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</div>\n\n\n\t                <div class=\"wrap-input100 validate-input m-b-16\" >\n\t\t\t\t\t\t<input class=\"input100\" type=\"password\" name=\"passwordRepeat\" placeholder=\"{{'SIGNUP.RPTPASSWORD' | translate}}\" [(ngModel)]=\"passwordRepeat\">\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t\t<span class=\"symbol-input100\">\n\t\t\t\t\t\t\t<span class=\"lnr lnr-lock\"></span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</div>\n\n\t\t\t\t \n\t\t\t\t\t\n\t\t\t\t\t<div class=\"container-login100-form-btn p-t-25\">\n\t\t\t\t\t\t<button class=\"login100-form-btn\" (click)=\"trySignup()\">\n\t\t\t\t\t\t\t\t{{\"SIGNUP.SIGNUP_BTN\" | translate}}\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</div>\n \n\n\t\t\t\t<div class=\"text-center w-full p-t-25\">\n\t\t\t\t\t\t<span class=\"txt1\">\n\t\t\t\t\t{{'SIGNUP.ALREADYMEMBER' | translate}}\n\t\t\t\t\t\t</span>\n\n\t\t\t\t\t\t<a class=\"txt1 bo1 hov1\" href=\"#\"  routerLink=\"/signin\">\n\t\t\t\t\t{{'SIGNUP.SIGNIN' | translate}}\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t</form>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\n\n\n\n\n\n\n\n<!-- Simple pop-up dialog box containing a form -->\n<dialog id=\"favDialog\">\n  <form method=\"dialog\">\n    <p><label>Favorite animal:\n      <select>\n        <option></option>\n        <option>Brine shrimp</option>\n        <option>Red panda</option>\n        <option>Spider monkey</option>\n      </select>\n    </label></p>\n    <menu>\n      <button>Cancel</button>\n      <button>Confirm</button>\n    </menu>\n  </form>\n</dialog>\n\n<menu>\n  <button id=\"updateDetails\">Update details</button>\n</menu>\n\n<div id=\"output\"></div>\n\n<script>\n(function() {\n  var updateButton = document.getElementById('updateDetails');\n  var favDialog = document.getElementById('favDialog');\n  var outputBox = document.getElementById(\"output\");\n\n  // “Update details” button opens the <dialog> modally\n  updateButton.addEventListener('click', function() {\n    favDialog.showModal();\n    output.innerHTML += \"<div>\" + favDialog.returnValue + \" button clicked!</div>\";\n  });\n})();\n</script>\n \n\n    <ng-template #share>\n        <div class=\"modal-body text-center\">\n\n            <p>Share your group.</p>\n            <pre>{{group.GroupId}}</pre>\n            <a type=\"button\" class=\"btn btn-primary\" (click)=\"decline()\">Cancel</a>\n        </div>\n    </ng-template>\n\n    <ng-template #join>\n        <div class=\"modal-body text-center\">\n            <p>Join a group.</p>\n            <div>\n                <label>Group code</label>\n                <input type=\"text\" class=\"form-control\" #group_code />\n            </div>\n            <a type=\"button\" class=\"btn btn-primary\" (click)=\"JoinConfirm(group_code.value)\">Join</a>\n            <a type=\"button\" class=\"btn btn-default\" (click)=\"decline()\">Cancel</a>\n        </div>\n    </ng-template>\n\n    <div class=\"float-left dropdown\" *ngIf=\"userData && group\">\n        <a class=\"btn btn-secondary dropdown-toggle white\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\n            aria-expanded=\"false\">\n            {{group.Name}}\n        </a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"position: absolute\">\n            <a class=\"dropdown-item\" (click)=\"setGroup(item)\" *ngFor=\"let item of userData.groups\">{{item.Name}}</a>\n\n            <a class=\"dropdown-item\" (click)=\"JoinGroup(join)\">Join group</a>\n            <a class=\"dropdown-item\" (click)=\"ShareGroup(share)\">Share group</a>\n        </div>\n\n    </div>\n</div>"
 
 /***/ }),
 

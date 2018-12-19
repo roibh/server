@@ -19,7 +19,9 @@
     "INSERT_PASSWORD": "נא הכנס סיסמה",
     "INVALID_USERNAME_OR_PASSWORD": "שם משתמש/סיסמה לא נכונים. אנא נסה שנית",
     "REMEMBER_ME": "זכור אותי",
-    "LOGIN_BTN": "כניסה"
+    "LOGIN_BTN": "כניסה",
+    "NOTAMEMBER": "אין לך חשבון?",
+    "SIGNUP": "פתח אחד עכשיו"
   },
   "SIGNUP": {
     "TITLE": "הצטרפות",
@@ -29,7 +31,10 @@
     "INSERT_PASSWORD": "נא הכנס סיסמה",
     "INVALID_USERNAME_OR_PASSWORD": "שם משתמש/סיסמה לא נכונים. אנא נסה שנית",
     "REMEMBER_ME": "זכור אותי",
-    "SIGNUP_BTN": "רישום"
+    "SIGNUP_BTN": "רישום",
+    "SIGNIN": "היכנס עכשיו",
+    "ALREADYMEMBER": "יש לך חשבון?",
+    "RPTPASSWORD": "שוב אותה סיסמה"
   },
   "SCREENS": {
     "NAME": "שם למסך",
@@ -43,6 +48,9 @@
   },
   "DASHBOARD": {
     "FOOTER": "כל הזכויות שמורות 2018 ©"
+  },
+  "DATA": {
+    "CONFIRM_DELETE": "מה, למחוק?"
   },
   "xxxxx": {
     "xxxx": "xxxx"
