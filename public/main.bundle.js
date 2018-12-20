@@ -1645,7 +1645,6 @@ var timelines_component_1 = __webpack_require__("../../../../../src/app/timeline
 var playlists_component_1 = __webpack_require__("../../../../../src/app/playlists/playlists.component.ts");
 var schedules_component_1 = __webpack_require__("../../../../../src/app/schedules/schedules.component.ts");
 var settings_component_1 = __webpack_require__("../../../../../src/app/settings/settings.component.ts");
-var language_bar_component_1 = __webpack_require__("../../../../../src/app/language-bar/language-bar.component.ts");
 var dialog_component_1 = __webpack_require__("../../../../../src/app/dialog/dialog.component.ts");
 var language_service_1 = __webpack_require__("../../../../../src/app/language.service.ts");
 var library_component_1 = __webpack_require__("../../../../../src/app/library/library.component.ts");
@@ -1711,7 +1710,6 @@ var AppModule = /** @class */ (function () {
                 editor_toolbar_component_1.EditorToolbarComponent,
                 schedules_component_1.SchedulesComponent,
                 settings_component_1.SettingsComponent,
-                language_bar_component_1.LanguageBarComponent,
                 dialog_component_1.DialogComponent,
             ],
             imports: [
@@ -1855,7 +1853,7 @@ exports.AuthInterceptor = AuthInterceptor;
 /***/ "../../../../../src/app/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper\">\n    <!-- Sidebar  -->\n    <nav id=\"sidebar\" [class]=\"activeClass\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <strong>BS</strong>\n        </div>\n\n        <ul class=\"list-unstyled components\">\n            <li class=\"active\">\n                <a href=\"#homeSubmenu\" data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-home\"></i>\n                    {{\"NAVBAR.HOME\" | translate}}\n                </a>             \n            </li>\n              <li>\n                <a routerLink=\"screens\">\n                    <i class=\"fas fa-desktop\"></i>\n                      {{\"NAVBAR.SCREENS\" | translate}}\n                     \n                </a></li>\n            <li>\n             \n                <a href=\"#LibrarySubmenu\" (click)=\"toggleSubmenu()\"    routerLink=\"library\" data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-copy\"></i>\n                      {{\"NAVBAR.LIBRARY\" | translate}}\n                     \n                </a>\n                <ul class=\"{{subMenuState}} list-unstyled\" id=\"LibrarySubmenu\">\n                    <li>\n                        <a    routerLink=\"library/images\">  {{\"NAVBAR.IMAGES\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a   routerLink=\"library/videos\">  {{\"NAVBAR.VIDEOS\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/sounds\">  {{\"NAVBAR.SOUNDS\" | translate}}</a>\n                    </li>\n                     <li>\n                        <a routerLink=\"library/slides\">  {{\"NAVBAR.SLIDES\" | translate}}</a>\n                    </li>\n                </ul>\n\n            </li>\n              <li>\n                <a routerLink=\"playlists\">\n                    <i class=\"fas fa-step-forward\"></i>\n                      {{\"NAVBAR.PLAYLISTS\" | translate}}\n                     \n                </a></li>\n\n                  <li>\n                <a routerLink=\"schedules\">\n                    <i class=\"fas fa-calendar-alt\"></i>\n                      {{\"NAVBAR.SCHEDULES\" | translate}}\n                    \n                </a></li>\n\n                  <li>\n                <a routerLink=\"settings\">\n                    <i class=\"fas fa-cogs\"></i>\n                      {{\"NAVBAR.SETTINGS\" | translate}}\n                  \n                </a></li>\n\n        </ul>\n\n    </nav>\n\n    <!-- Page Content  -->\n    <div id=\"content\">\n\n \n    <nav class=\"navbar-fixed-top dashboard-nav\">\n        <div class=\"container no-margin\">\n            <ul class=\"mr-auto\">\n                <li class=\"nav-item\"><button type=\"button\" (click)=\"toggleSidebar()\" id=\"sidebarCollapse\" class=\"btn btn-sm btn-info\">\n                    <i class=\"fas fa-align-left\"></i>                  \n                </button></li>\n             \n                <li class=\"nav-item\">\n                 <app-language-bar></app-language-bar>\n                 </li>\n            </ul> \n\n            <app-editor-toolbar></app-editor-toolbar>\n        </div>\n     \n\n    </nav>\n\n\n  \n \n\n \n\n<div id=\"scroller\">\n\n        \n         <router-outlet></router-outlet>\n         </div>\n    </div>\n     <footer class=\"footer closed\">\n     {{'DASHBOARD.FOOTER' | translate}}\n     </footer>\n</div>\n\n\n\n\n "
+module.exports = "<div class=\"wrapper\">\n    <!-- Sidebar  -->\n    <nav id=\"sidebar\" [class]=\"activeClass\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <strong>BS</strong>\n        </div>\n\n        <ul class=\"list-unstyled components\">\n            <li class=\"active\">\n                <a href=\"#homeSubmenu\" data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-home\"></i>\n                    {{\"NAVBAR.HOME\" | translate}}\n                </a>             \n            </li>\n              <li>\n                <a routerLink=\"screens\">\n                    <i class=\"fas fa-desktop\"></i>\n                      {{\"NAVBAR.SCREENS\" | translate}}\n                     \n                </a></li>\n            <li>\n             \n                <a href=\"#LibrarySubmenu\" (click)=\"toggleSubmenu()\"    routerLink=\"library\" data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-copy\"></i>\n                      {{\"NAVBAR.LIBRARY\" | translate}}\n                     \n                </a>\n                <ul class=\"{{subMenuState}} list-unstyled\" id=\"LibrarySubmenu\">\n                    <li>\n                        <a    routerLink=\"library/images\">  {{\"NAVBAR.IMAGES\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a   routerLink=\"library/videos\">  {{\"NAVBAR.VIDEOS\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/sounds\">  {{\"NAVBAR.SOUNDS\" | translate}}</a>\n                    </li>\n                     <li>\n                        <a routerLink=\"library/slides\">  {{\"NAVBAR.SLIDES\" | translate}}</a>\n                    </li>\n                </ul>\n\n            </li>\n              <li>\n                <a routerLink=\"playlists\">\n                    <i class=\"fas fa-step-forward\"></i>\n                      {{\"NAVBAR.PLAYLISTS\" | translate}}\n                     \n                </a></li>\n\n                  <li>\n                <a routerLink=\"schedules\">\n                    <i class=\"fas fa-calendar-alt\"></i>\n                      {{\"NAVBAR.SCHEDULES\" | translate}}\n                    \n                </a></li>\n\n                  <li>\n                <a routerLink=\"settings\">\n                    <i class=\"fas fa-cogs\"></i>\n                      {{\"NAVBAR.SETTINGS\" | translate}}\n                  \n                </a></li>\n\n        </ul>\n\n    </nav>\n\n    <!-- Page Content  -->\n    <div id=\"content\">\n\n\n<div id=\"scroller\">\n     \n         <router-outlet></router-outlet>\n         </div>\n    </div>\n     <footer class=\"footer closed\">\n     {{'DASHBOARD.FOOTER' | translate}}\n     </footer>\n</div>\n\n\n\n\n "
 
 /***/ }),
 
@@ -1893,8 +1891,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/fesm5/core.js");
+var router_1 = __webpack_require__("../../../router/fesm5/router.js");
 var DashboardComponent = /** @class */ (function () {
-    function DashboardComponent() {
+    function DashboardComponent(route) {
+        this.route = route;
         this.subMenuState = 'collapse';
         this.toggled = false;
         this.activeClass = '';
@@ -1924,7 +1924,7 @@ var DashboardComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/dashboard/dashboard.component.html"),
             styles: [__webpack_require__("../../../../../src/app/dashboard/dashboard.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [router_1.ActivatedRoute])
     ], DashboardComponent);
     return DashboardComponent;
 }());
@@ -2854,7 +2854,7 @@ exports.FinderComponent = FinderComponent;
 /***/ "../../../../../src/app/library/images/images.component.html":
 /***/ (function(module, exports) {
 
-module.exports = " <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\" >\n    {{item.Name}}\n      <ul class=\"sqr-toolbar\">\n        <li>\n          <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n        </li>\n        <li>\n          <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>\n</div>\n<div class=\"slider-container {{displayModalNew}} shadow \">\n<dialog open={{displayModalNew}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n<div class=\"scroller\">\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"libraryName\"  class=\"form-control\" id=\"screenName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"libraryFile\">{{ \"LIBRARY.RESOURCE\" | translate }}</label>\n<app-upload [item]=\"item\"></app-upload>\n</div>\n   \n</form>\n </div>\n  <button   *ngIf=\"item && item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"LIBRARY.UPDATE\" | translate }}</button>\n  <button   *ngIf=\"!item || !item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"LIBRARY.CREATE\" | translate }}</button>\n</dialog>\n</div>\n "
+module.exports = "  <nav class=\"navbar-fixed-top dashboard-nav\">\n        <div class=\"container no-margin\">\n            <ul class=\"mr-auto\">\n                <li class=\"nav-item\"><button type=\"button\" (click)=\"toggleSidebar()\" id=\"sidebarCollapse\" class=\"btn btn-sm btn-info\">\n                    <i class=\"fas fa-align-left\"></i>                  \n                </button></li>\n             \n                <li class=\"nav-item\">\n                 <app-language-bar></app-language-bar>\n                 </li>\n            </ul> \n\n           \n        </div>\n     \n\n    </nav>      \n    \n    \n    <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\" >\n    {{item.Name}}\n      <ul class=\"sqr-toolbar\">\n        <li>\n          <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n        </li>\n        <li>\n          <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>\n</div>\n<div class=\"slider-container {{displayModalNew}} shadow \">\n<dialog open={{displayModalNew}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n<div class=\"scroller\">\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"libraryName\"  class=\"form-control\" id=\"screenName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"libraryFile\">{{ \"LIBRARY.RESOURCE\" | translate }}</label>\n<app-upload [item]=\"item\"></app-upload>\n</div>\n   \n</form>\n </div>\n  <button   *ngIf=\"item && item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"LIBRARY.UPDATE\" | translate }}</button>\n  <button   *ngIf=\"!item || !item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"LIBRARY.CREATE\" | translate }}</button>\n</dialog>\n</div>\n "
 
 /***/ }),
 
@@ -4943,6 +4943,9 @@ var dictionary_service_1 = __webpack_require__("../../../../../src/app/services/
 var ngx_file_drop_1 = __webpack_require__("../../../../ngx-file-drop/fesm5/ngx-file-drop.js");
 var angular_draggable_droppable_1 = __webpack_require__("../../../../angular-draggable-droppable/fesm5/angular-draggable-droppable.js");
 var angular2_draggable_1 = __webpack_require__("../../../../angular2-draggable/fesm5/angular2-draggable.js");
+var language_bar_component_1 = __webpack_require__("../../../../../src/app/language-bar/language-bar.component.ts");
+var forms_1 = __webpack_require__("../../../forms/fesm5/forms.js");
+var common_1 = __webpack_require__("../../../common/fesm5/common.js");
 var SharedModule = /** @class */ (function () {
     function SharedModule(translate) {
         // this language will be used as a fallback when a translation isn't found in the current language
@@ -4958,10 +4961,10 @@ var SharedModule = /** @class */ (function () {
     var SharedModule_1;
     SharedModule = SharedModule_1 = __decorate([
         core_1.NgModule({
-            imports: [core_2.TranslateModule.forChild(), ngx_file_drop_1.FileDropModule, angular_draggable_droppable_1.DragAndDropModule, angular2_draggable_1.AngularDraggableModule],
-            declarations: [],
+            imports: [common_1.CommonModule, forms_1.FormsModule, core_2.TranslateModule.forChild(), ngx_file_drop_1.FileDropModule, angular_draggable_droppable_1.DragAndDropModule, angular2_draggable_1.AngularDraggableModule],
+            declarations: [language_bar_component_1.LanguageBarComponent],
             providers: [core_2.TranslateService, dictionary_service_1.DictionaryService],
-            exports: [core_2.TranslateModule, ngx_file_drop_1.FileDropModule, angular_draggable_droppable_1.DragAndDropModule, angular2_draggable_1.AngularDraggableModule],
+            exports: [language_bar_component_1.LanguageBarComponent, core_2.TranslateModule, ngx_file_drop_1.FileDropModule, angular_draggable_droppable_1.DragAndDropModule, angular2_draggable_1.AngularDraggableModule],
         }),
         __metadata("design:paramtypes", [core_2.TranslateService])
     ], SharedModule);
