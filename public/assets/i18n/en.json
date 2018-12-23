@@ -53,6 +53,8 @@
     "NAME": "Name",
     "NAME_HELP": "Try using a meaningful name",
     "RESOURCE": "Resource",
+    "EMBED": "Embed code",
+    "EMBED_HELP": "Copy the embed code from youtube / any other video site",
     "IMAGE_DESCRIPTION": "Images (jpg,gif)",
     "VIDEO_DESCRIPTION": "videos (mp4)",
     "AUDIO_DESCRIPTION": "audio (mp3)",

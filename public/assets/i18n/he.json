@@ -54,7 +54,26 @@
   "DATA": {
     "CONFIRM_DELETE": "מה, למחוק?"
   },
-  "xxxxx": {
-    "xxxx": "xxxx"
+  "LIBRARY": {
+    "NAME": "שם",
+    "NAME_HELP": "כדאי לבחור שם בעל משמעות.",
+    "RESOURCE": "קובץ",
+    "EMBED": "קוד הטמעה",
+    "EMBED_HELP": "העתק וידאו מיוטיוב וחבריו",
+    "IMAGE_DESCRIPTION": "תמונות (jpg,gif)",
+    "VIDEO_DESCRIPTION": "סרטונים (mp4)",
+    "AUDIO_DESCRIPTION": "שמע (mp3)",
+    "CREATE": "חדש",
+    "UPDATE": "עידכון"
+  },
+  "SLIDES": {
+    "NAME": "Name your slide",
+    "NAME_HELP": "Try using a meaningful name",
+    "TYPE": "Type",
+    "STATUS": "Status",
+    "LAST_DATE": "Last active date",
+    "RESET": "Reset",
+    "CREATE": "Create",
+    "UPDATE": "Update"
   }
 }
