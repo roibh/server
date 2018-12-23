@@ -1,12 +1,12 @@
 import { MethodConfig, Method, Verbs, MethodConfigExtend } from '@methodus/server';
-import { PlaylistModel } from '../models';
 import { AuthMiddleware } from './auth.middleware';
+import { ScheduleModel } from '../models';
 
 /*start custom*/
 import { DataController } from './datacontroller';
 /*end custom*/
-@MethodConfig('Playlist', [AuthMiddleware], PlaylistModel)
+@MethodConfig('ScheduleDataController', [AuthMiddleware], ScheduleModel)
 @MethodConfigExtend(DataController)
-export class Playlist extends DataController {
+export class ScheduleDataController extends DataController {
 
 }

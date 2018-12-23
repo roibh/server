@@ -13,6 +13,7 @@ export class DataController {
     }
 
     @Method(Verbs.Post, '/insert')
+    // tslint:disable-next-line:max-line-length
     public static async create(@Body('record') record: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
         // extract repository
         const repo = (this as any).methodus[this.name].repository;
@@ -38,8 +39,12 @@ export class DataController {
     }
 
     @Method(Verbs.Post, '/query')
+    // tslint:disable-next-line:max-line-length
     public static async query(@Body('query') queryObject: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
         // extract repository
+        if (!queryObject) {
+            queryObject = {};
+        }
         const repo = (this as any).methodus[this.name].repository;
         const queryX = new DataQuery(repo.odm.collectionName);
         queryX.filter(queryObject).filter({ user_id: securityContext._id });

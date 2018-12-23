@@ -1,8 +1,5 @@
-
-
-import { Body, Method, MethodConfig, Param, Query, Verbs, MethodError, MethodResult, MethodMock, MethodConfigExtend } from '@methodus/server';
-import { Query as DataQuery } from '@methodus/data';
-import { UserModel } from '../models/user.model';
+import { MethodConfig, MethodConfigExtend } from '@methodus/server';
+import { UserModel } from '../models';
 import { UserMock } from '../mocks/';
 /*start custom*/
 import { DataController } from './datacontroller';
@@ -12,5 +9,3 @@ import { DataController } from './datacontroller';
 @MethodConfigExtend(DataController)
 export class UserController extends DataController {
 }
-
-

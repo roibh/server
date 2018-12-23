@@ -932,24 +932,75 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sat Dec 15 2018 18:07:03 GMT+0200 (Israel Standard Time)
+// Generated at: Sat Dec 22 2018 02:45:05 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
 var AuthController = /** @class */ (function () {
     function AuthController() {
     }
     AuthController.signup = function (userOptions) {
-        return {};
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, {}];
+            });
+        });
     };
     AuthController.token = function (userOptions) {
-        return {};
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, {}];
+            });
+        });
     };
     AuthController.verify = function () {
-        return {};
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, {}];
+            });
+        });
     };
     AuthController.decode = function (token) {
-        return {};
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, {}];
+            });
+        });
     };
     __decorate([
         M.Method(M.Verbs.Post, '/api/auth/signup'),
@@ -1005,27 +1056,82 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sat Dec 15 2018 18:07:03 GMT+0200 (Israel Standard Time)
+// Generated at: Sat Dec 22 2018 02:45:05 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
 var DataController = /** @class */ (function () {
     function DataController() {
     }
     DataController.get = function (id) {
-        return {};
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, {}];
+            });
+        });
     };
     DataController.create = function (record) {
-        return {};
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, {}];
+            });
+        });
     };
     DataController.update = function (id, record) {
-        return {};
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, {}];
+            });
+        });
     };
     DataController.delete = function (id) {
-        return {};
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, {}];
+            });
+        });
     };
     DataController.query = function (queryObject) {
-        return {};
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, {}];
+            });
+        });
     };
     __decorate([
         M.Method(M.Verbs.Get, '/id/:id'),
@@ -1078,15 +1184,51 @@ exports.DataController = DataController;
 "use strict";
 
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// TMLA methodus contract.
+// Generated at: Sat Dec 22 2018 02:45:05 GMT+0200 (Israel Standard Time)
+var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
+/*start custom*/
+var datacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/datacontroller.js");
+var LibraryDataController = /** @class */ (function (_super) {
+    __extends(LibraryDataController, _super);
+    function LibraryDataController() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    LibraryDataController = __decorate([
+        M.MethodConfig('LibraryDataController'),
+        M.MethodConfigExtend(datacontroller_1.DataController)
+    ], LibraryDataController);
+    return LibraryDataController;
+}(datacontroller_1.DataController));
+exports.LibraryDataController = LibraryDataController;
+//# sourceMappingURL=librarydatacontroller.js.map
+
+/***/ }),
+
+/***/ "../../../../../../@signnature/client/contracts/playercontroller.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1099,35 +1241,69 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sat Dec 15 2018 18:07:03 GMT+0200 (Israel Standard Time)
+// Generated at: Sat Dec 22 2018 02:45:05 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
-/*start custom*/
-var datacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/datacontroller.js");
-var LibraryDataController = /** @class */ (function (_super) {
-    __extends(LibraryDataController, _super);
-    function LibraryDataController() {
-        return _super !== null && _super.apply(this, arguments) || this;
+var PlayerController = /** @class */ (function () {
+    function PlayerController() {
     }
-    LibraryDataController.capture = function (files, actionGuid) {
-        return {};
+    PlayerController.registerPlayer = function (token) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, {}];
+            });
+        });
     };
     __decorate([
-        M.Method(M.Verbs.Post, '/upload'),
-        __param(0, M.Files()),
+        M.Method(M.Verbs.Post, '/register-player/:token'),
+        __param(0, M.Param('token')),
         __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object, String]),
+        __metadata("design:paramtypes", [Object]),
         __metadata("design:returntype", Promise)
-    ], LibraryDataController, "capture", null);
-    LibraryDataController = __decorate([
-        M.MethodConfig('LibraryDataController'),
-        M.MethodConfigExtend(datacontroller_1.DataController)
-    ], LibraryDataController);
-    return LibraryDataController;
-}(datacontroller_1.DataController));
-exports.LibraryDataController = LibraryDataController;
-//# sourceMappingURL=librarydatacontroller.js.map
+    ], PlayerController, "registerPlayer", null);
+    PlayerController = __decorate([
+        M.MethodConfig('PlayerController')
+    ], PlayerController);
+    return PlayerController;
+}());
+exports.PlayerController = PlayerController;
+//# sourceMappingURL=playercontroller.js.map
 
 /***/ }),
 
@@ -1137,9 +1313,12 @@ exports.LibraryDataController = LibraryDataController;
 "use strict";
 
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -1154,7 +1333,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sat Dec 15 2018 18:07:03 GMT+0200 (Israel Standard Time)
+// Generated at: Sat Dec 22 2018 02:45:05 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
 /*start custom*/
 var datacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/datacontroller.js");
@@ -1174,15 +1353,18 @@ exports.Playlist = Playlist;
 
 /***/ }),
 
-/***/ "../../../../../../@signnature/client/contracts/screensdatacontroller.js":
+/***/ "../../../../../../@signnature/client/contracts/scheduledatacontroller.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -1197,7 +1379,99 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sat Dec 15 2018 18:07:03 GMT+0200 (Israel Standard Time)
+// Generated at: Sat Dec 22 2018 02:45:05 GMT+0200 (Israel Standard Time)
+var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
+/*start custom*/
+var datacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/datacontroller.js");
+var ScheduleDataController = /** @class */ (function (_super) {
+    __extends(ScheduleDataController, _super);
+    function ScheduleDataController() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ScheduleDataController = __decorate([
+        M.MethodConfig('ScheduleDataController'),
+        M.MethodConfigExtend(datacontroller_1.DataController)
+    ], ScheduleDataController);
+    return ScheduleDataController;
+}(datacontroller_1.DataController));
+exports.ScheduleDataController = ScheduleDataController;
+//# sourceMappingURL=scheduledatacontroller.js.map
+
+/***/ }),
+
+/***/ "../../../../../../@signnature/client/contracts/screengroupdatacontroller.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// TMLA methodus contract.
+// Generated at: Sat Dec 22 2018 02:45:05 GMT+0200 (Israel Standard Time)
+var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
+/*start custom*/
+var datacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/datacontroller.js");
+var ScreenGroupDataController = /** @class */ (function (_super) {
+    __extends(ScreenGroupDataController, _super);
+    function ScreenGroupDataController() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ScreenGroupDataController = __decorate([
+        M.MethodConfig('ScreenGroupDataController'),
+        M.MethodConfigExtend(datacontroller_1.DataController)
+    ], ScreenGroupDataController);
+    return ScreenGroupDataController;
+}(datacontroller_1.DataController));
+exports.ScreenGroupDataController = ScreenGroupDataController;
+//# sourceMappingURL=screengroupdatacontroller.js.map
+
+/***/ }),
+
+/***/ "../../../../../../@signnature/client/contracts/screensdatacontroller.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// TMLA methodus contract.
+// Generated at: Sat Dec 22 2018 02:45:05 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
 /*start custom*/
 var datacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/datacontroller.js");
@@ -1223,9 +1497,12 @@ exports.ScreensDataController = ScreensDataController;
 "use strict";
 
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -1240,7 +1517,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sat Dec 15 2018 18:07:03 GMT+0200 (Israel Standard Time)
+// Generated at: Sat Dec 22 2018 02:45:05 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
 /*start custom*/
 var datacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/datacontroller.js");
@@ -1277,15 +1554,54 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sat Dec 15 2018 18:07:03 GMT+0200 (Israel Standard Time)
+// Generated at: Sat Dec 22 2018 02:45:05 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
 var Upload = /** @class */ (function () {
     function Upload() {
     }
     Upload.capture = function (files) {
-        return {};
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, {}];
+            });
+        });
     };
     __decorate([
         M.Method(M.Verbs.Post, '/upload'),
@@ -1310,9 +1626,12 @@ exports.Upload = Upload;
 "use strict";
 
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -1327,7 +1646,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sat Dec 15 2018 18:07:03 GMT+0200 (Israel Standard Time)
+// Generated at: Sat Dec 22 2018 02:45:05 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__("../../../../../../../methodus/methodus-client/dist/methodus-client.js");
 /*start custom*/
 var datacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/datacontroller.js");
@@ -1435,7 +1754,7 @@ exports.UserMock = UserMock;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sat Dec 15 2018 18:07:03 GMT+0200 (Israel Standard Time)
+// Generated at: Sat Dec 22 2018 02:45:05 GMT+0200 (Israel Standard Time)
 /**/
 var usermock_1 = __webpack_require__("../../../../../../@signnature/client/includes/usermock.js");
 exports.UserMock = usermock_1.UserMock;
@@ -1457,14 +1776,23 @@ exports.ScreensDataController = screensdatacontroller_2.ScreensDataController;
 var librarydatacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/librarydatacontroller.js");
 var librarydatacontroller_2 = __webpack_require__("../../../../../../@signnature/client/contracts/librarydatacontroller.js");
 exports.LibraryDataController = librarydatacontroller_2.LibraryDataController;
-var playlist_1 = __webpack_require__("../../../../../../@signnature/client/contracts/playlist.js");
-var playlist_2 = __webpack_require__("../../../../../../@signnature/client/contracts/playlist.js");
-exports.Playlist = playlist_2.Playlist;
 var slidesdatacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/slidesdatacontroller.js");
 var slidesdatacontroller_2 = __webpack_require__("../../../../../../@signnature/client/contracts/slidesdatacontroller.js");
 exports.SlidesDataController = slidesdatacontroller_2.SlidesDataController;
+var playlist_1 = __webpack_require__("../../../../../../@signnature/client/contracts/playlist.js");
+var playlist_2 = __webpack_require__("../../../../../../@signnature/client/contracts/playlist.js");
+exports.Playlist = playlist_2.Playlist;
+var playercontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/playercontroller.js");
+var playercontroller_2 = __webpack_require__("../../../../../../@signnature/client/contracts/playercontroller.js");
+exports.PlayerController = playercontroller_2.PlayerController;
+var screengroupdatacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/screengroupdatacontroller.js");
+var screengroupdatacontroller_2 = __webpack_require__("../../../../../../@signnature/client/contracts/screengroupdatacontroller.js");
+exports.ScreenGroupDataController = screengroupdatacontroller_2.ScreenGroupDataController;
+var scheduledatacontroller_1 = __webpack_require__("../../../../../../@signnature/client/contracts/scheduledatacontroller.js");
+var scheduledatacontroller_2 = __webpack_require__("../../../../../../@signnature/client/contracts/scheduledatacontroller.js");
+exports.ScheduleDataController = scheduledatacontroller_2.ScheduleDataController;
 function getAll() {
-    return ['DataController', 'Upload', 'UserController', 'AuthController', 'ScreensDataController', 'LibraryDataController', 'Playlist', 'SlidesDataController'];
+    return ['DataController', 'Upload', 'UserController', 'AuthController', 'ScreensDataController', 'LibraryDataController', 'SlidesDataController', 'Playlist', 'PlayerController', 'ScreenGroupDataController', 'ScheduleDataController'];
 }
 exports.getAll = getAll;
 function get(contractName) {
@@ -1481,10 +1809,16 @@ function get(contractName) {
             return screensdatacontroller_1.ScreensDataController;
         case 'LibraryDataController':
             return librarydatacontroller_1.LibraryDataController;
-        case 'Playlist':
-            return playlist_1.Playlist;
         case 'SlidesDataController':
             return slidesdatacontroller_1.SlidesDataController;
+        case 'Playlist':
+            return playlist_1.Playlist;
+        case 'PlayerController':
+            return playercontroller_1.PlayerController;
+        case 'ScreenGroupDataController':
+            return screengroupdatacontroller_1.ScreenGroupDataController;
+        case 'ScheduleDataController':
+            return scheduledatacontroller_1.ScheduleDataController;
     }
 }
 exports.get = get;
@@ -1609,24 +1943,6 @@ var angular_jwt_1 = __webpack_require__("../../../../@auth0/angular-jwt/index.js
 var angularx_social_login_1 = __webpack_require__("../../../../angularx-social-login/angularx-social-login.es5.js");
 var http_1 = __webpack_require__("../../../common/fesm5/http.js");
 var auth_intercepter_1 = __webpack_require__("../../../../../src/app/auth/auth.intercepter.ts");
-var config = new angularx_social_login_1.AuthServiceConfig([
-// {
-//   id: GoogleLoginProvider.PROVIDER_ID,
-//   provider: new GoogleLoginProvider('Google-OAuth-Client-Id')
-// },
-// {
-//   id: FacebookLoginProvider.PROVIDER_ID,
-//   provider: new FacebookLoginProvider('Facebook-App-Id')
-// },
-// {
-//   id: LinkedInLoginProvider.PROVIDER_ID,
-//   provider: new LinkedInLoginProvider('LinkedIn-client-Id', false, 'en_US')
-// }
-]);
-function provideConfig() {
-    return config;
-}
-exports.provideConfig = provideConfig;
 var login_component_1 = __webpack_require__("../../../../../src/app/login/login.component.ts");
 var user_context_service_1 = __webpack_require__("../../../../../src/app/user.context.service.ts");
 var user_info_component_1 = __webpack_require__("../../../../../src/app/user-info/user-info.component.ts");
@@ -1647,8 +1963,8 @@ var schedules_component_1 = __webpack_require__("../../../../../src/app/schedule
 var settings_component_1 = __webpack_require__("../../../../../src/app/settings/settings.component.ts");
 var dialog_component_1 = __webpack_require__("../../../../../src/app/dialog/dialog.component.ts");
 var language_service_1 = __webpack_require__("../../../../../src/app/language.service.ts");
-var library_component_1 = __webpack_require__("../../../../../src/app/library/library.component.ts");
 var editor_toolbar_component_1 = __webpack_require__("../../../../../src/app/library/editor-toolbar/editor-toolbar.component.ts");
+var bread_crumbs_component_1 = __webpack_require__("../../../../../src/app/bread-crumbs/bread-crumbs.component.ts");
 var appRoutes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'signin', component: login_component_1.LoginComponent },
@@ -1658,14 +1974,9 @@ var appRoutes = [
             {
                 path: '',
                 component: timelines_component_1.TimelinesComponent,
-            },
+            }
+        ].concat(screens_module_1.screenRoutes, library_module_1.libraryRoutes, [
             {
-                path: 'screens',
-                component: screens_module_1.ScreensComponent,
-            }, {
-                path: 'library', component: library_component_1.LibraryComponent,
-                children: library_module_1.libraryRoutes.slice()
-            }, {
                 path: 'playlists',
                 component: playlists_component_1.PlaylistsComponent,
                 canActivate: [auth_guard_service_1.AuthGuardService],
@@ -1678,7 +1989,7 @@ var appRoutes = [
                 path: 'settings',
                 component: settings_component_1.SettingsComponent,
             },
-        ]
+        ])
     },
     { path: 'user/details', component: user_info_component_1.UserInfoComponent },
 ];
@@ -1687,6 +1998,24 @@ function HttpLoaderFactory(http) {
     return new http_loader_1.TranslateHttpLoader(http);
 }
 exports.HttpLoaderFactory = HttpLoaderFactory;
+var config = new angularx_social_login_1.AuthServiceConfig([
+// {
+//   id: GoogleLoginProvider.PROVIDER_ID,
+//   provider: new GoogleLoginProvider('Google-OAuth-Client-Id')
+// },
+// {
+//   id: FacebookLoginProvider.PROVIDER_ID,
+//   provider: new FacebookLoginProvider('Facebook-App-Id')
+// },
+// {
+//   id: LinkedInLoginProvider.PROVIDER_ID,
+//   provider: new LinkedInLoginProvider('LinkedIn-client-Id', false, 'en_US')
+// }
+]);
+function provideConfig() {
+    return config;
+}
+exports.provideConfig = provideConfig;
 function tokenGetter() {
     return localStorage.getItem('access_token');
 }
@@ -1711,6 +2040,7 @@ var AppModule = /** @class */ (function () {
                 schedules_component_1.SchedulesComponent,
                 settings_component_1.SettingsComponent,
                 dialog_component_1.DialogComponent,
+                bread_crumbs_component_1.BreadCrumbsComponent,
             ],
             imports: [
                 http_2.HttpClientModule,
@@ -1850,10 +2180,122 @@ exports.AuthInterceptor = AuthInterceptor;
 
 /***/ }),
 
+/***/ "../../../../../src/app/bread-crumbs/bread-crumbs.component.html":
+/***/ (function(module, exports) {
+
+module.exports = " <nav class=\"navbar-fixed-top dashboard-nav\">\nHome >> {{crumbs | json}}\n\n     </nav>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/bread-crumbs/bread-crumbs.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/bread-crumbs/bread-crumbs.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/fesm5/core.js");
+var router_1 = __webpack_require__("../../../router/fesm5/router.js");
+var BreadCrumbsComponent = /** @class */ (function () {
+    function BreadCrumbsComponent(_ngZone, router, route, changeDetector) {
+        this._ngZone = _ngZone;
+        this.router = router;
+        this.route = route;
+        this.changeDetector = changeDetector;
+    }
+    BreadCrumbsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.router.events.subscribe(function (val) {
+            _this._ngZone.run(function () { return __awaiter(_this, void 0, void 0, function () {
+                return __generator(this, function (_a) {
+                    this.crumbs = val.urlAfterRedirects;
+                    this.changeDetector.detectChanges();
+                    return [2 /*return*/];
+                });
+            }); });
+        });
+    };
+    BreadCrumbsComponent = __decorate([
+        core_1.Component({
+            selector: 'app-bread-crumbs',
+            template: __webpack_require__("../../../../../src/app/bread-crumbs/bread-crumbs.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/bread-crumbs/bread-crumbs.component.scss")]
+        }),
+        __metadata("design:paramtypes", [core_1.NgZone, router_1.Router,
+            router_1.ActivatedRoute, core_1.ChangeDetectorRef])
+    ], BreadCrumbsComponent);
+    return BreadCrumbsComponent;
+}());
+exports.BreadCrumbsComponent = BreadCrumbsComponent;
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper\">\n    <!-- Sidebar  -->\n    <nav id=\"sidebar\" [class]=\"activeClass\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <strong>BS</strong>\n        </div>\n\n        <ul class=\"list-unstyled components\">\n            <li class=\"active\">\n                <a href=\"#homeSubmenu\" data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-home\"></i>\n                    {{\"NAVBAR.HOME\" | translate}}\n                </a>             \n            </li>\n              <li>\n                <a routerLink=\"screens\">\n                    <i class=\"fas fa-desktop\"></i>\n                      {{\"NAVBAR.SCREENS\" | translate}}\n                     \n                </a></li>\n            <li>\n             \n                <a href=\"#LibrarySubmenu\" (click)=\"toggleSubmenu()\"    routerLink=\"library\" data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-copy\"></i>\n                      {{\"NAVBAR.LIBRARY\" | translate}}\n                     \n                </a>\n                <ul class=\"{{subMenuState}} list-unstyled\" id=\"LibrarySubmenu\">\n                    <li>\n                        <a    routerLink=\"library/images\">  {{\"NAVBAR.IMAGES\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a   routerLink=\"library/videos\">  {{\"NAVBAR.VIDEOS\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/sounds\">  {{\"NAVBAR.SOUNDS\" | translate}}</a>\n                    </li>\n                     <li>\n                        <a routerLink=\"library/slides\">  {{\"NAVBAR.SLIDES\" | translate}}</a>\n                    </li>\n                </ul>\n\n            </li>\n              <li>\n                <a routerLink=\"playlists\">\n                    <i class=\"fas fa-step-forward\"></i>\n                      {{\"NAVBAR.PLAYLISTS\" | translate}}\n                     \n                </a></li>\n\n                  <li>\n                <a routerLink=\"schedules\">\n                    <i class=\"fas fa-calendar-alt\"></i>\n                      {{\"NAVBAR.SCHEDULES\" | translate}}\n                    \n                </a></li>\n\n                  <li>\n                <a routerLink=\"settings\">\n                    <i class=\"fas fa-cogs\"></i>\n                      {{\"NAVBAR.SETTINGS\" | translate}}\n                  \n                </a></li>\n\n        </ul>\n\n    </nav>\n\n    <!-- Page Content  -->\n    <div id=\"content\">\n\n\n<div id=\"scroller\">\n     \n         <router-outlet></router-outlet>\n         </div>\n    </div>\n     <footer class=\"footer closed\">\n     {{'DASHBOARD.FOOTER' | translate}}\n     </footer>\n</div>\n\n\n\n\n "
+module.exports = "<div class=\"wrapper\">\n    <nav id=\"sidebar\" [class]=\"activeClass\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <ul class=\"mr-auto\">\n                <li class=\"nav-item\"><button type=\"button\" (click)=\"toggleSidebar()\" id=\"sidebarCollapse\" class=\"btn btn-sm btn-info\">\n                        <i class=\"fas fa-align-left\"></i>\n                    </button></li>\n                <li class=\"nav-item\" class=\"language-bar\">\n                    <app-language-bar></app-language-bar>\n                </li>\n            </ul>\n            <strong>SN</strong>\n        </div>\n        <ul class=\"list-unstyled components\">\n            <li class=\"active\">\n                <a href=\"#homeSubmenu\" data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-home\"></i>\n                    {{\"NAVBAR.HOME\" | translate}}\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"screens\">\n                    <i class=\"fas fa-desktop\"></i>\n                    {{\"NAVBAR.SCREENS\" | translate}}\n\n                </a></li>\n            <li>\n                <a routerLink=\"screen-groups\">\n                    <i class=\"fas fa-clone\"></i>\n                    {{\"NAVBAR.SCREEN-GROUPS\" | translate}}\n\n                </a></li>\n            <li>\n                <a href=\"#LibrarySubmenu\" (click)=\"toggleSubmenu()\" routerLink=\"library\" data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-copy\"></i>\n                    {{\"NAVBAR.LIBRARY\" | translate}}\n                </a>\n                <ul class=\"{{subMenuState}} list-unstyled\" id=\"LibrarySubmenu\">\n                    <li>\n                        <a routerLink=\"library/images\"> {{\"NAVBAR.IMAGES\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/videos\"> {{\"NAVBAR.VIDEOS\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/sounds\"> {{\"NAVBAR.SOUNDS\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/slides\"> {{\"NAVBAR.SLIDES\" | translate}}</a>\n                    </li>\n                </ul>\n            </li>\n            <li>\n                <a routerLink=\"playlists\">\n                    <i class=\"fas fa-step-forward\"></i>\n                    {{\"NAVBAR.PLAYLISTS\" | translate}}\n\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"schedules\">\n                    <i class=\"fas fa-calendar-alt\"></i>\n                    {{\"NAVBAR.SCHEDULES\" | translate}}\n\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"settings\">\n                    <i class=\"fas fa-cogs\"></i>\n                    {{\"NAVBAR.SETTINGS\" | translate}}\n\n                </a>\n            </li>\n        </ul>\n    </nav>\n    <!-- Page Content  -->\n    <div id=\"content\">\n        <app-bread-crumbs></app-bread-crumbs>\n\n        <div id=\"scroller\">\n            <router-outlet></router-outlet>\n        </div>\n    </div>\n    <footer class=\"footer closed\">\n        {{'DASHBOARD.FOOTER' | translate}}\n    </footer>\n</div>\n"
 
 /***/ }),
 
@@ -2008,14 +2450,18 @@ var DataComponent = /** @class */ (function () {
             });
         });
     };
-    DataComponent.prototype.loadItems = function () {
+    DataComponent.prototype.loadItems = function (query) {
+        if (query === void 0) { query = {}; }
         return __awaiter(this, void 0, void 0, function () {
             var _a;
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
+                        if (Object.keys(query).length) {
+                            this.query = query;
+                        }
                         _a = this;
-                        return [4 /*yield*/, this.DataController.query({})];
+                        return [4 /*yield*/, this.DataController.query(this.query)];
                     case 1:
                         _a.items = _b.sent();
                         return [2 /*return*/];
@@ -2027,7 +2473,6 @@ var DataComponent = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                debugger;
                 this.translateService.get('DATA.CONFIRM_DELETE').subscribe(function (confirmMessage) { return __awaiter(_this, void 0, void 0, function () {
                     return __generator(this, function (_a) {
                         switch (_a.label) {
@@ -2301,6 +2746,7 @@ var LanguageBarComponent = /** @class */ (function () {
     }
     LanguageBarComponent.prototype.ngOnInit = function () {
         this.languages = this.languageService.languages;
+        this.selectedLanguage = this.languageService.language;
     };
     LanguageBarComponent.prototype.selectLanguage = function () {
         this.languageService.setLanguage(this.selectedLanguage);
@@ -2552,7 +2998,7 @@ exports.ContenteditableDirective = ContenteditableDirective;
 /***/ "../../../../../src/app/library/editor-toolbar/editor-toolbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div> \n  <button (click)=\"newTextBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"fas fa-font\"></i></button>\n  <button (click)=\"newImageBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"far fa-image\"></i></button>\n  <button (click)=\"newVideoBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"fas fa-video\"></i></button>\n  <button (click)=\"newPluginBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"fas fa-plug\"></i></button>\n</div>"
+module.exports = ""
 
 /***/ }),
 
@@ -2854,7 +3300,7 @@ exports.FinderComponent = FinderComponent;
 /***/ "../../../../../src/app/library/images/images.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "  <nav class=\"navbar-fixed-top dashboard-nav\">\n        <div class=\"container no-margin\">\n            <ul class=\"mr-auto\">\n                <li class=\"nav-item\"><button type=\"button\" (click)=\"toggleSidebar()\" id=\"sidebarCollapse\" class=\"btn btn-sm btn-info\">\n                    <i class=\"fas fa-align-left\"></i>                  \n                </button></li>\n             \n                <li class=\"nav-item\">\n                 <app-language-bar></app-language-bar>\n                 </li>\n            </ul> \n\n           \n        </div>\n     \n\n    </nav>      \n    \n    \n    <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\" >\n    {{item.Name}}\n      <ul class=\"sqr-toolbar\">\n        <li>\n          <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n        </li>\n        <li>\n          <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>\n</div>\n<div class=\"slider-container {{displayModalNew}} shadow \">\n<dialog open={{displayModalNew}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n<div class=\"scroller\">\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"libraryName\"  class=\"form-control\" id=\"screenName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"libraryFile\">{{ \"LIBRARY.RESOURCE\" | translate }}</label>\n<app-upload [item]=\"item\"></app-upload>\n</div>\n   \n</form>\n </div>\n  <button   *ngIf=\"item && item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"LIBRARY.UPDATE\" | translate }}</button>\n  <button   *ngIf=\"!item || !item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"LIBRARY.CREATE\" | translate }}</button>\n</dialog>\n</div>\n "
+module.exports = "<div class=\"container no-margin\">\n  <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    {{item.Name}}\n    <ul class=\"sqr-toolbar\">\n      <li>\n        <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n    </ul>\n  </div>\n</div>\n<div class=\"slider-container {{displayModalNew}} shadow \">\n  <dialog open= {{displayModalNew}}>\n    <a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\"></i></a>\n    <div class=\"scroller\">\n      <form *ngIf=\"item\">\n        <div class=\"form-group\">\n          <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n          <input type=\"text\" name=\"libraryName\" class=\"form-control\" id=\"screenName\" [(ngModel)]=\"item.Name\">\n          <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n        </div>\n        <div class=\"form-group\">\n          <label for=\"libraryFile\">{{ \"LIBRARY.RESOURCE\" | translate }}</label>\n          <div *ngIf=\"item.thumb\" [ngStyle]=\"{'background-image': 'url(' + item.thumb + ')'}\" class=\"fancy-image\"></div>\n          <p><a href=\"{{item.thumb}}\" target=\"_blank\" class=\"form-text text-muted\"><small>{{item.thumb}}</small></a></p>\n          <app-upload [item]=\"item\"></app-upload>\n          <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.IMAGE_DESCRIPTION\" | translate }}</small>\n        </div>\n      </form>\n    </div>\n    <button *ngIf=\"item && item._id\" class=\"btn btn-primary\" (click)=\"saveLibrary()\">{{ \"LIBRARY.UPDATE\" | translate }}</button>\n    <button *ngIf=\"!item || !item._id\" class=\"btn btn-primary\" (click)=\"createLibrary()\">{{ \"LIBRARY.CREATE\" | translate }}</button>\n  </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -2866,7 +3312,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".fancy-thumb {\n  background-position: 50%;\n  background-repeat: no-repeat !important; }\n", ""]);
+exports.push([module.i, ".fancy-thumb {\n  background-position: 50%;\n  background-repeat: no-repeat !important; }\n\n.fancy-image {\n  width: 100%;\n  height: 250px;\n  background-size: cover !important;\n  background-repeat: no-repeat !important; }\n", ""]);
 
 // exports
 
@@ -2953,7 +3399,25 @@ var ImagesComponent = /** @class */ (function (_super) {
     ImagesComponent.prototype.ngOnInit = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                this.loadItems();
+                this.loadItems({ type: 'image' });
+                return [2 /*return*/];
+            });
+        });
+    };
+    ImagesComponent.prototype.saveLibrary = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                this.item.type = 'image';
+                this.updateItem();
+                return [2 /*return*/];
+            });
+        });
+    };
+    ImagesComponent.prototype.createLibrary = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                this.item.type = 'image';
+                this.createItem();
                 return [2 /*return*/];
             });
         });
@@ -3208,11 +3672,14 @@ var selection_service_1 = __webpack_require__("../../../../../src/app/library/se
 var alloy_component_1 = __webpack_require__("../../../../../src/app/library/alloy/alloy.component.ts");
 __export(__webpack_require__("../../../../../src/app/library/main/main.component.ts"));
 exports.libraryRoutes = [
-    { path: 'images', component: images_component_1.ImagesComponent },
-    { path: 'videos', component: videos_component_1.VideosComponent },
-    { path: 'sounds', component: sounds_component_1.SoundsComponent },
-    { path: 'slides', component: slides_component_1.SlidesComponent },
-    { path: 'slides/:id', component: slide_editor_component_1.SlideEditorComponent },
+    {
+        path: 'library', component: library_component_1.LibraryComponent,
+        children: [{ path: 'images', component: images_component_1.ImagesComponent },
+            { path: 'videos', component: videos_component_1.VideosComponent },
+            { path: 'sounds', component: sounds_component_1.SoundsComponent },
+            { path: 'slides', component: slides_component_1.SlidesComponent },
+            { path: 'slides/:id', component: slide_editor_component_1.SlideEditorComponent }]
+    },
 ];
 var LibraryModule = /** @class */ (function () {
     function LibraryModule() {
@@ -3356,7 +3823,7 @@ exports.SelectionService = SelectionService;
 /***/ "../../../../../src/app/library/slide-editor/slide-editor.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"item\">\n  <div>\n    <div class=\"btn-group btn-group-toggle\" data-toggle=\"buttons\">\n      <label class=\"btn btn-secondary\" (click)=\"setEditorMode('Designer');\">\n        <input type=\"radio\" name=\"options\" id=\"designer\" autocomplete=\"off\" checked> Designer\n      </label>\n      <label class=\"btn btn-secondary\" (click)=\"setEditorMode('Source');\">\n        <input type=\"radio\" name=\"options\" id=\"source\" autocomplete=\"off\"> Source\n      </label>\n    </div>\n  </div>\n  <div *ngIf=\"editorMode==='Designer'\">\n    <button class=\"btn btn-primary\" (click)=\"resetItem()\">{{ \"SLIDES.RESET\" | translate }}</button>\n    <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">\n      <div class=\"btn-spinner-host\"> <i class=\"btn-spinner\" *ngIf=\"updateItemRunning\"></i> {{ \"SLIDES.UPDATE\" | translate }} </div>\n    </button>\n    <button *ngIf=\"!item._id\" class=\"btn btn-primary btn-spinner-host\" (click)=\"createItem()\"><i class=\"btn-spinner\"></i>\n      {{ \"SLIDES.CREATE\" | translate }}</button>\n\n  \n  \n  <p\n    contenteditable=\"true\"\n   \n    [(ngModel)]=\"item.name\"\n    ></p>\n    \n    <app-alloy></app-alloy>\n    \n\n    <div class=\"row slide-editor\">\n      <div class=\"col-md-9\">\n        <div class=\"slide-canvas drag-boundary\" class=\"drag-boundary\" [ngClass]=\"{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }\"\n          #myBounds>\n          <app-element *ngFor=\"let el of selectionService.elements\" \n          (click)=\"designerFocus($event)\"\n           [element]=\"el\"></app-element>\n        </div>\n      </div>\n      <div class=\"col-md-3\">\n        <ul class=\"list-group\">\n          <ol class=\"list-group-item\" *ngFor=\"let el of selectionService.elements\">\n            <app-inline-edit [(ngModel)]=\"el.name\" label=\"Name\" [required]=\"true\" type=\"text\">\n            </app-inline-edit>\n          </ol>\n        </ul>\n      </div>\n    </div>\n  </div>\n  <div *ngIf=\"editorMode==='Source'\">\n    <pre> {{item.elements | json}}</pre>\n  </div>\n\n</div>\n<div class=\"slider-container-wide {{displayModalNew}} shadow\">\n<app-finder></app-finder>\n</div>\n"
+module.exports = "<div *ngIf=\"item\">\n  <nav class=\"navbar-fixed-top dashboard-nav\">\n    <div class=\"btn-group btn-group-toggle\" data-toggle=\"buttons\">\n      <label class=\"btn btn-secondary\" (click)=\"setEditorMode('Designer');\">\n        <input type=\"radio\" name=\"options\" id=\"designer\" autocomplete=\"off\" checked> Designer\n      </label>\n      <label class=\"btn btn-secondary\" (click)=\"setEditorMode('Source');\">\n        <input type=\"radio\" name=\"options\" id=\"source\" autocomplete=\"off\"> Source\n      </label>\n    </div>\n <div class=\"btn-group\" data-toggle=\"buttons\">\n    <button (click)=\"newTextBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"fas fa-font\"></i></button>\n        <button (click)=\"newImageBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"far fa-image\"></i></button>\n        <button (click)=\"newVideoBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"fas fa-video\"></i></button>\n        <button (click)=\"newPluginBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"fas fa-plug\"></i></button>\n</div>\n    <ul>\n      <li class=\"nav-item\">\n       </li>\n      <li class=\"nav-item\">\n        <button class=\"btn btn-primary\" (click)=\"resetItem()\">{{ \"SLIDES.RESET\" | translate }}</button>\n        <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">\n          <span class=\"btn-spinner-host\"> <i class=\"btn-spinner\" *ngIf=\"updateItemRunning\"></i> {{ \"SLIDES.UPDATE\" | translate }}\n          </span>\n        </button>\n        <button *ngIf=\"!item._id\" class=\"btn btn-primary btn-spinner-host\" (click)=\"createItem()\"><i class=\"btn-spinner\"></i>\n          {{ \"SLIDES.CREATE\" | translate }}</button>\n      </li>\n    </ul>\n  </nav>\n</div>\n\n<div *ngIf=\"editorMode==='Designer'\">\n\n\n\n\n  <p contenteditable=\"true\" [(ngModel)]=\"item.name\"></p>\n\n  <app-alloy></app-alloy>\n\n\n  <div class=\"row slide-editor\">\n    <div class=\"col-md-9\">\n      <div class=\"slide-canvas drag-boundary\" class=\"drag-boundary\" [ngClass]=\"{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }\"\n        #myBounds>\n        <app-element *ngFor=\"let el of selectionService.elements\" (click)=\"designerFocus($event)\" [element]=\"el\"></app-element>\n      </div>\n    </div>\n    <div class=\"col-md-3\">\n      <ul class=\"list-group\">\n        <ol class=\"list-group-item\" *ngFor=\"let el of selectionService.elements\">\n          <app-inline-edit [(ngModel)]=\"el.name\" label=\"Name\" [required]=\"true\" type=\"text\">\n          </app-inline-edit>\n        </ol>\n      </ul>\n    </div>\n  </div>\n</div>\n\n\n\n\n<div *ngIf=\"editorMode==='Source'\">\n  <pre> {{item.elements | json}}</pre>\n</div>\n\n\n<div class=\"slider-container-wide {{displayModalNew}} shadow\">\n  <app-finder></app-finder>\n</div>\n"
 
 /***/ }),
 
@@ -3542,7 +4009,7 @@ exports.SlideEditorComponent = SlideEditorComponent;
 /***/ "../../../../../src/app/library/slides/slides.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container no-margin\">\n  <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}}\n    <ul class=\"sqr-toolbar\">\n      <li>\n        <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-xs btn-primary\" [routerLink]=\"[item._id]\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n    </ul>\n  </div>\n</div>\n<div class=\"slider-container-wide {{displayModalNew}} shadow\">\n  <dialog open= {{displayModalNew}}>\n    <a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\"></i></a>\n    <form *ngIf=\"item\">\n      <div class=\"form-group\">\n        <label for=\"screenName\">{{ \"SLIDES.NAME\" | translate }}:</label>\n        <input type=\"text\" name=\"slideName\" class=\"form-control\" id=\"screenName\" [(ngModel)]=\"item.Name\">\n        <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SLIDES.NAME_HELP\" | translate }}</small>\n      </div>\n      <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"SLIDES.UPDATE\" | translate }}</button>\n      <button *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"SLIDES.CREATE\" | translate }}</button>\n      <div class=\"form-group\">\n\n        <app-slide-editor></app-slide-editor>\n\n\n      </div>\n    </form>\n  </dialog>\n</div>\n"
+module.exports = "<div class=\"container no-margin\">\n  <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}}\n    <ul class=\"sqr-toolbar\">\n      <li>\n        <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-xs btn-primary\" [routerLink]=\"[item._id]\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n    </ul>\n  </div>\n</div>\n<div class=\"slider-container-wide {{displayModalNew}} shadow\">\n  <dialog open= {{displayModalNew}}>\n    <a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\"></i></a>\n    <form *ngIf=\"item\">\n      <div class=\"form-group\">\n        <label for=\"screenName\">{{ \"SLIDES.NAME\" | translate }}:</label>\n        <input type=\"text\" name=\"slideName\" class=\"form-control\" id=\"screenName\" [(ngModel)]=\"item.Name\">\n        <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SLIDES.NAME_HELP\" | translate }}</small>\n      </div>\n      <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"SLIDES.UPDATE\" | translate }}</button>\n      <button *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"SLIDES.CREATE\" | translate }}</button>\n      <div class=\"form-group\">\n        <app-slide-editor></app-slide-editor>\n      </div>\n    </form>\n  </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -3664,7 +4131,7 @@ exports.SlidesComponent = SlidesComponent;
 /***/ "../../../../../src/app/library/sounds/sounds.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  sounds works!\n</p>\n"
+module.exports = "   \n    \n    \n    <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\" >\n    {{item.Name}}\n      <ul class=\"sqr-toolbar\">\n        <li>\n          <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n        </li>\n        <li>\n          <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>\n</div>\n<div class=\"slider-container {{displayModalNew}} shadow \">\n<dialog open={{displayModalNew}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n<div class=\"scroller\">\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"libraryName\"  class=\"form-control\" id=\"screenName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"libraryFile\">{{ \"LIBRARY.RESOURCE\" | translate }}</label>\n<app-upload [item]=\"item\"></app-upload>\n</div>\n   \n</form>\n </div>\n  <button   *ngIf=\"item && item._id\" class=\"btn btn-primary\" (click)=\"saveLibrary()\">{{ \"LIBRARY.UPDATE\" | translate }}</button>\n  <button   *ngIf=\"!item || !item._id\" class=\"btn btn-primary\" (click)=\"createLibrary()\">{{ \"LIBRARY.CREATE\" | translate }}</button>\n</dialog>\n</div>\n "
 
 /***/ }),
 
@@ -3691,6 +4158,16 @@ module.exports = module.exports.toString();
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3700,12 +4177,80 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/fesm5/core.js");
-var SoundsComponent = /** @class */ (function () {
-    function SoundsComponent() {
+var data_component_1 = __webpack_require__("../../../../../src/app/data.component.ts");
+var client_1 = __webpack_require__("../../../../../../@signnature/client/index.js");
+var core_2 = __webpack_require__("../../../../@ngx-translate/core/fesm5/ngx-translate-core.js");
+var SoundsComponent = /** @class */ (function (_super) {
+    __extends(SoundsComponent, _super);
+    function SoundsComponent(_ngZone, translateService) {
+        var _this = _super.call(this, _ngZone, translateService) || this;
+        _this._ngZone = _ngZone;
+        _this.translateService = translateService;
+        _this.DataController = client_1.LibraryDataController;
+        return _this;
     }
+    SoundsComponent.prototype.saveLibrary = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                this.item.type = 'audio';
+                this.updateItem();
+                return [2 /*return*/];
+            });
+        });
+    };
+    SoundsComponent.prototype.createLibrary = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                this.item.type = 'audio';
+                this.createItem();
+                return [2 /*return*/];
+            });
+        });
+    };
     SoundsComponent.prototype.ngOnInit = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                this.loadItems({ type: 'audio' });
+                return [2 /*return*/];
+            });
+        });
     };
     SoundsComponent = __decorate([
         core_1.Component({
@@ -3713,10 +4258,10 @@ var SoundsComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/library/sounds/sounds.component.html"),
             styles: [__webpack_require__("../../../../../src/app/library/sounds/sounds.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [core_1.NgZone, core_2.TranslateService])
     ], SoundsComponent);
     return SoundsComponent;
-}());
+}(data_component_1.DataComponent));
 exports.SoundsComponent = SoundsComponent;
 
 
@@ -3725,7 +4270,7 @@ exports.SoundsComponent = SoundsComponent;
 /***/ "../../../../../src/app/library/upload/upload.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div (click)=\"addFiles()\" class=\"btn btn-default\">\n    <file-drop headertext=\"Drop files here\" customstyle=\"dropzone\" (onFileDrop)=\"dropped($event)\">\n    </file-drop>\n    </div>\n <input type=\"file\" #file style=\"display: none\" (change)=\"selected()\" />  \n     <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.RESOURCE_DESCRIPTION\" | translate }}</small>\n<div *ngIf=\"item\"> \n  <div class=\"loader\" *ngIf=\"loading\">Loading...</div>\n  <img [src]=\"item.thumb\" (load)=\"clearUpload()\" #imgIndicator id=\"imgIndicator\" /> \n  <div *ngIf=\"item.resource && !loading\" [ngStyle]=\"{'background-image': 'url(' + item.resource + ')'}\" class=\"fancy-image\"></div>\n </div>\n"
+module.exports = "<div (click)=\"addFiles()\" class=\"btn btn-default\">\n    <file-drop headertext=\"Drop files here\" customstyle=\"dropzone\" (onFileDrop)=\"dropped($event)\">\n    </file-drop>\n    </div>\n <input type=\"file\" #file style=\"display: none\" (change)=\"selected()\" />  \n\n\n<div *ngIf=\"item\"> \n  <div class=\"loader\" *ngIf=\"loading\">Loading...</div>\n  <img [src]=\"item.thumb\" (load)=\"clearUpload()\" #imgIndicator id=\"imgIndicator\" /> \n \n </div>\n"
 
 /***/ }),
 
@@ -3802,6 +4347,7 @@ var client_1 = __webpack_require__("../../../../../../@signnature/client/index.j
 var UploadComponent = /** @class */ (function () {
     function UploadComponent(_ngZone) {
         this._ngZone = _ngZone;
+        this.count = 0;
         this.files = new Set();
         this.uploadComplete = false;
     }
@@ -3826,6 +4372,7 @@ var UploadComponent = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 if (!this.uploadComplete) {
+                    this.count++;
                     this.loading = true;
                     if (this.imgIndicator.nativeElement && src) {
                         this.imgIndicator.nativeElement.src = src;
@@ -3834,6 +4381,14 @@ var UploadComponent = /** @class */ (function () {
                         this.imgIndicator.src = src;
                     }
                     setTimeout(function () { _this.waitUpload(src); }, 1000);
+                }
+                else {
+                    this._ngZone.run(function () { return __awaiter(_this, void 0, void 0, function () {
+                        return __generator(this, function (_a) {
+                            this.item.thumb = this.item.thumb.split('?____')[0] + '?____' + this.count;
+                            return [2 /*return*/];
+                        });
+                    }); });
                 }
                 return [2 /*return*/];
             });
@@ -3927,7 +4482,7 @@ exports.UploadComponent = UploadComponent;
 /***/ "../../../../../src/app/library/videos/videos.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  videos works!\n</p>\n"
+module.exports = "<div class=\"container no-margin\">\n  <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    {{item.Name}}\n    <ul class=\"sqr-toolbar\">\n      <li>\n        <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n    </ul>\n  </div>\n</div>\n<div class=\"slider-container {{displayModalNew}} shadow \">\n  <dialog open= {{displayModalNew}}>\n    <a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\"></i></a>\n    <div class=\"scroller\">\n      <form *ngIf=\"item\">\n        <div class=\"form-group\">\n          <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n          <input type=\"text\" name=\"libraryName\" class=\"form-control\" id=\"screenName\" [(ngModel)]=\"item.Name\">\n          <small id=\"nameHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n        </div>\n        <div class=\"form-group\">\n          <textarea id=\"embedCode\" name=\"embedCode\" class=\"form-control\" [(ngModel)]=\"item.Embed\"></textarea>\n          <small id=\"embedHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.EMBED_HELP\" | translate }}</small>\n        </div>\n      </form>\n    </div>\n    <button *ngIf=\"item && item._id\" class=\"btn btn-primary\" (click)=\"saveLibrary()\">{{ \"LIBRARY.UPDATE\" | translate }}</button>\n    <button *ngIf=\"!item || !item._id\" class=\"btn btn-primary\" (click)=\"createLibrary()\">{{ \"LIBRARY.CREATE\" | translate }}</button>\n  </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -3954,6 +4509,16 @@ module.exports = module.exports.toString();
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3963,12 +4528,81 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/fesm5/core.js");
-var VideosComponent = /** @class */ (function () {
-    function VideosComponent() {
+var data_component_1 = __webpack_require__("../../../../../src/app/data.component.ts");
+var client_1 = __webpack_require__("../../../../../../@signnature/client/index.js");
+var core_2 = __webpack_require__("../../../../@ngx-translate/core/fesm5/ngx-translate-core.js");
+var VideosComponent = /** @class */ (function (_super) {
+    __extends(VideosComponent, _super);
+    function VideosComponent(_ngZone, translateService) {
+        var _this = _super.call(this, _ngZone, translateService) || this;
+        _this._ngZone = _ngZone;
+        _this.translateService = translateService;
+        _this.DataController = client_1.LibraryDataController;
+        return _this;
+        // this.DataModel = PlaylistModel;
     }
     VideosComponent.prototype.ngOnInit = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                this.loadItems({ type: 'video' });
+                return [2 /*return*/];
+            });
+        });
+    };
+    VideosComponent.prototype.saveLibrary = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                this.item.type = 'video';
+                this.updateItem();
+                return [2 /*return*/];
+            });
+        });
+    };
+    VideosComponent.prototype.createLibrary = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                this.item.type = 'video';
+                this.createItem();
+                return [2 /*return*/];
+            });
+        });
     };
     VideosComponent = __decorate([
         core_1.Component({
@@ -3976,10 +4610,10 @@ var VideosComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/library/videos/videos.component.html"),
             styles: [__webpack_require__("../../../../../src/app/library/videos/videos.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [core_1.NgZone, core_2.TranslateService])
     ], VideosComponent);
     return VideosComponent;
-}());
+}(data_component_1.DataComponent));
 exports.VideosComponent = VideosComponent;
 
 
@@ -4644,14 +5278,181 @@ exports.SchedulesComponent = SchedulesComponent;
 
 /***/ }),
 
-/***/ "../../../../../src/app/screens/screens.component.html":
+/***/ "../../../../../src/app/screens/screen-group/screen-group.component.html":
 /***/ (function(module, exports) {
 
-module.exports = " <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow\" >\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}}\n       \n    <ul class=\"sqr-toolbar\">\n        <li>\n    <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n</li>\n    <li>\n    <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n</li>\n</ul>\n    \n    </div>    \n</div>\n\n \n<div class=\"slider-container {{displayModalNew}} shadow\">\n<dialog open={{displayModalNew}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"screenName\">{{ \"SCREENS.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"screenName\"  class=\"form-control\" id=\"screenName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"exampleInputPassword1\">{{ \"SCREENS.TOKEN\" | translate }}</label>\n    <input type=\"text\" [(ngModel)]=\"item.Token\" name=\"txtToken\" class=\"form-control\" id=\"txtToken\" placeholder=\"{{'SCREENS.TOKEN' | translate}}\">\n  </div>\n  \n  <button   *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"SCREENS.UPDATE\" | translate }}</button>\n\n   <button   *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"SCREENS.CREATE\" | translate }}</button>\n\n</form>\n</dialog>\n</div>\n "
+module.exports = " <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow\" >\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}}\n       \n    <ul class=\"sqr-toolbar\">\n        <li>\n    <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n</li>\n    <li>\n    <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n</li>\n</ul>\n    \n    </div>    \n</div>\n\n \n<div class=\"slider-container {{displayModalNew}} shadow\">\n<dialog open={{displayModalNew}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"screenName\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"screenName\"  class=\"form-control\" id=\"screenName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n  </div>\n  <button   *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"SCREENS.UPDATE\" | translate }}</button>\n  <button   *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"SCREENS.CREATE\" | translate }}</button>\n\n</form>\n</dialog>\n</div>\n "
 
 /***/ }),
 
-/***/ "../../../../../src/app/screens/screens.component.scss":
+/***/ "../../../../../src/app/screens/screen-group/screen-group.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/screens/screen-group/screen-group.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/fesm5/core.js");
+var client_1 = __webpack_require__("../../../../../../@signnature/client/index.js");
+var data_component_1 = __webpack_require__("../../../../../src/app/data.component.ts");
+var core_2 = __webpack_require__("../../../../@ngx-translate/core/fesm5/ngx-translate-core.js");
+var ScreenGroupComponent = /** @class */ (function (_super) {
+    __extends(ScreenGroupComponent, _super);
+    function ScreenGroupComponent(_ngZone, translateService) {
+        var _this = _super.call(this, _ngZone, translateService) || this;
+        _this._ngZone = _ngZone;
+        _this.translateService = translateService;
+        _this.DataController = client_1.ScreenGroupDataController;
+        return _this;
+    }
+    ScreenGroupComponent.prototype.ngOnInit = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                this.loadItems();
+                return [2 /*return*/];
+            });
+        });
+    };
+    ScreenGroupComponent = __decorate([
+        core_1.Component({
+            selector: 'app-screen-group',
+            template: __webpack_require__("../../../../../src/app/screens/screen-group/screen-group.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/screens/screen-group/screen-group.component.scss")]
+        }),
+        __metadata("design:paramtypes", [core_1.NgZone, core_2.TranslateService])
+    ], ScreenGroupComponent);
+    return ScreenGroupComponent;
+}(data_component_1.DataComponent));
+exports.ScreenGroupComponent = ScreenGroupComponent;
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/screens/screens.module.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/fesm5/core.js");
+var common_1 = __webpack_require__("../../../common/fesm5/common.js");
+var screens_component_1 = __webpack_require__("../../../../../src/app/screens/screens/screens.component.ts");
+var screens_component_2 = __webpack_require__("../../../../../src/app/screens/screens/screens.component.ts");
+exports.ScreensComponent = screens_component_2.ScreensComponent;
+var shared_module_1 = __webpack_require__("../../../../../src/app/shared.module.ts");
+var forms_1 = __webpack_require__("../../../forms/fesm5/forms.js");
+var screen_group_component_1 = __webpack_require__("../../../../../src/app/screens/screen-group/screen-group.component.ts");
+exports.screenRoutes = [
+    { path: 'screens', component: screens_component_1.ScreensComponent },
+    { path: 'screen-groups', component: screen_group_component_1.ScreenGroupComponent }
+];
+var ScreensModule = /** @class */ (function () {
+    function ScreensModule() {
+    }
+    ScreensModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                shared_module_1.SharedModule,
+                common_1.CommonModule,
+                forms_1.FormsModule
+            ],
+            declarations: [screens_component_1.ScreensComponent, screen_group_component_1.ScreenGroupComponent],
+            entryComponents: [screens_component_1.ScreensComponent],
+            exports: [screens_component_1.ScreensComponent, screen_group_component_1.ScreenGroupComponent]
+        })
+    ], ScreensModule);
+    return ScreensModule;
+}());
+exports.ScreensModule = ScreensModule;
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/screens/screens/screens.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container no-margin\">\n    <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n        <i class=\"fas fa-desktop\"></i>\n        {{item.Name}}\n        <ul class=\"sqr-toolbar\">\n            <li>\n                <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n            </li>\n            <li>\n                <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n            </li>\n        </ul>\n    </div>\n</div>\n\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n    <dialog open= {{displayModalNew}}>\n        <a (click)=\"closeSlider();\" class=\"close-button\"><i class=\"far fa-window-close\"></i></a>\n        <form *ngIf=\"item\">\n            <div class=\"form-group\">\n                <label for=\"screenName\">{{ \"SCREENS.NAME\" | translate }}:</label>\n                <input type=\"text\" name=\"screenName\" class=\"form-control\" id=\"screenName\" [(ngModel)]=\"item.Name\">\n                <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n            </div>          \n            <div class=\"form-group\">\n                <label for=\"ScreenGroup\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n                <select [(ngModel)]=\"item.Group\" name=\"ScreenGroup\" [compareWith]=\"compareFn\" class=\"form-control\">\n                    <option *ngFor=\"let c of groups\" [ngValue]=\"c\">{{c.Name}}</option>\n                </select>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"exampleInputPassword1\">{{ \"SCREENS.TOKEN\" | translate }}</label>\n                <input type=\"text\" [(ngModel)]=\"item.Token\" name=\"txtToken\" class=\"form-control\" id=\"txtToken\" placeholder=\"{{'SCREENS.TOKEN' | translate}}\">\n            </div>\n            <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"SCREENS.UPDATE\" | translate }}</button>\n            <button *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"SCREENS.CREATE\" | translate }}</button>\n        </form>\n    </dialog>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/screens/screens/screens.component.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
@@ -4669,7 +5470,7 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ "../../../../../src/app/screens/screens.component.ts":
+/***/ "../../../../../src/app/screens/screens/screens.component.ts":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4742,66 +5543,38 @@ var ScreensComponent = /** @class */ (function (_super) {
         _this.DataController = client_1.ScreensDataController;
         return _this;
     }
+    ScreensComponent.prototype.compareFn = function (a, b) {
+        if (b) {
+            return a._id === b._id;
+        }
+    };
     ScreensComponent.prototype.ngOnInit = function () {
         return __awaiter(this, void 0, void 0, function () {
+            var groups;
             return __generator(this, function (_a) {
-                this.loadItems();
-                return [2 /*return*/];
+                switch (_a.label) {
+                    case 0:
+                        this.loadItems();
+                        return [4 /*yield*/, client_1.ScreenGroupDataController.query({})];
+                    case 1:
+                        groups = _a.sent();
+                        this.groups = groups;
+                        return [2 /*return*/];
+                }
             });
         });
     };
     ScreensComponent = __decorate([
         core_1.Component({
             selector: 'app-screens',
-            template: __webpack_require__("../../../../../src/app/screens/screens.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/screens/screens.component.scss")]
+            template: __webpack_require__("../../../../../src/app/screens/screens/screens.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/screens/screens/screens.component.scss")]
         }),
         __metadata("design:paramtypes", [core_1.NgZone, core_2.TranslateService])
     ], ScreensComponent);
     return ScreensComponent;
 }(data_component_1.DataComponent));
 exports.ScreensComponent = ScreensComponent;
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/screens/screens.module.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/fesm5/core.js");
-var common_1 = __webpack_require__("../../../common/fesm5/common.js");
-var screens_component_1 = __webpack_require__("../../../../../src/app/screens/screens.component.ts");
-var screens_component_2 = __webpack_require__("../../../../../src/app/screens/screens.component.ts");
-exports.ScreensComponent = screens_component_2.ScreensComponent;
-var shared_module_1 = __webpack_require__("../../../../../src/app/shared.module.ts");
-var forms_1 = __webpack_require__("../../../forms/fesm5/forms.js");
-var ScreensModule = /** @class */ (function () {
-    function ScreensModule() {
-    }
-    ScreensModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                shared_module_1.SharedModule,
-                common_1.CommonModule,
-                forms_1.FormsModule
-            ],
-            declarations: [screens_component_1.ScreensComponent],
-            entryComponents: [screens_component_1.ScreensComponent],
-            exports: [screens_component_1.ScreensComponent]
-        })
-    ], ScreensModule);
-    return ScreensModule;
-}());
-exports.ScreensModule = ScreensModule;
 
 
 /***/ }),

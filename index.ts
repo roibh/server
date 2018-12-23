@@ -4,17 +4,16 @@ import {
     ClientConfiguration, ConfiguredServer, MethodType, ServerType,
 } from '@methodus/server';
 
-
-
 export * from './models/';
 import * as path from 'path';
 import { DBHandler } from '@methodus/data';
 import { configuration } from './db/config';
 import {
     LibraryDataController, Playlist, AuthController, UserController,
-    ScreensDataController, Upload,SlidesDataController,
+    ScreensDataController, Upload, SlidesDataController, PlayerController,
 } from './controllers/';
- 
+import { ScreenGroupDataController } from './controllers/screen-group.data.controller';
+
 DBHandler.config = configuration;
 
 @ServerConfiguration(ServerType.Express, { port: process.env.PORT || 6299 })
@@ -27,6 +26,8 @@ DBHandler.config = configuration;
 @ClientConfiguration(LibraryDataController, MethodType.Local, ServerType.Express)
 @ClientConfiguration(Upload, MethodType.Local, ServerType.Express)
 @ClientConfiguration(SlidesDataController, MethodType.Local, ServerType.Express)
+@ClientConfiguration(PlayerController, MethodType.Local, ServerType.Express)
+@ClientConfiguration(ScreenGroupDataController, MethodType.Local, ServerType.Express)
 class SetupServer extends ConfiguredServer {
     constructor() {
         super(SetupServer);

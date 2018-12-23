@@ -6,6 +6,7 @@ export function init(config, pluginOptions) {
             const options = {
                 etag: true,
                 extensions: ['woff', 'woff2', 'ttf', 'eot'],
+                index: ['index.html', 'player.html'],
                 maxAge: '1d',
                 redirect: false,
                 setHeaders: (res) => {
@@ -13,7 +14,13 @@ export function init(config, pluginOptions) {
                 },
             };
             const clientDir = path.resolve(path.join(__dirname, pluginOptions.clientPath));
+
             instance.use(pluginOptions.path, express.static(clientDir, options));
+
+            const playerDir = path.resolve(path.join(__dirname, pluginOptions.clientPath + '_player'));
+
+            instance.use(pluginOptions.path + '_player', express.static(playerDir, options));
+
         },
     });
     return config;

@@ -1,12 +1,12 @@
 import { MethodConfig, Method, Verbs, MethodConfigExtend } from '@methodus/server';
-import { PlaylistModel } from '../models';
+import { ScreenGroupModel } from '../models';
 import { AuthMiddleware } from './auth.middleware';
 
 /*start custom*/
 import { DataController } from './datacontroller';
 /*end custom*/
-@MethodConfig('Playlist', [AuthMiddleware], PlaylistModel)
+@MethodConfig('ScreenGroupDataController', [AuthMiddleware], ScreenGroupModel)
 @MethodConfigExtend(DataController)
-export class Playlist extends DataController {
+export class ScreenGroupDataController extends DataController {
 
 }

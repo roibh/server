@@ -1,9 +1,9 @@
 import { MethodConfig, Method, Verbs, MethodConfigExtend } from '@methodus/server';
 import { AuthMiddleware } from './auth.middleware';
+import { SlideModel } from '../models';
 
 /*start custom*/
 import { DataController } from './datacontroller';
-import { SlideModel } from '../models/slide.model';
 /*end custom*/
 @MethodConfig('SlidesDataController', [AuthMiddleware], SlideModel)
 @MethodConfigExtend(DataController)

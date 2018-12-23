@@ -2,6 +2,7 @@
   "NAVBAR": {
     "HOME": "Home",
     "SCREENS": "Screens",
+    "SCREEN-GROUPS": "Screen Groups",
     "LIBRARY": "Library",
     "PLAYLISTS": "Playlists",
     "SCHEDULES": "Schedules",
@@ -42,15 +43,19 @@
     "STATUS": "Status",
     "LAST_DATE": "Last active date",
     "CREATE": "Create",
-    "UPDATE": "Update"
+    "UPDATE": "Update",
+    "GROUP_NAME": "Group name"
   },
   "DASHBOARD": {
     "FOOTER": "All rights reserved ©"
   },
   "LIBRARY": {
     "NAME": "Name",
+    "NAME_HELP": "Try using a meaningful name",
     "RESOURCE": "Resource",
-    "RESOURCE_DESCRIPTION": "Images (jpg,gif) videos (mp4) audio (mp3)",
+    "IMAGE_DESCRIPTION": "Images (jpg,gif)",
+    "VIDEO_DESCRIPTION": "videos (mp4)",
+    "AUDIO_DESCRIPTION": "audio (mp3)",
     "CREATE": "Create",
     "UPDATE": "Update"
   },

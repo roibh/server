@@ -2,7 +2,6 @@ import {
     MethodConfig, Files, Method, Verbs, MethodError, MethodResult, SecurityContext,
 } from '@methodus/server';
 
-import { LibraryModel } from '../models/library.model';
 import * as aws from 'aws-sdk';
 import { AuthMiddleware } from './auth.middleware';
 import * as moment from 'moment';
@@ -15,10 +14,11 @@ const S3_REGION = 'us-east-2';
 
 const s3 = new aws.S3({ signatureVersion: 'v4', region: 'us-east-2' });
 
-@MethodConfig('Upload', [AuthMiddleware], LibraryModel)
+@MethodConfig('Upload', [AuthMiddleware])
 export class Upload {
 
     @Method(Verbs.Post, '/upload')
+    // tslint:disable-next-line:max-line-length
     public static async capture(@Files('files') files: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
         if (!files) {
             throw (new MethodError('no data'));
@@ -58,6 +58,7 @@ export class Upload {
                         const s3obj = new aws.S3({ params: s3Params });
                         s3obj.upload({ Body: file.data } as any).
                             send((err: any, data: any) => {
+                                // tslint:disable-next-line:no-console
                                 console.log(data);
                             });
                     });

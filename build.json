@@ -23,11 +23,20 @@
             "LibraryDataController": {
                 "path": "./controllers/library.data.controller.ts"
             },
+            "SlidesDataController": {
+                "path": "./controllers/slides.data.controller.ts"
+            },
             "Playlist": {
                 "path": "./controllers/playlist.data.controller.ts"
             },
-            "SlidesDataController": {
-                "path": "./controllers/slides.data.controller.ts"
+            "PlayerController": {
+                "path": "./controllers/player.controller.ts"
+            },
+            "ScreenGroupDataController": {
+                "path": "./controllers/screen-group.data.controller.ts"
+            },
+            "ScheduleDataController": {
+                "path": "./controllers/schedule.data.controller.ts"
             }
         },
         "models": {
@@ -45,6 +54,16 @@
             },
             "SlideModel": {
                 "path": "./models/slide.model.ts"
+            },
+            "TokenModel": {
+                "path": "./models/token.model.ts"
+            },
+            "ScreenGroupModel": {
+                "path": "./models/screen-group.model.ts"
+            },
+           
+            "ScheduleModel": {
+                "path": "./models/schedule.model.ts"
             }
         },
         "includes": {

@@ -1,7 +1,7 @@
 import { Repo, Field, Model, ObjectId, Transform } from '@methodus/data';
 
-@Model('Library', Transform.Automatic)
-export class LibraryModel extends Repo<LibraryModel> {
+@Model('Schedule', Transform.Automatic)
+export class ScheduleModel extends Repo<ScheduleModel> {
 
     @ObjectId()
     @Field('_id')
@@ -11,8 +11,8 @@ export class LibraryModel extends Repo<LibraryModel> {
     @Field()
     public Date?: Date;
     @Field()
-    public Path?: string;
+    public Status?: string;
     constructor(copyData?: any) {
-        super(copyData, LibraryModel);
+        super(copyData, ScheduleModel);
     }
 }

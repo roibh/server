@@ -1,5 +1,5 @@
 import { MethodConfig, Method, Verbs, MethodConfigExtend } from '@methodus/server';
-import { ScreenModel } from '../models/screen.model';
+import { ScreenModel } from '../models';
 import { AuthMiddleware } from './auth.middleware';
 
 /*start custom*/
