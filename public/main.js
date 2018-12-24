@@ -1629,7 +1629,7 @@ var LibraryComponent = /** @class */ (function () {
 /*!*******************************************!*\
   !*** ./src/app/library/library.module.ts ***!
   \*******************************************/
-/*! exports provided: libraryRoutes, LibraryModule, MainComponent */
+/*! exports provided: MainComponent, libraryRoutes, LibraryModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2780,7 +2780,7 @@ var ManageComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = " <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow\" >\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}} <span *ngIf=\"item.list\">({{item.list.length}})</span>\n      <ul class=\"sqr-toolbar\">    \n        <li>\n          <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n        </li>\n        <li>\n          <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>    \n</div>\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n<dialog open={{displayModalNew}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"itemName\">{{ \"PLAYLISTS.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"itemName\" class=\"form-control\" id=\"itemName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"PLAYLISTS.NAME_HELP\" | translate }}</small>\n  </div>\n  <div class=\"form-group\">\n    <button (click)=\"schedule()\">+</button>\n\n  </div>\n  <div class=\"form-group\" class=\"sortable\">\n<button (click)=\"finder()\">+</button>\n    <ngx-sortable *ngIf=\"item.list\" [listStyle]=\"listStyle\" [items]=\"item.list\" [name]=\"'List'\" (listSorted)=\"listOrderChanged($event)\">\n        <ng-template let-item>\n            <div class=\"sortable-list-item\">\n               <div  class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    {{item.Name}}\n   \n  </div>\n            </div>\n        </ng-template>\n    </ngx-sortable>   \n     </div>  \n  <button   *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"PLAYLISTS.UPDATE\" | translate }}</button>\n  <button   *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"PLAYLISTS.CREATE\" | translate }}</button>\n</form>\n</dialog>\n</div>\n\n\n<div class=\"slider-container-drawer {{displayDrawer}} shadow\">\n  <dialog open={{displayDrawer}}>\n  <a (click)=\"closeDrawer();\"><i class=\"far fa-window-close close-button\" ></i></a>\n   <form *ngIf=\"item\">\n    <div class=\"form-group\">\n      <label for=\"itemName\">{{ \"PLAYLISTS.NAME\" | translate }}:</label>\n      <input type=\"text\" name=\"itemName\" class=\"form-control\" id=\"itemName\"   [(ngModel)]=\"item.Name\">\n      <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"PLAYLISTS.NAME_HELP\" | translate }}</small>\n    </div>\n    <div class=\"form-group\" class=\"sortable\">\n  <button (click)=\"finder()\">+</button>\n      <ngx-sortable *ngIf=\"item.list\" [listStyle]=\"listStyle\" [items]=\"item.list\" [name]=\"'List'\" (listSorted)=\"listOrderChanged($event)\">\n          <ng-template let-item>\n              <div class=\"sortable-list-item\">\n                 <div  class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n      {{item.Name}}\n     \n    </div>\n              </div>\n          </ng-template>\n      </ngx-sortable>   \n       </div>  \n    <button   *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"PLAYLISTS.UPDATE\" | translate }}</button>\n    <button   *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"PLAYLISTS.CREATE\" | translate }}</button>\n  </form>\n  </dialog>\n  </div>\n\n\n <app-finder [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n "
+module.exports = "<div class=\"container no-margin\">\n  <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}} <span *ngIf=\"item.list\">({{item.list.length}})</span>\n    <ul class=\"sqr-toolbar\">\n      <li>\n        <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n  <dialog open= {{displayModalNew}}>\n    <a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\"></i></a>\n    <form *ngIf=\"item\">\n      <div class=\"form-group\">\n        <label for=\"itemName\">{{ \"PLAYLISTS.NAME\" | translate }}:</label>\n        <input type=\"text\" name=\"itemName\" class=\"form-control\" id=\"itemName\" [(ngModel)]=\"item.Name\">\n        <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"PLAYLISTS.NAME_HELP\" | translate }}</small>\n      </div>\n      <div class=\"form-group\">\n        <button (click)=\"schedule()\">+</button>\n\n      </div>\n      <div class=\"form-group\" class=\"sortable\">\n        <button (click)=\"finder()\">+</button>\n        <ngx-sortable *ngIf=\"item.list\" [listStyle]=\"listStyle\" [items]=\"item.list\" [name]=\"'List'\" (listSorted)=\"listOrderChanged($event)\">\n          <ng-template let-item>\n            <div class=\"sortable-list-item\">\n              <div class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n                {{item.Name}}\n\n              </div>\n            </div>\n          </ng-template>\n        </ngx-sortable>\n      </div>\n      <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"PLAYLISTS.UPDATE\" | translate }}</button>\n      <button *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"PLAYLISTS.CREATE\" | translate }}</button>\n    </form>\n  </dialog>\n</div>\n\n\n<div class=\"slider-container-drawer {{displayDrawer}} shadow\">\n  <dialog open= {{displayDrawer}}>\n    <a (click)=\"closeDrawer();\"><i class=\"far fa-window-close close-button\"></i></a>\n    <button (click)=\"addTime()\">Add time +</button>\n    <div *ngIf=\"item\">\n      <div *ngFor=\"let timeslot of item.TimeSlots\" class=\"sqr shadow\">\n\n      </div>\n    </div>\n  </dialog>\n</div>\n\n\n<app-finder [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
 
 /***/ }),
 
@@ -2849,12 +2849,22 @@ var PlaylistsComponent = /** @class */ (function (_super) {
         });
     };
     PlaylistsComponent.prototype.closeDrawer = function () {
+        this.displayDrawer = 'closing';
+    };
+    PlaylistsComponent.prototype.closeSlider = function () {
+        this.displayModalNew = 'closing';
     };
     PlaylistsComponent.prototype.finder = function () {
         this.finderActive = 'active';
     };
     PlaylistsComponent.prototype.schedule = function () {
         this.displayDrawer = 'active';
+    };
+    PlaylistsComponent.prototype.addTime = function () {
+        if (!this.item.TimeSlots) {
+            this.item.TimeSlots = [];
+        }
+        this.item.TimeSlots.push({ Name: 'asdasdasd' });
     };
     PlaylistsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
