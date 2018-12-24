@@ -92,13 +92,12 @@ var AppComponent = /** @class */ (function () {
 /*!*******************************!*\
   !*** ./src/app/app.module.ts ***!
   \*******************************/
-/*! exports provided: HttpLoaderFactory, provideConfig, tokenGetter, AppModule */
+/*! exports provided: HttpLoaderFactory, tokenGetter, AppModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HttpLoaderFactory", function() { return HttpLoaderFactory; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "provideConfig", function() { return provideConfig; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tokenGetter", function() { return tokenGetter; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
@@ -118,30 +117,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _loader_loader_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./loader/loader.component */ "./src/app/loader/loader.component.ts");
 /* harmony import */ var _manage_manage_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./manage/manage.component */ "./src/app/manage/manage.component.ts");
 /* harmony import */ var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @auth0/angular-jwt */ "./node_modules/@auth0/angular-jwt/index.js");
-/* harmony import */ var angularx_social_login__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! angularx-social-login */ "./node_modules/angularx-social-login/angularx-social-login.es5.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _auth_auth_intercepter__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./auth/auth.intercepter */ "./src/app/auth/auth.intercepter.ts");
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-/* harmony import */ var _user_context_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./user.context.service */ "./src/app/user.context.service.ts");
-/* harmony import */ var _user_info_user_info_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./user-info/user-info.component */ "./src/app/user-info/user-info.component.ts");
-/* harmony import */ var _directives_adapt_height__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./directives/adapt-height */ "./src/app/directives/adapt-height.ts");
-/* harmony import */ var ngx_order_pipe__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ngx-order-pipe */ "./node_modules/ngx-order-pipe/ngx-order-pipe.es5.js");
-/* harmony import */ var _shared_module__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./shared.module */ "./src/app/shared.module.ts");
-/* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
-/* harmony import */ var _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @ngx-translate/http-loader */ "./node_modules/@ngx-translate/http-loader/esm5/ngx-translate-http-loader.js");
-/* harmony import */ var _auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./auth/auth-guard.service */ "./src/app/auth/auth-guard.service.ts");
-/* harmony import */ var _signup_signup_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./signup/signup.component */ "./src/app/signup/signup.component.ts");
-/* harmony import */ var _screens_screens_module__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./screens/screens.module */ "./src/app/screens/screens.module.ts");
-/* harmony import */ var _library_library_module__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./library/library.module */ "./src/app/library/library.module.ts");
-/* harmony import */ var _playlists_playlists_module__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./playlists/playlists.module */ "./src/app/playlists/playlists.module.ts");
-/* harmony import */ var _timelines_timelines_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./timelines/timelines.component */ "./src/app/timelines/timelines.component.ts");
-/* harmony import */ var _schedules_schedules_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./schedules/schedules.component */ "./src/app/schedules/schedules.component.ts");
-/* harmony import */ var _settings_settings_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./settings/settings.component */ "./src/app/settings/settings.component.ts");
-/* harmony import */ var _dialog_dialog_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./dialog/dialog.component */ "./src/app/dialog/dialog.component.ts");
-/* harmony import */ var _language_service__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./language.service */ "./src/app/language.service.ts");
-/* harmony import */ var _library_editor_toolbar_editor_toolbar_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./library/editor-toolbar/editor-toolbar.component */ "./src/app/library/editor-toolbar/editor-toolbar.component.ts");
-/* harmony import */ var _bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./bread-crumbs/bread-crumbs.component */ "./src/app/bread-crumbs/bread-crumbs.component.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _auth_auth_intercepter__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./auth/auth.intercepter */ "./src/app/auth/auth.intercepter.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _user_context_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./user.context.service */ "./src/app/user.context.service.ts");
+/* harmony import */ var _user_info_user_info_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./user-info/user-info.component */ "./src/app/user-info/user-info.component.ts");
+/* harmony import */ var _directives_adapt_height__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./directives/adapt-height */ "./src/app/directives/adapt-height.ts");
+/* harmony import */ var ngx_order_pipe__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ngx-order-pipe */ "./node_modules/ngx-order-pipe/ngx-order-pipe.es5.js");
+/* harmony import */ var _shared_module__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./shared.module */ "./src/app/shared.module.ts");
+/* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
+/* harmony import */ var _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @ngx-translate/http-loader */ "./node_modules/@ngx-translate/http-loader/esm5/ngx-translate-http-loader.js");
+/* harmony import */ var _auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./auth/auth-guard.service */ "./src/app/auth/auth-guard.service.ts");
+/* harmony import */ var _signup_signup_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./signup/signup.component */ "./src/app/signup/signup.component.ts");
+/* harmony import */ var _screens_screens_module__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./screens/screens.module */ "./src/app/screens/screens.module.ts");
+/* harmony import */ var _library_library_module__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./library/library.module */ "./src/app/library/library.module.ts");
+/* harmony import */ var _playlists_playlists_module__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./playlists/playlists.module */ "./src/app/playlists/playlists.module.ts");
+/* harmony import */ var _timelines_timelines_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./timelines/timelines.component */ "./src/app/timelines/timelines.component.ts");
+/* harmony import */ var _settings_settings_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./settings/settings.component */ "./src/app/settings/settings.component.ts");
+/* harmony import */ var _dialog_dialog_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./dialog/dialog.component */ "./src/app/dialog/dialog.component.ts");
+/* harmony import */ var _language_service__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./language.service */ "./src/app/language.service.ts");
+/* harmony import */ var _library_editor_toolbar_editor_toolbar_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./library/editor-toolbar/editor-toolbar.component */ "./src/app/library/editor-toolbar/editor-toolbar.component.ts");
+/* harmony import */ var _bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./bread-crumbs/bread-crumbs.component */ "./src/app/bread-crumbs/bread-crumbs.component.ts");
 
 
 
@@ -183,51 +180,28 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
 var appRoutes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-    { path: 'signin', component: _login_login_component__WEBPACK_IMPORTED_MODULE_19__["LoginComponent"] },
-    { path: 'signup', component: _signup_signup_component__WEBPACK_IMPORTED_MODULE_29__["SignupComponent"] },
+    { path: 'signin', component: _login_login_component__WEBPACK_IMPORTED_MODULE_18__["LoginComponent"] },
+    { path: 'signup', component: _signup_signup_component__WEBPACK_IMPORTED_MODULE_28__["SignupComponent"] },
     {
-        path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_25__["DashboardComponent"], canActivate: [_auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_28__["AuthGuardService"]], children: [
+        path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_24__["DashboardComponent"], canActivate: [_auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_27__["AuthGuardService"]], children: [
             {
                 path: '',
-                component: _timelines_timelines_component__WEBPACK_IMPORTED_MODULE_33__["TimelinesComponent"],
+                component: _timelines_timelines_component__WEBPACK_IMPORTED_MODULE_32__["TimelinesComponent"],
             }
-        ].concat(_screens_screens_module__WEBPACK_IMPORTED_MODULE_30__["screenRoutes"], _library_library_module__WEBPACK_IMPORTED_MODULE_31__["libraryRoutes"], _playlists_playlists_module__WEBPACK_IMPORTED_MODULE_32__["playlistsRoutes"], [
-            {
-                path: 'schedules',
-                component: _schedules_schedules_component__WEBPACK_IMPORTED_MODULE_34__["SchedulesComponent"],
-            },
+        ].concat(_screens_screens_module__WEBPACK_IMPORTED_MODULE_29__["screenRoutes"], _library_library_module__WEBPACK_IMPORTED_MODULE_30__["libraryRoutes"], _playlists_playlists_module__WEBPACK_IMPORTED_MODULE_31__["playlistsRoutes"], [
             {
                 path: 'settings',
-                component: _settings_settings_component__WEBPACK_IMPORTED_MODULE_35__["SettingsComponent"],
+                component: _settings_settings_component__WEBPACK_IMPORTED_MODULE_33__["SettingsComponent"],
             },
         ])
     },
-    { path: 'user/details', component: _user_info_user_info_component__WEBPACK_IMPORTED_MODULE_21__["UserInfoComponent"] },
+    { path: 'user/details', component: _user_info_user_info_component__WEBPACK_IMPORTED_MODULE_20__["UserInfoComponent"] },
 ];
 // AoT requires an exported function for factories
 function HttpLoaderFactory(http) {
-    return new _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_27__["TranslateHttpLoader"](http);
-}
-var config = new angularx_social_login__WEBPACK_IMPORTED_MODULE_16__["AuthServiceConfig"]([
-// {
-//   id: GoogleLoginProvider.PROVIDER_ID,
-//   provider: new GoogleLoginProvider('Google-OAuth-Client-Id')
-// },
-// {
-//   id: FacebookLoginProvider.PROVIDER_ID,
-//   provider: new FacebookLoginProvider('Facebook-App-Id')
-// },
-// {
-//   id: LinkedInLoginProvider.PROVIDER_ID,
-//   provider: new LinkedInLoginProvider('LinkedIn-client-Id', false, 'en_US')
-// }
-]);
-function provideConfig() {
-    return config;
+    return new _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_26__["TranslateHttpLoader"](http);
 }
 function tokenGetter() {
     return localStorage.getItem('access_token');
@@ -241,28 +215,27 @@ var AppModule = /** @class */ (function () {
                 _app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"],
                 _loader_loader_component__WEBPACK_IMPORTED_MODULE_13__["LoaderComponent"],
                 _manage_manage_component__WEBPACK_IMPORTED_MODULE_14__["ManageComponent"],
-                _login_login_component__WEBPACK_IMPORTED_MODULE_19__["LoginComponent"],
-                _user_info_user_info_component__WEBPACK_IMPORTED_MODULE_21__["UserInfoComponent"],
-                _directives_adapt_height__WEBPACK_IMPORTED_MODULE_22__["AdaptHeightDirective"],
-                _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_25__["DashboardComponent"],
-                _signup_signup_component__WEBPACK_IMPORTED_MODULE_29__["SignupComponent"],
-                _timelines_timelines_component__WEBPACK_IMPORTED_MODULE_33__["TimelinesComponent"],
-                _library_editor_toolbar_editor_toolbar_component__WEBPACK_IMPORTED_MODULE_38__["EditorToolbarComponent"],
-                _schedules_schedules_component__WEBPACK_IMPORTED_MODULE_34__["SchedulesComponent"],
-                _settings_settings_component__WEBPACK_IMPORTED_MODULE_35__["SettingsComponent"],
-                _dialog_dialog_component__WEBPACK_IMPORTED_MODULE_36__["DialogComponent"],
-                _bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_39__["BreadCrumbsComponent"],
+                _login_login_component__WEBPACK_IMPORTED_MODULE_18__["LoginComponent"],
+                _user_info_user_info_component__WEBPACK_IMPORTED_MODULE_20__["UserInfoComponent"],
+                _directives_adapt_height__WEBPACK_IMPORTED_MODULE_21__["AdaptHeightDirective"],
+                _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_24__["DashboardComponent"],
+                _signup_signup_component__WEBPACK_IMPORTED_MODULE_28__["SignupComponent"],
+                _timelines_timelines_component__WEBPACK_IMPORTED_MODULE_32__["TimelinesComponent"],
+                _library_editor_toolbar_editor_toolbar_component__WEBPACK_IMPORTED_MODULE_36__["EditorToolbarComponent"],
+                _settings_settings_component__WEBPACK_IMPORTED_MODULE_33__["SettingsComponent"],
+                _dialog_dialog_component__WEBPACK_IMPORTED_MODULE_34__["DialogComponent"],
+                _bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_37__["BreadCrumbsComponent"],
             ],
             imports: [
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_17__["HttpClientModule"],
-                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_26__["TranslateModule"].forRoot({
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_16__["HttpClientModule"],
+                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_25__["TranslateModule"].forRoot({
                     loader: {
-                        provide: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_26__["TranslateLoader"],
+                        provide: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_25__["TranslateLoader"],
                         useFactory: HttpLoaderFactory,
-                        deps: [_angular_common_http__WEBPACK_IMPORTED_MODULE_17__["HttpClient"]]
+                        deps: [_angular_common_http__WEBPACK_IMPORTED_MODULE_16__["HttpClient"]]
                     }
                 }),
-                _shared_module__WEBPACK_IMPORTED_MODULE_24__["SharedModule"],
+                _shared_module__WEBPACK_IMPORTED_MODULE_23__["SharedModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_11__["RouterModule"].forRoot(appRoutes, { enableTracing: false, useHash: true } // <-- debugging purposes only
                 ),
                 ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_9__["TabsModule"].forRoot(),
@@ -273,26 +246,22 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
-                ngx_order_pipe__WEBPACK_IMPORTED_MODULE_23__["OrderModule"],
+                ngx_order_pipe__WEBPACK_IMPORTED_MODULE_22__["OrderModule"],
                 _ng_dynamic_forms_ui_bootstrap__WEBPACK_IMPORTED_MODULE_6__["DynamicFormsBootstrapUIModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"],
-                angularx_social_login__WEBPACK_IMPORTED_MODULE_16__["SocialLoginModule"],
-                _screens_screens_module__WEBPACK_IMPORTED_MODULE_30__["ScreensModule"],
-                _library_library_module__WEBPACK_IMPORTED_MODULE_31__["LibraryModule"],
-                _playlists_playlists_module__WEBPACK_IMPORTED_MODULE_32__["PlaylistsModule"],
+                _screens_screens_module__WEBPACK_IMPORTED_MODULE_29__["ScreensModule"],
+                _library_library_module__WEBPACK_IMPORTED_MODULE_30__["LibraryModule"],
+                _playlists_playlists_module__WEBPACK_IMPORTED_MODULE_31__["PlaylistsModule"],
                 _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_15__["JwtModule"].forRoot({
                     config: {
                         tokenGetter: tokenGetter
                     }
                 })
             ],
-            providers: [_user_context_service__WEBPACK_IMPORTED_MODULE_20__["UserService"], _language_service__WEBPACK_IMPORTED_MODULE_37__["LanguageService"], _auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_28__["AuthGuardService"], {
-                    provide: angularx_social_login__WEBPACK_IMPORTED_MODULE_16__["AuthServiceConfig"],
-                    useFactory: provideConfig
-                },
+            providers: [_user_context_service__WEBPACK_IMPORTED_MODULE_19__["UserService"], _language_service__WEBPACK_IMPORTED_MODULE_35__["LanguageService"], _auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_27__["AuthGuardService"],
                 {
-                    provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_17__["HTTP_INTERCEPTORS"],
-                    useClass: _auth_auth_intercepter__WEBPACK_IMPORTED_MODULE_18__["AuthInterceptor"],
+                    provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_16__["HTTP_INTERCEPTORS"],
+                    useClass: _auth_auth_intercepter__WEBPACK_IMPORTED_MODULE_17__["AuthInterceptor"],
                     multi: true
                 }],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"]]
@@ -716,9 +685,14 @@ var DialogComponent = /** @class */ (function () {
         this.nativeDialogElement = this.dialogElement.nativeElement;
         this.nativeDialogElement.showModal();
     };
+    DialogComponent.prototype.handleClose = function (e) { };
+    DialogComponent.prototype.okClicked = function () {
+    };
+    DialogComponent.prototype.cancelClicked = function () {
+    };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Notification)
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
     ], DialogComponent.prototype, "notification", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
@@ -814,7 +788,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<link rel=\"stylesheet\" [href]='sanitizer.bypassSecurityTrustResourceUrl(this.languageService.cssUrl)' />\n\n<select [(ngModel)]=\"selectedLanguage\" (change)=\"selectLanguage()\">\n  <option *ngFor=\"let c of languages\" [ngValue]=\"c\">{{c.name}}</option>\n</select>"
+module.exports = "<link rel=\"stylesheet\" [href]='sanitizer.bypassSecurityTrustResourceUrl(this.languageService.cssUrl)' />\n\n<select [(ngModel)]=\"selectedLanguage\" (change)=\"selectLanguage()\" [compareWith]=\"compareFn\">\n  <option *ngFor=\"let c of languages\" [ngValue]=\"c\">{{c.name}}</option>\n</select>"
 
 /***/ }),
 
@@ -844,10 +818,15 @@ var LanguageBarComponent = /** @class */ (function () {
     }
     LanguageBarComponent.prototype.ngOnInit = function () {
         this.languages = this.languageService.languages;
-        this.selectedLanguage = this.languageService.language;
+        this.selectedLanguage = this.languageService.getLanguage();
     };
     LanguageBarComponent.prototype.selectLanguage = function () {
         this.languageService.setLanguage(this.selectedLanguage);
+    };
+    LanguageBarComponent.prototype.compareFn = function (a, b) {
+        if (b) {
+            return a.lcid === b.lcid;
+        }
     };
     LanguageBarComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -899,6 +878,13 @@ var LanguageService = /** @class */ (function () {
         // the lang to use, if the lang isn't available, it will use the current loader to get them
         translate.use(this.language.key);
     }
+    LanguageService.prototype.getLanguage = function () {
+        var str = localStorage.getItem('lng');
+        if (str) {
+            this.language = JSON.parse(str);
+        }
+        return this.language;
+    };
     LanguageService.prototype.setLanguage = function (language) {
         this.language = language;
         localStorage.setItem('lng', JSON.stringify(language));
@@ -1333,7 +1319,7 @@ var FinderComponent = /** @class */ (function (_super) {
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Boolean)
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
     ], FinderComponent.prototype, "active", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
@@ -1643,7 +1629,7 @@ var LibraryComponent = /** @class */ (function () {
 /*!*******************************************!*\
   !*** ./src/app/library/library.module.ts ***!
   \*******************************************/
-/*! exports provided: MainComponent, libraryRoutes, LibraryModule */
+/*! exports provided: libraryRoutes, LibraryModule, MainComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1690,6 +1676,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var libraryRoutes = [
     {
         path: 'library', component: _library_component__WEBPACK_IMPORTED_MODULE_9__["LibraryComponent"],
@@ -1714,7 +1701,7 @@ var LibraryModule = /** @class */ (function () {
             exports: [_library_component__WEBPACK_IMPORTED_MODULE_9__["LibraryComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"]],
             entryComponents: [_library_component__WEBPACK_IMPORTED_MODULE_9__["LibraryComponent"]],
             declarations: [_inline_edit_inline_edit_component__WEBPACK_IMPORTED_MODULE_15__["InlineEditComponent"], _contenteditable_directive__WEBPACK_IMPORTED_MODULE_13__["ContenteditableDirective"], _images_images_component__WEBPACK_IMPORTED_MODULE_5__["ImagesComponent"],
-                _slide_editor_slide_editor_component__WEBPACK_IMPORTED_MODULE_14__["SlideEditorComponent"],
+                _slide_editor_slide_editor_component__WEBPACK_IMPORTED_MODULE_14__["SlideEditorComponent"], _main_main_component__WEBPACK_IMPORTED_MODULE_18__["MainComponent"],
                 _videos_videos_component__WEBPACK_IMPORTED_MODULE_6__["VideosComponent"], _sounds_sounds_component__WEBPACK_IMPORTED_MODULE_7__["SoundsComponent"], _slides_slides_component__WEBPACK_IMPORTED_MODULE_8__["SlidesComponent"],
                 _library_component__WEBPACK_IMPORTED_MODULE_9__["LibraryComponent"], _upload_upload_component__WEBPACK_IMPORTED_MODULE_11__["UploadComponent"], _element_element_component__WEBPACK_IMPORTED_MODULE_12__["ElementComponent"],
                 _slide_editor_slide_editor_component__WEBPACK_IMPORTED_MODULE_14__["SlideEditorComponent"], _alloy_alloy_component__WEBPACK_IMPORTED_MODULE_17__["AlloyComponent"]],
@@ -2150,7 +2137,7 @@ var SoundsComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div (click)=\"addFiles()\" class=\"btn btn-default\">\n    <file-drop headertext=\"Drop files here\" customstyle=\"dropzone\" (onFileDrop)=\"dropped($event)\">\n    </file-drop>\n    </div>\n <input type=\"file\" #file style=\"display: none\" (change)=\"selected()\" />  \n\n\n<div *ngIf=\"item\"> \n  <div class=\"loader\" *ngIf=\"loading\">Loading...</div>\n  <img [src]=\"item.thumb\" (load)=\"clearUpload()\" #imgIndicator id=\"imgIndicator\" /> \n \n </div>\n"
+module.exports = "<div (click)=\"addFiles()\" class=\"btn btn-default\">\n    <file-drop headertext=\"Drop files here\" customstyle=\"dropzone\" (onFileDrop)=\"dropped($event)\">\n    </file-drop>\n    </div>\n <input type=\"file\" #file style=\"display: none\" (change)=\"selected()\" />  \n\n\n<div *ngIf=\"item\"> \n  <div class=\"loader\" *ngIf=\"loading\">Loading...</div>\n  <img *ngIf=\"item.thumb\" [src]=\"item.thumb\" (load)=\"clearUpload()\" #imgIndicator id=\"imgIndicator\" /> \n \n </div>\n"
 
 /***/ }),
 
@@ -2510,9 +2497,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-bootstrap/modal */ "./node_modules/ngx-bootstrap/modal/index.js");
-/* harmony import */ var angularx_social_login__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! angularx-social-login */ "./node_modules/angularx-social-login/angularx-social-login.es5.js");
-
-
 
 
 
@@ -2523,12 +2507,11 @@ var LoginComponent = /** @class */ (function () {
     /**
      *
      */
-    function LoginComponent(ref, modalService, userService, authService, router, _ngZone) {
+    function LoginComponent(ref, modalService, userService, router, _ngZone) {
         var _this = this;
         this.ref = ref;
         this.modalService = modalService;
         this.userService = userService;
-        this.authService = authService;
         this.router = router;
         this._ngZone = _ngZone;
         this.user = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
@@ -2574,17 +2557,7 @@ var LoginComponent = /** @class */ (function () {
             });
         });
     };
-    LoginComponent.prototype.signInWithGoogle = function () {
-        this.authService.signIn(angularx_social_login__WEBPACK_IMPORTED_MODULE_6__["GoogleLoginProvider"].PROVIDER_ID);
-    };
-    LoginComponent.prototype.signInWithFB = function () {
-        this.authService.signIn(angularx_social_login__WEBPACK_IMPORTED_MODULE_6__["FacebookLoginProvider"].PROVIDER_ID);
-    };
-    LoginComponent.prototype.signInWithLinkedIn = function () {
-        this.authService.signIn(angularx_social_login__WEBPACK_IMPORTED_MODULE_6__["LinkedInLoginProvider"].PROVIDER_ID);
-    };
     LoginComponent.prototype.signOut = function () {
-        this.authService.signOut();
     };
     LoginComponent.prototype.setGroup = function (group) {
         this.group = group;
@@ -2614,17 +2587,7 @@ var LoginComponent = /** @class */ (function () {
             });
         }); });
     };
-    LoginComponent.prototype.onGoogleSignInSuccess = function (event) {
-        // alert(parent.document.location.href);
-        // let googleUser: gapi.auth2.GoogleUser = event.googleUser;
-        // let id: string = googleUser.getId();
-        // let profile: gapi.auth2.BasicProfile = googleUser.getBasicProfile();
-        // this.user.emit({ id: profile.getId(), name: profile.getName() });
-        // //this.user.name = profile.getName();
-        // console.log('ID: ' +
-        //   profile
-        //     .getId()); // Do not send to your backend! Use an ID token instead.
-        // console.log('Name: ' + profile.getName());
+    LoginComponent.prototype.onGoogleSignInSuccess = function () {
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
@@ -2642,7 +2605,7 @@ var LoginComponent = /** @class */ (function () {
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"],
             ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_5__["BsModalService"],
-            _user_context_service__WEBPACK_IMPORTED_MODULE_2__["UserService"], angularx_social_login__WEBPACK_IMPORTED_MODULE_6__["AuthService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"]])
+            _user_context_service__WEBPACK_IMPORTED_MODULE_2__["UserService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"]])
     ], LoginComponent);
     return LoginComponent;
 }());
@@ -2810,32 +2773,32 @@ var ManageComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/playlists/playlists.component.html":
-/*!****************************************************!*\
-  !*** ./src/app/playlists/playlists.component.html ***!
-  \****************************************************/
+/***/ "./src/app/playlists/playlist/playlists.component.html":
+/*!*************************************************************!*\
+  !*** ./src/app/playlists/playlist/playlists.component.html ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = " <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow\" >\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}} <span *ngIf=\"item.list\">({{item.list.length}})</span>\n      <ul class=\"sqr-toolbar\">    \n        <li>\n          <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n        </li>\n        <li>\n          <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>    \n</div>\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n<dialog open={{displayModalNew}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"itemName\">{{ \"PLAYLISTS.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"itemName\" class=\"form-control\" id=\"itemName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"PLAYLISTS.NAME_HELP\" | translate }}</small>\n  </div>\n  <div class=\"form-group\" class=\"sortable\">\n<button (click)=\"finder()\">+</button>\n    <ngx-sortable *ngIf=\"item.list\" [listStyle]=\"listStyle\" [items]=\"item.list\" [name]=\"'List'\" (listSorted)=\"listOrderChanged($event)\">\n        <ng-template let-item>\n            <div class=\"sortable-list-item\">\n               <div  class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    {{item.Name}}\n   \n  </div>\n            </div>\n        </ng-template>\n    </ngx-sortable>   \n     </div>  \n  <button   *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"PLAYLISTS.UPDATE\" | translate }}</button>\n  <button   *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"PLAYLISTS.CREATE\" | translate }}</button>\n</form>\n</dialog>\n</div>\n\n <app-finder [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n "
+module.exports = " <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow\" >\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}} <span *ngIf=\"item.list\">({{item.list.length}})</span>\n      <ul class=\"sqr-toolbar\">    \n        <li>\n          <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n        </li>\n        <li>\n          <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>    \n</div>\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n<dialog open={{displayModalNew}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"itemName\">{{ \"PLAYLISTS.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"itemName\" class=\"form-control\" id=\"itemName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"PLAYLISTS.NAME_HELP\" | translate }}</small>\n  </div>\n  <div class=\"form-group\">\n    <button (click)=\"schedule()\">+</button>\n\n  </div>\n  <div class=\"form-group\" class=\"sortable\">\n<button (click)=\"finder()\">+</button>\n    <ngx-sortable *ngIf=\"item.list\" [listStyle]=\"listStyle\" [items]=\"item.list\" [name]=\"'List'\" (listSorted)=\"listOrderChanged($event)\">\n        <ng-template let-item>\n            <div class=\"sortable-list-item\">\n               <div  class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    {{item.Name}}\n   \n  </div>\n            </div>\n        </ng-template>\n    </ngx-sortable>   \n     </div>  \n  <button   *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"PLAYLISTS.UPDATE\" | translate }}</button>\n  <button   *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"PLAYLISTS.CREATE\" | translate }}</button>\n</form>\n</dialog>\n</div>\n\n\n<div class=\"slider-container-drawer {{displayDrawer}} shadow\">\n  <dialog open={{displayDrawer}}>\n  <a (click)=\"closeDrawer();\"><i class=\"far fa-window-close close-button\" ></i></a>\n   <form *ngIf=\"item\">\n    <div class=\"form-group\">\n      <label for=\"itemName\">{{ \"PLAYLISTS.NAME\" | translate }}:</label>\n      <input type=\"text\" name=\"itemName\" class=\"form-control\" id=\"itemName\"   [(ngModel)]=\"item.Name\">\n      <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"PLAYLISTS.NAME_HELP\" | translate }}</small>\n    </div>\n    <div class=\"form-group\" class=\"sortable\">\n  <button (click)=\"finder()\">+</button>\n      <ngx-sortable *ngIf=\"item.list\" [listStyle]=\"listStyle\" [items]=\"item.list\" [name]=\"'List'\" (listSorted)=\"listOrderChanged($event)\">\n          <ng-template let-item>\n              <div class=\"sortable-list-item\">\n                 <div  class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n      {{item.Name}}\n     \n    </div>\n              </div>\n          </ng-template>\n      </ngx-sortable>   \n       </div>  \n    <button   *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"PLAYLISTS.UPDATE\" | translate }}</button>\n    <button   *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"PLAYLISTS.CREATE\" | translate }}</button>\n  </form>\n  </dialog>\n  </div>\n\n\n <app-finder [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n "
 
 /***/ }),
 
-/***/ "./src/app/playlists/playlists.component.scss":
-/*!****************************************************!*\
-  !*** ./src/app/playlists/playlists.component.scss ***!
-  \****************************************************/
+/***/ "./src/app/playlists/playlist/playlists.component.scss":
+/*!*************************************************************!*\
+  !*** ./src/app/playlists/playlist/playlists.component.scss ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BsYXlsaXN0cy9wbGF5bGlzdHMuY29tcG9uZW50LnNjc3MifQ== */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BsYXlsaXN0cy9wbGF5bGlzdC9wbGF5bGlzdHMuY29tcG9uZW50LnNjc3MifQ== */"
 
 /***/ }),
 
-/***/ "./src/app/playlists/playlists.component.ts":
-/*!**************************************************!*\
-  !*** ./src/app/playlists/playlists.component.ts ***!
-  \**************************************************/
+/***/ "./src/app/playlists/playlist/playlists.component.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/playlists/playlist/playlists.component.ts ***!
+  \***********************************************************/
 /*! exports provided: PlaylistsComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2846,7 +2809,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
 /* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _data_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../data.component */ "./src/app/data.component.ts");
+/* harmony import */ var _data_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../data.component */ "./src/app/data.component.ts");
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
 
 
@@ -2863,7 +2826,8 @@ var PlaylistsComponent = /** @class */ (function (_super) {
             width: '100%',
             height: '400px',
         };
-        _this.finderActive = false;
+        _this.displayDrawer = 'closing';
+        _this.finderActive = 'closing';
         _this.addToList = function (resource) {
             if (!_this.item.list) {
                 _this.item.list = [];
@@ -2884,14 +2848,19 @@ var PlaylistsComponent = /** @class */ (function (_super) {
             });
         });
     };
+    PlaylistsComponent.prototype.closeDrawer = function () {
+    };
     PlaylistsComponent.prototype.finder = function () {
         this.finderActive = 'active';
+    };
+    PlaylistsComponent.prototype.schedule = function () {
+        this.displayDrawer = 'active';
     };
     PlaylistsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-playlists',
-            template: __webpack_require__(/*! ./playlists.component.html */ "./src/app/playlists/playlists.component.html"),
-            styles: [__webpack_require__(/*! ./playlists.component.scss */ "./src/app/playlists/playlists.component.scss")]
+            template: __webpack_require__(/*! ./playlists.component.html */ "./src/app/playlists/playlist/playlists.component.html"),
+            styles: [__webpack_require__(/*! ./playlists.component.scss */ "./src/app/playlists/playlist/playlists.component.scss")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__["TranslateService"]])
     ], PlaylistsComponent);
@@ -2917,9 +2886,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var ngx_sortable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-sortable */ "./node_modules/ngx-sortable/dist/index.js");
-/* harmony import */ var _playlists_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./playlists.component */ "./src/app/playlists/playlists.component.ts");
-/* harmony import */ var _shared_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared.module */ "./src/app/shared.module.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _playlist_playlists_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./playlist/playlists.component */ "./src/app/playlists/playlist/playlists.component.ts");
+/* harmony import */ var _schedules_schedules_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./schedules/schedules.component */ "./src/app/playlists/schedules/schedules.component.ts");
+/* harmony import */ var _shared_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../shared.module */ "./src/app/shared.module.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+
 
 
 
@@ -2929,8 +2900,10 @@ __webpack_require__.r(__webpack_exports__);
 
 var playlistsRoutes = [
     {
-        path: 'playlists', component: _playlists_component__WEBPACK_IMPORTED_MODULE_4__["PlaylistsComponent"],
-    },
+        path: 'playlists', component: _playlist_playlists_component__WEBPACK_IMPORTED_MODULE_4__["PlaylistsComponent"],
+    }, {
+        path: 'schedules', component: _schedules_schedules_component__WEBPACK_IMPORTED_MODULE_5__["SchedulesComponent"],
+    }
 ];
 var PlaylistsModule = /** @class */ (function () {
     function PlaylistsModule() {
@@ -2939,12 +2912,12 @@ var PlaylistsModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-                _shared_module__WEBPACK_IMPORTED_MODULE_5__["SharedModule"],
+                _shared_module__WEBPACK_IMPORTED_MODULE_6__["SharedModule"],
                 ngx_sortable__WEBPACK_IMPORTED_MODULE_3__["NgxSortableModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormsModule"]
+                _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"]
             ],
-            entryComponents: [_playlists_component__WEBPACK_IMPORTED_MODULE_4__["PlaylistsComponent"]],
-            declarations: [_playlists_component__WEBPACK_IMPORTED_MODULE_4__["PlaylistsComponent"]]
+            entryComponents: [_playlist_playlists_component__WEBPACK_IMPORTED_MODULE_4__["PlaylistsComponent"]],
+            declarations: [_playlist_playlists_component__WEBPACK_IMPORTED_MODULE_4__["PlaylistsComponent"], _schedules_schedules_component__WEBPACK_IMPORTED_MODULE_5__["SchedulesComponent"]]
         })
     ], PlaylistsModule);
     return PlaylistsModule;
@@ -2954,32 +2927,32 @@ var PlaylistsModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/schedules/schedules.component.css":
-/*!***************************************************!*\
-  !*** ./src/app/schedules/schedules.component.css ***!
-  \***************************************************/
+/***/ "./src/app/playlists/schedules/schedules.component.css":
+/*!*************************************************************!*\
+  !*** ./src/app/playlists/schedules/schedules.component.css ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NjaGVkdWxlcy9zY2hlZHVsZXMuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BsYXlsaXN0cy9zY2hlZHVsZXMvc2NoZWR1bGVzLmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
-/***/ "./src/app/schedules/schedules.component.html":
-/*!****************************************************!*\
-  !*** ./src/app/schedules/schedules.component.html ***!
-  \****************************************************/
+/***/ "./src/app/playlists/schedules/schedules.component.html":
+/*!**************************************************************!*\
+  !*** ./src/app/playlists/schedules/schedules.component.html ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  schedules works!\n</p>\n"
+module.exports = " <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow\" >\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}}  \n      <ul class=\"sqr-toolbar\">    \n        <li>\n          <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n        </li>\n        <li>\n          <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>    \n</div>\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n<dialog open={{displayModalNew}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"itemName\">{{ \"PLAYLISTS.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"itemName\" class=\"form-control\" id=\"itemName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"PLAYLISTS.NAME_HELP\" | translate }}</small>\n  </div>\n \n  <button   *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"PLAYLISTS.UPDATE\" | translate }}</button>\n  <button   *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"PLAYLISTS.CREATE\" | translate }}</button>\n</form>\n</dialog>\n</div>\n "
 
 /***/ }),
 
-/***/ "./src/app/schedules/schedules.component.ts":
-/*!**************************************************!*\
-  !*** ./src/app/schedules/schedules.component.ts ***!
-  \**************************************************/
+/***/ "./src/app/playlists/schedules/schedules.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/playlists/schedules/schedules.component.ts ***!
+  \************************************************************/
 /*! exports provided: SchedulesComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2988,23 +2961,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SchedulesComponent", function() { return SchedulesComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _data_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../data.component */ "./src/app/data.component.ts");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
 
 
-var SchedulesComponent = /** @class */ (function () {
-    function SchedulesComponent() {
+
+
+
+var SchedulesComponent = /** @class */ (function (_super) {
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](SchedulesComponent, _super);
+    function SchedulesComponent(_ngZone, translateService) {
+        var _this = _super.call(this, _ngZone, translateService) || this;
+        _this._ngZone = _ngZone;
+        _this.translateService = translateService;
+        _this.DataController = _signnature_client__WEBPACK_IMPORTED_MODULE_2__["ScheduleDataController"];
+        return _this;
     }
     SchedulesComponent.prototype.ngOnInit = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                this.loadItems();
+                return [2 /*return*/];
+            });
+        });
     };
     SchedulesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-schedules',
-            template: __webpack_require__(/*! ./schedules.component.html */ "./src/app/schedules/schedules.component.html"),
-            styles: [__webpack_require__(/*! ./schedules.component.css */ "./src/app/schedules/schedules.component.css")]
+            template: __webpack_require__(/*! ./schedules.component.html */ "./src/app/playlists/schedules/schedules.component.html"),
+            styles: [__webpack_require__(/*! ./schedules.component.css */ "./src/app/playlists/schedules/schedules.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__["TranslateService"]])
     ], SchedulesComponent);
     return SchedulesComponent;
-}());
+}(_data_component__WEBPACK_IMPORTED_MODULE_3__["DataComponent"]));
 
 
 
@@ -3384,7 +3376,8 @@ var SharedModule = /** @class */ (function () {
     var SharedModule_1;
     SharedModule = SharedModule_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_9__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateModule"].forChild(), ngx_file_drop__WEBPACK_IMPORTED_MODULE_4__["FileDropModule"], angular_draggable_droppable__WEBPACK_IMPORTED_MODULE_5__["DragAndDropModule"], angular2_draggable__WEBPACK_IMPORTED_MODULE_6__["AngularDraggableModule"]],
+            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_9__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"],
+                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateModule"].forChild(), ngx_file_drop__WEBPACK_IMPORTED_MODULE_4__["FileDropModule"], angular_draggable_droppable__WEBPACK_IMPORTED_MODULE_5__["DragAndDropModule"], angular2_draggable__WEBPACK_IMPORTED_MODULE_6__["AngularDraggableModule"]],
             declarations: [_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_7__["LanguageBarComponent"], _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_10__["FinderComponent"]],
             providers: [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"], _services_language_dictionary_service__WEBPACK_IMPORTED_MODULE_3__["DictionaryService"]],
             exports: [_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_7__["LanguageBarComponent"], _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_10__["FinderComponent"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateModule"], ngx_file_drop__WEBPACK_IMPORTED_MODULE_4__["FileDropModule"], angular_draggable_droppable__WEBPACK_IMPORTED_MODULE_5__["DragAndDropModule"], angular2_draggable__WEBPACK_IMPORTED_MODULE_6__["AngularDraggableModule"]],
@@ -3416,7 +3409,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n<app-language-bar></app-language-bar>\n\t<div class=\"limiter\">\n\t\t<div class=\"container-login100\">\n\t\t\t<div class=\"wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30\">\n\t\t\t\t<form class=\"login100-form validate-form\">\n\t\t\t\t\t<span class=\"login100-form-title p-b-55\">\n\t\t\t\t\t\t{{\"SIGNUP.TITLE\" | translate}}\n\t\t\t\t\t</span>\n\n\t\t\t\t\t<div class=\"wrap-input100 validate-input m-b-16\" [attr.data-validate]=\"'SIGNUP.INSERT_USERNAME' | translate\">\n\t\t\t\t\t\t<input class=\"input100\" type=\"text\" name=\"userName\" placeholder=\"{{'SIGNUP.USERNAME' | translate}}\" [(ngModel)]=\"userName\">\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t\t<span class=\"symbol-input100\">\n\t\t\t\t\t\t\t<span class=\"lnr lnr-envelope\"></span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class=\"wrap-input100 validate-input m-b-16\" >\n\t\t\t\t\t\t<input class=\"input100\" type=\"password\" name=\"password\" placeholder=\"{{'SIGNUP.PASSWORD' | translate}}\" [(ngModel)]=\"password\">\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t\t<span class=\"symbol-input100\">\n\t\t\t\t\t\t\t<span class=\"lnr lnr-lock\"></span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</div>\n\n\n\t                <div class=\"wrap-input100 validate-input m-b-16\" >\n\t\t\t\t\t\t<input class=\"input100\" type=\"password\" name=\"passwordRepeat\" placeholder=\"{{'SIGNUP.RPTPASSWORD' | translate}}\" [(ngModel)]=\"passwordRepeat\">\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t\t<span class=\"symbol-input100\">\n\t\t\t\t\t\t\t<span class=\"lnr lnr-lock\"></span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</div>\n\n\t\t\t\t \n\t\t\t\t\t\n\t\t\t\t\t<div class=\"container-login100-form-btn p-t-25\">\n\t\t\t\t\t\t<button class=\"login100-form-btn\" (click)=\"trySignup()\">\n\t\t\t\t\t\t\t\t{{\"SIGNUP.SIGNUP_BTN\" | translate}}\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</div>\n \n\n\t\t\t\t<div class=\"text-center w-full p-t-25\">\n\t\t\t\t\t\t<span class=\"txt1\">\n\t\t\t\t\t{{'SIGNUP.ALREADYMEMBER' | translate}}\n\t\t\t\t\t\t</span>\n\n\t\t\t\t\t\t<a class=\"txt1 bo1 hov1\" href=\"#\"  routerLink=\"/signin\">\n\t\t\t\t\t{{'SIGNUP.SIGNIN' | translate}}\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t</form>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\n\n\n\n\n\n\n\n<!-- Simple pop-up dialog box containing a form -->\n<dialog id=\"favDialog\">\n  <form method=\"dialog\">\n    <p><label>Favorite animal:\n      <select>\n        <option></option>\n        <option>Brine shrimp</option>\n        <option>Red panda</option>\n        <option>Spider monkey</option>\n      </select>\n    </label></p>\n    <menu>\n      <button>Cancel</button>\n      <button>Confirm</button>\n    </menu>\n  </form>\n</dialog>\n\n<menu>\n  <button id=\"updateDetails\">Update details</button>\n</menu>\n\n<div id=\"output\"></div>\n\n<script>\n(function() {\n  var updateButton = document.getElementById('updateDetails');\n  var favDialog = document.getElementById('favDialog');\n  var outputBox = document.getElementById(\"output\");\n\n  // “Update details” button opens the <dialog> modally\n  updateButton.addEventListener('click', function() {\n    favDialog.showModal();\n    output.innerHTML += \"<div>\" + favDialog.returnValue + \" button clicked!</div>\";\n  });\n})();\n</script>\n \n\n    <ng-template #share>\n        <div class=\"modal-body text-center\">\n\n            <p>Share your group.</p>\n            <pre>{{group.GroupId}}</pre>\n            <a type=\"button\" class=\"btn btn-primary\" (click)=\"decline()\">Cancel</a>\n        </div>\n    </ng-template>\n\n    <ng-template #join>\n        <div class=\"modal-body text-center\">\n            <p>Join a group.</p>\n            <div>\n                <label>Group code</label>\n                <input type=\"text\" class=\"form-control\" #group_code />\n            </div>\n            <a type=\"button\" class=\"btn btn-primary\" (click)=\"JoinConfirm(group_code.value)\">Join</a>\n            <a type=\"button\" class=\"btn btn-default\" (click)=\"decline()\">Cancel</a>\n        </div>\n    </ng-template>\n\n    <div class=\"float-left dropdown\" *ngIf=\"userData && group\">\n        <a class=\"btn btn-secondary dropdown-toggle white\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\n            aria-expanded=\"false\">\n            {{group.Name}}\n        </a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"position: absolute\">\n            <a class=\"dropdown-item\" (click)=\"setGroup(item)\" *ngFor=\"let item of userData.groups\">{{item.Name}}</a>\n\n            <a class=\"dropdown-item\" (click)=\"JoinGroup(join)\">Join group</a>\n            <a class=\"dropdown-item\" (click)=\"ShareGroup(share)\">Share group</a>\n        </div>\n\n    </div>\n</div>"
+module.exports = "<div>\n\n    <div class=\"limiter\">\n        <div class=\"container-login100\">\n            <div class=\"wrap-login100\" style=\"padding: 50px 50px 30px 30px\">\n                <div>\n                    <app-language-bar></app-language-bar>\n                </div>\n                <form class=\"login100-form validate-form\">\n                    <span class=\"login100-form-title p-b-55\">\n                        {{\"SIGNUP.TITLE\" | translate}}\n                    </span>\n\n                    <div class=\"wrap-input100 validate-input m-b-16\" [attr.data-validate]=\"'SIGNUP.INSERT_USERNAME' | translate\">\n                        <input class=\"input100\" type=\"text\" name=\"userName\" placeholder=\"{{'SIGNUP.USERNAME' | translate}}\" [(ngModel)]=\"userName\">\n                        <span class=\"focus-input100\"></span>\n                        <span class=\"symbol-input100\">\n                            <span class=\"lnr lnr-envelope\"></span>\n                        </span>\n                    </div>\n\n                    <div class=\"wrap-input100 validate-input m-b-16\">\n                        <input class=\"input100\" type=\"password\" name=\"password\" placeholder=\"{{'SIGNUP.PASSWORD' | translate}}\" [(ngModel)]=\"password\">\n                        <span class=\"focus-input100\"></span>\n                        <span class=\"symbol-input100\">\n                            <span class=\"lnr lnr-lock\"></span>\n                        </span>\n                    </div>\n\n\n                    <div class=\"wrap-input100 validate-input m-b-16\">\n                        <input class=\"input100\" type=\"password\" name=\"passwordRepeat\" placeholder=\"{{'SIGNUP.RPTPASSWORD' | translate}}\" [(ngModel)]=\"passwordRepeat\">\n                        <span class=\"focus-input100\"></span>\n                        <span class=\"symbol-input100\">\n                            <span class=\"lnr lnr-lock\"></span>\n                        </span>\n                    </div>\n\n\n\n                    <div class=\"container-login100-form-btn p-t-25\">\n                        <button class=\"login100-form-btn\" (click)=\"trySignup()\">\n                            {{\"SIGNUP.SIGNUP_BTN\" | translate}}\n                        </button>\n                    </div>\n\n\n                    <div class=\"text-center w-full p-t-25\">\n                        <span class=\"txt1\">\n                            {{'SIGNUP.ALREADYMEMBER' | translate}}\n                        </span>\n\n                        <a class=\"txt1 bo1 hov1\" href=\"#\" routerLink=\"/signin\">\n                            {{'SIGNUP.SIGNIN' | translate}}\n                        </a>\n                    </div>\n                </form>\n            </div>\n        </div>\n    </div>\n\n\n\n\n\n\n\n\n    <!-- Simple pop-up dialog box containing a form -->\n    <dialog id=\"favDialog\">\n        <form method=\"dialog\">\n            <p><label>Favorite animal:\n                    <select>\n                        <option></option>\n                        <option>Brine shrimp</option>\n                        <option>Red panda</option>\n                        <option>Spider monkey</option>\n                    </select>\n                </label></p>\n            <menu>\n                <button>Cancel</button>\n                <button>Confirm</button>\n            </menu>\n        </form>\n    </dialog>\n\n    <menu>\n        <button id=\"updateDetails\">Update details</button>\n    </menu>\n\n    <div id=\"output\"></div>\n\n    <script>\n        (function () {\n            var updateButton = document.getElementById('updateDetails');\n            var favDialog = document.getElementById('favDialog');\n            var outputBox = document.getElementById(\"output\");\n\n            // “Update details” button opens the <dialog> modally\n            updateButton.addEventListener('click', function () {\n                favDialog.showModal();\n                output.innerHTML += \"<div>\" + favDialog.returnValue + \" button clicked!</div>\";\n            });\n        })();\n    </script>\n\n\n    <ng-template #share>\n        <div class=\"modal-body text-center\">\n\n            <p>Share your group.</p>\n            <pre>{{group.GroupId}}</pre>\n            <a type=\"button\" class=\"btn btn-primary\" (click)=\"decline()\">Cancel</a>\n        </div>\n    </ng-template>\n\n    <ng-template #join>\n        <div class=\"modal-body text-center\">\n            <p>Join a group.</p>\n            <div>\n                <label>Group code</label>\n                <input type=\"text\" class=\"form-control\" #group_code />\n            </div>\n            <a type=\"button\" class=\"btn btn-primary\" (click)=\"JoinConfirm(group_code.value)\">Join</a>\n            <a type=\"button\" class=\"btn btn-default\" (click)=\"decline()\">Cancel</a>\n        </div>\n    </ng-template>\n\n    <div class=\"float-left dropdown\" *ngIf=\"userData && group\">\n        <a class=\"btn btn-secondary dropdown-toggle white\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\n            aria-expanded=\"false\">\n            {{group.Name}}\n        </a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"position: absolute\">\n            <a class=\"dropdown-item\" (click)=\"setGroup(item)\" *ngFor=\"let item of userData.groups\">{{item.Name}}</a>\n\n            <a class=\"dropdown-item\" (click)=\"JoinGroup(join)\">Join group</a>\n            <a class=\"dropdown-item\" (click)=\"ShareGroup(share)\">Share group</a>\n        </div>\n\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -3467,6 +3460,10 @@ var SignupComponent = /** @class */ (function () {
             });
         });
     };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], SignupComponent.prototype, "userData", void 0);
     SignupComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-signup',

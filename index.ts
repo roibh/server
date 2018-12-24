@@ -10,7 +10,7 @@ import { DBHandler } from '@methodus/data';
 import { configuration } from './db/config';
 import {
     LibraryDataController, Playlist, AuthController, UserController,
-    ScreensDataController, Upload, SlidesDataController, PlayerController,
+    ScreensDataController, Upload, SlidesDataController, PlayerController, ScheduleDataController,
 } from './controllers/';
 import { ScreenGroupDataController } from './controllers/screen-group.data.controller';
 
@@ -28,6 +28,7 @@ DBHandler.config = configuration;
 @ClientConfiguration(SlidesDataController, MethodType.Local, ServerType.Express)
 @ClientConfiguration(PlayerController, MethodType.Local, ServerType.Express)
 @ClientConfiguration(ScreenGroupDataController, MethodType.Local, ServerType.Express)
+@ClientConfiguration(ScheduleDataController, MethodType.Local, ServerType.Express)
 class SetupServer extends ConfiguredServer {
     constructor() {
         super(SetupServer);
