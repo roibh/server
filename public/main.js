@@ -57,7 +57,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _user_context_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user.context.service */ "./src/app/user.context.service.ts");
+/* harmony import */ var _services_user_context_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/user.context.service */ "./src/app/services/user.context.service.ts");
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
 
 
@@ -70,7 +70,7 @@ var AppComponent = /** @class */ (function () {
         this.translate = translate;
         this.title = 'SignNature';
         // the lang to use, if the lang isn't available, it will use the current loader to get them
-        //this.translate.use('he');
+        // this.translate.use('he');
         this.userCheck = userService.getUser();
     }
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -79,7 +79,7 @@ var AppComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.scss */ "./src/app/app.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_user_context_service__WEBPACK_IMPORTED_MODULE_2__["UserService"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_3__["TranslateService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_user_context_service__WEBPACK_IMPORTED_MODULE_2__["UserService"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_3__["TranslateService"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -114,36 +114,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var angular2_loaders_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! angular2-loaders-css */ "./node_modules/angular2-loaders-css/index.js");
 /* harmony import */ var angular2_loaders_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(angular2_loaders_css__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _loader_loader_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./loader/loader.component */ "./src/app/loader/loader.component.ts");
-/* harmony import */ var _manage_manage_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./manage/manage.component */ "./src/app/manage/manage.component.ts");
-/* harmony import */ var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @auth0/angular-jwt */ "./node_modules/@auth0/angular-jwt/index.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _auth_auth_intercepter__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./auth/auth.intercepter */ "./src/app/auth/auth.intercepter.ts");
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-/* harmony import */ var _user_context_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./user.context.service */ "./src/app/user.context.service.ts");
-/* harmony import */ var _user_info_user_info_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./user-info/user-info.component */ "./src/app/user-info/user-info.component.ts");
-/* harmony import */ var _directives_adapt_height__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./directives/adapt-height */ "./src/app/directives/adapt-height.ts");
-/* harmony import */ var ngx_order_pipe__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ngx-order-pipe */ "./node_modules/ngx-order-pipe/ngx-order-pipe.es5.js");
-/* harmony import */ var _shared_module__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./shared.module */ "./src/app/shared.module.ts");
-/* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
-/* harmony import */ var _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @ngx-translate/http-loader */ "./node_modules/@ngx-translate/http-loader/esm5/ngx-translate-http-loader.js");
-/* harmony import */ var _auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./auth/auth-guard.service */ "./src/app/auth/auth-guard.service.ts");
-/* harmony import */ var _signup_signup_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./signup/signup.component */ "./src/app/signup/signup.component.ts");
-/* harmony import */ var _screens_screens_module__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./screens/screens.module */ "./src/app/screens/screens.module.ts");
-/* harmony import */ var _library_library_module__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./library/library.module */ "./src/app/library/library.module.ts");
-/* harmony import */ var _playlists_playlists_module__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./playlists/playlists.module */ "./src/app/playlists/playlists.module.ts");
-/* harmony import */ var _timelines_timelines_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./timelines/timelines.component */ "./src/app/timelines/timelines.component.ts");
-/* harmony import */ var _settings_settings_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./settings/settings.component */ "./src/app/settings/settings.component.ts");
-/* harmony import */ var _dialog_dialog_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./dialog/dialog.component */ "./src/app/dialog/dialog.component.ts");
-/* harmony import */ var _language_service__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./language.service */ "./src/app/language.service.ts");
-/* harmony import */ var _library_editor_toolbar_editor_toolbar_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./library/editor-toolbar/editor-toolbar.component */ "./src/app/library/editor-toolbar/editor-toolbar.component.ts");
-/* harmony import */ var _bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./bread-crumbs/bread-crumbs.component */ "./src/app/bread-crumbs/bread-crumbs.component.ts");
-
-
-
-
-// import { DynamicFormsCoreModule } from '@ng-dynamic-forms/core';
+/* harmony import */ var _common_loader_loader_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./common/loader/loader.component */ "./src/app/common/loader/loader.component.ts");
+/* harmony import */ var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @auth0/angular-jwt */ "./node_modules/@auth0/angular-jwt/index.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _auth_auth_intercepter__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./auth/auth.intercepter */ "./src/app/auth/auth.intercepter.ts");
+/* harmony import */ var _services_user_context_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./services/user.context.service */ "./src/app/services/user.context.service.ts");
+/* harmony import */ var _directives_adapt_height__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./directives/adapt-height */ "./src/app/directives/adapt-height.ts");
+/* harmony import */ var ngx_order_pipe__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ngx-order-pipe */ "./node_modules/ngx-order-pipe/ngx-order-pipe.es5.js");
+/* harmony import */ var _shared_module__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./shared.module */ "./src/app/shared.module.ts");
+/* harmony import */ var _user_user_module__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./user/user.module */ "./src/app/user/user.module.ts");
+/* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
+/* harmony import */ var _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @ngx-translate/http-loader */ "./node_modules/@ngx-translate/http-loader/esm5/ngx-translate-http-loader.js");
+/* harmony import */ var _auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./auth/auth-guard.service */ "./src/app/auth/auth-guard.service.ts");
+/* harmony import */ var _screens_screens_module__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./screens/screens.module */ "./src/app/screens/screens.module.ts");
+/* harmony import */ var _library_library_module__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./library/library.module */ "./src/app/library/library.module.ts");
+/* harmony import */ var _playlists_playlists_module__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./playlists/playlists.module */ "./src/app/playlists/playlists.module.ts");
+/* harmony import */ var _timelines_timelines_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./timelines/timelines.component */ "./src/app/timelines/timelines.component.ts");
+/* harmony import */ var _settings_settings_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./settings/settings.component */ "./src/app/settings/settings.component.ts");
+/* harmony import */ var _common_dialog_dialog_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./common/dialog/dialog.component */ "./src/app/common/dialog/dialog.component.ts");
+/* harmony import */ var _services_language_service__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./services/language.service */ "./src/app/services/language.service.ts");
+/* harmony import */ var _library_editor_toolbar_editor_toolbar_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./library/editor-toolbar/editor-toolbar.component */ "./src/app/library/editor-toolbar/editor-toolbar.component.ts");
 
 
 
@@ -181,27 +172,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var appRoutes = [
-    { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-    { path: 'signin', component: _login_login_component__WEBPACK_IMPORTED_MODULE_18__["LoginComponent"] },
-    { path: 'signup', component: _signup_signup_component__WEBPACK_IMPORTED_MODULE_28__["SignupComponent"] },
+    { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
+].concat(_user_user_module__WEBPACK_IMPORTED_MODULE_21__["userRoutes"], [
     {
-        path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_24__["DashboardComponent"], canActivate: [_auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_27__["AuthGuardService"]], children: [
+        path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_22__["DashboardComponent"], canActivate: [_auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_25__["AuthGuardService"]], children: [
             {
                 path: '',
-                component: _timelines_timelines_component__WEBPACK_IMPORTED_MODULE_32__["TimelinesComponent"],
+                component: _timelines_timelines_component__WEBPACK_IMPORTED_MODULE_29__["TimelinesComponent"],
             }
-        ].concat(_screens_screens_module__WEBPACK_IMPORTED_MODULE_29__["screenRoutes"], _library_library_module__WEBPACK_IMPORTED_MODULE_30__["libraryRoutes"], _playlists_playlists_module__WEBPACK_IMPORTED_MODULE_31__["playlistsRoutes"], [
+        ].concat(_screens_screens_module__WEBPACK_IMPORTED_MODULE_26__["screenRoutes"], _library_library_module__WEBPACK_IMPORTED_MODULE_27__["libraryRoutes"], _playlists_playlists_module__WEBPACK_IMPORTED_MODULE_28__["playlistsRoutes"], [
             {
                 path: 'settings',
-                component: _settings_settings_component__WEBPACK_IMPORTED_MODULE_33__["SettingsComponent"],
+                component: _settings_settings_component__WEBPACK_IMPORTED_MODULE_30__["SettingsComponent"],
             },
         ])
     },
-    { path: 'user/details', component: _user_info_user_info_component__WEBPACK_IMPORTED_MODULE_20__["UserInfoComponent"] },
-];
+]);
 // AoT requires an exported function for factories
 function HttpLoaderFactory(http) {
-    return new _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_26__["TranslateHttpLoader"](http);
+    return new _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_24__["TranslateHttpLoader"](http);
 }
 function tokenGetter() {
     return localStorage.getItem('access_token');
@@ -213,29 +202,24 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"],
-                _loader_loader_component__WEBPACK_IMPORTED_MODULE_13__["LoaderComponent"],
-                _manage_manage_component__WEBPACK_IMPORTED_MODULE_14__["ManageComponent"],
-                _login_login_component__WEBPACK_IMPORTED_MODULE_18__["LoginComponent"],
-                _user_info_user_info_component__WEBPACK_IMPORTED_MODULE_20__["UserInfoComponent"],
-                _directives_adapt_height__WEBPACK_IMPORTED_MODULE_21__["AdaptHeightDirective"],
-                _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_24__["DashboardComponent"],
-                _signup_signup_component__WEBPACK_IMPORTED_MODULE_28__["SignupComponent"],
-                _timelines_timelines_component__WEBPACK_IMPORTED_MODULE_32__["TimelinesComponent"],
-                _library_editor_toolbar_editor_toolbar_component__WEBPACK_IMPORTED_MODULE_36__["EditorToolbarComponent"],
-                _settings_settings_component__WEBPACK_IMPORTED_MODULE_33__["SettingsComponent"],
-                _dialog_dialog_component__WEBPACK_IMPORTED_MODULE_34__["DialogComponent"],
-                _bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_37__["BreadCrumbsComponent"],
+                _common_loader_loader_component__WEBPACK_IMPORTED_MODULE_13__["LoaderComponent"],
+                _directives_adapt_height__WEBPACK_IMPORTED_MODULE_18__["AdaptHeightDirective"],
+                _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_22__["DashboardComponent"],
+                _timelines_timelines_component__WEBPACK_IMPORTED_MODULE_29__["TimelinesComponent"],
+                _library_editor_toolbar_editor_toolbar_component__WEBPACK_IMPORTED_MODULE_33__["EditorToolbarComponent"],
+                _settings_settings_component__WEBPACK_IMPORTED_MODULE_30__["SettingsComponent"],
+                _common_dialog_dialog_component__WEBPACK_IMPORTED_MODULE_31__["DialogComponent"],
             ],
             imports: [
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_16__["HttpClientModule"],
-                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_25__["TranslateModule"].forRoot({
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_15__["HttpClientModule"],
+                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_23__["TranslateModule"].forRoot({
                     loader: {
-                        provide: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_25__["TranslateLoader"],
+                        provide: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_23__["TranslateLoader"],
                         useFactory: HttpLoaderFactory,
-                        deps: [_angular_common_http__WEBPACK_IMPORTED_MODULE_16__["HttpClient"]]
+                        deps: [_angular_common_http__WEBPACK_IMPORTED_MODULE_15__["HttpClient"]]
                     }
                 }),
-                _shared_module__WEBPACK_IMPORTED_MODULE_23__["SharedModule"],
+                _shared_module__WEBPACK_IMPORTED_MODULE_20__["SharedModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_11__["RouterModule"].forRoot(appRoutes, { enableTracing: false, useHash: true } // <-- debugging purposes only
                 ),
                 ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_9__["TabsModule"].forRoot(),
@@ -246,22 +230,23 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
-                ngx_order_pipe__WEBPACK_IMPORTED_MODULE_22__["OrderModule"],
+                ngx_order_pipe__WEBPACK_IMPORTED_MODULE_19__["OrderModule"],
                 _ng_dynamic_forms_ui_bootstrap__WEBPACK_IMPORTED_MODULE_6__["DynamicFormsBootstrapUIModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"],
-                _screens_screens_module__WEBPACK_IMPORTED_MODULE_29__["ScreensModule"],
-                _library_library_module__WEBPACK_IMPORTED_MODULE_30__["LibraryModule"],
-                _playlists_playlists_module__WEBPACK_IMPORTED_MODULE_31__["PlaylistsModule"],
-                _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_15__["JwtModule"].forRoot({
+                _user_user_module__WEBPACK_IMPORTED_MODULE_21__["UserModule"],
+                _screens_screens_module__WEBPACK_IMPORTED_MODULE_26__["ScreensModule"],
+                _library_library_module__WEBPACK_IMPORTED_MODULE_27__["LibraryModule"],
+                _playlists_playlists_module__WEBPACK_IMPORTED_MODULE_28__["PlaylistsModule"],
+                _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_14__["JwtModule"].forRoot({
                     config: {
                         tokenGetter: tokenGetter
                     }
                 })
             ],
-            providers: [_user_context_service__WEBPACK_IMPORTED_MODULE_19__["UserService"], _language_service__WEBPACK_IMPORTED_MODULE_35__["LanguageService"], _auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_27__["AuthGuardService"],
+            providers: [_services_user_context_service__WEBPACK_IMPORTED_MODULE_17__["UserService"], _services_language_service__WEBPACK_IMPORTED_MODULE_32__["LanguageService"], _auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_25__["AuthGuardService"],
                 {
-                    provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_16__["HTTP_INTERCEPTORS"],
-                    useClass: _auth_auth_intercepter__WEBPACK_IMPORTED_MODULE_17__["AuthInterceptor"],
+                    provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_15__["HTTP_INTERCEPTORS"],
+                    useClass: _auth_auth_intercepter__WEBPACK_IMPORTED_MODULE_16__["AuthInterceptor"],
                     multi: true
                 }],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"]]
@@ -287,7 +272,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _user_context_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../user.context.service */ "./src/app/user.context.service.ts");
+/* harmony import */ var _services_user_context_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/user.context.service */ "./src/app/services/user.context.service.ts");
 
 
 
@@ -306,7 +291,7 @@ var AuthGuardService = /** @class */ (function () {
     };
     AuthGuardService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_user_context_service__WEBPACK_IMPORTED_MODULE_3__["UserService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_user_context_service__WEBPACK_IMPORTED_MODULE_3__["UserService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], AuthGuardService);
     return AuthGuardService;
 }());
@@ -364,32 +349,32 @@ var AuthInterceptor = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/bread-crumbs/bread-crumbs.component.html":
-/*!**********************************************************!*\
-  !*** ./src/app/bread-crumbs/bread-crumbs.component.html ***!
-  \**********************************************************/
+/***/ "./src/app/common/bread-crumbs/bread-crumbs.component.html":
+/*!*****************************************************************!*\
+  !*** ./src/app/common/bread-crumbs/bread-crumbs.component.html ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = " <nav class=\"navbar-fixed-top dashboard-nav\">\nHome >> {{crumbs | json}}\n\n     </nav>"
+module.exports = "<nav class=\"navbar-fixed-top dashboard-nav\"> \n        <button type=\"button\" (click)=\"toggleSidebar()\" id=\"sidebarCollapse\" class=\"btn btn-sm btn-info\">\n                <i class=\"fas fa-align-left\"></i>\n            </button>\n            \n    <button class=\"btn btn-primary crumbs\" *ngFor=\"let b of crumbs\">{{b.name}}</button>\n</nav>\n"
 
 /***/ }),
 
-/***/ "./src/app/bread-crumbs/bread-crumbs.component.scss":
-/*!**********************************************************!*\
-  !*** ./src/app/bread-crumbs/bread-crumbs.component.scss ***!
-  \**********************************************************/
+/***/ "./src/app/common/bread-crumbs/bread-crumbs.component.scss":
+/*!*****************************************************************!*\
+  !*** ./src/app/common/bread-crumbs/bread-crumbs.component.scss ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2JyZWFkLWNydW1icy9icmVhZC1jcnVtYnMuY29tcG9uZW50LnNjc3MifQ== */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbW1vbi9icmVhZC1jcnVtYnMvYnJlYWQtY3J1bWJzLmNvbXBvbmVudC5zY3NzIn0= */"
 
 /***/ }),
 
-/***/ "./src/app/bread-crumbs/bread-crumbs.component.ts":
-/*!********************************************************!*\
-  !*** ./src/app/bread-crumbs/bread-crumbs.component.ts ***!
-  \********************************************************/
+/***/ "./src/app/common/bread-crumbs/bread-crumbs.component.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/common/bread-crumbs/bread-crumbs.component.ts ***!
+  \***************************************************************/
 /*! exports provided: BreadCrumbsComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -408,29 +393,327 @@ var BreadCrumbsComponent = /** @class */ (function () {
         this.router = router;
         this.route = route;
         this.changeDetector = changeDetector;
+        this.Toggled = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.crumbs = [];
     }
     BreadCrumbsComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.router.events.subscribe(function (val) {
-            _this._ngZone.run(function () { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                    this.crumbs = val.urlAfterRedirects;
-                    this.changeDetector.detectChanges();
-                    return [2 /*return*/];
-                });
-            }); });
+            if (val.urlAfterRedirects) {
+                _this._ngZone.run(function () { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
+                    var _this = this;
+                    return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                        this.crumbs = [];
+                        val.url.split('/').forEach(function (frag) {
+                            if (frag) {
+                                _this.crumbs.push({ name: frag });
+                            }
+                        });
+                        // this.crumbs = val.urlAfterRedirects.split('/').map((frag) => {
+                        //   return { name: frag };
+                        // });
+                        // this.crumbs = val.urlAfterRedirects;
+                        this.changeDetector.detectChanges();
+                        return [2 /*return*/];
+                    });
+                }); });
+            }
         });
     };
+    BreadCrumbsComponent.prototype.toggleSidebar = function () {
+        this.toggled = !this.toggled;
+        this.Toggled.emit(this.toggled);
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], BreadCrumbsComponent.prototype, "Toggled", void 0);
     BreadCrumbsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-bread-crumbs',
-            template: __webpack_require__(/*! ./bread-crumbs.component.html */ "./src/app/bread-crumbs/bread-crumbs.component.html"),
-            styles: [__webpack_require__(/*! ./bread-crumbs.component.scss */ "./src/app/bread-crumbs/bread-crumbs.component.scss")]
+            template: __webpack_require__(/*! ./bread-crumbs.component.html */ "./src/app/common/bread-crumbs/bread-crumbs.component.html"),
+            styles: [__webpack_require__(/*! ./bread-crumbs.component.scss */ "./src/app/common/bread-crumbs/bread-crumbs.component.scss")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
             _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]])
     ], BreadCrumbsComponent);
     return BreadCrumbsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/common/dialog/dialog.component.css":
+/*!****************************************************!*\
+  !*** ./src/app/common/dialog/dialog.component.css ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbW1vbi9kaWFsb2cvZGlhbG9nLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/common/dialog/dialog.component.html":
+/*!*****************************************************!*\
+  !*** ./src/app/common/dialog/dialog.component.html ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<dialog class=\"my-dialog\" (close)=\"handleClose($event)\" #leDialog>\n  <h3>{{notification.title}}</h3>\n  <p>{{notification.message}}</p>\n  <div class=\"inline-components\">\n    <button class=\"btn\" (click)=\"okClicked()\">ok</button>\n    <button class=\"btn\" (click)=\"cancelClicked()\">cancel</button>\n  </div>\n</dialog>"
+
+/***/ }),
+
+/***/ "./src/app/common/dialog/dialog.component.ts":
+/*!***************************************************!*\
+  !*** ./src/app/common/dialog/dialog.component.ts ***!
+  \***************************************************/
+/*! exports provided: DialogComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DialogComponent", function() { return DialogComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var DialogComponent = /** @class */ (function () {
+    function DialogComponent() {
+        this.close = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+    }
+    DialogComponent.prototype.ngOnInit = function () {
+        this.nativeDialogElement = this.dialogElement.nativeElement;
+        this.nativeDialogElement.showModal();
+    };
+    DialogComponent.prototype.handleClose = function (e) { };
+    DialogComponent.prototype.okClicked = function () {
+    };
+    DialogComponent.prototype.cancelClicked = function () {
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], DialogComponent.prototype, "notification", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"])
+    ], DialogComponent.prototype, "close", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('leDialog'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])
+    ], DialogComponent.prototype, "dialogElement", void 0);
+    DialogComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-dialog',
+            template: __webpack_require__(/*! ./dialog.component.html */ "./src/app/common/dialog/dialog.component.html"),
+            styles: [__webpack_require__(/*! ./dialog.component.css */ "./src/app/common/dialog/dialog.component.css")]
+        })
+    ], DialogComponent);
+    return DialogComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/common/language-bar/language-bar.component.css":
+/*!****************************************************************!*\
+  !*** ./src/app/common/language-bar/language-bar.component.css ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbW1vbi9sYW5ndWFnZS1iYXIvbGFuZ3VhZ2UtYmFyLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/common/language-bar/language-bar.component.html":
+/*!*****************************************************************!*\
+  !*** ./src/app/common/language-bar/language-bar.component.html ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<link rel=\"stylesheet\" [href]='sanitizer.bypassSecurityTrustResourceUrl(this.languageService.cssUrl)' />\n\n<select [(ngModel)]=\"selectedLanguage\" (change)=\"selectLanguage()\" [compareWith]=\"compareFn\">\n  <option *ngFor=\"let c of languages\" [ngValue]=\"c\">{{c.name}}</option>\n</select>"
+
+/***/ }),
+
+/***/ "./src/app/common/language-bar/language-bar.component.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/common/language-bar/language-bar.component.ts ***!
+  \***************************************************************/
+/*! exports provided: LanguageBarComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LanguageBarComponent", function() { return LanguageBarComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
+/* harmony import */ var _services_language_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/language.service */ "./src/app/services/language.service.ts");
+
+
+
+
+var LanguageBarComponent = /** @class */ (function () {
+    function LanguageBarComponent(translate, languageService, sanitizer) {
+        this.translate = translate;
+        this.languageService = languageService;
+        this.sanitizer = sanitizer;
+    }
+    LanguageBarComponent.prototype.ngOnInit = function () {
+        this.languages = this.languageService.languages;
+        this.selectedLanguage = this.languageService.getLanguage();
+    };
+    LanguageBarComponent.prototype.selectLanguage = function () {
+        this.languageService.setLanguage(this.selectedLanguage);
+    };
+    LanguageBarComponent.prototype.compareFn = function (a, b) {
+        if (b) {
+            return a.lcid === b.lcid;
+        }
+    };
+    LanguageBarComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-language-bar',
+            template: __webpack_require__(/*! ./language-bar.component.html */ "./src/app/common/language-bar/language-bar.component.html"),
+            styles: [__webpack_require__(/*! ./language-bar.component.css */ "./src/app/common/language-bar/language-bar.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"], _services_language_service__WEBPACK_IMPORTED_MODULE_3__["LanguageService"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["Sanitizer"]])
+    ], LanguageBarComponent);
+    return LanguageBarComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/common/loader/loader.component.css":
+/*!****************************************************!*\
+  !*** ./src/app/common/loader/loader.component.css ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbW1vbi9sb2FkZXIvbG9hZGVyLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/common/loader/loader.component.html":
+/*!*****************************************************!*\
+  !*** ./src/app/common/loader/loader.component.html ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = " \r\n<div id=\"loader_back\" [hidden]=\"!busy\">\r\n    <div class=\"lds-ellipsis\">\r\n        <div class=\"color1\"></div>\r\n        <div class=\"color2\"></div>\r\n        <div class=\"color3\"></div>\r\n\r\n    </div>\r\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/common/loader/loader.component.ts":
+/*!***************************************************!*\
+  !*** ./src/app/common/loader/loader.component.ts ***!
+  \***************************************************/
+/*! exports provided: LoaderComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoaderComponent", function() { return LoaderComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var LoaderComponent = /** @class */ (function () {
+    function LoaderComponent() {
+    }
+    LoaderComponent.prototype.ngOnInit = function () {
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Boolean)
+    ], LoaderComponent.prototype, "busy", void 0);
+    LoaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-loader',
+            template: __webpack_require__(/*! ./loader.component.html */ "./src/app/common/loader/loader.component.html"),
+            styles: [__webpack_require__(/*! ./loader.component.css */ "./src/app/common/loader/loader.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], LoaderComponent);
+    return LoaderComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/common/slide-header/slide-header.component.html":
+/*!*****************************************************************!*\
+  !*** ./src/app/common/slide-header/slide-header.component.html ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"topper {{className}}\"><span class=\"fas fa-clone bar-icon\"></span> <h4> {{title | translate}}</h4>\n</div>\n<a (click)=\"closeSlider();\" class=\"close-button\"><i class=\"far fa-window-close\"></i></a>\n"
+
+/***/ }),
+
+/***/ "./src/app/common/slide-header/slide-header.component.scss":
+/*!*****************************************************************!*\
+  !*** ./src/app/common/slide-header/slide-header.component.scss ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".orange {\n  background: #de4823;\n  background: linear-gradient(90deg, #de4823 0%, #791f09 67%, #00fffc 100%); }\n\n.topper {\n  height: 65px;\n  opacity: 0.8;\n  position: absolute;\n  width: 112%;\n  padding-top: 30px;\n  top: -34px;\n  left: -16px; }\n\n.topper h4 {\n    display: inline; }\n\n.topper .bar-icon {\n    margin-left: 15px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL3NsaWRlLWhlYWRlci9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXGNvbW1vblxcc2xpZGUtaGVhZGVyXFxzbGlkZS1oZWFkZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDSSxvQkFBMEI7RUFDMUIsMEVBQXNHLEVBQ3pHOztBQUVEO0VBQ0ksYUFBWTtFQUNaLGFBQVk7RUFDWixtQkFBa0I7RUFDbEIsWUFBVztFQUNYLGtCQUFpQjtFQUNqQixXQUFVO0VBQ1YsWUFBVyxFQU9kOztBQWREO0lBU1EsZ0JBQWUsRUFDbEI7O0FBVkw7SUFZUSxrQkFBaUIsRUFDcEIiLCJmaWxlIjoic3JjL2FwcC9jb21tb24vc2xpZGUtaGVhZGVyL3NsaWRlLWhlYWRlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG4ub3JhbmdlIHtcclxuICAgIGJhY2tncm91bmQ6IHJnYigyMjIsNzIsMzUpO1xyXG4gICAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDkwZGVnLCByZ2JhKDIyMiw3MiwzNSwxKSAwJSwgcmdiYSgxMjEsMzEsOSwxKSA2NyUsIHJnYmEoMCwyNTUsMjUyLDEpIDEwMCUpO1xyXG59XHJcblxyXG4udG9wcGVye1xyXG4gICAgaGVpZ2h0OiA2NXB4OyAgIFxyXG4gICAgb3BhY2l0eTogMC44O1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgd2lkdGg6IDExMiU7XHJcbiAgICBwYWRkaW5nLXRvcDogMzBweDtcclxuICAgIHRvcDogLTM0cHg7XHJcbiAgICBsZWZ0OiAtMTZweDtcclxuICAgIGg0e1xyXG4gICAgICAgIGRpc3BsYXk6IGlubGluZTtcclxuICAgIH1cclxuICAgIC5iYXItaWNvbntcclxuICAgICAgICBtYXJnaW4tbGVmdDogMTVweDtcclxuICAgIH1cclxufVxyXG4iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/common/slide-header/slide-header.component.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/common/slide-header/slide-header.component.ts ***!
+  \***************************************************************/
+/*! exports provided: SlideHeaderComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SlideHeaderComponent", function() { return SlideHeaderComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var SlideHeaderComponent = /** @class */ (function () {
+    function SlideHeaderComponent() {
+    }
+    SlideHeaderComponent.prototype.ngOnInit = function () {
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
+    ], SlideHeaderComponent.prototype, "title", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
+    ], SlideHeaderComponent.prototype, "className", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function)
+    ], SlideHeaderComponent.prototype, "closeFn", void 0);
+    SlideHeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-slide-header',
+            template: __webpack_require__(/*! ./slide-header.component.html */ "./src/app/common/slide-header/slide-header.component.html"),
+            styles: [__webpack_require__(/*! ./slide-header.component.scss */ "./src/app/common/slide-header/slide-header.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], SlideHeaderComponent);
+    return SlideHeaderComponent;
 }());
 
 
@@ -444,7 +727,7 @@ var BreadCrumbsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper\">\n    <nav id=\"sidebar\" [class]=\"activeClass\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <ul class=\"mr-auto\">\n                <li class=\"nav-item\"><button type=\"button\" (click)=\"toggleSidebar()\" id=\"sidebarCollapse\" class=\"btn btn-sm btn-info\">\n                        <i class=\"fas fa-align-left\"></i>\n                    </button></li>\n                <li class=\"nav-item\" class=\"language-bar\">\n                    <app-language-bar></app-language-bar>\n                </li>\n            </ul>\n            <strong>SN</strong>\n        </div>\n        <ul class=\"list-unstyled components\">\n            <li class=\"active\">\n                <a href=\"#homeSubmenu\" data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-home\"></i>\n                    {{\"NAVBAR.HOME\" | translate}}\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"screens\">\n                    <i class=\"fas fa-desktop\"></i>\n                    {{\"NAVBAR.SCREENS\" | translate}}\n\n                </a></li>\n            <li>\n                <a routerLink=\"screen-groups\">\n                    <i class=\"fas fa-clone\"></i>\n                    {{\"NAVBAR.SCREEN-GROUPS\" | translate}}\n\n                </a></li>\n            <li>\n                <a href=\"#LibrarySubmenu\" (click)=\"toggleSubmenu()\" routerLink=\"library\" data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-copy\"></i>\n                    {{\"NAVBAR.LIBRARY\" | translate}}\n                </a>\n                <ul class=\"{{subMenuState}} list-unstyled\" id=\"LibrarySubmenu\">\n                    <li>\n                        <a routerLink=\"library/images\"> {{\"NAVBAR.IMAGES\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/videos\"> {{\"NAVBAR.VIDEOS\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/sounds\"> {{\"NAVBAR.SOUNDS\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/slides\"> {{\"NAVBAR.SLIDES\" | translate}}</a>\n                    </li>\n                </ul>\n            </li>\n            <li>\n                <a routerLink=\"playlists\">\n                    <i class=\"fas fa-step-forward\"></i>\n                    {{\"NAVBAR.PLAYLISTS\" | translate}}\n\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"schedules\">\n                    <i class=\"fas fa-calendar-alt\"></i>\n                    {{\"NAVBAR.SCHEDULES\" | translate}}\n\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"settings\">\n                    <i class=\"fas fa-cogs\"></i>\n                    {{\"NAVBAR.SETTINGS\" | translate}}\n\n                </a>\n            </li>\n        </ul>\n    </nav>\n    <!-- Page Content  -->\n    <div id=\"content\">\n        <app-bread-crumbs></app-bread-crumbs>\n\n        <div id=\"scroller\">\n            <router-outlet></router-outlet>\n        </div>\n    </div>\n    <footer class=\"footer closed\">\n        {{'DASHBOARD.FOOTER' | translate}}\n    </footer>\n</div>\n"
+module.exports = "<div class=\"wrapper\">\n    <nav id=\"sidebar\" [class]=\"activeClass\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <ul class=\"mr-auto\">\n                <li class=\"nav-item\" class=\"language-bar\">\n                    <app-language-bar></app-language-bar>\n                </li>\n            </ul>\n            <strong>SN</strong>\n        </div>\n        <ul class=\"list-unstyled components\">\n            <li class=\"active\">\n                <a routerLink=\"/\">\n                    <i class=\"fas fa-home\"></i>\n                    {{\"NAVBAR.HOME\" | translate}}\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"screens\">\n                    <i class=\"fas fa-desktop\"></i>\n                    {{\"NAVBAR.SCREENS\" | translate}}\n\n                </a></li>\n            <li>\n                <a routerLink=\"screen-groups\">\n                    <i class=\"fas fa-clone\"></i>\n                    {{\"NAVBAR.SCREEN-GROUPS\" | translate}}\n\n                </a></li>\n            <li>\n                <a href=\"#LibrarySubmenu\" (click)=\"toggleSubmenu()\" routerLink=\"library\" data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-copy\"></i>\n                    {{\"NAVBAR.LIBRARY\" | translate}}\n                </a>\n                <ul class=\"{{subMenuState}} list-unstyled\" id=\"LibrarySubmenu\">\n                    <li>\n                        <a routerLink=\"library/images\"> {{\"NAVBAR.IMAGES\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/videos\"> {{\"NAVBAR.VIDEOS\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/sounds\"> {{\"NAVBAR.SOUNDS\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/slides\"> {{\"NAVBAR.SLIDES\" | translate}}</a>\n                    </li>\n                </ul>\n            </li>\n            <li>\n                <a routerLink=\"playlists\">\n                    <i class=\"fas fa-step-forward\"></i>\n                    {{\"NAVBAR.PLAYLISTS\" | translate}}\n\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"schedules\">\n                    <i class=\"fas fa-calendar-alt\"></i>\n                    {{\"NAVBAR.SCHEDULES\" | translate}}\n\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"settings\">\n                    <i class=\"fas fa-cogs\"></i>\n                    {{\"NAVBAR.SETTINGS\" | translate}}\n\n                </a>\n            </li>\n        </ul>\n    </nav>\n    <!-- Page Content  -->\n    <div id=\"content\">\n        <app-bread-crumbs (Toggled)=\"toggleSidebar($event)\"></app-bread-crumbs>\n        <div id=\"scroller\">\n            <router-outlet></router-outlet>\n        </div>\n    </div>\n    <footer class=\"footer closed\">\n        {{'DASHBOARD.FOOTER' | translate}}\n    </footer>\n</div>\n"
 
 /***/ }),
 
@@ -492,9 +775,8 @@ var DashboardComponent = /** @class */ (function () {
             this.subMenuState = 'collapse';
         }
     };
-    DashboardComponent.prototype.toggleSidebar = function () {
-        this.toggled = !this.toggled;
-        if (this.toggled) {
+    DashboardComponent.prototype.toggleSidebar = function (toggleState) {
+        if (toggleState) {
             this.activeClass = 'active';
         }
         else {
@@ -641,81 +923,6 @@ var DataComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/dialog/dialog.component.css":
-/*!*********************************************!*\
-  !*** ./src/app/dialog/dialog.component.css ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2RpYWxvZy9kaWFsb2cuY29tcG9uZW50LmNzcyJ9 */"
-
-/***/ }),
-
-/***/ "./src/app/dialog/dialog.component.html":
-/*!**********************************************!*\
-  !*** ./src/app/dialog/dialog.component.html ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<dialog class=\"my-dialog\" (close)=\"handleClose($event)\" #leDialog>\n  <h3>{{notification.title}}</h3>\n  <p>{{notification.message}}</p>\n  <div class=\"inline-components\">\n    <button class=\"btn\" (click)=\"okClicked()\">ok</button>\n    <button class=\"btn\" (click)=\"cancelClicked()\">cancel</button>\n  </div>\n</dialog>"
-
-/***/ }),
-
-/***/ "./src/app/dialog/dialog.component.ts":
-/*!********************************************!*\
-  !*** ./src/app/dialog/dialog.component.ts ***!
-  \********************************************/
-/*! exports provided: DialogComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DialogComponent", function() { return DialogComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var DialogComponent = /** @class */ (function () {
-    function DialogComponent() {
-        this.close = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
-    }
-    DialogComponent.prototype.ngOnInit = function () {
-        this.nativeDialogElement = this.dialogElement.nativeElement;
-        this.nativeDialogElement.showModal();
-    };
-    DialogComponent.prototype.handleClose = function (e) { };
-    DialogComponent.prototype.okClicked = function () {
-    };
-    DialogComponent.prototype.cancelClicked = function () {
-    };
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
-    ], DialogComponent.prototype, "notification", void 0);
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"])
-    ], DialogComponent.prototype, "close", void 0);
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('leDialog'),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])
-    ], DialogComponent.prototype, "dialogElement", void 0);
-    DialogComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-dialog',
-            template: __webpack_require__(/*! ./dialog.component.html */ "./src/app/dialog/dialog.component.html"),
-            styles: [__webpack_require__(/*! ./dialog.component.css */ "./src/app/dialog/dialog.component.css")]
-        })
-    ], DialogComponent);
-    return DialogComponent;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/directives/adapt-height.ts":
 /*!********************************************!*\
   !*** ./src/app/directives/adapt-height.ts ***!
@@ -764,139 +971,6 @@ var AdaptHeightDirective = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]])
     ], AdaptHeightDirective);
     return AdaptHeightDirective;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/language-bar/language-bar.component.css":
-/*!*********************************************************!*\
-  !*** ./src/app/language-bar/language-bar.component.css ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xhbmd1YWdlLWJhci9sYW5ndWFnZS1iYXIuY29tcG9uZW50LmNzcyJ9 */"
-
-/***/ }),
-
-/***/ "./src/app/language-bar/language-bar.component.html":
-/*!**********************************************************!*\
-  !*** ./src/app/language-bar/language-bar.component.html ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<link rel=\"stylesheet\" [href]='sanitizer.bypassSecurityTrustResourceUrl(this.languageService.cssUrl)' />\n\n<select [(ngModel)]=\"selectedLanguage\" (change)=\"selectLanguage()\" [compareWith]=\"compareFn\">\n  <option *ngFor=\"let c of languages\" [ngValue]=\"c\">{{c.name}}</option>\n</select>"
-
-/***/ }),
-
-/***/ "./src/app/language-bar/language-bar.component.ts":
-/*!********************************************************!*\
-  !*** ./src/app/language-bar/language-bar.component.ts ***!
-  \********************************************************/
-/*! exports provided: LanguageBarComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LanguageBarComponent", function() { return LanguageBarComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
-/* harmony import */ var _language_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../language.service */ "./src/app/language.service.ts");
-
-
-
-
-var LanguageBarComponent = /** @class */ (function () {
-    function LanguageBarComponent(translate, languageService, sanitizer) {
-        this.translate = translate;
-        this.languageService = languageService;
-        this.sanitizer = sanitizer;
-    }
-    LanguageBarComponent.prototype.ngOnInit = function () {
-        this.languages = this.languageService.languages;
-        this.selectedLanguage = this.languageService.getLanguage();
-    };
-    LanguageBarComponent.prototype.selectLanguage = function () {
-        this.languageService.setLanguage(this.selectedLanguage);
-    };
-    LanguageBarComponent.prototype.compareFn = function (a, b) {
-        if (b) {
-            return a.lcid === b.lcid;
-        }
-    };
-    LanguageBarComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-language-bar',
-            template: __webpack_require__(/*! ./language-bar.component.html */ "./src/app/language-bar/language-bar.component.html"),
-            styles: [__webpack_require__(/*! ./language-bar.component.css */ "./src/app/language-bar/language-bar.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"], _language_service__WEBPACK_IMPORTED_MODULE_3__["LanguageService"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["Sanitizer"]])
-    ], LanguageBarComponent);
-    return LanguageBarComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/language.service.ts":
-/*!*************************************!*\
-  !*** ./src/app/language.service.ts ***!
-  \*************************************/
-/*! exports provided: LanguageService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LanguageService", function() { return LanguageService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
-
-
-
-var LanguageService = /** @class */ (function () {
-    function LanguageService(translate) {
-        this.translate = translate;
-        this.languages = [];
-        this.languages.push({ key: 'en', lcid: 1025, name: 'English', dir: 'ltr' });
-        this.languages.push({ key: 'he', lcid: 1037, name: 'עברית', dir: 'rtl' });
-        this.languages.push({ key: 'de', lcid: 1037, name: 'Dutche', dir: 'ltr' });
-        var lngstr = localStorage.getItem('lng');
-        if (lngstr) {
-            this.language = JSON.parse(lngstr);
-        }
-        else {
-            this.language = this.languages[0];
-        }
-        document.getElementsByTagName('body')[0].className = this.language.dir;
-        this.cssUrl = "/assets/i18n/" + this.language.dir + ".css?k=" + Math.random();
-        // the lang to use, if the lang isn't available, it will use the current loader to get them
-        translate.use(this.language.key);
-    }
-    LanguageService.prototype.getLanguage = function () {
-        var str = localStorage.getItem('lng');
-        if (str) {
-            this.language = JSON.parse(str);
-        }
-        return this.language;
-    };
-    LanguageService.prototype.setLanguage = function (language) {
-        this.language = language;
-        localStorage.setItem('lng', JSON.stringify(language));
-        this.translate.use(language.key);
-        document.getElementsByTagName('body')[0].className = language.dir;
-        this.cssUrl = "/assets/i18n/" + language.dir + ".css?k=" + Math.random();
-    };
-    LanguageService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"]])
-    ], LanguageService);
-    return LanguageService;
 }());
 
 
@@ -1257,7 +1331,7 @@ var ElementComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<div class=\"slider-container-wide {{active}} shadow\">\n\n<dialog open={{active}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n<input type=\"text\" name=\"searchPhrase\" /><button class=\"btn btn-primary\"></button>\n\n <div class=\"container no-margin\"> \n    <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\" >\n    {{item.Name}}\n      <ul class=\"sqr-toolbar\">\n    \n        <li>\n          <button class=\"btn btn-xs btn-primary\" (click)=\"selectItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>\n</div>\n\n </dialog>\n\n</div>\n"
+module.exports = "\n\n<div class=\"slider-container-wide {{active}} shadow\">\n\n<dialog open={{active}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n<input type=\"text\" name=\"searchPhrase\" /><button class=\"btn btn-primary\"></button>\n\n <div class=\"container no-margin\"> \n    <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\" >\n    {{item.Name}}\n      <ul class=\"sqr-toolbar\">\n    \n        <li>\n          <button class=\"btn btn-md btn-primary\" (click)=\"selectItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>\n</div>\n\n </dialog>\n\n</div>\n"
 
 /***/ }),
 
@@ -1347,7 +1421,7 @@ var FinderComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container no-margin\">\n  <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    {{item.Name}}\n    <ul class=\"sqr-toolbar\">\n      <li>\n        <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n    </ul>\n  </div>\n</div>\n<div class=\"slider-container {{displayModalNew}} shadow \">\n  <dialog open= {{displayModalNew}}>\n    <a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\"></i></a>\n    <div class=\"scroller\">\n      <form *ngIf=\"item\">\n        <div class=\"form-group\">\n          <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n          <input type=\"text\" name=\"libraryName\" class=\"form-control\" id=\"screenName\" [(ngModel)]=\"item.Name\">\n          <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n        </div>\n        <div class=\"form-group\">\n          <label for=\"libraryFile\">{{ \"LIBRARY.RESOURCE\" | translate }}</label>\n          <div *ngIf=\"item.thumb\" [ngStyle]=\"{'background-image': 'url(' + item.thumb + ')'}\" class=\"fancy-image\"></div>\n          <p><a href=\"{{item.thumb}}\" target=\"_blank\" class=\"form-text text-muted\"><small>{{item.thumb}}</small></a></p>\n          <app-upload [item]=\"item\"></app-upload>\n          <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.IMAGE_DESCRIPTION\" | translate }}</small>\n        </div>\n      </form>\n    </div>\n    <button *ngIf=\"item && item._id\" class=\"btn btn-primary\" (click)=\"saveLibrary()\">{{ \"LIBRARY.UPDATE\" | translate }}</button>\n    <button *ngIf=\"!item || !item._id\" class=\"btn btn-primary\" (click)=\"createLibrary()\">{{ \"LIBRARY.CREATE\" | translate }}</button>\n  </dialog>\n</div>\n"
+module.exports = "<div class=\"container no-margin\">\n  <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    {{item.Name}}\n    <ul class=\"sqr-toolbar\">\n      <li>\n        <button class=\"btn btn-md btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-md btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n    </ul>\n  </div>\n</div>\n<div class=\"slider-container {{displayModalNew}} shadow \">\n  <dialog open= {{displayModalNew}}>\n    <a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\"></i></a>\n    <div class=\"scroller\">\n      <form *ngIf=\"item\">\n        <div class=\"form-group\">\n          <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n          <input type=\"text\" name=\"libraryName\" class=\"form-control\" id=\"screenName\" [(ngModel)]=\"item.Name\">\n          <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n        </div>\n        <div class=\"form-group\">\n          <label for=\"libraryFile\">{{ \"LIBRARY.RESOURCE\" | translate }}</label>\n          <img *ngIf=\"item.thumb\" [src]=\" item.thumb\" class=\"fancy-image\">\n          <p><a href=\"{{item.thumb}}\" target=\"_blank\" class=\"form-text text-muted\"><small>{{item.thumb}}</small></a></p>\n          <app-upload [item]=\"item\"></app-upload>\n          <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.IMAGE_DESCRIPTION\" | translate }}</small>\n        </div>\n      </form>\n    </div>\n    <button *ngIf=\"item && item._id\" class=\"btn btn-primary\" (click)=\"saveLibrary()\">{{ \"LIBRARY.UPDATE\" | translate }}</button>\n    <button *ngIf=\"!item || !item._id\" class=\"btn btn-primary\" (click)=\"createLibrary()\">{{ \"LIBRARY.CREATE\" | translate }}</button>\n  </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -1587,7 +1661,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>\n"
+module.exports = "\n\n\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -1629,7 +1703,7 @@ var LibraryComponent = /** @class */ (function () {
 /*!*******************************************!*\
   !*** ./src/app/library/library.module.ts ***!
   \*******************************************/
-/*! exports provided: MainComponent, libraryRoutes, LibraryModule */
+/*! exports provided: libraryRoutes, LibraryModule, MainComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1678,14 +1752,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var libraryRoutes = [
-    {
-        path: 'library', component: _library_component__WEBPACK_IMPORTED_MODULE_9__["LibraryComponent"],
-        children: [{ path: 'images', component: _images_images_component__WEBPACK_IMPORTED_MODULE_5__["ImagesComponent"] },
-            { path: 'videos', component: _videos_videos_component__WEBPACK_IMPORTED_MODULE_6__["VideosComponent"] },
-            { path: 'sounds', component: _sounds_sounds_component__WEBPACK_IMPORTED_MODULE_7__["SoundsComponent"] },
-            { path: 'slides', component: _slides_slides_component__WEBPACK_IMPORTED_MODULE_8__["SlidesComponent"] },
-            { path: 'slides/:id', component: _slide_editor_slide_editor_component__WEBPACK_IMPORTED_MODULE_14__["SlideEditorComponent"] }]
-    },
+    { path: 'library', component: _main_main_component__WEBPACK_IMPORTED_MODULE_18__["MainComponent"] },
+    { path: 'library/images', component: _images_images_component__WEBPACK_IMPORTED_MODULE_5__["ImagesComponent"] },
+    { path: 'library/videos', component: _videos_videos_component__WEBPACK_IMPORTED_MODULE_6__["VideosComponent"] },
+    { path: 'library/sounds', component: _sounds_sounds_component__WEBPACK_IMPORTED_MODULE_7__["SoundsComponent"] },
+    { path: 'library/slides', component: _slides_slides_component__WEBPACK_IMPORTED_MODULE_8__["SlidesComponent"] },
+    { path: 'library/slides/:id', component: _slide_editor_slide_editor_component__WEBPACK_IMPORTED_MODULE_14__["SlideEditorComponent"] },
 ];
 var LibraryModule = /** @class */ (function () {
     function LibraryModule() {
@@ -1722,7 +1794,7 @@ var LibraryModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  main works!\n</p>\n"
+module.exports = "<div class=\"container no-margin\">\n    <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n      {{item.Name}}\n      <ul class=\"sqr-toolbar\">\n        <li>\n          <button class=\"btn btn-md btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n        </li>\n        <li>\n          <button class=\"btn btn-md btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>\n  </div>\n  <div class=\"slider-container {{displayModalNew}} shadow \">\n    <dialog open= {{displayModalNew}}>\n      <a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\"></i></a>\n      <div class=\"scroller\">\n        <form *ngIf=\"item\">\n          <div class=\"form-group\">\n            <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n            <input type=\"text\" name=\"libraryName\" class=\"form-control\" id=\"screenName\" [(ngModel)]=\"item.Name\">\n            <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n          </div>\n          <div class=\"form-group\">\n            <label for=\"libraryFile\">{{ \"LIBRARY.RESOURCE\" | translate }}</label>\n            <img *ngIf=\"item.thumb\" [src]=\" item.thumb\" class=\"fancy-image\">\n            <p><a href=\"{{item.thumb}}\" target=\"_blank\" class=\"form-text text-muted\"><small>{{item.thumb}}</small></a></p>\n            <app-upload [item]=\"item\"></app-upload>\n            <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.IMAGE_DESCRIPTION\" | translate }}</small>\n          </div>\n        </form>\n      </div>\n      <button *ngIf=\"item && item._id\" class=\"btn btn-primary\" (click)=\"saveLibrary()\">{{ \"LIBRARY.UPDATE\" | translate }}</button>\n      <button *ngIf=\"!item || !item._id\" class=\"btn btn-primary\" (click)=\"createLibrary()\">{{ \"LIBRARY.CREATE\" | translate }}</button>\n    </dialog>\n  </div>\n  "
 
 /***/ }),
 
@@ -1749,12 +1821,50 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MainComponent", function() { return MainComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _data_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../data.component */ "./src/app/data.component.ts");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
 
 
-var MainComponent = /** @class */ (function () {
-    function MainComponent() {
+
+
+
+var MainComponent = /** @class */ (function (_super) {
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](MainComponent, _super);
+    function MainComponent(_ngZone, translateService) {
+        var _this = _super.call(this, _ngZone, translateService) || this;
+        _this._ngZone = _ngZone;
+        _this.translateService = translateService;
+        _this.DataController = _signnature_client__WEBPACK_IMPORTED_MODULE_3__["LibraryDataController"];
+        return _this;
+        // this.DataModel = PlaylistModel;
     }
     MainComponent.prototype.ngOnInit = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                this.loadItems({});
+                return [2 /*return*/];
+            });
+        });
+    };
+    MainComponent.prototype.saveLibrary = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                this.item.type = 'image';
+                this.updateItem();
+                return [2 /*return*/];
+            });
+        });
+    };
+    MainComponent.prototype.createLibrary = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                this.item.type = 'image';
+                this.createItem();
+                return [2 /*return*/];
+            });
+        });
     };
     MainComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1762,10 +1872,10 @@ var MainComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./main.component.html */ "./src/app/library/main/main.component.html"),
             styles: [__webpack_require__(/*! ./main.component.scss */ "./src/app/library/main/main.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__["TranslateService"]])
     ], MainComponent);
     return MainComponent;
-}());
+}(_data_component__WEBPACK_IMPORTED_MODULE_2__["DataComponent"]));
 
 
 
@@ -1968,7 +2078,7 @@ var SlideEditorComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container no-margin\">\n  <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}}\n    <ul class=\"sqr-toolbar\">\n      <li>\n        <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-xs btn-primary\" [routerLink]=\"[item._id]\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n    </ul>\n  </div>\n</div>\n<div class=\"slider-container-wide {{displayModalNew}} shadow\">\n  <dialog open= {{displayModalNew}}>\n    <a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\"></i></a>\n    <form *ngIf=\"item\">\n      <div class=\"form-group\">\n        <label for=\"screenName\">{{ \"SLIDES.NAME\" | translate }}:</label>\n        <input type=\"text\" name=\"slideName\" class=\"form-control\" id=\"screenName\" [(ngModel)]=\"item.Name\">\n        <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SLIDES.NAME_HELP\" | translate }}</small>\n      </div>\n      <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"SLIDES.UPDATE\" | translate }}</button>\n      <button *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"SLIDES.CREATE\" | translate }}</button>\n      <div class=\"form-group\">\n        <app-slide-editor></app-slide-editor>\n      </div>\n    </form>\n  </dialog>\n</div>\n"
+module.exports = "<div class=\"container no-margin\">\n  <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}}\n    <ul class=\"sqr-toolbar\">\n      <li>\n        <button class=\"btn btn-md btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-md btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-md btn-primary\" [routerLink]=\"[item._id]\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n    </ul>\n  </div>\n</div>\n<div class=\"slider-container-wide {{displayModalNew}} shadow\">\n  <dialog open= {{displayModalNew}}>\n    <a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\"></i></a>\n    <form *ngIf=\"item\">\n      <div class=\"form-group\">\n        <label for=\"screenName\">{{ \"SLIDES.NAME\" | translate }}:</label>\n        <input type=\"text\" name=\"slideName\" class=\"form-control\" id=\"screenName\" [(ngModel)]=\"item.Name\">\n        <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SLIDES.NAME_HELP\" | translate }}</small>\n      </div>\n      <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"SLIDES.UPDATE\" | translate }}</button>\n      <button *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"SLIDES.CREATE\" | translate }}</button>\n      <div class=\"form-group\">\n        <app-slide-editor></app-slide-editor>\n      </div>\n    </form>\n  </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -2044,7 +2154,7 @@ var SlidesComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "   \n    \n    \n    <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\" >\n    {{item.Name}}\n      <ul class=\"sqr-toolbar\">\n        <li>\n          <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n        </li>\n        <li>\n          <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>\n</div>\n<div class=\"slider-container {{displayModalNew}} shadow \">\n<dialog open={{displayModalNew}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n<div class=\"scroller\">\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"libraryName\"  class=\"form-control\" id=\"screenName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"libraryFile\">{{ \"LIBRARY.RESOURCE\" | translate }}</label>\n<app-upload [item]=\"item\"></app-upload>\n</div>\n   \n</form>\n </div>\n  <button   *ngIf=\"item && item._id\" class=\"btn btn-primary\" (click)=\"saveLibrary()\">{{ \"LIBRARY.UPDATE\" | translate }}</button>\n  <button   *ngIf=\"!item || !item._id\" class=\"btn btn-primary\" (click)=\"createLibrary()\">{{ \"LIBRARY.CREATE\" | translate }}</button>\n</dialog>\n</div>\n "
+module.exports = "   \n    \n    \n    <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\" >\n    {{item.Name}}\n      <ul class=\"sqr-toolbar\">\n        <li>\n          <button class=\"btn btn-md btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n        </li>\n        <li>\n          <button class=\"btn btn-md btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>\n</div>\n<div class=\"slider-container {{displayModalNew}} shadow \">\n<dialog open={{displayModalNew}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n<div class=\"scroller\">\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"libraryName\"  class=\"form-control\" id=\"screenName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"libraryFile\">{{ \"LIBRARY.RESOURCE\" | translate }}</label>\n<app-upload [item]=\"item\"></app-upload>\n</div>\n   \n</form>\n </div>\n  <button   *ngIf=\"item && item._id\" class=\"btn btn-primary\" (click)=\"saveLibrary()\">{{ \"LIBRARY.UPDATE\" | translate }}</button>\n  <button   *ngIf=\"!item || !item._id\" class=\"btn btn-primary\" (click)=\"createLibrary()\">{{ \"LIBRARY.CREATE\" | translate }}</button>\n</dialog>\n</div>\n "
 
 /***/ }),
 
@@ -2137,7 +2247,7 @@ var SoundsComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div (click)=\"addFiles()\" class=\"btn btn-default\">\n    <file-drop headertext=\"Drop files here\" customstyle=\"dropzone\" (onFileDrop)=\"dropped($event)\">\n    </file-drop>\n    </div>\n <input type=\"file\" #file style=\"display: none\" (change)=\"selected()\" />  \n\n\n<div *ngIf=\"item\"> \n  <div class=\"loader\" *ngIf=\"loading\">Loading...</div>\n  <img *ngIf=\"item.thumb\" [src]=\"item.thumb\" (load)=\"clearUpload()\" #imgIndicator id=\"imgIndicator\" /> \n \n </div>\n"
+module.exports = "<div (click)=\"addFiles()\" class=\"btn btn-default\">\n  <file-drop headertext=\"Drop files here\" customstyle=\"dropzone\" (onFileDrop)=\"dropped($event)\">\n  </file-drop>\n</div>\n<input type=\"file\" #file style=\"display: none\" (change)=\"selected()\" />\n\n\n<div>\n  <div class=\"loader\" *ngIf=\"loading\">Loading...</div>\n  <img [src]=\"thumb\" (load)=\"clearUpload()\" #imgIndicator id=\"imgIndicator\" />\n\n</div>\n"
 
 /***/ }),
 
@@ -2211,6 +2321,7 @@ var UploadComponent = /** @class */ (function () {
                     this._ngZone.run(function () { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
                         return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                             this.item.thumb = this.item.thumb.split('?____')[0] + '?____' + this.count;
+                            this.thumb = this.item.thumb;
                             return [2 /*return*/];
                         });
                     }); });
@@ -2241,6 +2352,7 @@ var UploadComponent = /** @class */ (function () {
                         s3Path = _c.sent();
                         this.item.resource = s3Path.url;
                         this.item.thumb = s3Path.thumb;
+                        this.thumb = this.item.thumb;
                         this.waitUpload(s3Path.thumb);
                         _c.label = 3;
                     case 3:
@@ -2269,6 +2381,7 @@ var UploadComponent = /** @class */ (function () {
                                 s3Path = _a.sent();
                                 this.item.resource = s3Path.url;
                                 this.item.thumb = s3Path.thumb;
+                                this.thumb = this.item.thumb;
                                 this.waitUpload(s3Path.thumb);
                                 return [2 /*return*/];
                         }
@@ -2311,7 +2424,7 @@ var UploadComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container no-margin\">\n  <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    {{item.Name}}\n    <ul class=\"sqr-toolbar\">\n      <li>\n        <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n    </ul>\n  </div>\n</div>\n<div class=\"slider-container {{displayModalNew}} shadow \">\n  <dialog open= {{displayModalNew}}>\n    <a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\"></i></a>\n    <div class=\"scroller\">\n      <form *ngIf=\"item\">\n        <div class=\"form-group\">\n          <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n          <input type=\"text\" name=\"libraryName\" class=\"form-control\" id=\"screenName\" [(ngModel)]=\"item.Name\">\n          <small id=\"nameHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n        </div>\n        <div class=\"form-group\">\n         <label for=\"embedCode\">{{ \"LIBRARY.EMBED\" | translate }}:</label>\n          <textarea id=\"embedCode\" name=\"embedCode\" class=\"form-control\" [(ngModel)]=\"item.Embed\"></textarea>\n          <small id=\"embedHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.EMBED_HELP\" | translate }}</small>\n        </div>\n      </form>\n    </div>\n    <button *ngIf=\"item && item._id\" class=\"btn btn-primary\" (click)=\"saveLibrary()\">{{ \"LIBRARY.UPDATE\" | translate }}</button>\n    <button *ngIf=\"!item || !item._id\" class=\"btn btn-primary\" (click)=\"createLibrary()\">{{ \"LIBRARY.CREATE\" | translate }}</button>\n  </dialog>\n</div>\n"
+module.exports = "<div class=\"container no-margin\">\n  <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    {{item.Name}}\n    <ul class=\"sqr-toolbar\">\n      <li>\n        <button class=\"btn btn-md btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-md btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n    </ul>\n  </div>\n</div>\n<div class=\"slider-container {{displayModalNew}} shadow \">\n  <dialog open= {{displayModalNew}}>\n    <a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\"></i></a>\n    <div class=\"scroller\">\n      <form *ngIf=\"item\">\n        <div class=\"form-group\">\n          <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n          <input type=\"text\" name=\"libraryName\" class=\"form-control\" id=\"screenName\" [(ngModel)]=\"item.Name\">\n          <small id=\"nameHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n        </div>\n        <div class=\"form-group\">\n         <label for=\"embedCode\">{{ \"LIBRARY.EMBED\" | translate }}:</label>\n          <textarea id=\"embedCode\" name=\"embedCode\" class=\"form-control\" [(ngModel)]=\"item.Embed\"></textarea>\n          <small id=\"embedHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.EMBED_HELP\" | translate }}</small>\n        </div>\n      </form>\n    </div>\n    <button *ngIf=\"item && item._id\" class=\"btn btn-primary\" (click)=\"saveLibrary()\">{{ \"LIBRARY.UPDATE\" | translate }}</button>\n    <button *ngIf=\"!item || !item._id\" class=\"btn btn-primary\" (click)=\"createLibrary()\">{{ \"LIBRARY.CREATE\" | translate }}</button>\n  </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -2398,381 +2511,6 @@ var VideosComponent = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ "./src/app/loader/loader.component.css":
-/*!*********************************************!*\
-  !*** ./src/app/loader/loader.component.css ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xvYWRlci9sb2FkZXIuY29tcG9uZW50LmNzcyJ9 */"
-
-/***/ }),
-
-/***/ "./src/app/loader/loader.component.html":
-/*!**********************************************!*\
-  !*** ./src/app/loader/loader.component.html ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = " \r\n<div id=\"loader_back\" [hidden]=\"!busy\">\r\n    <div class=\"lds-ellipsis\">\r\n        <div class=\"color1\"></div>\r\n        <div class=\"color2\"></div>\r\n        <div class=\"color3\"></div>\r\n\r\n    </div>\r\n</div>"
-
-/***/ }),
-
-/***/ "./src/app/loader/loader.component.ts":
-/*!********************************************!*\
-  !*** ./src/app/loader/loader.component.ts ***!
-  \********************************************/
-/*! exports provided: LoaderComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoaderComponent", function() { return LoaderComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var LoaderComponent = /** @class */ (function () {
-    function LoaderComponent() {
-    }
-    LoaderComponent.prototype.ngOnInit = function () {
-    };
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Boolean)
-    ], LoaderComponent.prototype, "busy", void 0);
-    LoaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-loader',
-            template: __webpack_require__(/*! ./loader.component.html */ "./src/app/loader/loader.component.html"),
-            styles: [__webpack_require__(/*! ./loader.component.css */ "./src/app/loader/loader.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-    ], LoaderComponent);
-    return LoaderComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/login/login.component.css":
-/*!*******************************************!*\
-  !*** ./src/app/login/login.component.css ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".dropdown-menu a {cursor: pointer;}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxrQkFBa0IsZ0JBQWdCLENBQUMiLCJmaWxlIjoic3JjL2FwcC9sb2dpbi9sb2dpbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmRyb3Bkb3duLW1lbnUgYSB7Y3Vyc29yOiBwb2ludGVyO30iXX0= */"
-
-/***/ }),
-
-/***/ "./src/app/login/login.component.html":
-/*!********************************************!*\
-  !*** ./src/app/login/login.component.html ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div>\n\t<div class=\"limiter\">\n\t\t<div class=\"container-login100\">\n      \n\n\t\t\t<div class=\"wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30\">\n            \n\t\t\t\t<form class=\"login100-form validate-form\">\n\t\t\t\t\t<span class=\"login100-form-title p-b-55\">\n\t\t\t\t\t\t{{\"LOGIN.TITLE\" | translate}}\n\t\t\t\t\t</span>\n\n\t\t\t\t\t<div class=\"wrap-input100 validate-input m-b-16\" [attr.data-validate]=\"'LOGIN.INSERT_USERNAME' | translate\">\n\t\t\t\t\t\t<input class=\"input100\" type=\"text\" name=\"userName\" placeholder=\"{{'LOGIN.USERNAME' | translate}}\" [(ngModel)]=\"userName\">\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t\t<span class=\"symbol-input100\">\n\t\t\t\t\t\t\t<span class=\"lnr lnr-envelope\"></span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class=\"wrap-input100 validate-input m-b-16\" >\n\t\t\t\t\t\t<input class=\"input100\" type=\"password\" name=\"password\" placeholder=\"{{'LOGIN.PASSWORD' | translate}}\" [(ngModel)]=\"password\">\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t\t<span class=\"symbol-input100\">\n\t\t\t\t\t\t\t<span class=\"lnr lnr-lock\"></span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class=\"contact100-form-checkbox m-l-4\">\n\t\t\t\t\t\t<input class=\"input-checkbox100\" id=\"ckb1\" type=\"checkbox\" name=\"remember-me\">\n\t\t\t\t\t\t<label class=\"label-checkbox100\" for=\"ckb1\">\n\t\t\t\t\t\t\t{{\"LOGIN.REMEMBER_ME\" | translate}}\n\t\t\t\t\t\t</label>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"container-login100-form-btn p-t-25\">\n\t\t\t\t\t\t<button class=\"login100-form-btn\" (click)=\"tryLogin()\">\n\t\t\t\t\t\t\t\t{{\"LOGIN.LOGIN_BTN\" | translate}}\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</div>\n \n\t\t\t\t\t<div class=\"text-center w-full p-t-25\">\n\t\t\t\t\t\t<span class=\"txt1\">\n\t\t\t\t\t\t{{'LOGIN.NOTAMEMBER' | translate}}\t\n\t\t\t\t\t\t</span>\n\n\t\t\t\t\t\t<a class=\"txt1 bo1 hov1\" href=\"#\"  routerLink=\"/signup\">\n\t\t\t\t\t\t{{'LOGIN.SIGNUP' | translate}}\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t</a>\n                    </div>\n                    <app-language-bar></app-language-bar>\n\t\t\t\t</form>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\n\n\n\n\n\n\n\n<!-- Simple pop-up dialog box containing a form -->\n<dialog id=\"favDialog\">\n  <form method=\"dialog\">\n    <p><label>Favorite animal:\n      <select>\n        <option></option>\n        <option>Brine shrimp</option>\n        <option>Red panda</option>\n        <option>Spider monkey</option>\n      </select>\n    </label></p>\n    <menu>\n      <button>Cancel</button>\n      <button>Confirm</button>\n    </menu>\n  </form>\n</dialog>\n\n<menu>\n  <button id=\"updateDetails\">Update details</button>\n</menu>\n\n<div id=\"output\"></div>\n\n<script>\n(function() {\n  var updateButton = document.getElementById('updateDetails');\n  var favDialog = document.getElementById('favDialog');\n  var outputBox = document.getElementById(\"output\");\n\n  // “Update details” button opens the <dialog> modally\n  updateButton.addEventListener('click', function() {\n    favDialog.showModal();\n    output.innerHTML += \"<div>\" + favDialog.returnValue + \" button clicked!</div>\";\n  });\n})();\n</script>\n \n\n    <ng-template #share>\n        <div class=\"modal-body text-center\">\n\n            <p>Share your group.</p>\n            <pre>{{group.GroupId}}</pre>\n            <a type=\"button\" class=\"btn btn-primary\" (click)=\"decline()\">Cancel</a>\n        </div>\n    </ng-template>\n\n    <ng-template #join>\n        <div class=\"modal-body text-center\">\n            <p>Join a group.</p>\n            <div>\n                <label>Group code</label>\n                <input type=\"text\" class=\"form-control\" #group_code />\n            </div>\n            <a type=\"button\" class=\"btn btn-primary\" (click)=\"JoinConfirm(group_code.value)\">Join</a>\n            <a type=\"button\" class=\"btn btn-default\" (click)=\"decline()\">Cancel</a>\n        </div>\n    </ng-template>\n\n    <div class=\"float-left dropdown\" *ngIf=\"userData && group\">\n        <a class=\"btn btn-secondary dropdown-toggle white\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\n            aria-expanded=\"false\">\n            {{group.Name}}\n        </a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"position: absolute\">\n            <a class=\"dropdown-item\" (click)=\"setGroup(item)\" *ngFor=\"let item of userData.groups\">{{item.Name}}</a>\n\n            <a class=\"dropdown-item\" (click)=\"JoinGroup(join)\">Join group</a>\n            <a class=\"dropdown-item\" (click)=\"ShareGroup(share)\">Share group</a>\n        </div>\n\n    </div>\n</div>"
-
-/***/ }),
-
-/***/ "./src/app/login/login.component.ts":
-/*!******************************************!*\
-  !*** ./src/app/login/login.component.ts ***!
-  \******************************************/
-/*! exports provided: LoginComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return LoginComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _user_context_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../user.context.service */ "./src/app/user.context.service.ts");
-/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
-/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-bootstrap/modal */ "./node_modules/ngx-bootstrap/modal/index.js");
-
-
-
-
-
-
-var LoginComponent = /** @class */ (function () {
-    /**
-     *
-     */
-    function LoginComponent(ref, modalService, userService, router, _ngZone) {
-        var _this = this;
-        this.ref = ref;
-        this.modalService = modalService;
-        this.userService = userService;
-        this.router = router;
-        this._ngZone = _ngZone;
-        this.user = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
-        this.modalPromise = null;
-        var win = window;
-        if (win.chrome) {
-            var interval_1 = setInterval(function () {
-                if (win.chrome.identity && win.chrome.identity.getProfileUserInfo) {
-                    clearInterval(interval_1);
-                    win.chrome.identity.getProfileUserInfo(function (profile) {
-                        _this.user.emit({ id: profile.id, name: profile.email });
-                        // this.userService.setUser(profile);
-                    });
-                }
-            }, 500);
-        }
-        this.user.subscribe(function ($event) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
-            var _this = this;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                this._ngZone.run(function () { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
-                    return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                        return [2 /*return*/];
-                    });
-                }); });
-                return [2 /*return*/];
-            });
-        }); });
-    }
-    LoginComponent.prototype.tryLogin = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var result;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, _signnature_client__WEBPACK_IMPORTED_MODULE_3__["AuthController"].token({ Email: this.userName, Password: this.password })];
-                    case 1:
-                        result = _a.sent();
-                        if (result.token) {
-                            this.userService.setToken(result.token);
-                            this.router.navigate(['dashboard']);
-                        }
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    LoginComponent.prototype.signOut = function () {
-    };
-    LoginComponent.prototype.setGroup = function (group) {
-        this.group = group;
-        this.userService.setGroup(group);
-    };
-    LoginComponent.prototype.decline = function () {
-        this.modalRef.hide();
-    };
-    LoginComponent.prototype.JoinGroup = function (template) {
-        this.modalRef = this.modalService.show(template, { class: 'modal-md' });
-    };
-    LoginComponent.prototype.JoinConfirm = function (group_id) {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var user_id;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                user_id = this.userService.getUser().id;
-                return [2 /*return*/];
-            });
-        });
-    };
-    LoginComponent.prototype.ShareGroup = function (template) {
-        var _this = this;
-        this._ngZone.run(function () { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                this.modalRef = this.modalService.show(template, { class: 'modal-md' });
-                return [2 /*return*/];
-            });
-        }); });
-    };
-    LoginComponent.prototype.onGoogleSignInSuccess = function () {
-    };
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
-    ], LoginComponent.prototype, "userData", void 0);
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
-    ], LoginComponent.prototype, "user", void 0);
-    LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-login',
-            template: __webpack_require__(/*! ./login.component.html */ "./src/app/login/login.component.html"),
-            styles: [__webpack_require__(/*! ./login.component.css */ "./src/app/login/login.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"],
-            ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_5__["BsModalService"],
-            _user_context_service__WEBPACK_IMPORTED_MODULE_2__["UserService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"]])
-    ], LoginComponent);
-    return LoginComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/manage/manage.component.css":
-/*!*********************************************!*\
-  !*** ./src/app/manage/manage.component.css ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".white {color: white;}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbWFuYWdlL21hbmFnZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLFFBQVEsYUFBYSxDQUFDIiwiZmlsZSI6InNyYy9hcHAvbWFuYWdlL21hbmFnZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLndoaXRlIHtjb2xvcjogd2hpdGU7fVxyXG4iXX0= */"
-
-/***/ }),
-
-/***/ "./src/app/manage/manage.component.html":
-/*!**********************************************!*\
-  !*** ./src/app/manage/manage.component.html ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div [appAdaptHeight]=\"100\">\r\n  <table class=\"table\">\r\n    <thead>\r\n      <tr>\r\n        <th scope=\"col\">Category</th>\r\n        <th scope=\"col\">Name</th>\r\n        <th scope=\"col\">Description</th>\r\n        <th scope=\"col\">Last run date</th>\r\n        <th scope=\"col\">\r\n          <a class=\"btn btn-primary btn-xs\" routerLink=\"/adscript/manage/create\">\r\n            + New Script</a>\r\n        </th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let row of collectionData\">\r\n\r\n        <td>\r\n          {{row.Category}}\r\n\r\n        </td>\r\n        <td>\r\n          <a href=\"#\" [routerLink]=\"[row.ScriptId, 'details']\">{{row.Name}}</a>\r\n        </td>\r\n        <td>\r\n          {{row.Description}}\r\n\r\n        </td>\r\n        <td>\r\n          {{row.LastRunDate | date:'mediumDate'}}\r\n\r\n        </td>\r\n        <td>\r\n          <a class=\"btn btn-danger\" (click)=\"remove(row.ScriptId, template)\">\r\n            <i class=\"oi oi-trash white\"></i>\r\n          </a>\r\n          <a class=\"btn btn-info\" [routerLink]=\"[row.ScriptId, 'details']\">\r\n            <i class=\"oi oi-pencil white\"></i>\r\n          </a>\r\n   \r\n        </td>\r\n\r\n\r\n\r\n\r\n      </tr>\r\n\r\n    </tbody>\r\n  </table>\r\n</div>\r\n<ng-template #template>\r\n  <div class=\"modal-body text-center\">\r\n    <p>The script will be deleted.</p>\r\n    <button type=\"button\" class=\"btn btn-default\" (click)=\"confirm()\">Continue</button>\r\n    <button type=\"button\" class=\"btn btn-primary\" (click)=\"decline()\">Cancel</button>\r\n  </div>\r\n</ng-template>\r\n\r\n<app-loader [busy]=\"busy\">\r\n  Loading\r\n</app-loader>\r\n\r\n<!-- \r\n \r\n<app-dynamic-table [columns]=\"tableColumns\" [tableData]=\"collectionData\"></app-dynamic-table> -->"
-
-/***/ }),
-
-/***/ "./src/app/manage/manage.component.ts":
-/*!********************************************!*\
-  !*** ./src/app/manage/manage.component.ts ***!
-  \********************************************/
-/*! exports provided: ManageComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ManageComponent", function() { return ManageComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _user_context_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../user.context.service */ "./src/app/user.context.service.ts");
-/* harmony import */ var ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-bootstrap/modal */ "./node_modules/ngx-bootstrap/modal/index.js");
-
-
-
-
-var ManageComponent = /** @class */ (function () {
-    function ManageComponent(_ngZone, modalService, userService) {
-        this._ngZone = _ngZone;
-        this.modalService = modalService;
-        this.userService = userService;
-        this.modalPromise = null;
-        this.collectionData = [];
-        this.user = userService.getUser();
-    }
-    ManageComponent.prototype.ngOnInit = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var _this = this;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                this.userService.onGroupChange(function (group) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
-                    var _this = this;
-                    return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                        this._ngZone.run(function () { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
-                            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                                this.busy = true;
-                                // this.collectionData = await Scripts.list(group.GroupId);
-                                this.busy = false;
-                                return [2 /*return*/];
-                            });
-                        }); });
-                        return [2 /*return*/];
-                    });
-                }); });
-                if (this.collectionData.length === 0 && this.userService.getGroup()) {
-                    this._ngZone.run(function () { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
-                        return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                            this.busy = true;
-                            // this.collectionData = await Scripts.list(this.userService.getGroup().GroupId);
-                            this.busy = false;
-                            return [2 /*return*/];
-                        });
-                    }); });
-                }
-                return [2 /*return*/];
-            });
-        });
-    };
-    ManageComponent.prototype.openModal = function (template) {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var _this = this;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                return [2 /*return*/, new Promise(function (resolve, reject) {
-                        _this.modalPromise = resolve;
-                        _this.modalRef = _this.modalService.show(template, { class: 'modal-md' });
-                    })];
-            });
-        });
-    };
-    ManageComponent.prototype.confirm = function () {
-        this.modalPromise(true);
-        this.message = 'Confirmed!';
-        this.modalRef.hide();
-    };
-    ManageComponent.prototype.decline = function () {
-        this.modalPromise(false);
-        this.message = 'Declined!';
-        this.modalRef.hide();
-    };
-    ManageComponent.prototype.spreadsheet = function (id) {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var group_id;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                try {
-                    group_id = this.userService.getGroup().GroupId;
-                    // await Scripts.remove(group_id, id);
-                }
-                catch (error) {
-                    console.error(error);
-                }
-                return [2 /*return*/];
-            });
-        });
-    };
-    ManageComponent.prototype.remove = function (id, template) {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var modalResult, group_id, error_1;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        _a.trys.push([0, 2, , 3]);
-                        return [4 /*yield*/, this.openModal(template)];
-                    case 1:
-                        modalResult = _a.sent();
-                        if (modalResult) {
-                            if (this.userService.getGroup()) {
-                                group_id = this.userService.getGroup().GroupId;
-                                // await Scripts.remove(group_id, id);
-                                // this.collectionData = await Scripts.list(group_id);
-                            }
-                        }
-                        return [3 /*break*/, 3];
-                    case 2:
-                        error_1 = _a.sent();
-                        console.error(error_1);
-                        return [3 /*break*/, 3];
-                    case 3: return [2 /*return*/];
-                }
-            });
-        });
-    };
-    ManageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-manage',
-            template: __webpack_require__(/*! ./manage.component.html */ "./src/app/manage/manage.component.html"),
-            styles: [__webpack_require__(/*! ./manage.component.css */ "./src/app/manage/manage.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_3__["BsModalService"], _user_context_service__WEBPACK_IMPORTED_MODULE_2__["UserService"]])
-    ], ManageComponent);
-    return ManageComponent;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/playlists/playlist/playlists.component.html":
 /*!*************************************************************!*\
   !*** ./src/app/playlists/playlist/playlists.component.html ***!
@@ -2780,7 +2518,7 @@ var ManageComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container no-margin\">\n  <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}} <span *ngIf=\"item.list\">({{item.list.length}})</span>\n    <ul class=\"sqr-toolbar\">\n      <li>\n        <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n  <dialog open= {{displayModalNew}}>\n    <a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\"></i></a>\n    <form *ngIf=\"item\">\n      <div class=\"form-group\">\n        <label for=\"itemName\">{{ \"PLAYLISTS.NAME\" | translate }}:</label>\n        <input type=\"text\" name=\"itemName\" class=\"form-control\" id=\"itemName\" [(ngModel)]=\"item.Name\">\n        <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"PLAYLISTS.NAME_HELP\" | translate }}</small>\n      </div>\n      <div class=\"form-group\">\n        <button (click)=\"schedule()\">+</button>\n\n      </div>\n      <div class=\"form-group\" class=\"sortable\">\n        <button (click)=\"finder()\">+</button>\n        <ngx-sortable *ngIf=\"item.list\" [listStyle]=\"listStyle\" [items]=\"item.list\" [name]=\"'List'\" (listSorted)=\"listOrderChanged($event)\">\n          <ng-template let-item>\n            <div class=\"sortable-list-item\">\n              <div class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n                {{item.Name}}\n\n              </div>\n            </div>\n          </ng-template>\n        </ngx-sortable>\n      </div>\n      <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"PLAYLISTS.UPDATE\" | translate }}</button>\n      <button *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"PLAYLISTS.CREATE\" | translate }}</button>\n    </form>\n  </dialog>\n</div>\n\n\n<div class=\"slider-container-drawer {{displayDrawer}} shadow\">\n  <dialog open= {{displayDrawer}}>\n    <a (click)=\"closeDrawer();\"><i class=\"far fa-window-close close-button\"></i></a>\n    <button (click)=\"addTime()\">Add time +</button>\n    <div *ngIf=\"item\">\n      <div *ngFor=\"let timeslot of item.TimeSlots\" class=\"sqr shadow\">\n\n      </div>\n    </div>\n  </dialog>\n</div>\n\n\n<app-finder [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
+module.exports = "<div class=\"container no-margin\">\n  <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}} <span *ngIf=\"item.list\">({{item.list.length}})</span>\n    <ul class=\"sqr-toolbar\">\n      <li>\n        <button class=\"btn btn-md btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-md btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n  <dialog open= {{displayModalNew}}>\n    <a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\"></i></a>\n    <form *ngIf=\"item\">\n      <div class=\"form-group\">\n        <label for=\"itemName\">{{ \"PLAYLISTS.NAME\" | translate }}:</label>\n        <input type=\"text\" name=\"itemName\" class=\"form-control\" id=\"itemName\" [(ngModel)]=\"item.Name\">\n        <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"PLAYLISTS.NAME_HELP\" | translate }}</small>\n      </div>\n      <div class=\"form-group\">\n        <button (click)=\"schedule()\">+</button>\n\n      </div>\n      <div class=\"form-group\" class=\"sortable\">\n        <button (click)=\"finder()\">+</button>\n        <ngx-sortable *ngIf=\"item.list\" [listStyle]=\"listStyle\" [items]=\"item.list\" [name]=\"'List'\" (listSorted)=\"listOrderChanged($event)\">\n          <ng-template let-item>\n            <div class=\"sortable-list-item\">\n              <div class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n                {{item.Name}}\n\n              </div>\n            </div>\n          </ng-template>\n        </ngx-sortable>\n      </div>\n      <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"PLAYLISTS.UPDATE\" | translate }}</button>\n      <button *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"PLAYLISTS.CREATE\" | translate }}</button>\n    </form>\n  </dialog>\n</div>\n\n\n<div class=\"slider-container-drawer {{displayDrawer}} shadow\">\n  <dialog open= {{displayDrawer}}>\n    <a (click)=\"closeDrawer();\"><i class=\"far fa-window-close close-button\"></i></a>\n    <button (click)=\"addTime()\">Add time +</button>\n    <div *ngIf=\"item\">\n      <div *ngFor=\"let timeslot of item.TimeSlots\" class=\"sqr shadow\">\n\n      </div>\n    </div>\n  </dialog>\n</div>\n\n\n<app-finder [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
 
 /***/ }),
 
@@ -2955,7 +2693,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = " <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow\" >\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}}  \n      <ul class=\"sqr-toolbar\">    \n        <li>\n          <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n        </li>\n        <li>\n          <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>    \n</div>\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n<dialog open={{displayModalNew}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"itemName\">{{ \"PLAYLISTS.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"itemName\" class=\"form-control\" id=\"itemName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"PLAYLISTS.NAME_HELP\" | translate }}</small>\n  </div>\n \n  <button   *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"PLAYLISTS.UPDATE\" | translate }}</button>\n  <button   *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"PLAYLISTS.CREATE\" | translate }}</button>\n</form>\n</dialog>\n</div>\n "
+module.exports = " <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow\" >\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}}  \n      <ul class=\"sqr-toolbar\">    \n        <li>\n          <button class=\"btn btn-md btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n        </li>\n        <li>\n          <button class=\"btn btn-md btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>    \n</div>\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n<dialog open={{displayModalNew}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"itemName\">{{ \"PLAYLISTS.NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"itemName\" class=\"form-control\" id=\"itemName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"PLAYLISTS.NAME_HELP\" | translate }}</small>\n  </div>\n \n  <button   *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"PLAYLISTS.UPDATE\" | translate }}</button>\n  <button   *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"PLAYLISTS.CREATE\" | translate }}</button>\n</form>\n</dialog>\n</div>\n "
 
 /***/ }),
 
@@ -3019,7 +2757,7 @@ var SchedulesComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = " <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow\" >\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}}\n       \n    <ul class=\"sqr-toolbar\">\n        <li>\n    <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n</li>\n    <li>\n    <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n</li>\n</ul>\n    \n    </div>    \n</div>\n\n \n<div class=\"slider-container {{displayModalNew}} shadow\">\n<dialog open={{displayModalNew}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"screenName\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"screenName\"  class=\"form-control\" id=\"screenName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n  </div>\n  <button   *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"SCREENS.UPDATE\" | translate }}</button>\n  <button   *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"SCREENS.CREATE\" | translate }}</button>\n\n</form>\n</dialog>\n</div>\n "
+module.exports = " <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow\" >\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}}\n       \n    <ul class=\"sqr-toolbar\">\n        <li>\n    <button class=\"btn btn-md btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n</li>\n    <li>\n    <button class=\"btn btn-md btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n</li>\n</ul>\n    \n    </div>    \n</div>\n\n \n<div class=\"slider-container {{displayModalNew}} shadow\">\n<dialog open={{displayModalNew}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"screenName\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"screenName\"  class=\"form-control\" id=\"screenName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n  </div>\n  <button   *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"SCREENS.UPDATE\" | translate }}</button>\n  <button   *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"SCREENS.CREATE\" | translate }}</button>\n\n</form>\n</dialog>\n</div>\n "
 
 /***/ }),
 
@@ -3148,7 +2886,7 @@ var ScreensModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container no-margin\">\n    <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n        <i class=\"fas fa-desktop\"></i>\n        {{item.Name}}\n        <ul class=\"sqr-toolbar\">\n            <li>\n                <button class=\"btn btn-xs btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n            </li>\n            <li>\n                <button class=\"btn btn-xs btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n            </li>\n        </ul>\n    </div>\n</div>\n\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n    <dialog open= {{displayModalNew}}>\n        <a (click)=\"closeSlider();\" class=\"close-button\"><i class=\"far fa-window-close\"></i></a>\n        <form *ngIf=\"item\">\n            <div class=\"form-group\">\n                <label for=\"screenName\">{{ \"SCREENS.NAME\" | translate }}:</label>\n                <input type=\"text\" name=\"screenName\" class=\"form-control\" id=\"screenName\" [(ngModel)]=\"item.Name\">\n                <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n            </div>          \n            <div class=\"form-group\">\n                <label for=\"ScreenGroup\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n                <select [(ngModel)]=\"item.Group\" name=\"ScreenGroup\" [compareWith]=\"compareFn\" class=\"form-control\">\n                    <option *ngFor=\"let c of groups\" [ngValue]=\"c\">{{c.Name}}</option>\n                </select>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"exampleInputPassword1\">{{ \"SCREENS.TOKEN\" | translate }}</label>\n                <input type=\"text\" [(ngModel)]=\"item.Token\" name=\"txtToken\" class=\"form-control\" id=\"txtToken\" placeholder=\"{{'SCREENS.TOKEN' | translate}}\">\n            </div>\n            <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"SCREENS.UPDATE\" | translate }}</button>\n            <button *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"SCREENS.CREATE\" | translate }}</button>\n        </form>\n    </dialog>\n</div>\n"
+module.exports = "<div class=\"container no-margin\">\n    <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n        <i class=\"fas fa-desktop\"></i>\n        {{item.Name}}\n        <ul class=\"sqr-toolbar\">\n            <li>\n                <button class=\"btn btn-md btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n            </li>\n            <li>\n                <button class=\"btn btn-md btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n            </li>\n        </ul>\n    </div>\n</div>\n\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n    <dialog open= {{displayModalNew}}>\n        <app-slide-header [title]=\"'NAVBAR.SCREENS'\" [className]=\"'orange'\"></app-slide-header>\n        <!-- <div class=\"topper\"><span class=\"fas fa-clone bar-icon\"></span> <h4> {{\"NAVBAR.SCREENS\" | translate}}</h4>\n        </div>\n        <a (click)=\"closeSlider();\" class=\"close-button\"><i class=\"far fa-window-close\"></i></a> -->\n\n\n        <form *ngIf=\"item\" style=\"margin-top: 50px;\">\n            <div class=\"form-group\">\n                <label for=\"screenName\">{{ \"SCREENS.NAME\" | translate }}:</label>\n                <input type=\"text\" name=\"screenName\" class=\"form-control\" id=\"screenName\" [(ngModel)]=\"item.Name\">\n                <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"ScreenGroup\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n                <select [(ngModel)]=\"item.Group\" name=\"ScreenGroup\" [compareWith]=\"compareFn\" class=\"form-control\">\n                    <option *ngFor=\"let c of groups\" [ngValue]=\"c\">{{c.Name}}</option>\n                </select>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"exampleInputPassword1\">{{ \"SCREENS.TOKEN\" | translate }}</label>\n                <input type=\"text\" [(ngModel)]=\"item.Token\" name=\"txtToken\" class=\"form-control\" id=\"txtToken\" placeholder=\"{{'SCREENS.TOKEN' | translate}}\">\n            </div>\n            <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"SCREENS.UPDATE\" | translate }}</button>\n            <button *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"SCREENS.CREATE\" | translate }}</button>\n        </form>\n    </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -3229,6 +2967,66 @@ var ScreensComponent = /** @class */ (function (_super) {
 
 /***/ }),
 
+/***/ "./src/app/services/language.service.ts":
+/*!**********************************************!*\
+  !*** ./src/app/services/language.service.ts ***!
+  \**********************************************/
+/*! exports provided: LanguageService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LanguageService", function() { return LanguageService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
+
+
+
+var LanguageService = /** @class */ (function () {
+    function LanguageService(translate) {
+        this.translate = translate;
+        this.languages = [];
+        this.languages.push({ key: 'en', lcid: 1025, name: 'English', dir: 'ltr' });
+        this.languages.push({ key: 'he', lcid: 1037, name: 'עברית', dir: 'rtl' });
+        this.languages.push({ key: 'de', lcid: 1037, name: 'Dutche', dir: 'ltr' });
+        var lngstr = localStorage.getItem('lng');
+        if (lngstr) {
+            this.language = JSON.parse(lngstr);
+        }
+        else {
+            this.language = this.languages[0];
+        }
+        document.getElementsByTagName('body')[0].className = this.language.dir;
+        this.cssUrl = "/assets/i18n/" + this.language.dir + ".css?k=" + Math.random();
+        // the lang to use, if the lang isn't available, it will use the current loader to get them
+        translate.use(this.language.key);
+    }
+    LanguageService.prototype.getLanguage = function () {
+        var str = localStorage.getItem('lng');
+        if (str) {
+            this.language = JSON.parse(str);
+        }
+        return this.language;
+    };
+    LanguageService.prototype.setLanguage = function (language) {
+        this.language = language;
+        localStorage.setItem('lng', JSON.stringify(language));
+        this.translate.use(language.key);
+        document.getElementsByTagName('body')[0].className = language.dir;
+        this.cssUrl = "/assets/i18n/" + language.dir + ".css?k=" + Math.random();
+    };
+    LanguageService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"]])
+    ], LanguageService);
+    return LanguageService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/services/language/dictionary.service.ts":
 /*!*********************************************************!*\
   !*** ./src/app/services/language/dictionary.service.ts ***!
@@ -3277,6 +3075,75 @@ var DictionaryService = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"]])
     ], DictionaryService);
     return DictionaryService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/user.context.service.ts":
+/*!**************************************************!*\
+  !*** ./src/app/services/user.context.service.ts ***!
+  \**************************************************/
+/*! exports provided: UserService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserService", function() { return UserService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @auth0/angular-jwt */ "./node_modules/@auth0/angular-jwt/index.js");
+
+
+
+var UserService = /** @class */ (function () {
+    function UserService(jwtHelper) {
+        this.jwtHelper = jwtHelper;
+        this.groupChanges = [];
+    }
+    UserService.prototype.setUser = function (user) {
+        localStorage.setItem('user', JSON.stringify(user));
+    };
+    UserService.prototype.setToken = function (token) {
+        localStorage.setItem('token', token);
+    };
+    UserService.prototype.isAuthenticated = function () {
+        var token = localStorage.getItem('token');
+        // Check whether the token is expired and return
+        // true or false
+        var isExpired = this.jwtHelper.isTokenExpired(token);
+        return !isExpired;
+    };
+    UserService.prototype.getUser = function () {
+        var str = localStorage.getItem('user');
+        if (str) {
+            return JSON.parse(str);
+        }
+    };
+    UserService.prototype.setGroup = function (group) {
+        this.group = group;
+        this.groupChanges.forEach(function (func) { return func(group); });
+    };
+    UserService.prototype.onGroupChange = function (callback) {
+        this.groupChanges.push(callback);
+    };
+    UserService.prototype.getGroup = function () {
+        return this.group;
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], UserService.prototype, "group", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], UserService.prototype, "user", void 0);
+    UserService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_2__["JwtHelperService"]])
+    ], UserService);
+    return UserService;
 }());
 
 
@@ -3356,10 +3223,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_file_drop__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-file-drop */ "./node_modules/ngx-file-drop/fesm5/ngx-file-drop.js");
 /* harmony import */ var angular_draggable_droppable__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! angular-draggable-droppable */ "./node_modules/angular-draggable-droppable/fesm5/angular-draggable-droppable.js");
 /* harmony import */ var angular2_draggable__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! angular2-draggable */ "./node_modules/angular2-draggable/fesm5/angular2-draggable.js");
-/* harmony import */ var _language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./language-bar/language-bar.component */ "./src/app/language-bar/language-bar.component.ts");
+/* harmony import */ var _common_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./common/language-bar/language-bar.component */ "./src/app/common/language-bar/language-bar.component.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./library/finder/finder.component */ "./src/app/library/finder/finder.component.ts");
+/* harmony import */ var _common_slide_header_slide_header_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./common/slide-header/slide-header.component */ "./src/app/common/slide-header/slide-header.component.ts");
+/* harmony import */ var _common_bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./common/bread-crumbs/bread-crumbs.component */ "./src/app/common/bread-crumbs/bread-crumbs.component.ts");
+
+
 
 
 
@@ -3388,101 +3259,14 @@ var SharedModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             imports: [_angular_common__WEBPACK_IMPORTED_MODULE_9__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"],
                 _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateModule"].forChild(), ngx_file_drop__WEBPACK_IMPORTED_MODULE_4__["FileDropModule"], angular_draggable_droppable__WEBPACK_IMPORTED_MODULE_5__["DragAndDropModule"], angular2_draggable__WEBPACK_IMPORTED_MODULE_6__["AngularDraggableModule"]],
-            declarations: [_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_7__["LanguageBarComponent"], _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_10__["FinderComponent"]],
+            declarations: [_common_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_7__["LanguageBarComponent"], _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_10__["FinderComponent"], _common_slide_header_slide_header_component__WEBPACK_IMPORTED_MODULE_11__["SlideHeaderComponent"], _common_bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_12__["BreadCrumbsComponent"]],
             providers: [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"], _services_language_dictionary_service__WEBPACK_IMPORTED_MODULE_3__["DictionaryService"]],
-            exports: [_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_7__["LanguageBarComponent"], _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_10__["FinderComponent"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateModule"], ngx_file_drop__WEBPACK_IMPORTED_MODULE_4__["FileDropModule"], angular_draggable_droppable__WEBPACK_IMPORTED_MODULE_5__["DragAndDropModule"], angular2_draggable__WEBPACK_IMPORTED_MODULE_6__["AngularDraggableModule"]],
+            exports: [_common_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_7__["LanguageBarComponent"], _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_10__["FinderComponent"], _common_slide_header_slide_header_component__WEBPACK_IMPORTED_MODULE_11__["SlideHeaderComponent"], _common_bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_12__["BreadCrumbsComponent"],
+                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateModule"], ngx_file_drop__WEBPACK_IMPORTED_MODULE_4__["FileDropModule"], angular_draggable_droppable__WEBPACK_IMPORTED_MODULE_5__["DragAndDropModule"], angular2_draggable__WEBPACK_IMPORTED_MODULE_6__["AngularDraggableModule"]],
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"]])
     ], SharedModule);
     return SharedModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/signup/signup.component.css":
-/*!*********************************************!*\
-  !*** ./src/app/signup/signup.component.css ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NpZ251cC9zaWdudXAuY29tcG9uZW50LmNzcyJ9 */"
-
-/***/ }),
-
-/***/ "./src/app/signup/signup.component.html":
-/*!**********************************************!*\
-  !*** ./src/app/signup/signup.component.html ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div>\n\n    <div class=\"limiter\">\n\n        <div class=\"container-login100\">\n\n            <div class=\"wrap-login100\" style=\"padding: 50px 50px 30px 30px\">\n\n                <form class=\"login100-form validate-form\">\n                    <span class=\"login100-form-title p-b-55\">\n                        {{\"SIGNUP.TITLE\" | translate}}\n                    </span>\n\n                    <div class=\"wrap-input100 validate-input m-b-16\" [attr.data-validate]=\"'SIGNUP.INSERT_USERNAME' | translate\">\n                        <input class=\"input100\" type=\"text\" name=\"userName\" placeholder=\"{{'SIGNUP.USERNAME' | translate}}\" [(ngModel)]=\"userName\">\n                        <span class=\"focus-input100\"></span>\n                        <span class=\"symbol-input100\">\n                            <span class=\"lnr lnr-envelope\"></span>\n                        </span>\n                    </div>\n\n                    <div class=\"wrap-input100 validate-input m-b-16\">\n                        <input class=\"input100\" type=\"password\" name=\"password\" placeholder=\"{{'SIGNUP.PASSWORD' | translate}}\" [(ngModel)]=\"password\">\n                        <span class=\"focus-input100\"></span>\n                        <span class=\"symbol-input100\">\n                            <span class=\"lnr lnr-lock\"></span>\n                        </span>\n                    </div>\n\n\n                    <div class=\"wrap-input100 validate-input m-b-16\">\n                        <input class=\"input100\" type=\"password\" name=\"passwordRepeat\" placeholder=\"{{'SIGNUP.RPTPASSWORD' | translate}}\" [(ngModel)]=\"passwordRepeat\">\n                        <span class=\"focus-input100\"></span>\n                        <span class=\"symbol-input100\">\n                            <span class=\"lnr lnr-lock\"></span>\n                        </span>\n                    </div>\n\n\n\n                    <div class=\"container-login100-form-btn p-t-25\">\n                        <button class=\"login100-form-btn\" (click)=\"trySignup()\">\n                            {{\"SIGNUP.SIGNUP_BTN\" | translate}}\n                        </button>\n                    </div>\n\n\n                    <div class=\"text-center w-full p-t-25\">\n                        <span class=\"txt1\">\n                            {{'SIGNUP.ALREADYMEMBER' | translate}}\n                        </span>\n\n                        <a class=\"txt1 bo1 hov1\" href=\"#\" routerLink=\"/signin\">\n                            {{'SIGNUP.SIGNIN' | translate}}\n                        </a>\n                    </div>\n                    <app-language-bar></app-language-bar>\n                </form>\n            </div>\n\n\n\n        </div>\n    </div>\n\n\n\n\n\n\n\n\n    <!-- Simple pop-up dialog box containing a form -->\n    <dialog id=\"favDialog\">\n        <form method=\"dialog\">\n            <p><label>Favorite animal:\n                    <select>\n                        <option></option>\n                        <option>Brine shrimp</option>\n                        <option>Red panda</option>\n                        <option>Spider monkey</option>\n                    </select>\n                </label></p>\n            <menu>\n                <button>Cancel</button>\n                <button>Confirm</button>\n            </menu>\n        </form>\n    </dialog>\n\n    <menu>\n        <button id=\"updateDetails\">Update details</button>\n    </menu>\n\n    <div id=\"output\"></div>\n\n    <script>\n        (function () {\n            var updateButton = document.getElementById('updateDetails');\n            var favDialog = document.getElementById('favDialog');\n            var outputBox = document.getElementById(\"output\");\n\n            // “Update details” button opens the <dialog> modally\n            updateButton.addEventListener('click', function () {\n                favDialog.showModal();\n                output.innerHTML += \"<div>\" + favDialog.returnValue + \" button clicked!</div>\";\n            });\n        })();\n    </script>\n\n\n    <ng-template #share>\n        <div class=\"modal-body text-center\">\n\n            <p>Share your group.</p>\n            <pre>{{group.GroupId}}</pre>\n            <a type=\"button\" class=\"btn btn-primary\" (click)=\"decline()\">Cancel</a>\n        </div>\n    </ng-template>\n\n    <ng-template #join>\n        <div class=\"modal-body text-center\">\n            <p>Join a group.</p>\n            <div>\n                <label>Group code</label>\n                <input type=\"text\" class=\"form-control\" #group_code />\n            </div>\n            <a type=\"button\" class=\"btn btn-primary\" (click)=\"JoinConfirm(group_code.value)\">Join</a>\n            <a type=\"button\" class=\"btn btn-default\" (click)=\"decline()\">Cancel</a>\n        </div>\n    </ng-template>\n\n    <div class=\"float-left dropdown\" *ngIf=\"userData && group\">\n        <a class=\"btn btn-secondary dropdown-toggle white\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\n            aria-expanded=\"false\">\n            {{group.Name}}\n        </a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"position: absolute\">\n            <a class=\"dropdown-item\" (click)=\"setGroup(item)\" *ngFor=\"let item of userData.groups\">{{item.Name}}</a>\n\n            <a class=\"dropdown-item\" (click)=\"JoinGroup(join)\">Join group</a>\n            <a class=\"dropdown-item\" (click)=\"ShareGroup(share)\">Share group</a>\n        </div>\n\n    </div>\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/signup/signup.component.ts":
-/*!********************************************!*\
-  !*** ./src/app/signup/signup.component.ts ***!
-  \********************************************/
-/*! exports provided: SignupComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignupComponent", function() { return SignupComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
-/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _user_context_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../user.context.service */ "./src/app/user.context.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-
-
-
-
-
-var SignupComponent = /** @class */ (function () {
-    function SignupComponent(userService, router) {
-        this.userService = userService;
-        this.router = router;
-    }
-    SignupComponent.prototype.ngOnInit = function () {
-    };
-    SignupComponent.prototype.trySignup = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var userRequest, result;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        userRequest = { Email: this.userName, Password: this.password };
-                        return [4 /*yield*/, _signnature_client__WEBPACK_IMPORTED_MODULE_2__["AuthController"].signup(userRequest)];
-                    case 1:
-                        result = _a.sent();
-                        if (result.token) {
-                            this.userService.setToken(result.token);
-                            this.router.navigate(['dashboard']);
-                        }
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
-    ], SignupComponent.prototype, "userData", void 0);
-    SignupComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-signup',
-            template: __webpack_require__(/*! ./signup.component.html */ "./src/app/signup/signup.component.html"),
-            styles: [__webpack_require__(/*! ./signup.component.css */ "./src/app/signup/signup.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_user_context_service__WEBPACK_IMPORTED_MODULE_3__["UserService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
-    ], SignupComponent);
-    return SignupComponent;
 }());
 
 
@@ -3545,21 +3329,265 @@ var TimelinesComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/user-info/user-info.component.css":
+/***/ "./src/app/user/login/login.component.css":
+/*!************************************************!*\
+  !*** ./src/app/user/login/login.component.css ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".dropdown-menu a {cursor: pointer;}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdXNlci9sb2dpbi9sb2dpbi5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGtCQUFrQixnQkFBZ0IsQ0FBQyIsImZpbGUiOiJzcmMvYXBwL3VzZXIvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5kcm9wZG93bi1tZW51IGEge2N1cnNvcjogcG9pbnRlcjt9Il19 */"
+
+/***/ }),
+
+/***/ "./src/app/user/login/login.component.html":
+/*!*************************************************!*\
+  !*** ./src/app/user/login/login.component.html ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div>\n\t<div class=\"limiter\">\n\t\t<div class=\"container-login100\">\n      \n\n\t\t\t<div class=\"wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30\">\n            \n\t\t\t\t<form class=\"login100-form validate-form\">\n\t\t\t\t\t<span class=\"login100-form-title p-b-55\">\n\t\t\t\t\t\t{{\"LOGIN.TITLE\" | translate}}\n\t\t\t\t\t</span>\n\n\t\t\t\t\t<div class=\"wrap-input100 validate-input m-b-16\" [attr.data-validate]=\"'LOGIN.INSERT_USERNAME' | translate\">\n\t\t\t\t\t\t<input class=\"input100\" type=\"text\" name=\"userName\" placeholder=\"{{'LOGIN.USERNAME' | translate}}\" [(ngModel)]=\"userName\">\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t\t<span class=\"symbol-input100\">\n\t\t\t\t\t\t\t<span class=\"lnr lnr-envelope\"></span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class=\"wrap-input100 validate-input m-b-16\" >\n\t\t\t\t\t\t<input class=\"input100\" type=\"password\" name=\"password\" placeholder=\"{{'LOGIN.PASSWORD' | translate}}\" [(ngModel)]=\"password\">\n\t\t\t\t\t\t<span class=\"focus-input100\"></span>\n\t\t\t\t\t\t<span class=\"symbol-input100\">\n\t\t\t\t\t\t\t<span class=\"lnr lnr-lock\"></span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class=\"contact100-form-checkbox m-l-4\">\n\t\t\t\t\t\t<input class=\"input-checkbox100\" id=\"ckb1\" type=\"checkbox\" name=\"remember-me\">\n\t\t\t\t\t\t<label class=\"label-checkbox100\" for=\"ckb1\">\n\t\t\t\t\t\t\t{{\"LOGIN.REMEMBER_ME\" | translate}}\n\t\t\t\t\t\t</label>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"container-login100-form-btn p-t-25\">\n\t\t\t\t\t\t<button class=\"login100-form-btn\" (click)=\"tryLogin()\">\n\t\t\t\t\t\t\t\t{{\"LOGIN.LOGIN_BTN\" | translate}}\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</div>\n \n\t\t\t\t\t<div class=\"text-center w-full p-t-25\">\n\t\t\t\t\t\t<span class=\"txt1\">\n\t\t\t\t\t\t{{'LOGIN.NOTAMEMBER' | translate}}\t\n\t\t\t\t\t\t</span>\n\n\t\t\t\t\t\t<a class=\"txt1 bo1 hov1\" href=\"#\"  routerLink=\"/signup\">\n\t\t\t\t\t\t{{'LOGIN.SIGNUP' | translate}}\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t</a>\n                    </div>\n                    <app-language-bar></app-language-bar>\n\t\t\t\t</form>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\n\n\n\n\n\n\n\n<!-- Simple pop-up dialog box containing a form -->\n<dialog id=\"favDialog\">\n  <form method=\"dialog\">\n    <p><label>Favorite animal:\n      <select>\n        <option></option>\n        <option>Brine shrimp</option>\n        <option>Red panda</option>\n        <option>Spider monkey</option>\n      </select>\n    </label></p>\n    <menu>\n      <button>Cancel</button>\n      <button>Confirm</button>\n    </menu>\n  </form>\n</dialog>\n\n<menu>\n  <button id=\"updateDetails\">Update details</button>\n</menu>\n\n<div id=\"output\"></div>\n\n<script>\n(function() {\n  var updateButton = document.getElementById('updateDetails');\n  var favDialog = document.getElementById('favDialog');\n  var outputBox = document.getElementById(\"output\");\n\n  // “Update details” button opens the <dialog> modally\n  updateButton.addEventListener('click', function() {\n    favDialog.showModal();\n    output.innerHTML += \"<div>\" + favDialog.returnValue + \" button clicked!</div>\";\n  });\n})();\n</script>\n \n\n    <ng-template #share>\n        <div class=\"modal-body text-center\">\n\n            <p>Share your group.</p>\n            <pre>{{group.GroupId}}</pre>\n            <a type=\"button\" class=\"btn btn-primary\" (click)=\"decline()\">Cancel</a>\n        </div>\n    </ng-template>\n\n    <ng-template #join>\n        <div class=\"modal-body text-center\">\n            <p>Join a group.</p>\n            <div>\n                <label>Group code</label>\n                <input type=\"text\" class=\"form-control\" #group_code />\n            </div>\n            <a type=\"button\" class=\"btn btn-primary\" (click)=\"JoinConfirm(group_code.value)\">Join</a>\n            <a type=\"button\" class=\"btn btn-default\" (click)=\"decline()\">Cancel</a>\n        </div>\n    </ng-template>\n\n    <div class=\"float-left dropdown\" *ngIf=\"userData && group\">\n        <a class=\"btn btn-secondary dropdown-toggle white\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\n            aria-expanded=\"false\">\n            {{group.Name}}\n        </a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"position: absolute\">\n            <a class=\"dropdown-item\" (click)=\"setGroup(item)\" *ngFor=\"let item of userData.groups\">{{item.Name}}</a>\n\n            <a class=\"dropdown-item\" (click)=\"JoinGroup(join)\">Join group</a>\n            <a class=\"dropdown-item\" (click)=\"ShareGroup(share)\">Share group</a>\n        </div>\n\n    </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/user/login/login.component.ts":
+/*!***********************************************!*\
+  !*** ./src/app/user/login/login.component.ts ***!
+  \***********************************************/
+/*! exports provided: LoginComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return LoginComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_user_context_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/user.context.service */ "./src/app/services/user.context.service.ts");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-bootstrap/modal */ "./node_modules/ngx-bootstrap/modal/index.js");
+
+
+
+
+
+
+var LoginComponent = /** @class */ (function () {
+    /**
+     *
+     */
+    function LoginComponent(ref, modalService, userService, router, _ngZone) {
+        var _this = this;
+        this.ref = ref;
+        this.modalService = modalService;
+        this.userService = userService;
+        this.router = router;
+        this._ngZone = _ngZone;
+        this.user = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.modalPromise = null;
+        var win = window;
+        if (win.chrome) {
+            var interval_1 = setInterval(function () {
+                if (win.chrome.identity && win.chrome.identity.getProfileUserInfo) {
+                    clearInterval(interval_1);
+                    win.chrome.identity.getProfileUserInfo(function (profile) {
+                        _this.user.emit({ id: profile.id, name: profile.email });
+                        // this.userService.setUser(profile);
+                    });
+                }
+            }, 500);
+        }
+        this.user.subscribe(function ($event) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                this._ngZone.run(function () { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
+                    return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                        return [2 /*return*/];
+                    });
+                }); });
+                return [2 /*return*/];
+            });
+        }); });
+    }
+    LoginComponent.prototype.tryLogin = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var result;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, _signnature_client__WEBPACK_IMPORTED_MODULE_3__["AuthController"].token({ Email: this.userName, Password: this.password })];
+                    case 1:
+                        result = _a.sent();
+                        if (result.token) {
+                            this.userService.setToken(result.token);
+                            this.router.navigate(['dashboard']);
+                        }
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    LoginComponent.prototype.signOut = function () {
+    };
+    LoginComponent.prototype.setGroup = function (group) {
+        this.group = group;
+        this.userService.setGroup(group);
+    };
+    LoginComponent.prototype.decline = function () {
+        this.modalRef.hide();
+    };
+    LoginComponent.prototype.JoinGroup = function (template) {
+        this.modalRef = this.modalService.show(template, { class: 'modal-md' });
+    };
+    LoginComponent.prototype.JoinConfirm = function (group_id) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var user_id;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                user_id = this.userService.getUser().id;
+                return [2 /*return*/];
+            });
+        });
+    };
+    LoginComponent.prototype.ShareGroup = function (template) {
+        var _this = this;
+        this._ngZone.run(function () { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                this.modalRef = this.modalService.show(template, { class: 'modal-md' });
+                return [2 /*return*/];
+            });
+        }); });
+    };
+    LoginComponent.prototype.onGoogleSignInSuccess = function () {
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], LoginComponent.prototype, "userData", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], LoginComponent.prototype, "user", void 0);
+    LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-login',
+            template: __webpack_require__(/*! ./login.component.html */ "./src/app/user/login/login.component.html"),
+            styles: [__webpack_require__(/*! ./login.component.css */ "./src/app/user/login/login.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"],
+            ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_5__["BsModalService"],
+            _services_user_context_service__WEBPACK_IMPORTED_MODULE_2__["UserService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"]])
+    ], LoginComponent);
+    return LoginComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/user/signup/signup.component.css":
+/*!**************************************************!*\
+  !*** ./src/app/user/signup/signup.component.css ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3VzZXIvc2lnbnVwL3NpZ251cC5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/user/signup/signup.component.html":
 /*!***************************************************!*\
-  !*** ./src/app/user-info/user-info.component.css ***!
+  !*** ./src/app/user/signup/signup.component.html ***!
   \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3VzZXItaW5mby91c2VyLWluZm8uY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "<div>\n\n    <div class=\"limiter\">\n\n        <div class=\"container-login100\">\n\n            <div class=\"wrap-login100\" style=\"padding: 50px 50px 30px 30px\">\n\n                <form class=\"login100-form validate-form\">\n                    <span class=\"login100-form-title p-b-55\">\n                        {{\"SIGNUP.TITLE\" | translate}}\n                    </span>\n\n                    <div class=\"wrap-input100 validate-input m-b-16\" [attr.data-validate]=\"'SIGNUP.INSERT_USERNAME' | translate\">\n                        <input class=\"input100\" type=\"text\" name=\"userName\" placeholder=\"{{'SIGNUP.USERNAME' | translate}}\" [(ngModel)]=\"userName\">\n                        <span class=\"focus-input100\"></span>\n                        <span class=\"symbol-input100\">\n                            <span class=\"lnr lnr-envelope\"></span>\n                        </span>\n                    </div>\n\n                    <div class=\"wrap-input100 validate-input m-b-16\">\n                        <input class=\"input100\" type=\"password\" name=\"password\" placeholder=\"{{'SIGNUP.PASSWORD' | translate}}\" [(ngModel)]=\"password\">\n                        <span class=\"focus-input100\"></span>\n                        <span class=\"symbol-input100\">\n                            <span class=\"lnr lnr-lock\"></span>\n                        </span>\n                    </div>\n\n\n                    <div class=\"wrap-input100 validate-input m-b-16\">\n                        <input class=\"input100\" type=\"password\" name=\"passwordRepeat\" placeholder=\"{{'SIGNUP.RPTPASSWORD' | translate}}\" [(ngModel)]=\"passwordRepeat\">\n                        <span class=\"focus-input100\"></span>\n                        <span class=\"symbol-input100\">\n                            <span class=\"lnr lnr-lock\"></span>\n                        </span>\n                    </div>\n\n\n\n                    <div class=\"container-login100-form-btn p-t-25\">\n                        <button class=\"login100-form-btn\" (click)=\"trySignup()\">\n                            {{\"SIGNUP.SIGNUP_BTN\" | translate}}\n                        </button>\n                    </div>\n\n\n                    <div class=\"text-center w-full p-t-25\">\n                        <span class=\"txt1\">\n                            {{'SIGNUP.ALREADYMEMBER' | translate}}\n                        </span>\n\n                        <a class=\"txt1 bo1 hov1\" href=\"#\" routerLink=\"/signin\">\n                            {{'SIGNUP.SIGNIN' | translate}}\n                        </a>\n                    </div>\n                    <app-language-bar></app-language-bar>\n                </form>\n            </div>\n\n\n\n        </div>\n    </div>\n\n\n\n\n\n\n\n\n    <!-- Simple pop-up dialog box containing a form -->\n    <dialog id=\"favDialog\">\n        <form method=\"dialog\">\n            <p><label>Favorite animal:\n                    <select>\n                        <option></option>\n                        <option>Brine shrimp</option>\n                        <option>Red panda</option>\n                        <option>Spider monkey</option>\n                    </select>\n                </label></p>\n            <menu>\n                <button>Cancel</button>\n                <button>Confirm</button>\n            </menu>\n        </form>\n    </dialog>\n\n    <menu>\n        <button id=\"updateDetails\">Update details</button>\n    </menu>\n\n    <div id=\"output\"></div>\n\n    <script>\n        (function () {\n            var updateButton = document.getElementById('updateDetails');\n            var favDialog = document.getElementById('favDialog');\n            var outputBox = document.getElementById(\"output\");\n\n            // “Update details” button opens the <dialog> modally\n            updateButton.addEventListener('click', function () {\n                favDialog.showModal();\n                output.innerHTML += \"<div>\" + favDialog.returnValue + \" button clicked!</div>\";\n            });\n        })();\n    </script>\n\n\n    <ng-template #share>\n        <div class=\"modal-body text-center\">\n\n            <p>Share your group.</p>\n            <pre>{{group.GroupId}}</pre>\n            <a type=\"button\" class=\"btn btn-primary\" (click)=\"decline()\">Cancel</a>\n        </div>\n    </ng-template>\n\n    <ng-template #join>\n        <div class=\"modal-body text-center\">\n            <p>Join a group.</p>\n            <div>\n                <label>Group code</label>\n                <input type=\"text\" class=\"form-control\" #group_code />\n            </div>\n            <a type=\"button\" class=\"btn btn-primary\" (click)=\"JoinConfirm(group_code.value)\">Join</a>\n            <a type=\"button\" class=\"btn btn-default\" (click)=\"decline()\">Cancel</a>\n        </div>\n    </ng-template>\n\n    <div class=\"float-left dropdown\" *ngIf=\"userData && group\">\n        <a class=\"btn btn-secondary dropdown-toggle white\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\n            aria-expanded=\"false\">\n            {{group.Name}}\n        </a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" style=\"position: absolute\">\n            <a class=\"dropdown-item\" (click)=\"setGroup(item)\" *ngFor=\"let item of userData.groups\">{{item.Name}}</a>\n\n            <a class=\"dropdown-item\" (click)=\"JoinGroup(join)\">Join group</a>\n            <a class=\"dropdown-item\" (click)=\"ShareGroup(share)\">Share group</a>\n        </div>\n\n    </div>\n</div>\n"
 
 /***/ }),
 
-/***/ "./src/app/user-info/user-info.component.html":
-/*!****************************************************!*\
-  !*** ./src/app/user-info/user-info.component.html ***!
-  \****************************************************/
+/***/ "./src/app/user/signup/signup.component.ts":
+/*!*************************************************!*\
+  !*** ./src/app/user/signup/signup.component.ts ***!
+  \*************************************************/
+/*! exports provided: SignupComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignupComponent", function() { return SignupComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _services_user_context_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/user.context.service */ "./src/app/services/user.context.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+
+var SignupComponent = /** @class */ (function () {
+    function SignupComponent(userService, router) {
+        this.userService = userService;
+        this.router = router;
+    }
+    SignupComponent.prototype.ngOnInit = function () {
+    };
+    SignupComponent.prototype.trySignup = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var userRequest, result;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        userRequest = { Email: this.userName, Password: this.password };
+                        return [4 /*yield*/, _signnature_client__WEBPACK_IMPORTED_MODULE_2__["AuthController"].signup(userRequest)];
+                    case 1:
+                        result = _a.sent();
+                        if (result.token) {
+                            this.userService.setToken(result.token);
+                            this.router.navigate(['dashboard']);
+                        }
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], SignupComponent.prototype, "userData", void 0);
+    SignupComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-signup',
+            template: __webpack_require__(/*! ./signup.component.html */ "./src/app/user/signup/signup.component.html"),
+            styles: [__webpack_require__(/*! ./signup.component.css */ "./src/app/user/signup/signup.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_user_context_service__WEBPACK_IMPORTED_MODULE_3__["UserService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
+    ], SignupComponent);
+    return SignupComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/user/user-info/user-info.component.css":
+/*!********************************************************!*\
+  !*** ./src/app/user/user-info/user-info.component.css ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3VzZXIvdXNlci1pbmZvL3VzZXItaW5mby5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/user/user-info/user-info.component.html":
+/*!*********************************************************!*\
+  !*** ./src/app/user/user-info/user-info.component.html ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -3567,10 +3595,10 @@ module.exports = "<!-- <form #infoForm=\"ngForm\"> -->\n\n<div class=\"container
 
 /***/ }),
 
-/***/ "./src/app/user-info/user-info.component.ts":
-/*!**************************************************!*\
-  !*** ./src/app/user-info/user-info.component.ts ***!
-  \**************************************************/
+/***/ "./src/app/user/user-info/user-info.component.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/user/user-info/user-info.component.ts ***!
+  \*******************************************************/
 /*! exports provided: UserInfoComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3579,7 +3607,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserInfoComponent", function() { return UserInfoComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _user_context_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../user.context.service */ "./src/app/user.context.service.ts");
+/* harmony import */ var _services_user_context_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/user.context.service */ "./src/app/services/user.context.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 
 
@@ -3614,12 +3642,12 @@ var UserInfoComponent = /** @class */ (function () {
     UserInfoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-user-info',
-            template: __webpack_require__(/*! ./user-info.component.html */ "./src/app/user-info/user-info.component.html"),
-            providers: [_user_context_service__WEBPACK_IMPORTED_MODULE_2__["UserService"]],
-            styles: [__webpack_require__(/*! ./user-info.component.css */ "./src/app/user-info/user-info.component.css")]
+            template: __webpack_require__(/*! ./user-info.component.html */ "./src/app/user/user-info/user-info.component.html"),
+            providers: [_services_user_context_service__WEBPACK_IMPORTED_MODULE_2__["UserService"]],
+            styles: [__webpack_require__(/*! ./user-info.component.css */ "./src/app/user/user-info/user-info.component.css")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"],
-            _user_context_service__WEBPACK_IMPORTED_MODULE_2__["UserService"],
+            _services_user_context_service__WEBPACK_IMPORTED_MODULE_2__["UserService"],
             _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]])
     ], UserInfoComponent);
     return UserInfoComponent;
@@ -3629,69 +3657,54 @@ var UserInfoComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/user.context.service.ts":
-/*!*****************************************!*\
-  !*** ./src/app/user.context.service.ts ***!
-  \*****************************************/
-/*! exports provided: UserService */
+/***/ "./src/app/user/user.module.ts":
+/*!*************************************!*\
+  !*** ./src/app/user/user.module.ts ***!
+  \*************************************/
+/*! exports provided: userRoutes, UserModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserService", function() { return UserService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "userRoutes", function() { return userRoutes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserModule", function() { return UserModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @auth0/angular-jwt */ "./node_modules/@auth0/angular-jwt/index.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _shared_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared.module */ "./src/app/shared.module.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./login/login.component */ "./src/app/user/login/login.component.ts");
+/* harmony import */ var _signup_signup_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./signup/signup.component */ "./src/app/user/signup/signup.component.ts");
+/* harmony import */ var _user_info_user_info_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./user-info/user-info.component */ "./src/app/user/user-info/user-info.component.ts");
 
 
 
-var UserService = /** @class */ (function () {
-    function UserService(jwtHelper) {
-        this.jwtHelper = jwtHelper;
-        this.groupChanges = [];
+
+
+
+
+
+var userRoutes = [
+    { path: 'signin', component: _login_login_component__WEBPACK_IMPORTED_MODULE_5__["LoginComponent"] },
+    { path: 'signup', component: _signup_signup_component__WEBPACK_IMPORTED_MODULE_6__["SignupComponent"] },
+    { path: 'user/details', component: _user_info_user_info_component__WEBPACK_IMPORTED_MODULE_7__["UserInfoComponent"] },
+];
+var UserModule = /** @class */ (function () {
+    function UserModule() {
     }
-    UserService.prototype.setUser = function (user) {
-        localStorage.setItem('user', JSON.stringify(user));
-    };
-    UserService.prototype.setToken = function (token) {
-        localStorage.setItem('token', token);
-    };
-    UserService.prototype.isAuthenticated = function () {
-        var token = localStorage.getItem('token');
-        // Check whether the token is expired and return
-        // true or false
-        var isExpired = this.jwtHelper.isTokenExpired(token);
-        return !isExpired;
-    };
-    UserService.prototype.getUser = function () {
-        var str = localStorage.getItem('user');
-        if (str) {
-            return JSON.parse(str);
-        }
-    };
-    UserService.prototype.setGroup = function (group) {
-        this.group = group;
-        this.groupChanges.forEach(function (func) { return func(group); });
-    };
-    UserService.prototype.onGroupChange = function (callback) {
-        this.groupChanges.push(callback);
-    };
-    UserService.prototype.getGroup = function () {
-        return this.group;
-    };
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
-    ], UserService.prototype, "group", void 0);
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
-    ], UserService.prototype, "user", void 0);
-    UserService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_2__["JwtHelperService"]])
-    ], UserService);
-    return UserService;
+    UserModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            imports: [
+                _shared_module__WEBPACK_IMPORTED_MODULE_3__["SharedModule"],
+                _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"]
+            ],
+            declarations: [_user_info_user_info_component__WEBPACK_IMPORTED_MODULE_7__["UserInfoComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_5__["LoginComponent"], _signup_signup_component__WEBPACK_IMPORTED_MODULE_6__["SignupComponent"]],
+            entryComponents: [_login_login_component__WEBPACK_IMPORTED_MODULE_5__["LoginComponent"]],
+            exports: []
+        })
+    ], UserModule);
+    return UserModule;
 }());
 
 
