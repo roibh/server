@@ -1,6 +1,7 @@
 {
   "NAVBAR": {
     "HOME": "ראשי",
+    "DASHBOARD": "ראשי",
     "SCREENS": "מסכים",
     "SCREEN-GROUPS": "קבוצות מסכים",
     "LIBRARY": "ספרייה",
@@ -73,7 +74,23 @@
     "STATUS": "Status",
     "LAST_DATE": "Last active date",
     "RESET": "Reset",
-    "CREATE": "Create",
-    "UPDATE": "Update"
+    "CREATE": "חדש",
+    "UPDATE": "עידכון"
+  },
+  "PLAYLISTS": {
+    "NAME": "שם רשימה",
+    "NAME_HELP": "כדאי לבחור שם בעל משמעות.",
+    "ADDTIME": "הוספת זמני תצוגה",
+    "ADDTOLIST": "הוספת פריט",
+    "TIME": "זמנים",
+    "SCHEDULE": "תזמון",
+    "LIST": "רשימה",
+    "RESET": "Reset",
+    "CREATE": "חדש",
+    "UPDATE": "עידכון",
+    "SETTIME": "קביעה"
+  },
+  "TIMES": {
+    "ALL": "כל הזמן"
   }
 }

@@ -1,5 +1,1910 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
 
+/***/ "../../methodus/methodus-client/dist/methodus-client.js":
+/*!********************************************************************!*\
+  !*** C:/projects/methodus/methodus-client/dist/methodus-client.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory();
+	else { var i, a; }
+})(typeof self !== 'undefined' ? self : this, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+__export(__webpack_require__(10));
+__export(__webpack_require__(11));
+__export(__webpack_require__(12));
+__export(__webpack_require__(13));
+__export(__webpack_require__(14));
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var Rest = /** @class */ (function () {
+    function Rest(uri, verb, paramsMap, args) {
+        this.options = {};
+        this.uri = uri;
+        this.options = this.parse(verb, paramsMap, args);
+        if (Rest.interceptor) {
+            this.options = Rest.interceptor(this.options);
+        }
+        this.request = new Request(this.uri);
+    }
+    Rest.intercept = function (interceptor) {
+        this.interceptor = interceptor;
+    };
+    Rest.prototype.prepare = function (url, method, params, body, query, headers) {
+        if (params && url) {
+            params.forEach(function (param) {
+                if (url) {
+                    url = url.replace(":" + param.id, param.value);
+                }
+            });
+        }
+        if (query && query.length > 0) {
+            url = url + "?" + query.join("&");
+        }
+        var formData = new FormData();
+        Object.keys(body).forEach(function (key) {
+            formData.append(key, body[key]);
+        });
+        if (window.RELATIVE_CONTRACTS) {
+            url = '.' + url;
+        }
+        this.uri = url;
+        this.request = new Request(url);
+        var options = {
+            cache: "default",
+            credentials: "include",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: method,
+            mode: "cors",
+        };
+        if (body && Object.keys(body).length > 0) {
+            Object.assign(options, { body: JSON.stringify(body) });
+        }
+        return options;
+    };
+    Rest.prototype.parse = function (verb, paramsMap, args) {
+        var _this = this;
+        var queryString = [];
+        var body = {};
+        var formData;
+        var headers = {};
+        var options = {
+            cache: "default",
+            credentials: "include",
+            headers: Object.assign(headers, {
+                "Content-Type": "application/json",
+            }),
+            method: verb,
+            mode: "cors",
+            redirect: "follow",
+        };
+        paramsMap.forEach(function (param) {
+            if (param.index !== undefined) {
+                switch (param.from) {
+                    case "params":
+                        if (_this.uri) {
+                            _this.uri = _this.uri.replace(":" + param.name, args[param.index]);
+                        }
+                        break;
+                    case "query":
+                        if (param.name) {
+                            queryString.push({ name: param.name, value: args[param.index] });
+                        }
+                        else {
+                            var queryObject_1 = args[param.index];
+                            Object.keys(queryObject_1).forEach(function (key) {
+                                if (Array.isArray(queryObject_1[key])) {
+                                    queryObject_1[key].forEach(function (item) {
+                                        queryString.push({ name: key, value: item });
+                                    });
+                                }
+                                else {
+                                    queryString.push({ name: key, value: queryObject_1[key] });
+                                }
+                            });
+                        }
+                        break;
+                    case "body":
+                        if (param.name) {
+                            body[param.name] = args[param.index];
+                        }
+                        else {
+                            Object.assign(body, args[param.index]);
+                        }
+                        break;
+                    case "files":
+                        // create a new multipart-form for every file
+                        var formData_1 = new FormData();
+                        var argus = args[param.index];
+                        if (!Array.isArray(args[param.index])) {
+                            argus = [args[param.index]];
+                        }
+                        argus.forEach(function (file) {
+                            formData_1.append(param.name || 'files', file, file.name);
+                        });
+                        Object.assign(options, { body: formData_1 });
+                        delete options.headers['Content-Type'];
+                        break;
+                    case "headers":
+                        if (param.name) {
+                            headers[param.name] = args[param.index];
+                        }
+                        else {
+                            Object.assign(headers, args[param.index]);
+                        }
+                        break;
+                }
+            }
+        });
+        if (queryString.length > 0) {
+            this.uri = this.uri + "?" + queryString.map(function (item) {
+                if (typeof item.value === "object") {
+                    return item.name + "=" + encodeURIComponent(JSON.stringify(item.value));
+                }
+                else {
+                    return item.name + "=" + encodeURIComponent(item.value);
+                }
+            }).join("&");
+        }
+        if (body && Object.keys(body).length > 0) {
+            Object.assign(options, { body: JSON.stringify(body) });
+        }
+        return options;
+    };
+    Rest.prototype.send = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, fetch(this.request, this.options)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, response.json()];
+                }
+            });
+        });
+    };
+    Rest.prototype.execute = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, fetch(this.request, this.options)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, response.json()];
+                }
+            });
+        });
+    };
+    return Rest;
+}());
+exports.Rest = Rest;
+//# sourceMappingURL=rest.js.map
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib___ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib____default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__lib___);
+/* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__lib___) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__lib___[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+__export(__webpack_require__(4));
+__export(__webpack_require__(15));
+__export(__webpack_require__(20));
+__export(__webpack_require__(0));
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+__export(__webpack_require__(5));
+__export(__webpack_require__(6));
+__export(__webpack_require__(7));
+__export(__webpack_require__(8));
+__export(__webpack_require__(9));
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+/** the MethodConfig decorator registers the controller as a router
+ *  @param {string} name - the identifier of the controller in the resolver.
+ *  @param {Function[]} middlewares - an array of middlewares to apply to this controller}
+ */
+function MethodConfigBase(name) {
+    return function (target) {
+        var proto = target.prototype || target.__proto__;
+        // means its a static class , no prototype
+        if (target.methodus) {
+            proto = target;
+        }
+        proto.methodus_base = JSON.parse(JSON.stringify(target.methodus[name]));
+    };
+}
+exports.MethodConfigBase = MethodConfigBase;
+//# sourceMappingURL=method-config-base.js.map
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/** the MethodConfig decorator registers the controller as a router
+ *  @param {string} name - the identifier of the controller in the resolver.
+ *  @param {Function[]} middlewares - an array of middlewares to apply to this controller}
+ */
+function MethodConfigExtend(extendTarget) {
+    var _this = this;
+    return function (target) {
+        var filterKeys = ['length', 'prototype', 'name', 'methodus', 'methodus_base'];
+        target.methodus[target.name] = JSON.parse(JSON.stringify(extendTarget.methodus_base));
+        Object.getOwnPropertyNames(extendTarget.prototype.constructor).forEach(function (key) {
+            if (filterKeys.indexOf(key) === -1) {
+                var func = function () {
+                    var args = [];
+                    for (var _i = 0; _i < arguments.length; _i++) {
+                        args[_i] = arguments[_i];
+                    }
+                    return __awaiter(_this, void 0, void 0, function () {
+                        return __generator(this, function (_a) {
+                            switch (_a.label) {
+                                case 0:
+                                    args.push({ target: target, instruct: true });
+                                    return [4 /*yield*/, extendTarget.prototype.constructor[key].apply(target, args)];
+                                case 1: return [2 /*return*/, _a.sent()];
+                            }
+                        });
+                    });
+                };
+                target.prototype.constructor[key] = func.bind(target);
+            }
+        });
+        var mTarget = target.methodus[target.name];
+        var routePrefix = target.name.toLocaleLowerCase();
+        Object.keys(mTarget._descriptors).forEach(function (desciptorKey) {
+            var route = mTarget._descriptors[desciptorKey].route;
+            mTarget._descriptors[desciptorKey].route = '/' + routePrefix + route;
+        });
+    };
+}
+exports.MethodConfigExtend = MethodConfigExtend;
+//# sourceMappingURL=method-config-extend.js.map
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+/** the MethodConfig decorator registers the controller as a router
+ *  @param {string} name - the identifier of the controller in the resolver.
+ *  @param {Function[]} middlewares - an array of middlewares to apply to this controller}
+ */
+function MethodConfig(name) {
+    return function (target) {
+        var proto = target.prototype || target.__proto__;
+        // means its a static class , no prototype
+        if (target.methodus) {
+            proto = target;
+        }
+        target.methodus[name] = target.methodus[name] || { _events: {}, _descriptors: {} };
+        proto.methodus[name].name = name;
+    };
+}
+exports.MethodConfig = MethodConfig;
+//# sourceMappingURL=method-config.js.map
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+function pushParams(target, propertyKey, param) {
+    // const methodus = fp.maybeMethodus(target);
+    target.methodus = target.methodus || {};
+    var name = target.name || target.constructor.name;
+    target.methodus[name] = target.methodus[name] || { _events: {}, _descriptors: {} };
+    var mTarget = target.methodus[name];
+    mTarget._descriptors[propertyKey] = mTarget._descriptors[propertyKey] || { params: [] };
+    mTarget._descriptors[propertyKey].params.push(Object.assign({}, param, { type: "any" }));
+}
+function build(from, name, type) {
+    return function (target, propertyKey, parameterIndex) {
+        if (name) {
+            pushParams(target, propertyKey, {
+                from: from, index: parameterIndex,
+                name: name,
+            });
+        }
+        else {
+            pushParams(target, propertyKey, { from: from, index: parameterIndex });
+        }
+    };
+}
+function Body(name, type) {
+    return build("body", name, type);
+}
+exports.Body = Body;
+function Param(name) {
+    return build("params", name);
+}
+exports.Param = Param;
+function Files(name) {
+    return build("files", name);
+}
+exports.Files = Files;
+function Headers(name) {
+    return build("headers", name);
+}
+exports.Headers = Headers;
+function Cookies(name) {
+    return build("cookies", name);
+}
+exports.Cookies = Cookies;
+function Query(name) {
+    return build("query", name);
+}
+exports.Query = Query;
+function Request(name) {
+    return function () { return false; };
+}
+exports.Request = Request;
+function Response(name) {
+    return function () { return false; };
+}
+exports.Response = Response;
+//# sourceMappingURL=params.js.map
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var excludedProps = ["constructor"];
+var commons_1 = __webpack_require__(0);
+var rest_1 = __webpack_require__(1);
+var methodMetadataKey = "methodus";
+var metadataKey = "params";
+/** the @Method decorator registers the model with the odm
+ *  @param {Verbs} verb - the HTTP verb for the route.
+ *  @param {string} route - express route string.
+ *  @param {Function[]} middlewares - an array of middlewares to apply to this function}
+ */
+var METHODLOG = "methodus::Method";
+function Method(verb, route) {
+    var _this = this;
+    return function (target, propertyKey, descriptor) {
+        target.methodus = target.methodus || {};
+        var name = target.name || target.constructor.name;
+        target.methodus[name] = target.methodus[name] || { _events: {}, _descriptors: {} };
+        var mTarget = target.methodus[name];
+        var metaObject = Object.assign({}, { verb: verb, route: route, propertyKey: propertyKey, params: [] });
+        if (mTarget._descriptors[propertyKey]) {
+            metaObject = Object.assign(metaObject, { params: mTarget._descriptors[propertyKey].params });
+        }
+        mTarget._descriptors[propertyKey] = metaObject; // as MethodDescriptor;
+        var paramsMap;
+        if (metaObject.params) {
+            paramsMap = metaObject.params;
+            paramsMap.sort(function (a, b) {
+                return a.index - b.index;
+            });
+        }
+        var originalMethod = descriptor.value;
+        descriptor.value = function () {
+            var args = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                args[_i] = arguments[_i];
+            }
+            return __awaiter(_this, void 0, void 0, function () {
+                var config, methodus, completeConfiguration, _a, finalRoute, request, result;
+                return __generator(this, function (_b) {
+                    switch (_b.label) {
+                        case 0:
+                            config = { methodType: commons_1.MethodType.Http };
+                            if (window.METHODUS_CONFIG) {
+                                config = window.METHODUS_CONFIG;
+                            }
+                            if (args && args[args.length - 1] && args[args.length - 1].instruct) {
+                                target = args[args.length - 1].target;
+                                target.methodus = target.methodus || {};
+                                name = target.name || target.constructor.name;
+                                target.methodus[name] = target.methodus[name] || { _events: {}, _descriptors: {} };
+                                mTarget = target.methodus[name];
+                                metaObject = mTarget._descriptors[propertyKey];
+                                paramsMap = metaObject.params;
+                                paramsMap.sort(function (a, b) {
+                                    return a.index - b.index;
+                                });
+                            }
+                            methodus = mTarget;
+                            // merge the configuration object
+                            Object.assign(methodus, methodus._descriptors[propertyKey]);
+                            completeConfiguration = Object.assign({}, methodus, config);
+                            _a = config.methodType;
+                            switch (_a) {
+                                case commons_1.MethodType.Mock: return [3 /*break*/, 1];
+                                case commons_1.MethodType.Http: return [3 /*break*/, 3];
+                            }
+                            return [3 /*break*/, 5];
+                        case 1: return [4 /*yield*/, originalMethod.apply(target, args)];
+                        case 2: return [2 /*return*/, _b.sent()];
+                        case 3:
+                            finalRoute = completeConfiguration.route;
+                            if (target.base !== undefined) {
+                                finalRoute = target.base + finalRoute;
+                            }
+                            else if (window.RELATIVE_CONTRACTS) {
+                                finalRoute = '.' + finalRoute;
+                            }
+                            request = new rest_1.Rest(finalRoute, completeConfiguration.verb, paramsMap, args);
+                            return [4 /*yield*/, request.send()];
+                        case 4:
+                            result = _b.sent();
+                            return [2 /*return*/, result];
+                        case 5: return [2 /*return*/];
+                    }
+                });
+            });
+        };
+        return descriptor;
+    };
+}
+exports.Method = Method;
+//# sourceMappingURL=method.js.map
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Verbs;
+(function (Verbs) {
+    Verbs["Get"] = "GET";
+    Verbs["Post"] = "POST";
+    Verbs["Put"] = "PUT";
+    Verbs["Patch"] = "PATCH";
+    Verbs["Head"] = "HEAD";
+    Verbs["Delete"] = "DELETE";
+})(Verbs = exports.Verbs || (exports.Verbs = {}));
+var MethodType;
+(function (MethodType) {
+    MethodType["Local"] = "Local";
+    MethodType["Http"] = "Http";
+    MethodType["MQ"] = "MQ";
+    MethodType["Redis"] = "Redis";
+    MethodType["Socket"] = "Socket";
+    MethodType["Kafka"] = "Kafka";
+    MethodType["Mock"] = "Mock";
+})(MethodType = exports.MethodType || (exports.MethodType = {}));
+//# sourceMappingURL=enums.js.map
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Prototyped = /** @class */ (function () {
+    function Prototyped() {
+    }
+    return Prototyped;
+}());
+exports.Prototyped = Prototyped;
+//# sourceMappingURL=prototyped.js.map
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var MethodDescriptor = /** @class */ (function () {
+    function MethodDescriptor() {
+    }
+    return MethodDescriptor;
+}());
+exports.MethodDescriptor = MethodDescriptor;
+//# sourceMappingURL=method-descriptor.js.map
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var MethodusClass = /** @class */ (function () {
+    function MethodusClass() {
+    }
+    return MethodusClass;
+}());
+exports.MethodusClass = MethodusClass;
+//# sourceMappingURL=methodus-class.js.map
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var ParamsMap = /** @class */ (function () {
+    function ParamsMap() {
+    }
+    return ParamsMap;
+}());
+exports.ParamsMap = ParamsMap;
+//# sourceMappingURL=params-map.js.map
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+__export(__webpack_require__(16));
+__export(__webpack_require__(17));
+__export(__webpack_require__(18));
+__export(__webpack_require__(19));
+function generateUuid() {
+    return Math.random().toString() +
+        Math.random().toString() +
+        Math.random().toString();
+}
+exports.generateUuid = generateUuid;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var MethodError = /** @class */ (function (_super) {
+    __extends(MethodError, _super);
+    function MethodError(error, statusCode, additional) {
+        var _this = this;
+        var message = error;
+        if (typeof error === "object") {
+            message = error.message;
+        }
+        _this = _super.call(this, message) || this;
+        _this.error = error;
+        _this.statusCode = statusCode || 500;
+        if (additional) {
+            _this.additional = additional;
+        }
+        return _this;
+    }
+    return MethodError;
+}(Error));
+exports.MethodError = MethodError;
+//# sourceMappingURL=methodError.js.map
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var MethodEvent = /** @class */ (function () {
+    function MethodEvent(name, value, exchangeName) {
+        this.value = value;
+        this.name = name;
+        if (exchangeName) {
+            this.exchanges = Array.isArray(exchangeName) ? (exchangeName) : [exchangeName];
+        }
+    }
+    MethodEvent.emit = function (name, value, exchangeName) {
+        var eventResult = new MethodEvent(name, value, exchangeName);
+        eventResult.result = eventResult;
+    };
+    return MethodEvent;
+}());
+exports.MethodEvent = MethodEvent;
+//# sourceMappingURL=methodEvent.js.map
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var MethodResult = /** @class */ (function () {
+    function MethodResult(result, total, page) {
+        this.result = result;
+        if (total) {
+            this.total = total;
+        }
+        if (page) {
+            this.page = page;
+        }
+    }
+    MethodResult.prototype.pipe = function (streamToPipe) {
+        this.stream = streamToPipe;
+    };
+    return MethodResult;
+}());
+exports.MethodResult = MethodResult;
+//# sourceMappingURL=methodResult.js.map
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var MethodMessage = /** @class */ (function () {
+    function MethodMessage(to, message, metadata, args, correlationId) {
+        this.to = to;
+        this.message = message;
+        this.metadata = metadata;
+        this.args = args;
+        this.correlationId = correlationId;
+    }
+    return MethodMessage;
+}());
+exports.MethodMessage = MethodMessage;
+//# sourceMappingURL=methodMessage.js.map
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+__export(__webpack_require__(1));
+//# sourceMappingURL=index.js.map
+
+/***/ })
+/******/ ]);
+});
+
+/***/ }),
+
+/***/ "../@signnature/client/contracts/authcontroller.js":
+/*!*********************************************************!*\
+  !*** ../@signnature/client/contracts/authcontroller.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// TMLA methodus contract.
+// Generated at: Sun Dec 30 2018 13:16:47 GMT+0200 (Israel Standard Time)
+var M = __webpack_require__(/*! @methodus/client */ "../../methodus/methodus-client/dist/methodus-client.js");
+var AuthController = /** @class */ (function () {
+    function AuthController() {
+    }
+    AuthController.signup = function (userOptions) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, {}];
+            });
+        });
+    };
+    AuthController.token = function (userOptions) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, {}];
+            });
+        });
+    };
+    AuthController.verify = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, {}];
+            });
+        });
+    };
+    AuthController.decode = function (token) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, {}];
+            });
+        });
+    };
+    __decorate([
+        M.Method(M.Verbs.Post, '/api/auth/signup'),
+        __param(0, M.Body('userOptions')),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Promise)
+    ], AuthController, "signup", null);
+    __decorate([
+        M.Method(M.Verbs.Post, '/api/auth/token'),
+        __param(0, M.Body('userOptions')),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Promise)
+    ], AuthController, "token", null);
+    __decorate([
+        M.Method(M.Verbs.Get, '/auth/verify'),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", Promise)
+    ], AuthController, "verify", null);
+    __decorate([
+        M.Method(M.Verbs.Get, '/api/auth/verify'),
+        __param(0, M.Body('token')),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [String]),
+        __metadata("design:returntype", Promise)
+    ], AuthController, "decode", null);
+    AuthController = __decorate([
+        M.MethodConfig('AuthController')
+    ], AuthController);
+    return AuthController;
+}());
+exports.AuthController = AuthController;
+//# sourceMappingURL=authcontroller.js.map
+
+/***/ }),
+
+/***/ "../@signnature/client/contracts/datacontroller.js":
+/*!*********************************************************!*\
+  !*** ../@signnature/client/contracts/datacontroller.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// TMLA methodus contract.
+// Generated at: Sun Dec 30 2018 13:16:47 GMT+0200 (Israel Standard Time)
+var M = __webpack_require__(/*! @methodus/client */ "../../methodus/methodus-client/dist/methodus-client.js");
+var DataController = /** @class */ (function () {
+    function DataController() {
+    }
+    DataController.get = function (id) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, {}];
+            });
+        });
+    };
+    DataController.create = function (record) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, {}];
+            });
+        });
+    };
+    DataController.update = function (id, record) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, {}];
+            });
+        });
+    };
+    DataController.delete = function (id) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, {}];
+            });
+        });
+    };
+    DataController.query = function (queryObject) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, {}];
+            });
+        });
+    };
+    __decorate([
+        M.Method(M.Verbs.Get, '/id/:id'),
+        __param(0, M.Param('id')),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [String]),
+        __metadata("design:returntype", Promise)
+    ], DataController, "get", null);
+    __decorate([
+        M.Method(M.Verbs.Post, '/insert'),
+        __param(0, M.Body('record')),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Promise)
+    ], DataController, "create", null);
+    __decorate([
+        M.Method(M.Verbs.Post, '/id/:id'),
+        __param(0, M.Param('id')), __param(1, M.Body('record')),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [String, Object]),
+        __metadata("design:returntype", Promise)
+    ], DataController, "update", null);
+    __decorate([
+        M.Method(M.Verbs.Delete, '/id/:id'),
+        __param(0, M.Param('id')),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [String]),
+        __metadata("design:returntype", Promise)
+    ], DataController, "delete", null);
+    __decorate([
+        M.Method(M.Verbs.Post, '/query'),
+        __param(0, M.Body('query')),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Promise)
+    ], DataController, "query", null);
+    DataController = __decorate([
+        M.MethodConfigBase('DataController')
+    ], DataController);
+    return DataController;
+}());
+exports.DataController = DataController;
+//# sourceMappingURL=datacontroller.js.map
+
+/***/ }),
+
+/***/ "../@signnature/client/contracts/librarydatacontroller.js":
+/*!****************************************************************!*\
+  !*** ../@signnature/client/contracts/librarydatacontroller.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// TMLA methodus contract.
+// Generated at: Sun Dec 30 2018 13:16:47 GMT+0200 (Israel Standard Time)
+var M = __webpack_require__(/*! @methodus/client */ "../../methodus/methodus-client/dist/methodus-client.js");
+/*start custom*/
+var datacontroller_1 = __webpack_require__(/*! ./datacontroller */ "../@signnature/client/contracts/datacontroller.js");
+var LibraryDataController = /** @class */ (function (_super) {
+    __extends(LibraryDataController, _super);
+    function LibraryDataController() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    LibraryDataController = __decorate([
+        M.MethodConfig('LibraryDataController'),
+        M.MethodConfigExtend(datacontroller_1.DataController)
+    ], LibraryDataController);
+    return LibraryDataController;
+}(datacontroller_1.DataController));
+exports.LibraryDataController = LibraryDataController;
+//# sourceMappingURL=librarydatacontroller.js.map
+
+/***/ }),
+
+/***/ "../@signnature/client/contracts/playercontroller.js":
+/*!***********************************************************!*\
+  !*** ../@signnature/client/contracts/playercontroller.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// TMLA methodus contract.
+// Generated at: Sun Dec 30 2018 13:16:47 GMT+0200 (Israel Standard Time)
+var M = __webpack_require__(/*! @methodus/client */ "../../methodus/methodus-client/dist/methodus-client.js");
+var PlayerController = /** @class */ (function () {
+    function PlayerController() {
+    }
+    PlayerController.registerPlayer = function (token) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, {}];
+            });
+        });
+    };
+    PlayerController.validatePlayer = function (token) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, {}];
+            });
+        });
+    };
+    PlayerController.runPlayer = function (group) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, {}];
+            });
+        });
+    };
+    __decorate([
+        M.Method(M.Verbs.Post, '/register-player/:token'),
+        __param(0, M.Param('token')),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Promise)
+    ], PlayerController, "registerPlayer", null);
+    __decorate([
+        M.Method(M.Verbs.Post, '/validate-player/:token'),
+        __param(0, M.Param('token')),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Promise)
+    ], PlayerController, "validatePlayer", null);
+    __decorate([
+        M.Method(M.Verbs.Post, '/run-player/:group'),
+        __param(0, M.Param('group')),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Promise)
+    ], PlayerController, "runPlayer", null);
+    PlayerController = __decorate([
+        M.MethodConfig('PlayerController')
+    ], PlayerController);
+    return PlayerController;
+}());
+exports.PlayerController = PlayerController;
+//# sourceMappingURL=playercontroller.js.map
+
+/***/ }),
+
+/***/ "../@signnature/client/contracts/playlist.js":
+/*!***************************************************!*\
+  !*** ../@signnature/client/contracts/playlist.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// TMLA methodus contract.
+// Generated at: Sun Dec 30 2018 13:16:47 GMT+0200 (Israel Standard Time)
+var M = __webpack_require__(/*! @methodus/client */ "../../methodus/methodus-client/dist/methodus-client.js");
+/*start custom*/
+var datacontroller_1 = __webpack_require__(/*! ./datacontroller */ "../@signnature/client/contracts/datacontroller.js");
+var Playlist = /** @class */ (function (_super) {
+    __extends(Playlist, _super);
+    function Playlist() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Playlist = __decorate([
+        M.MethodConfig('Playlist'),
+        M.MethodConfigExtend(datacontroller_1.DataController)
+    ], Playlist);
+    return Playlist;
+}(datacontroller_1.DataController));
+exports.Playlist = Playlist;
+//# sourceMappingURL=playlist.js.map
+
+/***/ }),
+
+/***/ "../@signnature/client/contracts/scheduledatacontroller.js":
+/*!*****************************************************************!*\
+  !*** ../@signnature/client/contracts/scheduledatacontroller.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// TMLA methodus contract.
+// Generated at: Sun Dec 30 2018 13:16:47 GMT+0200 (Israel Standard Time)
+var M = __webpack_require__(/*! @methodus/client */ "../../methodus/methodus-client/dist/methodus-client.js");
+/*start custom*/
+var datacontroller_1 = __webpack_require__(/*! ./datacontroller */ "../@signnature/client/contracts/datacontroller.js");
+var ScheduleDataController = /** @class */ (function (_super) {
+    __extends(ScheduleDataController, _super);
+    function ScheduleDataController() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ScheduleDataController = __decorate([
+        M.MethodConfig('ScheduleDataController'),
+        M.MethodConfigExtend(datacontroller_1.DataController)
+    ], ScheduleDataController);
+    return ScheduleDataController;
+}(datacontroller_1.DataController));
+exports.ScheduleDataController = ScheduleDataController;
+//# sourceMappingURL=scheduledatacontroller.js.map
+
+/***/ }),
+
+/***/ "../@signnature/client/contracts/screengroupdatacontroller.js":
+/*!********************************************************************!*\
+  !*** ../@signnature/client/contracts/screengroupdatacontroller.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// TMLA methodus contract.
+// Generated at: Sun Dec 30 2018 13:16:47 GMT+0200 (Israel Standard Time)
+var M = __webpack_require__(/*! @methodus/client */ "../../methodus/methodus-client/dist/methodus-client.js");
+/*start custom*/
+var datacontroller_1 = __webpack_require__(/*! ./datacontroller */ "../@signnature/client/contracts/datacontroller.js");
+var ScreenGroupDataController = /** @class */ (function (_super) {
+    __extends(ScreenGroupDataController, _super);
+    function ScreenGroupDataController() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ScreenGroupDataController = __decorate([
+        M.MethodConfig('ScreenGroupDataController'),
+        M.MethodConfigExtend(datacontroller_1.DataController)
+    ], ScreenGroupDataController);
+    return ScreenGroupDataController;
+}(datacontroller_1.DataController));
+exports.ScreenGroupDataController = ScreenGroupDataController;
+//# sourceMappingURL=screengroupdatacontroller.js.map
+
+/***/ }),
+
+/***/ "../@signnature/client/contracts/screensdatacontroller.js":
+/*!****************************************************************!*\
+  !*** ../@signnature/client/contracts/screensdatacontroller.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// TMLA methodus contract.
+// Generated at: Sun Dec 30 2018 13:16:47 GMT+0200 (Israel Standard Time)
+var M = __webpack_require__(/*! @methodus/client */ "../../methodus/methodus-client/dist/methodus-client.js");
+/*start custom*/
+var datacontroller_1 = __webpack_require__(/*! ./datacontroller */ "../@signnature/client/contracts/datacontroller.js");
+var ScreensDataController = /** @class */ (function (_super) {
+    __extends(ScreensDataController, _super);
+    function ScreensDataController() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ScreensDataController = __decorate([
+        M.MethodConfig('ScreensDataController'),
+        M.MethodConfigExtend(datacontroller_1.DataController)
+    ], ScreensDataController);
+    return ScreensDataController;
+}(datacontroller_1.DataController));
+exports.ScreensDataController = ScreensDataController;
+//# sourceMappingURL=screensdatacontroller.js.map
+
+/***/ }),
+
+/***/ "../@signnature/client/contracts/slidesdatacontroller.js":
+/*!***************************************************************!*\
+  !*** ../@signnature/client/contracts/slidesdatacontroller.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// TMLA methodus contract.
+// Generated at: Sun Dec 30 2018 13:16:47 GMT+0200 (Israel Standard Time)
+var M = __webpack_require__(/*! @methodus/client */ "../../methodus/methodus-client/dist/methodus-client.js");
+/*start custom*/
+var datacontroller_1 = __webpack_require__(/*! ./datacontroller */ "../@signnature/client/contracts/datacontroller.js");
+var SlidesDataController = /** @class */ (function (_super) {
+    __extends(SlidesDataController, _super);
+    function SlidesDataController() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    SlidesDataController = __decorate([
+        M.MethodConfig('SlidesDataController'),
+        M.MethodConfigExtend(datacontroller_1.DataController)
+    ], SlidesDataController);
+    return SlidesDataController;
+}(datacontroller_1.DataController));
+exports.SlidesDataController = SlidesDataController;
+//# sourceMappingURL=slidesdatacontroller.js.map
+
+/***/ }),
+
+/***/ "../@signnature/client/contracts/upload.js":
+/*!*************************************************!*\
+  !*** ../@signnature/client/contracts/upload.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// TMLA methodus contract.
+// Generated at: Sun Dec 30 2018 13:16:47 GMT+0200 (Israel Standard Time)
+var M = __webpack_require__(/*! @methodus/client */ "../../methodus/methodus-client/dist/methodus-client.js");
+var Upload = /** @class */ (function () {
+    function Upload() {
+    }
+    Upload.capture = function (files) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, {}];
+            });
+        });
+    };
+    __decorate([
+        M.Method(M.Verbs.Post, '/upload'),
+        __param(0, M.Files('files')),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Promise)
+    ], Upload, "capture", null);
+    Upload = __decorate([
+        M.MethodConfig('Upload')
+    ], Upload);
+    return Upload;
+}());
+exports.Upload = Upload;
+//# sourceMappingURL=upload.js.map
+
+/***/ }),
+
+/***/ "../@signnature/client/contracts/usercontroller.js":
+/*!*********************************************************!*\
+  !*** ../@signnature/client/contracts/usercontroller.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// TMLA methodus contract.
+// Generated at: Sun Dec 30 2018 13:16:47 GMT+0200 (Israel Standard Time)
+var M = __webpack_require__(/*! @methodus/client */ "../../methodus/methodus-client/dist/methodus-client.js");
+/*start custom*/
+var datacontroller_1 = __webpack_require__(/*! ./datacontroller */ "../@signnature/client/contracts/datacontroller.js");
+var UserController = /** @class */ (function (_super) {
+    __extends(UserController, _super);
+    function UserController() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    UserController = __decorate([
+        M.MethodConfig('UserController'),
+        M.MethodConfigExtend(datacontroller_1.DataController)
+    ], UserController);
+    return UserController;
+}(datacontroller_1.DataController));
+exports.UserController = UserController;
+//# sourceMappingURL=usercontroller.js.map
+
+/***/ }),
+
+/***/ "../@signnature/client/includes/usermock.js":
+/*!**************************************************!*\
+  !*** ../@signnature/client/includes/usermock.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var UserMock = /** @class */ (function () {
+    function UserMock() {
+    }
+    UserMock.list = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var results, i, user;
+            return __generator(this, function (_a) {
+                results = [];
+                for (i = 0; i < 10; i++) {
+                    user = new Object();
+                    user.Email = 'info@gmail.com';
+                    user.FirstName = 'First name';
+                    user.LastName = 'Last name';
+                    user.Password = '********';
+                    results.push(user);
+                }
+                return [2 /*return*/, results];
+            });
+        });
+    };
+    UserMock.get = function (userId) {
+        return __awaiter(this, void 0, void 0, function () {
+            var user;
+            return __generator(this, function (_a) {
+                user = new Object();
+                user.Email = 'info@gmail.com';
+                user.FirstName = 'First name';
+                user.LastName = 'Last name';
+                user.Password = '********';
+                return [2 /*return*/, user];
+            });
+        });
+    };
+    return UserMock;
+}());
+exports.UserMock = UserMock;
+//# sourceMappingURL=usermock.js.map
+
+/***/ }),
+
+/***/ "../@signnature/client/index.js":
+/*!**************************************!*\
+  !*** ../@signnature/client/index.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+// TMLA methodus contract.
+// Generated at: Sun Dec 30 2018 13:16:47 GMT+0200 (Israel Standard Time)
+/**/
+var usermock_1 = __webpack_require__(/*! ./includes/usermock */ "../@signnature/client/includes/usermock.js");
+exports.UserMock = usermock_1.UserMock;
+var datacontroller_1 = __webpack_require__(/*! ./contracts/datacontroller */ "../@signnature/client/contracts/datacontroller.js");
+var datacontroller_2 = __webpack_require__(/*! ./contracts/datacontroller */ "../@signnature/client/contracts/datacontroller.js");
+exports.DataController = datacontroller_2.DataController;
+var upload_1 = __webpack_require__(/*! ./contracts/upload */ "../@signnature/client/contracts/upload.js");
+var upload_2 = __webpack_require__(/*! ./contracts/upload */ "../@signnature/client/contracts/upload.js");
+exports.Upload = upload_2.Upload;
+var usercontroller_1 = __webpack_require__(/*! ./contracts/usercontroller */ "../@signnature/client/contracts/usercontroller.js");
+var usercontroller_2 = __webpack_require__(/*! ./contracts/usercontroller */ "../@signnature/client/contracts/usercontroller.js");
+exports.UserController = usercontroller_2.UserController;
+var authcontroller_1 = __webpack_require__(/*! ./contracts/authcontroller */ "../@signnature/client/contracts/authcontroller.js");
+var authcontroller_2 = __webpack_require__(/*! ./contracts/authcontroller */ "../@signnature/client/contracts/authcontroller.js");
+exports.AuthController = authcontroller_2.AuthController;
+var screensdatacontroller_1 = __webpack_require__(/*! ./contracts/screensdatacontroller */ "../@signnature/client/contracts/screensdatacontroller.js");
+var screensdatacontroller_2 = __webpack_require__(/*! ./contracts/screensdatacontroller */ "../@signnature/client/contracts/screensdatacontroller.js");
+exports.ScreensDataController = screensdatacontroller_2.ScreensDataController;
+var librarydatacontroller_1 = __webpack_require__(/*! ./contracts/librarydatacontroller */ "../@signnature/client/contracts/librarydatacontroller.js");
+var librarydatacontroller_2 = __webpack_require__(/*! ./contracts/librarydatacontroller */ "../@signnature/client/contracts/librarydatacontroller.js");
+exports.LibraryDataController = librarydatacontroller_2.LibraryDataController;
+var slidesdatacontroller_1 = __webpack_require__(/*! ./contracts/slidesdatacontroller */ "../@signnature/client/contracts/slidesdatacontroller.js");
+var slidesdatacontroller_2 = __webpack_require__(/*! ./contracts/slidesdatacontroller */ "../@signnature/client/contracts/slidesdatacontroller.js");
+exports.SlidesDataController = slidesdatacontroller_2.SlidesDataController;
+var playlist_1 = __webpack_require__(/*! ./contracts/playlist */ "../@signnature/client/contracts/playlist.js");
+var playlist_2 = __webpack_require__(/*! ./contracts/playlist */ "../@signnature/client/contracts/playlist.js");
+exports.Playlist = playlist_2.Playlist;
+var playercontroller_1 = __webpack_require__(/*! ./contracts/playercontroller */ "../@signnature/client/contracts/playercontroller.js");
+var playercontroller_2 = __webpack_require__(/*! ./contracts/playercontroller */ "../@signnature/client/contracts/playercontroller.js");
+exports.PlayerController = playercontroller_2.PlayerController;
+var screengroupdatacontroller_1 = __webpack_require__(/*! ./contracts/screengroupdatacontroller */ "../@signnature/client/contracts/screengroupdatacontroller.js");
+var screengroupdatacontroller_2 = __webpack_require__(/*! ./contracts/screengroupdatacontroller */ "../@signnature/client/contracts/screengroupdatacontroller.js");
+exports.ScreenGroupDataController = screengroupdatacontroller_2.ScreenGroupDataController;
+var scheduledatacontroller_1 = __webpack_require__(/*! ./contracts/scheduledatacontroller */ "../@signnature/client/contracts/scheduledatacontroller.js");
+var scheduledatacontroller_2 = __webpack_require__(/*! ./contracts/scheduledatacontroller */ "../@signnature/client/contracts/scheduledatacontroller.js");
+exports.ScheduleDataController = scheduledatacontroller_2.ScheduleDataController;
+function getAll() {
+    return ['DataController', 'Upload', 'UserController', 'AuthController', 'ScreensDataController', 'LibraryDataController', 'SlidesDataController', 'Playlist', 'PlayerController', 'ScreenGroupDataController', 'ScheduleDataController'];
+}
+exports.getAll = getAll;
+function get(contractName) {
+    switch (contractName) {
+        case 'DataController':
+            return datacontroller_1.DataController;
+        case 'Upload':
+            return upload_1.Upload;
+        case 'UserController':
+            return usercontroller_1.UserController;
+        case 'AuthController':
+            return authcontroller_1.AuthController;
+        case 'ScreensDataController':
+            return screensdatacontroller_1.ScreensDataController;
+        case 'LibraryDataController':
+            return librarydatacontroller_1.LibraryDataController;
+        case 'SlidesDataController':
+            return slidesdatacontroller_1.SlidesDataController;
+        case 'Playlist':
+            return playlist_1.Playlist;
+        case 'PlayerController':
+            return playercontroller_1.PlayerController;
+        case 'ScreenGroupDataController':
+            return screengroupdatacontroller_1.ScreenGroupDataController;
+        case 'ScheduleDataController':
+            return scheduledatacontroller_1.ScheduleDataController;
+    }
+}
+exports.get = get;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
 /***/ "./src/$$_lazy_route_resource lazy recursive":
 /*!**********************************************************!*\
   !*** ./src/$$_lazy_route_resource lazy namespace object ***!
@@ -119,23 +2024,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _auth_auth_intercepter__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./auth/auth.intercepter */ "./src/app/auth/auth.intercepter.ts");
 /* harmony import */ var _services_user_context_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./services/user.context.service */ "./src/app/services/user.context.service.ts");
-/* harmony import */ var _directives_adapt_height__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./directives/adapt-height */ "./src/app/directives/adapt-height.ts");
-/* harmony import */ var ngx_order_pipe__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ngx-order-pipe */ "./node_modules/ngx-order-pipe/ngx-order-pipe.es5.js");
-/* harmony import */ var _shared_module__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./shared.module */ "./src/app/shared.module.ts");
-/* harmony import */ var _user_user_module__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./user/user.module */ "./src/app/user/user.module.ts");
-/* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
-/* harmony import */ var _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @ngx-translate/http-loader */ "./node_modules/@ngx-translate/http-loader/esm5/ngx-translate-http-loader.js");
-/* harmony import */ var _auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./auth/auth-guard.service */ "./src/app/auth/auth-guard.service.ts");
-/* harmony import */ var _screens_screens_module__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./screens/screens.module */ "./src/app/screens/screens.module.ts");
-/* harmony import */ var _library_library_module__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./library/library.module */ "./src/app/library/library.module.ts");
-/* harmony import */ var _playlists_playlists_module__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./playlists/playlists.module */ "./src/app/playlists/playlists.module.ts");
-/* harmony import */ var _timelines_timelines_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./timelines/timelines.component */ "./src/app/timelines/timelines.component.ts");
-/* harmony import */ var _settings_settings_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./settings/settings.component */ "./src/app/settings/settings.component.ts");
-/* harmony import */ var _common_dialog_dialog_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./common/dialog/dialog.component */ "./src/app/common/dialog/dialog.component.ts");
-/* harmony import */ var _services_language_service__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./services/language.service */ "./src/app/services/language.service.ts");
-/* harmony import */ var _library_editor_toolbar_editor_toolbar_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./library/editor-toolbar/editor-toolbar.component */ "./src/app/library/editor-toolbar/editor-toolbar.component.ts");
-
+/* harmony import */ var ngx_order_pipe__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ngx-order-pipe */ "./node_modules/ngx-order-pipe/ngx-order-pipe.es5.js");
+/* harmony import */ var _shared_module__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./shared.module */ "./src/app/shared.module.ts");
+/* harmony import */ var _user_user_module__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./user/user.module */ "./src/app/user/user.module.ts");
+/* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
+/* harmony import */ var _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @ngx-translate/http-loader */ "./node_modules/@ngx-translate/http-loader/esm5/ngx-translate-http-loader.js");
+/* harmony import */ var _auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./auth/auth-guard.service */ "./src/app/auth/auth-guard.service.ts");
+/* harmony import */ var _screens_screens_module__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./screens/screens.module */ "./src/app/screens/screens.module.ts");
+/* harmony import */ var _library_library_module__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./library/library.module */ "./src/app/library/library.module.ts");
+/* harmony import */ var _playlists_playlists_module__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./playlists/playlists.module */ "./src/app/playlists/playlists.module.ts");
+/* harmony import */ var _timelines_timelines_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./timelines/timelines.component */ "./src/app/timelines/timelines.component.ts");
+/* harmony import */ var _settings_settings_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./settings/settings.component */ "./src/app/settings/settings.component.ts");
+/* harmony import */ var _common_dialog_dialog_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./common/dialog/dialog.component */ "./src/app/common/dialog/dialog.component.ts");
+/* harmony import */ var _services_language_service__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./services/language.service */ "./src/app/services/language.service.ts");
+/* harmony import */ var _library_editor_toolbar_editor_toolbar_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./library/editor-toolbar/editor-toolbar.component */ "./src/app/library/editor-toolbar/editor-toolbar.component.ts");
 
 
 
@@ -173,24 +2076,24 @@ __webpack_require__.r(__webpack_exports__);
 
 var appRoutes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
-].concat(_user_user_module__WEBPACK_IMPORTED_MODULE_21__["userRoutes"], [
+].concat(_user_user_module__WEBPACK_IMPORTED_MODULE_20__["userRoutes"], [
     {
-        path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_22__["DashboardComponent"], canActivate: [_auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_25__["AuthGuardService"]], children: [
+        path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_21__["DashboardComponent"], canActivate: [_auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_24__["AuthGuardService"]], children: [
             {
                 path: '',
-                component: _timelines_timelines_component__WEBPACK_IMPORTED_MODULE_29__["TimelinesComponent"],
+                component: _timelines_timelines_component__WEBPACK_IMPORTED_MODULE_28__["TimelinesComponent"],
             }
-        ].concat(_screens_screens_module__WEBPACK_IMPORTED_MODULE_26__["screenRoutes"], _library_library_module__WEBPACK_IMPORTED_MODULE_27__["libraryRoutes"], _playlists_playlists_module__WEBPACK_IMPORTED_MODULE_28__["playlistsRoutes"], [
+        ].concat(_screens_screens_module__WEBPACK_IMPORTED_MODULE_25__["screenRoutes"], _library_library_module__WEBPACK_IMPORTED_MODULE_26__["libraryRoutes"], _playlists_playlists_module__WEBPACK_IMPORTED_MODULE_27__["playlistsRoutes"], [
             {
                 path: 'settings',
-                component: _settings_settings_component__WEBPACK_IMPORTED_MODULE_30__["SettingsComponent"],
+                component: _settings_settings_component__WEBPACK_IMPORTED_MODULE_29__["SettingsComponent"],
             },
         ])
     },
 ]);
 // AoT requires an exported function for factories
 function HttpLoaderFactory(http) {
-    return new _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_24__["TranslateHttpLoader"](http);
+    return new _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_23__["TranslateHttpLoader"](http);
 }
 function tokenGetter() {
     return localStorage.getItem('access_token');
@@ -203,23 +2106,22 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"],
                 _common_loader_loader_component__WEBPACK_IMPORTED_MODULE_13__["LoaderComponent"],
-                _directives_adapt_height__WEBPACK_IMPORTED_MODULE_18__["AdaptHeightDirective"],
-                _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_22__["DashboardComponent"],
-                _timelines_timelines_component__WEBPACK_IMPORTED_MODULE_29__["TimelinesComponent"],
-                _library_editor_toolbar_editor_toolbar_component__WEBPACK_IMPORTED_MODULE_33__["EditorToolbarComponent"],
-                _settings_settings_component__WEBPACK_IMPORTED_MODULE_30__["SettingsComponent"],
-                _common_dialog_dialog_component__WEBPACK_IMPORTED_MODULE_31__["DialogComponent"],
+                _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_21__["DashboardComponent"],
+                _timelines_timelines_component__WEBPACK_IMPORTED_MODULE_28__["TimelinesComponent"],
+                _library_editor_toolbar_editor_toolbar_component__WEBPACK_IMPORTED_MODULE_32__["EditorToolbarComponent"],
+                _settings_settings_component__WEBPACK_IMPORTED_MODULE_29__["SettingsComponent"],
+                _common_dialog_dialog_component__WEBPACK_IMPORTED_MODULE_30__["DialogComponent"],
             ],
             imports: [
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_15__["HttpClientModule"],
-                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_23__["TranslateModule"].forRoot({
+                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_22__["TranslateModule"].forRoot({
                     loader: {
-                        provide: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_23__["TranslateLoader"],
+                        provide: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_22__["TranslateLoader"],
                         useFactory: HttpLoaderFactory,
                         deps: [_angular_common_http__WEBPACK_IMPORTED_MODULE_15__["HttpClient"]]
                     }
                 }),
-                _shared_module__WEBPACK_IMPORTED_MODULE_20__["SharedModule"],
+                _shared_module__WEBPACK_IMPORTED_MODULE_19__["SharedModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_11__["RouterModule"].forRoot(appRoutes, { enableTracing: false, useHash: true } // <-- debugging purposes only
                 ),
                 ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_9__["TabsModule"].forRoot(),
@@ -230,20 +2132,20 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
-                ngx_order_pipe__WEBPACK_IMPORTED_MODULE_19__["OrderModule"],
+                ngx_order_pipe__WEBPACK_IMPORTED_MODULE_18__["OrderModule"],
                 _ng_dynamic_forms_ui_bootstrap__WEBPACK_IMPORTED_MODULE_6__["DynamicFormsBootstrapUIModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"],
-                _user_user_module__WEBPACK_IMPORTED_MODULE_21__["UserModule"],
-                _screens_screens_module__WEBPACK_IMPORTED_MODULE_26__["ScreensModule"],
-                _library_library_module__WEBPACK_IMPORTED_MODULE_27__["LibraryModule"],
-                _playlists_playlists_module__WEBPACK_IMPORTED_MODULE_28__["PlaylistsModule"],
+                _user_user_module__WEBPACK_IMPORTED_MODULE_20__["UserModule"],
+                _screens_screens_module__WEBPACK_IMPORTED_MODULE_25__["ScreensModule"],
+                _library_library_module__WEBPACK_IMPORTED_MODULE_26__["LibraryModule"],
+                _playlists_playlists_module__WEBPACK_IMPORTED_MODULE_27__["PlaylistsModule"],
                 _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_14__["JwtModule"].forRoot({
                     config: {
                         tokenGetter: tokenGetter
                     }
                 })
             ],
-            providers: [_services_user_context_service__WEBPACK_IMPORTED_MODULE_17__["UserService"], _services_language_service__WEBPACK_IMPORTED_MODULE_32__["LanguageService"], _auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_25__["AuthGuardService"],
+            providers: [_services_user_context_service__WEBPACK_IMPORTED_MODULE_17__["UserService"], _services_language_service__WEBPACK_IMPORTED_MODULE_31__["LanguageService"], _auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_24__["AuthGuardService"],
                 {
                     provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_15__["HTTP_INTERCEPTORS"],
                     useClass: _auth_auth_intercepter__WEBPACK_IMPORTED_MODULE_16__["AuthInterceptor"],
@@ -317,7 +2219,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+debugger;
 _methodus_client__WEBPACK_IMPORTED_MODULE_2__["Rest"].intercept(function (req) {
+    debugger;
     var idToken = localStorage.getItem('token');
     if (idToken) {
         req.headers['Authorization'] = 'Bearer ' + idToken;
@@ -356,7 +2260,7 @@ var AuthInterceptor = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar-fixed-top dashboard-nav\"> \n        <button type=\"button\" (click)=\"toggleSidebar()\" id=\"sidebarCollapse\" class=\"btn btn-sm btn-info\">\n                <i class=\"fas fa-align-left\"></i>\n            </button>\n            \n    <button class=\"btn btn-primary crumbs\" *ngFor=\"let b of crumbs\">{{b.name}}</button>\n</nav>\n"
+module.exports = "<nav class=\"navbar-fixed-top dashboard-nav\"> \n        <button type=\"button\" (click)=\"toggleSidebar()\" id=\"sidebarCollapse\" class=\"btn btn-sm btn-info\">\n                <i class=\"fas fa-align-left\"></i>\n            </button>\n\n    <button class=\"btn btn-primary btn-sm crumbs\" *ngFor=\"let b of crumbs\">{{\"NAVBAR.\" + b.name.toUpperCase() | translate}}</button>\n</nav>\n"
 
 /***/ }),
 
@@ -384,20 +2288,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_name_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/name.service */ "./src/app/services/name.service.ts");
+
 
 
 
 var BreadCrumbsComponent = /** @class */ (function () {
-    function BreadCrumbsComponent(_ngZone, router, route, changeDetector) {
+    function BreadCrumbsComponent(_ngZone, router, nameService, route, changeDetector) {
+        var _this = this;
         this._ngZone = _ngZone;
         this.router = router;
+        this.nameService = nameService;
         this.route = route;
         this.changeDetector = changeDetector;
         this.Toggled = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.crumbs = [];
-    }
-    BreadCrumbsComponent.prototype.ngOnInit = function () {
-        var _this = this;
+        this.crumbs = [];
         this.router.events.subscribe(function (val) {
             if (val.urlAfterRedirects) {
                 _this._ngZone.run(function () { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
@@ -405,20 +2311,19 @@ var BreadCrumbsComponent = /** @class */ (function () {
                     return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                         this.crumbs = [];
                         val.url.split('/').forEach(function (frag) {
-                            if (frag) {
+                            if (frag && frag !== 'dashbaord') {
                                 _this.crumbs.push({ name: frag });
                             }
                         });
-                        // this.crumbs = val.urlAfterRedirects.split('/').map((frag) => {
-                        //   return { name: frag };
-                        // });
-                        // this.crumbs = val.urlAfterRedirects;
-                        this.changeDetector.detectChanges();
                         return [2 /*return*/];
                     });
                 }); });
             }
         });
+        this.route.params.subscribe(function (val) {
+        });
+    }
+    BreadCrumbsComponent.prototype.ngOnInit = function () {
     };
     BreadCrumbsComponent.prototype.toggleSidebar = function () {
         this.toggled = !this.toggled;
@@ -434,7 +2339,7 @@ var BreadCrumbsComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./bread-crumbs.component.html */ "./src/app/common/bread-crumbs/bread-crumbs.component.html"),
             styles: [__webpack_require__(/*! ./bread-crumbs.component.scss */ "./src/app/common/bread-crumbs/bread-crumbs.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _services_name_service__WEBPACK_IMPORTED_MODULE_3__["NameService"],
             _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]])
     ], BreadCrumbsComponent);
     return BreadCrumbsComponent;
@@ -659,7 +2564,7 @@ var LoaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"topper {{className}}\"><span class=\"fas fa-clone bar-icon\"></span> <h4> {{title | translate}}</h4>\n</div>\n<a (click)=\"closeSlider();\" class=\"close-button\"><i class=\"far fa-window-close\"></i></a>\n"
+module.exports = "<div class=\"topper {{className}}\"><span class=\"fas fa-clone bar-icon\"></span> <h4> {{title | translate}}</h4>\n</div>\n\n<button class=\"close-button\" (click)=\"closeSlider();\"><i class=\"far fa-window-close\"></i></button>\n\n"
 
 /***/ }),
 
@@ -670,7 +2575,7 @@ module.exports = "<div class=\"topper {{className}}\"><span class=\"fas fa-clone
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".orange {\n  background: #de4823;\n  background: linear-gradient(90deg, #de4823 0%, #791f09 67%, #00fffc 100%); }\n\n.topper {\n  height: 65px;\n  opacity: 0.8;\n  position: absolute;\n  width: 112%;\n  padding-top: 30px;\n  top: -34px;\n  left: -16px; }\n\n.topper h4 {\n    display: inline; }\n\n.topper .bar-icon {\n    margin-left: 15px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL3NsaWRlLWhlYWRlci9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXGNvbW1vblxcc2xpZGUtaGVhZGVyXFxzbGlkZS1oZWFkZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDSSxvQkFBMEI7RUFDMUIsMEVBQXNHLEVBQ3pHOztBQUVEO0VBQ0ksYUFBWTtFQUNaLGFBQVk7RUFDWixtQkFBa0I7RUFDbEIsWUFBVztFQUNYLGtCQUFpQjtFQUNqQixXQUFVO0VBQ1YsWUFBVyxFQU9kOztBQWREO0lBU1EsZ0JBQWUsRUFDbEI7O0FBVkw7SUFZUSxrQkFBaUIsRUFDcEIiLCJmaWxlIjoic3JjL2FwcC9jb21tb24vc2xpZGUtaGVhZGVyL3NsaWRlLWhlYWRlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG4ub3JhbmdlIHtcclxuICAgIGJhY2tncm91bmQ6IHJnYigyMjIsNzIsMzUpO1xyXG4gICAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDkwZGVnLCByZ2JhKDIyMiw3MiwzNSwxKSAwJSwgcmdiYSgxMjEsMzEsOSwxKSA2NyUsIHJnYmEoMCwyNTUsMjUyLDEpIDEwMCUpO1xyXG59XHJcblxyXG4udG9wcGVye1xyXG4gICAgaGVpZ2h0OiA2NXB4OyAgIFxyXG4gICAgb3BhY2l0eTogMC44O1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgd2lkdGg6IDExMiU7XHJcbiAgICBwYWRkaW5nLXRvcDogMzBweDtcclxuICAgIHRvcDogLTM0cHg7XHJcbiAgICBsZWZ0OiAtMTZweDtcclxuICAgIGg0e1xyXG4gICAgICAgIGRpc3BsYXk6IGlubGluZTtcclxuICAgIH1cclxuICAgIC5iYXItaWNvbntcclxuICAgICAgICBtYXJnaW4tbGVmdDogMTVweDtcclxuICAgIH1cclxufVxyXG4iXX0= */"
+module.exports = ".orange {\n  background: #de4823;\n  background: linear-gradient(90deg, #de4823 0%, #791f09 67%, #00fffc 100%); }\n\n.topper {\n  pointer-events: none;\n  z-index: 0;\n  height: 65px;\n  opacity: 0.8;\n  position: absolute;\n  width: 112%;\n  padding-top: 30px;\n  top: -34px;\n  left: -16px; }\n\n.topper h4 {\n    display: inline; }\n\n.topper .bar-icon {\n    margin-left: 15px; }\n\n.rtl .close-button {\n  position: absolute;\n  z-index: 2000;\n  left: 0; }\n\n.ltr .close-button {\n  position: absolute;\n  z-index: 2000;\n  right: 0; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL3NsaWRlLWhlYWRlci9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXGNvbW1vblxcc2xpZGUtaGVhZGVyXFxzbGlkZS1oZWFkZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDSSxvQkFBMEI7RUFDMUIsMEVBQXNHLEVBQ3pHOztBQUVEO0VBQ0kscUJBQW9CO0VBQ3BCLFdBQVU7RUFDVixhQUFZO0VBQ1osYUFBWTtFQUNaLG1CQUFrQjtFQUNsQixZQUFXO0VBQ1gsa0JBQWlCO0VBQ2pCLFdBQVU7RUFDVixZQUFXLEVBT2Q7O0FBaEJEO0lBV1EsZ0JBQWUsRUFDbEI7O0FBWkw7SUFjUSxrQkFBaUIsRUFDcEI7O0FBR0w7RUFHUSxtQkFBa0I7RUFDbEIsY0FBYTtFQUNiLFFBQU8sRUFDVjs7QUFHTDtFQUVRLG1CQUFrQjtFQUNsQixjQUFhO0VBQ2IsU0FBUSxFQUNYIiwiZmlsZSI6InNyYy9hcHAvY29tbW9uL3NsaWRlLWhlYWRlci9zbGlkZS1oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcclxuLm9yYW5nZSB7XHJcbiAgICBiYWNrZ3JvdW5kOiByZ2IoMjIyLDcyLDM1KTtcclxuICAgIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCg5MGRlZywgcmdiYSgyMjIsNzIsMzUsMSkgMCUsIHJnYmEoMTIxLDMxLDksMSkgNjclLCByZ2JhKDAsMjU1LDI1MiwxKSAxMDAlKTtcclxufVxyXG5cclxuLnRvcHBlcntcclxuICAgIHBvaW50ZXItZXZlbnRzOiBub25lOyBcclxuICAgIHotaW5kZXg6IDA7XHJcbiAgICBoZWlnaHQ6IDY1cHg7ICAgXHJcbiAgICBvcGFjaXR5OiAwLjg7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB3aWR0aDogMTEyJTtcclxuICAgIHBhZGRpbmctdG9wOiAzMHB4O1xyXG4gICAgdG9wOiAtMzRweDtcclxuICAgIGxlZnQ6IC0xNnB4O1xyXG4gICAgaDR7XHJcbiAgICAgICAgZGlzcGxheTogaW5saW5lO1xyXG4gICAgfVxyXG4gICAgLmJhci1pY29ue1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiAxNXB4O1xyXG4gICAgfVxyXG59XHJcblxyXG4ucnRsXHJcbntcclxuICAgIC5jbG9zZS1idXR0b257XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIHotaW5kZXg6IDIwMDA7XHJcbiAgICAgICAgbGVmdDogMDtcclxuICAgIH1cclxufVxyXG5cclxuLmx0cntcclxuICAgIC5jbG9zZS1idXR0b257XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIHotaW5kZXg6IDIwMDA7XHJcbiAgICAgICAgcmlnaHQ6IDA7XHJcbiAgICB9XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -690,8 +2595,12 @@ __webpack_require__.r(__webpack_exports__);
 
 var SlideHeaderComponent = /** @class */ (function () {
     function SlideHeaderComponent() {
+        this.closed = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     SlideHeaderComponent.prototype.ngOnInit = function () {
+    };
+    SlideHeaderComponent.prototype.closeSlider = function () {
+        this.closed.emit(true);
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
@@ -705,6 +2614,10 @@ var SlideHeaderComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function)
     ], SlideHeaderComponent.prototype, "closeFn", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], SlideHeaderComponent.prototype, "closed", void 0);
     SlideHeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-slide-header',
@@ -727,7 +2640,7 @@ var SlideHeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper\">\n    <nav id=\"sidebar\" [class]=\"activeClass\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <ul class=\"mr-auto\">\n                <li class=\"nav-item\" class=\"language-bar\">\n                    <app-language-bar></app-language-bar>\n                </li>\n            </ul>\n            <strong>SN</strong>\n        </div>\n        <ul class=\"list-unstyled components\">\n            <li class=\"active\">\n                <a routerLink=\"/\">\n                    <i class=\"fas fa-home\"></i>\n                    {{\"NAVBAR.HOME\" | translate}}\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"screens\">\n                    <i class=\"fas fa-desktop\"></i>\n                    {{\"NAVBAR.SCREENS\" | translate}}\n\n                </a></li>\n            <li>\n                <a routerLink=\"screen-groups\">\n                    <i class=\"fas fa-clone\"></i>\n                    {{\"NAVBAR.SCREEN-GROUPS\" | translate}}\n\n                </a></li>\n            <li>\n                <a href=\"#LibrarySubmenu\" (click)=\"toggleSubmenu()\" routerLink=\"library\" data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-copy\"></i>\n                    {{\"NAVBAR.LIBRARY\" | translate}}\n                </a>\n                <ul class=\"{{subMenuState}} list-unstyled\" id=\"LibrarySubmenu\">\n                    <li>\n                        <a routerLink=\"library/images\"> {{\"NAVBAR.IMAGES\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/videos\"> {{\"NAVBAR.VIDEOS\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/sounds\"> {{\"NAVBAR.SOUNDS\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/slides\"> {{\"NAVBAR.SLIDES\" | translate}}</a>\n                    </li>\n                </ul>\n            </li>\n            <li>\n                <a routerLink=\"playlists\">\n                    <i class=\"fas fa-step-forward\"></i>\n                    {{\"NAVBAR.PLAYLISTS\" | translate}}\n\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"schedules\">\n                    <i class=\"fas fa-calendar-alt\"></i>\n                    {{\"NAVBAR.SCHEDULES\" | translate}}\n\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"settings\">\n                    <i class=\"fas fa-cogs\"></i>\n                    {{\"NAVBAR.SETTINGS\" | translate}}\n\n                </a>\n            </li>\n        </ul>\n    </nav>\n    <!-- Page Content  -->\n    <div id=\"content\">\n        <app-bread-crumbs (Toggled)=\"toggleSidebar($event)\"></app-bread-crumbs>\n        <div id=\"scroller\">\n            <router-outlet></router-outlet>\n        </div>\n    </div>\n    <footer class=\"footer closed\">\n        {{'DASHBOARD.FOOTER' | translate}}\n    </footer>\n</div>\n"
+module.exports = "<div class=\"wrapper\">\n    <nav id=\"sidebar\" [class]=\"activeClass\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <ul class=\"mr-auto\">\n                <li class=\"nav-item\" class=\"language-bar\">\n                    <app-language-bar></app-language-bar>\n                </li>\n            </ul>\n            <strong>SN</strong>\n        </div>\n        <ul class=\"list-unstyled components\">\n            <li>\n                <a routerLink=\"/\">\n                    <i class=\"fas fa-home\"></i>\n                    {{\"NAVBAR.HOME\" | translate}}\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"screens\" routerLinkActive=\"active-link\">\n                    <i class=\"fas fa-desktop\"></i>\n                    {{\"NAVBAR.SCREENS\" | translate}}\n\n                </a></li>\n            <li>\n                <a routerLink=\"screen-groups\" routerLinkActive=\"active-link\">\n                    <i class=\"fas fa-clone\"></i>\n                    {{\"NAVBAR.SCREEN-GROUPS\" | translate}}\n\n                </a></li>\n            <li>\n                <a href=\"#LibrarySubmenu\" (click)=\"toggleSubmenu()\"  routerLinkActive=\"active-link\" routerLink=\"library\" data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-copy\"></i>\n                    {{\"NAVBAR.LIBRARY\" | translate}}\n                </a>\n                <ul class=\"{{subMenuState}} list-unstyled\" id=\"LibrarySubmenu\">\n                    <li>\n                        <a routerLink=\"library/images\"  routerLinkActive=\"active-link\"> {{\"NAVBAR.IMAGES\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/videos\"  routerLinkActive=\"active-link\"> {{\"NAVBAR.VIDEOS\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/sounds\"  routerLinkActive=\"active-link\"> {{\"NAVBAR.SOUNDS\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/slides\"  routerLinkActive=\"active-link\"> {{\"NAVBAR.SLIDES\" | translate}}</a>\n                    </li>\n                </ul>\n            </li>\n            <li>\n                <a routerLink=\"playlists\"  routerLinkActive=\"active-link\">\n                    <i class=\"fas fa-step-forward\"></i>\n                    {{\"NAVBAR.PLAYLISTS\" | translate}}\n\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"schedules\"  routerLinkActive=\"active-link\">\n                    <i class=\"fas fa-calendar-alt\"></i>\n                    {{\"NAVBAR.SCHEDULES\" | translate}}\n\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"settings\"  routerLinkActive=\"active-link\">\n                    <i class=\"fas fa-cogs\"></i>\n                    {{\"NAVBAR.SETTINGS\" | translate}}\n\n                </a>\n            </li>\n        </ul>\n    </nav>\n    <!-- Page Content  -->\n    <div id=\"content\">\n        <app-bread-crumbs (Toggled)=\"toggleSidebar($event)\"></app-bread-crumbs>\n        <div id=\"scroller\">\n            <router-outlet></router-outlet>\n        </div>\n    </div>\n    <footer class=\"footer closed\">\n        {{'DASHBOARD.FOOTER' | translate}}\n    </footer>\n</div>\n"
 
 /***/ }),
 
@@ -738,7 +2651,7 @@ module.exports = "<div class=\"wrapper\">\n    <nav id=\"sidebar\" [class]=\"act
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Rhc2hib2FyZC9kYXNoYm9hcmQuY29tcG9uZW50LnNjc3MifQ== */"
+module.exports = ".active-link {\n  color: #c5c5c5;\n  background: #3f5efb;\n  background: radial-gradient(circle, #3f5efb 0%, #fc466b 100%); }\n  .active-link #LibrarySubmenu {\n    display: block !important; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGFzaGJvYXJkL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcZGFzaGJvYXJkXFxkYXNoYm9hcmQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxlQUFjO0VBQ2Qsb0JBQTBCO0VBQzFCLDhEQUFrRixFQUlyRjtFQVBEO0lBS1EsMEJBQXdCLEVBQzNCIiwiZmlsZSI6InNyYy9hcHAvZGFzaGJvYXJkL2Rhc2hib2FyZC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hY3RpdmUtbGlua3tcclxuICAgIGNvbG9yOiAjYzVjNWM1O1xyXG4gICAgYmFja2dyb3VuZDogcmdiKDYzLDk0LDI1MSk7XHJcbiAgICBiYWNrZ3JvdW5kOiByYWRpYWwtZ3JhZGllbnQoY2lyY2xlLCByZ2JhKDYzLDk0LDI1MSwxKSAwJSwgcmdiYSgyNTIsNzAsMTA3LDEpIDEwMCUpO1xyXG4gICAgI0xpYnJhcnlTdWJtZW51e1xyXG4gICAgICAgIGRpc3BsYXk6IGJsb2NrIWltcG9ydGFudDtcclxuICAgIH1cclxufVxyXG5cclxuIl19 */"
 
 /***/ }),
 
@@ -1228,7 +3141,7 @@ var EditorToolbarComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"element.position\"  ngDraggable [zIndex]=\"element.zIndex\" [handle]=\"ElementHandle\" [position]=\"element.position\"\n  class=\"drag-block element\" (edge)=\"checkEdge($event)\" [bounds]=\"myBounds\" [inBounds]=\"inBounds\" (started)=\"onStart($event)\"\n  (stopped)=\"onStop($event)\" (movingOffset)=\"onMoving($event)\" [preventDefaultEvent]=\"false\" (endOffset)=\"onMoveEnd($event)\"\n  (click)=\"focus($event, element)\" >   \n \n<div *ngIf=\"element.type === 'text' && element.selected\">\n\n<select [(ngModel)]=\"font\">\n  <option *ngFor=\"let c of fonts\" [ngValue]=\"c\">{{c.name}}</option>\n</select>\n\n<select [(ngModel)]=\"fontSize\">\n  <option *ngFor=\"let c of sizes\" [ngValue]=\"c\">{{c}}</option>\n</select>\n\n\n</div>\n\n    <span [ngStyle]=\"{'font-family': font.id, 'font-size': fontSize +'px' }\"\n      contenteditable=\"true\"   \n      [(ngModel)]=\"element.name\"\n      *ngIf=\"element.type === 'text'\"></span> \n\n    <img [src]=\"element.src\" *ngIf=\"element.type === 'image'\"     />    \n  \n</div>\n"
+module.exports = "<div  *ngIf=\"element.position\" ngDraggable  [zIndex]=\"element.zIndex\" [handle]=\"ElementHandle\" [position]=\"element.position\"\n  class=\"drag-block element\" (edge)=\"checkEdge($event)\" [bounds]=\"myBounds\" [inBounds]=\"inBounds\" (started)=\"onStart($event)\"\n  (stopped)=\"onStop($event)\" (movingOffset)=\"onMoving($event)\" [preventDefaultEvent]=\"false\" (endOffset)=\"onMoveEnd($event)\"\n  (click)=\"focus($event, element)\">\n\n  <div *ngIf=\"element.type === 'text' && element.selected\">\n    <select [(ngModel)]=\"font\">\n      <option *ngFor=\"let c of fonts\" [ngValue]=\"c\">{{c.name}}</option>\n    </select>\n\n    <select [(ngModel)]=\"fontSize\">\n      <option *ngFor=\"let c of sizes\" [ngValue]=\"c\">{{c}}</option>\n    </select>\n  </div>\n\n  <span [ngStyle]=\"{'font-family': font.id, 'font-size': fontSize +'px' }\" contenteditable=\"true\" [(ngModel)]=\"element.name\"\n    *ngIf=\"element.type === 'text'\"></span>\n  <img [src]=\"element.src\" ngResizable  class=\"image-element shadow\" *ngIf=\"element.type === 'image'\" />\n</div>\n"
 
 /***/ }),
 
@@ -1239,7 +3152,7 @@ module.exports = "<div *ngIf=\"element.position\"  ngDraggable [zIndex]=\"elemen
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".drag-block {\n  background-color: #ddd;\n  padding: 15px;\n  cursor: crosshair;\n  position: relative; }\n  .drag-block span {\n    cursor: text;\n    display: inline;\n    position: relative; }\n  .element {\n  min-width: 150px; }\n  .element .active {\n    border: 1px solid black; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGlicmFyeS9lbGVtZW50L0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcbGlicmFyeVxcZWxlbWVudFxcZWxlbWVudC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUVJLHVCQUFzQjtFQUN0QixjQUFhO0VBQ2Isa0JBQWlCO0VBQ2pCLG1CQUFrQixFQU1yQjtFQVhEO0lBT1EsYUFBWTtJQUNaLGdCQUFlO0lBQ2YsbUJBQ0osRUFBQztFQUdMO0VBQ0ksaUJBQWdCLEVBSW5CO0VBTEQ7SUFHUSx3QkFBdUIsRUFDMUIiLCJmaWxlIjoic3JjL2FwcC9saWJyYXJ5L2VsZW1lbnQvZWxlbWVudC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5kcmFnLWJsb2NrXHJcbntcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNkZGQ7XHJcbiAgICBwYWRkaW5nOiAxNXB4O1xyXG4gICAgY3Vyc29yOiBjcm9zc2hhaXI7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBzcGFuIHtcclxuICAgICAgICBjdXJzb3I6IHRleHQ7XHJcbiAgICAgICAgZGlzcGxheTogaW5saW5lO1xyXG4gICAgICAgIHBvc2l0aW9uOnJlbGF0aXZlXHJcbiAgICB9XHJcbn1cclxuXHJcbi5lbGVtZW50e1xyXG4gICAgbWluLXdpZHRoOiAxNTBweDtcclxuICAgIC5hY3RpdmV7XHJcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgYmxhY2s7XHJcbiAgICB9XHJcbn0iXX0= */"
+module.exports = ".drag-block {\n  background-color: #ddd;\n  padding: 15px;\n  cursor: crosshair;\n  position: absolute; }\n  .drag-block span {\n    cursor: text;\n    display: inline; }\n  .element {\n  border: 1px solid transparent; }\n  .element .active {\n    border: 1px solid black; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGlicmFyeS9lbGVtZW50L0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcbGlicmFyeVxcZWxlbWVudFxcZWxlbWVudC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUVJLHVCQUFzQjtFQUN0QixjQUFhO0VBQ2Isa0JBQWlCO0VBQ2pCLG1CQUFrQixFQU1yQjtFQVhEO0lBT1EsYUFBWTtJQUNaLGdCQUFlLEVBRWxCO0VBR0w7RUFDSSw4QkFBNkIsRUFJaEM7RUFMRDtJQUdRLHdCQUF1QixFQUMxQiIsImZpbGUiOiJzcmMvYXBwL2xpYnJhcnkvZWxlbWVudC9lbGVtZW50LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmRyYWctYmxvY2tcclxue1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2RkZDtcclxuICAgIHBhZGRpbmc6IDE1cHg7XHJcbiAgICBjdXJzb3I6IGNyb3NzaGFpcjtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHNwYW4ge1xyXG4gICAgICAgIGN1cnNvcjogdGV4dDtcclxuICAgICAgICBkaXNwbGF5OiBpbmxpbmU7XHJcbiAgICAgICAgXHJcbiAgICB9XHJcbn1cclxuXHJcbi5lbGVtZW50e1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XHJcbiAgICAuYWN0aXZle1xyXG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrO1xyXG4gICAgfVxyXG59XHJcblxyXG4uaW1hZ2UtZWxlbWVudHtcclxuICAgXHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -1331,7 +3244,7 @@ var ElementComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<div class=\"slider-container-wide {{active}} shadow\">\n\n<dialog open={{active}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n<input type=\"text\" name=\"searchPhrase\" /><button class=\"btn btn-primary\"></button>\n\n <div class=\"container no-margin\"> \n    <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\" >\n    {{item.Name}}\n      <ul class=\"sqr-toolbar\">\n    \n        <li>\n          <button class=\"btn btn-md btn-primary\" (click)=\"selectItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n        </li>\n      </ul>\n    </div>\n</div>\n\n </dialog>\n\n</div>\n"
+module.exports = "<div class=\"slider-container-wide {{active}} shadow\">\n\n  <dialog open= {{active}}>\n    <a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\"></i></a>\n    <input type=\"text\" name=\"searchPhrase\" /><button class=\"btn btn-primary\"></button>\n\n\n\n    <ul class=\"nav nav-tabs\">\n      <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n        <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n      </li>\n    </ul>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias !=='slides'\">\n      <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n        {{item.Name}}\n        <ul class=\"sqr-toolbar\">\n\n          <li>\n            <button class=\"btn btn-md btn-primary\" (click)=\"selectItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n          </li>\n        </ul>\n      </div>\n    </div>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias ==='slides'\">\n      <div *ngFor=\"let item of slides\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n        {{item.Name}}\n        <ul class=\"sqr-toolbar\">\n          <li>\n            <button class=\"btn btn-md btn-primary\" (click)=\"selectItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -1359,7 +3272,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _data_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../data.component */ "./src/app/data.component.ts");
-/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @signnature/client */ "../@signnature/client/index.js");
 /* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
 
@@ -1373,12 +3286,20 @@ var FinderComponent = /** @class */ (function (_super) {
         var _this = _super.call(this, _ngZone, translateService) || this;
         _this._ngZone = _ngZone;
         _this.translateService = translateService;
+        _this.tabs = [{ name: 'NAVBAR.IMAGES', selected: true, alias: 'images' },
+            { name: 'NAVBAR.VIDEOS', selected: false, alias: 'videos' },
+            { name: 'NAVBAR.SLIDES', selected: false, alias: 'slides' }];
         _this.selectItem = function (item) {
             _this.selector(item);
         };
         _this.DataController = _signnature_client__WEBPACK_IMPORTED_MODULE_3__["LibraryDataController"];
         return _this;
     }
+    FinderComponent.prototype.tabSelect = function (tab) {
+        this.tabs.forEach(function (tabItem) { return tabItem.selected = false; });
+        tab.selected = true;
+        this.selectedTab = tab;
+    };
     FinderComponent.prototype.closeSlider = function () {
         var _this = this;
         this._ngZone.run(function () { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
@@ -1389,7 +3310,26 @@ var FinderComponent = /** @class */ (function (_super) {
         }); });
     };
     FinderComponent.prototype.ngOnInit = function () {
-        this.loadItems();
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _a;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        this.loadItems();
+                        // if (Object.keys(query).length) {
+                        //   this.query = query;
+                        // }
+                        _a = this;
+                        return [4 /*yield*/, _signnature_client__WEBPACK_IMPORTED_MODULE_3__["SlidesDataController"].query(this.query)];
+                    case 1:
+                        // if (Object.keys(query).length) {
+                        //   this.query = query;
+                        // }
+                        _a.slides = _b.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
@@ -1449,7 +3389,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _data_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../data.component */ "./src/app/data.component.ts");
-/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @signnature/client */ "../@signnature/client/index.js");
 /* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
 
@@ -1526,7 +3466,7 @@ module.exports = ".bold {\n  font-weight: 700;\n}\n\n.block {\n  display: inline
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <div *ngIf=\"editing\">\n    <input #inlineEditControl [required]=\"required\" (blur)=\"onBlur($event)\" [name]=\"value\" [(ngModel)]=\"value\" [type]=\"type\" [placeholder]=\"label\" />\n  </div>\n  <div *ngIf=\"!editing\">\n    <label class=\"block bold\">{{label}}</label>\n    <div title=\"Click to edit\" (click)=\"edit(value)\" (focus)=\"edit(value);\" tabindex=\"0\" class=\"inline-edit\">{{value}}&nbsp;</div>\n  </div>\n</div>\n"
+module.exports = "<div>\n  <div *ngIf=\"editing\">\n    <input #inlineEditControl [required]=\"required\" (blur)=\"onBlur($event)\" [name]=\"value\" [(ngModel)]=\"value\" [type]=\"type\" [placeholder]=\"label\" />\n  </div>\n  <div *ngIf=\"!editing\">\n    <label class=\"block bold\">{{label}}</label>\n    <div title=\"Click to edit\" (click)=\"edit(value)\" tabindex=\"0\" class=\"inline-edit\">{{value}}&nbsp;</div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1596,14 +3536,14 @@ var InlineEditComponent = /** @class */ (function () {
     };
     // Start the editting process for the input element
     InlineEditComponent.prototype.edit = function (value) {
-        var _this = this;
         if (this.disabled) {
             return;
         }
         this.preValue = value;
         this.editing = true;
-        // Focus on the input element just as the editing begins
-        setTimeout(function (_) { return _this._renderer.invokeElementMethod(_this.inlineEditControl, 'focus', []); });
+        // // Focus on the input element just as the editing begins
+        // setTimeout(_ => this._renderer.invokeElementMethod(this.inlineEditControl,
+        //   'focus', []));
     };
     InlineEditComponent.prototype.ngOnInit = function () {
     };
@@ -1822,7 +3762,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _data_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../data.component */ "./src/app/data.component.ts");
-/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @signnature/client */ "../@signnature/client/index.js");
 /* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
 
@@ -1909,8 +3849,9 @@ var SelectionService = /** @class */ (function () {
         elementItem.selected = true;
         eventElement.currentTarget.className = eventElement.currentTarget.className + ' selected';
     };
-    SelectionService.prototype.load = function (elements) {
-        this.elements = elements;
+    SelectionService.prototype.load = function (document) {
+        this.document = document;
+        this.elements = this.document.elements;
     };
     SelectionService.prototype.reset = function () {
         this.elements = [];
@@ -1936,7 +3877,7 @@ var SelectionService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"item\">\n  <nav class=\"navbar-fixed-top dashboard-nav\">\n    <div class=\"btn-group btn-group-toggle\" data-toggle=\"buttons\">\n      <label class=\"btn btn-secondary\" (click)=\"setEditorMode('Designer');\">\n        <input type=\"radio\" name=\"options\" id=\"designer\" autocomplete=\"off\" checked> Designer\n      </label>\n      <label class=\"btn btn-secondary\" (click)=\"setEditorMode('Source');\">\n        <input type=\"radio\" name=\"options\" id=\"source\" autocomplete=\"off\"> Source\n      </label>\n    </div>\n <div class=\"btn-group\" data-toggle=\"buttons\">\n    <button (click)=\"newTextBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"fas fa-font\"></i></button>\n        <button (click)=\"newImageBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"far fa-image\"></i></button>\n        <button (click)=\"newVideoBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"fas fa-video\"></i></button>\n        <button (click)=\"newPluginBlockElement()\" class=\"btn btn-md btn-default\"><i class=\"fas fa-plug\"></i></button>\n</div>\n    <ul>\n      <li class=\"nav-item\">\n       </li>\n      <li class=\"nav-item\">\n        <button class=\"btn btn-primary\" (click)=\"resetItem()\">{{ \"SLIDES.RESET\" | translate }}</button>\n        <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">\n          <span class=\"btn-spinner-host\"> <i class=\"btn-spinner\" *ngIf=\"updateItemRunning\"></i> {{ \"SLIDES.UPDATE\" | translate }}\n          </span>\n        </button>\n        <button *ngIf=\"!item._id\" class=\"btn btn-primary btn-spinner-host\" (click)=\"createItem()\"><i class=\"btn-spinner\"></i>\n          {{ \"SLIDES.CREATE\" | translate }}</button>\n      </li>\n    </ul>\n  </nav>\n</div>\n\n<div *ngIf=\"editorMode==='Designer'\">\n\n\n\n\n  <p contenteditable=\"true\" [(ngModel)]=\"item.name\"></p>\n\n  <app-alloy></app-alloy>\n\n\n  <div class=\"row slide-editor\">\n    <div class=\"col-md-9\">\n      <div class=\"slide-canvas drag-boundary\" class=\"drag-boundary\" [ngClass]=\"{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }\"\n        #myBounds>\n        <app-element *ngFor=\"let el of selectionService.elements\" (click)=\"designerFocus($event)\" [element]=\"el\"></app-element>\n      </div>\n    </div>\n    <div class=\"col-md-3\">\n      <ul class=\"list-group\">\n        <ol class=\"list-group-item\" *ngFor=\"let el of selectionService.elements\">\n          <app-inline-edit [(ngModel)]=\"el.name\" label=\"Name\" [required]=\"true\" type=\"text\">\n          </app-inline-edit>\n        </ol>\n      </ul>\n    </div>\n  </div>\n</div>\n\n\n\n\n<div *ngIf=\"editorMode==='Source'\">\n  <pre> {{item.elements | json}}</pre>\n</div>\n\n\n<div class=\"slider-container-wide {{displayModalNew}} shadow\">\n  <app-finder></app-finder>\n</div>\n"
+module.exports = "<div *ngIf=\"item\">\n  <ul class=\"nav nav-tabs\">\n    <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n      <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n    </li>\n    <li *ngIf=\"tabs[0].selected\">\n      <div class=\"btn-group\" data-toggle=\"buttons\">\n        <button (click)=\"newTextBlockElement()\" class=\"btn btn-md btn-primary\"><i class=\"fas fa-font\"></i></button>\n        <button (click)=\"finder('image')\" class=\"btn btn-md btn-primary\"><i class=\"far fa-image\"></i></button>\n        <button (click)=\"finder('video')\" class=\"btn btn-md btn-primary\"><i class=\"fas fa-video\"></i></button>\n        <button (click)=\"newPluginBlockElement()\" class=\"btn btn-md btn-primary\"><i class=\"fas fa-plug\"></i></button>\n      </div>\n    </li>\n    <li class=\"toolbar-end\">\n      <button class=\"btn btn-primary btn-sm\" (click)=\"resetItem()\">{{ \"SLIDES.RESET\" | translate }}</button>\n      <button *ngIf=\"item._id\" class=\"btn btn-primary btn-sm\" (click)=\"updateItem()\">\n        <span class=\"btn-spinner-host\"> <i class=\"btn-spinner\" *ngIf=\"updateItemRunning\"></i> {{ \"SLIDES.UPDATE\" | translate }}\n        </span>\n      </button>\n      <button *ngIf=\"!item._id\" class=\"btn btn-primary btn-sm\" (click)=\"createItem()\">\n        <span class=\"btn-spinner-host\"> <i class=\"btn-spinner\" *ngIf=\"updateItemRunning\">\n          </i> {{ \"SLIDES.CREATE\" | translate }}\n        </span>\n      </button>\n    </li>\n  </ul>\n  <div *ngIf=\"tabs[0].selected\" [appAdaptHeight]=\"300\">\n    <div class=\"row slide-editor\">\n      <div class=\"col-md-9\">\n        <div class=\"slide-canvas drag-boundary\" [appAdaptHeight]=\"300\" class=\"drag-boundary\" [ngClass]=\"{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }\"\n          #myBounds>\n          <app-element *ngFor=\"let el of selectionService.elements\" (click)=\"designerFocus($event)\" [element]=\"el\"></app-element>\n        </div>\n      </div>\n      <div class=\"col-md-3\">\n        <ul class=\"list-group\">\n          <ol class=\"list-group-item\" *ngFor=\"let el of selectionService.elements\">\n            <app-inline-edit [(ngModel)]=\"el.name\" label=\"Name\" [required]=\"true\" type=\"text\">\n            </app-inline-edit>\n          </ol>\n        </ul>\n      </div>\n    </div>\n  </div>\n  <div *ngIf=\"tabs[1].selected\">\n    <pre> {{item.elements | json}}</pre>\n  </div>\n</div>\n<app-finder [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
 
 /***/ }),
 
@@ -1947,7 +3888,7 @@ module.exports = "<div *ngIf=\"item\">\n  <nav class=\"navbar-fixed-top dashboar
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".slide-editor {\n  width: 100%;\n  border: 1px solid black; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGlicmFyeS9zbGlkZS1lZGl0b3IvQzpcXHByb2plY3RzXFxzaWduLW5hdHVyZVxcd2ViL3NyY1xcYXBwXFxsaWJyYXJ5XFxzbGlkZS1lZGl0b3JcXHNsaWRlLWVkaXRvci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFlBQVc7RUFDWCx3QkFBdUIsRUFDMUIiLCJmaWxlIjoic3JjL2FwcC9saWJyYXJ5L3NsaWRlLWVkaXRvci9zbGlkZS1lZGl0b3IuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc2xpZGUtZWRpdG9ye1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcclxufSJdfQ== */"
+module.exports = ".slide-editor {\n  width: 100%;\n  border: 1px solid black;\n  height: 100%;\n  min-height: 300px; }\n\n.toolbar-end {\n  float: left; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGlicmFyeS9zbGlkZS1lZGl0b3IvQzpcXHByb2plY3RzXFxzaWduLW5hdHVyZVxcd2ViL3NyY1xcYXBwXFxsaWJyYXJ5XFxzbGlkZS1lZGl0b3JcXHNsaWRlLWVkaXRvci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFlBQVc7RUFDWCx3QkFBdUI7RUFDdkIsYUFBWTtFQUNaLGtCQUFpQixFQUNwQjs7QUFHRDtFQUNJLFlBQVcsRUFDZCIsImZpbGUiOiJzcmMvYXBwL2xpYnJhcnkvc2xpZGUtZWRpdG9yL3NsaWRlLWVkaXRvci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zbGlkZS1lZGl0b3J7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrO1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgbWluLWhlaWdodDogMzAwcHg7XHJcbn1cclxuXHJcbiBcclxuLnRvb2xiYXItZW5ke1xyXG4gICAgZmxvYXQ6IGxlZnQ7XHJcbn1cclxuIl19 */"
 
 /***/ }),
 
@@ -1965,10 +3906,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _data_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../data.component */ "./src/app/data.component.ts");
-/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @signnature/client */ "../@signnature/client/index.js");
 /* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
 /* harmony import */ var _selection_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../selection.service */ "./src/app/library/selection.service.ts");
+/* harmony import */ var _services_name_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../services/name.service */ "./src/app/services/name.service.ts");
+
 
 
 
@@ -1978,16 +3921,43 @@ __webpack_require__.r(__webpack_exports__);
 
 var SlideEditorComponent = /** @class */ (function (_super) {
     tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](SlideEditorComponent, _super);
-    function SlideEditorComponent(_ngZone, translateService, selectionService, route) {
+    function SlideEditorComponent(_ngZone, translateService, nameService, selectionService, route) {
         var _this = _super.call(this, _ngZone, translateService) || this;
         _this._ngZone = _ngZone;
         _this.translateService = translateService;
+        _this.nameService = nameService;
         _this.selectionService = selectionService;
         _this.route = route;
-        _this.editorMode = 'Designer';
+        _this.tabs = [{ name: 'PLAYLISTS.DESIGNER', selected: true }, { name: 'PLAYLISTS.SOURCE', selected: false }];
+        _this.finderActive = 'closing';
+        _this.addToList = function (resource) {
+            switch (_this.finderMode) {
+                case 'image':
+                    var imageBlock = {
+                        type: 'image',
+                        position: { x: 0, y: 0 },
+                        src: resource.resource,
+                        class: 'img', zIndex: 1000 + _this.item.elements.length + 1
+                    };
+                    _this.newBlockElement(imageBlock);
+                    break;
+                case 'video':
+                    break;
+            }
+            _this.finderActive = 'closing';
+        };
         _this.DataController = _signnature_client__WEBPACK_IMPORTED_MODULE_4__["SlidesDataController"];
+        _this.addToList.bind(_this);
         return _this;
     }
+    SlideEditorComponent.prototype.finder = function (finderMode) {
+        this.finderMode = finderMode;
+        this.finderActive = 'active';
+    };
+    SlideEditorComponent.prototype.tabSelect = function (tab) {
+        this.tabs.forEach(function (tabItem) { return tabItem.selected = false; });
+        tab.selected = true;
+    };
     SlideEditorComponent.prototype.ngOnInit = function () {
         var _this = this;
         if (!this.item) {
@@ -1996,11 +3966,18 @@ var SlideEditorComponent = /** @class */ (function (_super) {
                 return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
                     switch (_b.label) {
                         case 0:
+                            if (!(data.id !== '0')) return [3 /*break*/, 2];
                             _a = this;
                             return [4 /*yield*/, _signnature_client__WEBPACK_IMPORTED_MODULE_4__["SlidesDataController"].get(data.id)];
                         case 1:
                             _a.item = _b.sent();
-                            this.selectionService.load(this.item.elements);
+                            this.nameService.setName(this.item.Name);
+                            return [3 /*break*/, 3];
+                        case 2:
+                            this.item = { elements: [] };
+                            _b.label = 3;
+                        case 3:
+                            this.selectionService.load(this.item);
                             return [2 /*return*/];
                     }
                 });
@@ -2037,13 +4014,10 @@ var SlideEditorComponent = /** @class */ (function (_super) {
                 if (!this.item.elements) {
                     this.item.elements = [];
                 }
-                this.item.elements.push(block);
+                this.selectionService.elements.push(block);
                 return [2 /*return*/];
             });
         });
-    };
-    SlideEditorComponent.prototype.setEditorMode = function (editorMode) {
-        this.editorMode = editorMode;
     };
     SlideEditorComponent.prototype.designerFocus = function (element) {
         document.querySelector('.element'); // .removeClass('active');
@@ -2060,7 +4034,7 @@ var SlideEditorComponent = /** @class */ (function (_super) {
             template: __webpack_require__(/*! ./slide-editor.component.html */ "./src/app/library/slide-editor/slide-editor.component.html"),
             styles: [__webpack_require__(/*! ./slide-editor.component.scss */ "./src/app/library/slide-editor/slide-editor.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_5__["TranslateService"],
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_5__["TranslateService"], _services_name_service__WEBPACK_IMPORTED_MODULE_7__["NameService"],
             _selection_service__WEBPACK_IMPORTED_MODULE_6__["SelectionService"],
             _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
     ], SlideEditorComponent);
@@ -2078,7 +4052,7 @@ var SlideEditorComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container no-margin\">\n  <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}}\n    <ul class=\"sqr-toolbar\">\n      <li>\n        <button class=\"btn btn-md btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-md btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-md btn-primary\" [routerLink]=\"[item._id]\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n    </ul>\n  </div>\n</div>\n<div class=\"slider-container-wide {{displayModalNew}} shadow\">\n  <dialog open= {{displayModalNew}}>\n    <a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\"></i></a>\n    <form *ngIf=\"item\">\n      <div class=\"form-group\">\n        <label for=\"screenName\">{{ \"SLIDES.NAME\" | translate }}:</label>\n        <input type=\"text\" name=\"slideName\" class=\"form-control\" id=\"screenName\" [(ngModel)]=\"item.Name\">\n        <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SLIDES.NAME_HELP\" | translate }}</small>\n      </div>\n      <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"SLIDES.UPDATE\" | translate }}</button>\n      <button *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"SLIDES.CREATE\" | translate }}</button>\n      <div class=\"form-group\">\n        <app-slide-editor></app-slide-editor>\n      </div>\n    </form>\n  </dialog>\n</div>\n"
+module.exports = "<div class=\"container no-margin\">\n  <div class=\"sqr shadow sqr-btn\" [routerLink]=\"0\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}}\n    <ul class=\"sqr-toolbar\">\n      <li>\n        <button class=\"btn btn-md btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-md btn-primary\" [routerLink]=\"[item._id]\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n    </ul>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -2089,7 +4063,7 @@ module.exports = "<div class=\"container no-margin\">\n  <div class=\"sqr shadow
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".slide-canvas {\n  position: absolute;\n  border: 2px solid black; }\n\n.h1 {\n  font-size: 24px;\n  font-weight: bold; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGlicmFyeS9zbGlkZXMvQzpcXHByb2plY3RzXFxzaWduLW5hdHVyZVxcd2ViL3NyY1xcYXBwXFxsaWJyYXJ5XFxzbGlkZXNcXHNsaWRlcy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLG1CQUFrQjtFQUNsQix3QkFBdUIsRUFDeEI7O0FBR0Q7RUFDRSxnQkFBZTtFQUNmLGtCQUFpQixFQUNsQiIsImZpbGUiOiJzcmMvYXBwL2xpYnJhcnkvc2xpZGVzL3NsaWRlcy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zbGlkZS1jYW52YXN7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIGJvcmRlcjogMnB4IHNvbGlkIGJsYWNrO1xyXG59XHJcblxyXG5cclxuLmgxe1xyXG4gIGZvbnQtc2l6ZTogMjRweDtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxufSJdfQ== */"
+module.exports = ".slide-canvas {\n  position: relative;\n  border: 2px solid black; }\n\n.h1 {\n  font-size: 24px;\n  font-weight: bold; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGlicmFyeS9zbGlkZXMvQzpcXHByb2plY3RzXFxzaWduLW5hdHVyZVxcd2ViL3NyY1xcYXBwXFxsaWJyYXJ5XFxzbGlkZXNcXHNsaWRlcy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLG1CQUFrQjtFQUNsQix3QkFBdUIsRUFDeEI7O0FBR0Q7RUFDRSxnQkFBZTtFQUNmLGtCQUFpQixFQUNsQiIsImZpbGUiOiJzcmMvYXBwL2xpYnJhcnkvc2xpZGVzL3NsaWRlcy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zbGlkZS1jYW52YXN7XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gIGJvcmRlcjogMnB4IHNvbGlkIGJsYWNrO1xyXG59XHJcblxyXG5cclxuLmgxe1xyXG4gIGZvbnQtc2l6ZTogMjRweDtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxufSJdfQ== */"
 
 /***/ }),
 
@@ -2106,7 +4080,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _data_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../data.component */ "./src/app/data.component.ts");
-/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @signnature/client */ "../@signnature/client/index.js");
 /* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
 
@@ -2182,7 +4156,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _data_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../data.component */ "./src/app/data.component.ts");
-/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @signnature/client */ "../@signnature/client/index.js");
 /* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
 
@@ -2274,7 +4248,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UploadComponent", function() { return UploadComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @signnature/client */ "../@signnature/client/index.js");
 /* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_2__);
 
 
@@ -2452,7 +4426,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _data_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../data.component */ "./src/app/data.component.ts");
-/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @signnature/client */ "../@signnature/client/index.js");
 /* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
 
@@ -2518,7 +4492,7 @@ var VideosComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container no-margin\">\n  <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}} <span *ngIf=\"item.list\">({{item.list.length}})</span>\n    <ul class=\"sqr-toolbar\">\n      <li>\n        <button class=\"btn btn-md btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-md btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n  <dialog open= {{displayModalNew}}>\n    <a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\"></i></a>\n    <form *ngIf=\"item\">\n      <div class=\"form-group\">\n        <label for=\"itemName\">{{ \"PLAYLISTS.NAME\" | translate }}:</label>\n        <input type=\"text\" name=\"itemName\" class=\"form-control\" id=\"itemName\" [(ngModel)]=\"item.Name\">\n        <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"PLAYLISTS.NAME_HELP\" | translate }}</small>\n      </div>\n      <div class=\"form-group\">\n        <button (click)=\"schedule()\">+</button>\n\n      </div>\n      <div class=\"form-group\" class=\"sortable\">\n        <button (click)=\"finder()\">+</button>\n        <ngx-sortable *ngIf=\"item.list\" [listStyle]=\"listStyle\" [items]=\"item.list\" [name]=\"'List'\" (listSorted)=\"listOrderChanged($event)\">\n          <ng-template let-item>\n            <div class=\"sortable-list-item\">\n              <div class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n                {{item.Name}}\n\n              </div>\n            </div>\n          </ng-template>\n        </ngx-sortable>\n      </div>\n      <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"PLAYLISTS.UPDATE\" | translate }}</button>\n      <button *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"PLAYLISTS.CREATE\" | translate }}</button>\n    </form>\n  </dialog>\n</div>\n\n\n<div class=\"slider-container-drawer {{displayDrawer}} shadow\">\n  <dialog open= {{displayDrawer}}>\n    <a (click)=\"closeDrawer();\"><i class=\"far fa-window-close close-button\"></i></a>\n    <button (click)=\"addTime()\">Add time +</button>\n    <div *ngIf=\"item\">\n      <div *ngFor=\"let timeslot of item.TimeSlots\" class=\"sqr shadow\">\n\n      </div>\n    </div>\n  </dialog>\n</div>\n\n\n<app-finder [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
+module.exports = "<div class=\"container no-margin\">\n  <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}} <span *ngIf=\"item.list\">({{item.list.length}})</span>\n    <ul class=\"sqr-toolbar\">\n      <li>\n        <button class=\"btn btn-md btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-md btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n  <dialog open= {{displayModalNew}}>\n    <app-slide-header [title]=\"'NAVBAR.PLAYLISTS'\" [className]=\"'orange'\" (closed)=\"closeSlider($event)\"></app-slide-header>\n    <form *ngIf=\"item\" class=\"pt50\">\n      <div class=\"form-group\">\n        <label for=\"itemName\">{{ \"PLAYLISTS.NAME\" | translate }}:</label>\n        <input type=\"text\" name=\"itemName\" class=\"form-control\" id=\"itemName\" [(ngModel)]=\"item.Name\">\n        <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"PLAYLISTS.NAME_HELP\" | translate }}</small>\n      </div>\n      <ul class=\"nav nav-tabs\">\n        <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n          <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n        </li>\n      </ul>\n      <div *ngIf=\"tabs[0].selected\">\n        <div class=\"form-group\" class=\"sortable\">\n          <div class=\"shadow btn-long\" (click)=\"finder()\"><i class=\"fas fa-plus-circle\"></i> {{\"PLAYLISTS.ADDTOLIST\" | translate}}</div>\n          <ngx-sortable *ngIf=\"item.list\" [listStyle]=\"listStyle\" [items]=\"item.list\">\n            <ng-template let-item>\n              <div class=\"sortable-list-item\">\n                <div class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n                  {{item.Name}}\n                </div>\n              </div>\n            </ng-template>\n          </ngx-sortable>\n        </div>\n\n      </div>\n      <div *ngIf=\"tabs[1].selected\">\n        <div class=\"form-group shadow\">\n          <div class=\"btn-long\" (click)=\"schedule()\"><i class=\"fas fa-plus-circle\"></i> {{\"PLAYLISTS.ADDTIME\" | translate}}</div>\n          <div id=\"timeSlots\" *ngIf=\"editTime && selectedTimeEl\">\n            <div class=\"form-row\">\n              <div class=\"form-group col-md-6\">\n                <label for=\"itemName\">{{ \"PLAYLISTS.SCHEDULE\" | translate }}:</label>\n                <select [(ngModel)]=\"selectedTimeEl.timeslot\" name=\"timeSlotOptions\" [compareWith]=\"compareFnId\" class=\"form-control\">\n                  <option *ngFor=\"let c of timeSlotOptions\" [ngValue]=\"c\">{{c.name | translate}}</option>\n                </select>\n              </div>\n              <div class=\"form-group col-md-6\">\n                <label for=\"ScreenGroup\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n                <select [(ngModel)]=\"selectedTimeEl.screenGroup\" name=\"ScreenGroup\" [compareWith]=\"compareFn_id\" class=\"form-control\">\n                  <option *ngFor=\"let c of groups\" [ngValue]=\"c\">{{c.Name}}</option>\n                </select>\n              </div>\n              <button class=\"btn btn-primary\" (click)=\"addTimeSlot()\">{{ \"PLAYLISTS.SETTIME\" | translate}}</button>\n            </div>\n          </div>\n        </div>\n\n        <div class=\"container\">\n\n          <div *ngFor=\"let timeslotEl of item.TimeSlots\" class=\"sqr short shadow\">\n            <label>{{timeslotEl.timeslot.name | translate}}</label>\n            <small>{{timeslotEl.screenGroup.Name}}</small>\n            <ul class=\"sqr-toolbar\">\n              <li>\n                <button class=\"btn btn-md btn-danger\" (click)=\"deleteTimeslot(timeslotEl);\"> <i class=\"fas fa-trash\"></i>\n                </button>\n              </li>\n              <li>\n                <button class=\"btn btn-md btn-primary\" (click)=\"editTimeslot(timeslotEl);\"> <i class=\"fas fa-edit\"></i> </button>\n              </li>\n            </ul>\n          </div>\n        </div>\n      </div>\n      <hr />\n      <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"PLAYLISTS.UPDATE\" | translate }}</button>\n      <button *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"PLAYLISTS.CREATE\" | translate }}</button>\n\n    </form>\n  </dialog>\n</div>\n\n<!-- <div class=\"slider-container-drawer {{displayDrawer}} shadow\">\n  <dialog open= {{displayDrawer}}>\n    <app-slide-header [title]=\"'NAVBAR.SCHEDULES'\" [className]=\"'orange'\" (closed)=\"closeDrawer($event)\"></app-slide-header>\n    <div *ngIf=\"item\" class=\"pt50\">\n      <div class=\"sqr shadow sqr-btn\" (click)=\"addTime()\"><i class=\"fas fa-plus-circle\"></i></div>\n      <div *ngFor=\"let timeslot of item.TimeSlots\" class=\"sqr shadow\">\n        <ul class=\"sqr-toolbar\">\n          <li>\n            <button class=\"btn btn-md btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n          </li>\n          <li>\n            <button class=\"btn btn-md btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </dialog>\n</div> -->\n\n<app-finder [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
 
 /***/ }),
 
@@ -2529,7 +4503,7 @@ module.exports = "<div class=\"container no-margin\">\n  <div class=\"sqr shadow
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BsYXlsaXN0cy9wbGF5bGlzdC9wbGF5bGlzdHMuY29tcG9uZW50LnNjc3MifQ== */"
+module.exports = ".short {\n  height: 90px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGxheWxpc3RzL3BsYXlsaXN0L0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxccGxheWxpc3RzXFxwbGF5bGlzdFxccGxheWxpc3RzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFDO0VBQ0ksYUFBVyxFQUNkIiwiZmlsZSI6InNyYy9hcHAvcGxheWxpc3RzL3BsYXlsaXN0L3BsYXlsaXN0cy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiAuc2hvcnR7XHJcbiAgICAgaGVpZ2h0OjkwcHg7XHJcbiB9Il19 */"
 
 /***/ }),
 
@@ -2545,7 +4519,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlaylistsComponent", function() { return PlaylistsComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @signnature/client */ "../@signnature/client/index.js");
 /* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _data_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../data.component */ "./src/app/data.component.ts");
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
@@ -2564,6 +4538,8 @@ var PlaylistsComponent = /** @class */ (function (_super) {
             width: '100%',
             height: '400px',
         };
+        _this.tabs = [{ name: 'PLAYLISTS.LIST', selected: true }, { name: 'PLAYLISTS.TIME', selected: false }];
+        _this.timeSlotOptions = [{ id: 'ALL', name: 'TIMES.ALL' }, { id: '8TO8', name: 'TIMES.8TO8' }];
         _this.displayDrawer = 'closing';
         _this.finderActive = 'closing';
         _this.addToList = function (resource) {
@@ -2578,11 +4554,33 @@ var PlaylistsComponent = /** @class */ (function (_super) {
         return _this;
         // this.DataModel = PlaylistModel;
     }
+    PlaylistsComponent.prototype.tabSelect = function (tab) {
+        this.tabs.forEach(function (tabItem) { return tabItem.selected = false; });
+        tab.selected = true;
+    };
+    PlaylistsComponent.prototype.compareFnId = function (a, b) {
+        if (b) {
+            return a.id === b.id;
+        }
+    };
+    PlaylistsComponent.prototype.compareFn_id = function (a, b) {
+        if (b) {
+            return a._id === b._id;
+        }
+    };
     PlaylistsComponent.prototype.ngOnInit = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var groups;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                this.loadItems();
-                return [2 /*return*/];
+                switch (_a.label) {
+                    case 0:
+                        this.loadItems();
+                        return [4 /*yield*/, _signnature_client__WEBPACK_IMPORTED_MODULE_2__["ScreenGroupDataController"].query({})];
+                    case 1:
+                        groups = _a.sent();
+                        this.groups = groups;
+                        return [2 /*return*/];
+                }
             });
         });
     };
@@ -2592,17 +4590,39 @@ var PlaylistsComponent = /** @class */ (function (_super) {
     PlaylistsComponent.prototype.closeSlider = function () {
         this.displayModalNew = 'closing';
     };
-    PlaylistsComponent.prototype.finder = function () {
+    PlaylistsComponent.prototype.finder = function (finderMode) {
+        this.finderMode = finderMode;
         this.finderActive = 'active';
     };
     PlaylistsComponent.prototype.schedule = function () {
+        this.selectedTimeEl = {};
+        this.editTime = true;
         this.displayDrawer = 'active';
     };
-    PlaylistsComponent.prototype.addTime = function () {
+    PlaylistsComponent.prototype.addTimeSlot = function () {
         if (!this.item.TimeSlots) {
             this.item.TimeSlots = [];
         }
-        this.item.TimeSlots.push({ Name: 'asdasdasd' });
+        if (!this.selectedTimeEl.id) {
+            Object.assign(this.selectedTimeEl, { id: new Date().valueOf() });
+            this.item.TimeSlots.push(this.selectedTimeEl);
+        }
+        this.selectedTimeEl = null;
+    };
+    PlaylistsComponent.prototype.deleteTimeslot = function (timeslot) {
+        var _this = this;
+        this.translateService.get('DATA.CONFIRM_DELETE').subscribe(function (confirmMessage) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                if (confirm("" + confirmMessage)) {
+                    this.item.TimeSlots.splice(this.item.TimeSlots.indexOf(timeslot), 1);
+                }
+                return [2 /*return*/];
+            });
+        }); });
+    };
+    PlaylistsComponent.prototype.editTimeslot = function (timeslotEL) {
+        this.editTime = true;
+        this.selectedTimeEl = timeslotEL;
     };
     PlaylistsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -2709,7 +4729,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SchedulesComponent", function() { return SchedulesComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @signnature/client */ "../@signnature/client/index.js");
 /* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _data_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../data.component */ "./src/app/data.component.ts");
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
@@ -2757,7 +4777,7 @@ var SchedulesComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = " <div class=\"container no-margin\">\n<div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow\" >\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}}\n       \n    <ul class=\"sqr-toolbar\">\n        <li>\n    <button class=\"btn btn-md btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n</li>\n    <li>\n    <button class=\"btn btn-md btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n</li>\n</ul>\n    \n    </div>    \n</div>\n\n \n<div class=\"slider-container {{displayModalNew}} shadow\">\n<dialog open={{displayModalNew}}>\n<a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\" ></i></a>\n <form *ngIf=\"item\">\n  <div class=\"form-group\">\n    <label for=\"screenName\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n    <input type=\"text\" name=\"screenName\"  class=\"form-control\" id=\"screenName\"   [(ngModel)]=\"item.Name\">\n    <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n  </div>\n  <button   *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"SCREENS.UPDATE\" | translate }}</button>\n  <button   *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"SCREENS.CREATE\" | translate }}</button>\n\n</form>\n</dialog>\n</div>\n "
+module.exports = "<div class=\"container no-margin\">\n    <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n        <i class=\"fas fa-desktop\"></i> {{item.Name}}\n        <ul class=\"sqr-toolbar\">\n            <li>\n                <button class=\"btn btn-md btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n            </li>\n            <li>\n                <button class=\"btn btn-md btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n            </li>\n        </ul>\n    </div>\n</div>\n\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n    <dialog open= {{displayModalNew}}>\n        <app-slide-header [title]=\"'NAVBAR.SCREEN-GROUPS'\" [className]=\"'orange'\" (closed)=\"close($event)\"></app-slide-header>\n        <form *ngIf=\"item\" class=\"pt50\">\n            <div class=\"form-group\">\n                <label for=\"screenName\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n                <input type=\"text\" name=\"screenName\" class=\"form-control\" id=\"screenName\" [(ngModel)]=\"item.Name\">\n                <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n            </div>\n            <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"SCREENS.UPDATE\" | translate }}</button>\n            <button *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"SCREENS.CREATE\" | translate }}</button>\n        </form>\n    </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -2784,7 +4804,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScreenGroupComponent", function() { return ScreenGroupComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @signnature/client */ "../@signnature/client/index.js");
 /* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _data_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../data.component */ "./src/app/data.component.ts");
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
@@ -2809,6 +4829,9 @@ var ScreenGroupComponent = /** @class */ (function (_super) {
                 return [2 /*return*/];
             });
         });
+    };
+    ScreenGroupComponent.prototype.close = function () {
+        this.displayModalNew = 'closing';
     };
     ScreenGroupComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -2886,7 +4909,7 @@ var ScreensModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container no-margin\">\n    <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n        <i class=\"fas fa-desktop\"></i>\n        {{item.Name}}\n        <ul class=\"sqr-toolbar\">\n            <li>\n                <button class=\"btn btn-md btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n            </li>\n            <li>\n                <button class=\"btn btn-md btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n            </li>\n        </ul>\n    </div>\n</div>\n\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n    <dialog open= {{displayModalNew}}>\n        <app-slide-header [title]=\"'NAVBAR.SCREENS'\" [className]=\"'orange'\"></app-slide-header>\n        <!-- <div class=\"topper\"><span class=\"fas fa-clone bar-icon\"></span> <h4> {{\"NAVBAR.SCREENS\" | translate}}</h4>\n        </div>\n        <a (click)=\"closeSlider();\" class=\"close-button\"><i class=\"far fa-window-close\"></i></a> -->\n\n\n        <form *ngIf=\"item\" style=\"margin-top: 50px;\">\n            <div class=\"form-group\">\n                <label for=\"screenName\">{{ \"SCREENS.NAME\" | translate }}:</label>\n                <input type=\"text\" name=\"screenName\" class=\"form-control\" id=\"screenName\" [(ngModel)]=\"item.Name\">\n                <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"ScreenGroup\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n                <select [(ngModel)]=\"item.Group\" name=\"ScreenGroup\" [compareWith]=\"compareFn\" class=\"form-control\">\n                    <option *ngFor=\"let c of groups\" [ngValue]=\"c\">{{c.Name}}</option>\n                </select>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"exampleInputPassword1\">{{ \"SCREENS.TOKEN\" | translate }}</label>\n                <input type=\"text\" [(ngModel)]=\"item.Token\" name=\"txtToken\" class=\"form-control\" id=\"txtToken\" placeholder=\"{{'SCREENS.TOKEN' | translate}}\">\n            </div>\n            <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"SCREENS.UPDATE\" | translate }}</button>\n            <button *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"SCREENS.CREATE\" | translate }}</button>\n        </form>\n    </dialog>\n</div>\n"
+module.exports = "<div class=\"container no-margin\">\n    <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n    <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n        <i class=\"fas fa-desktop\"></i>\n        {{item.Name}}\n        <ul class=\"sqr-toolbar\">\n            <li>\n                <button class=\"btn btn-md btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n            </li>\n            <li>\n                <button class=\"btn btn-md btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n            </li>\n        </ul>\n    </div>\n</div>\n\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n    <dialog open= {{displayModalNew}}>\n        <app-slide-header [title]=\"'NAVBAR.SCREENS'\" [className]=\"'orange'\" (closed)=\"close($event)\"></app-slide-header>\n        <!-- <div class=\"topper\"><span class=\"fas fa-clone bar-icon\"></span> <h4> {{\"NAVBAR.SCREENS\" | translate}}</h4>\n        </div>\n        <a (click)=\"closeSlider();\" class=\"close-button\"><i class=\"far fa-window-close\"></i></a> -->\n\n\n        <form *ngIf=\"item\" class=\"pt50\">\n            <div class=\"form-group\">\n                <label for=\"screenName\">{{ \"SCREENS.NAME\" | translate }}:</label>\n                <input type=\"text\" name=\"screenName\" class=\"form-control\" id=\"screenName\" [(ngModel)]=\"item.Name\">\n                <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"ScreenGroup\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n                <select [(ngModel)]=\"item.Group\" name=\"ScreenGroup\" [compareWith]=\"compareFn\" class=\"form-control\">\n                    <option *ngFor=\"let c of groups\" [ngValue]=\"c\">{{c.Name}}</option>\n                </select>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"exampleInputPassword1\">{{ \"SCREENS.TOKEN\" | translate }}</label>\n                <input type=\"text\" [(ngModel)]=\"item.Token\" name=\"txtToken\" class=\"form-control\" id=\"txtToken\" placeholder=\"{{'SCREENS.TOKEN' | translate}}\">\n            </div>\n            <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"SCREENS.UPDATE\" | translate }}</button>\n            <button *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"SCREENS.CREATE\" | translate }}</button>\n        </form>\n    </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -2897,7 +4920,7 @@ module.exports = "<div class=\"container no-margin\">\n    <div class=\"sqr shad
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".container {\n  display: flex;\n  flex-flow: row wrap;\n  width: 100%; }\n\n.container div {\n  margin-right: 8px;\n  margin-bottom: 1em;\n  box-sizing: border-box;\n  padding: 15px 10px;\n  background: #fff;\n  border: none;\n  border-radius: 0;\n  margin-bottom: 40px;\n  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); }\n\n.modal {\n  margin: auto;\n  width: 50%;\n  height: 50%; }\n\n.ltr .slider-container.active {\n  right: 0;\n  overflow-y: hidden;\n  max-width: 80%;\n  /* approximate max height */\n  transition-property: all;\n  transition-duration: .5s;\n  transition-timing-function: cubic-bezier(0, 1, 0.5, 1); }\n\n.ltr .slider-container {\n  max-width: 0;\n  padding: 15px;\n  height: 100%;\n  position: fixed;\n  top: 10px;\n  bottom: 40px;\n  right: -50%; }\n\n.rtl .slider-container.active {\n  left: 0;\n  overflow-y: hidden;\n  max-width: 80%;\n  /* approximate max height */\n  transition-property: all;\n  transition-duration: .5s;\n  transition-timing-function: cubic-bezier(0, 1, 0.5, 1); }\n\n.rtl .slider-container {\n  background-color: black;\n  max-width: 0;\n  padding: 15px;\n  height: 100%;\n  position: fixed;\n  top: 10px;\n  bottom: 40px;\n  left: -50%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2NyZWVucy9zY3JlZW5zL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcc2NyZWVuc1xcc2NyZWVuc1xcc2NyZWVucy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGNBQWE7RUFDYixvQkFBbUI7RUFDbkIsWUFBVyxFQUVkOztBQUNEO0VBR0ksa0JBQWlCO0VBQ2pCLG1CQUFrQjtFQUNsQix1QkFBc0I7RUFDdEIsbUJBQWtCO0VBQ2xCLGlCQUFnQjtFQUNoQixhQUFZO0VBQ1osaUJBQWdCO0VBQ2hCLG9CQUFtQjtFQUVuQiwyQ0FBMEMsRUFFN0M7O0FBT0Q7RUFDSSxhQUFZO0VBQ1osV0FBVTtFQUNWLFlBQVcsRUFDZDs7QUFHRDtFQUNJLFNBQVE7RUFDUixtQkFBa0I7RUFDbEIsZUFBYztFQUFFLDRCQUE0QjtFQUM1Qyx5QkFBd0I7RUFDeEIseUJBQXdCO0VBQ3hCLHVEQUFzRCxFQUN6RDs7QUFHRDtFQUNJLGFBQVk7RUFDWixjQUFhO0VBQ2IsYUFBWTtFQUNaLGdCQUFlO0VBQ2YsVUFBUTtFQUNSLGFBQVk7RUFDWixZQUFXLEVBQ2Q7O0FBR0Q7RUFDSSxRQUFPO0VBQ1AsbUJBQWtCO0VBQ2xCLGVBQWM7RUFBRSw0QkFBNEI7RUFDNUMseUJBQXdCO0VBQ3hCLHlCQUF3QjtFQUN4Qix1REFBc0QsRUFDekQ7O0FBRUQ7RUFDSSx3QkFBdUI7RUFDdkIsYUFBWTtFQUNaLGNBQWE7RUFDYixhQUFZO0VBQ1osZ0JBQWU7RUFDZixVQUFRO0VBQ1IsYUFBWTtFQUNaLFdBQVUsRUFDYiIsImZpbGUiOiJzcmMvYXBwL3NjcmVlbnMvc2NyZWVucy9zY3JlZW5zLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbnRhaW5lciB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1mbG93OiByb3cgd3JhcDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgXHJcbn1cclxuLmNvbnRhaW5lciBkaXYge1xyXG4gIFxyXG4gIFxyXG4gICAgbWFyZ2luLXJpZ2h0OiA4cHg7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAxZW07XHJcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG4gICAgcGFkZGluZzogMTVweCAxMHB4O1xyXG4gICAgYmFja2dyb3VuZDogI2ZmZjtcclxuICAgIGJvcmRlcjogbm9uZTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDA7XHJcbiAgICBtYXJnaW4tYm90dG9tOiA0MHB4O1xyXG4gICAgLXdlYmtpdC1ib3gtc2hhZG93OiAxcHggMXB4IDNweCByZ2JhKDAsIDAsIDAsIDAuMSk7XHJcbiAgICBib3gtc2hhZG93OiAxcHggMXB4IDNweCByZ2JhKDAsIDAsIDAsIDAuMSk7XHJcblxyXG59XHJcblxyXG5cclxuLy8gLmNvbnRhaW5lciBkaXY6bnRoLWNoaWxkKDRuKSB7XHJcbi8vICAgICBtYXJnaW4tcmlnaHQ6MDtcclxuLy8gfVxyXG5cclxuLm1vZGFse1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgd2lkdGg6IDUwJTtcclxuICAgIGhlaWdodDogNTAlO1xyXG59XHJcblxyXG4gXHJcbi5sdHIgLnNsaWRlci1jb250YWluZXIuYWN0aXZlIHtcclxuICAgIHJpZ2h0OiAwO1xyXG4gICAgb3ZlcmZsb3cteTogaGlkZGVuO1xyXG4gICAgbWF4LXdpZHRoOiA4MCU7IC8qIGFwcHJveGltYXRlIG1heCBoZWlnaHQgKi9cclxuICAgIHRyYW5zaXRpb24tcHJvcGVydHk6IGFsbDtcclxuICAgIHRyYW5zaXRpb24tZHVyYXRpb246IC41cztcclxuICAgIHRyYW5zaXRpb24tdGltaW5nLWZ1bmN0aW9uOiBjdWJpYy1iZXppZXIoMCwgMSwgMC41LCAxKTtcclxufVxyXG5cclxuXHJcbi5sdHIgLnNsaWRlci1jb250YWluZXIge1xyXG4gICAgbWF4LXdpZHRoOiAwOyAgIFxyXG4gICAgcGFkZGluZzogMTVweDsgICBcclxuICAgIGhlaWdodDogMTAwJTtcclxuICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgIHRvcDoxMHB4O1xyXG4gICAgYm90dG9tOiA0MHB4O1xyXG4gICAgcmlnaHQ6IC01MCU7XHJcbn1cclxuXHJcblxyXG4ucnRsIC5zbGlkZXItY29udGFpbmVyLmFjdGl2ZSB7XHJcbiAgICBsZWZ0OiAwO1xyXG4gICAgb3ZlcmZsb3cteTogaGlkZGVuO1xyXG4gICAgbWF4LXdpZHRoOiA4MCU7IC8qIGFwcHJveGltYXRlIG1heCBoZWlnaHQgKi9cclxuICAgIHRyYW5zaXRpb24tcHJvcGVydHk6IGFsbDtcclxuICAgIHRyYW5zaXRpb24tZHVyYXRpb246IC41cztcclxuICAgIHRyYW5zaXRpb24tdGltaW5nLWZ1bmN0aW9uOiBjdWJpYy1iZXppZXIoMCwgMSwgMC41LCAxKTtcclxufVxyXG5cclxuLnJ0bCAuc2xpZGVyLWNvbnRhaW5lciB7ICBcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xyXG4gICAgbWF4LXdpZHRoOiAwOyAgIFxyXG4gICAgcGFkZGluZzogMTVweDsgICBcclxuICAgIGhlaWdodDogMTAwJTtcclxuICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgIHRvcDoxMHB4O1xyXG4gICAgYm90dG9tOiA0MHB4O1xyXG4gICAgbGVmdDogLTUwJTtcclxufVxyXG5cclxuXHJcbiJdfQ== */"
+module.exports = ".container {\n  display: flex;\n  flex-flow: row wrap;\n  width: 100%; }\n\n.container div {\n  margin-right: 8px;\n  margin-bottom: 1em;\n  box-sizing: border-box;\n  padding: 15px 10px;\n  background: #fff;\n  border: none;\n  border-radius: 0;\n  margin-bottom: 40px;\n  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); }\n\n.modal {\n  margin: auto;\n  width: 50%;\n  height: 50%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2NyZWVucy9zY3JlZW5zL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcc2NyZWVuc1xcc2NyZWVuc1xcc2NyZWVucy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGNBQWE7RUFDYixvQkFBbUI7RUFDbkIsWUFBVyxFQUVkOztBQUNEO0VBR0ksa0JBQWlCO0VBQ2pCLG1CQUFrQjtFQUNsQix1QkFBc0I7RUFDdEIsbUJBQWtCO0VBQ2xCLGlCQUFnQjtFQUNoQixhQUFZO0VBQ1osaUJBQWdCO0VBQ2hCLG9CQUFtQjtFQUVuQiwyQ0FBMEMsRUFFN0M7O0FBT0Q7RUFDSSxhQUFZO0VBQ1osV0FBVTtFQUNWLFlBQVcsRUFDZCIsImZpbGUiOiJzcmMvYXBwL3NjcmVlbnMvc2NyZWVucy9zY3JlZW5zLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbnRhaW5lciB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1mbG93OiByb3cgd3JhcDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgXHJcbn1cclxuLmNvbnRhaW5lciBkaXYge1xyXG4gIFxyXG4gIFxyXG4gICAgbWFyZ2luLXJpZ2h0OiA4cHg7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAxZW07XHJcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG4gICAgcGFkZGluZzogMTVweCAxMHB4O1xyXG4gICAgYmFja2dyb3VuZDogI2ZmZjtcclxuICAgIGJvcmRlcjogbm9uZTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDA7XHJcbiAgICBtYXJnaW4tYm90dG9tOiA0MHB4O1xyXG4gICAgLXdlYmtpdC1ib3gtc2hhZG93OiAxcHggMXB4IDNweCByZ2JhKDAsIDAsIDAsIDAuMSk7XHJcbiAgICBib3gtc2hhZG93OiAxcHggMXB4IDNweCByZ2JhKDAsIDAsIDAsIDAuMSk7XHJcblxyXG59XHJcblxyXG5cclxuLy8gLmNvbnRhaW5lciBkaXY6bnRoLWNoaWxkKDRuKSB7XHJcbi8vICAgICBtYXJnaW4tcmlnaHQ6MDtcclxuLy8gfVxyXG5cclxuLm1vZGFse1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgd2lkdGg6IDUwJTtcclxuICAgIGhlaWdodDogNTAlO1xyXG59XHJcbiAiXX0= */"
 
 /***/ }),
 
@@ -2913,7 +4936,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScreensComponent", function() { return ScreensComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @signnature/client */ "../@signnature/client/index.js");
 /* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _data_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../data.component */ "./src/app/data.component.ts");
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
@@ -2935,6 +4958,9 @@ var ScreensComponent = /** @class */ (function (_super) {
         if (b) {
             return a._id === b._id;
         }
+    };
+    ScreensComponent.prototype.close = function () {
+        this.displayModalNew = 'closing';
     };
     ScreensComponent.prototype.ngOnInit = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
@@ -3081,6 +5107,43 @@ var DictionaryService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/services/name.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/services/name.service.ts ***!
+  \******************************************/
+/*! exports provided: NameService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NameService", function() { return NameService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
+
+
+
+var NameService = /** @class */ (function () {
+    function NameService(translate) {
+        this.translate = translate;
+    }
+    NameService.prototype.setName = function (name) {
+        this.name = name;
+    };
+    NameService.prototype.getName = function () {
+        return this.name;
+    };
+    NameService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"]])
+    ], NameService);
+    return NameService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/services/user.context.service.ts":
 /*!**************************************************!*\
   !*** ./src/app/services/user.context.service.ts ***!
@@ -3220,8 +5283,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
 /* harmony import */ var _services_language_dictionary_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/language/dictionary.service */ "./src/app/services/language/dictionary.service.ts");
-/* harmony import */ var ngx_file_drop__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-file-drop */ "./node_modules/ngx-file-drop/fesm5/ngx-file-drop.js");
-/* harmony import */ var angular_draggable_droppable__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! angular-draggable-droppable */ "./node_modules/angular-draggable-droppable/fesm5/angular-draggable-droppable.js");
+/* harmony import */ var _services_name_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services/name.service */ "./src/app/services/name.service.ts");
+/* harmony import */ var ngx_file_drop__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-file-drop */ "./node_modules/ngx-file-drop/fesm5/ngx-file-drop.js");
 /* harmony import */ var angular2_draggable__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! angular2-draggable */ "./node_modules/angular2-draggable/fesm5/angular2-draggable.js");
 /* harmony import */ var _common_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./common/language-bar/language-bar.component */ "./src/app/common/language-bar/language-bar.component.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
@@ -3229,11 +5292,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./library/finder/finder.component */ "./src/app/library/finder/finder.component.ts");
 /* harmony import */ var _common_slide_header_slide_header_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./common/slide-header/slide-header.component */ "./src/app/common/slide-header/slide-header.component.ts");
 /* harmony import */ var _common_bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./common/bread-crumbs/bread-crumbs.component */ "./src/app/common/bread-crumbs/bread-crumbs.component.ts");
+/* harmony import */ var _directives_adapt_height__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./directives/adapt-height */ "./src/app/directives/adapt-height.ts");
 
 
 
 
 
+
+// import { DragAndDropModule } from 'angular-draggable-droppable';
 
 
 
@@ -3258,11 +5324,11 @@ var SharedModule = /** @class */ (function () {
     SharedModule = SharedModule_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             imports: [_angular_common__WEBPACK_IMPORTED_MODULE_9__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"],
-                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateModule"].forChild(), ngx_file_drop__WEBPACK_IMPORTED_MODULE_4__["FileDropModule"], angular_draggable_droppable__WEBPACK_IMPORTED_MODULE_5__["DragAndDropModule"], angular2_draggable__WEBPACK_IMPORTED_MODULE_6__["AngularDraggableModule"]],
-            declarations: [_common_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_7__["LanguageBarComponent"], _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_10__["FinderComponent"], _common_slide_header_slide_header_component__WEBPACK_IMPORTED_MODULE_11__["SlideHeaderComponent"], _common_bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_12__["BreadCrumbsComponent"]],
-            providers: [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"], _services_language_dictionary_service__WEBPACK_IMPORTED_MODULE_3__["DictionaryService"]],
+                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateModule"].forChild(), ngx_file_drop__WEBPACK_IMPORTED_MODULE_5__["FileDropModule"], angular2_draggable__WEBPACK_IMPORTED_MODULE_6__["AngularDraggableModule"]],
+            declarations: [_directives_adapt_height__WEBPACK_IMPORTED_MODULE_13__["AdaptHeightDirective"], _common_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_7__["LanguageBarComponent"], _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_10__["FinderComponent"], _common_slide_header_slide_header_component__WEBPACK_IMPORTED_MODULE_11__["SlideHeaderComponent"], _common_bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_12__["BreadCrumbsComponent"]],
+            providers: [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"], _services_language_dictionary_service__WEBPACK_IMPORTED_MODULE_3__["DictionaryService"], _services_name_service__WEBPACK_IMPORTED_MODULE_4__["NameService"]],
             exports: [_common_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_7__["LanguageBarComponent"], _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_10__["FinderComponent"], _common_slide_header_slide_header_component__WEBPACK_IMPORTED_MODULE_11__["SlideHeaderComponent"], _common_bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_12__["BreadCrumbsComponent"],
-                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateModule"], ngx_file_drop__WEBPACK_IMPORTED_MODULE_4__["FileDropModule"], angular_draggable_droppable__WEBPACK_IMPORTED_MODULE_5__["DragAndDropModule"], angular2_draggable__WEBPACK_IMPORTED_MODULE_6__["AngularDraggableModule"]],
+                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateModule"], ngx_file_drop__WEBPACK_IMPORTED_MODULE_5__["FileDropModule"], _directives_adapt_height__WEBPACK_IMPORTED_MODULE_13__["AdaptHeightDirective"], angular2_draggable__WEBPACK_IMPORTED_MODULE_6__["AngularDraggableModule"]],
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"]])
     ], SharedModule);
@@ -3291,7 +5357,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  timelines works!\n</p>\n"
+module.exports = "<div *ngFor=\"let item of screenGroups\">\n  {{item.Name}}\n</div>\n"
 
 /***/ }),
 
@@ -3307,12 +5373,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimelinesComponent", function() { return TimelinesComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @signnature/client */ "../@signnature/client/index.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 var TimelinesComponent = /** @class */ (function () {
     function TimelinesComponent() {
     }
     TimelinesComponent.prototype.ngOnInit = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _a;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _a = this;
+                        return [4 /*yield*/, _signnature_client__WEBPACK_IMPORTED_MODULE_2__["ScreenGroupDataController"].query({})];
+                    case 1:
+                        _a.screenGroups = _b.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
     };
     TimelinesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -3364,7 +5446,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_user_context_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/user.context.service */ "./src/app/services/user.context.service.ts");
-/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @signnature/client */ "../@signnature/client/index.js");
 /* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-bootstrap/modal */ "./node_modules/ngx-bootstrap/modal/index.js");
@@ -3519,7 +5601,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignupComponent", function() { return SignupComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @signnature/client */ "../@signnature/client/index.js");
 /* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _services_user_context_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/user.context.service */ "./src/app/services/user.context.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
