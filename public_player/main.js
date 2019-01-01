@@ -972,7 +972,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sun Dec 30 2018 13:16:47 GMT+0200 (Israel Standard Time)
+// Generated at: Tue Jan 01 2019 19:42:35 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__(/*! @methodus/client */ "../../methodus/methodus-client/dist/methodus-client.js");
 var AuthController = /** @class */ (function () {
     function AuthController() {
@@ -1100,7 +1100,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sun Dec 30 2018 13:16:47 GMT+0200 (Israel Standard Time)
+// Generated at: Tue Jan 01 2019 19:42:35 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__(/*! @methodus/client */ "../../methodus/methodus-client/dist/methodus-client.js");
 var DataController = /** @class */ (function () {
     function DataController() {
@@ -1215,7 +1215,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sun Dec 30 2018 13:16:47 GMT+0200 (Israel Standard Time)
+// Generated at: Tue Jan 01 2019 19:42:35 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__(/*! @methodus/client */ "../../methodus/methodus-client/dist/methodus-client.js");
 /*start custom*/
 var datacontroller_1 = __webpack_require__(/*! ./datacontroller */ "../@signnature/client/contracts/datacontroller.js");
@@ -1293,7 +1293,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sun Dec 30 2018 13:16:47 GMT+0200 (Israel Standard Time)
+// Generated at: Tue Jan 01 2019 19:42:35 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__(/*! @methodus/client */ "../../methodus/methodus-client/dist/methodus-client.js");
 var PlayerController = /** @class */ (function () {
     function PlayerController() {
@@ -1380,7 +1380,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sun Dec 30 2018 13:16:47 GMT+0200 (Israel Standard Time)
+// Generated at: Tue Jan 01 2019 19:42:35 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__(/*! @methodus/client */ "../../methodus/methodus-client/dist/methodus-client.js");
 /*start custom*/
 var datacontroller_1 = __webpack_require__(/*! ./datacontroller */ "../@signnature/client/contracts/datacontroller.js");
@@ -1430,7 +1430,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sun Dec 30 2018 13:16:47 GMT+0200 (Israel Standard Time)
+// Generated at: Tue Jan 01 2019 19:42:35 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__(/*! @methodus/client */ "../../methodus/methodus-client/dist/methodus-client.js");
 /*start custom*/
 var datacontroller_1 = __webpack_require__(/*! ./datacontroller */ "../@signnature/client/contracts/datacontroller.js");
@@ -1480,7 +1480,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sun Dec 30 2018 13:16:47 GMT+0200 (Israel Standard Time)
+// Generated at: Tue Jan 01 2019 19:42:35 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__(/*! @methodus/client */ "../../methodus/methodus-client/dist/methodus-client.js");
 /*start custom*/
 var datacontroller_1 = __webpack_require__(/*! ./datacontroller */ "../@signnature/client/contracts/datacontroller.js");
@@ -1530,7 +1530,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sun Dec 30 2018 13:16:47 GMT+0200 (Israel Standard Time)
+// Generated at: Tue Jan 01 2019 19:42:35 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__(/*! @methodus/client */ "../../methodus/methodus-client/dist/methodus-client.js");
 /*start custom*/
 var datacontroller_1 = __webpack_require__(/*! ./datacontroller */ "../@signnature/client/contracts/datacontroller.js");
@@ -1580,7 +1580,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sun Dec 30 2018 13:16:47 GMT+0200 (Israel Standard Time)
+// Generated at: Tue Jan 01 2019 19:42:35 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__(/*! @methodus/client */ "../../methodus/methodus-client/dist/methodus-client.js");
 /*start custom*/
 var datacontroller_1 = __webpack_require__(/*! ./datacontroller */ "../@signnature/client/contracts/datacontroller.js");
@@ -1658,7 +1658,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sun Dec 30 2018 13:16:47 GMT+0200 (Israel Standard Time)
+// Generated at: Tue Jan 01 2019 19:42:35 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__(/*! @methodus/client */ "../../methodus/methodus-client/dist/methodus-client.js");
 var Upload = /** @class */ (function () {
     function Upload() {
@@ -1717,7 +1717,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sun Dec 30 2018 13:16:47 GMT+0200 (Israel Standard Time)
+// Generated at: Tue Jan 01 2019 19:42:35 GMT+0200 (Israel Standard Time)
 var M = __webpack_require__(/*! @methodus/client */ "../../methodus/methodus-client/dist/methodus-client.js");
 /*start custom*/
 var datacontroller_1 = __webpack_require__(/*! ./datacontroller */ "../@signnature/client/contracts/datacontroller.js");
@@ -1833,7 +1833,7 @@ exports.UserMock = UserMock;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 // TMLA methodus contract.
-// Generated at: Sun Dec 30 2018 13:16:47 GMT+0200 (Israel Standard Time)
+// Generated at: Tue Jan 01 2019 19:42:35 GMT+0200 (Israel Standard Time)
 /**/
 var usermock_1 = __webpack_require__(/*! ./includes/usermock */ "../@signnature/client/includes/usermock.js");
 exports.UserMock = usermock_1.UserMock;
