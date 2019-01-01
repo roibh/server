@@ -2720,24 +2720,32 @@ var environment = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _methodus_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @methodus/client */ "./node_modules/@methodus/client/dist/methodus-client.js");
-/* harmony import */ var _methodus_client__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_methodus_client__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
-/* harmony import */ var _player_player_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./player/player.module */ "./src/player/player.module.ts");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
-
-window.METHODUS_CONFIG = { methodType: _methodus_client__WEBPACK_IMPORTED_MODULE_0__["MethodType"].Http };
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
+/* harmony import */ var _player_player_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./player/player.module */ "./src/player/player.module.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
+window.METHODUS_CONFIG = { methodType: 'Http' };
 
 
 
 
-if (_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].production) {
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["enableProdMode"])();
+if (_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].production) {
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["enableProdMode"])();
 }
-Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformBrowserDynamic"])().bootstrapModule(_player_player_module__WEBPACK_IMPORTED_MODULE_3__["PlayerModule"])
+Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformBrowserDynamic"])().bootstrapModule(_player_player_module__WEBPACK_IMPORTED_MODULE_2__["PlayerModule"])
     .catch(function (err) { return console.log(err); });
 
+
+/***/ }),
+
+/***/ "./src/player/player-entry.component.html":
+/*!************************************************!*\
+  !*** ./src/player/player-entry.component.html ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "xxxxxxxxxxxxxxxx\r\n\r\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -2875,12 +2883,11 @@ var PlayerComponent = /** @class */ (function () {
     };
     PlayerComponent.prototype.registerScreen = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var playerInformation;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, _signnature_client__WEBPACK_IMPORTED_MODULE_4__["PlayerController"].registerPlayer(this.Token)];
                     case 1:
-                        playerInformation = _a.sent();
+                        _a.sent();
                         setTimeout(this.validateScreen.bind(this), 10 * 1000);
                         return [2 /*return*/];
                 }
@@ -2889,7 +2896,7 @@ var PlayerComponent = /** @class */ (function () {
     };
     PlayerComponent.prototype.ngOnInit = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var str;
+            var str, datax;
             var _this = this;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
@@ -2902,6 +2909,7 @@ var PlayerComponent = /** @class */ (function () {
                         _a.sent();
                         return [3 /*break*/, 3];
                     case 2:
+                        datax = this.route.snapshot.data;
                         this.route.params.subscribe(function (data) {
                             _this._ngZone.run(function () { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
                                 var xstr;
@@ -2937,7 +2945,8 @@ var PlayerComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./player.component.html */ "./src/player/player.component.html"),
             styles: [__webpack_require__(/*! ./player.component.scss */ "./src/player/player.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_slide_service__WEBPACK_IMPORTED_MODULE_5__["SlideService"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"],
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_slide_service__WEBPACK_IMPORTED_MODULE_5__["SlideService"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"],
             _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]])
     ], PlayerComponent);
     return PlayerComponent;
@@ -2979,6 +2988,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _slide_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./slide.service */ "./src/player/slide.service.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _app_shared_module__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../app/shared.module */ "./src/app/shared.module.ts");
+/* harmony import */ var _root_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./root.component */ "./src/player/root.component.ts");
 
 
 
@@ -3004,6 +3014,7 @@ function HttpLoaderFactory(http) {
     return new _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_14__["TranslateHttpLoader"](http);
 }
 
+
 var appRoutes = [
     { path: ':id', pathMatch: 'full', component: _player_component__WEBPACK_IMPORTED_MODULE_10__["PlayerComponent"] },
 ];
@@ -3017,6 +3028,7 @@ var PlayerModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
                 _player_component__WEBPACK_IMPORTED_MODULE_10__["PlayerComponent"],
+                _root_component__WEBPACK_IMPORTED_MODULE_19__["PlayerEntryComponent"],
             ],
             providers: [_slide_service__WEBPACK_IMPORTED_MODULE_16__["SlideService"]],
             imports: [
@@ -3029,7 +3041,7 @@ var PlayerModule = /** @class */ (function () {
                 }),
                 _app_shared_module__WEBPACK_IMPORTED_MODULE_18__["SharedModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_17__["HttpClientModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_11__["RouterModule"].forRoot(appRoutes, { enableTracing: false, useHash: true } // <-- debugging purposes only
+                _angular_router__WEBPACK_IMPORTED_MODULE_11__["RouterModule"].forRoot(appRoutes, { enableTracing: true, useHash: true } // <-- debugging purposes only
                 ),
                 ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_9__["TabsModule"].forRoot(),
                 ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_8__["ModalModule"].forRoot(),
@@ -3047,10 +3059,42 @@ var PlayerModule = /** @class */ (function () {
                     }
                 })
             ],
-            bootstrap: [_player_component__WEBPACK_IMPORTED_MODULE_10__["PlayerComponent"]]
+            bootstrap: [_root_component__WEBPACK_IMPORTED_MODULE_19__["PlayerEntryComponent"]]
         })
     ], PlayerModule);
     return PlayerModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/player/root.component.ts":
+/*!**************************************!*\
+  !*** ./src/player/root.component.ts ***!
+  \**************************************/
+/*! exports provided: PlayerEntryComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlayerEntryComponent", function() { return PlayerEntryComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var PlayerEntryComponent = /** @class */ (function () {
+    function PlayerEntryComponent() {
+    }
+    PlayerEntryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'player-entry',
+            template: __webpack_require__(/*! ./player-entry.component.html */ "./src/player/player-entry.component.html"),
+            styles: [__webpack_require__(/*! ./player.component.scss */ "./src/player/player.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], PlayerEntryComponent);
+    return PlayerEntryComponent;
 }());
 
 
@@ -3083,11 +3127,11 @@ var SlideService = /** @class */ (function () {
     };
     SlideService.prototype.play = function (playerPlan, ctx, width, height) {
         var _this = this;
+        this.playerPlan = playerPlan;
         this.ctx = ctx;
         this.width = width;
         this.height = height;
         this.list = this.playerPlan[0].list;
-        var activeItem = this.list[0];
         this.prerender(this.list[this.itemIndex]);
         this.itemIndex++;
         setInterval(function () {
