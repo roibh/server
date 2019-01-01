@@ -3,6 +3,8 @@
 !config/prod.js
 !public/inline.bundle.js
 !public/*
+
+!public_player/*.js
 coverage/
 node_modules/
 *.js.map
