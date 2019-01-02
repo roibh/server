@@ -12,7 +12,7 @@
     "VIDEOS": "סרטונים",
     "SOUNDS": "צלילים",
     "SLIDES": "שקפים",
-    "FINDER":"המאתר"
+    "FINDER": "המאתר"
   },
   "LOGIN": {
     "TITLE": "כניסה",
@@ -76,7 +76,9 @@
     "LAST_DATE": "Last active date",
     "RESET": "Reset",
     "CREATE": "חדש",
-    "UPDATE": "עידכון"
+    "UPDATE": "עידכון",
+    "DESIGNER": "עיצוב",
+    "SOURCE": "מקור"
   },
   "PLAYLISTS": {
     "NAME": "שם רשימה",

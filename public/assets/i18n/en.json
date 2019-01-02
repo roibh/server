@@ -12,7 +12,7 @@
     "VIDEOS": "Videos",
     "SOUNDS": "Sounds",
     "SLIDES": "Slides",
-    "FINDER":"Finder"
+    "FINDER": "Finder"
   },
   "LOGIN": {
     "TITLE": "Login",
@@ -71,7 +71,9 @@
     "LAST_DATE": "Last active date",
     "RESET": "Reset",
     "CREATE": "Create",
-    "UPDATE": "Update"
+    "UPDATE": "Update",
+    "DESIGNER": "עיצוב",
+    "SOURCE": "מקור"
   },
   "PLAYLISTS": {
     "NAME": "שם רשימה",
