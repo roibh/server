@@ -5,10 +5,10 @@ import { Query } from '@methodus/data';
 @MethodConfig('PlayerController', [])
 export class PlayerController {
     @Method(Verbs.Post, '/register-player/:token')
-    public static async registerPlayer(@Param('token') token: any): Promise<MethodResult> {
-        const existing = await TokenModel.query(new Query('Token').filter({ Token: token }));
+    public static async registerPlayer(@Param('token') token: string): Promise<MethodResult> {
+        const existing = await TokenModel.query(new Query('Token').filter({ Token: token.toString() }));
         if (!existing || existing.length === 0) {
-            const result = await TokenModel.insert({ Token: token, Date: new Date(), Status: 'pending' });
+            const result = await TokenModel.insert({ Token: token.toString(), Date: new Date(), Status: 'pending' });
             return new MethodResult(result);
         } else {
             return new MethodResult(existing[0]);
@@ -17,12 +17,19 @@ export class PlayerController {
 
     @Method(Verbs.Post, '/validate-player/:token')
     public static async validatePlayer(@Param('token') token: any): Promise<MethodResult> {
-        const existing = await ScreenModel.query(new Query('Screen').filter({ Token: token }));
+        const existing = await ScreenModel.query(new Query('Screen').filter({ Token: token.toString() }));
         if (existing && existing.length > 0) {
-            const result = await TokenModel.update({ Token: token }, { Date: new Date(), Status: 'active' });
+            await TokenModel.update({ Token: token }, { Date: new Date(), Status: 'active' });
             return new MethodResult(existing[0]);
+        } else {
+            const tokenData = await TokenModel.query(new Query('Token').filter({ Token: token.toString() }));
+            if (tokenData && tokenData.length > 0) {
+                return new MethodResult(tokenData[0]);
+            } else {
+                throw new MethodError('not found', 404);
+            }
         }
-        return new MethodResult(existing);
+
     }
 
     @Method(Verbs.Post, '/run-player/:group')
