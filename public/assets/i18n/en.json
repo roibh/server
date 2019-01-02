@@ -11,7 +11,8 @@
     "IMAGES": "Images",
     "VIDEOS": "Videos",
     "SOUNDS": "Sounds",
-    "SLIDES": "Slides"
+    "SLIDES": "Slides",
+    "FINDER":"Finder"
   },
   "LOGIN": {
     "TITLE": "Login",

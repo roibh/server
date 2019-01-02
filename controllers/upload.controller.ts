@@ -59,7 +59,7 @@ export class Upload {
                         s3obj.upload({ Body: file.data } as any).
                             send((err: any, data: any) => {
                                 // tslint:disable-next-line:no-console
-                                console.log(data);
+                                console.log(err, data);
                             });
                     });
                 });

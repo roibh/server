@@ -134,6 +134,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _common_dialog_dialog_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./common/dialog/dialog.component */ "./src/app/common/dialog/dialog.component.ts");
 /* harmony import */ var _services_language_service__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./services/language.service */ "./src/app/services/language.service.ts");
 /* harmony import */ var _library_editor_toolbar_editor_toolbar_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./library/editor-toolbar/editor-toolbar.component */ "./src/app/library/editor-toolbar/editor-toolbar.component.ts");
+/* harmony import */ var ng2_dragula__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ng2-dragula */ "./node_modules/ng2-dragula/dist/fesm5/ng2-dragula.js");
+
 
 
 
@@ -208,6 +210,7 @@ var AppModule = /** @class */ (function () {
                 _common_dialog_dialog_component__WEBPACK_IMPORTED_MODULE_30__["DialogComponent"],
             ],
             imports: [
+                ng2_dragula__WEBPACK_IMPORTED_MODULE_33__["DragulaModule"].forRoot(),
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_15__["HttpClientModule"],
                 _ngx_translate_core__WEBPACK_IMPORTED_MODULE_22__["TranslateModule"].forRoot({
                     loader: {
@@ -657,7 +660,7 @@ var LoaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"topper {{className}}\"><span class=\"fas fa-clone bar-icon\"></span> <h4> {{title | translate}}</h4>\n</div>\n\n<button class=\"close-button\" (click)=\"closeSlider();\"><i class=\"far fa-window-close\"></i></button>\n\n"
+module.exports = "<div class=\"topper {{className}}\">\n    <i class=\"{{iconClass}} icon\"></i>\n    <h4> {{title | translate}}</h4>\n</div>\n\n<button class=\"close-button\" (click)=\"closeSlider();\"><i class=\"far fa-window-close\"></i></button>\n"
 
 /***/ }),
 
@@ -668,7 +671,7 @@ module.exports = "<div class=\"topper {{className}}\"><span class=\"fas fa-clone
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".orange {\n  background: #de4823;\n  background: linear-gradient(90deg, #de4823 0%, #791f09 67%, #00fffc 100%); }\n\n.topper {\n  pointer-events: none;\n  z-index: 0;\n  height: 65px;\n  opacity: 0.8;\n  position: absolute;\n  width: 112%;\n  padding-top: 30px;\n  top: -34px;\n  left: -16px; }\n\n.topper h4 {\n    display: inline; }\n\n.topper .bar-icon {\n    margin-left: 15px; }\n\n.rtl .close-button {\n  position: absolute;\n  z-index: 2000;\n  left: 0; }\n\n.ltr .close-button {\n  position: absolute;\n  z-index: 2000;\n  right: 0; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL3NsaWRlLWhlYWRlci9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXGNvbW1vblxcc2xpZGUtaGVhZGVyXFxzbGlkZS1oZWFkZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDSSxvQkFBMEI7RUFDMUIsMEVBQXNHLEVBQ3pHOztBQUVEO0VBQ0kscUJBQW9CO0VBQ3BCLFdBQVU7RUFDVixhQUFZO0VBQ1osYUFBWTtFQUNaLG1CQUFrQjtFQUNsQixZQUFXO0VBQ1gsa0JBQWlCO0VBQ2pCLFdBQVU7RUFDVixZQUFXLEVBT2Q7O0FBaEJEO0lBV1EsZ0JBQWUsRUFDbEI7O0FBWkw7SUFjUSxrQkFBaUIsRUFDcEI7O0FBR0w7RUFHUSxtQkFBa0I7RUFDbEIsY0FBYTtFQUNiLFFBQU8sRUFDVjs7QUFHTDtFQUVRLG1CQUFrQjtFQUNsQixjQUFhO0VBQ2IsU0FBUSxFQUNYIiwiZmlsZSI6InNyYy9hcHAvY29tbW9uL3NsaWRlLWhlYWRlci9zbGlkZS1oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcclxuLm9yYW5nZSB7XHJcbiAgICBiYWNrZ3JvdW5kOiByZ2IoMjIyLDcyLDM1KTtcclxuICAgIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCg5MGRlZywgcmdiYSgyMjIsNzIsMzUsMSkgMCUsIHJnYmEoMTIxLDMxLDksMSkgNjclLCByZ2JhKDAsMjU1LDI1MiwxKSAxMDAlKTtcclxufVxyXG5cclxuLnRvcHBlcntcclxuICAgIHBvaW50ZXItZXZlbnRzOiBub25lOyBcclxuICAgIHotaW5kZXg6IDA7XHJcbiAgICBoZWlnaHQ6IDY1cHg7ICAgXHJcbiAgICBvcGFjaXR5OiAwLjg7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB3aWR0aDogMTEyJTtcclxuICAgIHBhZGRpbmctdG9wOiAzMHB4O1xyXG4gICAgdG9wOiAtMzRweDtcclxuICAgIGxlZnQ6IC0xNnB4O1xyXG4gICAgaDR7XHJcbiAgICAgICAgZGlzcGxheTogaW5saW5lO1xyXG4gICAgfVxyXG4gICAgLmJhci1pY29ue1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiAxNXB4O1xyXG4gICAgfVxyXG59XHJcblxyXG4ucnRsXHJcbntcclxuICAgIC5jbG9zZS1idXR0b257XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIHotaW5kZXg6IDIwMDA7XHJcbiAgICAgICAgbGVmdDogMDtcclxuICAgIH1cclxufVxyXG5cclxuLmx0cntcclxuICAgIC5jbG9zZS1idXR0b257XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIHotaW5kZXg6IDIwMDA7XHJcbiAgICAgICAgcmlnaHQ6IDA7XHJcbiAgICB9XHJcbn0iXX0= */"
+module.exports = ".orange {\n  background: #de4823;\n  background: linear-gradient(90deg, #de4823 0%, #791f09 67%, #00fffc 100%);\n  color: #fff; }\n\n.topper {\n  pointer-events: none;\n  z-index: 0;\n  height: 65px;\n  opacity: 0.8;\n  position: absolute;\n  padding-top: 30px;\n  top: -30px;\n  left: -15px;\n  right: -15px; }\n\n.topper .icon {\n    margin: 8px;\n    vertical-align: top; }\n\n.topper h4 {\n    display: inline;\n    vertical-align: top; }\n\n.topper .bar-icon {\n    margin-left: 15px; }\n\n.rtl .close-button {\n  position: absolute;\n  z-index: 2000;\n  left: 0; }\n\n.ltr .close-button {\n  position: absolute;\n  z-index: 2000;\n  right: 0; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL3NsaWRlLWhlYWRlci9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXGNvbW1vblxcc2xpZGUtaGVhZGVyXFxzbGlkZS1oZWFkZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDSSxvQkFBMEI7RUFDMUIsMEVBQXNHO0VBQ3RHLFlBQVcsRUFDZDs7QUFFRDtFQUNJLHFCQUFvQjtFQUNwQixXQUFVO0VBQ1YsYUFBWTtFQUNaLGFBQVk7RUFDWixtQkFBa0I7RUFDbEIsa0JBQWlCO0VBQ2pCLFdBQVU7RUFDVixZQUFXO0VBQ1gsYUFBWSxFQVlmOztBQXJCRDtJQVdRLFlBQVc7SUFDWCxvQkFBbUIsRUFDdEI7O0FBYkw7SUFlUSxnQkFBZTtJQUNmLG9CQUFtQixFQUN0Qjs7QUFqQkw7SUFtQlEsa0JBQWlCLEVBQ3BCOztBQUdMO0VBR1EsbUJBQWtCO0VBQ2xCLGNBQWE7RUFDYixRQUFPLEVBQ1Y7O0FBR0w7RUFFUSxtQkFBa0I7RUFDbEIsY0FBYTtFQUNiLFNBQVEsRUFDWCIsImZpbGUiOiJzcmMvYXBwL2NvbW1vbi9zbGlkZS1oZWFkZXIvc2xpZGUtaGVhZGVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXHJcbi5vcmFuZ2Uge1xyXG4gICAgYmFja2dyb3VuZDogcmdiKDIyMiw3MiwzNSk7XHJcbiAgICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoOTBkZWcsIHJnYmEoMjIyLDcyLDM1LDEpIDAlLCByZ2JhKDEyMSwzMSw5LDEpIDY3JSwgcmdiYSgwLDI1NSwyNTIsMSkgMTAwJSk7XHJcbiAgICBjb2xvcjogI2ZmZjtcclxufVxyXG5cclxuLnRvcHBlcntcclxuICAgIHBvaW50ZXItZXZlbnRzOiBub25lOyBcclxuICAgIHotaW5kZXg6IDA7XHJcbiAgICBoZWlnaHQ6IDY1cHg7ICAgXHJcbiAgICBvcGFjaXR5OiAwLjg7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7ICAgICBcclxuICAgIHBhZGRpbmctdG9wOiAzMHB4O1xyXG4gICAgdG9wOiAtMzBweDtcclxuICAgIGxlZnQ6IC0xNXB4O1xyXG4gICAgcmlnaHQ6IC0xNXB4O1xyXG4gICAgLmljb257XHJcbiAgICAgICAgbWFyZ2luOiA4cHg7ICAgICAgXHJcbiAgICAgICAgdmVydGljYWwtYWxpZ246IHRvcDtcclxuICAgIH1cclxuICAgIGg0e1xyXG4gICAgICAgIGRpc3BsYXk6IGlubGluZTtcclxuICAgICAgICB2ZXJ0aWNhbC1hbGlnbjogdG9wO1xyXG4gICAgfVxyXG4gICAgLmJhci1pY29ue1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiAxNXB4O1xyXG4gICAgfVxyXG59XHJcblxyXG4ucnRsXHJcbntcclxuICAgIC5jbG9zZS1idXR0b257XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIHotaW5kZXg6IDIwMDA7XHJcbiAgICAgICAgbGVmdDogMDtcclxuICAgIH1cclxufVxyXG5cclxuLmx0cntcclxuICAgIC5jbG9zZS1idXR0b257XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIHotaW5kZXg6IDIwMDA7XHJcbiAgICAgICAgcmlnaHQ6IDA7XHJcbiAgICB9XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -703,6 +706,10 @@ var SlideHeaderComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
     ], SlideHeaderComponent.prototype, "className", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
+    ], SlideHeaderComponent.prototype, "iconClass", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function)
@@ -1337,7 +1344,7 @@ var ElementComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"slider-container-wide {{active}} shadow\">\n\n  <dialog open= {{active}}>\n    <a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\"></i></a>\n    <input type=\"text\" name=\"searchPhrase\" /><button class=\"btn btn-primary\"></button>\n\n\n\n    <ul class=\"nav nav-tabs\">\n      <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n        <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n      </li>\n    </ul>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias !=='slides'\">\n      <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n        {{item.Name}}\n        <ul class=\"sqr-toolbar\">\n\n          <li>\n            <button class=\"btn btn-md btn-primary\" (click)=\"selectItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n          </li>\n        </ul>\n      </div>\n    </div>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias ==='slides'\">\n      <div *ngFor=\"let item of slides\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n        {{item.Name}}\n        <ul class=\"sqr-toolbar\">\n          <li>\n            <button class=\"btn btn-md btn-primary\" (click)=\"selectItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </dialog>\n</div>\n"
+module.exports = "<div class=\"slider-container-wide {{active}} shadow\">\n\n  <dialog open= {{active}}>\n    <app-slide-header [title]=\"'NAVBAR.FINDER'\" [className]=\"'orange'\" (closed)=\"closeSlider($event)\"></app-slide-header>\n\n\n\n    <div class=\"input-group pt50\">\n      <input type=\"text\" name=\"searchPhrase\" class=\"form-control\" />\n      <div class=\"input-group-prepend\">\n        <button class=\"btn btn-outline-secondary\" type=\"button\"> <i class=\"fas fa-search\"></i></button>\n      </div>\n    </div>\n    <ul class=\"nav nav-tabs\">\n      <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n        <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n      </li>\n    </ul>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias !=='slide'\">\n      <div *ngFor=\"let item of filteredItems()\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n        {{item.Name}}\n        <ul class=\"sqr-toolbar\">\n          <li>\n            <button class=\"btn btn-md btn-primary\" (click)=\"selectItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n          </li>\n        </ul>\n      </div>\n    </div>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias ==='slide'\">\n      <div *ngFor=\"let item of slides\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n        {{item.Name}}\n        <ul class=\"sqr-toolbar\">\n          <li>\n            <button class=\"btn btn-md btn-primary\" (click)=\"selectItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -1379,9 +1386,9 @@ var FinderComponent = /** @class */ (function (_super) {
         var _this = _super.call(this, _ngZone, translateService) || this;
         _this._ngZone = _ngZone;
         _this.translateService = translateService;
-        _this.tabs = [{ name: 'NAVBAR.IMAGES', selected: true, alias: 'images' },
-            { name: 'NAVBAR.VIDEOS', selected: false, alias: 'videos' },
-            { name: 'NAVBAR.SLIDES', selected: false, alias: 'slides' }];
+        _this.tabs = [{ name: 'NAVBAR.IMAGES', selected: true, alias: 'image' },
+            { name: 'NAVBAR.VIDEOS', selected: false, alias: 'video' },
+            { name: 'NAVBAR.SLIDES', selected: false, alias: 'slide' }];
         _this.selectItem = function (item) {
             _this.selector(item);
         };
@@ -1402,13 +1409,17 @@ var FinderComponent = /** @class */ (function (_super) {
             });
         }); });
     };
+    FinderComponent.prototype.filteredItems = function () {
+        var _this = this;
+        return this.items.filter(function (item) { return item.type === _this.selectedTab.alias; });
+    };
     FinderComponent.prototype.ngOnInit = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var _a;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
                 switch (_b.label) {
                     case 0:
-                        this.loadItems();
+                        this.loadItems({});
                         // if (Object.keys(query).length) {
                         //   this.query = query;
                         // }
@@ -1419,6 +1430,7 @@ var FinderComponent = /** @class */ (function (_super) {
                         //   this.query = query;
                         // }
                         _a.slides = _b.sent();
+                        this.selectedTab = this.tabs[0];
                         return [2 /*return*/];
                 }
             });
@@ -1454,7 +1466,7 @@ var FinderComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container no-margin\">\n  <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    {{item.Name}}\n    <ul class=\"sqr-toolbar\">\n      <li>\n        <button class=\"btn btn-md btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-md btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n    </ul>\n  </div>\n</div>\n<div class=\"slider-container {{displayModalNew}} shadow \">\n  <dialog open= {{displayModalNew}}>\n    <a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\"></i></a>\n    <div class=\"scroller\">\n      <form *ngIf=\"item\">\n        <div class=\"form-group\">\n          <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n          <input type=\"text\" name=\"libraryName\" class=\"form-control\" id=\"screenName\" [(ngModel)]=\"item.Name\">\n          <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n        </div>\n        <div class=\"form-group\">\n          <label for=\"libraryFile\">{{ \"LIBRARY.RESOURCE\" | translate }}</label>\n          <img *ngIf=\"item.thumb\" [src]=\" item.thumb\" class=\"fancy-image\">\n          <p><a href=\"{{item.thumb}}\" target=\"_blank\" class=\"form-text text-muted\"><small>{{item.thumb}}</small></a></p>\n          <app-upload [item]=\"item\"></app-upload>\n          <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.IMAGE_DESCRIPTION\" | translate }}</small>\n        </div>\n      </form>\n    </div>\n    <button *ngIf=\"item && item._id\" class=\"btn btn-primary\" (click)=\"saveLibrary()\">{{ \"LIBRARY.UPDATE\" | translate }}</button>\n    <button *ngIf=\"!item || !item._id\" class=\"btn btn-primary\" (click)=\"createLibrary()\">{{ \"LIBRARY.CREATE\" | translate }}</button>\n  </dialog>\n</div>\n"
+module.exports = "<div class=\"container no-margin\">\n  <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{'background-image': 'url(' + item.thumb + ')'}\">\n\n    <img [src]=\"item.thumb\" width=\"50\" height=\"50\" [alt]=\"item.thumb\">\n\n\n    <ul class=\"sqr-toolbar\">\n      <li>\n        <button class=\"btn btn-md btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-md btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n    </ul>\n  </div>\n</div>\n<div class=\"slider-container {{displayModalNew}} shadow \">\n  <dialog open= {{displayModalNew}}>\n    <a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\"></i></a>\n    <div class=\"scroller\">\n      <form *ngIf=\"item\">\n        <div class=\"form-group\">\n          <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n          <input type=\"text\" name=\"libraryName\" class=\"form-control\" id=\"screenName\" [(ngModel)]=\"item.Name\">\n          <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n        </div>\n        <div class=\"form-group\">\n          <label for=\"libraryFile\">{{ \"LIBRARY.RESOURCE\" | translate }}</label>\n          <img *ngIf=\"item.thumb && !uploading\" [src]=\"item.thumb\" class=\"fancy-image\">\n          <p><a href=\"{{item.thumb}}\" target=\"_blank\" class=\"form-text text-muted\"><small>{{item.thumb}}</small></a></p>\n          <app-upload [item]=\"item\" (change)=\"change($event)\"></app-upload>\n          <small id=\" screenHelp \" class=\"form-text text-muted \">{{ \"LIBRARY.IMAGE_DESCRIPTION\" | translate }}</small>\n        </div>\n      </form>\n    </div>\n    <button *ngIf=\"item && item._id \" class=\"btn btn-primary \" (click)=\"saveLibrary() \">{{ \"LIBRARY.UPDATE\" | translate }}</button>\n    <button *ngIf=\"!item || !item._id \" class=\"btn btn-primary \" (click)=\"createLibrary() \">{{ \"LIBRARY.CREATE\" | translate }}</button>\n  </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -1496,6 +1508,7 @@ var ImagesComponent = /** @class */ (function (_super) {
         var _this = _super.call(this, _ngZone, translateService) || this;
         _this._ngZone = _ngZone;
         _this.translateService = translateService;
+        _this.uploading = false;
         _this.DataController = _signnature_client__WEBPACK_IMPORTED_MODULE_3__["LibraryDataController"];
         return _this;
         // this.DataModel = PlaylistModel;
@@ -1525,6 +1538,9 @@ var ImagesComponent = /** @class */ (function (_super) {
                 return [2 /*return*/];
             });
         });
+    };
+    ImagesComponent.prototype.change = function (state) {
+        this.uploading = state === 'start' ? true : false;
     };
     ImagesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1736,7 +1752,7 @@ var LibraryComponent = /** @class */ (function () {
 /*!*******************************************!*\
   !*** ./src/app/library/library.module.ts ***!
   \*******************************************/
-/*! exports provided: libraryRoutes, LibraryModule, MainComponent */
+/*! exports provided: MainComponent, libraryRoutes, LibraryModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2352,6 +2368,7 @@ var UploadComponent = /** @class */ (function () {
         this.count = 0;
         this.files = new Set();
         this.uploadComplete = false;
+        this.change = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     UploadComponent.prototype.ngOnInit = function () {
     };
@@ -2364,6 +2381,7 @@ var UploadComponent = /** @class */ (function () {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 this.uploadComplete = true;
                 this.loading = false;
+                this.change.emit('end');
                 return [2 /*return*/];
             });
         }); });
@@ -2373,6 +2391,7 @@ var UploadComponent = /** @class */ (function () {
         this._ngZone.run(function () { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
             var _this = this;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                this.change.emit('start');
                 if (!this.uploadComplete) {
                     this.count++;
                     this.loading = true;
@@ -2465,6 +2484,10 @@ var UploadComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('imgIndicator'),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
     ], UploadComponent.prototype, "imgIndicator", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"])
+    ], UploadComponent.prototype, "change", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
@@ -2585,7 +2608,7 @@ var VideosComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container no-margin\">\n  <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}} <span *ngIf=\"item.list\">({{item.list.length}})</span>\n    <ul class=\"sqr-toolbar\">\n      <li>\n        <button class=\"btn btn-md btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-md btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n  <dialog open= {{displayModalNew}}>\n    <app-slide-header [title]=\"'NAVBAR.PLAYLISTS'\" [className]=\"'orange'\" (closed)=\"closeSlider($event)\"></app-slide-header>\n    <form *ngIf=\"item\" class=\"pt50\">\n      <div class=\"form-group\">\n        <label for=\"itemName\">{{ \"PLAYLISTS.NAME\" | translate }}:</label>\n        <input type=\"text\" name=\"itemName\" class=\"form-control\" id=\"itemName\" [(ngModel)]=\"item.Name\">\n        <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"PLAYLISTS.NAME_HELP\" | translate }}</small>\n      </div>\n      <ul class=\"nav nav-tabs\">\n        <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n          <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n        </li>\n      </ul>\n      <div *ngIf=\"tabs[0].selected\">\n        <div class=\"form-group\" class=\"sortable\">\n          <div class=\"shadow btn-long\" (click)=\"finder()\"><i class=\"fas fa-plus-circle\"></i> {{\"PLAYLISTS.ADDTOLIST\" | translate}}</div>\n          <ngx-sortable *ngIf=\"item.list\" [listStyle]=\"listStyle\" [items]=\"item.list\">\n            <ng-template let-item>\n              <div class=\"sortable-list-item\">\n                <div class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n                  {{item.Name}}\n                </div>\n              </div>\n            </ng-template>\n          </ngx-sortable>\n        </div>\n\n      </div>\n      <div *ngIf=\"tabs[1].selected\">\n        <div class=\"form-group shadow\">\n          <div class=\"btn-long\" (click)=\"schedule()\"><i class=\"fas fa-plus-circle\"></i> {{\"PLAYLISTS.ADDTIME\" | translate}}</div>\n          <div id=\"timeSlots\" *ngIf=\"editTime && selectedTimeEl\">\n            <div class=\"form-row\">\n              <div class=\"form-group col-md-6\">\n                <label for=\"itemName\">{{ \"PLAYLISTS.SCHEDULE\" | translate }}:</label>\n                <select [(ngModel)]=\"selectedTimeEl.timeslot\" name=\"timeSlotOptions\" [compareWith]=\"compareFnId\" class=\"form-control\">\n                  <option *ngFor=\"let c of timeSlotOptions\" [ngValue]=\"c\">{{c.name | translate}}</option>\n                </select>\n              </div>\n              <div class=\"form-group col-md-6\">\n                <label for=\"ScreenGroup\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n                <select [(ngModel)]=\"selectedTimeEl.screenGroup\" name=\"ScreenGroup\" [compareWith]=\"compareFn_id\" class=\"form-control\">\n                  <option *ngFor=\"let c of groups\" [ngValue]=\"c\">{{c.Name}}</option>\n                </select>\n              </div>\n              <button class=\"btn btn-primary\" (click)=\"addTimeSlot()\">{{ \"PLAYLISTS.SETTIME\" | translate}}</button>\n            </div>\n          </div>\n        </div>\n\n        <div class=\"container\">\n\n          <div *ngFor=\"let timeslotEl of item.TimeSlots\" class=\"sqr short shadow\">\n            <label>{{timeslotEl.timeslot.name | translate}}</label>\n            <small>{{timeslotEl.screenGroup.Name}}</small>\n            <ul class=\"sqr-toolbar\">\n              <li>\n                <button class=\"btn btn-md btn-danger\" (click)=\"deleteTimeslot(timeslotEl);\"> <i class=\"fas fa-trash\"></i>\n                </button>\n              </li>\n              <li>\n                <button class=\"btn btn-md btn-primary\" (click)=\"editTimeslot(timeslotEl);\"> <i class=\"fas fa-edit\"></i> </button>\n              </li>\n            </ul>\n          </div>\n        </div>\n      </div>\n      <hr />\n      <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"PLAYLISTS.UPDATE\" | translate }}</button>\n      <button *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"PLAYLISTS.CREATE\" | translate }}</button>\n\n    </form>\n  </dialog>\n</div>\n\n<!-- <div class=\"slider-container-drawer {{displayDrawer}} shadow\">\n  <dialog open= {{displayDrawer}}>\n    <app-slide-header [title]=\"'NAVBAR.SCHEDULES'\" [className]=\"'orange'\" (closed)=\"closeDrawer($event)\"></app-slide-header>\n    <div *ngIf=\"item\" class=\"pt50\">\n      <div class=\"sqr shadow sqr-btn\" (click)=\"addTime()\"><i class=\"fas fa-plus-circle\"></i></div>\n      <div *ngFor=\"let timeslot of item.TimeSlots\" class=\"sqr shadow\">\n        <ul class=\"sqr-toolbar\">\n          <li>\n            <button class=\"btn btn-md btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n          </li>\n          <li>\n            <button class=\"btn btn-md btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </dialog>\n</div> -->\n\n<app-finder [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
+module.exports = "<div class=\"container no-margin\">\n\n\n\n\n  <div class=\"sqr shadow sqr-btn\" (click)=\"editItem()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <i class=\"fas fa-desktop\"></i>\n    {{item.Name}} <span *ngIf=\"item.list\">({{item.list.length}})</span>\n    <ul class=\"sqr-toolbar\">\n      <li>\n        <button class=\"btn btn-md btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n      </li>\n      <li>\n        <button class=\"btn btn-md btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n  <dialog open= {{displayModalNew}}>\n    <app-slide-header [title]=\"'NAVBAR.PLAYLISTS'\" [iconClass]=\"'fas fa-scroll'\" [className]=\"'orange'\" (closed)=\"closeSlider($event)\"></app-slide-header>\n    <form *ngIf=\"item\" class=\"pt50\">\n      <div class=\"form-group\">\n        <label for=\"itemName\">{{ \"PLAYLISTS.NAME\" | translate }}:</label>\n        <input type=\"text\" name=\"itemName\" class=\"form-control\" id=\"itemName\" [(ngModel)]=\"item.Name\">\n        <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"PLAYLISTS.NAME_HELP\" | translate }}</small>\n      </div>\n      <ul class=\"nav nav-tabs\">\n        <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n          <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n        </li>\n      </ul>\n      <div *ngIf=\"tabs[0].selected\">\n        <div class=\"form-group\" class=\"sortable\">\n          <div class=\"shadow btn-long\" (click)=\"finder()\"><i class=\"fas fa-plus-circle\"></i> {{\"PLAYLISTS.ADDTOLIST\" | translate}}</div>\n\n\n          <div style=\"width: 500px;overflow: auto;\">\n            <div class=\"wrapper\" style=\"width: 800px;overflow: auto;\">\n              <div class=\"container\" dragula=\"DRAGULA_FACTS\" [(dragulaModel)]=\"item.list\">\n                <div *ngFor=\"let listitem of item.list; let i = index\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{'background-image': 'url(' + listitem.thumb + ')'}\">\n                  <span class=\"label\"> {{listitem.Name}}</span>\n                  <ul class=\"sqr-toolbar\">\n                    <li>\n                      <button class=\"btn btn-md btn-danger\" (click)=\"removeListItem(listitem);\"> <i class=\"fas fa-trash\"></i>\n                      </button>\n                    </li>\n                    <li>\n                      <button class=\"btn btn-md btn-primary\" (click)=\"editListItem(listitem);\"> <i class=\"fas fa-edit\"></i>\n                      </button>\n                    </li>\n                  </ul>\n                </div>\n              </div>\n            </div>\n          </div>\n\n          <div *ngFor=\"let listitem of item.list; let i = index\">\n            <a>{{listitem.Name}}</a>\n          </div>\n\n        </div>\n      </div>\n      <div *ngIf=\"tabs[1].selected\">\n        <div class=\"form-group shadow\">\n          <div class=\"btn-long\" (click)=\"schedule()\"><i class=\"fas fa-plus-circle\"></i> {{\"PLAYLISTS.ADDTIME\" | translate}}</div>\n          <div id=\"timeSlots\" *ngIf=\"editTime && selectedTimeEl\">\n            <div class=\"form-row\">\n              <div class=\"form-group col-md-6\">\n                <label for=\"itemName\">{{ \"PLAYLISTS.SCHEDULE\" | translate }}:</label>\n                <select [(ngModel)]=\"selectedTimeEl.timeslot\" name=\"timeSlotOptions\" [compareWith]=\"compareFnId\" class=\"form-control\">\n                  <option *ngFor=\"let c of timeSlotOptions\" [ngValue]=\"c\">{{c.name | translate}}</option>\n                </select>\n              </div>\n              <div class=\"form-group col-md-6\">\n                <label for=\"ScreenGroup\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n                <select [(ngModel)]=\"selectedTimeEl.screenGroup\" name=\"ScreenGroup\" [compareWith]=\"compareFn_id\" class=\"form-control\">\n                  <option *ngFor=\"let c of groups\" [ngValue]=\"c\">{{c.Name}}</option>\n                </select>\n              </div>\n              <button class=\"btn btn-primary\" (click)=\"addTimeSlot()\">{{ \"PLAYLISTS.SETTIME\" | translate}}</button>\n            </div>\n          </div>\n        </div>\n\n        <div class=\"container\">\n\n          <div *ngFor=\"let timeslotEl of item.TimeSlots\" class=\"sqr short shadow\">\n            <label>{{timeslotEl.timeslot.name | translate}}</label>\n            <small>{{timeslotEl.screenGroup.Name}}</small>\n            <ul class=\"sqr-toolbar\">\n              <li>\n                <button class=\"btn btn-md btn-danger\" (click)=\"deleteTimeslot(timeslotEl);\"> <i class=\"fas fa-trash\"></i>\n                </button>\n              </li>\n              <li>\n                <button class=\"btn btn-md btn-primary\" (click)=\"editTimeslot(timeslotEl);\"> <i class=\"fas fa-edit\"></i> </button>\n              </li>\n            </ul>\n          </div>\n        </div>\n      </div>\n      <hr />\n      <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"PLAYLISTS.UPDATE\" | translate }}</button>\n      <button *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"PLAYLISTS.CREATE\" | translate }}</button>\n\n    </form>\n  </dialog>\n</div>\n\n<!-- <div class=\"slider-container-drawer {{displayDrawer}} shadow\">\n  <dialog open= {{displayDrawer}}>\n    <app-slide-header [title]=\"'NAVBAR.SCHEDULES'\" [className]=\"'orange'\" (closed)=\"closeDrawer($event)\"></app-slide-header>\n    <div *ngIf=\"item\" class=\"pt50\">\n      <div class=\"sqr shadow sqr-btn\" (click)=\"addTime()\"><i class=\"fas fa-plus-circle\"></i></div>\n      <div *ngFor=\"let timeslot of item.TimeSlots\" class=\"sqr shadow\">\n        <ul class=\"sqr-toolbar\">\n          <li>\n            <button class=\"btn btn-md btn-danger\" (click)=\"deleteItem(item);\"> <i class=\"fas fa-trash\"></i> </button>\n          </li>\n          <li>\n            <button class=\"btn btn-md btn-primary\" (click)=\"editItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </dialog>\n</div> -->\n\n<app-finder [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
 
 /***/ }),
 
@@ -2596,7 +2619,7 @@ module.exports = "<div class=\"container no-margin\">\n  <div class=\"sqr shadow
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".short {\n  height: 90px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGxheWxpc3RzL3BsYXlsaXN0L0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxccGxheWxpc3RzXFxwbGF5bGlzdFxccGxheWxpc3RzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFDO0VBQ0ksYUFBVyxFQUNkIiwiZmlsZSI6InNyYy9hcHAvcGxheWxpc3RzL3BsYXlsaXN0L3BsYXlsaXN0cy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiAuc2hvcnR7XHJcbiAgICAgaGVpZ2h0OjkwcHg7XHJcbiB9Il19 */"
+module.exports = ".short {\n  height: 90px; }\n\n.box-container {\n  position: relative;\n  height: 150px;\n  padding: 45px 0; }\n\n.box-swap {\n  position: absolute;\n  text-align: center;\n  width: 150px;\n  height: 60px;\n  padding: 15px 35px;\n  line-height: 30px; }\n\n.box-swap.static-block {\n    transition: all 0.3s ease-out; }\n\n/* in-flight clone */\n\n.gu-mirror {\n  position: fixed !important;\n  margin: 0 !important;\n  z-index: 9999 !important;\n  opacity: 0.8;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)\";\n  filter: alpha(opacity=80);\n  pointer-events: none; }\n\n/* high-performance display:none; helper */\n\n.gu-hide {\n  left: -9999px !important; }\n\n/* added to mirrorContainer (default = body) while dragging */\n\n.gu-unselectable {\n  -webkit-user-select: none !important;\n  -moz-user-select: none !important;\n  -ms-user-select: none !important;\n  user-select: none !important; }\n\n/* added to the source element while its mirror is dragged */\n\n.gu-transit {\n  opacity: 0.2;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)\";\n  filter: alpha(opacity=20); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGxheWxpc3RzL3BsYXlsaXN0L0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxccGxheWxpc3RzXFxwbGF5bGlzdFxccGxheWxpc3RzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFDO0VBQ0ksYUFBVyxFQUNkOztBQUVEO0VBQ0csbUJBQWtCO0VBQ2xCLGNBQWE7RUFDYixnQkFBZSxFQUNoQjs7QUFFRDtFQUNFLG1CQUFrQjtFQUNsQixtQkFBa0I7RUFDbEIsYUFBWTtFQUNaLGFBQVk7RUFDWixtQkFBa0I7RUFDbEIsa0JBQWlCLEVBS2xCOztBQVhEO0lBU0ksOEJBQTZCLEVBQzlCOztBQUlILHFCQUFxQjs7QUFDdkI7RUFDSSwyQkFBMEI7RUFDMUIscUJBQW9CO0VBQ3BCLHlCQUF3QjtFQUN4QixhQUFZO0VBQ1osa0VBQWlFO0VBQ2pFLDBCQUF5QjtFQUN6QixxQkFBb0IsRUFDckI7O0FBQ0QsMkNBQTJDOztBQUMzQztFQUNFLHlCQUF3QixFQUN6Qjs7QUFDRCw4REFBOEQ7O0FBQzlEO0VBQ0UscUNBQW9DO0VBQ3BDLGtDQUFpQztFQUNqQyxpQ0FBZ0M7RUFDaEMsNkJBQTRCLEVBQzdCOztBQUNELDZEQUE2RDs7QUFDN0Q7RUFDRSxhQUFZO0VBQ1osa0VBQWlFO0VBQ2pFLDBCQUF5QixFQUMxQiIsImZpbGUiOiJzcmMvYXBwL3BsYXlsaXN0cy9wbGF5bGlzdC9wbGF5bGlzdHMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIgLnNob3J0e1xyXG4gICAgIGhlaWdodDo5MHB4O1xyXG4gfVxyXG5cclxuIC5ib3gtY29udGFpbmVyIHtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIGhlaWdodDogMTUwcHg7XHJcbiAgICBwYWRkaW5nOiA0NXB4IDA7XHJcbiAgfVxyXG4gIFxyXG4gIC5ib3gtc3dhcCB7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICB3aWR0aDogMTUwcHg7XHJcbiAgICBoZWlnaHQ6IDYwcHg7XHJcbiAgICBwYWRkaW5nOiAxNXB4IDM1cHg7XHJcbiAgICBsaW5lLWhlaWdodDogMzBweDtcclxuICBcclxuICAgICYuc3RhdGljLWJsb2NrIHtcclxuICAgICAgdHJhbnNpdGlvbjogYWxsIDAuM3MgZWFzZS1vdXQ7XHJcbiAgICB9XHJcbiAgfVxyXG5cclxuXHJcbiAgLyogaW4tZmxpZ2h0IGNsb25lICovXHJcbi5ndS1taXJyb3Ige1xyXG4gICAgcG9zaXRpb246IGZpeGVkICFpbXBvcnRhbnQ7XHJcbiAgICBtYXJnaW46IDAgIWltcG9ydGFudDtcclxuICAgIHotaW5kZXg6IDk5OTkgIWltcG9ydGFudDtcclxuICAgIG9wYWNpdHk6IDAuODtcclxuICAgIC1tcy1maWx0ZXI6IFwicHJvZ2lkOkRYSW1hZ2VUcmFuc2Zvcm0uTWljcm9zb2Z0LkFscGhhKE9wYWNpdHk9ODApXCI7XHJcbiAgICBmaWx0ZXI6IGFscGhhKG9wYWNpdHk9ODApO1xyXG4gICAgcG9pbnRlci1ldmVudHM6IG5vbmU7XHJcbiAgfVxyXG4gIC8qIGhpZ2gtcGVyZm9ybWFuY2UgZGlzcGxheTpub25lOyBoZWxwZXIgKi9cclxuICAuZ3UtaGlkZSB7XHJcbiAgICBsZWZ0OiAtOTk5OXB4ICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gIC8qIGFkZGVkIHRvIG1pcnJvckNvbnRhaW5lciAoZGVmYXVsdCA9IGJvZHkpIHdoaWxlIGRyYWdnaW5nICovXHJcbiAgLmd1LXVuc2VsZWN0YWJsZSB7XHJcbiAgICAtd2Via2l0LXVzZXItc2VsZWN0OiBub25lICFpbXBvcnRhbnQ7XHJcbiAgICAtbW96LXVzZXItc2VsZWN0OiBub25lICFpbXBvcnRhbnQ7XHJcbiAgICAtbXMtdXNlci1zZWxlY3Q6IG5vbmUgIWltcG9ydGFudDtcclxuICAgIHVzZXItc2VsZWN0OiBub25lICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gIC8qIGFkZGVkIHRvIHRoZSBzb3VyY2UgZWxlbWVudCB3aGlsZSBpdHMgbWlycm9yIGlzIGRyYWdnZWQgKi9cclxuICAuZ3UtdHJhbnNpdCB7XHJcbiAgICBvcGFjaXR5OiAwLjI7XHJcbiAgICAtbXMtZmlsdGVyOiBcInByb2dpZDpEWEltYWdlVHJhbnNmb3JtLk1pY3Jvc29mdC5BbHBoYShPcGFjaXR5PTIwKVwiO1xyXG4gICAgZmlsdGVyOiBhbHBoYShvcGFjaXR5PTIwKTtcclxuICB9XHJcblxyXG4iXX0= */"
 
 /***/ }),
 
@@ -2712,6 +2735,32 @@ var PlaylistsComponent = /** @class */ (function (_super) {
                 return [2 /*return*/];
             });
         }); });
+    };
+    PlaylistsComponent.prototype.onMoving = function (event) {
+        var boxWidth = 150;
+        var boxHeight = 60;
+        // if (this.positionA.x < this.positionB.x &&
+        //   event.x + boxWidth >= this.positionB.x + boxWidth / 2 &&
+        //   event.x <= this.positionB.x + boxWidth &&
+        //   event.y + boxHeight >= this.positionA.y &&
+        //   event.y <= this.positionA.y + boxHeight) {
+        //   const tmp = this.positionB;
+        //   this.positionB = this.positionA;
+        //   this.positionA = tmp;
+        // } else if (this.positionA.x >= this.positionB.x &&
+        //   event.x <= this.positionB.x + boxWidth / 2 &&
+        //   event.x + boxWidth >= this.positionB.x &&
+        //   event.y + boxHeight >= this.positionA.y &&
+        //   event.y <= this.positionA.y + boxHeight) {
+        //   const tmp = this.positionB;
+        //   this.positionB = this.positionA;
+        //   this.positionA = tmp;
+        // }
+    };
+    PlaylistsComponent.prototype.editListItem = function () {
+    };
+    PlaylistsComponent.prototype.removeListItem = function (item) {
+        this.item.list.splice(this.item.list.indexOf(item), 1);
     };
     PlaylistsComponent.prototype.editTimeslot = function (timeslotEL) {
         this.editTime = true;
@@ -3386,6 +3435,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _common_slide_header_slide_header_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./common/slide-header/slide-header.component */ "./src/app/common/slide-header/slide-header.component.ts");
 /* harmony import */ var _common_bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./common/bread-crumbs/bread-crumbs.component */ "./src/app/common/bread-crumbs/bread-crumbs.component.ts");
 /* harmony import */ var _directives_adapt_height__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./directives/adapt-height */ "./src/app/directives/adapt-height.ts");
+/* harmony import */ var ng2_dragula__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ng2-dragula */ "./node_modules/ng2-dragula/dist/fesm5/ng2-dragula.js");
 
 
 
@@ -3393,6 +3443,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // import { DragAndDropModule } from 'angular-draggable-droppable';
+
 
 
 
@@ -3416,12 +3467,12 @@ var SharedModule = /** @class */ (function () {
     var SharedModule_1;
     SharedModule = SharedModule_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_9__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"],
+            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_9__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"], ng2_dragula__WEBPACK_IMPORTED_MODULE_14__["DragulaModule"],
                 _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateModule"].forChild(), ngx_file_drop__WEBPACK_IMPORTED_MODULE_5__["FileDropModule"], angular2_draggable__WEBPACK_IMPORTED_MODULE_6__["AngularDraggableModule"]],
             declarations: [_directives_adapt_height__WEBPACK_IMPORTED_MODULE_13__["AdaptHeightDirective"], _common_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_7__["LanguageBarComponent"], _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_10__["FinderComponent"], _common_slide_header_slide_header_component__WEBPACK_IMPORTED_MODULE_11__["SlideHeaderComponent"], _common_bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_12__["BreadCrumbsComponent"]],
             providers: [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"], _services_language_dictionary_service__WEBPACK_IMPORTED_MODULE_3__["DictionaryService"], _services_name_service__WEBPACK_IMPORTED_MODULE_4__["NameService"]],
             exports: [_common_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_7__["LanguageBarComponent"], _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_10__["FinderComponent"], _common_slide_header_slide_header_component__WEBPACK_IMPORTED_MODULE_11__["SlideHeaderComponent"], _common_bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_12__["BreadCrumbsComponent"],
-                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateModule"], ngx_file_drop__WEBPACK_IMPORTED_MODULE_5__["FileDropModule"], _directives_adapt_height__WEBPACK_IMPORTED_MODULE_13__["AdaptHeightDirective"], angular2_draggable__WEBPACK_IMPORTED_MODULE_6__["AngularDraggableModule"]],
+                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateModule"], ngx_file_drop__WEBPACK_IMPORTED_MODULE_5__["FileDropModule"], _directives_adapt_height__WEBPACK_IMPORTED_MODULE_13__["AdaptHeightDirective"], angular2_draggable__WEBPACK_IMPORTED_MODULE_6__["AngularDraggableModule"], ng2_dragula__WEBPACK_IMPORTED_MODULE_14__["DragulaDirective"]],
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"]])
     ], SharedModule);
