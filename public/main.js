@@ -663,7 +663,7 @@ var LoaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container no-margin\" *ngIf=\"mode==='media'\">\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn\" (click)=\"newItemHandler()\"><i class=\"fas fa-plus-circle\"></i></div>\n\n\n\n  <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    <span class=\"label\">{{item.Name}}</span>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\" aria-label=\"Basic example\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"deleteItemHandler(item);\"> <i class=\"fas fa-trash\"></i>\n        </button>\n      </li>\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"editItemHandler(item);\"> <i class=\"fas fa-edit\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"container no-margin\" *ngIf=\"mode==='object'\">\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn\" (click)=\"newItemHandler()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <i class=\"{{iconClass}} icon\"></i> <span class=\"label\">{{item.Name}}</span>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"deleteItemHandler(item);\"> <i class=\"fas fa-trash\"></i>\n        </button>\n      </li>\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"editItemHandler(item);\"> <i class=\"fas fa-edit\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n"
+module.exports = "<div class=\"container no-margin\" *ngIf=\"mode==='media'\">\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn\" (click)=\"newItemHandler()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    <span class=\"label\">{{item.Name}}</span>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\" aria-label=\"Basic example\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"deleteItemHandler(item);\"> <i class=\"fas fa-trash\"></i>\n        </button>\n      </li>\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"editItemHandler(item);\"> <i class=\"fas fa-edit\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"container no-margin\" *ngIf=\"mode==='media-finder'\">\n\n  <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    <span class=\"label\">{{item.Name}}</span>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"selectItemHandler(item);\"> <i class=\"fas fa-plus-square\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"container no-margin\" *ngIf=\"mode==='object-finder'\">\n\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <span class=\"label\">{{item.Name}}</span>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"selectItemHandler(item);\"> <i class=\"fas fa-plus-square\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"container no-margin\" *ngIf=\"mode==='object'\">\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn\" (click)=\"newItemHandler()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <i class=\"{{iconClass}} icon\"></i> <span class=\"label\">{{item.Name}}</span>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"deleteItemHandler(item);\"> <i class=\"fas fa-trash\"></i>\n        </button>\n      </li>\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"editItemHandler(item);\"> <i class=\"fas fa-edit\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -698,6 +698,7 @@ var LobbyComponent = /** @class */ (function () {
         this.deleteItem = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.editItem = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.newItem = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.selectItem = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     LobbyComponent.prototype.deleteItemHandler = function (item) {
         this.deleteItem.emit(item);
@@ -707,6 +708,9 @@ var LobbyComponent = /** @class */ (function () {
     };
     LobbyComponent.prototype.newItemHandler = function (item) {
         this.newItem.emit(item);
+    };
+    LobbyComponent.prototype.selectItemHandler = function (item) {
+        this.selectItem.emit(item);
     };
     LobbyComponent.prototype.ngOnInit = function () {
     };
@@ -738,6 +742,10 @@ var LobbyComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
     ], LobbyComponent.prototype, "newItem", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], LobbyComponent.prototype, "selectItem", void 0);
     LobbyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-lobby',
@@ -1424,7 +1432,7 @@ var EditorToolbarComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"element.position\" ngDraggable [zIndex]=\"element.zIndex\" [handle]=\"ElementHandle\" [position]=\"element.position\"\n  class=\"drag-block element\" (edge)=\"checkEdge($event)\" [bounds]=\"myBounds\" [inBounds]=\"inBounds\" (started)=\"onStart($event)\"\n  (stopped)=\"onStop($event)\" (movingOffset)=\"onMoving($event)\" [preventDefaultEvent]=\"false\" (endOffset)=\"onMoveEnd($event)\"\n  (click)=\"focus($event, element)\">\n\n  <div *ngIf=\"element.type === 'text' && element.selected\" class=\"t-bar\">\n    <select [(ngModel)]=\"element.font\" [compareWith]=\"compareFn\">\n      <option *ngFor=\"let c of fonts\" [ngValue]=\"c\">{{c.name}}</option>\n    </select>\n\n    <select [(ngModel)]=\"element.fontSize\">\n      <option *ngFor=\"let c of sizes\" [ngValue]=\"c\">{{c}}</option>\n    </select>\n\n    <input [(colorPicker)]=\"element.color\" [style.background]=\"element.color\" />\n  </div>\n\n  <span [ngStyle]=\"{'font-family': element.font ? element.font.id: 'arial',\n   'font-size': element.fontSize +'px',\n  'color': element.color }\" contenteditable=\"true\" [(ngModel)]=\"element.name\" *ngIf=\"element.type === 'text'\"></span>\n  <img [src]=\"element.src\" ngResizable class=\"image-element shadow\" *ngIf=\"element.type === 'image'\" />\n\n  <span class=\"position\">{{element.position | json}}</span>\n</div>\n"
+module.exports = "<div *ngIf=\"!layers && element.position\" ngDraggable [zIndex]=\"element.zIndex\" [handle]=\"ElementHandle\" [position]=\"element.position\"\n  class=\"drag-block element\" (edge)=\"checkEdge($event)\" [bounds]=\"myBounds\" [inBounds]=\"inBounds\" (started)=\"onStart($event)\"\n  (stopped)=\"onStop($event)\" (movingOffset)=\"onMoving($event)\" [preventDefaultEvent]=\"false\" (endOffset)=\"onMoveEnd($event)\"\n  (click)=\"focus($event, element)\">\n\n  <div *ngIf=\"element.type === 'text' && element.selected\" class=\"t-bar\">\n    <select [(ngModel)]=\"element.font\" [compareWith]=\"compareFn\">\n      <option *ngFor=\"let c of fonts\" [ngValue]=\"c\">{{c.name}}</option>\n    </select>\n\n    <select [(ngModel)]=\"element.fontSize\">\n      <option *ngFor=\"let c of sizes\" [ngValue]=\"c\">{{c}}</option>\n    </select>\n\n    <input [(colorPicker)]=\"element.color\" [style.background]=\"element.color\" />\n  </div>\n\n  <span [ngStyle]=\"{'font-family': element.font ? element.font.id: 'arial',\n   'font-size': element.fontSize +'px',\n  'color': element.color }\" contenteditable=\"true\" [(ngModel)]=\"element.name\" *ngIf=\"element.type === 'text'\"></span>\n  <img [src]=\"element.src\" ngResizable class=\"image-element shadow\" *ngIf=\"element.type === 'image'\" />\n\n  <span class=\"position\">{{element.position | json}}</span>\n</div>\n\n<div *ngIf=\"layers\" class=\"layer\" (click)=\"focus($event, element)\">\n  {{element.name}}\n\n \n\n  <ul class=\"toolbox\" *ngIf=\"element.selected && element.type==='text'\">\n    <li>\n      <select [(ngModel)]=\"element.font\" [compareWith]=\"compareFn\">\n        <option *ngFor=\"let c of fonts\" [ngValue]=\"c\">{{c.name}}</option>\n      </select>\n    </li>\n    <li>\n      <select [(ngModel)]=\"element.fontSize\">\n        <option *ngFor=\"let c of sizes\" [ngValue]=\"c\">{{c}}</option>\n      </select>\n    </li>\n    <li>\n      <input [(colorPicker)]=\"element.color\" [style.background]=\"element.color\" />\n    </li>\n  </ul>\n\n\n  <ul class=\"toolbox\" *ngIf=\"element.selected && element.type==='image'\">\n      <li>\n       <img [src]=\"element.src\" >\n      </li>\n      <li>\n        \n      </li>\n      <li>\n       \n      </li>\n    </ul>\n</div>\n"
 
 /***/ }),
 
@@ -1435,7 +1443,7 @@ module.exports = "<div *ngIf=\"element.position\" ngDraggable [zIndex]=\"element
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".drag-block {\n  padding: 1px;\n  cursor: crosshair;\n  position: absolute; }\n  .drag-block span {\n    cursor: text;\n    display: inline; }\n  .element {\n  border: 1px solid transparent; }\n  .element .active {\n    border: 1px solid black; }\n  .t-bar {\n  font-size: 9px; }\n  .t-bar input {\n    width: 50px; }\n  .t-bar select {\n    width: 100px; }\n  .position {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100px;\n  font-size: 9px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGlicmFyeS9lbGVtZW50L0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcbGlicmFyeVxcZWxlbWVudFxcZWxlbWVudC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUVJLGFBQVk7RUFDWixrQkFBaUI7RUFDakIsbUJBQWtCLEVBS3JCO0VBVEQ7SUFNUSxhQUFZO0lBQ1osZ0JBQWUsRUFDbEI7RUFHTDtFQUNJLDhCQUE2QixFQUloQztFQUxEO0lBR1Esd0JBQXVCLEVBQzFCO0VBR0w7RUFDQSxlQUFjLEVBUWI7RUFURDtJQUdRLFlBQVUsRUFDYjtFQUpMO0lBTVEsYUFBWSxFQUNmO0VBR0w7RUFDSSxtQkFBa0I7RUFDbEIsVUFBUTtFQUNSLFFBQU07RUFDTixhQUFZO0VBQ1osZUFBYyxFQUNqQiIsImZpbGUiOiJzcmMvYXBwL2xpYnJhcnkvZWxlbWVudC9lbGVtZW50LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmRyYWctYmxvY2tcclxueyAgICAgXHJcbiAgICBwYWRkaW5nOiAxcHg7XHJcbiAgICBjdXJzb3I6IGNyb3NzaGFpcjtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHNwYW4ge1xyXG4gICAgICAgIGN1cnNvcjogdGV4dDtcclxuICAgICAgICBkaXNwbGF5OiBpbmxpbmU7ICAgICAgICBcclxuICAgIH1cclxufVxyXG5cclxuLmVsZW1lbnR7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCB0cmFuc3BhcmVudDtcclxuICAgIC5hY3RpdmV7XHJcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgYmxhY2s7XHJcbiAgICB9XHJcbn1cclxuXHJcbi50LWJhcntcclxuZm9udC1zaXplOiA5cHg7XHJcbiAgICBpbnB1dHtcclxuICAgICAgICB3aWR0aDo1MHB4O1xyXG4gICAgfVxyXG4gICAgc2VsZWN0e1xyXG4gICAgICAgIHdpZHRoOiAxMDBweDtcclxuICAgIH1cclxuXHJcbn1cclxuLnBvc2l0aW9ue1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgYm90dG9tOjA7XHJcbiAgICBsZWZ0OjA7XHJcbiAgICB3aWR0aDogMTAwcHg7XHJcbiAgICBmb250LXNpemU6IDlweDtcclxufVxyXG4uaW1hZ2UtZWxlbWVudHtcclxuICAgXHJcbn0iXX0= */"
+module.exports = ".drag-block {\n  padding: 1px;\n  cursor: crosshair;\n  position: absolute; }\n  .drag-block span {\n    cursor: text;\n    display: inline; }\n  .element {\n  border: 1px solid transparent; }\n  .element .active {\n    border: 1px solid black; }\n  .t-bar {\n  font-size: 9px; }\n  .t-bar input {\n    width: 50px; }\n  .t-bar select {\n    width: 100px; }\n  .position {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100px;\n  font-size: 9px; }\n  .layer {\n  height: 80px;\n  background-color: white; }\n  .layer .toolbox select, .layer .toolbox input {\n    font-size: 10px; }\n  .layer .toolbox input {\n    width: 30px; }\n  .layer .toolbox img {\n    width: 50px;\n    height: 50px; }\n  .layer .toolbox.active {\n    display: block; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGlicmFyeS9lbGVtZW50L0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcbGlicmFyeVxcZWxlbWVudFxcZWxlbWVudC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUVJLGFBQVk7RUFDWixrQkFBaUI7RUFDakIsbUJBQWtCLEVBS3JCO0VBVEQ7SUFNUSxhQUFZO0lBQ1osZ0JBQWUsRUFDbEI7RUFHTDtFQUNJLDhCQUE2QixFQUloQztFQUxEO0lBR1Esd0JBQXVCLEVBQzFCO0VBR0w7RUFDQSxlQUFjLEVBUWI7RUFURDtJQUdRLFlBQVUsRUFDYjtFQUpMO0lBTVEsYUFBWSxFQUNmO0VBR0w7RUFDSSxtQkFBa0I7RUFDbEIsVUFBUTtFQUNSLFFBQU07RUFDTixhQUFZO0VBQ1osZUFBYyxFQUNqQjtFQUtEO0VBQ0ksYUFBWTtFQUNaLHdCQUF1QixFQWlCMUI7RUFuQkQ7SUFRWSxnQkFBZSxFQUNsQjtFQVRUO0lBVWUsWUFBVyxFQUFHO0VBVjdCO0lBWVksWUFBVztJQUFDLGFBQVcsRUFDMUI7RUFiVDtJQWdCUSxlQUFjLEVBQ2pCIiwiZmlsZSI6InNyYy9hcHAvbGlicmFyeS9lbGVtZW50L2VsZW1lbnQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZHJhZy1ibG9ja1xyXG57ICAgICBcclxuICAgIHBhZGRpbmc6IDFweDtcclxuICAgIGN1cnNvcjogY3Jvc3NoYWlyO1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgc3BhbiB7XHJcbiAgICAgICAgY3Vyc29yOiB0ZXh0O1xyXG4gICAgICAgIGRpc3BsYXk6IGlubGluZTsgICAgICAgIFxyXG4gICAgfVxyXG59XHJcblxyXG4uZWxlbWVudHtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIHRyYW5zcGFyZW50O1xyXG4gICAgLmFjdGl2ZXtcclxuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcclxuICAgIH1cclxufVxyXG5cclxuLnQtYmFye1xyXG5mb250LXNpemU6IDlweDtcclxuICAgIGlucHV0e1xyXG4gICAgICAgIHdpZHRoOjUwcHg7XHJcbiAgICB9XHJcbiAgICBzZWxlY3R7XHJcbiAgICAgICAgd2lkdGg6IDEwMHB4O1xyXG4gICAgfVxyXG5cclxufVxyXG4ucG9zaXRpb257XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBib3R0b206MDtcclxuICAgIGxlZnQ6MDtcclxuICAgIHdpZHRoOiAxMDBweDtcclxuICAgIGZvbnQtc2l6ZTogOXB4O1xyXG59XHJcbi5pbWFnZS1lbGVtZW50e1xyXG4gICBcclxufVxyXG5cclxuLmxheWVye1xyXG4gICAgaGVpZ2h0OiA4MHB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbiAgICBcclxuICAgIC50b29sYm94XHJcbiAgICB7XHJcbiAgICAgICAgXHJcbiAgICAgICAgc2VsZWN0LCBpbnB1dHtcclxuICAgICAgICAgICAgZm9udC1zaXplOiAxMHB4O1xyXG4gICAgICAgIH1cclxuICAgICAgICBpbnB1dCB7d2lkdGg6IDMwcHg7fVxyXG4gICAgICAgIGltZ3tcclxuICAgICAgICAgICAgd2lkdGg6IDUwcHg7aGVpZ2h0OjUwcHg7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG4gICAgLnRvb2xib3guYWN0aXZle1xyXG4gICAgICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgfVxyXG4gIFxyXG59Il19 */"
 
 /***/ }),
 
@@ -1472,6 +1480,7 @@ var ElementComponent = /** @class */ (function () {
             { id: 'david', name: 'david' }];
     }
     ElementComponent.prototype.ngOnInit = function () {
+        this.layers = this.mode === 'layers';
         if (this.element && !this.element.style) {
             this.element.style = { font: '' };
         }
@@ -1510,6 +1519,10 @@ var ElementComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
     ], ElementComponent.prototype, "element", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
+    ], ElementComponent.prototype, "mode", void 0);
     ElementComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-element',
@@ -1532,7 +1545,7 @@ var ElementComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"slider-container-wide {{active}} shadow\">\n\n  <dialog open= {{active}}>\n    <app-slide-header [title]=\"'NAVBAR.FINDER'\" [className]=\"'orange'\" (closed)=\"closeSlider($event)\"></app-slide-header>\n\n\n\n    <div class=\"input-group pt50\">\n      <input type=\"text\" name=\"searchPhrase\" class=\"form-control\" />\n      <div class=\"input-group-prepend\">\n        <button class=\"btn btn-outline-secondary\" type=\"button\"> <i class=\"fas fa-search\"></i></button>\n      </div>\n    </div>\n    <ul class=\"nav nav-tabs\">\n      <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n        <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n      </li>\n    </ul>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias !=='slide'\">\n      <div *ngFor=\"let item of filteredItems()\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n        {{item.Name}}\n        <ul class=\"sqr-toolbar\">\n          <li>\n            <button class=\"btn btn-md btn-primary\" (click)=\"selectItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n          </li>\n        </ul>\n      </div>\n    </div>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias ==='slide'\">\n      <div *ngFor=\"let item of slides\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n        {{item.Name}}\n        <ul class=\"sqr-toolbar\">\n          <li>\n            <button class=\"btn btn-md btn-primary\" (click)=\"selectItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </dialog>\n</div>\n"
+module.exports = "<div class=\"slider-container-wide {{active}} shadow\">\n\n  <dialog open= {{active}}>\n    <app-slide-header title=\"NAVBAR.FINDER\" className=\"lemon-cat\" (closed)=\"closeSlider($event)\"></app-slide-header>\n    <div class=\"input-group pt50\">\n      <input type=\"text\" name=\"searchPhrase\" class=\"form-control\" />\n      <div class=\"input-group-prepend\">\n        <button class=\"btn btn-outline-secondary\" type=\"button\"> <i class=\"fas fa-search\"></i></button>\n      </div>\n    </div>\n    <ul class=\"nav nav-tabs\">\n      <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n        <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n      </li>\n    </ul>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias !=='slide'\">\n      <app-lobby [items]=\"filteredItems()\" mode=\"media-finder\" (selectItem)=\"selectItem($event)\" (deleteItem)=\"deleteItem($event)\"\n        (newItem)=\"newItem($event)\"></app-lobby>\n    </div>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias ==='slide'\">\n      <app-lobby [items]=\"filteredItems()\" mode=\"object-finder\" (selectItem)=\"selectItem($event)\" (deleteItem)=\"deleteItem($event)\"\n        (newItem)=\"newItem($event)\"></app-lobby>\n    </div>\n    <app-slide-footer className=\"lemon-cat\"></app-slide-footer>\n  </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -1574,15 +1587,22 @@ var FinderComponent = /** @class */ (function (_super) {
         var _this = _super.call(this, _ngZone, translateService) || this;
         _this._ngZone = _ngZone;
         _this.translateService = translateService;
-        _this.tabs = [{ name: 'NAVBAR.IMAGES', selected: true, alias: 'image' },
-            { name: 'NAVBAR.VIDEOS', selected: false, alias: 'video' },
-            { name: 'NAVBAR.SLIDES', selected: false, alias: 'slide' }];
+        _this.types = ['image', 'video'];
+        _this.tabsCollection = {
+            'image': 'NAVBAR.IMAGES',
+            'video': 'NAVBAR.VIDEOS',
+            'slide': 'NAVBAR.SLIDES',
+        };
+        _this.tabs = [];
         _this.selectItem = function (item) {
             _this.selector(item);
         };
         _this.DataController = _signnature_client__WEBPACK_IMPORTED_MODULE_3__["LibraryDataController"];
         return _this;
     }
+    // [{ name: 'NAVBAR.IMAGES', selected: true, alias: 'image' },
+    // { name: 'NAVBAR.VIDEOS', selected: false, alias: 'video' },
+    // { name: 'NAVBAR.SLIDES', selected: false, alias: 'slide' }];
     FinderComponent.prototype.tabSelect = function (tab) {
         this.tabs.forEach(function (tabItem) { return tabItem.selected = false; });
         tab.selected = true;
@@ -1604,10 +1624,17 @@ var FinderComponent = /** @class */ (function (_super) {
     FinderComponent.prototype.ngOnInit = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var _a;
+            var _this = this;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
                 switch (_b.label) {
                     case 0:
                         this.loadItems({});
+                        this.tabs = this.types.map(function (item) {
+                            return {
+                                name: _this.tabsCollection[item],
+                                alias: item,
+                            };
+                        });
                         // if (Object.keys(query).length) {
                         //   this.query = query;
                         // }
@@ -1632,6 +1659,10 @@ var FinderComponent = /** @class */ (function (_super) {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function)
     ], FinderComponent.prototype, "selector", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], FinderComponent.prototype, "types", void 0);
     FinderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-finder',
@@ -2149,6 +2180,9 @@ var SelectionService = /** @class */ (function () {
     SelectionService.prototype.load = function (document) {
         this.document = document;
         this.elements = this.document.elements;
+        this.elements.forEach(function (elem, i) {
+            elem.zIndex = 1000 + i;
+        });
     };
     SelectionService.prototype.reset = function () {
         this.elements = [];
@@ -2174,7 +2208,7 @@ var SelectionService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"item\">\n  <ul class=\"nav nav-tabs direction\">\n    <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n      <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n    </li>\n  </ul>\n  <ul class=\"direction\">\n    <li *ngIf=\"tabs[0].selected\">\n      <div class=\"btn-group\" data-toggle=\"buttons\">\n        <button (click)=\"newTextBlockElement()\" class=\"btn btn-tool\"><i class=\"fas fa-font\"></i></button>\n        <button (click)=\"finder('image')\" class=\"btn btn-tool\"><i class=\"far fa-image\"></i></button>\n        <button (click)=\"finder('video')\" class=\"btn btn-tool\"><i class=\"fas fa-video\"></i></button>\n        <button (click)=\"newPluginBlockElement()\" class=\"btn btn-tool\"><i class=\"fas fa-plug\"></i></button>\n      </div>\n    </li>\n  </ul>\n  <ul class=\"direction-invert\">\n    <li class=\"toolbar-end\">\n      <button class=\"btn btn-primary btn-sm\" (click)=\"resetItem()\">{{ \"SLIDES.RESET\" | translate }}</button>\n      <button *ngIf=\"item._id\" class=\"btn btn-primary btn-sm\" (click)=\"updateItem()\">\n        <span class=\"btn-spinner-host\"> <i class=\"btn-spinner\" *ngIf=\"updateItemRunning\"></i> {{ \"SLIDES.UPDATE\" | translate }}\n        </span>\n      </button>\n      <button *ngIf=\"!item._id\" class=\"btn btn-primary btn-sm\" (click)=\"createItem()\">\n        <span class=\"btn-spinner-host\"> <i class=\"btn-spinner\" *ngIf=\"updateItemRunning\">\n          </i> {{ \"SLIDES.CREATE\" | translate }}\n        </span>\n      </button>\n    </li>\n  </ul>\n  <div style=\"clear: both\"></div>\n\n  <div *ngIf=\"tabs[0].selected\" [appAdaptHeight]=\"200\">\n    <div class=\"row slide-editor\" style=\"direction: ltr;\">\n      <div class=\"col-md-9\">\n        <div class=\"slide-canvas drag-boundary\" [appAdaptHeight]=\"300\" class=\"drag-boundary\" #myBounds>\n          <app-element *ngFor=\"let el of selectionService.elements\" (click)=\"designerFocus($event)\" [element]=\"el\"></app-element>\n        </div>\n      </div>\n      <div class=\"layers\">\n        <ul class=\"list-group\">\n          <ol class=\"list-group-item\" *ngFor=\"let el of selectionService.elements\">\n            <app-inline-edit [(ngModel)]=\"el.name\" label=\"Name\" [required]=\"true\" type=\"text\">\n            </app-inline-edit>\n          </ol>\n        </ul>\n      </div>\n    </div>\n  </div>\n  <div *ngIf=\"tabs[1].selected\">\n    <pre> {{item.elements | json}}</pre>\n  </div>\n</div>\n<app-finder [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
+module.exports = "<div *ngIf=\"item\">\n  <ul class=\"nav nav-tabs direction\">\n    <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n      <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n    </li>\n  </ul>\n  <ul class=\"direction\">\n    <li *ngIf=\"tabs[0].selected\">\n      <div class=\"btn-group\" data-toggle=\"buttons\">\n        <button (click)=\"newTextBlockElement()\" class=\"btn btn-tool\"><i class=\"fas fa-font\"></i></button>\n        <button (click)=\"finder('image')\" class=\"btn btn-tool\"><i class=\"far fa-image\"></i></button>\n        <button (click)=\"finder('video')\" class=\"btn btn-tool\"><i class=\"fas fa-video\"></i></button>\n        <button (click)=\"newPluginBlockElement()\" class=\"btn btn-tool\"><i class=\"fas fa-plug\"></i></button>\n      </div>\n    </li>\n  </ul>\n  <ul class=\"direction-invert\">\n    <li class=\"toolbar-end\">\n      <button class=\"btn btn-primary btn-sm\" (click)=\"resetItem()\">{{ \"SLIDES.RESET\" | translate }}</button>\n      <button *ngIf=\"item._id\" class=\"btn btn-primary btn-sm\" (click)=\"updateItemProxy()\">\n        <span class=\"btn-spinner-host\"> <i class=\"btn-spinner\" *ngIf=\"updateItemRunning\"></i> {{ \"SLIDES.UPDATE\" | translate }}\n        </span>\n      </button>\n      <button *ngIf=\"!item._id\" class=\"btn btn-primary btn-sm\" (click)=\"createItemProxy()\">\n        <span class=\"btn-spinner-host\"> <i class=\"btn-spinner\" *ngIf=\"updateItemRunning\">\n          </i> {{ \"SLIDES.CREATE\" | translate }}\n        </span>\n      </button>\n    </li>\n  </ul>\n  <div style=\"clear: both\"></div>\n\n  <div *ngIf=\"tabs[0].selected\" [appAdaptHeight]=\"200\">\n    <div class=\"row slide-editor\" style=\"direction: ltr;\">\n\n      <div class=\"slide-canvas drag-boundary\" [appAdaptHeight]=\"300\" class=\"drag-boundary\" #myBounds>\n        <app-element *ngFor=\"let el of selectionService.elements\" (click)=\"designerFocus($event)\" [element]=\"el\"></app-element>\n      </div>\n\n\n      <div class=\"layers\" dragula=\"DRAGULA_FACTS\" [(dragulaModel)]=\"selectionService.elements\">\n        <div *ngFor=\"let el of selectionService.elements\">\n          <app-element [element]=\"el\" mode=\"layers\"></app-element>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div *ngIf=\"tabs[1].selected\">\n    <pre> {{item.elements | json}}</pre>\n  </div>\n</div>\n<app-finder [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
 
 /***/ }),
 
@@ -2254,6 +2288,14 @@ var SlideEditorComponent = /** @class */ (function (_super) {
     SlideEditorComponent.prototype.tabSelect = function (tab) {
         this.tabs.forEach(function (tabItem) { return tabItem.selected = false; });
         tab.selected = true;
+    };
+    SlideEditorComponent.prototype.createItemProxy = function () {
+        this.item.elements = this.selectionService.elements;
+        this.createItem();
+    };
+    SlideEditorComponent.prototype.updateItemProxy = function () {
+        this.item.elements = this.selectionService.elements;
+        this.updateItem();
     };
     SlideEditorComponent.prototype.ngOnInit = function () {
         var _this = this;
