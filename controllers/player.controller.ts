@@ -1,6 +1,7 @@
 import { MethodConfig, Method, Verbs, MethodError, MethodResult, Param } from '@methodus/server';
-import { TokenModel, ScreenModel, PlaylistModel } from '../models/';
-import { Query } from '@methodus/data';
+import { TokenModel, ScreenModel, PlaylistModel, SlideModel } from '../models/';
+import { Query, ObjectId, Odm } from '@methodus/data';
+import { ODM } from '@methodus/data/lib/odm-models';
 
 @MethodConfig('PlayerController', [])
 export class PlayerController {
@@ -35,7 +36,29 @@ export class PlayerController {
     @Method(Verbs.Post, '/run-player/:group')
     public static async runPlayer(@Param('group') group: any): Promise<MethodResult> {
         const timePlan = await PlaylistModel.query(new Query('Playlist')
-            .filter({ "TimeSlots.screenGroup._id": group }));
+            .filter({ 'TimeSlots.screenGroup._id': group }));
+        const slides = [];
+        timePlan.forEach((plan) => {
+            plan.list.forEach((item) => {
+                if (item.elements) {
+                    slides.push(Odm.applyObjectID(item._id));
+                }
+            });
+        });
+
+        const slidesDb = await SlideModel.query(new Query('Slide').in('_id', slides));
+        const slideDic = {};
+        slidesDb.forEach((item) => {
+            slideDic[item._id] = item;
+        });
+
+        timePlan.forEach((plan) => {
+            plan.list.forEach((item) => {
+                if (item.elements) {
+                    item.elements = slideDic[item._id].elements;
+                }
+            });
+        });
 
         return new MethodResult(timePlan);
 

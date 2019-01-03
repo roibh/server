@@ -137,7 +137,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<link rel=\"stylesheet\" [href]='sanitizer.bypassSecurityTrustResourceUrl(this.languageService.cssUrl)' />\n\n<select [(ngModel)]=\"selectedLanguage\" (change)=\"selectLanguage()\" [compareWith]=\"compareFn\">\n  <option *ngFor=\"let c of languages\" [ngValue]=\"c\">{{c.name}}</option>\n</select>"
+module.exports = "<link rel=\"stylesheet\" [href]='sanitizer.bypassSecurityTrustResourceUrl(this.languageService.cssUrl)' />\n\n\n<div class=\"input-group mb-3\">\n  <div class=\"input-group-prepend\">\n    <span class=\"input-group-text\" id=\"basic-addon1\"><i class=\"fas fa-globe\"></i></span>\n  </div>\n  <select [(ngModel)]=\"selectedLanguage\" class=\"form-control\" (change)=\"selectLanguage()\" [compareWith]=\"compareFn\">\n    <option *ngFor=\"let c of languages\" [ngValue]=\"c\">{{c.name}}</option>\n  </select>\n</div>\n"
 
 /***/ }),
 
@@ -192,6 +192,190 @@ var LanguageBarComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/common/lobby/lobby.component.html":
+/*!***************************************************!*\
+  !*** ./src/app/common/lobby/lobby.component.html ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container no-margin\" *ngIf=\"mode==='media'\">\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn\" (click)=\"newItemHandler()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    <span class=\"label\">{{item.Name}}</span>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\" aria-label=\"Basic example\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"deleteItemHandler(item);\"> <i class=\"fas fa-trash\"></i>\n        </button>\n      </li>\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"editItemHandler(item);\"> <i class=\"fas fa-edit\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"container no-margin\" *ngIf=\"mode==='media-finder'\">\n\n  <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    <span class=\"label\">{{item.Name}}</span>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"selectItemHandler(item);\"> <i class=\"fas fa-plus-square\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"container no-margin\" *ngIf=\"mode==='object-finder'\">\n\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <span class=\"label\">{{item.Name}}</span>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"selectItemHandler(item);\"> <i class=\"fas fa-plus-square\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"container no-margin\" *ngIf=\"mode==='object'\">\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn\" (click)=\"newItemHandler()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <i class=\"{{iconClass}} icon\"></i> <span class=\"label\">{{item.Name}}</span>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"deleteItemHandler(item);\"> <i class=\"fas fa-trash\"></i>\n        </button>\n      </li>\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"editItemHandler(item);\"> <i class=\"fas fa-edit\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/common/lobby/lobby.component.scss":
+/*!***************************************************!*\
+  !*** ./src/app/common/lobby/lobby.component.scss ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".icon {\n  margin-right: 5px;\n  margin-left: 5px; }\n\n.sqr-btn {\n  font-size: 84px;\n  text-align: center;\n  vertical-align: middle; }\n\n.sqr-btn:hover, .sqr:hover {\n  opacity: 1; }\n\n.sqr-btn:hover .sqr-toolbar, .sqr:hover .sqr-toolbar {\n    visibility: visible; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL2xvYmJ5L0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcY29tbW9uXFxsb2JieVxcbG9iYnkuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBZ0I7RUFDaEIsaUJBQWUsRUFDbEI7O0FBRUQ7RUFFSSxnQkFBZTtFQUNmLG1CQUFrQjtFQUNsQix1QkFBc0IsRUFDekI7O0FBQ0Q7RUFDSSxXQUFVLEVBSWI7O0FBTEQ7SUFHUSxvQkFBbUIsRUFDdEIiLCJmaWxlIjoic3JjL2FwcC9jb21tb24vbG9iYnkvbG9iYnkuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaWNvbiB7XHJcbiAgICBtYXJnaW4tcmlnaHQ6NXB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6NXB4O1xyXG59XHJcblxyXG4uc3FyLWJ0bntcclxuICAgIFxyXG4gICAgZm9udC1zaXplOiA4NHB4O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxufVxyXG4uc3FyLWJ0bjpob3Zlciwuc3FyOmhvdmVye1xyXG4gICAgb3BhY2l0eTogMTtcclxuICAgIC5zcXItdG9vbGJhcntcclxuICAgICAgICB2aXNpYmlsaXR5OiB2aXNpYmxlO1xyXG4gICAgfVxyXG59Il19 */"
+
+/***/ }),
+
+/***/ "./src/app/common/lobby/lobby.component.ts":
+/*!*************************************************!*\
+  !*** ./src/app/common/lobby/lobby.component.ts ***!
+  \*************************************************/
+/*! exports provided: LobbyComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LobbyComponent", function() { return LobbyComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var LobbyComponent = /** @class */ (function () {
+    function LobbyComponent() {
+        this.noNew = false;
+        this.deleteItem = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.editItem = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.newItem = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.selectItem = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+    }
+    LobbyComponent.prototype.deleteItemHandler = function (item) {
+        this.deleteItem.emit(item);
+    };
+    LobbyComponent.prototype.editItemHandler = function (item) {
+        this.editItem.emit(item);
+    };
+    LobbyComponent.prototype.newItemHandler = function (item) {
+        this.newItem.emit(item);
+    };
+    LobbyComponent.prototype.selectItemHandler = function (item) {
+        this.selectItem.emit(item);
+    };
+    LobbyComponent.prototype.ngOnInit = function () {
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], LobbyComponent.prototype, "items", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], LobbyComponent.prototype, "noNew", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
+    ], LobbyComponent.prototype, "mode", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
+    ], LobbyComponent.prototype, "iconClass", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], LobbyComponent.prototype, "deleteItem", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], LobbyComponent.prototype, "editItem", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], LobbyComponent.prototype, "newItem", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], LobbyComponent.prototype, "selectItem", void 0);
+    LobbyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-lobby',
+            template: __webpack_require__(/*! ./lobby.component.html */ "./src/app/common/lobby/lobby.component.html"),
+            styles: [__webpack_require__(/*! ./lobby.component.scss */ "./src/app/common/lobby/lobby.component.scss")]
+        })
+    ], LobbyComponent);
+    return LobbyComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/common/slide-footer/slide-footer.component.html":
+/*!*****************************************************************!*\
+  !*** ./src/app/common/slide-footer/slide-footer.component.html ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"footer {{className}}\">\n   \n</div> "
+
+/***/ }),
+
+/***/ "./src/app/common/slide-footer/slide-footer.component.scss":
+/*!*****************************************************************!*\
+  !*** ./src/app/common/slide-footer/slide-footer.component.scss ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".footer {\n  pointer-events: none;\n  z-index: 0;\n  width: 110%;\n  opacity: 0.8;\n  position: absolute;\n  padding-top: 30px;\n  bottom: -15px;\n  right: -15px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL3NsaWRlLWZvb3Rlci9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXGNvbW1vblxcc2xpZGUtZm9vdGVyXFxzbGlkZS1mb290ZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBR0E7RUFDSSxxQkFBb0I7RUFDcEIsV0FBVTtFQUNWLFlBQVc7RUFDWCxhQUFZO0VBQ1osbUJBQWtCO0VBQ2xCLGtCQUFpQjtFQUNqQixjQUFhO0VBRWIsYUFBWSxFQUNmIiwiZmlsZSI6InNyYy9hcHAvY29tbW9uL3NsaWRlLWZvb3Rlci9zbGlkZS1mb290ZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcclxuXHJcblxyXG4uZm9vdGVye1xyXG4gICAgcG9pbnRlci1ldmVudHM6IG5vbmU7IFxyXG4gICAgei1pbmRleDogMDtcclxuICAgIHdpZHRoOiAxMTAlO1xyXG4gICAgb3BhY2l0eTogMC44O1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlOyAgICAgXHJcbiAgICBwYWRkaW5nLXRvcDogMzBweDtcclxuICAgIGJvdHRvbTogLTE1cHg7XHJcbiAgICBcclxuICAgIHJpZ2h0OiAtMTVweDsgIFxyXG59XHJcblxyXG4gIl19 */"
+
+/***/ }),
+
+/***/ "./src/app/common/slide-footer/slide-footer.component.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/common/slide-footer/slide-footer.component.ts ***!
+  \***************************************************************/
+/*! exports provided: SlideFooterComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SlideFooterComponent", function() { return SlideFooterComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var SlideFooterComponent = /** @class */ (function () {
+    function SlideFooterComponent() {
+        this.closed = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+    }
+    SlideFooterComponent.prototype.ngOnInit = function () {
+    };
+    SlideFooterComponent.prototype.closeSlider = function () {
+        this.closed.emit(true);
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
+    ], SlideFooterComponent.prototype, "title", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
+    ], SlideFooterComponent.prototype, "className", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
+    ], SlideFooterComponent.prototype, "iconClass", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function)
+    ], SlideFooterComponent.prototype, "closeFn", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], SlideFooterComponent.prototype, "closed", void 0);
+    SlideFooterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-slide-footer',
+            template: __webpack_require__(/*! ./slide-footer.component.html */ "./src/app/common/slide-footer/slide-footer.component.html"),
+            styles: [__webpack_require__(/*! ./slide-footer.component.scss */ "./src/app/common/slide-footer/slide-footer.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], SlideFooterComponent);
+    return SlideFooterComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/common/slide-header/slide-header.component.html":
 /*!*****************************************************************!*\
   !*** ./src/app/common/slide-header/slide-header.component.html ***!
@@ -199,7 +383,7 @@ var LanguageBarComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"topper {{className}}\"><span class=\"fas fa-clone bar-icon\"></span> <h4> {{title | translate}}</h4>\n</div>\n\n<button class=\"close-button\" (click)=\"closeSlider();\"><i class=\"far fa-window-close\"></i></button>\n\n"
+module.exports = "<div class=\"topper {{className}}\">\n    <i class=\"{{iconClass}} icon\"></i>\n    <h4> {{title | translate}}</h4>\n</div>\n<button class=\"close-button\" (click)=\"closeSlider();\"><i class=\"far fa-window-close \"></i></button>\n"
 
 /***/ }),
 
@@ -210,7 +394,7 @@ module.exports = "<div class=\"topper {{className}}\"><span class=\"fas fa-clone
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".orange {\n  background: #de4823;\n  background: linear-gradient(90deg, #de4823 0%, #791f09 67%, #00fffc 100%); }\n\n.topper {\n  pointer-events: none;\n  z-index: 0;\n  height: 65px;\n  opacity: 0.8;\n  position: absolute;\n  width: 112%;\n  padding-top: 30px;\n  top: -34px;\n  left: -16px; }\n\n.topper h4 {\n    display: inline; }\n\n.topper .bar-icon {\n    margin-left: 15px; }\n\n.rtl .close-button {\n  position: absolute;\n  z-index: 2000;\n  left: 0; }\n\n.ltr .close-button {\n  position: absolute;\n  z-index: 2000;\n  right: 0; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL3NsaWRlLWhlYWRlci9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXGNvbW1vblxcc2xpZGUtaGVhZGVyXFxzbGlkZS1oZWFkZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDSSxvQkFBMEI7RUFDMUIsMEVBQXNHLEVBQ3pHOztBQUVEO0VBQ0kscUJBQW9CO0VBQ3BCLFdBQVU7RUFDVixhQUFZO0VBQ1osYUFBWTtFQUNaLG1CQUFrQjtFQUNsQixZQUFXO0VBQ1gsa0JBQWlCO0VBQ2pCLFdBQVU7RUFDVixZQUFXLEVBT2Q7O0FBaEJEO0lBV1EsZ0JBQWUsRUFDbEI7O0FBWkw7SUFjUSxrQkFBaUIsRUFDcEI7O0FBR0w7RUFHUSxtQkFBa0I7RUFDbEIsY0FBYTtFQUNiLFFBQU8sRUFDVjs7QUFHTDtFQUVRLG1CQUFrQjtFQUNsQixjQUFhO0VBQ2IsU0FBUSxFQUNYIiwiZmlsZSI6InNyYy9hcHAvY29tbW9uL3NsaWRlLWhlYWRlci9zbGlkZS1oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcclxuLm9yYW5nZSB7XHJcbiAgICBiYWNrZ3JvdW5kOiByZ2IoMjIyLDcyLDM1KTtcclxuICAgIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCg5MGRlZywgcmdiYSgyMjIsNzIsMzUsMSkgMCUsIHJnYmEoMTIxLDMxLDksMSkgNjclLCByZ2JhKDAsMjU1LDI1MiwxKSAxMDAlKTtcclxufVxyXG5cclxuLnRvcHBlcntcclxuICAgIHBvaW50ZXItZXZlbnRzOiBub25lOyBcclxuICAgIHotaW5kZXg6IDA7XHJcbiAgICBoZWlnaHQ6IDY1cHg7ICAgXHJcbiAgICBvcGFjaXR5OiAwLjg7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB3aWR0aDogMTEyJTtcclxuICAgIHBhZGRpbmctdG9wOiAzMHB4O1xyXG4gICAgdG9wOiAtMzRweDtcclxuICAgIGxlZnQ6IC0xNnB4O1xyXG4gICAgaDR7XHJcbiAgICAgICAgZGlzcGxheTogaW5saW5lO1xyXG4gICAgfVxyXG4gICAgLmJhci1pY29ue1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiAxNXB4O1xyXG4gICAgfVxyXG59XHJcblxyXG4ucnRsXHJcbntcclxuICAgIC5jbG9zZS1idXR0b257XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIHotaW5kZXg6IDIwMDA7XHJcbiAgICAgICAgbGVmdDogMDtcclxuICAgIH1cclxufVxyXG5cclxuLmx0cntcclxuICAgIC5jbG9zZS1idXR0b257XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIHotaW5kZXg6IDIwMDA7XHJcbiAgICAgICAgcmlnaHQ6IDA7XHJcbiAgICB9XHJcbn0iXX0= */"
+module.exports = ".topper {\n  pointer-events: none;\n  z-index: 0;\n  height: 65px;\n  opacity: 0.8;\n  position: absolute;\n  padding-top: 30px;\n  top: -30px;\n  left: -15px;\n  right: -15px; }\n  .topper .icon {\n    margin: 8px;\n    vertical-align: top; }\n  .topper h4 {\n    display: inline;\n    vertical-align: top; }\n  .topper .bar-icon {\n    margin-left: 15px; }\n  .rtl .close-button {\n  position: absolute;\n  z-index: 2000;\n  left: 0; }\n  .ltr .close-button {\n  position: absolute;\n  z-index: 2000;\n  right: 0; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL3NsaWRlLWhlYWRlci9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXGNvbW1vblxcc2xpZGUtaGVhZGVyXFxzbGlkZS1oZWFkZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBR0E7RUFDSSxxQkFBb0I7RUFDcEIsV0FBVTtFQUNWLGFBQVk7RUFDWixhQUFZO0VBQ1osbUJBQWtCO0VBQ2xCLGtCQUFpQjtFQUNqQixXQUFVO0VBQ1YsWUFBVztFQUNYLGFBQVksRUFZZjtFQXJCRDtJQVdRLFlBQVc7SUFDWCxvQkFBbUIsRUFDdEI7RUFiTDtJQWVRLGdCQUFlO0lBQ2Ysb0JBQW1CLEVBQ3RCO0VBakJMO0lBbUJRLGtCQUFpQixFQUNwQjtFQUdMO0VBR1EsbUJBQWtCO0VBQ2xCLGNBQWE7RUFDYixRQUFPLEVBQ1Y7RUFHTDtFQUVRLG1CQUFrQjtFQUNsQixjQUFhO0VBQ2IsU0FBUSxFQUNYIiwiZmlsZSI6InNyYy9hcHAvY29tbW9uL3NsaWRlLWhlYWRlci9zbGlkZS1oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcclxuXHJcblxyXG4udG9wcGVye1xyXG4gICAgcG9pbnRlci1ldmVudHM6IG5vbmU7IFxyXG4gICAgei1pbmRleDogMDtcclxuICAgIGhlaWdodDogNjVweDsgICBcclxuICAgIG9wYWNpdHk6IDAuODtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTsgICAgIFxyXG4gICAgcGFkZGluZy10b3A6IDMwcHg7XHJcbiAgICB0b3A6IC0zMHB4O1xyXG4gICAgbGVmdDogLTE1cHg7XHJcbiAgICByaWdodDogLTE1cHg7XHJcbiAgICAuaWNvbntcclxuICAgICAgICBtYXJnaW46IDhweDsgICAgICBcclxuICAgICAgICB2ZXJ0aWNhbC1hbGlnbjogdG9wO1xyXG4gICAgfVxyXG4gICAgaDR7XHJcbiAgICAgICAgZGlzcGxheTogaW5saW5lO1xyXG4gICAgICAgIHZlcnRpY2FsLWFsaWduOiB0b3A7XHJcbiAgICB9XHJcbiAgICAuYmFyLWljb257XHJcbiAgICAgICAgbWFyZ2luLWxlZnQ6IDE1cHg7XHJcbiAgICB9XHJcbn1cclxuXHJcbi5ydGxcclxue1xyXG4gICAgLmNsb3NlLWJ1dHRvbntcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgei1pbmRleDogMjAwMDtcclxuICAgICAgICBsZWZ0OiAwO1xyXG4gICAgfVxyXG59XHJcblxyXG4ubHRye1xyXG4gICAgLmNsb3NlLWJ1dHRvbntcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgei1pbmRleDogMjAwMDtcclxuICAgICAgICByaWdodDogMDtcclxuICAgIH1cclxufSJdfQ== */"
 
 /***/ }),
 
@@ -245,6 +429,10 @@ var SlideHeaderComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
     ], SlideHeaderComponent.prototype, "className", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
+    ], SlideHeaderComponent.prototype, "iconClass", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function)
@@ -371,6 +559,10 @@ var DataComponent = /** @class */ (function () {
             });
         });
     };
+    DataComponent.prototype.newItem = function () {
+        this.item = {};
+        this.displayModalNew = 'active';
+    };
     DataComponent.prototype.editItem = function (item) {
         var _this = this;
         this._ngZone.run(function () { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
@@ -454,7 +646,7 @@ var AdaptHeightDirective = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"slider-container-wide {{active}} shadow\">\n\n  <dialog open= {{active}}>\n    <a (click)=\"closeSlider();\"><i class=\"far fa-window-close close-button\"></i></a>\n    <input type=\"text\" name=\"searchPhrase\" /><button class=\"btn btn-primary\"></button>\n\n\n\n    <ul class=\"nav nav-tabs\">\n      <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n        <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n      </li>\n    </ul>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias !=='slides'\">\n      <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n        {{item.Name}}\n        <ul class=\"sqr-toolbar\">\n\n          <li>\n            <button class=\"btn btn-md btn-primary\" (click)=\"selectItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n          </li>\n        </ul>\n      </div>\n    </div>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias ==='slides'\">\n      <div *ngFor=\"let item of slides\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n        {{item.Name}}\n        <ul class=\"sqr-toolbar\">\n          <li>\n            <button class=\"btn btn-md btn-primary\" (click)=\"selectItem(item);\"> <i class=\"fas fa-edit\"></i> </button>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </dialog>\n</div>\n"
+module.exports = "<div class=\"slider-container-wide {{active}} shadow\">\n\n  <dialog open= {{active}}>\n    <app-slide-header title=\"NAVBAR.FINDER\" className=\"lemon-cat\" (closed)=\"closeSlider($event)\"></app-slide-header>\n    <div class=\"input-group pt50\">\n      <input type=\"text\" name=\"searchPhrase\" class=\"form-control\" />\n      <div class=\"input-group-prepend\">\n        <button class=\"btn btn-outline-secondary\" type=\"button\"> <i class=\"fas fa-search\"></i></button>\n      </div>\n    </div>\n    <ul class=\"nav nav-tabs\">\n      <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n        <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n      </li>\n    </ul>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias !=='slide'\">\n      <app-lobby [items]=\"filteredItems()\" mode=\"media-finder\" (selectItem)=\"selectItem($event)\" (deleteItem)=\"deleteItem($event)\"\n        (newItem)=\"newItem($event)\"></app-lobby>\n    </div>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias ==='slide'\">\n      <app-lobby [items]=\"slides\" mode=\"object-finder\" (selectItem)=\"selectItem($event)\" (deleteItem)=\"deleteItem($event)\"\n        (newItem)=\"newItem($event)\"></app-lobby>\n    </div>\n    <app-slide-footer className=\"lemon-cat\"></app-slide-footer>\n  </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -496,15 +688,22 @@ var FinderComponent = /** @class */ (function (_super) {
         var _this = _super.call(this, _ngZone, translateService) || this;
         _this._ngZone = _ngZone;
         _this.translateService = translateService;
-        _this.tabs = [{ name: 'NAVBAR.IMAGES', selected: true, alias: 'images' },
-            { name: 'NAVBAR.VIDEOS', selected: false, alias: 'videos' },
-            { name: 'NAVBAR.SLIDES', selected: false, alias: 'slides' }];
+        _this.types = ['image', 'video'];
+        _this.tabsCollection = {
+            'image': 'NAVBAR.IMAGES',
+            'video': 'NAVBAR.VIDEOS',
+            'slide': 'NAVBAR.SLIDES',
+        };
+        _this.tabs = [];
         _this.selectItem = function (item) {
             _this.selector(item);
         };
         _this.DataController = _signnature_client__WEBPACK_IMPORTED_MODULE_3__["LibraryDataController"];
         return _this;
     }
+    // [{ name: 'NAVBAR.IMAGES', selected: true, alias: 'image' },
+    // { name: 'NAVBAR.VIDEOS', selected: false, alias: 'video' },
+    // { name: 'NAVBAR.SLIDES', selected: false, alias: 'slide' }];
     FinderComponent.prototype.tabSelect = function (tab) {
         this.tabs.forEach(function (tabItem) { return tabItem.selected = false; });
         tab.selected = true;
@@ -519,13 +718,24 @@ var FinderComponent = /** @class */ (function (_super) {
             });
         }); });
     };
+    FinderComponent.prototype.filteredItems = function () {
+        var _this = this;
+        return this.items.filter(function (item) { return item.type === _this.selectedTab.alias; });
+    };
     FinderComponent.prototype.ngOnInit = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var _a;
+            var _this = this;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
                 switch (_b.label) {
                     case 0:
-                        this.loadItems();
+                        this.loadItems({});
+                        this.tabs = this.types.map(function (item) {
+                            return {
+                                name: _this.tabsCollection[item],
+                                alias: item,
+                            };
+                        });
                         // if (Object.keys(query).length) {
                         //   this.query = query;
                         // }
@@ -536,6 +746,7 @@ var FinderComponent = /** @class */ (function (_super) {
                         //   this.query = query;
                         // }
                         _a.slides = _b.sent();
+                        this.selectedTab = this.tabs[0];
                         return [2 /*return*/];
                 }
             });
@@ -549,6 +760,10 @@ var FinderComponent = /** @class */ (function (_super) {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function)
     ], FinderComponent.prototype, "selector", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], FinderComponent.prototype, "types", void 0);
     FinderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-finder',
@@ -737,8 +952,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./library/finder/finder.component */ "./src/app/library/finder/finder.component.ts");
 /* harmony import */ var _common_slide_header_slide_header_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./common/slide-header/slide-header.component */ "./src/app/common/slide-header/slide-header.component.ts");
-/* harmony import */ var _common_bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./common/bread-crumbs/bread-crumbs.component */ "./src/app/common/bread-crumbs/bread-crumbs.component.ts");
-/* harmony import */ var _directives_adapt_height__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./directives/adapt-height */ "./src/app/directives/adapt-height.ts");
+/* harmony import */ var _common_slide_footer_slide_footer_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./common/slide-footer/slide-footer.component */ "./src/app/common/slide-footer/slide-footer.component.ts");
+/* harmony import */ var _common_bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./common/bread-crumbs/bread-crumbs.component */ "./src/app/common/bread-crumbs/bread-crumbs.component.ts");
+/* harmony import */ var _common_lobby_lobby_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./common/lobby/lobby.component */ "./src/app/common/lobby/lobby.component.ts");
+/* harmony import */ var _directives_adapt_height__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./directives/adapt-height */ "./src/app/directives/adapt-height.ts");
+/* harmony import */ var ng2_dragula__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ng2-dragula */ "./node_modules/ng2-dragula/dist/fesm5/ng2-dragula.js");
+/* harmony import */ var ngx_color_picker__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ngx-color-picker */ "./node_modules/ngx-color-picker/dist/ngx-color-picker.es5.js");
 
 
 
@@ -746,6 +965,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // import { DragAndDropModule } from 'angular-draggable-droppable';
+
+
+
+
 
 
 
@@ -769,12 +992,15 @@ var SharedModule = /** @class */ (function () {
     var SharedModule_1;
     SharedModule = SharedModule_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_9__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"],
+            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_9__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"], ng2_dragula__WEBPACK_IMPORTED_MODULE_16__["DragulaModule"], ngx_color_picker__WEBPACK_IMPORTED_MODULE_17__["ColorPickerModule"],
                 _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateModule"].forChild(), ngx_file_drop__WEBPACK_IMPORTED_MODULE_5__["FileDropModule"], angular2_draggable__WEBPACK_IMPORTED_MODULE_6__["AngularDraggableModule"]],
-            declarations: [_directives_adapt_height__WEBPACK_IMPORTED_MODULE_13__["AdaptHeightDirective"], _common_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_7__["LanguageBarComponent"], _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_10__["FinderComponent"], _common_slide_header_slide_header_component__WEBPACK_IMPORTED_MODULE_11__["SlideHeaderComponent"], _common_bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_12__["BreadCrumbsComponent"]],
+            declarations: [_directives_adapt_height__WEBPACK_IMPORTED_MODULE_15__["AdaptHeightDirective"], _common_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_7__["LanguageBarComponent"], _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_10__["FinderComponent"],
+                _common_slide_header_slide_header_component__WEBPACK_IMPORTED_MODULE_11__["SlideHeaderComponent"], _common_slide_footer_slide_footer_component__WEBPACK_IMPORTED_MODULE_12__["SlideFooterComponent"], _common_bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_13__["BreadCrumbsComponent"], _common_lobby_lobby_component__WEBPACK_IMPORTED_MODULE_14__["LobbyComponent"]],
             providers: [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"], _services_language_dictionary_service__WEBPACK_IMPORTED_MODULE_3__["DictionaryService"], _services_name_service__WEBPACK_IMPORTED_MODULE_4__["NameService"]],
-            exports: [_common_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_7__["LanguageBarComponent"], _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_10__["FinderComponent"], _common_slide_header_slide_header_component__WEBPACK_IMPORTED_MODULE_11__["SlideHeaderComponent"], _common_bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_12__["BreadCrumbsComponent"],
-                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateModule"], ngx_file_drop__WEBPACK_IMPORTED_MODULE_5__["FileDropModule"], _directives_adapt_height__WEBPACK_IMPORTED_MODULE_13__["AdaptHeightDirective"], angular2_draggable__WEBPACK_IMPORTED_MODULE_6__["AngularDraggableModule"]],
+            exports: [_common_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_7__["LanguageBarComponent"], _common_lobby_lobby_component__WEBPACK_IMPORTED_MODULE_14__["LobbyComponent"], _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_10__["FinderComponent"], _common_slide_header_slide_header_component__WEBPACK_IMPORTED_MODULE_11__["SlideHeaderComponent"],
+                _common_slide_footer_slide_footer_component__WEBPACK_IMPORTED_MODULE_12__["SlideFooterComponent"], _common_bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_13__["BreadCrumbsComponent"],
+                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateModule"], ngx_file_drop__WEBPACK_IMPORTED_MODULE_5__["FileDropModule"], ngx_color_picker__WEBPACK_IMPORTED_MODULE_17__["ColorPickerModule"], _directives_adapt_height__WEBPACK_IMPORTED_MODULE_15__["AdaptHeightDirective"], angular2_draggable__WEBPACK_IMPORTED_MODULE_6__["AngularDraggableModule"],
+                ng2_dragula__WEBPACK_IMPORTED_MODULE_16__["DragulaDirective"]],
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"]])
     ], SharedModule);
@@ -1234,18 +1460,41 @@ var SlideService = /** @class */ (function () {
             if (_this.itemIndex >= _this.list.length) {
                 _this.itemIndex = 0;
             }
+            _this.ctx.clearRect(0, 0, _this.width, _this.height);
             _this.prerender(_this.list[_this.itemIndex]);
             _this.itemIndex++;
         }, 5000);
     };
     SlideService.prototype.prerender = function (item) {
         var html = '<div>ELEMENT</div>';
+        if (item.elements) {
+            item.type = 'slide';
+        }
         switch (item.type) {
             case 'image':
                 // html = html.replace('ELEMENT', `<img src="${item.resource}" width="${this.width}" height="${this.height}" />`);
                 this.render_image_to_canvas(item.resource, 0, 0, this.width, this.height);
                 break;
+            case 'slide':
+                // html = html.replace('ELEMENT', `<img src="${item.resource}" width="${this.width}" height="${this.height}" />`);
+                this.render_html_to_canvas(this.renderElementsToTags(item.elements), 0, 0, this.width, this.height);
+                break;
         }
+    };
+    SlideService.prototype.renderElementsToTags = function (elements) {
+        var _this = this;
+        return elements.map(function (element) {
+            switch (element.type) {
+                case 'image':
+                    _this.render_image_to_canvas(element.src, element.position.x, element.position.y, element.width, element.height);
+                    return '';
+                // return `<img src="${element.resource}" width="${element.width}"
+                //     height="${element.height}"
+                //     style="position: absolute;top:${element.position.y}px;left:${element.position.x}px" />`;
+                case 'text':
+                    return "<p style=\"position: absolute;top:" + element.position.y + "px; left:" + element.position.x + "px; font-size: " + element.fontSize + "px;color: " + element.color + ";font-family: " + element.font.id + "\">" + element.name + "</p>";
+            }
+        }).join('');
     };
     SlideService.prototype.render_image_to_canvas = function (url, x, y, width, height) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
@@ -1253,8 +1502,10 @@ var SlideService = /** @class */ (function () {
             var _this = this;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 img = new Image();
+                debugger;
                 img.onload = function () {
-                    _this.ctx.clearRect(0, 0, _this.width, _this.height);
+                    debugger;
+                    // this.ctx.clearRect(0, 0, this.width, this.height);
                     _this.ctx.drawImage(img, x, y);
                 };
                 img.src = url;
@@ -1280,7 +1531,7 @@ var SlideService = /** @class */ (function () {
                             '</svg>';
                         img = new Image();
                         img.onload = function () {
-                            _this.ctx.clearRect(0, 0, _this.width, _this.height);
+                            // this.ctx.clearRect(0, 0, this.width, this.height);
                             _this.ctx.drawImage(img, x, y);
                         };
                         img.src = data;
