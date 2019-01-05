@@ -55,7 +55,7 @@ export class PlayerController {
         timePlan.forEach((plan) => {
             plan.list.forEach((item) => {
                 if (item.elements) {
-                    item.elements = slideDic[item._id].elements;
+                    Object.assign(item, slideDic[item._id]);
                 }
             });
         });

@@ -296,6 +296,165 @@ var LobbyComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/common/rulers/rulers.component.html":
+/*!*****************************************************!*\
+  !*** ./src/app/common/rulers/rulers.component.html ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div style=\"border: 1px solid red;\"><canvas class='ruler' id='ruler'></canvas></div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/common/rulers/rulers.component.scss":
+/*!*****************************************************!*\
+  !*** ./src/app/common/rulers/rulers.component.scss ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".ruler {\n  position: absolute;\n  z-index: -1; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL3J1bGVycy9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXGNvbW1vblxccnVsZXJzXFxydWxlcnMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDQyxtQkFBa0I7RUFFbEIsWUFBVyxFQUNYIiwiZmlsZSI6InNyYy9hcHAvY29tbW9uL3J1bGVycy9ydWxlcnMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucnVsZXIge1xyXG5cdHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuIFxyXG5cdHotaW5kZXg6IC0xO1xyXG59XHJcblxyXG4gIl19 */"
+
+/***/ }),
+
+/***/ "./src/app/common/rulers/rulers.component.ts":
+/*!***************************************************!*\
+  !*** ./src/app/common/rulers/rulers.component.ts ***!
+  \***************************************************/
+/*! exports provided: RulersComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RulersComponent", function() { return RulersComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var RulersComponent = /** @class */ (function () {
+    function RulersComponent() {
+    }
+    RulersComponent.prototype.ngOnInit = function () {
+        var myCanvas = document.getElementById('ruler');
+        var worksapce = document.getElementById('worksapce');
+        var style = getComputedStyle(worksapce, null);
+        myCanvas.width = Number(style.width.replace('px', '')) + 15;
+        myCanvas.height = Number(style.height.replace('px', '')) + 15;
+        var ruler = new Ruler('ruler');
+        ruler.render('#aaa', 'pixels', 100);
+        window.onresize = function () {
+            worksapce = document.getElementById('worksapce');
+            style = getComputedStyle(worksapce, null);
+            myCanvas.width = style.width.replace('px', '');
+            myCanvas.height = style.height.replace('px', '');
+            ruler.render('#aaa', 'pixels', 100);
+        };
+    };
+    RulersComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-rulers',
+            template: __webpack_require__(/*! ./rulers.component.html */ "./src/app/common/rulers/rulers.component.html"),
+            styles: [__webpack_require__(/*! ./rulers.component.scss */ "./src/app/common/rulers/rulers.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], RulersComponent);
+    return RulersComponent;
+}());
+
+var MAJOR_INTERVAL_RATIO = 0.5, MINOR_INTERVAL_RATIO = 0.2, TICKS_PER_MAJOR_INTERVAL = 10, CURSOR_FPS = 48, GUTTER_SIZE = 15;
+function Ruler(canvas) {
+    /*global document, window, Blob, setInterval*/
+    this.canvas = (canvas.getContext) ? canvas : document.getElementById(canvas);
+    this.ctx = this.canvas.getContext('2d');
+    this.cursor = document.createElement('canvas');
+    this.cursor_ctx = this.cursor.getContext('2d');
+    document.body.appendChild(this.cursor);
+    this.cursor.width = this.canvas.width;
+    this.cursor.height = this.canvas.height;
+    this.cursor.className = this.canvas.className;
+    this.cursor.style.zIndex = (this.canvas.style.zIndex + 1) || 1;
+    this.cursor.x = this.cursor.currentX = 0;
+    this.cursor.y = this.cursor.currentY = 0;
+    var refreshCursor = setInterval(function () {
+        if (this.cursor.y !== this.cursor.currentY) {
+            this.cursor_ctx.clearRect(0, 0, GUTTER_SIZE, window.innerHeight);
+            this.cursor_ctx.beginPath();
+            this.cursor_ctx.moveTo(0, this.cursor.y);
+            this.cursor_ctx.lineTo(GUTTER_SIZE, this.cursor.y);
+            this.cursor_ctx.stroke();
+            this.cursor.currentY = this.cursor.y;
+        }
+        if (this.cursor.x !== this.cursor.currentX) {
+            this.cursor_ctx.clearRect(0, 0, window.innerWidth, GUTTER_SIZE);
+            this.cursor_ctx.beginPath();
+            this.cursor_ctx.moveTo(this.cursor.x, 0);
+            this.cursor_ctx.lineTo(this.cursor.x, GUTTER_SIZE);
+            this.cursor_ctx.stroke();
+            this.cursor.currentX = this.cursor.x;
+        }
+    }.bind(this), 1000 / CURSOR_FPS);
+    this.cursor.onmousemove = function (ev) {
+        if (ev.clientX > GUTTER_SIZE) {
+            this.cursor.x = ev.clientX;
+        }
+        if (ev.clientY > GUTTER_SIZE) {
+            this.cursor.y = ev.clientY;
+        }
+    }.bind(this);
+    function fillContextWithRuler(context, ruler, width, height) {
+        var pattern_holder = document.createElement('canvas'), pattern_ctx = pattern_holder.getContext('2d');
+        context.fillStyle = context.createPattern(ruler, 'repeat-x');
+        context.fillRect(GUTTER_SIZE, 0, width, height);
+        pattern_holder.width = width;
+        pattern_holder.height = 100;
+        pattern_ctx.translate(0, 0);
+        pattern_ctx.scale(-1, 1);
+        pattern_ctx.rotate(Math.PI / 4 * 2);
+        pattern_ctx.drawImage(ruler, 0, 0);
+        context.fillStyle = context.createPattern(pattern_holder, 'repeat-y');
+        context.fillRect(0, GUTTER_SIZE, width, width);
+    }
+    function constructSVGData(color, units, major) {
+        var majorHeight = parseInt((GUTTER_SIZE * MAJOR_INTERVAL_RATIO).toString(), 10), minorHeight = parseInt((GUTTER_SIZE * MINOR_INTERVAL_RATIO).toString(), 10);
+        var tickWidth = parseInt((major / 10).toString(), 10);
+        var html = '', i;
+        for (i = 0; i < TICKS_PER_MAJOR_INTERVAL; i += 1) {
+            html += '<div xmlns=\'http://www.w3.org/1999/xhtml\' style=\'position: absolute; bottom: 0px; width: ' +
+                tickWidth + 'px; border-bottom: 1px solid #555; border-left: 1px solid #999;  height: ' +
+                ((i % 5 === 0) ? majorHeight : minorHeight) + 'px; left: ' + i * tickWidth + 'px\'></div>';
+        }
+        // https://developer.mozilla.org/en-US/docs/HTML/Canvas/Drawing_DOM_objects_into_a_canvas
+        return '<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'' + major + '\' height=\'' + GUTTER_SIZE +
+            '\'><foreignObject width=\'100%\' height=\'100%\'>' + html + '</foreignObject></svg>';
+    }
+    this.render = function (color, units, major, width, height, options) {
+        var svg, svgdata, ruler, url, DOMURL;
+        options = options || {};
+        this.ctx.fillStyle = options.backgroundColor || '#474747';
+        this.ctx.strokeStyle = '#ffffff';
+        this.cursor_ctx.strokeStyle = options.cursorColor || '#ffffff';
+        this.ctx.fillRect(0, 0, this.canvas.width, GUTTER_SIZE);
+        this.ctx.fillRect(0, 0, GUTTER_SIZE, this.canvas.height);
+        svgdata = constructSVGData.apply(this, arguments);
+        ruler = document.createElement('img');
+        DOMURL = window.URL || window.webkitURL || window;
+        ruler.onload = function () {
+            DOMURL.revokeObjectURL(url);
+            fillContextWithRuler(this.ctx, ruler, this.canvas.width, this.canvas.height);
+        }.bind(this);
+        svg = new Blob([svgdata], {
+            type: 'image/svg+xml;charset=utf-8'
+        });
+        url = DOMURL.createObjectURL(svg);
+        ruler.src = url;
+    };
+    // window.onresize = this.render;
+}
+
+
+/***/ }),
+
 /***/ "./src/app/common/slide-footer/slide-footer.component.html":
 /*!*****************************************************************!*\
   !*** ./src/app/common/slide-footer/slide-footer.component.html ***!
@@ -958,6 +1117,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _directives_adapt_height__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./directives/adapt-height */ "./src/app/directives/adapt-height.ts");
 /* harmony import */ var ng2_dragula__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ng2-dragula */ "./node_modules/ng2-dragula/dist/fesm5/ng2-dragula.js");
 /* harmony import */ var ngx_color_picker__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ngx-color-picker */ "./node_modules/ngx-color-picker/dist/ngx-color-picker.es5.js");
+/* harmony import */ var _common_rulers_rulers_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./common/rulers/rulers.component */ "./src/app/common/rulers/rulers.component.ts");
 
 
 
@@ -965,6 +1125,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // import { DragAndDropModule } from 'angular-draggable-droppable';
+
 
 
 
@@ -994,10 +1155,10 @@ var SharedModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             imports: [_angular_common__WEBPACK_IMPORTED_MODULE_9__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"], ng2_dragula__WEBPACK_IMPORTED_MODULE_16__["DragulaModule"], ngx_color_picker__WEBPACK_IMPORTED_MODULE_17__["ColorPickerModule"],
                 _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateModule"].forChild(), ngx_file_drop__WEBPACK_IMPORTED_MODULE_5__["FileDropModule"], angular2_draggable__WEBPACK_IMPORTED_MODULE_6__["AngularDraggableModule"]],
-            declarations: [_directives_adapt_height__WEBPACK_IMPORTED_MODULE_15__["AdaptHeightDirective"], _common_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_7__["LanguageBarComponent"], _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_10__["FinderComponent"],
+            declarations: [_directives_adapt_height__WEBPACK_IMPORTED_MODULE_15__["AdaptHeightDirective"], _common_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_7__["LanguageBarComponent"], _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_10__["FinderComponent"], _common_rulers_rulers_component__WEBPACK_IMPORTED_MODULE_18__["RulersComponent"],
                 _common_slide_header_slide_header_component__WEBPACK_IMPORTED_MODULE_11__["SlideHeaderComponent"], _common_slide_footer_slide_footer_component__WEBPACK_IMPORTED_MODULE_12__["SlideFooterComponent"], _common_bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_13__["BreadCrumbsComponent"], _common_lobby_lobby_component__WEBPACK_IMPORTED_MODULE_14__["LobbyComponent"]],
             providers: [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"], _services_language_dictionary_service__WEBPACK_IMPORTED_MODULE_3__["DictionaryService"], _services_name_service__WEBPACK_IMPORTED_MODULE_4__["NameService"]],
-            exports: [_common_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_7__["LanguageBarComponent"], _common_lobby_lobby_component__WEBPACK_IMPORTED_MODULE_14__["LobbyComponent"], _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_10__["FinderComponent"], _common_slide_header_slide_header_component__WEBPACK_IMPORTED_MODULE_11__["SlideHeaderComponent"],
+            exports: [_common_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_7__["LanguageBarComponent"], _common_lobby_lobby_component__WEBPACK_IMPORTED_MODULE_14__["LobbyComponent"], _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_10__["FinderComponent"], _common_slide_header_slide_header_component__WEBPACK_IMPORTED_MODULE_11__["SlideHeaderComponent"], _common_rulers_rulers_component__WEBPACK_IMPORTED_MODULE_18__["RulersComponent"],
                 _common_slide_footer_slide_footer_component__WEBPACK_IMPORTED_MODULE_12__["SlideFooterComponent"], _common_bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_13__["BreadCrumbsComponent"],
                 _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateModule"], ngx_file_drop__WEBPACK_IMPORTED_MODULE_5__["FileDropModule"], ngx_color_picker__WEBPACK_IMPORTED_MODULE_17__["ColorPickerModule"], _directives_adapt_height__WEBPACK_IMPORTED_MODULE_15__["AdaptHeightDirective"], angular2_draggable__WEBPACK_IMPORTED_MODULE_6__["AngularDraggableModule"],
                 ng2_dragula__WEBPACK_IMPORTED_MODULE_16__["DragulaDirective"]],
@@ -1077,7 +1238,7 @@ module.exports = "\r\n<router-outlet></router-outlet>"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"{{bodyClass}}\">\r\n    <label *ngIf=\"!playerPlan\" class=\"huge\">{{Token}}</label>\r\n    <canvas *ngIf=\"playerPlan\"  #playerCanvas id=\"playerCanvas\"></canvas>\r\n</div>\r\n"
+module.exports = "<div class=\"{{bodyClass}}\">\r\n    <label *ngIf=\"!playerPlan\" class=\"huge\">{{Token}}</label>\r\n    <div class=\"screen\">\r\n        <canvas *ngIf=\"playerPlan\" #playerCanvas id=\"playerCanvas\"></canvas>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1088,7 +1249,7 @@ module.exports = "<div class=\"{{bodyClass}}\">\r\n    <label *ngIf=\"!playerPla
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".white {\n  color: white; }\n\n.huge {\n  font-size: 70px;\n  padding: 40px;\n  border: 1px solid rgba(6, 19, 19, 0.932);\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  margin-top: -100px;\n  margin-left: -400px;\n  width: 800px;\n  height: 200px;\n  text-align: center;\n  font-family: 'Montserrat', 'Roboto', sans-serif;\n  background-color: rgba(255, 255, 255, 0.5); }\n\ncanvas {\n  position: absolute;\n  top: 0;\n  left: 0; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9wbGF5ZXIvQzpcXHByb2plY3RzXFxzaWduLW5hdHVyZVxcd2ViL3NyY1xccGxheWVyXFxwbGF5ZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFBUSxhQUFZLEVBQUc7O0FBRXZCO0VBQ0ksZ0JBQWU7RUFDZixjQUFZO0VBQ1oseUNBQXdDO0VBQ3hDLG1CQUFrQjtFQUNsQixTQUFRO0VBQ1IsVUFBUztFQUNULG1CQUFrQjtFQUNsQixvQkFBbUI7RUFDbkIsYUFBWTtFQUNaLGNBQWE7RUFDYixtQkFBa0I7RUFDbEIsZ0RBQStDO0VBQy9DLDJDQUEwQyxFQUUzQzs7QUFFRDtFQUVFLG1CQUFrQjtFQUNsQixPQUFLO0VBQUMsUUFBTSxFQUNiIiwiZmlsZSI6InNyYy9wbGF5ZXIvcGxheWVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLndoaXRlIHtjb2xvcjogd2hpdGU7fVxyXG4gXHJcbi5odWdlIHtcclxuICAgIGZvbnQtc2l6ZTogNzBweDtcclxuICAgIHBhZGRpbmc6NDBweDtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIHJnYmEoNiwgMTksIDE5LCAwLjkzMik7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6IDUwJTtcclxuICAgIGxlZnQ6IDUwJTtcclxuICAgIG1hcmdpbi10b3A6IC0xMDBweDtcclxuICAgIG1hcmdpbi1sZWZ0OiAtNDAwcHg7XHJcbiAgICB3aWR0aDogODAwcHg7XHJcbiAgICBoZWlnaHQ6IDIwMHB4O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgZm9udC1mYW1pbHk6ICdNb250c2VycmF0JywgJ1JvYm90bycsIHNhbnMtc2VyaWY7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNSk7XHJcblxyXG4gIH1cclxuXHJcbiAgY2FudmFze1xyXG4gICBcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRvcDowO2xlZnQ6MDtcclxuICB9XHJcblxyXG5cclxuIl19 */"
+module.exports = ".white {\n  color: white; }\n\n.screen {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0; }\n\n.huge {\n  font-size: 70px;\n  padding: 40px;\n  border: 1px solid rgba(6, 19, 19, 0.932);\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  margin-top: -100px;\n  margin-left: -400px;\n  width: 800px;\n  height: 200px;\n  text-align: center;\n  font-family: 'Montserrat', 'Roboto', sans-serif;\n  background-color: rgba(255, 255, 255, 0.5); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9wbGF5ZXIvQzpcXHByb2plY3RzXFxzaWduLW5hdHVyZVxcd2ViL3NyY1xccGxheWVyXFxwbGF5ZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFBUSxhQUFZLEVBQUc7O0FBRXZCO0VBQ0UsbUJBQWtCO0VBQ2xCLE9BQU07RUFDTixRQUFRO0VBQ1IsU0FBUTtFQUNSLFVBQVMsRUFDVjs7QUFDRDtFQUNJLGdCQUFlO0VBQ2YsY0FBWTtFQUNaLHlDQUF3QztFQUN4QyxtQkFBa0I7RUFDbEIsU0FBUTtFQUNSLFVBQVM7RUFDVCxtQkFBa0I7RUFDbEIsb0JBQW1CO0VBQ25CLGFBQVk7RUFDWixjQUFhO0VBQ2IsbUJBQWtCO0VBQ2xCLGdEQUErQztFQUMvQywyQ0FBMEMsRUFFM0MiLCJmaWxlIjoic3JjL3BsYXllci9wbGF5ZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIud2hpdGUge2NvbG9yOiB3aGl0ZTt9XHJcbiBcclxuLnNjcmVlbiB7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHRvcDogMDtcclxuICBsZWZ0IDogMDtcclxuICByaWdodDogMDtcclxuICBib3R0b206IDA7XHJcbn1cclxuLmh1Z2Uge1xyXG4gICAgZm9udC1zaXplOiA3MHB4O1xyXG4gICAgcGFkZGluZzo0MHB4O1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgcmdiYSg2LCAxOSwgMTksIDAuOTMyKTtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRvcDogNTAlO1xyXG4gICAgbGVmdDogNTAlO1xyXG4gICAgbWFyZ2luLXRvcDogLTEwMHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IC00MDBweDtcclxuICAgIHdpZHRoOiA4MDBweDtcclxuICAgIGhlaWdodDogMjAwcHg7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBmb250LWZhbWlseTogJ01vbnRzZXJyYXQnLCAnUm9ib3RvJywgc2Fucy1zZXJpZjtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMC41KTtcclxuXHJcbiAgfVxyXG5cclxuXHJcblxyXG5cclxuIl19 */"
 
 /***/ }),
 
@@ -1445,6 +1606,23 @@ var SlideService = /** @class */ (function () {
         this.playerPlan = playerPlan;
         if (this.playerPlan) {
             this.list = this.playerPlan[0].list;
+            var fontsArr_1 = {};
+            this.list.forEach(function (item) {
+                if (item.elements) {
+                    item.elements.forEach(function (element) {
+                        if (element.font) {
+                            fontsArr_1[element.font] = element.font;
+                        }
+                    });
+                }
+            });
+            if (Object.keys(fontsArr_1).length > 0) {
+                window.WebFont.load({
+                    google: {
+                        families: Object.keys(fontsArr_1)
+                    }
+                });
+            }
         }
     };
     SlideService.prototype.play = function (playerPlan, ctx, width, height) {
@@ -1470,6 +1648,10 @@ var SlideService = /** @class */ (function () {
         if (item.elements) {
             item.type = 'slide';
         }
+        if (item.bgColor) {
+            this.ctx.fillStyle = item.bgColor;
+            this.ctx.fillRect(0, 0, this.width, this.height);
+        }
         switch (item.type) {
             case 'image':
                 // html = html.replace('ELEMENT', `<img src="${item.resource}" width="${this.width}" height="${this.height}" />`);
@@ -1477,24 +1659,35 @@ var SlideService = /** @class */ (function () {
                 break;
             case 'slide':
                 // html = html.replace('ELEMENT', `<img src="${item.resource}" width="${this.width}" height="${this.height}" />`);
-                this.render_html_to_canvas(this.renderElementsToTags(item.elements), 0, 0, this.width, this.height);
+                this.renderElementsToTags(item.elements);
+                // this.render_html_to_canvas(this.renderElementsToTags(item.elements), 0, 0, this.width, this.height);
                 break;
         }
     };
     SlideService.prototype.renderElementsToTags = function (elements) {
         var _this = this;
-        return elements.map(function (element) {
+        elements.forEach(function (element) {
             switch (element.type) {
                 case 'image':
                     _this.render_image_to_canvas(element.src, element.position.x, element.position.y, element.width, element.height);
-                    return '';
-                // return `<img src="${element.resource}" width="${element.width}"
-                //     height="${element.height}"
-                //     style="position: absolute;top:${element.position.y}px;left:${element.position.x}px" />`;
+                    break;
                 case 'text':
-                    return "<p style=\"position: absolute;top:" + element.position.y + "px; left:" + element.position.x + "px; font-size: " + element.fontSize + "px;color: " + element.color + ";font-family: " + element.font.id + "\">" + element.name + "</p>";
+                    _this.render_text_to_canvas(element);
+                    break;
             }
-        }).join('');
+        });
+    };
+    SlideService.prototype.render_text_to_canvas = function (element) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                if (element.text) {
+                    this.ctx.font = element.fontSize + "px " + element.font;
+                    this.ctx.fillStyle = "" + element.color;
+                    this.ctx.fillText(element.text, element.position.x, element.position.y + 70);
+                }
+                return [2 /*return*/];
+            });
+        });
     };
     SlideService.prototype.render_image_to_canvas = function (url, x, y, width, height) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
@@ -1502,9 +1695,7 @@ var SlideService = /** @class */ (function () {
             var _this = this;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 img = new Image();
-                debugger;
                 img.onload = function () {
-                    debugger;
                     // this.ctx.clearRect(0, 0, this.width, this.height);
                     _this.ctx.drawImage(img, x, y);
                 };
