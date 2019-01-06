@@ -7,3 +7,4 @@ export * from './screen-group.model';
 export * from './library.model';
 export * from './playlist.model';
 export * from './slide.model';
+export * from './share.model';

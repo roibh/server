@@ -37,6 +37,9 @@
             },
             "ScheduleDataController": {
                 "path": "./controllers/schedule.data.controller.ts"
+            },
+            "ShareDataController": {
+                "path": "./controllers/share.data.controller.ts"
             }
         },
         "models": {
@@ -61,9 +64,11 @@
             "ScreenGroupModel": {
                 "path": "./models/screen-group.model.ts"
             },
-           
             "ScheduleModel": {
                 "path": "./models/schedule.model.ts"
+            },
+            "ShareModel": {
+                "path": "./models/share.model.ts"
             }
         },
         "includes": {
