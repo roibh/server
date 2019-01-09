@@ -356,7 +356,7 @@ var AuthInterceptor = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar-fixed-top dashboard-nav\"> \n        <button type=\"button\" (click)=\"toggleSidebar()\" id=\"sidebarCollapse\" class=\"btn btn-sm btn-info\">\n                <i class=\"fas fa-align-left\"></i>\n            </button>\n\n    <button class=\"btn btn-primary btn-sm crumbs\" *ngFor=\"let b of crumbs\">{{\"NAVBAR.\" + b.name.toUpperCase() | translate}}</button>\n</nav>\n"
+module.exports = "<nav class=\"navbar-fixed-top dashboard-nav\"> \n       \n\n    <button class=\"btn btn-primary btn-sm crumbs\" *ngFor=\"let b of crumbs\">{{\"NAVBAR.\" + b.name.toUpperCase() | translate}}</button>\n</nav>\n"
 
 /***/ }),
 
@@ -671,7 +671,7 @@ module.exports = "<div class=\"container no-margin\" *ngIf=\"mode==='media'\">\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".icon {\n  margin-right: 5px;\n  margin-left: 5px; }\n\n.sqr-btn {\n  font-size: 84px;\n  text-align: center;\n  vertical-align: middle; }\n\n.sqr-btn:hover, .sqr:hover {\n  opacity: 1; }\n\n.sqr-btn:hover .sqr-toolbar, .sqr:hover .sqr-toolbar {\n    visibility: visible; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL2xvYmJ5L0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcY29tbW9uXFxsb2JieVxcbG9iYnkuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBZ0I7RUFDaEIsaUJBQWUsRUFDbEI7O0FBRUQ7RUFFSSxnQkFBZTtFQUNmLG1CQUFrQjtFQUNsQix1QkFBc0IsRUFDekI7O0FBQ0Q7RUFDSSxXQUFVLEVBSWI7O0FBTEQ7SUFHUSxvQkFBbUIsRUFDdEIiLCJmaWxlIjoic3JjL2FwcC9jb21tb24vbG9iYnkvbG9iYnkuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaWNvbiB7XHJcbiAgICBtYXJnaW4tcmlnaHQ6NXB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6NXB4O1xyXG59XHJcblxyXG4uc3FyLWJ0bntcclxuICAgIFxyXG4gICAgZm9udC1zaXplOiA4NHB4O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxufVxyXG4uc3FyLWJ0bjpob3Zlciwuc3FyOmhvdmVye1xyXG4gICAgb3BhY2l0eTogMTtcclxuICAgIC5zcXItdG9vbGJhcntcclxuICAgICAgICB2aXNpYmlsaXR5OiB2aXNpYmxlO1xyXG4gICAgfVxyXG59Il19 */"
+module.exports = ".icon {\n  margin-right: 5px;\n  margin-left: 5px; }\n\n.sqr-btn {\n  font-size: 84px;\n  text-align: center;\n  vertical-align: middle; }\n\n.sqr {\n  transition: -webkit-transform 0.5s;\n  transition: transform 0.5s;\n  transition: transform 0.5s, -webkit-transform 0.5s;\n  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0) !important; }\n\n.sqr-btn:hover, .sqr:hover {\n  opacity: 1;\n  -webkit-transform: translate(2px, 2px);\n          transform: translate(2px, 2px);\n  border: none;\n  border-radius: 35;\n  background: #fff;\n  margin-bottom: 40px;\n  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2) !important; }\n\n.sqr-btn:hover .sqr-toolbar, .sqr:hover .sqr-toolbar {\n    visibility: visible; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL2xvYmJ5L0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcY29tbW9uXFxsb2JieVxcbG9iYnkuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBZ0I7RUFDaEIsaUJBQWUsRUFDbEI7O0FBRUQ7RUFFSSxnQkFBZTtFQUNmLG1CQUFrQjtFQUNsQix1QkFBc0IsRUFDekI7O0FBQ0Q7RUFDSSxtQ0FBMEI7RUFBMUIsMkJBQTBCO0VBQTFCLG1EQUEwQjtFQUMxQixvREFBa0QsRUFFckQ7O0FBQ0Q7RUFDSSxXQUFVO0VBRVYsdUNBQThCO1VBQTlCLCtCQUE4QjtFQUM5QixhQUFZO0VBQ1osa0JBQWlCO0VBQ2pCLGlCQUFnQjtFQUNoQixvQkFBbUI7RUFFbkIseURBQXVELEVBTTFEOztBQWZEO0lBWVEsb0JBQW1CLEVBQ3RCIiwiZmlsZSI6InNyYy9hcHAvY29tbW9uL2xvYmJ5L2xvYmJ5LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmljb24ge1xyXG4gICAgbWFyZ2luLXJpZ2h0OjVweDtcclxuICAgIG1hcmdpbi1sZWZ0OjVweDtcclxufVxyXG5cclxuLnNxci1idG57XHJcbiAgICBcclxuICAgIGZvbnQtc2l6ZTogODRweDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XHJcbn1cclxuLnNxcntcclxuICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjVzO1xyXG4gICAgYm94LXNoYWRvdzogMHB4IDBweCAwcHggcmdiYSgwLCAwLCAwLCAwKSFpbXBvcnRhbnQ7XHJcbiBcclxufVxyXG4uc3FyLWJ0bjpob3Zlciwuc3FyOmhvdmVye1xyXG4gICAgb3BhY2l0eTogMTtcclxuICAgIFxyXG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoMnB4LCAycHgpO1xyXG4gICAgYm9yZGVyOiBub25lO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMzU7XHJcbiAgICBiYWNrZ3JvdW5kOiAjZmZmO1xyXG4gICAgbWFyZ2luLWJvdHRvbTogNDBweDtcclxuICAgIC13ZWJraXQtYm94LXNoYWRvdzogMXB4IDFweCAzcHggcmdiYSgwLCAwLCAwLCAwLjEpIWltcG9ydGFudDtcclxuICAgIGJveC1zaGFkb3c6IDEwcHggMTBweCAyMHB4IHJnYmEoMCwgMCwgMCwgMC4yKSFpbXBvcnRhbnQ7XHJcbiAgICBcclxuICAgIC5zcXItdG9vbGJhcntcclxuICAgICAgICB2aXNpYmlsaXR5OiB2aXNpYmxlO1xyXG4gICAgfVxyXG5cclxufSJdfQ== */"
 
 /***/ }),
 
@@ -764,7 +764,7 @@ var LobbyComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"border: 1px solid red;\"><canvas class='ruler' id='ruler'></canvas></div>\r\n"
+module.exports = "<div><canvas class='ruler' id='ruler'></canvas></div>\r\n"
 
 /***/ }),
 
@@ -775,7 +775,7 @@ module.exports = "<div style=\"border: 1px solid red;\"><canvas class='ruler' id
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".ruler {\n  position: absolute;\n  z-index: -1; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL3J1bGVycy9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXGNvbW1vblxccnVsZXJzXFxydWxlcnMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDQyxtQkFBa0I7RUFFbEIsWUFBVyxFQUNYIiwiZmlsZSI6InNyYy9hcHAvY29tbW9uL3J1bGVycy9ydWxlcnMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucnVsZXIge1xyXG5cdHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuIFxyXG5cdHotaW5kZXg6IC0xO1xyXG59XHJcblxyXG4gIl19 */"
+module.exports = ".ruler {\n  position: absolute;\n  z-index: -1; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL3J1bGVycy9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXGNvbW1vblxccnVsZXJzXFxydWxlcnMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDQyxtQkFBa0I7RUFDbEIsWUFBVyxFQUNYIiwiZmlsZSI6InNyYy9hcHAvY29tbW9uL3J1bGVycy9ydWxlcnMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucnVsZXIge1xyXG5cdHBvc2l0aW9uOiBhYnNvbHV0ZTsgXHJcblx0ei1pbmRleDogLTE7XHJcbn1cclxuXHJcbiAiXX0= */"
 
 /***/ }),
 
@@ -1083,7 +1083,7 @@ var SlideHeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper\">\n    <nav id=\"sidebar\" [class]=\"activeClass\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <ul class=\"mr-auto\">\n                <li class=\"nav-item\" class=\"language-bar\">\n                    <app-language-bar></app-language-bar>\n                </li>\n            </ul>\n            <strong>SN</strong>\n        </div>\n        <ul class=\"list-unstyled components\">\n            <li>\n                <a routerLink=\"/\">\n                    <i class=\"fas fa-home\"></i>\n                    {{\"NAVBAR.HOME\" | translate}}\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"screens\" routerLinkActive=\"orange-cat\">\n                    <i class=\"fas fa-desktop\"></i>\n                    {{\"NAVBAR.SCREENS\" | translate}}\n\n                </a></li>\n            <li>\n                <a routerLink=\"screen-groups\" routerLinkActive=\"green-cat\">\n                    <i class=\"fas fa-clone\"></i>\n                    {{\"NAVBAR.SCREEN-GROUPS\" | translate}}\n\n                </a></li>\n            <li>\n                <a href=\"#LibrarySubmenu\" (click)=\"toggleSubmenu()\" routerLinkActive=\"lemon-cat\" routerLink=\"library\" data-toggle=\"collapse\"\n                    aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-copy\"></i>\n                    {{\"NAVBAR.LIBRARY\" | translate}}\n                </a>\n                <ul class=\"{{subMenuState}} list-unstyled\" id=\"LibrarySubmenu\">\n                    <li>\n                        <a routerLink=\"library/images\" routerLinkActive=\"lemon-cat\"><i class=\"fas fa-images\"></i> {{\"NAVBAR.IMAGES\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/videos\" routerLinkActive=\"lemon-cat\"><i class=\"fas fa-video\"></i> {{\"NAVBAR.VIDEOS\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/slides\" routerLinkActive=\"lemon-cat\"><i class=\"far fa-object-group\"></i> {{\"NAVBAR.SLIDES\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/fonts\" routerLinkActive=\"lemon-cat\"><i class=\"fas fa-font\"></i> {{\"NAVBAR.FONTS\" | translate}}</a>\n                    </li>\n                </ul>\n            </li>\n            <li>\n                <a routerLink=\"playlists\" routerLinkActive=\"purple-cat\">\n                    <i class=\"fas fa-step-forward\"></i>\n                    {{\"NAVBAR.PLAYLISTS\" | translate}}\n\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"schedules\" routerLinkActive=\"active-link\">\n                    <i class=\"fas fa-calendar-alt\"></i>\n                    {{\"NAVBAR.SCHEDULES\" | translate}}\n\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"settings\" routerLinkActive=\"active-link\">\n                    <i class=\"fas fa-cogs\"></i>\n                    {{\"NAVBAR.SETTINGS\" | translate}}\n\n                </a>\n            </li>\n        </ul>\n    </nav>\n    <!-- Page Content  -->\n    <div id=\"content\">\n        <app-bread-crumbs (Toggled)=\"toggleSidebar($event)\"></app-bread-crumbs>\n        <div id=\"scroller\">\n            <router-outlet></router-outlet>\n        </div>\n    </div>\n    <footer class=\"footer closed\">\n        {{'DASHBOARD.FOOTER' | translate}}\n    </footer>\n</div>\n"
+module.exports = "<div class=\"wrapper\">\n    <nav id=\"sidebar\" [class]=\"activeClass\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <ul class=\"mr-auto\">\n                <li class=\"nav-item\" class=\"language-bar\">\n                    <app-language-bar></app-language-bar>\n                </li>\n                <li class=\"nav-item\">\n                    <button type=\"button\" (click)=\"toggleSidebar()\" id=\"sidebarCollapse\" class=\"btn btn-sm btn-info\">\n                        <i class=\"fas fa-align-left\"></i>\n                    </button>\n                </li>\n            </ul>\n            <strong>SN</strong>\n        </div>\n        <ul class=\"list-unstyled components\">\n            <li>\n                <a routerLink=\"/\">\n                    <i class=\"fas fa-home\"></i>\n                    {{\"NAVBAR.HOME\" | translate}}\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"screens\" routerLinkActive=\"orange-cat\">\n                    <i class=\"fas fa-desktop\"></i>\n                    {{\"NAVBAR.SCREENS\" | translate}}\n\n                </a></li>\n            <li>\n                <a routerLink=\"screen-groups\" routerLinkActive=\"green-cat\">\n                    <i class=\"fas fa-clone\"></i>\n                    {{\"NAVBAR.SCREEN-GROUPS\" | translate}}\n\n                </a></li>\n            <li>\n                <a href=\"#LibrarySubmenu\" (click)=\"toggleSubmenu()\" routerLinkActive=\"lemon-cat\" routerLink=\"library\" data-toggle=\"collapse\"\n                    aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-copy\"></i>\n                    {{\"NAVBAR.LIBRARY\" | translate}}\n                </a>\n                <ul class=\"{{subMenuState}} list-unstyled\" id=\"LibrarySubmenu\">\n                    <li>\n                        <a routerLink=\"library/images\" routerLinkActive=\"lemon-cat\"><i class=\"fas fa-images\"></i> {{\"NAVBAR.IMAGES\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/videos\" routerLinkActive=\"lemon-cat\"><i class=\"fas fa-video\"></i> {{\"NAVBAR.VIDEOS\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/slides\" routerLinkActive=\"lemon-cat\"><i class=\"far fa-object-group\"></i> {{\"NAVBAR.SLIDES\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/fonts\" routerLinkActive=\"lemon-cat\"><i class=\"fas fa-font\"></i> {{\"NAVBAR.FONTS\" | translate}}</a>\n                    </li>\n                </ul>\n            </li>\n            <li>\n                <a routerLink=\"playlists\" routerLinkActive=\"purple-cat\">\n                    <i class=\"fas fa-step-forward\"></i>\n                    {{\"NAVBAR.PLAYLISTS\" | translate}}\n\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"schedules\" routerLinkActive=\"active-link\">\n                    <i class=\"fas fa-calendar-alt\"></i>\n                    {{\"NAVBAR.SCHEDULES\" | translate}}\n\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"settings\" routerLinkActive=\"active-link\">\n                    <i class=\"fas fa-cogs\"></i>\n                    {{\"NAVBAR.SETTINGS\" | translate}}\n\n                </a>\n            </li>\n        </ul>\n    </nav>\n    <!-- Page Content  -->\n    <div id=\"content\">\n        <app-bread-crumbs (Toggled)=\"toggleSidebar($event)\"></app-bread-crumbs>\n        <router-outlet></router-outlet>\n    </div>\n    <footer class=\"footer closed\">\n        {{'DASHBOARD.FOOTER' | translate}}\n    </footer>\n</div>\n"
 
 /***/ }),
 
@@ -1132,7 +1132,8 @@ var DashboardComponent = /** @class */ (function () {
         }
     };
     DashboardComponent.prototype.toggleSidebar = function (toggleState) {
-        if (toggleState) {
+        this.toggled = !this.toggled;
+        if (this.toggled) {
             this.activeClass = 'active';
         }
         else {
@@ -1622,6 +1623,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _selection_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./selection.service */ "./src/app/editor/selection.service.ts");
 /* harmony import */ var _fonts_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./fonts.service */ "./src/app/editor/fonts.service.ts");
 /* harmony import */ var _slide_editor_slide_editor_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./slide-editor/slide-editor.component */ "./src/app/editor/slide-editor/slide-editor.component.ts");
+/* harmony import */ var _panel_panel_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./panel/panel.component */ "./src/app/editor/panel/panel.component.ts");
+/* harmony import */ var ng5_slider__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ng5-slider */ "./node_modules/ng5-slider/esm5/ng5-slider.js");
+
+
 
 
 
@@ -1642,9 +1647,10 @@ var EditorModule = /** @class */ (function () {
                 _shared_module__WEBPACK_IMPORTED_MODULE_5__["SharedModule"],
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"]
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+                ng5_slider__WEBPACK_IMPORTED_MODULE_12__["Ng5SliderModule"]
             ],
-            declarations: [_contenteditable_directive__WEBPACK_IMPORTED_MODULE_7__["ContenteditableDirective"], _element_element_component__WEBPACK_IMPORTED_MODULE_6__["ElementComponent"], _slide_editor_slide_editor_component__WEBPACK_IMPORTED_MODULE_10__["SlideEditorComponent"]],
+            declarations: [_contenteditable_directive__WEBPACK_IMPORTED_MODULE_7__["ContenteditableDirective"], _element_element_component__WEBPACK_IMPORTED_MODULE_6__["ElementComponent"], _slide_editor_slide_editor_component__WEBPACK_IMPORTED_MODULE_10__["SlideEditorComponent"], _panel_panel_component__WEBPACK_IMPORTED_MODULE_11__["PanelComponent"]],
             providers: [_fonts_service__WEBPACK_IMPORTED_MODULE_9__["FontsService"], _selection_service__WEBPACK_IMPORTED_MODULE_8__["SelectionService"]]
         })
     ], EditorModule);
@@ -1662,7 +1668,7 @@ var EditorModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div [hidden]=\"layers || !element.position\" ngDraggable [zIndex]=\"element.zIndex\" [handle]=\"ElementHandle\" [position]=\"element.position\"\n  class=\"drag-block element {{element.selected}}\" (edge)=\"checkEdge($event)\" [bounds]=\"myBounds\" [inBounds]=\"inBounds\" (started)=\"onStart($event)\"\n  (stopped)=\"onStop($event)\" (movingOffset)=\"onMoving($event)\" [preventDefaultEvent]=\"false\" (endOffset)=\"onMoveEnd($event)\"\n  (click)=\"focus($event, element)\">\n\n\n  <div [ngStyle]=\"{'font-family': element.font ? element.font: 'arial',\n   'font-size': element.fontSize +'px',\n  'color': element.color }\" contenteditable=\"true\" (updateComplete)=\"updateComplete($event)\" [(ngModel)]=\"element.text\"\n    *ngIf=\"element.type === 'text'\"></div>\n\n  <img [src]=\"element.src\" ngResizable class=\"image-element shadow\" [ngStyle]=\"{'width': element.width+'px','height': element.height+'px', 'opacity': element.opacity }\"\n    *ngIf=\"element.type === 'image'\" />\n    <div *ngIf=\"element.type === 'text' && element.selected\" class=\"t-bar\">\n        <select [(ngModel)]=\"element.font\" (change)=\"selectFont($event)\">\n          <option *ngFor=\"let c of fonts\" [ngValue]=\"c\">{{c}}</option>\n        </select>\n    \n        <select [(ngModel)]=\"element.fontSize\">\n          <option *ngFor=\"let c of sizes\" [ngValue]=\"c\">{{c}}</option>\n        </select>\n    \n        <input [(colorPicker)]=\"element.color\" [style.background]=\"element.color\" />\n      </div>\n  <span class=\"position\">{{element.position | json}}</span>\n</div>\n\n<div [hidden]=\"!layers\" class=\"layer\" (click)=\"focus($event, element)\">\n \n  <div class=\"row\">\n    <div class=\"col-6\">\n     <input type=\"text\" [(ngModel)]=\"element.text\" class=\"form-control\"> \n      <ul class=\"toolbox\" *ngIf=\"element.selected && element.type==='text'\">\n          <li>\n            <select [(ngModel)]=\"element.font\" (change)=\"selectFont($event)\">\n              <option *ngFor=\"let c of fonts\" [ngValue]=\"c\">{{c}}</option>\n            </select>\n          </li>\n          <li>\n            <select [(ngModel)]=\"element.fontSize\">\n              <option *ngFor=\"let c of sizes\" [ngValue]=\"c\">{{c}}</option>\n            </select>\n          </li>\n          <li>\n            <input [(colorPicker)]=\"element.color\" [style.background]=\"element.color\" />\n          </li>\n        </ul>\n      \n      \n        <ul class=\"toolbox\" *ngIf=\"element.selected && element.type==='image'\">\n          <li>\n            <img [src]=\"element.src\">\n          </li>\n          <li>\n            <span>Width:</span>\n            <input type=\"number\" [(ngModel)]=\"element.width\" />\n            <span>Height:</span> <input type=\"number\" [(ngModel)]=\"element.height\" />\n            <span>Opacity:</span> <input type=\"number\" [(ngModel)]=\"element.opacity\" />\n          </li>\n          <li>\n      \n          </li>\n        </ul>\n\n    </div>\n    <div class=\"col-6\">     \n      <div style=\"border: 1px inset #ccddcc;\">\n        <canvas width=\"115\" height=\"115\" #thumbCanvas></canvas>\n      </div>\n      <div #htmlElement id=\"htmlElement\" style=\"visibility: hidden\"> \n        <div [ngStyle]=\"{'font-family': element.font ? element.font: 'arial','position': 'absolute', 'top':element.position.y + 'px','left':element.position.x + 'px',  \n         'font-size': element.fontSize +'px',\n        'color': element.color }\">{{element.text}}</div>\n      </div>\n    </div>\n  </div>\n\n\n\n\n</div>\n"
+module.exports = "<div ngDraggable [zIndex]=\"element.zIndex\" [handle]=\"ElementHandle\" [position]=\"element.position\" class=\"drag-block element {{element.selected}}\"\n  (edge)=\"checkEdge($event)\" [bounds]=\"myBounds\" [inBounds]=\"inBounds\" (started)=\"onStart($event)\" (stopped)=\"onStop($event)\"\n  (movingOffset)=\"onMoving($event)\" [preventDefaultEvent]=\"false\" (endOffset)=\"onMoveEnd($event)\" (click)=\"focus($event, element)\">\n\n\n  <div [ngStyle]=\"{'font-family': element.font ? element.font: 'arial',\n   'font-size': element.fontSize +'px',\n  'color': element.color }\" contenteditable=\"true\" (updateComplete)=\"updateComplete($event)\" [(ngModel)]=\"element.text\"\n    *ngIf=\"element.type === 'text'\"></div>\n\n  <img [src]=\"element.src\" ngResizable class=\"image-element shadow\" [ngStyle]=\"{'width': element.width+'px','height': element.height+'px', 'opacity': element.opacity }\"\n    *ngIf=\"element.type === 'image'\" /> {{element.position | json}}\n</div>\n\n<!-- <div [hidden]=\"!layers\" class=\"layer\" (click)=\"focus($event, element)\">\n \n  <div class=\"row\">\n    <div class=\"col-6\">\n     <input type=\"text\" [(ngModel)]=\"element.text\" class=\"form-control\"> \n      <ul class=\"toolbox\" *ngIf=\"element.selected && element.type==='text'\">\n          <li>\n            <select [(ngModel)]=\"element.font\" (change)=\"selectFont($event)\">\n              <option *ngFor=\"let c of fonts\" [ngValue]=\"c\">{{c}}</option>\n            </select>\n          </li>\n          <li>\n            <select [(ngModel)]=\"element.fontSize\">\n              <option *ngFor=\"let c of sizes\" [ngValue]=\"c\">{{c}}</option>\n            </select>\n          </li>\n          <li>\n            <input [(colorPicker)]=\"element.color\" [style.background]=\"element.color\" />\n          </li>\n        </ul>\n      \n      \n        <ul class=\"toolbox\" *ngIf=\"element.selected && element.type==='image'\">\n          <li>\n            <img [src]=\"element.src\">\n          </li>\n          <li>\n            <span>Width:</span>\n            <input type=\"number\" [(ngModel)]=\"element.width\" />\n            <span>Height:</span> <input type=\"number\" [(ngModel)]=\"element.height\" />\n            <span>Opacity:</span> <input type=\"number\" [(ngModel)]=\"element.opacity\" />\n          </li>\n          <li>\n      \n          </li>\n        </ul>\n\n    </div>\n    <div class=\"col-6\">     \n      <div style=\"border: 1px inset #ccddcc;\">\n        <canvas width=\"115\" height=\"115\" #thumbCanvas></canvas>\n      </div>\n      <div #htmlElement id=\"htmlElement\" style=\"visibility: hidden\"> \n        <div [ngStyle]=\"{'font-family': element.font ? element.font: 'arial','position': 'absolute', 'top':element.position.y + 'px','left':element.position.x + 'px',  \n         'font-size': element.fontSize +'px',\n        'color': element.color }\">{{element.text}}</div>\n      </div>\n    </div>\n  </div>\n\n\n\n\n</div> -->\n"
 
 /***/ }),
 
@@ -1701,6 +1707,7 @@ var ElementComponent = /** @class */ (function () {
         this._selectionService = _selectionService;
         this.sanitizer = sanitizer;
         this.fontService = fontService;
+        this.selected = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.inBounds = true;
         this.edge = {
             top: true,
@@ -1708,62 +1715,46 @@ var ElementComponent = /** @class */ (function () {
             left: true,
             right: true
         };
-        this.sizes = [10, 12, 14, 16, 18, 20, 22, 24, 40, 58, 72, 120];
     }
-    ElementComponent.prototype.selectFont = function (event) {
-        window.WebFont.load({
-            google: {
-                families: [this.element.font]
-            }
-        });
-    };
     ElementComponent.prototype.updateComplete = function (event) {
         clearTimeout(this.updateTimeout);
         if (!this.lastSvg) {
             this.lastSvg = '';
         }
-        if (this.domElement.innerHTML !== this.lastSvg) {
-            this.lastSvg = this.domElement.innerHTML;
-            this.updateTimeout = setTimeout(render.bind(this), 1000);
-        }
+        // if (this.domElement.innerHTML !== this.lastSvg) {
+        //   this.lastSvg = this.domElement.innerHTML;
+        //   this.updateTimeout = setTimeout(render.bind(this), 1000);
+        // }
         function render() {
             this.render_html_to_canvas(this.domElement.innerHTML, 0, 0, 85, 85);
         }
     };
     ElementComponent.prototype.paint = function () {
-        var _this = this;
-        this.thumbCanvas.changes.subscribe(function (data) {
-            if (data.first) {
-                var ctx = data.first.nativeElement.getContext('2d');
-                _this.ctx = ctx;
-                _this.htmlElement.notifyOnChanges();
-            }
-        });
-        this.htmlElement.changes.subscribe(function (data) {
-            if (data.first) {
-                var el = data.first.nativeElement;
-                if (el) {
-                    _this.domElement = el;
-                    _this.render_html_to_canvas(el.innerHTML, 0, 0, 85, 85);
-                }
-            }
-        });
-        this.thumbCanvas.notifyOnChanges();
-    };
-    ElementComponent.prototype.ngAfterViewInit = function () {
-        this.paint();
-        setInterval(function () {
-            // this.updateComplete(null);
-            // this.fonts = this.fontService.getFonts();
-        }, 2000);
+        // this.thumbCanvas.changes.subscribe((data) => {
+        //   if (data.first) {
+        //     const ctx: CanvasRenderingContext2D = data.first.nativeElement.getContext('2d');
+        //     this.ctx = ctx;
+        //     this.htmlElement.notifyOnChanges();
+        //   }
+        // });
+        // this.htmlElement.changes.subscribe((data) => {
+        //   if (data.first) {
+        //     const el: any = data.first.nativeElement;
+        //     if (el) {
+        //       this.domElement = el;
+        //       this.render_html_to_canvas(el.innerHTML, 0, 0, 85, 85);
+        //     }
+        //   }
+        // });
+        // this.thumbCanvas.notifyOnChanges();
     };
     ElementComponent.prototype.ngOnInit = function () {
         this.layers = this.mode === 'layers';
         if (this.element && !this.element.style) {
             this.element.style = { font: '' };
         }
-        this.font = this.element.style.font;
-        this.fontSize = this.element.style.fontSize;
+        // this.font = this.element.style.font;
+        // this.fontSize = this.element.style.fontSize;
         if (this.element.font) {
             window.WebFont.load({
                 google: {
@@ -1771,11 +1762,11 @@ var ElementComponent = /** @class */ (function () {
                 }
             });
         }
-        this.fonts = this.fontService.getFonts();
     };
     ElementComponent.prototype.onStart = function (event) {
     };
     ElementComponent.prototype.focus = function (event, element) {
+        this.selected.emit(element);
         this._selectionService.focus(event, element);
     };
     ElementComponent.prototype.compareFn = function (a, b) {
@@ -1847,6 +1838,10 @@ var ElementComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
     ], ElementComponent.prototype, "mode", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"])
+    ], ElementComponent.prototype, "selected", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChildren"])('thumbCanvas'),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["QueryList"])
     ], ElementComponent.prototype, "thumbCanvas", void 0);
@@ -1905,18 +1900,18 @@ var FontsService = /** @class */ (function () {
             var url;
             var _this = this;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        url = "https://www.googleapis.com/webfonts/v1/webfonts?key=" + KEY;
-                        return [4 /*yield*/, this.http.get(url).subscribe(function (data) {
-                                _this.fonts = data.items.map(function (font) {
-                                    return font.family;
-                                });
-                            })];
-                    case 1:
-                        _a.sent();
-                        return [2 /*return*/];
-                }
+                url = "https://www.googleapis.com/webfonts/v1/webfonts?key=" + KEY;
+                return [2 /*return*/, new Promise(function (resolve, reject) {
+                        if (_this.fonts.length > 0) {
+                            return resolve(_this.fonts);
+                        }
+                        _this.http.get(url).subscribe(function (data) {
+                            _this.fonts = data.items.map(function (font) {
+                                return font.family;
+                            });
+                            resolve(_this.fonts);
+                        });
+                    })];
             });
         });
     };
@@ -2761,6 +2756,104 @@ var FontsService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/editor/panel/panel.component.html":
+/*!***************************************************!*\
+  !*** ./src/app/editor/panel/panel.component.html ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div *ngIf=\"element\" [handle]=\"myHandle\" ngDraggable class=\"drag-panel\" [ngStyle]=\"positionProjection\" [preventDefaultEvent]=\"false\">\r\n    <div #myHandle class=\"drag-block-handle\"> <i class=\"fas fa-arrows-alt\"></i></div>\r\n    <form class=\"pt50\">\r\n            <div class=\"form-group\">\r\n                {{element.zIndex}}\r\n                  <button (click)=\"moveIndex(-1)\"><i class=\"fas fa-level-down-alt\"></i></button>\r\n                  <button (click)=\"moveIndex(1)\"><i class=\"fas fa-level-up-alt\"></i></button>\r\n                </div>\r\n\r\n        <div *ngIf=\"element.type === 'text'\" class=\"t-bar\">\r\n\r\n            <div class=\"form-group\">\r\n                <label for=\"fontName\">{{ \"PANEL.FONTNAME\" | translate }}:</label>\r\n                <select class=\"form-control\" name=\"fontNameTxt\" [(ngModel)]=\"element.font\" (change)=\"selectFont($event)\">\r\n                    <option *ngFor=\"let c of fonts\" [ngValue]=\"c\">{{c}}</option>\r\n                </select>\r\n                <small id=\"fontHelp\" class=\"form-text text-muted\">{{ \"PANEL.FONTNAME_HELP\" | translate }}</small>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label for=\"fontName\">{{ \"PANEL.FONTSIZE\" | translate }}:</label>\r\n                <ng5-slider [(value)]=\"element.fontSize\" [options]=\"sliderOptions\"></ng5-slider>\r\n                <small id=\"fontSize\" class=\"form-text text-muted\">{{ \"PANEL.FONTSIZE_HELP\" | translate }}</small>\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n                <label for=\"fontColor\">{{ \"PANEL.FONTCOLOR\" | translate }}:</label>\r\n                <input class=\"form-control\" name=\"fontColorTxt\" [(colorPicker)]=\"element.color\" [style.background]=\"element.color\" />\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n                <label for=\"fontColor\">{{ \"PANEL.POSITIONX\" | translate }}:</label>\r\n                <input class=\"form-control\" name=\"position_x\" [(ngModel)]=\"element.position.x\" />\r\n\r\n                <label for=\"fontColor\">{{ \"PANEL.POSITIONY\" | translate }}:</label>\r\n                <input class=\"form-control\" name=\"position_y\" [(ngModel)]=\"element.position.y\" />\r\n            </div>\r\n        </div>\r\n    </form>\r\n\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/editor/panel/panel.component.scss":
+/*!***************************************************!*\
+  !*** ./src/app/editor/panel/panel.component.scss ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".drag-panel {\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: #faf3fa;\n  border: 1px solid #faf7f7;\n  width: 300px;\n  height: 700px;\n  z-index: 2000 !important;\n  padding: 20px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL3BhbmVsL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcZWRpdG9yXFxwYW5lbFxccGFuZWwuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFFSSxtQkFBa0I7RUFDbEIsT0FBSztFQUNMLFFBQU07RUFDTiwwQkFBeUI7RUFDekIsMEJBQW9DO0VBQ3BDLGFBQVk7RUFDWixjQUFZO0VBQ1oseUJBQXVCO0VBQ3ZCLGNBQWEsRUFDaEIiLCJmaWxlIjoic3JjL2FwcC9lZGl0b3IvcGFuZWwvcGFuZWwuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZHJhZy1wYW5lbFxyXG57XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6MDtcclxuICAgIGxlZnQ6MDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmYWYzZmE7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCByZ2IoMjUwLCAyNDcsIDI0Nyk7XHJcbiAgICB3aWR0aDogMzAwcHg7XHJcbiAgICBoZWlnaHQ6NzAwcHg7XHJcbiAgICB6LWluZGV4OiAyMDAwIWltcG9ydGFudDtcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbn0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/editor/panel/panel.component.ts":
+/*!*************************************************!*\
+  !*** ./src/app/editor/panel/panel.component.ts ***!
+  \*************************************************/
+/*! exports provided: PanelComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PanelComponent", function() { return PanelComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _fonts_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../fonts.service */ "./src/app/editor/fonts.service.ts");
+
+
+
+
+var PanelComponent = /** @class */ (function () {
+    function PanelComponent(_ngZone, sanitizer, fontService) {
+        this._ngZone = _ngZone;
+        this.sanitizer = sanitizer;
+        this.fontService = fontService;
+        this.sliderOptions = {
+            floor: 0,
+            ceil: 250
+        };
+        this.sizes = [10, 12, 14, 16, 18, 20, 22, 24, 40, 58, 72, 120];
+    }
+    PanelComponent.prototype.selectFont = function (event) {
+        window.WebFont.load({
+            google: {
+                families: [this.element.font]
+            }
+        });
+    };
+    PanelComponent.prototype.moveIndex = function (delta) {
+        this.element.zIndex = this.element.zIndex + delta;
+    };
+    PanelComponent.prototype.ngOnInit = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _a;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _a = this;
+                        return [4 /*yield*/, this.fontService.loadFontsForLanguage()];
+                    case 1:
+                        _a.fonts = _b.sent();
+                        if (this.element) {
+                            this.positionProjection = { 'top': this.element.position.y + 'px', 'left': (this.element.position.x * 1) + 300 + 'px' };
+                        }
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], PanelComponent.prototype, "element", void 0);
+    PanelComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-panel',
+            template: __webpack_require__(/*! ./panel.component.html */ "./src/app/editor/panel/panel.component.html"),
+            styles: [__webpack_require__(/*! ./panel.component.scss */ "./src/app/editor/panel/panel.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"], _fonts_service__WEBPACK_IMPORTED_MODULE_3__["FontsService"]])
+    ], PanelComponent);
+    return PanelComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/editor/selection.service.ts":
 /*!*********************************************!*\
   !*** ./src/app/editor/selection.service.ts ***!
@@ -2793,7 +2886,9 @@ var SelectionService = /** @class */ (function () {
         this.document = document;
         this.elements = this.document.elements;
         this.elements.forEach(function (elem, i) {
-            elem.zIndex = 1000 + i;
+            if (!elem.zIndex) {
+                elem.zIndex = 1000 + i;
+            }
         });
     };
     SelectionService.prototype.reset = function () {
@@ -2820,7 +2915,7 @@ var SelectionService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"item\">\n  <ul class=\"nav nav-tabs direction\">\n    <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n      <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n    </li>\n  </ul>\n  <ul class=\"direction\">\n    <li *ngIf=\"tabs[0].selected\">\n      <div class=\"btn-group\" data-toggle=\"buttons\">\n        <button (click)=\"newTextBlockElement()\" class=\"btn btn-tool\"><i class=\"fas fa-font\"></i></button>\n        <button (click)=\"finder('image')\" class=\"btn btn-tool\"><i class=\"far fa-image\"></i></button>\n        <button (click)=\"finder('video')\" class=\"btn btn-tool\"><i class=\"fas fa-video\"></i></button>\n        <button (click)=\"newPluginBlockElement()\" class=\"btn btn-tool\"><i class=\"fas fa-plug\"></i></button>\n        <input [(colorPicker)]=\"editor.color\" class=\"btn btn-tool color-tool\" [style.background]=\"editor.color\" />\n        <input [(colorPicker)]=\"editor.bgColor\" (colorPickerChange)=\"setBgColor($event)\" class=\"btn btn-tool color-tool\" [style.background]=\"editor.bgColor\"\n        />\n      </div>\n    </li>\n    <li>\n\n    </li>\n    <li>\n\n    </li>\n  </ul>\n  <ul class=\"direction-invert\">\n    <li class=\"toolbar-end\">\n      <button class=\"btn btn-primary btn-sm\" (click)=\"resetItem()\">{{ \"SLIDES.RESET\" | translate }}</button>\n      <button *ngIf=\"item._id\" class=\"btn btn-primary btn-sm\" (click)=\"updateItemProxy()\">\n        <span class=\"btn-spinner-host\"> <i class=\"btn-spinner\" *ngIf=\"updateItemRunning\"></i> {{ \"SLIDES.UPDATE\" | translate }}\n        </span>\n      </button>\n      <button *ngIf=\"!item._id\" class=\"btn btn-primary btn-sm\" (click)=\"createItemProxy()\">\n        <span class=\"btn-spinner-host\"> <i class=\"btn-spinner\" *ngIf=\"updateItemRunning\">\n          </i> {{ \"SLIDES.CREATE\" | translate }}\n        </span>\n      </button>\n    </li>\n  </ul>\n  <div style=\"clear: both\"></div>\n\n  <div *ngIf=\"tabs[0].selected\" [appAdaptHeight]=\"100\">\n    <div class=\"layers\"  dragula=\"DRAGULA_FACTS\" [(dragulaModel)]=\"selectionService.elements\">\n      <div *ngFor=\"let el of selectionService.elements\">\n        <app-element [element]=\"el\" mode=\"layers\"></app-element>\n      </div>\n    </div>\n    <div class=\"row slide-editor\" id=\"worksapce\" style=\"direction: ltr;\">\n      <app-rulers></app-rulers><br />\n      <div class=\"editor-plate small\" [ngStyle]=\"{'background-color': item.bgColor }\">\n        <app-element *ngFor=\"let el of selectionService.elements\" (click)=\"designerFocus($event)\" [element]=\"el\"></app-element>\n      </div>\n    </div>\n  </div>\n  <div *ngIf=\"tabs[1].selected\">\n    <pre> {{item.elements | json}}</pre>\n  </div>\n</div>\n<app-finder [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
+module.exports = "<div *ngIf=\"item\">\n  <ul class=\"nav nav-tabs direction\">\n    <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n      <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n    </li>\n  </ul>\n  <ul class=\"direction\">\n    <li *ngIf=\"tabs[0].selected\">\n      <div class=\"btn-group\" data-toggle=\"buttons\">\n        <button (click)=\"newTextBlockElement()\" class=\"btn btn-tool\"><i class=\"fas fa-font\"></i></button>\n        <button (click)=\"finder('image')\" class=\"btn btn-tool\"><i class=\"far fa-image\"></i></button>\n        <button (click)=\"finder('video')\" class=\"btn btn-tool\"><i class=\"fas fa-video\"></i></button>\n        <button (click)=\"newPluginBlockElement()\" class=\"btn btn-tool\"><i class=\"fas fa-plug\"></i></button>\n        <input [(colorPicker)]=\"editor.color\" class=\"btn btn-tool color-tool\" [style.background]=\"editor.color\" />\n        <input [(colorPicker)]=\"editor.bgColor\" (colorPickerChange)=\"setBgColor($event)\" class=\"btn btn-tool color-tool\" [style.background]=\"editor.bgColor\"\n        />\n      </div>\n    </li>\n    <li>\n\n    </li>\n    <li>\n\n    </li>\n  </ul>\n  <ul class=\"direction-invert\">\n    <li class=\"toolbar-end\">\n      <button class=\"btn btn-primary btn-sm\" (click)=\"resetItem()\">{{ \"SLIDES.RESET\" | translate }}</button>\n      <button *ngIf=\"item._id\" class=\"btn btn-primary btn-sm\" (click)=\"updateItemProxy()\">\n        <span class=\"btn-spinner-host\"> <i class=\"btn-spinner\" *ngIf=\"updateItemRunning\"></i> {{ \"SLIDES.UPDATE\" | translate }}\n        </span>\n      </button>\n      <button *ngIf=\"!item._id\" class=\"btn btn-primary btn-sm\" (click)=\"createItemProxy()\">\n        <span class=\"btn-spinner-host\"> <i class=\"btn-spinner\" *ngIf=\"updateItemRunning\">\n          </i> {{ \"SLIDES.CREATE\" | translate }}\n        </span>\n      </button>\n    </li>\n  </ul>\n  <div style=\"clear: both\"></div>\n\n  <div *ngIf=\"tabs[0].selected\" [appAdaptHeight]=\"100\">\n    <!-- <div class=\"layers\"  dragula=\"DRAGULA_FACTS\" [(dragulaModel)]=\"selectionService.elements\">\n      <div *ngFor=\"let el of selectionService.elements\">\n        <app-element [element]=\"el\" mode=\"layers\"></app-element>\n      </div>\n    </div> -->\n    <app-panel [(element)]=\"selectedElement\"></app-panel>\n\n    <div class=\"row slide-editor\" id=\"worksapce\" style=\"direction: ltr;\">\n      <app-rulers></app-rulers><br />\n      <div class=\"editor-plate small\" [ngStyle]=\"{'background-color': item.bgColor }\">\n        <app-element *ngFor=\"let el of selectionService.elements\" (selected)=\"designerFocus(el)\" (click)=\"designerFocus(el)\" [element]=\"el\"></app-element>\n      </div>\n    </div>\n  </div>\n  <div *ngIf=\"tabs[1].selected\">\n    <pre> {{item.elements | json}}</pre>\n  </div>\n</div>\n\n<app-finder [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
 
 /***/ }),
 
@@ -2945,7 +3040,6 @@ var SlideEditorComponent = /** @class */ (function (_super) {
                             this.item = { elements: [] };
                             _b.label = 3;
                         case 3:
-                            this.fontService.loadFontsForLanguage();
                             this.selectionService.load(this.item);
                             return [2 /*return*/];
                     }
@@ -2961,7 +3055,11 @@ var SlideEditorComponent = /** @class */ (function (_super) {
     SlideEditorComponent.prototype.newTextBlockElement = function () {
         var textBlock = {
             type: 'text',
-            position: { x: 0, y: 0 }, class: 'h1', zIndex: 1000 + this.item.elements.length + 1
+            position: { x: 100, y: 100 }, class: 'h1',
+            font: this.fontService.getFonts()[0],
+            fontSize: 42,
+            text: 'Text line',
+            zIndex: 1000 + this.item.elements.length + 1
         };
         this.newBlockElement(textBlock);
     };
@@ -2989,7 +3087,8 @@ var SlideEditorComponent = /** @class */ (function (_super) {
         });
     };
     SlideEditorComponent.prototype.designerFocus = function (element) {
-        document.querySelector('.element'); // .removeClass('active');
+        this.selectedElement = element;
+        // document.querySelector('.element'); // .removeClass('active');
         // window.$('.element').removeClass('active');
         // window.$(element).addClass('active');
     };
