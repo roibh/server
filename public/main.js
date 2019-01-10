@@ -660,7 +660,7 @@ var LoaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container no-margin\" *ngIf=\"mode==='media'\">\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn\" (click)=\"newItemHandler()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    <span class=\"label\">{{item.Name}}</span>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\" aria-label=\"Basic example\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"deleteItemHandler(item);\"> <i class=\"fas fa-trash\"></i>\n        </button>\n      </li>\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"editItemHandler(item);\"> <i class=\"fas fa-edit\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"container no-margin\" *ngIf=\"mode==='media-finder'\">\n\n  <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    <span class=\"label\">{{item.Name}}</span>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"selectItemHandler(item);\"> <i class=\"fas fa-plus-square\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"container no-margin\" *ngIf=\"mode==='object-finder'\">\n\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <span class=\"label\">{{item.Name}}</span>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"selectItemHandler(item);\"> <i class=\"fas fa-plus-square\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"container no-margin\" *ngIf=\"mode==='object'\">\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn\" (click)=\"newItemHandler()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <i class=\"{{iconClass}} icon\"></i> <span class=\"label\">{{item.Name}}</span>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"deleteItemHandler(item);\"> <i class=\"fas fa-trash\"></i>\n        </button>\n      </li>\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"editItemHandler(item);\"> <i class=\"fas fa-edit\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n\n<div class=\"container no-margin\" *ngIf=\"mode==='slide'\">\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn\" (click)=\"newItemHandler()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <div class=\"canvas-bg\">\n      <app-canvas [item]=\"item\" [width]=\"230\" [height]=\"150\" [scale]=\"0.5\"></app-canvas>\n    </div>\n    <i class=\"{{iconClass}} icon\"></i> <span class=\"label\">{{item.Name}}</span>\n\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"deleteItemHandler(item);\"> <i class=\"fas fa-trash\"></i>\n        </button>\n      </li>\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"editItemHandler(item);\"> <i class=\"fas fa-edit\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n"
+module.exports = "<div class=\"lobby no-margin\" *ngIf=\"mode==='media'\">\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn\" (click)=\"newItemHandler()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    <span class=\"label\">{{item.Name}}</span>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\" aria-label=\"Basic example\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"deleteItemHandler(item);\"> <i class=\"fas fa-trash\"></i>\n        </button>\n      </li>\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"editItemHandler(item);\"> <i class=\"fas fa-edit\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"lobby no-margin\" *ngIf=\"mode==='media-finder'\">\n\n  <div *ngFor=\"let item of items\" class=\"sqr shadow fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    <span class=\"label\">{{item.Name}}</span>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"selectItemHandler(item);\"> <i class=\"fas fa-plus-square\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"lobby no-margin\" *ngIf=\"mode==='object-finder'\">\n\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <span class=\"label\">{{item.Name}}</span>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"selectItemHandler(item);\"> <i class=\"fas fa-plus-square\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"lobby no-margin\" *ngIf=\"mode==='object'\">\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn\" (click)=\"newItemHandler()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{item.selected}}\">\n    <ng-template [ngTemplateOutlet]=\"template || defaultTemplate\" [ngTemplateOutletContext]=\"{item: item}\"></ng-template>\n    \n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"deleteItemHandler(item);\"> <i class=\"fas fa-trash\"></i>\n        </button>\n      </li>\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"editItemHandler(item);\"> <i class=\"fas fa-edit\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n\n<div class=\"lobby no-margin\" *ngIf=\"mode==='slide'\">\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn\" (click)=\"newItemHandler()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <div class=\"canvas-bg\">\n      <app-canvas [item]=\"item\" [width]=\"230\" [height]=\"150\" [scale]=\"0.5\"></app-canvas>\n    </div>\n    <i class=\"{{iconClass}} icon\"></i> <span class=\"label\">{{item.Name}}</span>\n\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"deleteItemHandler(item);\"> <i class=\"fas fa-trash\"></i>\n        </button>\n      </li>\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"editItemHandler(item);\"> <i class=\"fas fa-edit\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n\n<ng-template #defaultTemplate let-item=\"item\">\n   <span class=\"label\">{{item.Name}}</span>\n</ng-template>\n"
 
 /***/ }),
 
@@ -671,7 +671,7 @@ module.exports = "<div class=\"container no-margin\" *ngIf=\"mode==='media'\">\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".icon {\n  margin-right: 5px;\n  margin-left: 5px; }\n\n.sqr-btn {\n  font-size: 84px;\n  text-align: center;\n  vertical-align: middle; }\n\n.sqr {\n  transition: -webkit-transform 0.5s;\n  transition: transform 0.5s;\n  transition: transform 0.5s, -webkit-transform 0.5s;\n  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0) !important; }\n\n.sqr-btn:hover, .sqr:hover {\n  opacity: 1;\n  -webkit-transform: translate(2px, 2px);\n          transform: translate(2px, 2px);\n  border: none;\n  border-radius: 35;\n  background: #fff;\n  margin-bottom: 40px;\n  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2) !important; }\n\n.sqr-btn:hover .sqr-toolbar, .sqr:hover .sqr-toolbar {\n    visibility: visible; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL2xvYmJ5L0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcY29tbW9uXFxsb2JieVxcbG9iYnkuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBZ0I7RUFDaEIsaUJBQWUsRUFDbEI7O0FBRUQ7RUFFSSxnQkFBZTtFQUNmLG1CQUFrQjtFQUNsQix1QkFBc0IsRUFDekI7O0FBQ0Q7RUFDSSxtQ0FBMEI7RUFBMUIsMkJBQTBCO0VBQTFCLG1EQUEwQjtFQUMxQixvREFBa0QsRUFFckQ7O0FBQ0Q7RUFDSSxXQUFVO0VBRVYsdUNBQThCO1VBQTlCLCtCQUE4QjtFQUM5QixhQUFZO0VBQ1osa0JBQWlCO0VBQ2pCLGlCQUFnQjtFQUNoQixvQkFBbUI7RUFFbkIseURBQXVELEVBTTFEOztBQWZEO0lBWVEsb0JBQW1CLEVBQ3RCIiwiZmlsZSI6InNyYy9hcHAvY29tbW9uL2xvYmJ5L2xvYmJ5LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmljb24ge1xyXG4gICAgbWFyZ2luLXJpZ2h0OjVweDtcclxuICAgIG1hcmdpbi1sZWZ0OjVweDtcclxufVxyXG5cclxuLnNxci1idG57XHJcbiAgICBcclxuICAgIGZvbnQtc2l6ZTogODRweDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XHJcbn1cclxuLnNxcntcclxuICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjVzO1xyXG4gICAgYm94LXNoYWRvdzogMHB4IDBweCAwcHggcmdiYSgwLCAwLCAwLCAwKSFpbXBvcnRhbnQ7XHJcbiBcclxufVxyXG4uc3FyLWJ0bjpob3Zlciwuc3FyOmhvdmVye1xyXG4gICAgb3BhY2l0eTogMTtcclxuICAgIFxyXG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoMnB4LCAycHgpO1xyXG4gICAgYm9yZGVyOiBub25lO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMzU7XHJcbiAgICBiYWNrZ3JvdW5kOiAjZmZmO1xyXG4gICAgbWFyZ2luLWJvdHRvbTogNDBweDtcclxuICAgIC13ZWJraXQtYm94LXNoYWRvdzogMXB4IDFweCAzcHggcmdiYSgwLCAwLCAwLCAwLjEpIWltcG9ydGFudDtcclxuICAgIGJveC1zaGFkb3c6IDEwcHggMTBweCAyMHB4IHJnYmEoMCwgMCwgMCwgMC4yKSFpbXBvcnRhbnQ7XHJcbiAgICBcclxuICAgIC5zcXItdG9vbGJhcntcclxuICAgICAgICB2aXNpYmlsaXR5OiB2aXNpYmxlO1xyXG4gICAgfVxyXG5cclxufSJdfQ== */"
+module.exports = ".icon {\n  margin-right: 5px;\n  margin-left: 5px; }\n\n.sqr-btn {\n  font-size: 84px;\n  text-align: center;\n  vertical-align: middle; }\n\n.sqr {\n  opacity: 0.9;\n  transition: -webkit-transform 0.5s;\n  transition: transform 0.5s;\n  transition: transform 0.5s, -webkit-transform 0.5s;\n  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3) !important; }\n\n.sqr-btn:hover, .sqr:hover {\n  opacity: 1;\n  -webkit-transform: translate(2px, 2px);\n          transform: translate(2px, 2px);\n  border: 1px solid rgba(0, 0, 0, 0.2);\n  border-radius: 35;\n  background: #fff;\n  margin-bottom: 40px;\n  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2) !important; }\n\n.sqr-btn:hover .sqr-toolbar, .sqr:hover .sqr-toolbar {\n    visibility: visible; }\n\n.sqr-btn.active, .sqr.active {\n  opacity: 1;\n  -webkit-transform: translate(2px, 2px);\n          transform: translate(2px, 2px);\n  border: 1px solid rgba(69, 59, 59, 0.2);\n  border-radius: 35;\n  background: #fff;\n  margin-bottom: 40px;\n  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2) !important; }\n\n.sqr-btn.active .sqr-toolbar, .sqr.active .sqr-toolbar {\n    visibility: visible; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL2xvYmJ5L0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcY29tbW9uXFxsb2JieVxcbG9iYnkuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBZ0I7RUFDaEIsaUJBQWUsRUFDbEI7O0FBRUQ7RUFFSSxnQkFBZTtFQUNmLG1CQUFrQjtFQUNsQix1QkFBc0IsRUFDekI7O0FBQ0Q7RUFDSSxhQUFZO0VBQ1osbUNBQTBCO0VBQTFCLDJCQUEwQjtFQUExQixtREFBMEI7RUFDMUIsc0RBQW9ELEVBRXZEOztBQUNEO0VBQ0ksV0FBVTtFQUVWLHVDQUE4QjtVQUE5QiwrQkFBOEI7RUFDOUIscUNBQW1DO0VBQ25DLGtCQUFpQjtFQUNqQixpQkFBZ0I7RUFDaEIsb0JBQW1CO0VBRW5CLHlEQUF1RCxFQU0xRDs7QUFmRDtJQVlRLG9CQUFtQixFQUN0Qjs7QUFJTDtFQUNJLFdBQVU7RUFFVix1Q0FBOEI7VUFBOUIsK0JBQThCO0VBQzlCLHdDQUFzQztFQUN0QyxrQkFBaUI7RUFDakIsaUJBQWdCO0VBQ2hCLG9CQUFtQjtFQUVuQix5REFBdUQsRUFNMUQ7O0FBZkQ7SUFZUSxvQkFBbUIsRUFDdEIiLCJmaWxlIjoic3JjL2FwcC9jb21tb24vbG9iYnkvbG9iYnkuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaWNvbiB7XHJcbiAgICBtYXJnaW4tcmlnaHQ6NXB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6NXB4O1xyXG59XHJcblxyXG4uc3FyLWJ0bntcclxuICAgIFxyXG4gICAgZm9udC1zaXplOiA4NHB4O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxufVxyXG4uc3Fye1xyXG4gICAgb3BhY2l0eTogMC45O1xyXG4gICAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDAuNXM7XHJcbiAgICBib3gtc2hhZG93OiAxcHggMXB4IDNweCByZ2JhKDAsIDAsIDAsIDAuMykhaW1wb3J0YW50O1xyXG4gXHJcbn1cclxuLnNxci1idG46aG92ZXIsLnNxcjpob3ZlcntcclxuICAgIG9wYWNpdHk6IDE7XHJcbiAgICBcclxuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKDJweCwgMnB4KTtcclxuICAgIGJvcmRlcjoxcHggc29saWQgcmdiYSgwLCAwLCAwLCAwLjIpO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMzU7XHJcbiAgICBiYWNrZ3JvdW5kOiAjZmZmO1xyXG4gICAgbWFyZ2luLWJvdHRvbTogNDBweDtcclxuICAgIC13ZWJraXQtYm94LXNoYWRvdzogMXB4IDFweCAzcHggcmdiYSgwLCAwLCAwLCAwLjEpIWltcG9ydGFudDtcclxuICAgIGJveC1zaGFkb3c6IDEwcHggMTBweCAyMHB4IHJnYmEoMCwgMCwgMCwgMC4yKSFpbXBvcnRhbnQ7XHJcbiAgICBcclxuICAgIC5zcXItdG9vbGJhcntcclxuICAgICAgICB2aXNpYmlsaXR5OiB2aXNpYmxlO1xyXG4gICAgfVxyXG5cclxufVxyXG5cclxuLnNxci1idG4uYWN0aXZlLC5zcXIuYWN0aXZle1xyXG4gICAgb3BhY2l0eTogMTtcclxuICAgIFxyXG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoMnB4LCAycHgpO1xyXG4gICAgYm9yZGVyOjFweCBzb2xpZCByZ2JhKDY5LCA1OSwgNTksIDAuMik7XHJcbiAgICBib3JkZXItcmFkaXVzOiAzNTtcclxuICAgIGJhY2tncm91bmQ6ICNmZmY7XHJcbiAgICBtYXJnaW4tYm90dG9tOiA0MHB4O1xyXG4gICAgLXdlYmtpdC1ib3gtc2hhZG93OiAxcHggMXB4IDNweCByZ2JhKDAsIDAsIDAsIDAuMSkhaW1wb3J0YW50O1xyXG4gICAgYm94LXNoYWRvdzogMTBweCAxMHB4IDIwcHggcmdiYSgwLCAwLCAwLCAwLjIpIWltcG9ydGFudDtcclxuICAgIFxyXG4gICAgLnNxci10b29sYmFye1xyXG4gICAgICAgIHZpc2liaWxpdHk6IHZpc2libGU7XHJcbiAgICB9XHJcblxyXG59Il19 */"
 
 /***/ }),
 
@@ -701,16 +701,25 @@ var LobbyComponent = /** @class */ (function () {
         this.deleteItem.emit(item);
     };
     LobbyComponent.prototype.editItemHandler = function (item) {
+        this.items.forEach(function (it) {
+            delete it.selected;
+        });
+        item.selected = 'active';
         this.editItem.emit(item);
     };
     LobbyComponent.prototype.newItemHandler = function (item) {
         this.newItem.emit(item);
     };
     LobbyComponent.prototype.selectItemHandler = function (item) {
+        item.selected = 'active';
         this.selectItem.emit(item);
     };
     LobbyComponent.prototype.ngOnInit = function () {
     };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"])
+    ], LobbyComponent.prototype, "template", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
@@ -1083,7 +1092,7 @@ var SlideHeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper\">\n    <nav id=\"sidebar\" [class]=\"activeClass\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <ul class=\"mr-auto\">\n                <li class=\"nav-item\" class=\"language-bar\">\n                    <app-language-bar></app-language-bar>\n                </li>\n                <li class=\"nav-item\">\n                    <button type=\"button\" (click)=\"toggleSidebar()\" id=\"sidebarCollapse\" class=\"btn btn-sm btn-info\">\n                        <i class=\"fas fa-align-left\"></i>\n                    </button>\n                </li>\n            </ul>\n            <strong>SN</strong>\n        </div>\n        <ul class=\"list-unstyled components\">\n            <li>\n                <a routerLink=\"/\">\n                    <i class=\"fas fa-home\"></i>\n                    {{\"NAVBAR.HOME\" | translate}}\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"screens\" routerLinkActive=\"orange-cat\">\n                    <i class=\"fas fa-desktop\"></i>\n                    {{\"NAVBAR.SCREENS\" | translate}}\n\n                </a></li>\n            <li>\n                <a routerLink=\"screen-groups\" routerLinkActive=\"green-cat\">\n                    <i class=\"fas fa-clone\"></i>\n                    {{\"NAVBAR.SCREEN-GROUPS\" | translate}}\n\n                </a></li>\n            <li>\n                <a href=\"#LibrarySubmenu\" (click)=\"toggleSubmenu()\" routerLinkActive=\"lemon-cat\" routerLink=\"library\" data-toggle=\"collapse\"\n                    aria-expanded=\"false\" class=\"dropdown-toggle\">\n                    <i class=\"fas fa-copy\"></i>\n                    {{\"NAVBAR.LIBRARY\" | translate}}\n                </a>\n                <ul class=\"{{subMenuState}} list-unstyled\" id=\"LibrarySubmenu\">\n                    <li>\n                        <a routerLink=\"library/images\" routerLinkActive=\"lemon-cat\"><i class=\"fas fa-images\"></i> {{\"NAVBAR.IMAGES\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/videos\" routerLinkActive=\"lemon-cat\"><i class=\"fas fa-video\"></i> {{\"NAVBAR.VIDEOS\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/slides\" routerLinkActive=\"lemon-cat\"><i class=\"far fa-object-group\"></i> {{\"NAVBAR.SLIDES\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/fonts\" routerLinkActive=\"lemon-cat\"><i class=\"fas fa-font\"></i> {{\"NAVBAR.FONTS\" | translate}}</a>\n                    </li>\n                </ul>\n            </li>\n            <li>\n                <a routerLink=\"playlists\" routerLinkActive=\"purple-cat\">\n                    <i class=\"fas fa-step-forward\"></i>\n                    {{\"NAVBAR.PLAYLISTS\" | translate}}\n\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"schedules\" routerLinkActive=\"active-link\">\n                    <i class=\"fas fa-calendar-alt\"></i>\n                    {{\"NAVBAR.SCHEDULES\" | translate}}\n\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"settings\" routerLinkActive=\"active-link\">\n                    <i class=\"fas fa-cogs\"></i>\n                    {{\"NAVBAR.SETTINGS\" | translate}}\n\n                </a>\n            </li>\n        </ul>\n    </nav>\n    <!-- Page Content  -->\n    <div id=\"content\">\n        <app-bread-crumbs (Toggled)=\"toggleSidebar($event)\"></app-bread-crumbs>\n        <router-outlet></router-outlet>\n    </div>\n    <footer class=\"footer closed\">\n        {{'DASHBOARD.FOOTER' | translate}}\n    </footer>\n</div>\n"
+module.exports = "<div class=\"wrapper\">\n    <nav id=\"sidebar\" [class]=\"activeClass\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <ul class=\"mr-auto\">\n                <li class=\"nav-item\" class=\"language-bar\">\n                    <app-language-bar></app-language-bar>\n                </li>\n                <li class=\"nav-item\">\n                    <button type=\"button\" (click)=\"toggleSidebar()\" id=\"sidebarCollapse\" class=\"btn btn-sm btn-info\">\n                        <i class=\"fas fa-align-left\"></i>\n                    </button>\n                </li>\n            </ul>\n            <strong>SN</strong>\n        </div>\n        <ul class=\"list-unstyled components\">\n            <li>\n                <a routerLink=\"/\">\n                    <i class=\"fas fa-home\"></i>\n                    {{\"NAVBAR.HOME\" | translate}}\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"screens\" routerLinkActive=\"orange-cat\">\n                    <i class=\"fas fa-desktop\"></i>\n                    {{\"NAVBAR.SCREENS\" | translate}}\n\n                </a></li>\n            <li>\n                <a routerLink=\"screen-groups\" routerLinkActive=\"green-cat\">\n                    <i class=\"fas fa-clone\"></i>\n                    {{\"NAVBAR.SCREEN-GROUPS\" | translate}}\n\n                </a></li>\n            <li>\n                <a   (click)=\"toggleSubmenu()\" routerLinkActive=\"lemon-cat\" routerLink=\"library\"  \n                    aria-expanded=\"false\">\n                    <i class=\"fas fa-copy\"></i>\n                    {{\"NAVBAR.LIBRARY\" | translate}}\n                </a>\n                <!-- <ul class=\"{{subMenuState}} list-unstyled\" id=\"LibrarySubmenu\">\n                    <li>\n                        <a routerLink=\"library/images\" routerLinkActive=\"lemon-cat\"><i class=\"fas fa-images\"></i> {{\"NAVBAR.IMAGES\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/videos\" routerLinkActive=\"lemon-cat\"><i class=\"fas fa-video\"></i> {{\"NAVBAR.VIDEOS\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/slides\" routerLinkActive=\"lemon-cat\"><i class=\"far fa-object-group\"></i> {{\"NAVBAR.SLIDES\" | translate}}</a>\n                    </li>\n                    <li>\n                        <a routerLink=\"library/fonts\" routerLinkActive=\"lemon-cat\"><i class=\"fas fa-font\"></i> {{\"NAVBAR.FONTS\" | translate}}</a>\n                    </li>\n                </ul> -->\n            </li>\n            <li>\n                <a routerLink=\"playlists\" routerLinkActive=\"purple-cat\">\n                    <i class=\"fas fa-step-forward\"></i>\n                    {{\"NAVBAR.PLAYLISTS\" | translate}}\n\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"schedules\" routerLinkActive=\"active-link\">\n                    <i class=\"fas fa-calendar-alt\"></i>\n                    {{\"NAVBAR.SCHEDULES\" | translate}}\n\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"settings\" routerLinkActive=\"active-link\">\n                    <i class=\"fas fa-cogs\"></i>\n                    {{\"NAVBAR.SETTINGS\" | translate}}\n\n                </a>\n            </li>\n        </ul>\n    </nav>\n    <!-- Page Content  -->\n    <div id=\"content\">\n        <app-bread-crumbs (Toggled)=\"toggleSidebar($event)\"></app-bread-crumbs>\n        <router-outlet></router-outlet>\n    </div>\n    <footer class=\"footer closed\">\n        {{'DASHBOARD.FOOTER' | translate}}\n    </footer>\n</div>\n"
 
 /***/ }),
 
@@ -1332,6 +1341,146 @@ var AdaptHeightDirective = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]])
     ], AdaptHeightDirective);
     return AdaptHeightDirective;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/directives/stop-prop.ts":
+/*!*****************************************!*\
+  !*** ./src/app/directives/stop-prop.ts ***!
+  \*****************************************/
+/*! exports provided: ClickStopPropagationDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClickStopPropagationDirective", function() { return ClickStopPropagationDirective; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var ClickStopPropagationDirective = /** @class */ (function () {
+    function ClickStopPropagationDirective() {
+    }
+    ClickStopPropagationDirective.prototype.onClick = function (event) {
+        event.stopPropagation();
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('click', ['$event']),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object]),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
+    ], ClickStopPropagationDirective.prototype, "onClick", null);
+    ClickStopPropagationDirective = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"])({
+            selector: '[click-stop-propagation]'
+        })
+    ], ClickStopPropagationDirective);
+    return ClickStopPropagationDirective;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/editor/add/add.component.html":
+/*!***********************************************!*\
+  !*** ./src/app/editor/add/add.component.html ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"cube-container\">\r\n    <div class=\"cube\">\r\n        <div class=\"plus\">\r\n            <div class=\"plus-horizontal\"></div>\r\n            <div class=\"plus-vertical\"></div>\r\n        </div>\r\n        <div class=\"quadrant\">\r\n            <div class=\"quadrant__item\">\r\n                <div class=\"quadrant__item__content\">\r\n                    <button class=\"arrow-up\" (click)=\"add('text')\">\r\n                        <i class=\"fas fa-font\"></i>\r\n                    </button>\r\n                </div>\r\n            </div>\r\n            <div class=\"quadrant__item\">\r\n                <div class=\"quadrant__item__content\">\r\n                    <button class=\"arrow-right\" (click)=\"add('image')\">\r\n                        <i class=\"fas fa-images\"></i>\r\n                    </button>\r\n\r\n                </div>\r\n            </div>\r\n            <div class=\"quadrant__item\">\r\n                <div class=\"quadrant__item__content\">\r\n                    <button class=\"arrow-left\" (click)=\"add('video')\">\r\n                        <i class=\"fas fa-video\"></i>\r\n                    </button>\r\n\r\n                </div>\r\n            </div>\r\n            <div class=\"quadrant__item\">\r\n                <div class=\"quadrant__item__content\">\r\n                    <button class=\"arrow-down\" (click)=\"add('plugin')\">\r\n                        <i class=\"fas fa-plug\"></i>\r\n                    </button>\r\n\r\n\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/editor/add/add.component.scss":
+/*!***********************************************!*\
+  !*** ./src/app/editor/add/add.component.scss ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".cube-container {\n  position: absolute; }\n\n.cube {\n  width: 60px;\n  height: 60px;\n  background: #f45c41;\n  border-radius: 6px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  position: relative;\n  cursor: pointer;\n  transition: background 0.2s; }\n\n.plus-vertical,\n.plus-horizontal {\n  background: #fff;\n  border-radius: 4px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  z-index: 10; }\n\n.plus-vertical {\n  height: 50%;\n  width: 5px; }\n\n.plus-horizontal {\n  width: 50%;\n  height: 5px; }\n\n.quadrant {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-wrap: wrap;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%); }\n\n.quadrant__item {\n  width: 50%;\n  height: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: #f45c41;\n  border-radius: 6px;\n  position: relative; }\n\n.quadrant__item__content {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%) rotate(-45deg);\n          transform: translate(-50%, -50%) rotate(-45deg);\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\n.arrow-down,\n.arrow-left,\n.arrow-right,\n.arrow-up {\n  opacity: 0;\n  color: white;\n  font-size: 24px; }\n\n.arrow-up {\n  -webkit-transform: translateY(10px);\n          transform: translateY(10px); }\n\n.arrow-down {\n  -webkit-transform: translateY(-10px);\n          transform: translateY(-10px); }\n\n.arrow-left {\n  -webkit-transform: translateX(10px);\n          transform: translateX(10px); }\n\n.arrow-right {\n  -webkit-transform: translateX(-10px);\n          transform: translateX(-10px); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL2FkZC9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXGVkaXRvclxcYWRkXFxhZGQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDSSxtQkFBa0IsRUFDckI7O0FBSUQ7RUFDRSxZQUFXO0VBQ1gsYUFBWTtFQUNaLG9CQUFtQjtFQUNuQixtQkFBa0I7RUFDbEIsY0FBYTtFQUNiLG9CQUFtQjtFQUNuQix3QkFBdUI7RUFDdkIsbUJBQWtCO0VBQ2xCLGdCQUFlO0VBQ2YsNEJBQTJCLEVBQzVCOztBQUVEOztFQUVFLGlCQUFnQjtFQUNoQixtQkFBa0I7RUFDbEIsbUJBQWtCO0VBQ2xCLFNBQVE7RUFDUixVQUFTO0VBQ1QseUNBQWdDO1VBQWhDLGlDQUFnQztFQUNoQyxZQUFXLEVBQ1o7O0FBRUQ7RUFDRSxZQUFXO0VBQ1gsV0FBVSxFQUNYOztBQUVEO0VBQ0UsV0FBVTtFQUNWLFlBQVcsRUFDWjs7QUFFRDtFQUNFLG1CQUFrQjtFQUNsQixZQUFXO0VBQ1gsYUFBWTtFQUNaLGNBQWE7RUFDYixnQkFBZTtFQUNmLFNBQVE7RUFDUixVQUFTO0VBQ1QseUNBQWdDO1VBQWhDLGlDQUFnQyxFQUNqQzs7QUFFRDtFQUNFLFdBQVU7RUFDVixZQUFXO0VBQ1gsY0FBYTtFQUNiLG9CQUFtQjtFQUNuQix3QkFBdUI7RUFDdkIsb0JBQW1CO0VBQ25CLG1CQUFrQjtFQUNsQixtQkFBa0IsRUFDbkI7O0FBRUQ7RUFDRSxZQUFXO0VBQ1gsYUFBWTtFQUNaLG1CQUFrQjtFQUNsQixTQUFRO0VBQ1IsVUFBUztFQUNULHdEQUErQztVQUEvQyxnREFBK0M7RUFDL0MsY0FBYTtFQUNiLG9CQUFtQjtFQUNuQix3QkFBdUIsRUFDeEI7O0FBRUQ7Ozs7RUFJRyxXQUFVO0VBQ1YsYUFBWTtFQUNaLGdCQUFlLEVBQ2pCOztBQUVEO0VBQ0Usb0NBQTJCO1VBQTNCLDRCQUEyQixFQUM1Qjs7QUFFRDtFQUNFLHFDQUE0QjtVQUE1Qiw2QkFBNEIsRUFDN0I7O0FBRUQ7RUFDRSxvQ0FBMkI7VUFBM0IsNEJBQTJCLEVBQzVCOztBQUVEO0VBQ0UscUNBQTRCO1VBQTVCLDZCQUE0QixFQUM3QiIsImZpbGUiOiJzcmMvYXBwL2VkaXRvci9hZGQvYWRkLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiIFxyXG4uY3ViZS1jb250YWluZXJ7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbn1cclxuXHJcblxyXG5cclxuLmN1YmUge1xyXG4gIHdpZHRoOiA2MHB4O1xyXG4gIGhlaWdodDogNjBweDtcclxuICBiYWNrZ3JvdW5kOiAjZjQ1YzQxO1xyXG4gIGJvcmRlci1yYWRpdXM6IDZweDtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICB0cmFuc2l0aW9uOiBiYWNrZ3JvdW5kIDAuMnM7XHJcbn1cclxuXHJcbi5wbHVzLXZlcnRpY2FsLFxyXG4ucGx1cy1ob3Jpem9udGFsIHtcclxuICBiYWNrZ3JvdW5kOiAjZmZmO1xyXG4gIGJvcmRlci1yYWRpdXM6IDRweDtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgdG9wOiA1MCU7XHJcbiAgbGVmdDogNTAlO1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xyXG4gIHotaW5kZXg6IDEwO1xyXG59XHJcblxyXG4ucGx1cy12ZXJ0aWNhbCB7XHJcbiAgaGVpZ2h0OiA1MCU7XHJcbiAgd2lkdGg6IDVweDtcclxufVxyXG5cclxuLnBsdXMtaG9yaXpvbnRhbCB7XHJcbiAgd2lkdGg6IDUwJTtcclxuICBoZWlnaHQ6IDVweDtcclxufVxyXG5cclxuLnF1YWRyYW50IHtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgaGVpZ2h0OiAxMDAlO1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgZmxleC13cmFwOiB3cmFwO1xyXG4gIHRvcDogNTAlO1xyXG4gIGxlZnQ6IDUwJTtcclxuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcclxufVxyXG5cclxuLnF1YWRyYW50X19pdGVtIHtcclxuICB3aWR0aDogNTAlO1xyXG4gIGhlaWdodDogNTAlO1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICBiYWNrZ3JvdW5kOiAjZjQ1YzQxO1xyXG4gIGJvcmRlci1yYWRpdXM6IDZweDtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbn1cclxuXHJcbi5xdWFkcmFudF9faXRlbV9fY29udGVudCB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgaGVpZ2h0OiAxMDAlO1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICB0b3A6IDUwJTtcclxuICBsZWZ0OiA1MCU7XHJcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSkgcm90YXRlKC00NWRlZyk7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG59XHJcblxyXG4uYXJyb3ctZG93bixcclxuLmFycm93LWxlZnQsXHJcbi5hcnJvdy1yaWdodCxcclxuLmFycm93LXVwIHtcclxuICAgb3BhY2l0eTogMDtcclxuICAgY29sb3I6IHdoaXRlO1xyXG4gICBmb250LXNpemU6IDI0cHg7XHJcbn1cclxuXHJcbi5hcnJvdy11cCB7XHJcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDEwcHgpO1xyXG59XHJcblxyXG4uYXJyb3ctZG93biB7XHJcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC0xMHB4KTtcclxufVxyXG5cclxuLmFycm93LWxlZnQge1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgxMHB4KTtcclxufVxyXG5cclxuLmFycm93LXJpZ2h0IHtcclxuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoLTEwcHgpO1xyXG59Il19 */"
+
+/***/ }),
+
+/***/ "./src/app/editor/add/add.component.ts":
+/*!*********************************************!*\
+  !*** ./src/app/editor/add/add.component.ts ***!
+  \*********************************************/
+/*! exports provided: AddComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddComponent", function() { return AddComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+
+
+
+var AddComponent = /** @class */ (function () {
+    function AddComponent(_ngZone, sanitizer) {
+        this._ngZone = _ngZone;
+        this.sanitizer = sanitizer;
+        this.selected = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+    }
+    AddComponent.prototype.add = function (type) {
+        this.selected.emit(type);
+    };
+    AddComponent.prototype.ngOnInit = function () {
+        var quadrantItems = document.querySelectorAll('.quadrant__item');
+        var svgs = document.querySelectorAll('svg');
+        var cube = document.querySelector('.cube');
+        var closeButton = document.querySelector('.quadrant__item__content--close');
+        var isInside = false;
+        var tl = new window.TimelineLite({ paused: true });
+        tl.timeScale(1.6);
+        tl.to('.cube', 0.4, { rotation: 45, width: '120px', height: '120px', ease: window.Expo.easeOut }, 'first');
+        tl.to('.plus .plus-vertical', 0.3, { height: '0', backgroundColor: '#f45c41', ease: window.Power1.easeIn }, 'first');
+        tl.to('.plus .plus-horizontal', 0.3, { width: '0', backgroundColor: '#f45c41', ease: window.Power1.easeIn }, 'first');
+        tl.to('.cube', 0, { backgroundColor: 'transparent' });
+        tl.to(quadrantItems[0], 0.15, { x: -5, y: -5 }, 'seperate');
+        tl.to('.arrow-up', 0.2, { opacity: 1, y: 0 }, 'seperate+=0.2');
+        tl.to(quadrantItems[1], 0.15, { x: 5, y: -5 }, 'seperate');
+        tl.to('.arrow-right', 0.2, { opacity: 1, x: 0 }, 'seperate+=0.2');
+        tl.to(quadrantItems[3], 0.15, { x: 5, y: 5 }, 'seperate');
+        tl.to('.arrow-down', 0.2, { opacity: 1, y: 0 }, 'seperate+=0.2');
+        tl.to(quadrantItems[2], 0.15, { x: -5, y: 5 }, 'seperate');
+        tl.to('.arrow-left', 0.2, { opacity: 1, x: 0 }, 'seperate+=0.2');
+        cube.addEventListener('mouseenter', playTimeline);
+        cube.addEventListener('mouseleave', reverseTimeline);
+        function playTimeline(e) {
+            e.stopPropagation();
+            tl.play();
+        }
+        function reverseTimeline(e) {
+            e.stopPropagation();
+            tl.timeScale(1.8);
+            tl.reverse();
+        }
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"])
+    ], AddComponent.prototype, "selected", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChildren"])('thumbObject'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["QueryList"])
+    ], AddComponent.prototype, "thumbObject", void 0);
+    AddComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-add',
+            template: __webpack_require__(/*! ./add.component.html */ "./src/app/editor/add/add.component.html"),
+            styles: [__webpack_require__(/*! ./add.component.scss */ "./src/app/editor/add/add.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"]])
+    ], AddComponent);
+    return AddComponent;
 }());
 
 
@@ -1625,6 +1774,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _slide_editor_slide_editor_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./slide-editor/slide-editor.component */ "./src/app/editor/slide-editor/slide-editor.component.ts");
 /* harmony import */ var _panel_panel_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./panel/panel.component */ "./src/app/editor/panel/panel.component.ts");
 /* harmony import */ var ng5_slider__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ng5-slider */ "./node_modules/ng5-slider/esm5/ng5-slider.js");
+/* harmony import */ var _add_add_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./add/add.component */ "./src/app/editor/add/add.component.ts");
+
 
 
 
@@ -1650,7 +1801,7 @@ var EditorModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
                 ng5_slider__WEBPACK_IMPORTED_MODULE_12__["Ng5SliderModule"]
             ],
-            declarations: [_contenteditable_directive__WEBPACK_IMPORTED_MODULE_7__["ContenteditableDirective"], _element_element_component__WEBPACK_IMPORTED_MODULE_6__["ElementComponent"], _slide_editor_slide_editor_component__WEBPACK_IMPORTED_MODULE_10__["SlideEditorComponent"], _panel_panel_component__WEBPACK_IMPORTED_MODULE_11__["PanelComponent"]],
+            declarations: [_contenteditable_directive__WEBPACK_IMPORTED_MODULE_7__["ContenteditableDirective"], _element_element_component__WEBPACK_IMPORTED_MODULE_6__["ElementComponent"], _add_add_component__WEBPACK_IMPORTED_MODULE_13__["AddComponent"], _slide_editor_slide_editor_component__WEBPACK_IMPORTED_MODULE_10__["SlideEditorComponent"], _panel_panel_component__WEBPACK_IMPORTED_MODULE_11__["PanelComponent"]],
             providers: [_fonts_service__WEBPACK_IMPORTED_MODULE_9__["FontsService"], _selection_service__WEBPACK_IMPORTED_MODULE_8__["SelectionService"]]
         })
     ], EditorModule);
@@ -1668,7 +1819,7 @@ var EditorModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div ngDraggable [zIndex]=\"element.zIndex\" [handle]=\"ElementHandle\" [position]=\"element.position\" class=\"drag-block element {{element.selected}}\"\n  (edge)=\"checkEdge($event)\" [bounds]=\"myBounds\" [inBounds]=\"inBounds\" (started)=\"onStart($event)\" (stopped)=\"onStop($event)\"\n  (movingOffset)=\"onMoving($event)\" [preventDefaultEvent]=\"false\" (endOffset)=\"onMoveEnd($event)\" (click)=\"focus($event, element)\">\n\n\n  <div [ngStyle]=\"{'font-family': element.font ? element.font: 'arial',\n   'font-size': element.fontSize +'px',\n  'color': element.color }\" contenteditable=\"true\" (updateComplete)=\"updateComplete($event)\" [(ngModel)]=\"element.text\"\n    *ngIf=\"element.type === 'text'\"></div>\n\n  <img [src]=\"element.src\" ngResizable class=\"image-element shadow\" [ngStyle]=\"{'width': element.width+'px','height': element.height+'px', 'opacity': element.opacity }\"\n    *ngIf=\"element.type === 'image'\" /> {{element.position | json}}\n</div>\n\n<!-- <div [hidden]=\"!layers\" class=\"layer\" (click)=\"focus($event, element)\">\n \n  <div class=\"row\">\n    <div class=\"col-6\">\n     <input type=\"text\" [(ngModel)]=\"element.text\" class=\"form-control\"> \n      <ul class=\"toolbox\" *ngIf=\"element.selected && element.type==='text'\">\n          <li>\n            <select [(ngModel)]=\"element.font\" (change)=\"selectFont($event)\">\n              <option *ngFor=\"let c of fonts\" [ngValue]=\"c\">{{c}}</option>\n            </select>\n          </li>\n          <li>\n            <select [(ngModel)]=\"element.fontSize\">\n              <option *ngFor=\"let c of sizes\" [ngValue]=\"c\">{{c}}</option>\n            </select>\n          </li>\n          <li>\n            <input [(colorPicker)]=\"element.color\" [style.background]=\"element.color\" />\n          </li>\n        </ul>\n      \n      \n        <ul class=\"toolbox\" *ngIf=\"element.selected && element.type==='image'\">\n          <li>\n            <img [src]=\"element.src\">\n          </li>\n          <li>\n            <span>Width:</span>\n            <input type=\"number\" [(ngModel)]=\"element.width\" />\n            <span>Height:</span> <input type=\"number\" [(ngModel)]=\"element.height\" />\n            <span>Opacity:</span> <input type=\"number\" [(ngModel)]=\"element.opacity\" />\n          </li>\n          <li>\n      \n          </li>\n        </ul>\n\n    </div>\n    <div class=\"col-6\">     \n      <div style=\"border: 1px inset #ccddcc;\">\n        <canvas width=\"115\" height=\"115\" #thumbCanvas></canvas>\n      </div>\n      <div #htmlElement id=\"htmlElement\" style=\"visibility: hidden\"> \n        <div [ngStyle]=\"{'font-family': element.font ? element.font: 'arial','position': 'absolute', 'top':element.position.y + 'px','left':element.position.x + 'px',  \n         'font-size': element.fontSize +'px',\n        'color': element.color }\">{{element.text}}</div>\n      </div>\n    </div>\n  </div>\n\n\n\n\n</div> -->\n"
+module.exports = "<div  ngDraggable [zIndex]=\"element.zIndex\" [handle]=\"ElementHandle\" [position]=\"element.position\" class=\"drag-block element {{element.selected}}\"\n  (edge)=\"checkEdge($event)\" [bounds]=\"myBounds\" [inBounds]=\"inBounds\" (started)=\"onStart($event)\" (stopped)=\"onStop($event)\"\n  (movingOffset)=\"onMoving($event)\" [preventDefaultEvent]=\"false\" (endOffset)=\"onMoveEnd($event)\" (click)=\"focus($event, element)\">\n  <button class=\"del-button\" (click)=\"remove(element);\"><i class=\"far fa-window-close \"></i></button>\n\n  <div [ngStyle]=\"{'font-family': element.font ? element.font: 'arial',\n   'font-size': element.fontSize +'px',\n  'color': element.color }\" contenteditable=\"true\" (updateComplete)=\"updateComplete($event)\" [(ngModel)]=\"element.text\"\n    *ngIf=\"element.type === 'text'\"></div>\n\n  <img [src]=\"element.src\" ngResizable class=\"image-element shadow\" [ngStyle]=\"{'width': element.width+'px','height': element.height+'px', 'opacity': element.opacity }\"\n    *ngIf=\"element.type === 'image'\" /> {{element.position | json}}\n</div>\n\n<!-- <div [hidden]=\"!layers\" class=\"layer\" (click)=\"focus($event, element)\">\n \n  <div class=\"row\">\n    <div class=\"col-6\">\n     <input type=\"text\" [(ngModel)]=\"element.text\" class=\"form-control\"> \n      <ul class=\"toolbox\" *ngIf=\"element.selected && element.type==='text'\">\n          <li>\n            <select [(ngModel)]=\"element.font\" (change)=\"selectFont($event)\">\n              <option *ngFor=\"let c of fonts\" [ngValue]=\"c\">{{c}}</option>\n            </select>\n          </li>\n          <li>\n            <select [(ngModel)]=\"element.fontSize\">\n              <option *ngFor=\"let c of sizes\" [ngValue]=\"c\">{{c}}</option>\n            </select>\n          </li>\n          <li>\n            <input [(colorPicker)]=\"element.color\" [style.background]=\"element.color\" />\n          </li>\n        </ul>\n      \n      \n        <ul class=\"toolbox\" *ngIf=\"element.selected && element.type==='image'\">\n          <li>\n            <img [src]=\"element.src\">\n          </li>\n          <li>\n            <span>Width:</span>\n            <input type=\"number\" [(ngModel)]=\"element.width\" />\n            <span>Height:</span> <input type=\"number\" [(ngModel)]=\"element.height\" />\n            <span>Opacity:</span> <input type=\"number\" [(ngModel)]=\"element.opacity\" />\n          </li>\n          <li>\n      \n          </li>\n        </ul>\n\n    </div>\n    <div class=\"col-6\">     \n      <div style=\"border: 1px inset #ccddcc;\">\n        <canvas width=\"115\" height=\"115\" #thumbCanvas></canvas>\n      </div>\n      <div #htmlElement id=\"htmlElement\" style=\"visibility: hidden\"> \n        <div [ngStyle]=\"{'font-family': element.font ? element.font: 'arial','position': 'absolute', 'top':element.position.y + 'px','left':element.position.x + 'px',  \n         'font-size': element.fontSize +'px',\n        'color': element.color }\">{{element.text}}</div>\n      </div>\n    </div>\n  </div>\n\n\n\n\n</div> -->\n"
 
 /***/ }),
 
@@ -1679,7 +1830,7 @@ module.exports = "<div ngDraggable [zIndex]=\"element.zIndex\" [handle]=\"Elemen
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".drag-block {\n  min-height: 50px;\n  min-width: 50px;\n  padding: 1px;\n  cursor: crosshair;\n  position: absolute; }\n  .drag-block span {\n    cursor: text;\n    display: inline; }\n  .element {\n  border: 1px solid transparent; }\n  .element .selected, .element .true {\n    border: 1px solid black; }\n  .form-control {\n  height: 15px; }\n  .position {\n  position: absolute; }\n  .t-bar {\n  position: absolute;\n  font-size: 9px; }\n  .t-bar input {\n    width: 50px; }\n  .t-bar select {\n    width: 100px; }\n  .position {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100px;\n  font-size: 9px; }\n  .layer {\n  height: 130px;\n  background-color: white; }\n  .layer .toolbox select, .layer .toolbox input {\n    font-size: 10px; }\n  .layer .toolbox input {\n    width: 30px; }\n  .layer .toolbox img {\n    float: right;\n    width: 50px;\n    height: 50px; }\n  .layer .toolbox.active {\n    display: block; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL2VsZW1lbnQvQzpcXHByb2plY3RzXFxzaWduLW5hdHVyZVxcd2ViL3NyY1xcYXBwXFxlZGl0b3JcXGVsZW1lbnRcXGVsZW1lbnQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFFSSxpQkFBZ0I7RUFDaEIsZ0JBQWU7RUFDZixhQUFZO0VBQ1osa0JBQWlCO0VBQ2pCLG1CQUFrQixFQUtyQjtFQVhEO0lBUVEsYUFBWTtJQUNaLGdCQUFlLEVBQ2xCO0VBR0w7RUFDSSw4QkFBNkIsRUFJaEM7RUFMRDtJQUdRLHdCQUF1QixFQUMxQjtFQUdMO0VBQ0ksYUFBWSxFQUNmO0VBQ0Q7RUFDSSxtQkFBa0IsRUFDckI7RUFDRDtFQUNJLG1CQUFrQjtFQUNsQixlQUFjLEVBUWpCO0VBVkQ7SUFJUSxZQUFVLEVBQ2I7RUFMTDtJQU9RLGFBQVksRUFDZjtFQUdMO0VBQ0ksbUJBQWtCO0VBQ2xCLFVBQVE7RUFDUixRQUFNO0VBQ04sYUFBWTtFQUNaLGVBQWMsRUFDakI7RUFHRDtFQUNJLGNBQWE7RUFDYix3QkFBdUIsRUFrQjFCO0VBcEJEO0lBUVksZ0JBQWUsRUFDbEI7RUFUVDtJQVVlLFlBQVcsRUFBRztFQVY3QjtJQVlZLGFBQVk7SUFDWixZQUFXO0lBQUMsYUFBVyxFQUMxQjtFQWRUO0lBaUJRLGVBQWMsRUFDakIiLCJmaWxlIjoic3JjL2FwcC9lZGl0b3IvZWxlbWVudC9lbGVtZW50LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmRyYWctYmxvY2tcclxueyAgICAgXHJcbiAgICBtaW4taGVpZ2h0OiA1MHB4O1xyXG4gICAgbWluLXdpZHRoOiA1MHB4O1xyXG4gICAgcGFkZGluZzogMXB4O1xyXG4gICAgY3Vyc29yOiBjcm9zc2hhaXI7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBzcGFuIHtcclxuICAgICAgICBjdXJzb3I6IHRleHQ7XHJcbiAgICAgICAgZGlzcGxheTogaW5saW5lOyAgICAgICAgXHJcbiAgICB9XHJcbn1cclxuXHJcbi5lbGVtZW50e1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XHJcbiAgICAuc2VsZWN0ZWQsIC50cnVle1xyXG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrO1xyXG4gICAgfVxyXG59XHJcblxyXG4uZm9ybS1jb250cm9se1xyXG4gICAgaGVpZ2h0OiAxNXB4OyBcclxufVxyXG4ucG9zaXRpb257XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbn1cclxuLnQtYmFye1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgZm9udC1zaXplOiA5cHg7XHJcbiAgICBpbnB1dHtcclxuICAgICAgICB3aWR0aDo1MHB4O1xyXG4gICAgfVxyXG4gICAgc2VsZWN0e1xyXG4gICAgICAgIHdpZHRoOiAxMDBweDtcclxuICAgIH1cclxuXHJcbn1cclxuLnBvc2l0aW9ue1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgYm90dG9tOjA7XHJcbiAgICBsZWZ0OjA7XHJcbiAgICB3aWR0aDogMTAwcHg7XHJcbiAgICBmb250LXNpemU6IDlweDtcclxufVxyXG4gXHJcblxyXG4ubGF5ZXJ7XHJcbiAgICBoZWlnaHQ6IDEzMHB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbiAgICBcclxuICAgIC50b29sYm94XHJcbiAgICB7XHJcbiAgICAgICAgXHJcbiAgICAgICAgc2VsZWN0LCBpbnB1dHtcclxuICAgICAgICAgICAgZm9udC1zaXplOiAxMHB4O1xyXG4gICAgICAgIH1cclxuICAgICAgICBpbnB1dCB7d2lkdGg6IDMwcHg7fVxyXG4gICAgICAgIGltZ3tcclxuICAgICAgICAgICAgZmxvYXQ6IHJpZ2h0O1xyXG4gICAgICAgICAgICB3aWR0aDogNTBweDtoZWlnaHQ6NTBweDtcclxuICAgICAgICB9XHJcbiAgICB9XHJcbiAgICAudG9vbGJveC5hY3RpdmV7XHJcbiAgICAgICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICB9XHJcbiAgXHJcbn0iXX0= */"
+module.exports = ".drag-block {\n  min-height: 50px;\n  min-width: 50px;\n  padding: 1px;\n  cursor: crosshair;\n  position: absolute; }\n  .drag-block span {\n    cursor: text;\n    display: inline; }\n  .element {\n  border: 1px solid transparent; }\n  .element .del-button {\n    opacity: 0; }\n  .element .selected, .element .true {\n    border: 1px solid black; }\n  .selected .del-button, .true .del-button {\n  opacity: 1;\n  position: absolute;\n  left: -15px;\n  top: -15px;\n  width: 52px;\n  height: 52px;\n  color: white;\n  cursor: pointer;\n  opacity: 0.7; }\n  .del-button:active,\n.del-button:hover {\n  opacity: 1; }\n  .form-control {\n  height: 15px; }\n  .position {\n  position: absolute; }\n  .t-bar {\n  position: absolute;\n  font-size: 9px; }\n  .t-bar input {\n    width: 50px; }\n  .t-bar select {\n    width: 100px; }\n  .position {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100px;\n  font-size: 9px; }\n  .layer {\n  height: 130px;\n  background-color: white; }\n  .layer .toolbox select, .layer .toolbox input {\n    font-size: 10px; }\n  .layer .toolbox input {\n    width: 30px; }\n  .layer .toolbox img {\n    float: right;\n    width: 50px;\n    height: 50px; }\n  .layer .toolbox.active {\n    display: block; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL2VsZW1lbnQvQzpcXHByb2plY3RzXFxzaWduLW5hdHVyZVxcd2ViL3NyY1xcYXBwXFxlZGl0b3JcXGVsZW1lbnRcXGVsZW1lbnQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFHSSxpQkFBZ0I7RUFDaEIsZ0JBQWU7RUFDZixhQUFZO0VBQ1osa0JBQWlCO0VBQ2pCLG1CQUFrQixFQUtyQjtFQVpEO0lBU1EsYUFBWTtJQUNaLGdCQUFlLEVBQ2xCO0VBR0w7RUFFSSw4QkFBNkIsRUFZaEM7RUFkRDtJQUtZLFdBQVUsRUFDYjtFQU5UO0lBUVEsd0JBQXVCLEVBSzFCO0VBR0w7RUFHUSxXQUFVO0VBQ1YsbUJBQWtCO0VBQ2xCLFlBQVc7RUFDWCxXQUFVO0VBQ1YsWUFBVztFQUNYLGFBQVk7RUFHWixhQUFZO0VBQ1osZ0JBQWU7RUFDZixhQUFZLEVBRWY7RUFFTDs7RUFHSSxXQUFVLEVBRWI7RUFFRDtFQUNJLGFBQVksRUFDZjtFQUNEO0VBQ0ksbUJBQWtCLEVBQ3JCO0VBQ0Q7RUFDSSxtQkFBa0I7RUFDbEIsZUFBYyxFQVFqQjtFQVZEO0lBSVEsWUFBVSxFQUNiO0VBTEw7SUFPUSxhQUFZLEVBQ2Y7RUFHTDtFQUNJLG1CQUFrQjtFQUNsQixVQUFRO0VBQ1IsUUFBTTtFQUNOLGFBQVk7RUFDWixlQUFjLEVBQ2pCO0VBR0Q7RUFDSSxjQUFhO0VBQ2Isd0JBQXVCLEVBa0IxQjtFQXBCRDtJQVFZLGdCQUFlLEVBQ2xCO0VBVFQ7SUFVZSxZQUFXLEVBQUc7RUFWN0I7SUFZWSxhQUFZO0lBQ1osWUFBVztJQUFDLGFBQVcsRUFDMUI7RUFkVDtJQWlCUSxlQUFjLEVBQ2pCIiwiZmlsZSI6InNyYy9hcHAvZWRpdG9yL2VsZW1lbnQvZWxlbWVudC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5kcmFnLWJsb2NrXHJcbnsgICAgIFxyXG4gICAgXHJcbiAgICBtaW4taGVpZ2h0OiA1MHB4O1xyXG4gICAgbWluLXdpZHRoOiA1MHB4O1xyXG4gICAgcGFkZGluZzogMXB4O1xyXG4gICAgY3Vyc29yOiBjcm9zc2hhaXI7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBzcGFuIHtcclxuICAgICAgICBjdXJzb3I6IHRleHQ7XHJcbiAgICAgICAgZGlzcGxheTogaW5saW5lOyAgICAgICAgXHJcbiAgICB9XHJcbn1cclxuXHJcbi5lbGVtZW50e1xyXG4gIFxyXG4gICAgYm9yZGVyOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XHJcbiAgICAuZGVsLWJ1dHRvblxyXG4gICAgICAgIHtcclxuICAgICAgICAgICAgb3BhY2l0eTogMDsgICBcclxuICAgICAgICB9XHJcbiAgICAuc2VsZWN0ZWQsIC50cnVle1xyXG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrO1xyXG5cclxuXHJcbiAgICAgICBcclxuXHJcbiAgICB9XHJcbn1cclxuXHJcbi5zZWxlY3RlZCwgLnRydWV7XHJcbiAgICAuZGVsLWJ1dHRvblxyXG4gICAgeyAgIFxyXG4gICAgICAgIG9wYWNpdHk6IDE7ICAgXHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIGxlZnQ6IC0xNXB4O1xyXG4gICAgICAgIHRvcDogLTE1cHg7XHJcbiAgICAgICAgd2lkdGg6IDUycHg7XHJcbiAgICAgICAgaGVpZ2h0OiA1MnB4O1xyXG4gICAgICAgIFxyXG5cclxuICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgICAgIG9wYWNpdHk6IDAuNztcclxuICAgICAgICBcclxuICAgIH1cclxufVxyXG4uZGVsLWJ1dHRvbjphY3RpdmUsXHJcbi5kZWwtYnV0dG9uOmhvdmVyXHJcbnsgICBcclxuICAgIG9wYWNpdHk6IDE7XHJcbiAgICBcclxufVxyXG5cclxuLmZvcm0tY29udHJvbHtcclxuICAgIGhlaWdodDogMTVweDsgXHJcbn1cclxuLnBvc2l0aW9ue1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG59XHJcbi50LWJhcntcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIGZvbnQtc2l6ZTogOXB4O1xyXG4gICAgaW5wdXR7XHJcbiAgICAgICAgd2lkdGg6NTBweDtcclxuICAgIH1cclxuICAgIHNlbGVjdHtcclxuICAgICAgICB3aWR0aDogMTAwcHg7XHJcbiAgICB9XHJcblxyXG59XHJcbi5wb3NpdGlvbntcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIGJvdHRvbTowO1xyXG4gICAgbGVmdDowO1xyXG4gICAgd2lkdGg6IDEwMHB4O1xyXG4gICAgZm9udC1zaXplOiA5cHg7XHJcbn1cclxuIFxyXG5cclxuLmxheWVye1xyXG4gICAgaGVpZ2h0OiAxMzBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgXHJcbiAgICAudG9vbGJveFxyXG4gICAge1xyXG4gICAgICAgIFxyXG4gICAgICAgIHNlbGVjdCwgaW5wdXR7XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMTBweDtcclxuICAgICAgICB9XHJcbiAgICAgICAgaW5wdXQge3dpZHRoOiAzMHB4O31cclxuICAgICAgICBpbWd7XHJcbiAgICAgICAgICAgIGZsb2F0OiByaWdodDtcclxuICAgICAgICAgICAgd2lkdGg6IDUwcHg7aGVpZ2h0OjUwcHg7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG4gICAgLnRvb2xib3guYWN0aXZle1xyXG4gICAgICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgfVxyXG4gIFxyXG59XHJcblxyXG4iXX0= */"
 
 /***/ }),
 
@@ -1708,6 +1859,7 @@ var ElementComponent = /** @class */ (function () {
         this.sanitizer = sanitizer;
         this.fontService = fontService;
         this.selected = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.removed = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.inBounds = true;
         this.edge = {
             top: true,
@@ -1764,6 +1916,9 @@ var ElementComponent = /** @class */ (function () {
         }
     };
     ElementComponent.prototype.onStart = function (event) {
+    };
+    ElementComponent.prototype.remove = function (element) {
+        this.removed.emit(element);
     };
     ElementComponent.prototype.focus = function (event, element) {
         this.selected.emit(element);
@@ -1841,6 +1996,10 @@ var ElementComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"])
     ], ElementComponent.prototype, "selected", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"])
+    ], ElementComponent.prototype, "removed", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChildren"])('thumbCanvas'),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["QueryList"])
@@ -2763,7 +2922,7 @@ var FontsService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"element\" [handle]=\"myHandle\" ngDraggable class=\"drag-panel\" [ngStyle]=\"positionProjection\" [preventDefaultEvent]=\"false\">\r\n    <div #myHandle class=\"drag-block-handle\"> <i class=\"fas fa-arrows-alt\"></i></div>\r\n    <form class=\"pt50\">\r\n            <div class=\"form-group\">\r\n                {{element.zIndex}}\r\n                  <button (click)=\"moveIndex(-1)\"><i class=\"fas fa-level-down-alt\"></i></button>\r\n                  <button (click)=\"moveIndex(1)\"><i class=\"fas fa-level-up-alt\"></i></button>\r\n                </div>\r\n\r\n        <div *ngIf=\"element.type === 'text'\" class=\"t-bar\">\r\n\r\n            <div class=\"form-group\">\r\n                <label for=\"fontName\">{{ \"PANEL.FONTNAME\" | translate }}:</label>\r\n                <select class=\"form-control\" name=\"fontNameTxt\" [(ngModel)]=\"element.font\" (change)=\"selectFont($event)\">\r\n                    <option *ngFor=\"let c of fonts\" [ngValue]=\"c\">{{c}}</option>\r\n                </select>\r\n                <small id=\"fontHelp\" class=\"form-text text-muted\">{{ \"PANEL.FONTNAME_HELP\" | translate }}</small>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label for=\"fontName\">{{ \"PANEL.FONTSIZE\" | translate }}:</label>\r\n                <ng5-slider [(value)]=\"element.fontSize\" [options]=\"sliderOptions\"></ng5-slider>\r\n                <small id=\"fontSize\" class=\"form-text text-muted\">{{ \"PANEL.FONTSIZE_HELP\" | translate }}</small>\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n                <label for=\"fontColor\">{{ \"PANEL.FONTCOLOR\" | translate }}:</label>\r\n                <input class=\"form-control\" name=\"fontColorTxt\" [(colorPicker)]=\"element.color\" [style.background]=\"element.color\" />\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n                <label for=\"fontColor\">{{ \"PANEL.POSITIONX\" | translate }}:</label>\r\n                <input class=\"form-control\" name=\"position_x\" [(ngModel)]=\"element.position.x\" />\r\n\r\n                <label for=\"fontColor\">{{ \"PANEL.POSITIONY\" | translate }}:</label>\r\n                <input class=\"form-control\" name=\"position_y\" [(ngModel)]=\"element.position.y\" />\r\n            </div>\r\n        </div>\r\n    </form>\r\n\r\n</div>\r\n"
+module.exports = "<div *ngIf=\"element\"  class=\"drag-panel\">\r\n   \r\n    <form class=\"pt50\">\r\n            <div class=\"form-group\">\r\n                {{element.zIndex}}\r\n                  <button (click)=\"moveIndex(-1)\"><i class=\"fas fa-level-down-alt\"></i></button>\r\n                  <button (click)=\"moveIndex(1)\"><i class=\"fas fa-level-up-alt\"></i></button>\r\n                </div>\r\n\r\n        <div *ngIf=\"element.type === 'text'\" class=\"t-bar\">\r\n\r\n            <div class=\"form-group\">\r\n                <label for=\"fontName\">{{ \"PANEL.FONTNAME\" | translate }}:</label>\r\n                <select class=\"form-control\" name=\"fontNameTxt\" [(ngModel)]=\"element.font\" (change)=\"selectFont($event)\">\r\n                    <option *ngFor=\"let c of fonts\" [ngValue]=\"c\">{{c}}</option>\r\n                </select>\r\n                <small id=\"fontHelp\" class=\"form-text text-muted\">{{ \"PANEL.FONTNAME_HELP\" | translate }}</small>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label for=\"fontName\">{{ \"PANEL.FONTSIZE\" | translate }}:</label>\r\n                <ng5-slider [(value)]=\"element.fontSize\" [options]=\"sliderOptions\"></ng5-slider>\r\n                <small id=\"fontSize\" class=\"form-text text-muted\">{{ \"PANEL.FONTSIZE_HELP\" | translate }}</small>\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n                <label for=\"fontColor\">{{ \"PANEL.FONTCOLOR\" | translate }}:</label>\r\n                <input class=\"form-control\" name=\"fontColorTxt\" [cpPosition]=\"'left'\"   \r\n                 [(colorPicker)]=\"element.color\" [style.background]=\"element.color\" />\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n                <label for=\"fontColor\">{{ \"PANEL.POSITIONX\" | translate }}:</label>\r\n                <input class=\"form-control\" name=\"position_x\" [(ngModel)]=\"element.position.x\" />\r\n\r\n                <label for=\"fontColor\">{{ \"PANEL.POSITIONY\" | translate }}:</label>\r\n                <input class=\"form-control\" name=\"position_y\" [(ngModel)]=\"element.position.y\" />\r\n            </div>\r\n        </div>\r\n    </form>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -2774,7 +2933,7 @@ module.exports = "<div *ngIf=\"element\" [handle]=\"myHandle\" ngDraggable class
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".drag-panel {\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: #faf3fa;\n  border: 1px solid #faf7f7;\n  width: 300px;\n  height: 700px;\n  z-index: 2000 !important;\n  padding: 20px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL3BhbmVsL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcZWRpdG9yXFxwYW5lbFxccGFuZWwuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFFSSxtQkFBa0I7RUFDbEIsT0FBSztFQUNMLFFBQU07RUFDTiwwQkFBeUI7RUFDekIsMEJBQW9DO0VBQ3BDLGFBQVk7RUFDWixjQUFZO0VBQ1oseUJBQXVCO0VBQ3ZCLGNBQWEsRUFDaEIiLCJmaWxlIjoic3JjL2FwcC9lZGl0b3IvcGFuZWwvcGFuZWwuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZHJhZy1wYW5lbFxyXG57XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6MDtcclxuICAgIGxlZnQ6MDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmYWYzZmE7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCByZ2IoMjUwLCAyNDcsIDI0Nyk7XHJcbiAgICB3aWR0aDogMzAwcHg7XHJcbiAgICBoZWlnaHQ6NzAwcHg7XHJcbiAgICB6LWluZGV4OiAyMDAwIWltcG9ydGFudDtcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbn0iXX0= */"
+module.exports = ".drag-panel {\n  background-color: #faf3fa;\n  border: 1px solid #faf7f7;\n  width: 300px;\n  height: 700px;\n  padding: 20px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL3BhbmVsL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcZWRpdG9yXFxwYW5lbFxccGFuZWwuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFHSSwwQkFBeUI7RUFDekIsMEJBQW9DO0VBQ3BDLGFBQVk7RUFDWixjQUFZO0VBRVosY0FBYSxFQUNoQiIsImZpbGUiOiJzcmMvYXBwL2VkaXRvci9wYW5lbC9wYW5lbC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5kcmFnLXBhbmVsXHJcbntcclxuICAgIFxyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZhZjNmYTtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIHJnYigyNTAsIDI0NywgMjQ3KTtcclxuICAgIHdpZHRoOiAzMDBweDtcclxuICAgIGhlaWdodDo3MDBweDtcclxuICAgXHJcbiAgICBwYWRkaW5nOiAyMHB4O1xyXG59Il19 */"
 
 /***/ }),
 
@@ -2873,6 +3032,13 @@ var SelectionService = /** @class */ (function () {
         this.selection = [];
         this.elements = [];
     }
+    SelectionService.prototype.unselect = function () {
+        var all = document.querySelectorAll('.element');
+        for (var i = 0; i < all.length; i++) {
+            all[i].className = all[i].className.replace('selected', '');
+        }
+        this.elements.forEach(function (item) { return item.selected = false; });
+    };
     SelectionService.prototype.focus = function (eventElement, elementItem) {
         var all = document.querySelectorAll('.element');
         for (var i = 0; i < all.length; i++) {
@@ -2897,6 +3063,10 @@ var SelectionService = /** @class */ (function () {
     SelectionService.prototype.newBlockElement = function (newElement) {
         this.elements.push(newElement);
     };
+    SelectionService.prototype.remove = function (element) {
+        var found = this.elements.indexOf(element);
+        this.elements.splice(found, 1);
+    };
     SelectionService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
@@ -2915,7 +3085,7 @@ var SelectionService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"item\">\n  <ul class=\"nav nav-tabs direction\">\n    <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n      <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n    </li>\n  </ul>\n  <ul class=\"direction\">\n    <li *ngIf=\"tabs[0].selected\">\n      <div class=\"btn-group\" data-toggle=\"buttons\">\n        <button (click)=\"newTextBlockElement()\" class=\"btn btn-tool\"><i class=\"fas fa-font\"></i></button>\n        <button (click)=\"finder('image')\" class=\"btn btn-tool\"><i class=\"far fa-image\"></i></button>\n        <button (click)=\"finder('video')\" class=\"btn btn-tool\"><i class=\"fas fa-video\"></i></button>\n        <button (click)=\"newPluginBlockElement()\" class=\"btn btn-tool\"><i class=\"fas fa-plug\"></i></button>\n        <input [(colorPicker)]=\"editor.color\" class=\"btn btn-tool color-tool\" [style.background]=\"editor.color\" />\n        <input [(colorPicker)]=\"editor.bgColor\" (colorPickerChange)=\"setBgColor($event)\" class=\"btn btn-tool color-tool\" [style.background]=\"editor.bgColor\"\n        />\n      </div>\n    </li>\n    <li>\n\n    </li>\n    <li>\n\n    </li>\n  </ul>\n  <ul class=\"direction-invert\">\n    <li class=\"toolbar-end\">\n      <button class=\"btn btn-primary btn-sm\" (click)=\"resetItem()\">{{ \"SLIDES.RESET\" | translate }}</button>\n      <button *ngIf=\"item._id\" class=\"btn btn-primary btn-sm\" (click)=\"updateItemProxy()\">\n        <span class=\"btn-spinner-host\"> <i class=\"btn-spinner\" *ngIf=\"updateItemRunning\"></i> {{ \"SLIDES.UPDATE\" | translate }}\n        </span>\n      </button>\n      <button *ngIf=\"!item._id\" class=\"btn btn-primary btn-sm\" (click)=\"createItemProxy()\">\n        <span class=\"btn-spinner-host\"> <i class=\"btn-spinner\" *ngIf=\"updateItemRunning\">\n          </i> {{ \"SLIDES.CREATE\" | translate }}\n        </span>\n      </button>\n    </li>\n  </ul>\n  <div style=\"clear: both\"></div>\n\n  <div *ngIf=\"tabs[0].selected\" [appAdaptHeight]=\"100\">\n    <!-- <div class=\"layers\"  dragula=\"DRAGULA_FACTS\" [(dragulaModel)]=\"selectionService.elements\">\n      <div *ngFor=\"let el of selectionService.elements\">\n        <app-element [element]=\"el\" mode=\"layers\"></app-element>\n      </div>\n    </div> -->\n    <app-panel [(element)]=\"selectedElement\"></app-panel>\n\n    <div class=\"row slide-editor\" id=\"worksapce\" style=\"direction: ltr;\">\n      <app-rulers></app-rulers><br />\n      <div class=\"editor-plate small\" [ngStyle]=\"{'background-color': item.bgColor }\">\n        <app-element *ngFor=\"let el of selectionService.elements\" (selected)=\"designerFocus(el)\" (click)=\"designerFocus(el)\" [element]=\"el\"></app-element>\n      </div>\n    </div>\n  </div>\n  <div *ngIf=\"tabs[1].selected\">\n    <pre> {{item.elements | json}}</pre>\n  </div>\n</div>\n\n<app-finder [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
+module.exports = "<div *ngIf=\"item\">\n  <ul class=\"nav nav-tabs direction\">\n    <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n      <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n    </li>\n  </ul>\n  <ul class=\"direction-invert\">\n    <li *ngIf=\"tabs[0].selected\">\n      <div class=\"btn-group\" data-toggle=\"buttons\">\n\n        <input [(colorPicker)]=\"editor.color\" class=\"btn btn-tool color-tool\" [style.background]=\"editor.color\" />\n        <input [(colorPicker)]=\"editor.bgColor\" (colorPickerChange)=\"setBgColor($event)\" class=\"btn btn-tool color-tool\" [style.background]=\"editor.bgColor\"\n        />\n      </div>\n    </li>\n    <li>\n\n    </li>\n    <li>\n\n    </li>\n  </ul>\n  <ul class=\"direction-invert\">\n    <li class=\"toolbar-end\">\n      <button class=\"btn btn-primary btn-sm\" (click)=\"resetItem()\">{{ \"SLIDES.RESET\" | translate }}</button>\n      <button *ngIf=\"item._id\" class=\"btn btn-primary btn-sm\" (click)=\"updateItemProxy()\">\n        <span class=\"btn-spinner-host\"> <i class=\"btn-spinner\" *ngIf=\"updateItemRunning\"></i> {{ \"SLIDES.UPDATE\" | translate }}\n        </span>\n      </button>\n      <button *ngIf=\"!item._id\" class=\"btn btn-primary btn-sm\" (click)=\"createItemProxy()\">\n        <span class=\"btn-spinner-host\"> <i class=\"btn-spinner\" *ngIf=\"updateItemRunning\">\n          </i> {{ \"SLIDES.CREATE\" | translate }}\n        </span>\n      </button>\n    </li>\n  </ul>\n  <div style=\"clear: both\"></div>\n\n  <div *ngIf=\"tabs[0].selected\" [appAdaptHeight]=\"100\">\n    <!-- <div class=\"layers\"  dragula=\"DRAGULA_FACTS\" [(dragulaModel)]=\"selectionService.elements\">\n      <div *ngFor=\"let el of selectionService.elements\">\n        <app-element [element]=\"el\" mode=\"layers\"></app-element>\n      </div>\n    </div> -->\n    <div class=\"row\">\n      <div class=\"col-3\">\n        <app-add (selected)=\"addElement($event)\"></app-add>\n        <app-panel [(element)]=\"selectedElement\"></app-panel>\n      </div>\n      <div class=\"col-9\">\n        <div class=\"row slide-editor\" id=\"worksapce\" style=\"direction: ltr;\">\n\n          <app-rulers></app-rulers><br />\n          <div class=\"editor-plate small\" [ngStyle]=\"{'background-color': item.bgColor }\">\n\n            <app-element *ngFor=\"let el of selectionService.elements\" (selected)=\"designerFocus($event,el)\" (removed)=\"removeBlock($event, el)\"\n              [element]=\"el\"></app-element>\n\n          </div>\n        </div>\n      </div>\n\n    </div>\n\n\n\n  </div>\n  <div *ngIf=\"tabs[1].selected\">\n    <pre> {{item.elements | json}}</pre>\n  </div>\n</div>\n\n<app-finder [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
 
 /***/ }),
 
@@ -2926,7 +3096,7 @@ module.exports = "<div *ngIf=\"item\">\n  <ul class=\"nav nav-tabs direction\">\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".slide-editor {\n  position: absolute;\n  left: 10%; }\n  .slide-editor .editor-plate {\n    position: relative;\n    top: 15px;\n    left: 15px; }\n  .slide-editor .small {\n    width: 800px;\n    height: 600px; }\n  .slide-editor .small-portrait {\n    width: 600px;\n    height: 800px; }\n  .toolbar-end {\n  float: left; }\n  .selected, .true {\n  border: 1px dotted #cc66dd !important; }\n  .color-tool {\n  border: 1px solid #ccc; }\n  .layers {\n  z-index: 2000;\n  background-color: gray;\n  position: absolute;\n  width: 300px;\n  height: 400px; }\n  .btn-tool {\n  width: 40px;\n  height: 40px;\n  border-radius: 1px;\n  color: white;\n  background: #3f5efb;\n  background: radial-gradient(circle, #3f5efb 0%, rgba(134, 85, 197, 0.958719) 99%, #fc466b 99%); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL3NsaWRlLWVkaXRvci9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXGVkaXRvclxcc2xpZGUtZWRpdG9yXFxzbGlkZS1lZGl0b3IuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFnQkksbUJBQWtCO0VBQ2xCLFVBQVMsRUFDWjtFQWxCRDtJQUlRLG1CQUFrQjtJQUNsQixVQUFTO0lBQ1QsV0FBVSxFQUNiO0VBUEw7SUFTUSxhQUFZO0lBQ1osY0FBYSxFQUNoQjtFQVhMO0lBYVEsYUFBWTtJQUNaLGNBQWEsRUFDaEI7RUFNTDtFQUNJLFlBQVcsRUFDZDtFQUtEO0VBQ0ksc0NBQW9DLEVBQ3ZDO0VBQ0Q7RUFDSSx1QkFBc0IsRUFDekI7RUFDRDtFQUNJLGNBQVk7RUFDWix1QkFBc0I7RUFDdEIsbUJBQWtCO0VBQ2xCLGFBQVk7RUFDWixjQUFhLEVBQ2hCO0VBRUQ7RUFDSSxZQUFVO0VBQUMsYUFBVztFQUN0QixtQkFBa0I7RUFDbEIsYUFBWTtFQUNaLG9CQUEwQjtFQUMxQiwrRkFBMEgsRUFDN0giLCJmaWxlIjoic3JjL2FwcC9lZGl0b3Ivc2xpZGUtZWRpdG9yL3NsaWRlLWVkaXRvci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zbGlkZS1lZGl0b3J7XHJcblxyXG4gICAgLmVkaXRvci1wbGF0ZVxyXG4gICAge1xyXG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgICAgICB0b3A6IDE1cHg7XHJcbiAgICAgICAgbGVmdDogMTVweDtcclxuICAgIH1cclxuICAgIC5zbWFsbHtcclxuICAgICAgICB3aWR0aDogODAwcHg7ICAgXHJcbiAgICAgICAgaGVpZ2h0OiA2MDBweDsgIFxyXG4gICAgfVxyXG4gICAgLnNtYWxsLXBvcnRyYWl0e1xyXG4gICAgICAgIHdpZHRoOiA2MDBweDsgICBcclxuICAgICAgICBoZWlnaHQ6IDgwMHB4OyAgXHJcbiAgICB9XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBsZWZ0OiAxMCU7XHJcbn1cclxuXHJcbiBcclxuLnRvb2xiYXItZW5ke1xyXG4gICAgZmxvYXQ6IGxlZnQ7XHJcbn1cclxuXHJcbiN3b3Jrc2FwY2V7XHJcbiAgICAvL3BhZGRpbmc6MzBweDtcclxufVxyXG4uc2VsZWN0ZWQsLnRydWV7XHJcbiAgICBib3JkZXI6IDFweCBkb3R0ZWQgI2NjNjZkZCFpbXBvcnRhbnQ7XHJcbn1cclxuLmNvbG9yLXRvb2x7ICAgIFxyXG4gICAgYm9yZGVyOiAxcHggc29saWQgI2NjYztcclxufVxyXG4ubGF5ZXJze1xyXG4gICAgei1pbmRleDoyMDAwO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogZ3JheTtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHdpZHRoOiAzMDBweDtcclxuICAgIGhlaWdodDogNDAwcHg7XHJcbn1cclxuXHJcbi5idG4tdG9vbHtcclxuICAgIHdpZHRoOjQwcHg7aGVpZ2h0OjQwcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxcHg7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBiYWNrZ3JvdW5kOiByZ2IoNjMsOTQsMjUxKTtcclxuICAgIGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudChjaXJjbGUsIHJnYmEoNjMsOTQsMjUxLDEpIDAlLCByZ2JhKDEzNCw4NSwxOTcsMC45NTg3MTg1MjE1ODgzMjI4KSA5OSUsIHJnYmEoMjUyLDcwLDEwNywxKSA5OSUpO1xyXG59XHJcblxyXG5cclxuXHJcbiJdfQ== */"
+module.exports = ".slide-editor {\n  position: absolute;\n  left: 10%; }\n  .slide-editor .editor-plate {\n    position: relative;\n    top: 15px;\n    left: 15px; }\n  .slide-editor .small {\n    width: 800px;\n    height: 600px; }\n  .slide-editor .small-portrait {\n    width: 600px;\n    height: 800px; }\n  .toolbar-end {\n  float: left; }\n  .selected, .true {\n  border: 1px dotted #cc66dd !important; }\n  .color-tool {\n  border: 1px solid #ccc; }\n  .layers {\n  z-index: 2000;\n  background-color: gray;\n  position: absolute;\n  width: 300px;\n  height: 400px; }\n  .btn-tool {\n  width: 40px;\n  height: 40px;\n  border-radius: 1px;\n  color: white;\n  background: #3f5efb;\n  background: radial-gradient(circle, #3f5efb 0%, rgba(134, 85, 197, 0.958719) 99%, #fc466b 99%); }\n  .click-back {\n  z-index: 0;\n  position: absolute;\n  background-color: darkviolet;\n  width: 100%;\n  height: 100%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL3NsaWRlLWVkaXRvci9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXGVkaXRvclxcc2xpZGUtZWRpdG9yXFxzbGlkZS1lZGl0b3IuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFnQkksbUJBQWtCO0VBQ2xCLFVBQVMsRUFDWjtFQWxCRDtJQUlRLG1CQUFrQjtJQUNsQixVQUFTO0lBQ1QsV0FBVSxFQUNiO0VBUEw7SUFTUSxhQUFZO0lBQ1osY0FBYSxFQUNoQjtFQVhMO0lBYVEsYUFBWTtJQUNaLGNBQWEsRUFDaEI7RUFNTDtFQUNJLFlBQVcsRUFDZDtFQUtEO0VBQ0ksc0NBQW9DLEVBQ3ZDO0VBQ0Q7RUFDSSx1QkFBc0IsRUFDekI7RUFDRDtFQUNJLGNBQVk7RUFDWix1QkFBc0I7RUFDdEIsbUJBQWtCO0VBQ2xCLGFBQVk7RUFDWixjQUFhLEVBQ2hCO0VBRUQ7RUFDSSxZQUFVO0VBQUMsYUFBVztFQUN0QixtQkFBa0I7RUFDbEIsYUFBWTtFQUNaLG9CQUEwQjtFQUMxQiwrRkFBMEgsRUFDN0g7RUFFRDtFQUNJLFdBQVU7RUFDVixtQkFBa0I7RUFDbEIsNkJBQTRCO0VBQzVCLFlBQVc7RUFDWCxhQUFZLEVBQ2YiLCJmaWxlIjoic3JjL2FwcC9lZGl0b3Ivc2xpZGUtZWRpdG9yL3NsaWRlLWVkaXRvci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zbGlkZS1lZGl0b3J7XHJcblxyXG4gICAgLmVkaXRvci1wbGF0ZVxyXG4gICAge1xyXG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgICAgICB0b3A6IDE1cHg7XHJcbiAgICAgICAgbGVmdDogMTVweDtcclxuICAgIH1cclxuICAgIC5zbWFsbHtcclxuICAgICAgICB3aWR0aDogODAwcHg7ICAgXHJcbiAgICAgICAgaGVpZ2h0OiA2MDBweDsgIFxyXG4gICAgfVxyXG4gICAgLnNtYWxsLXBvcnRyYWl0e1xyXG4gICAgICAgIHdpZHRoOiA2MDBweDsgICBcclxuICAgICAgICBoZWlnaHQ6IDgwMHB4OyAgXHJcbiAgICB9XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBsZWZ0OiAxMCU7XHJcbn1cclxuXHJcbiBcclxuLnRvb2xiYXItZW5ke1xyXG4gICAgZmxvYXQ6IGxlZnQ7XHJcbn1cclxuXHJcbiN3b3Jrc2FwY2V7XHJcbiAgICAvL3BhZGRpbmc6MzBweDtcclxufVxyXG4uc2VsZWN0ZWQsLnRydWV7XHJcbiAgICBib3JkZXI6IDFweCBkb3R0ZWQgI2NjNjZkZCFpbXBvcnRhbnQ7XHJcbn1cclxuLmNvbG9yLXRvb2x7ICAgIFxyXG4gICAgYm9yZGVyOiAxcHggc29saWQgI2NjYztcclxufVxyXG4ubGF5ZXJze1xyXG4gICAgei1pbmRleDoyMDAwO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogZ3JheTtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHdpZHRoOiAzMDBweDtcclxuICAgIGhlaWdodDogNDAwcHg7XHJcbn1cclxuXHJcbi5idG4tdG9vbHtcclxuICAgIHdpZHRoOjQwcHg7aGVpZ2h0OjQwcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxcHg7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBiYWNrZ3JvdW5kOiByZ2IoNjMsOTQsMjUxKTtcclxuICAgIGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudChjaXJjbGUsIHJnYmEoNjMsOTQsMjUxLDEpIDAlLCByZ2JhKDEzNCw4NSwxOTcsMC45NTg3MTg1MjE1ODgzMjI4KSA5OSUsIHJnYmEoMjUyLDcwLDEwNywxKSA5OSUpO1xyXG59XHJcbiBcclxuLmNsaWNrLWJhY2t7XHJcbiAgICB6LWluZGV4OiAwO1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogZGFya3Zpb2xldDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG59Il19 */"
 
 /***/ }),
 
@@ -3012,6 +3182,9 @@ var SlideEditorComponent = /** @class */ (function (_super) {
         this.tabs.forEach(function (tabItem) { return tabItem.selected = false; });
         tab.selected = true;
     };
+    SlideEditorComponent.prototype.noActieElement = function () {
+        this.selectionService.unselect();
+    };
     SlideEditorComponent.prototype.createItemProxy = function () {
         this.item.elements = this.selectionService.elements;
         this.createItem();
@@ -3052,25 +3225,25 @@ var SlideEditorComponent = /** @class */ (function (_super) {
         this.item.elements = [];
         this.selectionService.reset();
     };
-    SlideEditorComponent.prototype.newTextBlockElement = function () {
-        var textBlock = {
-            type: 'text',
-            position: { x: 100, y: 100 }, class: 'h1',
-            font: this.fontService.getFonts()[0],
-            fontSize: 42,
-            text: 'Text line',
-            zIndex: 1000 + this.item.elements.length + 1
-        };
-        this.newBlockElement(textBlock);
-    };
-    SlideEditorComponent.prototype.newImageBlockElement = function () {
-        var imageBlock = {
-            type: 'image',
-            position: { x: 0, y: 0 },
-            src: 'https://www.publicengagement.ac.uk/sites/default/files/styles/content_width/public/hero/large-crowd-of-people-small.jpg',
-            class: 'img', zIndex: 1000 + this.item.elements.length + 1
-        };
-        this.newBlockElement(imageBlock);
+    SlideEditorComponent.prototype.addElement = function (type) {
+        switch (type) {
+            case 'text':
+                var textBlock = {
+                    type: 'text',
+                    position: { x: 100, y: 100 }, class: 'h1',
+                    font: this.fontService.getFonts()[0],
+                    fontSize: 42,
+                    text: 'Text line',
+                    zIndex: 1000 + this.item.elements.length + 1
+                };
+                this.newBlockElement(textBlock);
+                break;
+            case 'image':
+            case 'video':
+            case 'plugin':
+                this.finder(type);
+                break;
+        }
     };
     SlideEditorComponent.prototype.newBlockElement = function (block) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
@@ -3082,15 +3255,17 @@ var SlideEditorComponent = /** @class */ (function (_super) {
                     this.item.elements = [];
                 }
                 this.selectionService.elements.push(block);
+                this.selectionService.focus(null, block);
                 return [2 /*return*/];
             });
         });
     };
-    SlideEditorComponent.prototype.designerFocus = function (element) {
+    SlideEditorComponent.prototype.removeBlock = function (event, block) {
+        event.preventDefault();
+        this.selectionService.remove(block);
+    };
+    SlideEditorComponent.prototype.designerFocus = function (event, element) {
         this.selectedElement = element;
-        // document.querySelector('.element'); // .removeClass('active');
-        // window.$('.element').removeClass('active');
-        // window.$(element).addClass('active');
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
@@ -3462,7 +3637,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>\n"
+module.exports = "<ul class=\"nav nav-tabs\">\n    <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n        <a class=\"nav-link {{tab.selected}}\"   [routerLink]=\"['/dashboard/library/', tab.alias]\" routerLinkActive=\"lemon-cat\"><i class=\"{{tab.icon}}\"></i> {{tab.name | translate}}</a>\n    </li>\n</ul>\n<router-outlet></router-outlet>\n<!-- \n\n<div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias !=='slide'\">\n     \n  \n\n\n    <app-lobby [items]=\"filteredItems()\" mode=\"media-finder\" (selectItem)=\"selectItem($event)\" (deleteItem)=\"deleteItem($event)\"\n        (newItem)=\"newItem($event)\"></app-lobby>\n</div>\n<div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias ==='slide'\">\n    <app-lobby [items]=\"slides\" mode=\"object-finder\" (selectItem)=\"selectItem($event)\" (deleteItem)=\"deleteItem($event)\" (newItem)=\"newItem($event)\"></app-lobby>\n</div> -->\n"
 
 /***/ }),
 
@@ -3478,23 +3653,104 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LibraryComponent", function() { return LibraryComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _data_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data.component */ "./src/app/data.component.ts");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 
 
-var LibraryComponent = /** @class */ (function () {
-    function LibraryComponent() {
+
+
+
+
+var LibraryComponent = /** @class */ (function (_super) {
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](LibraryComponent, _super);
+    function LibraryComponent(_ngZone, translateService, router) {
+        var _this = _super.call(this, _ngZone, translateService) || this;
+        _this._ngZone = _ngZone;
+        _this.translateService = translateService;
+        _this.router = router;
+        _this.types = ['image', 'video', 'audio', 'slide', 'font'];
+        _this.tabsCollection = {
+            'image': {
+                name: 'NAVBAR.IMAGES', icon: 'fas fa-images'
+            },
+            'video': {
+                name: 'NAVBAR.VIDEOS', icon: 'fas fa-video'
+            },
+            'audio': {
+                name: 'NAVBAR.AUDIO', icon: 'fas fa-music'
+            },
+            'slide': {
+                name: 'NAVBAR.SLIDES', icon: 'far fa-object-group'
+            },
+            'font': {
+                name: 'NAVBAR.FONTS', icon: 'fas fa-font'
+            },
+        };
+        _this.tabs = [];
+        _this.DataController = _signnature_client__WEBPACK_IMPORTED_MODULE_4__["LibraryDataController"];
+        return _this;
     }
-    LibraryComponent.prototype.ngOnInit = function () {
+    // [{ name: 'NAVBAR.IMAGES', selected: true, alias: 'image' },
+    // { name: 'NAVBAR.VIDEOS', selected: false, alias: 'video' },
+    // { name: 'NAVBAR.SLIDES', selected: false, alias: 'slide' }];
+    LibraryComponent.prototype.tabSelect = function (tab) {
+        this.router.navigate(['/dashboard/library/', tab.alias]);
+        this.tabs.forEach(function (tabItem) { return tabItem.selected = false; });
+        tab.selected = true;
+        this.selectedTab = tab;
     };
+    LibraryComponent.prototype.filteredItems = function () {
+        var _this = this;
+        return this.items.filter(function (item) { return item.type === _this.selectedTab.alias; });
+    };
+    LibraryComponent.prototype.ngOnInit = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _a;
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        this.loadItems({});
+                        this.tabs = this.types.map(function (item) {
+                            return {
+                                name: _this.tabsCollection[item].name,
+                                icon: _this.tabsCollection[item].icon,
+                                alias: item,
+                            };
+                        });
+                        // if (Object.keys(query).length) {
+                        //   this.query = query;
+                        // }
+                        _a = this;
+                        return [4 /*yield*/, _signnature_client__WEBPACK_IMPORTED_MODULE_4__["SlidesDataController"].query(this.query)];
+                    case 1:
+                        // if (Object.keys(query).length) {
+                        //   this.query = query;
+                        // }
+                        _a.slides = _b.sent();
+                        this.selectedTab = this.tabs[0];
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], LibraryComponent.prototype, "types", void 0);
     LibraryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-library',
             template: __webpack_require__(/*! ./library.component.html */ "./src/app/library/library.component.html"),
             styles: [__webpack_require__(/*! ./library.component.css */ "./src/app/library/library.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_3__["TranslateService"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]])
     ], LibraryComponent);
     return LibraryComponent;
-}());
+}(_data_component__WEBPACK_IMPORTED_MODULE_2__["DataComponent"]));
 
 
 
@@ -3525,9 +3781,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _editor_editor_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../editor/editor.module */ "./src/app/editor/editor.module.ts");
 /* harmony import */ var _upload_upload_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./upload/upload.component */ "./src/app/library/upload/upload.component.ts");
 /* harmony import */ var _editor_slide_editor_slide_editor_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../editor/slide-editor/slide-editor.component */ "./src/app/editor/slide-editor/slide-editor.component.ts");
-/* harmony import */ var _main_main_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./main/main.component */ "./src/app/library/main/main.component.ts");
-/* harmony import */ var _fonts_fonts_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./fonts/fonts.component */ "./src/app/library/fonts/fonts.component.ts");
-
+/* harmony import */ var _fonts_fonts_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./fonts/fonts.component */ "./src/app/library/fonts/fonts.component.ts");
 
 
 
@@ -3544,13 +3798,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var libraryRoutes = [
-    { path: 'library', component: _main_main_component__WEBPACK_IMPORTED_MODULE_14__["MainComponent"] },
-    { path: 'library/images', component: _images_images_component__WEBPACK_IMPORTED_MODULE_6__["ImagesComponent"] },
-    { path: 'library/videos', component: _videos_videos_component__WEBPACK_IMPORTED_MODULE_7__["VideosComponent"] },
-    { path: 'library/sounds', component: _sounds_sounds_component__WEBPACK_IMPORTED_MODULE_8__["SoundsComponent"] },
-    { path: 'library/fonts', component: _fonts_fonts_component__WEBPACK_IMPORTED_MODULE_15__["FontsComponent"] },
-    { path: 'library/slides', component: _slides_slides_component__WEBPACK_IMPORTED_MODULE_9__["SlidesComponent"] },
-    { path: 'library/slides/:id', component: _editor_slide_editor_slide_editor_component__WEBPACK_IMPORTED_MODULE_13__["SlideEditorComponent"] },
+    {
+        path: 'library', component: _library_component__WEBPACK_IMPORTED_MODULE_10__["LibraryComponent"], children: [
+            { path: 'image', component: _images_images_component__WEBPACK_IMPORTED_MODULE_6__["ImagesComponent"] },
+            { path: 'video', component: _videos_videos_component__WEBPACK_IMPORTED_MODULE_7__["VideosComponent"] },
+            { path: 'audio', component: _sounds_sounds_component__WEBPACK_IMPORTED_MODULE_8__["SoundsComponent"] },
+            { path: 'font', component: _fonts_fonts_component__WEBPACK_IMPORTED_MODULE_14__["FontsComponent"] },
+            { path: 'slide', component: _slides_slides_component__WEBPACK_IMPORTED_MODULE_9__["SlidesComponent"] },
+        ]
+    },
+    { path: 'slides/:id', component: _editor_slide_editor_slide_editor_component__WEBPACK_IMPORTED_MODULE_13__["SlideEditorComponent"] },
 ];
 var LibraryModule = /** @class */ (function () {
     function LibraryModule() {
@@ -3567,7 +3824,7 @@ var LibraryModule = /** @class */ (function () {
             exports: [_library_component__WEBPACK_IMPORTED_MODULE_10__["LibraryComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"]],
             entryComponents: [_library_component__WEBPACK_IMPORTED_MODULE_10__["LibraryComponent"]],
             declarations: [_images_images_component__WEBPACK_IMPORTED_MODULE_6__["ImagesComponent"],
-                _main_main_component__WEBPACK_IMPORTED_MODULE_14__["MainComponent"], _fonts_fonts_component__WEBPACK_IMPORTED_MODULE_15__["FontsComponent"],
+                _fonts_fonts_component__WEBPACK_IMPORTED_MODULE_14__["FontsComponent"],
                 _videos_videos_component__WEBPACK_IMPORTED_MODULE_7__["VideosComponent"], _sounds_sounds_component__WEBPACK_IMPORTED_MODULE_8__["SoundsComponent"], _slides_slides_component__WEBPACK_IMPORTED_MODULE_9__["SlidesComponent"],
                 _library_component__WEBPACK_IMPORTED_MODULE_10__["LibraryComponent"], _upload_upload_component__WEBPACK_IMPORTED_MODULE_12__["UploadComponent"]
             ],
@@ -3576,100 +3833,6 @@ var LibraryModule = /** @class */ (function () {
     ], LibraryModule);
     return LibraryModule;
 }());
-
-
-
-/***/ }),
-
-/***/ "./src/app/library/main/main.component.html":
-/*!**************************************************!*\
-  !*** ./src/app/library/main/main.component.html ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<app-lobby [items]=\"items\" [noNew]=\"true\" mode=\"media\" (editItem)=\"editItem($event)\" (deleteItem)=\"deleteItem($event)\">\n</app-lobby>\n\n"
-
-/***/ }),
-
-/***/ "./src/app/library/main/main.component.scss":
-/*!**************************************************!*\
-  !*** ./src/app/library/main/main.component.scss ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xpYnJhcnkvbWFpbi9tYWluLmNvbXBvbmVudC5zY3NzIn0= */"
-
-/***/ }),
-
-/***/ "./src/app/library/main/main.component.ts":
-/*!************************************************!*\
-  !*** ./src/app/library/main/main.component.ts ***!
-  \************************************************/
-/*! exports provided: MainComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MainComponent", function() { return MainComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _data_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../data.component */ "./src/app/data.component.ts");
-/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
-/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
-
-
-
-
-
-var MainComponent = /** @class */ (function (_super) {
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](MainComponent, _super);
-    function MainComponent(_ngZone, translateService) {
-        var _this = _super.call(this, _ngZone, translateService) || this;
-        _this._ngZone = _ngZone;
-        _this.translateService = translateService;
-        _this.DataController = _signnature_client__WEBPACK_IMPORTED_MODULE_3__["LibraryDataController"];
-        return _this;
-        // this.DataModel = PlaylistModel;
-    }
-    MainComponent.prototype.ngOnInit = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                this.loadItems({});
-                return [2 /*return*/];
-            });
-        });
-    };
-    MainComponent.prototype.saveLibrary = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                this.item.type = 'image';
-                this.updateItem();
-                return [2 /*return*/];
-            });
-        });
-    };
-    MainComponent.prototype.createLibrary = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                this.item.type = 'image';
-                this.createItem();
-                return [2 /*return*/];
-            });
-        });
-    };
-    MainComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-main',
-            template: __webpack_require__(/*! ./main.component.html */ "./src/app/library/main/main.component.html"),
-            styles: [__webpack_require__(/*! ./main.component.scss */ "./src/app/library/main/main.component.scss")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__["TranslateService"]])
-    ], MainComponent);
-    return MainComponent;
-}(_data_component__WEBPACK_IMPORTED_MODULE_2__["DataComponent"]));
 
 
 
@@ -3741,10 +3904,10 @@ var SlidesComponent = /** @class */ (function (_super) {
     };
     SlidesComponent.prototype.editItem = function (item) {
         // Absolute route - Goes up to root level with route params
-        this.router.navigate(['/dashboard/library/slides/', item._id]);
+        this.router.navigate(['/dashboard/slides/', item._id]);
     };
     SlidesComponent.prototype.newItem = function () {
-        this.router.navigate(['/dashboard/library/slides/', 0]);
+        this.router.navigate(['/dashboard/slides/', 0]);
     };
     SlidesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -4139,7 +4302,7 @@ var VideosComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<dialog open>\n  <app-slide-header title=\"NAVBAR.PLAYLISTS\" iconClass=\"fas fa-step-forward\" className=\"purple-cat\" (closed)=\"closeSlider($event)\"></app-slide-header>\n  <form *ngIf=\"item\" class=\"pt50\">\n    <div class=\"form-group\">\n      <label for=\"itemName\">{{ \"PLAYLISTS.NAME\" | translate }}:</label>\n      <input type=\"text\" name=\"itemName\" class=\"form-control\" id=\"itemName\" [(ngModel)]=\"item.Name\">\n      <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"PLAYLISTS.NAME_HELP\" | translate }}</small>\n    </div>\n    <ul class=\"nav nav-tabs\">\n      <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n        <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n      </li>\n    </ul>\n    <div *ngIf=\"tabs[0].selected\">\n      <div class=\"form-group\" class=\"sortable\">\n        <div class=\"shadow btn-long\" (click)=\"finder()\"><i class=\"fas fa-plus-circle\"></i> {{\"PLAYLISTS.ADDTOLIST\" | translate}}</div>\n \n        <div *ngIf=\"playlistMode==='normal'\" [class]=\"playlistMode\">\n\n          <div class=\"container\" dragula=\"DRAGULA_FACTS\" [(dragulaModel)]=\"item.list\">\n            <div *ngFor=\"let listitem of item.list; let i = index\" class=\"slot shadow\">\n              <span class=\"label\"> {{listitem.Name}}</span>\n              <div class=\"canvas-bg\">\n                <app-canvas [scale]=\"0.5\" [item]=\"listitem\" [width]=\"250\" [height]=\"250\"></app-canvas>\n              </div>\n              <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n                <li>\n                  <select [(ngModel)]=\"listitem.transitionOut\" name=\"transitionOut\">\n                    <option *ngFor=\"let c of effects\" [ngValue]=\"c\">{{c}}</option>\n                  </select>\n\n                </li>\n                <li>\n                  <input type=\"number\" [(ngModel)]=\"listitem.duration\" name=\"duration\">\n                </li>\n                <li>\n                  <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"removeListItem(item);\"> <i class=\"fas fa-trash\"></i>\n                  </button>\n                </li>\n              </ul>\n            </div>\n          </div>\n\n        </div>\n\n\n\n      </div>\n    </div>\n    <div *ngIf=\"tabs[1].selected\">\n      <div class=\"form-group shadow\">\n        <div class=\"btn-long\" (click)=\"schedule()\"><i class=\"fas fa-plus-circle\"></i> {{\"PLAYLISTS.ADDTIME\" | translate}}</div>\n        <div id=\"timeSlots\" *ngIf=\"editTime && selectedTimeEl\">\n          <div class=\"form-row\">\n            <div class=\"form-group col-md-6\">\n              <label for=\"itemName\">{{ \"PLAYLISTS.SCHEDULE\" | translate }}:</label>\n              <select [(ngModel)]=\"selectedTimeEl.timeslot\" name=\"timeSlotOptions\" [compareWith]=\"compareFnId\" class=\"form-control\">\n                <option *ngFor=\"let c of timeSlotOptions\" [ngValue]=\"c\">{{c.name | translate}}</option>\n              </select>\n            </div>\n            <div class=\"form-group col-md-6\">\n              <label for=\"ScreenGroup\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n              <select [(ngModel)]=\"selectedTimeEl.screenGroup\" name=\"ScreenGroup\" [compareWith]=\"compareFn_id\" class=\"form-control\">\n                <option *ngFor=\"let c of groups\" [ngValue]=\"c\">{{c.Name}}</option>\n              </select>\n            </div>\n            <button class=\"btn btn-primary\" (click)=\"addTimeSlot()\">{{ \"PLAYLISTS.SETTIME\" | translate}}</button>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"container\">\n\n        <div *ngFor=\"let timeslotEl of item.TimeSlots\" class=\"sqr short shadow\">\n          <label>{{timeslotEl.timeslot.name | translate}}</label>\n          <small>{{timeslotEl.screenGroup.Name}}</small>\n          <ul class=\"sqr-toolbar\">\n            <li>\n              <button class=\"btn btn-md btn-danger\" (click)=\"deleteTimeslot(timeslotEl);\"> <i class=\"fas fa-trash\"></i>\n              </button>\n            </li>\n            <li>\n              <button class=\"btn btn-md btn-primary\" (click)=\"editTimeslot(timeslotEl);\"> <i class=\"fas fa-edit\"></i> </button>\n            </li>\n          </ul>\n        </div>\n      </div>\n    </div>\n    <hr />\n    <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"PLAYLISTS.UPDATE\" | translate }}</button>\n    <button *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"PLAYLISTS.CREATE\" | translate }}</button>\n\n  </form>\n\n  <app-slide-footer className=\"purple-cat\"></app-slide-footer>\n</dialog>\n\n\n\n\n\n<app-finder [types]=\"['image','video','slide']\" [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
+module.exports = "<dialog open>\n  <app-slide-header title=\"NAVBAR.PLAYLISTS\" iconClass=\"fas fa-step-forward\" className=\"purple-cat\" (closed)=\"closeSlider($event)\"></app-slide-header>\n  <form *ngIf=\"item\" class=\"pt50\">\n    <div class=\"form-group\">\n      <label for=\"itemName\">{{ \"PLAYLISTS.NAME\" | translate }}:</label>\n      <input type=\"text\" name=\"itemName\" class=\"form-control\" id=\"itemName\" [(ngModel)]=\"item.Name\">\n      <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"PLAYLISTS.NAME_HELP\" | translate }}</small>\n    </div>\n    <ul class=\"nav nav-tabs\">\n      <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n        <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n      </li>\n    </ul>\n    <div *ngIf=\"tabs[0].selected\">\n      <div class=\"form-group\" class=\"sortable\">\n        <div class=\"shadow btn-long\" (click)=\"finder()\"><i class=\"fas fa-plus-circle\"></i> {{\"PLAYLISTS.ADDTOLIST\" | translate}}</div>\n \n        <div *ngIf=\"playlistMode==='normal'\" [class]=\"playlistMode\">\n\n          <div class=\"container\" dragula=\"DRAGULA_FACTS\" [(dragulaModel)]=\"item.list\">\n            <div *ngFor=\"let listitem of item.list; let i = index\" class=\"slot shadow\">\n              <span class=\"label\"> {{listitem.Name}}</span>\n              <div class=\"canvas-bg\">\n                <app-canvas [scale]=\"0.5\" [item]=\"listitem\" [width]=\"250\" [height]=\"250\"></app-canvas>\n              </div>\n              <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n                <li>\n                  <select [(ngModel)]=\"listitem.transition\" name=\"transition\">\n                    <option *ngFor=\"let c of effects\" [ngValue]=\"c\">{{c}}</option>\n                  </select>\n                </li>\n                <li>\n                  <input type=\"number\" [(ngModel)]=\"listitem.duration\" name=\"duration\">\n                </li>\n                <li>\n                  <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"removeListItem(item);\"> <i class=\"fas fa-trash\"></i>\n                  </button>\n                </li>\n                <li>\n                    <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"editResource(item);\"> <i class=\"fas fa-pencil\"></i>\n                    </button>\n                  </li>\n              </ul>\n            </div>\n          </div>\n\n        </div>\n\n\n\n      </div>\n    </div>\n    <div *ngIf=\"tabs[1].selected\">\n      <div class=\"form-group shadow\">\n        <div class=\"btn-long\" (click)=\"schedule()\"><i class=\"fas fa-plus-circle\"></i> {{\"PLAYLISTS.ADDTIME\" | translate}}</div>\n        <div id=\"timeSlots\" *ngIf=\"editTime && selectedTimeEl\">\n          <div class=\"form-row\">\n            <div class=\"form-group col-md-6\">\n              <label for=\"itemName\">{{ \"PLAYLISTS.SCHEDULE\" | translate }}:</label>\n              <select [(ngModel)]=\"selectedTimeEl.timeslot\" name=\"timeSlotOptions\" [compareWith]=\"compareFnId\" class=\"form-control\">\n                <option *ngFor=\"let c of timeSlotOptions\" [ngValue]=\"c\">{{c.name | translate}}</option>\n              </select>\n            </div>\n            <div class=\"form-group col-md-6\">\n              <label for=\"ScreenGroup\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n              <select [(ngModel)]=\"selectedTimeEl.screenGroup\" name=\"ScreenGroup\" [compareWith]=\"compareFn_id\" class=\"form-control\">\n                <option *ngFor=\"let c of groups\" [ngValue]=\"c\">{{c.Name}}</option>\n              </select>\n            </div>\n            <button class=\"btn btn-primary\" (click)=\"addTimeSlot()\">{{ \"PLAYLISTS.SETTIME\" | translate}}</button>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"container\">\n\n        <div *ngFor=\"let timeslotEl of item.TimeSlots\" class=\"sqr short shadow\">\n          <label>{{timeslotEl.timeslot.name | translate}}</label>\n          <small>{{timeslotEl.screenGroup.Name}}</small>\n          <ul class=\"sqr-toolbar\">\n            <li>\n              <button class=\"btn btn-md btn-danger\" (click)=\"deleteTimeslot(timeslotEl);\"> <i class=\"fas fa-trash\"></i>\n              </button>\n            </li>\n            <li>\n              <button class=\"btn btn-md btn-primary\" (click)=\"editTimeslot(timeslotEl);\"> <i class=\"fas fa-edit\"></i> </button>\n            </li>\n          </ul>\n        </div>\n      </div>\n    </div>\n    <hr />\n    <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"PLAYLISTS.UPDATE\" | translate }}</button>\n    <button *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"PLAYLISTS.CREATE\" | translate }}</button>\n\n  </form>\n\n  <app-slide-footer className=\"purple-cat\"></app-slide-footer>\n</dialog>\n\n\n\n\n\n<app-finder [types]=\"['image','video','slide']\" [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
 
 /***/ }),
 
@@ -4800,7 +4963,7 @@ var ScreensModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-lobby [items]=\"items\" [iconClass]=\"'fas fa-desktop'\" [mode]=\"'object'\" (editItem)=\"editItem($event)\" (deleteItem)=\"deleteItem($event)\"\n    (newItem)=\"newItem($event)\"></app-lobby>\n<div class=\"slider-container {{displayModalNew}} shadow\">\n    <dialog open= {{displayModalNew}}>\n        <app-slide-header [title]=\"'NAVBAR.SCREENS'\" [iconClass]=\"'fas fa-desktop'\" [className]=\"'orange-cat'\" (closed)=\"close($event)\"></app-slide-header>\n        <form *ngIf=\"item\" class=\"pt50\">\n            <div class=\"form-group\">\n                <label for=\"screenName\">{{ \"SCREENS.NAME\" | translate }}:</label>\n                <input type=\"text\" name=\"screenName\" class=\"form-control\" [(ngModel)]=\"item.Name\">\n                <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"ScreenGroup\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n                <select [(ngModel)]=\"item.Group\" name=\"ScreenGroup\" [compareWith]=\"compareFn\" class=\"form-control\">\n                    <option *ngFor=\"let c of groups\" [ngValue]=\"c\">{{c.Name}}</option>\n                </select>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"exampleInputPassword1\">{{ \"SCREENS.TOKEN\" | translate }}</label>\n                <input type=\"text\" [(ngModel)]=\"item.Token\" name=\"txtToken\" class=\"form-control\" id=\"txtToken\" placeholder=\"{{'SCREENS.TOKEN' | translate}}\">\n            </div>\n            <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"SCREENS.UPDATE\" | translate }}</button>\n            <button *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"SCREENS.CREATE\" | translate }}</button>\n        </form>\n        <app-slide-footer [title]=\"'NAVBAR.SCREENS'\" [iconClass]=\"'fas fa-desktop'\" [className]=\"'orange-cat'\" (closed)=\"close($event)\"></app-slide-footer>\n\n    </dialog>\n</div>\n"
+module.exports = "<div class=\"scroller\" [appAdaptHeight]=\"70\">\n    <app-lobby [items]=\"items\" [template]=\"lobbyTemplate\" [iconClass]=\"'fas fa-desktop'\" [mode]=\"'object'\" (editItem)=\"editItem($event)\"\n        (deleteItem)=\"deleteItem($event)\" (newItem)=\"newItem($event)\"></app-lobby>\n</div>\n\n<ng-template #lobbyTemplate let-item=\"item\">\n   \n        <i class=\"fas fa-desktop icon\"></i> <span class=\"label\">{{item.Name}} </span> \n        <div><small *ngIf=\"item.Group\">({{item.Group.Name}})</small></div>\n    \n</ng-template>\n\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n    <dialog open= {{displayModalNew}}>\n        <app-slide-header [title]=\"'NAVBAR.SCREENS'\" [iconClass]=\"'fas fa-desktop'\" [className]=\"'orange-cat'\" (closed)=\"close($event)\"></app-slide-header>\n        <form *ngIf=\"item\" class=\"pt50\">\n            <div class=\"form-group\">\n                <label for=\"screenName\">{{ \"SCREENS.NAME\" | translate }}:</label>\n                <input type=\"text\" name=\"screenName\" class=\"form-control\" [(ngModel)]=\"item.Name\">\n                <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"ScreenGroup\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n                <select [(ngModel)]=\"item.Group\" name=\"ScreenGroup\" [compareWith]=\"compareFn\" class=\"form-control\">\n                    <option *ngFor=\"let c of groups\" [ngValue]=\"c\">{{c.Name}}</option>\n                </select>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"exampleInputPassword1\">{{ \"SCREENS.TOKEN\" | translate }}</label>\n                <input type=\"text\" [(ngModel)]=\"item.Token\" name=\"txtToken\" class=\"form-control\" id=\"txtToken\" placeholder=\"{{'SCREENS.TOKEN' | translate}}\">\n            </div>\n            <button *ngIf=\"item._id\" class=\"btn btn-primary\" (click)=\"updateItem()\">{{ \"SCREENS.UPDATE\" | translate }}</button>\n            <button *ngIf=\"!item._id\" class=\"btn btn-primary\" (click)=\"createItem()\">{{ \"SCREENS.CREATE\" | translate }}</button>\n        </form>\n        <app-slide-footer [title]=\"'NAVBAR.SCREENS'\" [iconClass]=\"'fas fa-desktop'\" [className]=\"'orange-cat'\" (closed)=\"close($event)\"></app-slide-footer>\n\n    </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -4811,7 +4974,7 @@ module.exports = "<app-lobby [items]=\"items\" [iconClass]=\"'fas fa-desktop'\" 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".container {\n  display: flex;\n  flex-flow: row wrap;\n  width: 100%; }\n\n.container div {\n  margin-right: 8px;\n  margin-bottom: 1em;\n  box-sizing: border-box;\n  padding: 15px 10px;\n  background: #fff;\n  border: none;\n  border-radius: 0;\n  margin-bottom: 40px;\n  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); }\n\n.modal {\n  margin: auto;\n  width: 50%;\n  height: 50%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2NyZWVucy9zY3JlZW5zL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcc2NyZWVuc1xcc2NyZWVuc1xcc2NyZWVucy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGNBQWE7RUFDYixvQkFBbUI7RUFDbkIsWUFBVyxFQUVkOztBQUNEO0VBR0ksa0JBQWlCO0VBQ2pCLG1CQUFrQjtFQUNsQix1QkFBc0I7RUFDdEIsbUJBQWtCO0VBQ2xCLGlCQUFnQjtFQUNoQixhQUFZO0VBQ1osaUJBQWdCO0VBQ2hCLG9CQUFtQjtFQUVuQiwyQ0FBMEMsRUFFN0M7O0FBT0Q7RUFDSSxhQUFZO0VBQ1osV0FBVTtFQUNWLFlBQVcsRUFDZCIsImZpbGUiOiJzcmMvYXBwL3NjcmVlbnMvc2NyZWVucy9zY3JlZW5zLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbnRhaW5lciB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1mbG93OiByb3cgd3JhcDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgXHJcbn1cclxuLmNvbnRhaW5lciBkaXYge1xyXG4gIFxyXG4gIFxyXG4gICAgbWFyZ2luLXJpZ2h0OiA4cHg7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAxZW07XHJcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG4gICAgcGFkZGluZzogMTVweCAxMHB4O1xyXG4gICAgYmFja2dyb3VuZDogI2ZmZjtcclxuICAgIGJvcmRlcjogbm9uZTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDA7XHJcbiAgICBtYXJnaW4tYm90dG9tOiA0MHB4O1xyXG4gICAgLXdlYmtpdC1ib3gtc2hhZG93OiAxcHggMXB4IDNweCByZ2JhKDAsIDAsIDAsIDAuMSk7XHJcbiAgICBib3gtc2hhZG93OiAxcHggMXB4IDNweCByZ2JhKDAsIDAsIDAsIDAuMSk7XHJcblxyXG59XHJcblxyXG5cclxuLy8gLmNvbnRhaW5lciBkaXY6bnRoLWNoaWxkKDRuKSB7XHJcbi8vICAgICBtYXJnaW4tcmlnaHQ6MDtcclxuLy8gfVxyXG5cclxuLm1vZGFse1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgd2lkdGg6IDUwJTtcclxuICAgIGhlaWdodDogNTAlO1xyXG59XHJcbiAiXX0= */"
+module.exports = ".icon {\n  margin-right: 10px;\n  margin-left: 10px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2NyZWVucy9zY3JlZW5zL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcc2NyZWVuc1xcc2NyZWVuc1xcc2NyZWVucy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLG1CQUFpQjtFQUNqQixrQkFBZ0IsRUFDbkIiLCJmaWxlIjoic3JjL2FwcC9zY3JlZW5zL3NjcmVlbnMvc2NyZWVucy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pY29ue1xyXG4gICAgbWFyZ2luLXJpZ2h0OjEwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDoxMHB4O1xyXG59Il19 */"
 
 /***/ }),
 
@@ -5191,6 +5354,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _common_rulers_rulers_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./common/rulers/rulers.component */ "./src/app/common/rulers/rulers.component.ts");
 /* harmony import */ var _editor_canvas_canvas_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./editor/canvas/canvas.component */ "./src/app/editor/canvas/canvas.component.ts");
 /* harmony import */ var _player_slide_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../player/slide.service */ "./src/player/slide.service.ts");
+/* harmony import */ var _directives_stop_prop__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./directives/stop-prop */ "./src/app/directives/stop-prop.ts");
 
 
 
@@ -5198,6 +5362,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // import { DragAndDropModule } from 'angular-draggable-droppable';
+
 
 
 
@@ -5230,7 +5395,8 @@ var SharedModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             imports: [_angular_common__WEBPACK_IMPORTED_MODULE_9__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"], ng2_dragula__WEBPACK_IMPORTED_MODULE_16__["DragulaModule"], ngx_color_picker__WEBPACK_IMPORTED_MODULE_17__["ColorPickerModule"],
                 _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateModule"].forChild(), ngx_file_drop__WEBPACK_IMPORTED_MODULE_5__["FileDropModule"], angular2_draggable__WEBPACK_IMPORTED_MODULE_6__["AngularDraggableModule"]],
-            declarations: [_editor_canvas_canvas_component__WEBPACK_IMPORTED_MODULE_19__["CanvasComponent"], _directives_adapt_height__WEBPACK_IMPORTED_MODULE_15__["AdaptHeightDirective"], _common_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_7__["LanguageBarComponent"], _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_10__["FinderComponent"], _common_rulers_rulers_component__WEBPACK_IMPORTED_MODULE_18__["RulersComponent"],
+            declarations: [_editor_canvas_canvas_component__WEBPACK_IMPORTED_MODULE_19__["CanvasComponent"], _directives_adapt_height__WEBPACK_IMPORTED_MODULE_15__["AdaptHeightDirective"], _directives_stop_prop__WEBPACK_IMPORTED_MODULE_21__["ClickStopPropagationDirective"],
+                _common_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_7__["LanguageBarComponent"], _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_10__["FinderComponent"], _common_rulers_rulers_component__WEBPACK_IMPORTED_MODULE_18__["RulersComponent"],
                 _common_slide_header_slide_header_component__WEBPACK_IMPORTED_MODULE_11__["SlideHeaderComponent"], _common_slide_footer_slide_footer_component__WEBPACK_IMPORTED_MODULE_12__["SlideFooterComponent"], _common_bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_13__["BreadCrumbsComponent"], _common_lobby_lobby_component__WEBPACK_IMPORTED_MODULE_14__["LobbyComponent"]],
             providers: [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"], _services_language_dictionary_service__WEBPACK_IMPORTED_MODULE_3__["DictionaryService"], _services_name_service__WEBPACK_IMPORTED_MODULE_4__["NameService"], _player_slide_service__WEBPACK_IMPORTED_MODULE_20__["SlideService"]],
             exports: [_editor_canvas_canvas_component__WEBPACK_IMPORTED_MODULE_19__["CanvasComponent"], _common_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_7__["LanguageBarComponent"], _common_lobby_lobby_component__WEBPACK_IMPORTED_MODULE_14__["LobbyComponent"], _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_10__["FinderComponent"], _common_slide_header_slide_header_component__WEBPACK_IMPORTED_MODULE_11__["SlideHeaderComponent"], _common_rulers_rulers_component__WEBPACK_IMPORTED_MODULE_18__["RulersComponent"],
@@ -5804,6 +5970,7 @@ var SlideService = /** @class */ (function () {
         var images = [];
         this.list = this.playerPlan[0].list;
         prerender(this.list[this.itemIndex]);
+        var frameDuration = (this.list[this.itemIndex].duration) ? this.list[this.itemIndex].duration * 1000 : 5000;
         this.itemIndex++;
         if (mode !== 'single') {
             setInterval(function () {
@@ -5812,7 +5979,7 @@ var SlideService = /** @class */ (function () {
                 }
                 prerender(_this.list[_this.itemIndex]);
                 _this.itemIndex++;
-            }, 5000);
+            }, frameDuration);
         }
         function prerender(item) {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
