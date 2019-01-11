@@ -9,6 +9,8 @@ export class SlideModel extends Repo<SlideModel> {
     @Field()
     public Name?: string;
     @Field()
+    public Screen?: any;
+    @Field()
     public Date?: Date;
     @Field()
     public Status?: string;

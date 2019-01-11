@@ -96,5 +96,14 @@
   },
   "TIMES": {
     "ALL": "כל הזמן"
+  },
+  "PANEL": {
+    "FONTNAME": "גופן",
+    "FONTNAME_HELP": "ניתן לבחור גופנים מספריית גוגל",
+    "FONTSIZE": "גודל גופן",
+    "FONTSIZE_HELP": "הגודל משנה",
+    "FONTCOLOR": "צבע טקסט",
+    "POSITIONX": "מיקום X",
+    "POSITIONY": "מיקום Y"
   }
 }
