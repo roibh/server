@@ -6,7 +6,7 @@ import { AuthMiddleware } from './auth.middleware';
 import { DataController } from './datacontroller';
 /*end custom*/
 @MethodConfig('ScreensDataController', [AuthMiddleware], ScreenModel)
-@MethodConfigExtend(DataController)
+@MethodConfigExtend(DataController, 'ScreensDataController')
 export class ScreensDataController extends DataController {
 
 }

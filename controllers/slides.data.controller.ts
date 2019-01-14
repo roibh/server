@@ -6,7 +6,7 @@ import { SlideModel } from '../models';
 import { DataController } from './datacontroller';
 /*end custom*/
 @MethodConfig('SlidesDataController', [AuthMiddleware], SlideModel)
-@MethodConfigExtend(DataController)
+@MethodConfigExtend(DataController, 'SlidesDataController')
 export class SlidesDataController extends DataController {
 
 }

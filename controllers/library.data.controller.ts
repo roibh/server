@@ -7,7 +7,7 @@ import { DataController } from './datacontroller';
 /*end custom*/
 
 @MethodConfig('LibraryDataController', [AuthMiddleware], LibraryModel)
-@MethodConfigExtend(DataController)
+@MethodConfigExtend(DataController,'LibraryDataController')
 export class LibraryDataController extends DataController {
 
 }

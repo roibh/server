@@ -20,8 +20,8 @@
   "license": "ISC",
   "dependencies": {
     "@methodus/data": "^1.0.1",
-    "@methodus/describe": "^2.0.0",
-    "@methodus/server": "^2.0.0",
+    "@methodus/describe": "latest",
+    "@methodus/server": "latest",
     "@types/node": "^10.0.4",
     "aws-sdk": "^2.368.0",
     "chrome-bridge": "^0.1.2",
@@ -32,7 +32,7 @@
     "uuid": "^3.2.1"
   },
   "devDependencies": {
-    "@methodus/contracts": "^1.0.3",
+    "@methodus/contracts": "latest",
     "alsatian": "^2.3.0",
     "nyc": "^12.0.2",
     "tslint": "^5.11.0",

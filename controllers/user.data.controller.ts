@@ -6,6 +6,6 @@ import { DataController } from './datacontroller';
 /*end custom*/
 
 @MethodConfig('UserController', [], UserModel)
-@MethodConfigExtend(DataController)
+@MethodConfigExtend(DataController, 'UserController')
 export class UserController extends DataController {
 }

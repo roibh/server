@@ -6,7 +6,7 @@ import { ScheduleModel } from '../models';
 import { DataController } from './datacontroller';
 /*end custom*/
 @MethodConfig('ScheduleDataController', [AuthMiddleware], ScheduleModel)
-@MethodConfigExtend(DataController)
+@MethodConfigExtend(DataController, 'ScheduleDataController')
 export class ScheduleDataController extends DataController {
 
 }
