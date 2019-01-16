@@ -104,6 +104,11 @@
     "FONTSIZE_HELP": "הגודל משנה",
     "FONTCOLOR": "צבע טקסט",
     "POSITIONX": "מיקום X",
-    "POSITIONY": "מיקום Y"
+    "POSITIONY": "מיקום Y",
+    "SELECT_ELEMENT": "אין בחירה",
+    "GENERAL": "כללי",
+    "ELEMENT":"בחירה",
+    "FORE_COLOR": "צבע קידמה",
+    "BACK_COLOR":"צבע רקע"
   }
 }

@@ -24,5 +24,5 @@ export async function AuthMiddleware(req, res, next) {
         }
     }
 
-    await next();
+    await res.end('access denied');
 }
