@@ -65,12 +65,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var AppComponent = /** @class */ (function () {
     function AppComponent(userService, translate) {
-        // this.translate.setDefaultLang('he');
         this.userService = userService;
         this.translate = translate;
         this.title = 'SignNature';
-        // the lang to use, if the lang isn't available, it will use the current loader to get them
-        // this.translate.use('he');
         this.userCheck = userService.getUser();
     }
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -92,11 +89,12 @@ var AppComponent = /** @class */ (function () {
 /*!*******************************!*\
   !*** ./src/app/app.module.ts ***!
   \*******************************/
-/*! exports provided: HttpLoaderFactory, tokenGetter, AppModule */
+/*! exports provided: appRoutes, HttpLoaderFactory, tokenGetter, AppModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "appRoutes", function() { return appRoutes; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HttpLoaderFactory", function() { return HttpLoaderFactory; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tokenGetter", function() { return tokenGetter; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
@@ -118,26 +116,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @auth0/angular-jwt */ "./node_modules/@auth0/angular-jwt/index.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _auth_auth_intercepter__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./auth/auth.intercepter */ "./src/app/auth/auth.intercepter.ts");
-/* harmony import */ var _services_user_context_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./services/user.context.service */ "./src/app/services/user.context.service.ts");
-/* harmony import */ var ngx_order_pipe__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ngx-order-pipe */ "./node_modules/ngx-order-pipe/ngx-order-pipe.es5.js");
-/* harmony import */ var _shared_module__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./shared.module */ "./src/app/shared.module.ts");
-/* harmony import */ var _user_user_module__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./user/user.module */ "./src/app/user/user.module.ts");
-/* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
-/* harmony import */ var _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @ngx-translate/http-loader */ "./node_modules/@ngx-translate/http-loader/esm5/ngx-translate-http-loader.js");
-/* harmony import */ var _auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./auth/auth-guard.service */ "./src/app/auth/auth-guard.service.ts");
-/* harmony import */ var _screens_screens_module__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./screens/screens.module */ "./src/app/screens/screens.module.ts");
-/* harmony import */ var _library_library_module__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./library/library.module */ "./src/app/library/library.module.ts");
-/* harmony import */ var _playlists_playlists_module__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./playlists/playlists.module */ "./src/app/playlists/playlists.module.ts");
-/* harmony import */ var _timelines_timelines_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./timelines/timelines.component */ "./src/app/timelines/timelines.component.ts");
-/* harmony import */ var _settings_settings_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./settings/settings.component */ "./src/app/settings/settings.component.ts");
-/* harmony import */ var _common_dialog_dialog_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./common/dialog/dialog.component */ "./src/app/common/dialog/dialog.component.ts");
-/* harmony import */ var _services_language_service__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./services/language.service */ "./src/app/services/language.service.ts");
-/* harmony import */ var ng2_dragula__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ng2-dragula */ "./node_modules/ng2-dragula/dist/fesm5/ng2-dragula.js");
-/* harmony import */ var ngx_color_picker__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ngx-color-picker */ "./node_modules/ngx-color-picker/dist/ngx-color-picker.es5.js");
-
-
-
+/* harmony import */ var ngx_order_pipe__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ngx-order-pipe */ "./node_modules/ngx-order-pipe/ngx-order-pipe.es5.js");
+/* harmony import */ var _shared_module__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./shared.module */ "./src/app/shared.module.ts");
+/* harmony import */ var _user_user_module__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./user/user.module */ "./src/app/user/user.module.ts");
+/* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
+/* harmony import */ var _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @ngx-translate/http-loader */ "./node_modules/@ngx-translate/http-loader/esm5/ngx-translate-http-loader.js");
+/* harmony import */ var _auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./auth/auth-guard.service */ "./src/app/auth/auth-guard.service.ts");
+/* harmony import */ var _screens_screens_module__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./screens/screens.module */ "./src/app/screens/screens.module.ts");
+/* harmony import */ var _library_library_module__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./library/library.module */ "./src/app/library/library.module.ts");
+/* harmony import */ var _playlists_playlists_module__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./playlists/playlists.module */ "./src/app/playlists/playlists.module.ts");
+/* harmony import */ var _timelines_timelines_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./timelines/timelines.component */ "./src/app/timelines/timelines.component.ts");
+/* harmony import */ var _services_language_service__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./services/language.service */ "./src/app/services/language.service.ts");
+/* harmony import */ var ng2_dragula__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ng2-dragula */ "./node_modules/ng2-dragula/dist/fesm5/ng2-dragula.js");
+/* harmony import */ var ngx_color_picker__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ngx-color-picker */ "./node_modules/ngx-color-picker/dist/ngx-color-picker.es5.js");
 
 
 
@@ -173,24 +165,19 @@ __webpack_require__.r(__webpack_exports__);
 
 var appRoutes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
-].concat(_user_user_module__WEBPACK_IMPORTED_MODULE_20__["userRoutes"], [
+].concat(_user_user_module__WEBPACK_IMPORTED_MODULE_19__["userRoutes"], [
     {
-        path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_21__["DashboardComponent"], canActivate: [_auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_24__["AuthGuardService"]], children: [
+        path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_20__["DashboardComponent"], canActivate: [_auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_23__["AuthGuardService"]], children: [
             {
                 path: '',
-                component: _timelines_timelines_component__WEBPACK_IMPORTED_MODULE_28__["TimelinesComponent"],
+                component: _timelines_timelines_component__WEBPACK_IMPORTED_MODULE_27__["TimelinesComponent"],
             }
-        ].concat(_screens_screens_module__WEBPACK_IMPORTED_MODULE_25__["screenRoutes"], _library_library_module__WEBPACK_IMPORTED_MODULE_26__["libraryRoutes"], _playlists_playlists_module__WEBPACK_IMPORTED_MODULE_27__["playlistsRoutes"], [
-            {
-                path: 'settings',
-                component: _settings_settings_component__WEBPACK_IMPORTED_MODULE_29__["SettingsComponent"],
-            },
-        ])
+        ].concat(_screens_screens_module__WEBPACK_IMPORTED_MODULE_24__["screenRoutes"], _library_library_module__WEBPACK_IMPORTED_MODULE_25__["libraryRoutes"], _playlists_playlists_module__WEBPACK_IMPORTED_MODULE_26__["playlistsRoutes"])
     },
 ]);
 // AoT requires an exported function for factories
 function HttpLoaderFactory(http) {
-    return new _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_23__["TranslateHttpLoader"](http);
+    return new _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_22__["TranslateHttpLoader"](http);
 }
 function tokenGetter() {
     return localStorage.getItem('access_token');
@@ -203,23 +190,21 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"],
                 _common_loader_loader_component__WEBPACK_IMPORTED_MODULE_13__["LoaderComponent"],
-                _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_21__["DashboardComponent"],
-                _timelines_timelines_component__WEBPACK_IMPORTED_MODULE_28__["TimelinesComponent"],
-                _settings_settings_component__WEBPACK_IMPORTED_MODULE_29__["SettingsComponent"],
-                _common_dialog_dialog_component__WEBPACK_IMPORTED_MODULE_30__["DialogComponent"],
+                _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_20__["DashboardComponent"],
+                _timelines_timelines_component__WEBPACK_IMPORTED_MODULE_27__["TimelinesComponent"]
             ],
             imports: [
-                ng2_dragula__WEBPACK_IMPORTED_MODULE_32__["DragulaModule"].forRoot(),
+                ng2_dragula__WEBPACK_IMPORTED_MODULE_29__["DragulaModule"].forRoot(),
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_15__["HttpClientModule"],
-                ngx_color_picker__WEBPACK_IMPORTED_MODULE_33__["ColorPickerModule"],
-                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_22__["TranslateModule"].forRoot({
+                ngx_color_picker__WEBPACK_IMPORTED_MODULE_30__["ColorPickerModule"],
+                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_21__["TranslateModule"].forRoot({
                     loader: {
-                        provide: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_22__["TranslateLoader"],
+                        provide: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_21__["TranslateLoader"],
                         useFactory: HttpLoaderFactory,
                         deps: [_angular_common_http__WEBPACK_IMPORTED_MODULE_15__["HttpClient"]]
                     }
                 }),
-                _shared_module__WEBPACK_IMPORTED_MODULE_19__["SharedModule"],
+                _shared_module__WEBPACK_IMPORTED_MODULE_18__["SharedModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_11__["RouterModule"].forRoot(appRoutes, { enableTracing: false, useHash: true } // <-- debugging purposes only
                 ),
                 ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_9__["TabsModule"].forRoot(),
@@ -230,20 +215,20 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
-                ngx_order_pipe__WEBPACK_IMPORTED_MODULE_18__["OrderModule"],
+                ngx_order_pipe__WEBPACK_IMPORTED_MODULE_17__["OrderModule"],
                 _ng_dynamic_forms_ui_bootstrap__WEBPACK_IMPORTED_MODULE_6__["DynamicFormsBootstrapUIModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"],
-                _user_user_module__WEBPACK_IMPORTED_MODULE_20__["UserModule"],
-                _screens_screens_module__WEBPACK_IMPORTED_MODULE_25__["ScreensModule"],
-                _library_library_module__WEBPACK_IMPORTED_MODULE_26__["LibraryModule"],
-                _playlists_playlists_module__WEBPACK_IMPORTED_MODULE_27__["PlaylistsModule"],
+                _user_user_module__WEBPACK_IMPORTED_MODULE_19__["UserModule"],
+                _screens_screens_module__WEBPACK_IMPORTED_MODULE_24__["ScreensModule"],
+                _library_library_module__WEBPACK_IMPORTED_MODULE_25__["LibraryModule"],
+                _playlists_playlists_module__WEBPACK_IMPORTED_MODULE_26__["PlaylistsModule"],
                 _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_14__["JwtModule"].forRoot({
                     config: {
                         tokenGetter: tokenGetter
                     }
                 })
             ],
-            providers: [_services_user_context_service__WEBPACK_IMPORTED_MODULE_17__["UserService"], _services_language_service__WEBPACK_IMPORTED_MODULE_31__["LanguageService"], _auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_24__["AuthGuardService"],
+            providers: [_services_language_service__WEBPACK_IMPORTED_MODULE_28__["LanguageService"], _auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_23__["AuthGuardService"],
                 {
                     provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_15__["HTTP_INTERCEPTORS"],
                     useClass: _auth_auth_intercepter__WEBPACK_IMPORTED_MODULE_16__["AuthInterceptor"],
@@ -349,102 +334,6 @@ var AuthInterceptor = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/common/bread-crumbs/bread-crumbs.component.html":
-/*!*****************************************************************!*\
-  !*** ./src/app/common/bread-crumbs/bread-crumbs.component.html ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<nav class=\"navbar-fixed-top dashboard-nav\"> \n       \n\n    <button class=\"btn btn-primary btn-sm crumbs\" *ngFor=\"let b of crumbs\">{{\"NAVBAR.\" + b.name.toUpperCase() | translate}}</button>\n</nav>\n"
-
-/***/ }),
-
-/***/ "./src/app/common/bread-crumbs/bread-crumbs.component.scss":
-/*!*****************************************************************!*\
-  !*** ./src/app/common/bread-crumbs/bread-crumbs.component.scss ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbW1vbi9icmVhZC1jcnVtYnMvYnJlYWQtY3J1bWJzLmNvbXBvbmVudC5zY3NzIn0= */"
-
-/***/ }),
-
-/***/ "./src/app/common/bread-crumbs/bread-crumbs.component.ts":
-/*!***************************************************************!*\
-  !*** ./src/app/common/bread-crumbs/bread-crumbs.component.ts ***!
-  \***************************************************************/
-/*! exports provided: BreadCrumbsComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BreadCrumbsComponent", function() { return BreadCrumbsComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _services_name_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/name.service */ "./src/app/services/name.service.ts");
-
-
-
-
-var BreadCrumbsComponent = /** @class */ (function () {
-    function BreadCrumbsComponent(_ngZone, router, nameService, route, changeDetector) {
-        var _this = this;
-        this._ngZone = _ngZone;
-        this.router = router;
-        this.nameService = nameService;
-        this.route = route;
-        this.changeDetector = changeDetector;
-        this.Toggled = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
-        this.crumbs = [];
-        this.crumbs = [];
-        this.router.events.subscribe(function (val) {
-            if (val.urlAfterRedirects) {
-                _this._ngZone.run(function () { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
-                    var _this = this;
-                    return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                        this.crumbs = [];
-                        val.url.split('/').forEach(function (frag) {
-                            if (frag && frag !== 'dashbaord') {
-                                _this.crumbs.push({ name: frag });
-                            }
-                        });
-                        return [2 /*return*/];
-                    });
-                }); });
-            }
-        });
-        this.route.params.subscribe(function (val) {
-        });
-    }
-    BreadCrumbsComponent.prototype.ngOnInit = function () {
-    };
-    BreadCrumbsComponent.prototype.toggleSidebar = function () {
-        this.toggled = !this.toggled;
-        this.Toggled.emit(this.toggled);
-    };
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
-    ], BreadCrumbsComponent.prototype, "Toggled", void 0);
-    BreadCrumbsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-bread-crumbs',
-            template: __webpack_require__(/*! ./bread-crumbs.component.html */ "./src/app/common/bread-crumbs/bread-crumbs.component.html"),
-            styles: [__webpack_require__(/*! ./bread-crumbs.component.scss */ "./src/app/common/bread-crumbs/bread-crumbs.component.scss")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _services_name_service__WEBPACK_IMPORTED_MODULE_3__["NameService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]])
-    ], BreadCrumbsComponent);
-    return BreadCrumbsComponent;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/common/change/change.component.html":
 /*!*****************************************************!*\
   !*** ./src/app/common/change/change.component.html ***!
@@ -480,45 +369,60 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_dirty_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/dirty.service */ "./src/app/services/dirty.service.ts");
+/* harmony import */ var fast_stringify__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! fast-stringify */ "./node_modules/fast-stringify/es/index.js");
+
 
 
 
 var ChangeComponent = /** @class */ (function () {
     function ChangeComponent(dirtyService) {
+        var _this = this;
         this.dirtyService = dirtyService;
         this.dirtyDetected = false;
         this.orgItem = {};
+        this.dirtyService.detect.subscribe(function (data) {
+            _this.detectChanges();
+        });
     }
-    ChangeComponent.prototype.canDeactivate = function () {
-        return !this.dirtyDetected;
-    };
-    ChangeComponent.prototype.detectChanges = function () {
+    ChangeComponent.prototype.ngOnInit = function () {
         var _this = this;
-        if (!this.dirtyDetected) {
-            Object.keys(this.item).forEach(function (key) {
-                if (_this.orgItem[key] !== _this.item[key]) {
-                    _this.dirtyDetected = true;
-                    _this.dirtyService.setDirty();
-                }
-            });
-        }
-    };
-    ChangeComponent.prototype.ngOnChanges = function (changes) {
-        var _this = this;
-        Object.assign(this.orgItem, this.item);
         this.dirtyService.dirty.subscribe(function (state) {
             _this.dirtyDetected = state;
             if (!state) {
-                Object.assign(_this.orgItem, _this.item);
+                _this.orgItem = JSON.parse(Object(fast_stringify__WEBPACK_IMPORTED_MODULE_3__["default"])(_this.item));
             }
         });
         this.dirtyService.saving.subscribe(function (state) {
         });
-        setInterval(this.detectChanges.bind(this), 1000);
-        if (changes.item && !changes.item.isFirstChange()) {
-            this.orgItem = this.item;
-            this.dirtyService.setDirty();
+        // setInterval(this.detectChanges.bind(this), 10 * 1000);
+        // if (changes.item && !changes.item.isFirstChange()) {
+        //   this.orgItem = JSON.parse(stringify(this.item));
+        //   this.dirtyService.setDirty();
+        // }
+    };
+    ChangeComponent.prototype.ngOnDestroy = function () {
+        // try {
+        //   this.dirtyService.dirty.unsubscribe();
+        //   this.dirtyService.saving.unsubscribe();
+        // } catch (ex) {
+        //   console.error(ex);
+        // }
+    };
+    ChangeComponent.prototype.canDeactivate = function () {
+        return !this.dirtyDetected;
+    };
+    ChangeComponent.prototype.detectChanges = function () {
+        if (!this.dirtyDetected) {
+            var org = Object(fast_stringify__WEBPACK_IMPORTED_MODULE_3__["default"])(this.orgItem);
+            var current = Object(fast_stringify__WEBPACK_IMPORTED_MODULE_3__["default"])(this.item);
+            if (org !== current) {
+                this.dirtyDetected = true;
+                this.dirtyService.setDirty();
+            }
         }
+    };
+    ChangeComponent.prototype.ngOnChanges = function (changes) {
+        this.orgItem = JSON.parse(Object(fast_stringify__WEBPACK_IMPORTED_MODULE_3__["default"])(this.item));
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
@@ -539,81 +443,6 @@ var ChangeComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_dirty_service__WEBPACK_IMPORTED_MODULE_2__["DirtyService"]])
     ], ChangeComponent);
     return ChangeComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/common/dialog/dialog.component.css":
-/*!****************************************************!*\
-  !*** ./src/app/common/dialog/dialog.component.css ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbW1vbi9kaWFsb2cvZGlhbG9nLmNvbXBvbmVudC5jc3MifQ== */"
-
-/***/ }),
-
-/***/ "./src/app/common/dialog/dialog.component.html":
-/*!*****************************************************!*\
-  !*** ./src/app/common/dialog/dialog.component.html ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<dialog class=\"my-dialog\" (close)=\"handleClose($event)\" #leDialog>\n  <h3>{{notification.title}}</h3>\n  <p>{{notification.message}}</p>\n  <div class=\"inline-components\">\n    <button class=\"btn\" (click)=\"okClicked()\">ok</button>\n    <button class=\"btn\" (click)=\"cancelClicked()\">cancel</button>\n  </div>\n</dialog>"
-
-/***/ }),
-
-/***/ "./src/app/common/dialog/dialog.component.ts":
-/*!***************************************************!*\
-  !*** ./src/app/common/dialog/dialog.component.ts ***!
-  \***************************************************/
-/*! exports provided: DialogComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DialogComponent", function() { return DialogComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var DialogComponent = /** @class */ (function () {
-    function DialogComponent() {
-        this.close = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
-    }
-    DialogComponent.prototype.ngOnInit = function () {
-        this.nativeDialogElement = this.dialogElement.nativeElement;
-        this.nativeDialogElement.showModal();
-    };
-    DialogComponent.prototype.handleClose = function (e) { };
-    DialogComponent.prototype.okClicked = function () {
-    };
-    DialogComponent.prototype.cancelClicked = function () {
-    };
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
-    ], DialogComponent.prototype, "notification", void 0);
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"])
-    ], DialogComponent.prototype, "close", void 0);
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('leDialog'),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])
-    ], DialogComponent.prototype, "dialogElement", void 0);
-    DialogComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-dialog',
-            template: __webpack_require__(/*! ./dialog.component.html */ "./src/app/common/dialog/dialog.component.html"),
-            styles: [__webpack_require__(/*! ./dialog.component.css */ "./src/app/common/dialog/dialog.component.css")]
-        })
-    ], DialogComponent);
-    return DialogComponent;
 }());
 
 
@@ -764,7 +593,7 @@ var LoaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-template [ngTemplateOutlet]=\"item.template || defaultTemplate\" [ngTemplateOutletContext]=\"{item: item}\">\n</ng-template>\n\n\n<ng-template #defaultTemplate let-item=\"item\">\n  <div class=\"m10\">\n    <span class=\"label\">{{item.Name}}</span>\n  </div>\n</ng-template>\n\n\n<ng-template #imageTemplate let-item=\"item\">\n  <div class=\"fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    <span class=\"label\">{{item.Name}}</span>\n  </div>\n</ng-template>\n\n<ng-template #playlistTemplate let-item=\"item\">\n  <div class=\"m10\">\n    <span class=\"label\">{{item.Name}}</span>\n    <span class=\"label\">({{item.list.length}})</span>\n  </div>\n</ng-template>\n\n\n<ng-template #slideTemplate let-item=\"item\">\n  <div class=\"canvas-bg\">\n    <app-canvas [item]=\"item\" [width]=\"230\" [height]=\"150\" [scale]=\"0.3\"></app-canvas>\n  </div>\n  <i class=\"{{iconClass}} icon\"></i> <span class=\"label\">{{item.Name}}</span>\n</ng-template>\n"
+module.exports = "<ng-template [ngTemplateOutlet]=\"template || defaultTemplate\" [ngTemplateOutletContext]=\"{item: item}\">\n</ng-template>\n\n\n<ng-template #defaultTemplate let-item=\"item\">\n  <div class=\"m10\">\n    <span class=\"label\">{{item.Name}}</span>\n  </div>\n</ng-template>\n\n\n<ng-template #imageTemplate let-item=\"item\">\n  <div class=\"fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    <span class=\"label\">{{item.Name}}</span>\n  </div>\n</ng-template>\n\n<ng-template #playlistTemplate let-item=\"item\">\n  <div class=\"m10\">\n    <span class=\"label\">{{item.Name}}</span>\n    <span class=\"label\">({{item.list.length}})</span>\n  </div>\n</ng-template>\n\n\n<ng-template #slideTemplate let-item=\"item\">\n  <div class=\"canvas-bg\">\n    <app-canvas [item]=\"item\" [width]=\"230\" [height]=\"150\" [scale]=\"0.3\"></app-canvas>\n  </div>\n  <i class=\"{{iconClass}} icon\"></i> <span class=\"label\">{{item.Name}}</span>\n</ng-template>\n"
 
 /***/ }),
 
@@ -801,15 +630,15 @@ var LobbyItemComponent = /** @class */ (function () {
             if (this.model) {
                 switch (this.model) {
                     case 'playlist':
-                        this.item.template = this.playlistTemplate;
+                        this.template = this.playlistTemplate;
                         break;
                 }
             }
             if (this.item.type === 'slide' || this.item.elements) {
-                this.item.template = this.slideTemplate;
+                this.template = this.slideTemplate;
             }
             if (this.item.type === 'image') {
-                this.item.template = this.imageTemplate;
+                this.template = this.imageTemplate;
             }
         }
     };
@@ -926,7 +755,6 @@ var LobbyComponent = /** @class */ (function () {
         if (this.items) {
             this.items.forEach(function (item) {
                 if (_this.model) {
-                    debugger;
                     item.template = _this.playlistTemplate;
                 }
             });
@@ -1264,7 +1092,7 @@ module.exports = "<div class=\"{{class}} {{className}}\">\n    <i class=\"{{icon
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".toolbar {\n  position: absolute;\n  top: 0;\n  left: 110px; }\n\n.inline-topper {\n  pointer-events: none;\n  z-index: 0;\n  height: 51px;\n  opacity: 0.8;\n  padding-top: 10px; }\n\n.inline-topper .icon {\n    margin: 8px;\n    vertical-align: top; }\n\n.inline-topper h4 {\n    display: inline;\n    vertical-align: top; }\n\n.inline-topper .bar-icon {\n    margin-left: 15px; }\n\n.topper {\n  pointer-events: none;\n  z-index: 0;\n  height: 65px;\n  opacity: 0.8;\n  position: absolute;\n  padding-top: 30px;\n  top: -30px;\n  left: -15px;\n  right: -15px; }\n\n.topper .icon {\n    margin: 8px;\n    vertical-align: top; }\n\n.topper h4 {\n    display: inline;\n    vertical-align: top; }\n\n.topper .bar-icon {\n    margin-left: 15px; }\n\n.close-button-topper {\n  position: absolute;\n  z-index: 2000;\n  left: 0;\n  position: absolute;\n  left: -15px;\n  top: -15px;\n  width: 52px;\n  height: 52px;\n  background-color: green;\n  color: white;\n  cursor: pointer;\n  opacity: 0.7; }\n\n.close-button-inline-topper {\n  color: white;\n  cursor: pointer;\n  opacity: 0.5;\n  float: right;\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  width: 52px;\n  height: 52px;\n  background-color: green;\n  color: white;\n  cursor: pointer;\n  opacity: 0.7; }\n\n.save-btn-inline-topper:hover {\n  font-size: 1.5em; }\n\n.save-btn-inline-topper {\n  transition: all .2s ease;\n  color: white;\n  cursor: pointer;\n  float: right;\n  position: absolute;\n  left: 52px;\n  top: 0px;\n  width: 52px;\n  height: 52px;\n  background-color: orange;\n  color: white;\n  cursor: pointer; }\n\n.save-btn-inline-topper.true {\n    background-color: red;\n    color: black; }\n\n.save-btn-topper {\n  color: white;\n  position: absolute;\n  left: 37px;\n  top: -15px;\n  width: 52px;\n  height: 52px;\n  background-color: orange;\n  color: white;\n  cursor: pointer;\n  opacity: 0.7; }\n\n.close-button-inline-topper:active,\n.close-button-inline-topper:hover,\n.close-button-topper:active,\n.close-button-topper:hover {\n  opacity: 1;\n  font-size: 1.5em; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL3NsaWRlLWhlYWRlci9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXGNvbW1vblxcc2xpZGUtaGVhZGVyXFxzbGlkZS1oZWFkZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBa0I7RUFDbEIsTUFBSztFQUNMLFdBQVcsRUFBQTs7QUFJZjtFQUNJLG9CQUFvQjtFQUNwQixVQUFVO0VBQ1YsWUFBWTtFQUNaLFlBQVk7RUFFWixpQkFBaUIsRUFBQTs7QUFOckI7SUFTUSxXQUFXO0lBQ1gsbUJBQW1CLEVBQUE7O0FBVjNCO0lBYVEsZUFBZTtJQUNmLG1CQUFtQixFQUFBOztBQWQzQjtJQWlCUSxpQkFBaUIsRUFBQTs7QUFJekI7RUFDSSxvQkFBb0I7RUFDcEIsVUFBVTtFQUNWLFlBQVk7RUFDWixZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLGlCQUFpQjtFQUNqQixVQUFVO0VBQ1YsV0FBVztFQUNYLFlBQVksRUFBQTs7QUFUaEI7SUFXUSxXQUFXO0lBQ1gsbUJBQW1CLEVBQUE7O0FBWjNCO0lBZVEsZUFBZTtJQUNmLG1CQUFtQixFQUFBOztBQWhCM0I7SUFtQlEsaUJBQWlCLEVBQUE7O0FBT3JCO0VBQ0ksa0JBQWtCO0VBQ2xCLGFBQWE7RUFDYixPQUFPO0VBQ1Asa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxVQUFVO0VBQ1YsV0FBVztFQUNYLFlBQVk7RUFDWix1QkFBdUI7RUFFdkIsWUFBWTtFQUNaLGVBQWU7RUFDZixZQUFZLEVBQUE7O0FBUVo7RUFFQSxZQUFZO0VBQ1osZUFBZTtFQUNmLFlBQVk7RUFDWixZQUFZO0VBRVosa0JBQWtCO0VBQ2QsU0FBUztFQUNULFFBQVE7RUFDUixXQUFXO0VBQ1gsWUFBWTtFQUNaLHVCQUF1QjtFQUV2QixZQUFZO0VBQ1osZUFBZTtFQUNmLFlBQVksRUFBQTs7QUFJcEI7RUFDSSxnQkFBZ0IsRUFBQTs7QUFFcEI7RUFJSSx3QkFBd0I7RUFDeEIsWUFBWTtFQUNaLGVBQWU7RUFFZixZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLFVBQVU7RUFDVixRQUFRO0VBQ1IsV0FBVztFQUNYLFlBQVk7RUFDWix3QkFBd0I7RUFFeEIsWUFBWTtFQUNaLGVBQWUsRUFBQTs7QUFqQm5CO0lBb0JRLHFCQUFxQjtJQUNyQixZQUFZLEVBQUE7O0FBSXBCO0VBRUksWUFBWTtFQUdaLGtCQUFrQjtFQUNkLFVBQVU7RUFDVixVQUFVO0VBQ1YsV0FBVztFQUNYLFlBQVk7RUFDWix3QkFBd0I7RUFFeEIsWUFBWTtFQUNaLGVBQWU7RUFDZixZQUFZLEVBQUE7O0FBR3BCOzs7O0VBS0ksVUFBVTtFQUNWLGdCQUFnQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvY29tbW9uL3NsaWRlLWhlYWRlci9zbGlkZS1oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudG9vbGJhcntcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRvcDowO1xyXG4gICAgbGVmdDogMTEwcHg7XHJcbiAgICAgXHJcbn1cclxuXHJcbi5pbmxpbmUtdG9wcGVye1xyXG4gICAgcG9pbnRlci1ldmVudHM6IG5vbmU7IFxyXG4gICAgei1pbmRleDogMDtcclxuICAgIGhlaWdodDogNTFweDsgICBcclxuICAgIG9wYWNpdHk6IDAuODtcclxuICAgICAgXHJcbiAgICBwYWRkaW5nLXRvcDogMTBweDtcclxuICAgIFxyXG4gICAgLmljb257XHJcbiAgICAgICAgbWFyZ2luOiA4cHg7ICAgICAgXHJcbiAgICAgICAgdmVydGljYWwtYWxpZ246IHRvcDtcclxuICAgIH1cclxuICAgIGg0e1xyXG4gICAgICAgIGRpc3BsYXk6IGlubGluZTtcclxuICAgICAgICB2ZXJ0aWNhbC1hbGlnbjogdG9wO1xyXG4gICAgfVxyXG4gICAgLmJhci1pY29ue1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiAxNXB4O1xyXG4gICAgfVxyXG59XHJcblxyXG4udG9wcGVye1xyXG4gICAgcG9pbnRlci1ldmVudHM6IG5vbmU7IFxyXG4gICAgei1pbmRleDogMDtcclxuICAgIGhlaWdodDogNjVweDsgICBcclxuICAgIG9wYWNpdHk6IDAuODtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTsgICAgIFxyXG4gICAgcGFkZGluZy10b3A6IDMwcHg7XHJcbiAgICB0b3A6IC0zMHB4O1xyXG4gICAgbGVmdDogLTE1cHg7XHJcbiAgICByaWdodDogLTE1cHg7XHJcbiAgICAuaWNvbntcclxuICAgICAgICBtYXJnaW46IDhweDsgICAgICBcclxuICAgICAgICB2ZXJ0aWNhbC1hbGlnbjogdG9wO1xyXG4gICAgfVxyXG4gICAgaDR7XHJcbiAgICAgICAgZGlzcGxheTogaW5saW5lO1xyXG4gICAgICAgIHZlcnRpY2FsLWFsaWduOiB0b3A7XHJcbiAgICB9XHJcbiAgICAuYmFyLWljb257XHJcbiAgICAgICAgbWFyZ2luLWxlZnQ6IDE1cHg7XHJcbiAgICB9XHJcbn1cclxuXHJcblxyXG4gXHJcbiAgICBcclxuICAgIC5jbG9zZS1idXR0b24tdG9wcGVye1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICB6LWluZGV4OiAyMDAwO1xyXG4gICAgICAgIGxlZnQ6IDA7XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIGxlZnQ6IC0xNXB4O1xyXG4gICAgICAgIHRvcDogLTE1cHg7XHJcbiAgICAgICAgd2lkdGg6IDUycHg7XHJcbiAgICAgICAgaGVpZ2h0OiA1MnB4O1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6IGdyZWVuO1xyXG5cclxuICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgICAgIG9wYWNpdHk6IDAuNztcclxuXHJcbiAgIFxyXG4gICAgIFxyXG4gICAgfVxyXG4gICAgXHJcbiBcclxuXHJcbiAgICAgICAgLmNsb3NlLWJ1dHRvbi1pbmxpbmUtdG9wcGVyIHtcclxuICAgICAgICAgICAgICAgICAgIFxyXG4gICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICAgICAgb3BhY2l0eTogMC41O1xyXG4gICAgICAgIGZsb2F0OiByaWdodDtcclxuXHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgICAgICBsZWZ0OiAwcHg7XHJcbiAgICAgICAgICAgIHRvcDogMHB4O1xyXG4gICAgICAgICAgICB3aWR0aDogNTJweDtcclxuICAgICAgICAgICAgaGVpZ2h0OiA1MnB4O1xyXG4gICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiBncmVlbjtcclxuICAgIFxyXG4gICAgICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgICAgICAgICAgb3BhY2l0eTogMC43O1xyXG5cclxuXHJcbiAgICB9XHJcbiAgICAuc2F2ZS1idG4taW5saW5lLXRvcHBlcjpob3ZlcntcclxuICAgICAgICBmb250LXNpemU6IDEuNWVtO1xyXG4gICAgfSBcclxuICAgIC5zYXZlLWJ0bi1pbmxpbmUtdG9wcGVyXHJcbiAgICB7XHJcbiAgICAgICAgLXdlYmtpdC10cmFuc2l0aW9uOiBhbGwgLjJzIGVhc2U7XHJcbiAgICAgICAgLW1vei10cmFuc2l0aW9uOiBhbGwgLjJzIGVhc2U7XHJcbiAgICAgICAgdHJhbnNpdGlvbjogYWxsIC4ycyBlYXNlO1xyXG4gICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICAgICAgXHJcbiAgICAgICAgZmxvYXQ6IHJpZ2h0O1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICBsZWZ0OiA1MnB4O1xyXG4gICAgICAgIHRvcDogMHB4O1xyXG4gICAgICAgIHdpZHRoOiA1MnB4O1xyXG4gICAgICAgIGhlaWdodDogNTJweDtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiBvcmFuZ2U7XHJcblxyXG4gICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICAgICAgXHJcbiAgICAgICAgJi50cnVle1xyXG4gICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZWQ7XHJcbiAgICAgICAgICAgIGNvbG9yOiBibGFjaztcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgLnNhdmUtYnRuLXRvcHBlclxyXG4gICAge1xyXG4gICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICBcclxuXHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgICAgICBsZWZ0OiAzN3B4O1xyXG4gICAgICAgICAgICB0b3A6IC0xNXB4O1xyXG4gICAgICAgICAgICB3aWR0aDogNTJweDtcclxuICAgICAgICAgICAgaGVpZ2h0OiA1MnB4O1xyXG4gICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiBvcmFuZ2U7XHJcbiAgICBcclxuICAgICAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICAgICAgICAgIG9wYWNpdHk6IDAuNztcclxuICAgIH1cclxuXHJcbiAgICAuY2xvc2UtYnV0dG9uLWlubGluZS10b3BwZXI6YWN0aXZlLCAgICBcclxuICAgIC5jbG9zZS1idXR0b24taW5saW5lLXRvcHBlcjpob3ZlcixcclxuICAgIC5jbG9zZS1idXR0b24tdG9wcGVyOmFjdGl2ZSxcclxuICAgIC5jbG9zZS1idXR0b24tdG9wcGVyOmhvdmVyXHJcbiAgICB7ICAgXHJcbiAgICAgICAgb3BhY2l0eTogMTtcclxuICAgICAgICBmb250LXNpemU6IDEuNWVtO1xyXG4gICAgICAgIFxyXG4gICAgfVxyXG4gICAgICAgICAgIFxyXG4gICAgICAgIFxyXG4gICAgXHJcbiBcclxuIFxyXG4gIl19 */"
+module.exports = ".toolbar {\n  position: absolute;\n  top: 0;\n  left: 110px; }\n\n.inline-topper {\n  pointer-events: none;\n  z-index: 0;\n  height: 51px;\n  padding-top: 10px; }\n\n.inline-topper .icon {\n    margin: 8px;\n    vertical-align: top; }\n\n.inline-topper h4 {\n    display: inline;\n    vertical-align: top; }\n\n.inline-topper .bar-icon {\n    margin-left: 15px; }\n\n.topper {\n  pointer-events: none;\n  z-index: 0;\n  height: 65px;\n  position: absolute;\n  padding-top: 30px;\n  top: -30px;\n  left: -15px;\n  right: -15px; }\n\n.topper .icon {\n    margin: 8px;\n    vertical-align: top; }\n\n.topper h4 {\n    display: inline;\n    vertical-align: top; }\n\n.topper .bar-icon {\n    margin-left: 15px; }\n\n:host-context(.ltr) .close-button-topper {\n  right: -15px; }\n\n:host-context(.rtl) .close-button-topper {\n  left: -15px; }\n\n.close-button-topper {\n  position: absolute;\n  z-index: 2000;\n  top: -15px;\n  width: 52px;\n  height: 52px;\n  background-color: #96ff00;\n  color: white;\n  cursor: pointer; }\n\n.close-button-inline-topper {\n  color: white;\n  cursor: pointer;\n  position: absolute;\n  top: 0px;\n  width: 52px;\n  height: 52px;\n  background-color: green; }\n\n.save-btn-inline-topper:hover {\n  font-size: 1.5em; }\n\n.save-btn-inline-topper {\n  transition: all .2s ease;\n  color: white;\n  cursor: pointer;\n  position: absolute;\n  top: 0px;\n  width: 52px;\n  height: 52px;\n  background-color: orange;\n  color: white;\n  cursor: pointer; }\n\n.save-btn-inline-topper.true {\n    background-color: red;\n    color: black; }\n\n:host-context(.rtl) .save-btn-topper {\n  left: 37px; }\n\n:host-context(.rtl) .save-btn-inline-topper {\n  float: right;\n  left: 52px; }\n\n:host-context(.rtl) .close-button-inline-topper {\n  float: right;\n  left: 0px; }\n\n:host-context(.ltr) .save-btn-topper {\n  right: 37px; }\n\n:host-context(.ltr) .save-btn-inline-topper {\n  float: left;\n  right: 52px; }\n\n:host-context(.ltr) .close-button-inline-topper {\n  float: right;\n  right: 0px; }\n\n.save-btn-topper {\n  color: white;\n  position: absolute;\n  top: -15px;\n  width: 52px;\n  height: 52px;\n  background-color: #fc6600;\n  cursor: pointer; }\n\n.save-btn-inline-topper:active,\n.save-btn-inline-topper:hover,\n.save-btn-topper:active,\n.save-btn-topper:hover {\n  font-size: 1.5em; }\n\n.close-button-inline-topper:active,\n.close-button-inline-topper:hover,\n.close-button-topper:active,\n.close-button-topper:hover {\n  font-size: 1.5em; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL3NsaWRlLWhlYWRlci9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXGNvbW1vblxcc2xpZGUtaGVhZGVyXFxzbGlkZS1oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbW1vbi9zbGlkZS1oZWFkZXIvQzpcXHByb2plY3RzXFxzaWduLW5hdHVyZVxcd2ViL3NyY1xcc2Fzc1xcX3ZhcmlhYmxlcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUlBO0VBQ0ksa0JBQWtCO0VBQ2xCLE1BQUs7RUFDTCxXQUFXLEVBQUE7O0FBR2Y7RUFDSSxvQkFBb0I7RUFDcEIsVUFBVTtFQUNWLFlBQVk7RUFFWixpQkFBaUIsRUFBQTs7QUFMckI7SUFPUSxXQUFXO0lBQ1gsbUJBQW1CLEVBQUE7O0FBUjNCO0lBV1EsZUFBZTtJQUNmLG1CQUFtQixFQUFBOztBQVozQjtJQWVRLGlCQUFpQixFQUFBOztBQUl6QjtFQUNJLG9CQUFvQjtFQUNwQixVQUFVO0VBQ1YsWUFBWTtFQUVaLGtCQUFrQjtFQUNsQixpQkFBaUI7RUFDakIsVUFBVTtFQUNWLFdBQVc7RUFDWCxZQUFZLEVBQUE7O0FBVGhCO0lBV1EsV0FBVztJQUNYLG1CQUFtQixFQUFBOztBQVozQjtJQWVRLGVBQWU7SUFDZixtQkFBbUIsRUFBQTs7QUFoQjNCO0lBbUJRLGlCQUFpQixFQUFBOztBQUl6QjtFQUlRLFlBQVksRUFBQTs7QUFHbkI7RUFHTyxXQUFXLEVBQUE7O0FBR2Y7RUFDSSxrQkFBa0I7RUFDbEIsYUFBYTtFQUNiLFVBQVU7RUFDVixXQUFXO0VBQ1gsWUFBWTtFQUNaLHlCQzFEYTtFRDREYixZQUFZO0VBQ1osZUFBZSxFQUFBOztBQVN2QjtFQUNBLFlBQVk7RUFDWixlQUFlO0VBQ2Ysa0JBQWtCO0VBRWxCLFFBQVE7RUFDUixXQUFXO0VBQ1gsWUFBWTtFQUNaLHVCQUF1QixFQUFBOztBQU9uQjtFQUNJLGdCQUFnQixFQUFBOztBQUVwQjtFQUlJLHdCQUF3QjtFQUN4QixZQUFZO0VBQ1osZUFBZTtFQUdmLGtCQUFrQjtFQUVsQixRQUFRO0VBQ1IsV0FBVztFQUNYLFlBQVk7RUFDWix3QkFBd0I7RUFFeEIsWUFBWTtFQUNaLGVBQWUsRUFBQTs7QUFqQm5CO0lBb0JRLHFCQUFxQjtJQUNyQixZQUFZLEVBQUE7O0FBSXBCO0VBSVEsVUFBVSxFQUFBOztBQUpsQjtFQVFRLFlBQVk7RUFDWixVQUFVLEVBQUE7O0FBVGxCO0VBY1EsWUFBWTtFQUdaLFNBQVMsRUFBQTs7QUFLakI7RUFJUSxXQUFXLEVBQUE7O0FBSm5CO0VBUVEsV0FBVztFQUNYLFdBQVcsRUFBQTs7QUFUbkI7RUFhUSxZQUFZO0VBQ1osVUFBVSxFQUFBOztBQUtsQjtFQUVJLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIsVUFBVTtFQUNWLFdBQVc7RUFDWCxZQUFZO0VBQ1oseUJDeEtjO0VEeUtkLGVBQWUsRUFBQTs7QUFLbkI7Ozs7RUFNSSxnQkFBZ0IsRUFBQTs7QUFJcEI7Ozs7RUFNSSxnQkFBZ0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2NvbW1vbi9zbGlkZS1oZWFkZXIvc2xpZGUtaGVhZGVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAnLi4vLi4vLi4vc2Fzcy9fdmFyaWFibGVzJztcclxuXHJcblxyXG5cclxuLnRvb2xiYXJ7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6MDtcclxuICAgIGxlZnQ6IDExMHB4OyAgICAgXHJcbn1cclxuXHJcbi5pbmxpbmUtdG9wcGVye1xyXG4gICAgcG9pbnRlci1ldmVudHM6IG5vbmU7IFxyXG4gICAgei1pbmRleDogMDtcclxuICAgIGhlaWdodDogNTFweDsgICBcclxuICAgICAgIFxyXG4gICAgcGFkZGluZy10b3A6IDEwcHg7ICAgIFxyXG4gICAgLmljb257XHJcbiAgICAgICAgbWFyZ2luOiA4cHg7ICAgICAgXHJcbiAgICAgICAgdmVydGljYWwtYWxpZ246IHRvcDtcclxuICAgIH1cclxuICAgIGg0e1xyXG4gICAgICAgIGRpc3BsYXk6IGlubGluZTtcclxuICAgICAgICB2ZXJ0aWNhbC1hbGlnbjogdG9wO1xyXG4gICAgfVxyXG4gICAgLmJhci1pY29ue1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiAxNXB4O1xyXG4gICAgfVxyXG59XHJcblxyXG4udG9wcGVye1xyXG4gICAgcG9pbnRlci1ldmVudHM6IG5vbmU7IFxyXG4gICAgei1pbmRleDogMDtcclxuICAgIGhlaWdodDogNjVweDsgICBcclxuICAgIFxyXG4gICAgcG9zaXRpb246IGFic29sdXRlOyAgICAgXHJcbiAgICBwYWRkaW5nLXRvcDogMzBweDtcclxuICAgIHRvcDogLTMwcHg7XHJcbiAgICBsZWZ0OiAtMTVweDtcclxuICAgIHJpZ2h0OiAtMTVweDtcclxuICAgIC5pY29ue1xyXG4gICAgICAgIG1hcmdpbjogOHB4OyAgICAgIFxyXG4gICAgICAgIHZlcnRpY2FsLWFsaWduOiB0b3A7XHJcbiAgICB9XHJcbiAgICBoNHtcclxuICAgICAgICBkaXNwbGF5OiBpbmxpbmU7XHJcbiAgICAgICAgdmVydGljYWwtYWxpZ246IHRvcDtcclxuICAgIH1cclxuICAgIC5iYXItaWNvbntcclxuICAgICAgICBtYXJnaW4tbGVmdDogMTVweDtcclxuICAgIH1cclxufVxyXG5cclxuOmhvc3QtY29udGV4dCgubHRyKVxyXG4ge1xyXG4gICBcclxuICAgIC5jbG9zZS1idXR0b24tdG9wcGVye1xyXG4gICAgICAgIHJpZ2h0OiAtMTVweDtcclxuICAgIH1cclxuIH1cclxuIDpob3N0LWNvbnRleHQoLnJ0bClcclxuIHtcclxuICAgIC5jbG9zZS1idXR0b24tdG9wcGVye1xyXG4gICAgICAgIGxlZnQ6IC0xNXB4O1xyXG4gICAgfVxyXG4gfVxyXG4gICAgLmNsb3NlLWJ1dHRvbi10b3BwZXJ7XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIHotaW5kZXg6IDIwMDA7ICAgICAgXHJcbiAgICAgICAgdG9wOiAtMTVweDtcclxuICAgICAgICB3aWR0aDogNTJweDtcclxuICAgICAgICBoZWlnaHQ6IDUycHg7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogJGNvbG9yLWdyZWVuO1xyXG5cclxuICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgICAgIFxyXG5cclxuICAgXHJcbiAgICAgXHJcbiAgICB9XHJcbiAgICBcclxuIFxyXG5cclxuLmNsb3NlLWJ1dHRvbi1pbmxpbmUtdG9wcGVyIHsgICAgXHJcbmNvbG9yOiB3aGl0ZTtcclxuY3Vyc29yOiBwb2ludGVyO1xyXG5wb3NpdGlvbjogYWJzb2x1dGU7XHJcblxyXG50b3A6IDBweDtcclxud2lkdGg6IDUycHg7XHJcbmhlaWdodDogNTJweDtcclxuYmFja2dyb3VuZC1jb2xvcjogZ3JlZW47XHJcblxyXG4gXHJcbiBcclxuXHJcblxyXG59XHJcbiAgICAuc2F2ZS1idG4taW5saW5lLXRvcHBlcjpob3ZlcntcclxuICAgICAgICBmb250LXNpemU6IDEuNWVtO1xyXG4gICAgfSBcclxuICAgIC5zYXZlLWJ0bi1pbmxpbmUtdG9wcGVyXHJcbiAgICB7XHJcbiAgICAgICAgLXdlYmtpdC10cmFuc2l0aW9uOiBhbGwgLjJzIGVhc2U7XHJcbiAgICAgICAgLW1vei10cmFuc2l0aW9uOiBhbGwgLjJzIGVhc2U7XHJcbiAgICAgICAgdHJhbnNpdGlvbjogYWxsIC4ycyBlYXNlO1xyXG4gICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICAgICAgXHJcbiAgICAgIFxyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgIFxyXG4gICAgICAgIHRvcDogMHB4O1xyXG4gICAgICAgIHdpZHRoOiA1MnB4O1xyXG4gICAgICAgIGhlaWdodDogNTJweDtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiBvcmFuZ2U7XHJcblxyXG4gICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICAgICAgXHJcbiAgICAgICAgJi50cnVle1xyXG4gICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZWQ7XHJcbiAgICAgICAgICAgIGNvbG9yOiBibGFjaztcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgOmhvc3QtY29udGV4dCgucnRsKVxyXG4gICAge1xyXG4gICAgICAgIC5zYXZlLWJ0bi10b3BwZXJcclxuICAgICAgICB7XHJcbiAgICAgICAgICAgIGxlZnQ6IDM3cHg7XHJcbiAgICAgICAgfVxyXG4gICAgICAgIC5zYXZlLWJ0bi1pbmxpbmUtdG9wcGVyXHJcbiAgICAgICAge1xyXG4gICAgICAgICAgICBmbG9hdDogcmlnaHQ7XHJcbiAgICAgICAgICAgIGxlZnQ6IDUycHg7XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAuY2xvc2UtYnV0dG9uLWlubGluZS10b3BwZXJcclxuICAgICAgICB7XHJcbiAgICAgICAgICAgIGZsb2F0OiByaWdodDtcclxuXHJcblxyXG4gICAgICAgICAgICBsZWZ0OiAwcHg7XHJcblxyXG4gICAgICAgIH1cclxuXHJcbiAgICB9XHJcbiAgICA6aG9zdC1jb250ZXh0KC5sdHIpXHJcbiAgICB7XHJcbiAgICAgICAgLnNhdmUtYnRuLXRvcHBlclxyXG4gICAgICAgIHtcclxuICAgICAgICAgICAgcmlnaHQ6IDM3cHg7XHJcbiAgICAgICAgfVxyXG4gICAgICAgIC5zYXZlLWJ0bi1pbmxpbmUtdG9wcGVyXHJcbiAgICAgICAge1xyXG4gICAgICAgICAgICBmbG9hdDogbGVmdDtcclxuICAgICAgICAgICAgcmlnaHQ6IDUycHg7XHJcbiAgICAgICAgfVxyXG4gICAgICAgIC5jbG9zZS1idXR0b24taW5saW5lLXRvcHBlclxyXG4gICAgICAgIHtcclxuICAgICAgICAgICAgZmxvYXQ6IHJpZ2h0O1xyXG4gICAgICAgICAgICByaWdodDogMHB4O1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcblxyXG4gICAgLnNhdmUtYnRuLXRvcHBlclxyXG4gICAge1xyXG4gICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgdG9wOiAtMTVweDtcclxuICAgICAgICB3aWR0aDogNTJweDtcclxuICAgICAgICBoZWlnaHQ6IDUycHg7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogJGNvbG9yLW9yYW5nZTtcclxuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICAgICAgXHJcbiAgICB9XHJcblxyXG5cclxuICAgIC5zYXZlLWJ0bi1pbmxpbmUtdG9wcGVyOmFjdGl2ZSwgICAgXHJcbiAgICAuc2F2ZS1idG4taW5saW5lLXRvcHBlcjpob3ZlcixcclxuICAgIC5zYXZlLWJ0bi10b3BwZXI6YWN0aXZlLFxyXG4gICAgLnNhdmUtYnRuLXRvcHBlcjpob3ZlclxyXG4gICAgeyAgIFxyXG4gICAgICAgXHJcbiAgICAgICAgZm9udC1zaXplOiAxLjVlbTtcclxuICAgICAgICBcclxuICAgIH1cclxuXHJcbiAgICAuY2xvc2UtYnV0dG9uLWlubGluZS10b3BwZXI6YWN0aXZlLCAgICBcclxuICAgIC5jbG9zZS1idXR0b24taW5saW5lLXRvcHBlcjpob3ZlcixcclxuICAgIC5jbG9zZS1idXR0b24tdG9wcGVyOmFjdGl2ZSxcclxuICAgIC5jbG9zZS1idXR0b24tdG9wcGVyOmhvdmVyXHJcbiAgICB7ICAgXHJcbiAgICAgICAgXHJcbiAgICAgICAgZm9udC1zaXplOiAxLjVlbTtcclxuICAgICAgICBcclxuICAgIH1cclxuICAgICAgICAgICBcclxuICAgICAgICBcclxuICAgIFxyXG4gXHJcbiBcclxuICIsIlxyXG4kY29sb3ItZ3JheTogI2UzZTRlNTtcclxuJGNvbG9yLWRhcmtibHVlMTogIzE2MjQzMztcclxuJGNvbG9yLWRhcmtibHVlMjogIzJhNDU2MztcclxuJGNvbG9yLWxpZ2h0Ymx1ZTE6ICMyNjQzNTY7XHJcbiRjb2xvci1saWdodGJsdWUyOiAjM2M3Mzk5O1xyXG4kY29sb3Itb3JhbmdlOiAjZmM2NjAwO1xyXG4kY29sb3ItY3lhbjogIzAwZmZmNjtcclxuJGNvbG9yLXNjcmVlbjogIzAwY2ZmZjtcclxuJGNvbG9yLXNjcmVlbi1ncm91cDogIzAwZmZmNjtcclxuJGNvbG9yLWxpYnJhcnk6ICM5NmZmMDA7XHJcbiRjb2xvci15ZWxsb3c6ICNmZmZmMDA7XHJcbiRjb2xvci1wdXJwbGU6ICNmM2I3ZWI7XHJcbiRjb2xvci1ncmVlbjogIzk2ZmYwMDtcclxuIFxyXG5cclxuICJdfQ== */"
 
 /***/ }),
 
@@ -1368,7 +1196,7 @@ var SlideHeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper\">\n    <nav id=\"sidebar\" [class]=\"activeClass\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <ul class=\"mr-auto\">\n                <li class=\"nav-item\" class=\"language-bar\" >\n                    <app-language-bar></app-language-bar>\n                </li>\n                <li class=\"nav-item\">\n                    <button type=\"button\" (click)=\"toggleSidebar()\" id=\"sidebarCollapse\" class=\"btn btn-sm btn-info\">\n                        <i class=\"fas fa-align-left\"></i>\n                    </button>\n                </li>\n            </ul>\n            <strong>SN</strong>\n        </div>\n        <ul class=\"list-unstyled components\">\n            <li>\n                <a routerLink=\"/\">\n                    <i class=\"fas fa-home\"></i>\n                    {{\"NAVBAR.HOME\" | translate}}\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"screens\" routerLinkActive=\"screen-cat\">\n                    <i class=\"fas fa-desktop\"></i>\n                    {{\"NAVBAR.SCREENS\" | translate}}\n\n                </a></li>\n            <li>\n                <a routerLink=\"screen-groups\" routerLinkActive=\"screen-group-cat\">\n                    <i class=\"fas fa-clone\"></i>\n                    {{\"NAVBAR.SCREEN-GROUPS\" | translate}}\n\n                </a></li>\n            <li>\n                <a routerLinkActive=\"library-cat\" routerLink=\"library\">\n                    <i class=\"fas fa-copy\"></i>\n                    {{\"NAVBAR.LIBRARY\" | translate}}\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"playlists\" routerLinkActive=\"purple-cat\">\n                    <i class=\"fas fa-step-forward\"></i>\n                    {{\"NAVBAR.PLAYLISTS\" | translate}}\n\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"schedules\" routerLinkActive=\"active-link\">\n                    <i class=\"fas fa-calendar-alt\"></i>\n                    {{\"NAVBAR.SCHEDULES\" | translate}}\n\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"settings\" routerLinkActive=\"active-link\">\n                    <i class=\"fas fa-cogs\"></i>\n                    {{\"NAVBAR.SETTINGS\" | translate}}\n\n                </a>\n            </li>\n        </ul>\n    </nav>\n    <!-- Page Content  -->\n    <!-- <app-bread-crumbs (Toggled)=\"toggleSidebar()\"></app-bread-crumbs> -->\n    <div id=\"content\">      \n        <router-outlet></router-outlet>\n    </div>\n    <footer class=\"footer closed\">\n        {{'DASHBOARD.FOOTER' | translate}}\n    </footer>\n</div>\n"
+module.exports = "<div class=\"wrapper\">\n    <nav id=\"sidebar\" [class]=\"activeClass\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <ul class=\"sidebar-header-bar\">\n                <li class=\"nav-item\" class=\"language-bar\" >\n                    <app-language-bar></app-language-bar>\n                </li>\n                <li class=\"nav-item\">\n                    <button type=\"button\" (click)=\"toggleSidebar()\" id=\"sidebarCollapse\" class=\"btn-collapse\">\n                        <i class=\"fas fa-align-justify\"></i>\n                    </button>\n                </li>\n            </ul>\n            <strong>                \n                <img src=\"assets/signnature_icon.png\" width=\"40\">\n            </strong>\n        </div>\n        <ul class=\"list-unstyled components\">\n            <li>\n                <a routerLink=\"/\">\n                    <i class=\"fas fa-home\"></i>\n                    {{\"NAVBAR.HOME\" | translate}}\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"screens\" routerLinkActive=\"screen-cat\">\n                    <i class=\"fas fa-desktop\"></i>\n                    {{\"NAVBAR.SCREENS\" | translate}}\n\n                </a></li>\n            <li>\n                <a routerLink=\"screen-groups\" routerLinkActive=\"screen-group-cat\">\n                    <i class=\"fas fa-clone\"></i>\n                    {{\"NAVBAR.SCREEN-GROUPS\" | translate}}\n\n                </a></li>\n            <li>\n                <a routerLinkActive=\"library-cat\" routerLink=\"library\">\n                    <i class=\"fas fa-copy\"></i>\n                    {{\"NAVBAR.LIBRARY\" | translate}}\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"playlists\" routerLinkActive=\"playlist-cat\">\n                    <i class=\"fas fa-step-forward\"></i>\n                    {{\"NAVBAR.PLAYLISTS\" | translate}}\n\n                </a>\n            </li>\n            <!-- <li>\n                <a routerLink=\"schedules\" routerLinkActive=\"active-link\">\n                    <i class=\"fas fa-calendar-alt\"></i>\n                    {{\"NAVBAR.SCHEDULES\" | translate}}\n\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"settings\" routerLinkActive=\"active-link\">\n                    <i class=\"fas fa-cogs\"></i>\n                    {{\"NAVBAR.SETTINGS\" | translate}}\n\n                </a>\n            </li> -->\n        </ul>\n    </nav>\n    <!-- Page Content  -->\n    <!-- <app-bread-crumbs (Toggled)=\"toggleSidebar()\"></app-bread-crumbs> -->\n    <div id=\"content\">      \n        <router-outlet></router-outlet>\n    </div>\n    <footer class=\"footer closed\">\n        {{'DASHBOARD.FOOTER' | translate}}\n    </footer>\n</div>\n"
 
 /***/ }),
 
@@ -1379,7 +1207,7 @@ module.exports = "<div class=\"wrapper\">\n    <nav id=\"sidebar\" [class]=\"act
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".active-link {\n  color: #c5c5c5;\n  background: #3f5efb;\n  background: radial-gradient(circle, #3f5efb 0%, #fc466b 100%); }\n  .active-link #LibrarySubmenu {\n    display: block !important; }\n  .language-bar {\n  width: 150px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGFzaGJvYXJkL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcZGFzaGJvYXJkXFxkYXNoYm9hcmQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxjQUFjO0VBQ2QsbUJBQTBCO0VBQzFCLDZEQUFrRixFQUFBO0VBSHRGO0lBS1EseUJBQXdCLEVBQUE7RUFJaEM7RUFFSSxZQUFZLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9kYXNoYm9hcmQvZGFzaGJvYXJkLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmFjdGl2ZS1saW5re1xyXG4gICAgY29sb3I6ICNjNWM1YzU7XHJcbiAgICBiYWNrZ3JvdW5kOiByZ2IoNjMsOTQsMjUxKTtcclxuICAgIGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudChjaXJjbGUsIHJnYmEoNjMsOTQsMjUxLDEpIDAlLCByZ2JhKDI1Miw3MCwxMDcsMSkgMTAwJSk7XHJcbiAgICAjTGlicmFyeVN1Ym1lbnV7XHJcbiAgICAgICAgZGlzcGxheTogYmxvY2shaW1wb3J0YW50O1xyXG4gICAgfVxyXG59XHJcblxyXG4ubGFuZ3VhZ2UtYmFyXHJcbntcclxuICAgIHdpZHRoOiAxNTBweDtcclxufVxyXG5cclxuIl19 */"
+module.exports = ".active-link {\n  color: #c5c5c5;\n  background: #3f5efb;\n  background: radial-gradient(circle, #3f5efb 0%, #fc466b 100%); }\n  .active-link #LibrarySubmenu {\n    display: block !important; }\n  .sidebar-header-bar {\n  clear: both;\n  background-color: #162433; }\n  .sidebar-header-bar li {\n    float: right; }\n  .sidebar-header-bar li.language-bar {\n    width: 150px; }\n  .btn-collapse {\n  color: #3c7399;\n  background-color: transparent;\n  margin-right: 7px;\n  width: 40px;\n  height: 40px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGFzaGJvYXJkL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcZGFzaGJvYXJkXFxkYXNoYm9hcmQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2Rhc2hib2FyZC9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxzYXNzXFxfdmFyaWFibGVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBR0E7RUFDSSxjQUFjO0VBQ2QsbUJBQTBCO0VBQzFCLDZEQUFrRixFQUFBO0VBSHRGO0lBS1EseUJBQXdCLEVBQUE7RUFLaEM7RUFDSSxXQUFXO0VBQ1gseUJDYnFCLEVBQUE7RURXekI7SUFJUSxZQUFZLEVBQUE7RUFKcEI7SUFPUSxZQUFZLEVBQUE7RUFHcEI7RUFHSSxjQ3JCc0I7RURzQnRCLDZCQUE2QjtFQUM3QixpQkFBaUI7RUFDakIsV0FBVztFQUNYLFlBQVksRUFBQSIsImZpbGUiOiJzcmMvYXBwL2Rhc2hib2FyZC9kYXNoYm9hcmQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLi8uLi9zYXNzL192YXJpYWJsZXMnO1xyXG5cclxuXHJcbi5hY3RpdmUtbGlua3tcclxuICAgIGNvbG9yOiAjYzVjNWM1O1xyXG4gICAgYmFja2dyb3VuZDogcmdiKDYzLDk0LDI1MSk7XHJcbiAgICBiYWNrZ3JvdW5kOiByYWRpYWwtZ3JhZGllbnQoY2lyY2xlLCByZ2JhKDYzLDk0LDI1MSwxKSAwJSwgcmdiYSgyNTIsNzAsMTA3LDEpIDEwMCUpO1xyXG4gICAgI0xpYnJhcnlTdWJtZW51e1xyXG4gICAgICAgIGRpc3BsYXk6IGJsb2NrIWltcG9ydGFudDtcclxuICAgIH1cclxufVxyXG5cclxuIFxyXG4uc2lkZWJhci1oZWFkZXItYmFye1xyXG4gICAgY2xlYXI6IGJvdGg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAkY29sb3ItZGFya2JsdWUxO1xyXG4gICAgbGl7XHJcbiAgICAgICAgZmxvYXQ6IHJpZ2h0O1xyXG4gICAgfVxyXG4gICAgbGkubGFuZ3VhZ2UtYmFye1xyXG4gICAgICAgIHdpZHRoOiAxNTBweDtcclxuICAgIH1cclxufVxyXG4uYnRuLWNvbGxhcHNleyAgXHJcbiAgIFxyXG4gICAgXHJcbiAgICBjb2xvcjokY29sb3ItbGlnaHRibHVlMjtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xyXG4gICAgbWFyZ2luLXJpZ2h0OiA3cHg7XHJcbiAgICB3aWR0aDogNDBweDtcclxuICAgIGhlaWdodDogNDBweDtcclxufVxyXG5cclxuIiwiXHJcbiRjb2xvci1ncmF5OiAjZTNlNGU1O1xyXG4kY29sb3ItZGFya2JsdWUxOiAjMTYyNDMzO1xyXG4kY29sb3ItZGFya2JsdWUyOiAjMmE0NTYzO1xyXG4kY29sb3ItbGlnaHRibHVlMTogIzI2NDM1NjtcclxuJGNvbG9yLWxpZ2h0Ymx1ZTI6ICMzYzczOTk7XHJcbiRjb2xvci1vcmFuZ2U6ICNmYzY2MDA7XHJcbiRjb2xvci1jeWFuOiAjMDBmZmY2O1xyXG4kY29sb3Itc2NyZWVuOiAjMDBjZmZmO1xyXG4kY29sb3Itc2NyZWVuLWdyb3VwOiAjMDBmZmY2O1xyXG4kY29sb3ItbGlicmFyeTogIzk2ZmYwMDtcclxuJGNvbG9yLXllbGxvdzogI2ZmZmYwMDtcclxuJGNvbG9yLXB1cnBsZTogI2YzYjdlYjtcclxuJGNvbG9yLWdyZWVuOiAjOTZmZjAwO1xyXG4gXHJcblxyXG4gIl19 */"
 
 /***/ }),
 
@@ -1738,6 +1566,52 @@ var AdaptWidthDirective = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/directives/change.directive.ts":
+/*!************************************************!*\
+  !*** ./src/app/directives/change.directive.ts ***!
+  \************************************************/
+/*! exports provided: DetectChangesDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetectChangesDirective", function() { return DetectChangesDirective; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_dirty_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/dirty.service */ "./src/app/services/dirty.service.ts");
+
+
+
+var DetectChangesDirective = /** @class */ (function () {
+    function DetectChangesDirective(dirtyService) {
+        this.dirtyService = dirtyService;
+    }
+    DetectChangesDirective.prototype.onBlur = function (event) {
+        this.dirtyService.detectChanges();
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])('detectChanges'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Boolean)
+    ], DetectChangesDirective.prototype, "detectChanges", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('change', ['$event']),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object]),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
+    ], DetectChangesDirective.prototype, "onBlur", null);
+    DetectChangesDirective = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"])({
+            selector: '[detectChanges]'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_dirty_service__WEBPACK_IMPORTED_MODULE_2__["DirtyService"]])
+    ], DetectChangesDirective);
+    return DetectChangesDirective;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/directives/stop-prop.ts":
 /*!*****************************************!*\
   !*** ./src/app/directives/stop-prop.ts ***!
@@ -1794,7 +1668,7 @@ module.exports = "<div class=\"cube-container\">\r\n    <div class=\"cube\">\r\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".cube-container {\n  position: absolute;\n  left: 0;\n  top: 0;\n  z-index: 2000; }\n\n.cube {\n  width: 60px;\n  height: 60px;\n  background: #f45c41;\n  border-radius: 6px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  position: relative;\n  cursor: pointer;\n  transition: background 0.2s; }\n\n.plus-vertical,\n.plus-horizontal {\n  background: #fff;\n  border-radius: 4px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  z-index: 10; }\n\n.plus-vertical {\n  height: 50%;\n  width: 5px; }\n\n.plus-horizontal {\n  width: 50%;\n  height: 5px; }\n\n.quadrant {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-wrap: wrap;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%); }\n\n.quadrant__item {\n  width: 50%;\n  height: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: #f45c41;\n  border-radius: 6px;\n  position: relative; }\n\n.quadrant__item__content {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%) rotate(-45deg);\n          transform: translate(-50%, -50%) rotate(-45deg);\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\n.arrow-down,\n.arrow-left,\n.arrow-right,\n.arrow-up {\n  opacity: 0;\n  color: white;\n  font-size: 24px; }\n\n.arrow-up {\n  -webkit-transform: translateY(10px);\n          transform: translateY(10px); }\n\n.arrow-down {\n  -webkit-transform: translateY(-10px);\n          transform: translateY(-10px); }\n\n.arrow-left {\n  -webkit-transform: translateX(10px);\n          transform: translateX(10px); }\n\n.arrow-right {\n  -webkit-transform: translateX(-10px);\n          transform: translateX(-10px); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL2FkZC9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXGVkaXRvclxcYWRkXFxhZGQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDSSxrQkFBa0I7RUFDbEIsT0FBTztFQUNQLE1BQUs7RUFDTCxhQUFhLEVBQUE7O0FBS2pCO0VBQ0UsV0FBVztFQUNYLFlBQVk7RUFDWixtQkFBbUI7RUFDbkIsa0JBQWtCO0VBQ2xCLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLGtCQUFrQjtFQUNsQixlQUFlO0VBQ2YsMkJBQTJCLEVBQUE7O0FBRzdCOztFQUVFLGdCQUFnQjtFQUNoQixrQkFBa0I7RUFDbEIsa0JBQWtCO0VBQ2xCLFFBQVE7RUFDUixTQUFTO0VBQ1Qsd0NBQWdDO1VBQWhDLGdDQUFnQztFQUNoQyxXQUFXLEVBQUE7O0FBR2I7RUFDRSxXQUFXO0VBQ1gsVUFBVSxFQUFBOztBQUdaO0VBQ0UsVUFBVTtFQUNWLFdBQVcsRUFBQTs7QUFHYjtFQUNFLGtCQUFrQjtFQUNsQixXQUFXO0VBQ1gsWUFBWTtFQUNaLGFBQWE7RUFDYixlQUFlO0VBQ2YsUUFBUTtFQUNSLFNBQVM7RUFDVCx3Q0FBZ0M7VUFBaEMsZ0NBQWdDLEVBQUE7O0FBR2xDO0VBQ0UsVUFBVTtFQUNWLFdBQVc7RUFDWCxhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIsa0JBQWtCO0VBQ2xCLGtCQUFrQixFQUFBOztBQUdwQjtFQUNFLFdBQVc7RUFDWCxZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLFFBQVE7RUFDUixTQUFTO0VBQ1QsdURBQStDO1VBQS9DLCtDQUErQztFQUMvQyxhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLHVCQUF1QixFQUFBOztBQUd6Qjs7OztFQUlHLFVBQVU7RUFDVixZQUFZO0VBQ1osZUFBZSxFQUFBOztBQUdsQjtFQUNFLG1DQUEyQjtVQUEzQiwyQkFBMkIsRUFBQTs7QUFHN0I7RUFDRSxvQ0FBNEI7VUFBNUIsNEJBQTRCLEVBQUE7O0FBRzlCO0VBQ0UsbUNBQTJCO1VBQTNCLDJCQUEyQixFQUFBOztBQUc3QjtFQUNFLG9DQUE0QjtVQUE1Qiw0QkFBNEIsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2VkaXRvci9hZGQvYWRkLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiIFxyXG4uY3ViZS1jb250YWluZXJ7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBsZWZ0OiAwO1xyXG4gICAgdG9wOjA7XHJcbiAgICB6LWluZGV4OiAyMDAwO1xyXG59XHJcblxyXG5cclxuXHJcbi5jdWJlIHtcclxuICB3aWR0aDogNjBweDtcclxuICBoZWlnaHQ6IDYwcHg7XHJcbiAgYmFja2dyb3VuZDogI2Y0NWM0MTtcclxuICBib3JkZXItcmFkaXVzOiA2cHg7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgdHJhbnNpdGlvbjogYmFja2dyb3VuZCAwLjJzO1xyXG59XHJcblxyXG4ucGx1cy12ZXJ0aWNhbCxcclxuLnBsdXMtaG9yaXpvbnRhbCB7XHJcbiAgYmFja2dyb3VuZDogI2ZmZjtcclxuICBib3JkZXItcmFkaXVzOiA0cHg7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHRvcDogNTAlO1xyXG4gIGxlZnQ6IDUwJTtcclxuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcclxuICB6LWluZGV4OiAxMDtcclxufVxyXG5cclxuLnBsdXMtdmVydGljYWwge1xyXG4gIGhlaWdodDogNTAlO1xyXG4gIHdpZHRoOiA1cHg7XHJcbn1cclxuXHJcbi5wbHVzLWhvcml6b250YWwge1xyXG4gIHdpZHRoOiA1MCU7XHJcbiAgaGVpZ2h0OiA1cHg7XHJcbn1cclxuXHJcbi5xdWFkcmFudCB7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGhlaWdodDogMTAwJTtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtd3JhcDogd3JhcDtcclxuICB0b3A6IDUwJTtcclxuICBsZWZ0OiA1MCU7XHJcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XHJcbn1cclxuXHJcbi5xdWFkcmFudF9faXRlbSB7XHJcbiAgd2lkdGg6IDUwJTtcclxuICBoZWlnaHQ6IDUwJTtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgYmFja2dyb3VuZDogI2Y0NWM0MTtcclxuICBib3JkZXItcmFkaXVzOiA2cHg7XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcblxyXG4ucXVhZHJhbnRfX2l0ZW1fX2NvbnRlbnQge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGhlaWdodDogMTAwJTtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgdG9wOiA1MCU7XHJcbiAgbGVmdDogNTAlO1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpIHJvdGF0ZSgtNDVkZWcpO1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxufVxyXG5cclxuLmFycm93LWRvd24sXHJcbi5hcnJvdy1sZWZ0LFxyXG4uYXJyb3ctcmlnaHQsXHJcbi5hcnJvdy11cCB7XHJcbiAgIG9wYWNpdHk6IDA7XHJcbiAgIGNvbG9yOiB3aGl0ZTtcclxuICAgZm9udC1zaXplOiAyNHB4O1xyXG59XHJcblxyXG4uYXJyb3ctdXAge1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxMHB4KTtcclxufVxyXG5cclxuLmFycm93LWRvd24ge1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtMTBweCk7XHJcbn1cclxuXHJcbi5hcnJvdy1sZWZ0IHtcclxuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMTBweCk7XHJcbn1cclxuXHJcbi5hcnJvdy1yaWdodCB7XHJcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKC0xMHB4KTtcclxufSJdfQ== */"
+module.exports = ".cube-container {\n  position: absolute;\n  top: 0;\n  z-index: 2000; }\n\n:host-context(.ltr) .cube-container {\n  right: 0; }\n\n:host-context(.rtl) .cube-container {\n  left: 0; }\n\n.cube {\n  width: 60px;\n  height: 60px;\n  background: #f45c41;\n  border-radius: 6px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  position: relative;\n  cursor: pointer;\n  transition: background 0.2s; }\n\n.plus-vertical,\n.plus-horizontal {\n  background: #fff;\n  border-radius: 4px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  z-index: 10; }\n\n.plus-vertical {\n  height: 50%;\n  width: 5px; }\n\n.plus-horizontal {\n  width: 50%;\n  height: 5px; }\n\n.quadrant {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-wrap: wrap;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%); }\n\n.quadrant__item {\n  width: 50%;\n  height: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: #f45c41;\n  border-radius: 6px;\n  position: relative; }\n\n.quadrant__item__content {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%) rotate(-45deg);\n          transform: translate(-50%, -50%) rotate(-45deg);\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\n.arrow-down,\n.arrow-left,\n.arrow-right,\n.arrow-up {\n  opacity: 0;\n  color: white;\n  font-size: 24px; }\n\n.arrow-up {\n  -webkit-transform: translateY(10px);\n          transform: translateY(10px); }\n\n.arrow-down {\n  -webkit-transform: translateY(-10px);\n          transform: translateY(-10px); }\n\n.arrow-left {\n  -webkit-transform: translateX(10px);\n          transform: translateX(10px); }\n\n.arrow-right {\n  -webkit-transform: translateX(-10px);\n          transform: translateX(-10px); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL2FkZC9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXGVkaXRvclxcYWRkXFxhZGQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDSSxrQkFBa0I7RUFFbEIsTUFBSztFQUNMLGFBQWEsRUFBQTs7QUFHakI7RUFJTSxRQUFRLEVBQUE7O0FBR1o7RUFJTSxPQUFPLEVBQUE7O0FBR2Y7RUFDRSxXQUFXO0VBQ1gsWUFBWTtFQUNaLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsa0JBQWtCO0VBQ2xCLGVBQWU7RUFDZiwyQkFBMkIsRUFBQTs7QUFHN0I7O0VBRUUsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtFQUNsQixrQkFBa0I7RUFDbEIsUUFBUTtFQUNSLFNBQVM7RUFDVCx3Q0FBZ0M7VUFBaEMsZ0NBQWdDO0VBQ2hDLFdBQVcsRUFBQTs7QUFHYjtFQUNFLFdBQVc7RUFDWCxVQUFVLEVBQUE7O0FBR1o7RUFDRSxVQUFVO0VBQ1YsV0FBVyxFQUFBOztBQUdiO0VBQ0Usa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxZQUFZO0VBQ1osYUFBYTtFQUNiLGVBQWU7RUFDZixRQUFRO0VBQ1IsU0FBUztFQUNULHdDQUFnQztVQUFoQyxnQ0FBZ0MsRUFBQTs7QUFHbEM7RUFDRSxVQUFVO0VBQ1YsV0FBVztFQUNYLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsa0JBQWtCLEVBQUE7O0FBR3BCO0VBQ0UsV0FBVztFQUNYLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIsUUFBUTtFQUNSLFNBQVM7RUFDVCx1REFBK0M7VUFBL0MsK0NBQStDO0VBQy9DLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsdUJBQXVCLEVBQUE7O0FBR3pCOzs7O0VBSUcsVUFBVTtFQUNWLFlBQVk7RUFDWixlQUFlLEVBQUE7O0FBR2xCO0VBQ0UsbUNBQTJCO1VBQTNCLDJCQUEyQixFQUFBOztBQUc3QjtFQUNFLG9DQUE0QjtVQUE1Qiw0QkFBNEIsRUFBQTs7QUFHOUI7RUFDRSxtQ0FBMkI7VUFBM0IsMkJBQTJCLEVBQUE7O0FBRzdCO0VBQ0Usb0NBQTRCO1VBQTVCLDRCQUE0QixFQUFBIiwiZmlsZSI6InNyYy9hcHAvZWRpdG9yL2FkZC9hZGQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIgXHJcbi5jdWJlLWNvbnRhaW5lcntcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgXHJcbiAgICB0b3A6MDtcclxuICAgIHotaW5kZXg6IDIwMDA7XHJcbn1cclxuXHJcbjpob3N0LWNvbnRleHQoLmx0cilcclxue1xyXG4gIC5jdWJlLWNvbnRhaW5lclxyXG4gICAge1xyXG4gICAgICByaWdodDogMDtcclxuICAgIH1cclxuICB9XHJcbiAgOmhvc3QtY29udGV4dCgucnRsKVxyXG4gIHtcclxuICAgIC5jdWJlLWNvbnRhaW5lclxyXG4gICAgICB7XHJcbiAgICAgICAgbGVmdDogMDtcclxuICAgICAgfVxyXG4gICAgfVxyXG4uY3ViZSB7XHJcbiAgd2lkdGg6IDYwcHg7XHJcbiAgaGVpZ2h0OiA2MHB4O1xyXG4gIGJhY2tncm91bmQ6ICNmNDVjNDE7XHJcbiAgYm9yZGVyLXJhZGl1czogNnB4O1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIHRyYW5zaXRpb246IGJhY2tncm91bmQgMC4ycztcclxufVxyXG5cclxuLnBsdXMtdmVydGljYWwsXHJcbi5wbHVzLWhvcml6b250YWwge1xyXG4gIGJhY2tncm91bmQ6ICNmZmY7XHJcbiAgYm9yZGVyLXJhZGl1czogNHB4O1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICB0b3A6IDUwJTtcclxuICBsZWZ0OiA1MCU7XHJcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XHJcbiAgei1pbmRleDogMTA7XHJcbn1cclxuXHJcbi5wbHVzLXZlcnRpY2FsIHtcclxuICBoZWlnaHQ6IDUwJTtcclxuICB3aWR0aDogNXB4O1xyXG59XHJcblxyXG4ucGx1cy1ob3Jpem9udGFsIHtcclxuICB3aWR0aDogNTAlO1xyXG4gIGhlaWdodDogNXB4O1xyXG59XHJcblxyXG4ucXVhZHJhbnQge1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICB3aWR0aDogMTAwJTtcclxuICBoZWlnaHQ6IDEwMCU7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBmbGV4LXdyYXA6IHdyYXA7XHJcbiAgdG9wOiA1MCU7XHJcbiAgbGVmdDogNTAlO1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xyXG59XHJcblxyXG4ucXVhZHJhbnRfX2l0ZW0ge1xyXG4gIHdpZHRoOiA1MCU7XHJcbiAgaGVpZ2h0OiA1MCU7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIGJhY2tncm91bmQ6ICNmNDVjNDE7XHJcbiAgYm9yZGVyLXJhZGl1czogNnB4O1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxufVxyXG5cclxuLnF1YWRyYW50X19pdGVtX19jb250ZW50IHtcclxuICB3aWR0aDogMTAwJTtcclxuICBoZWlnaHQ6IDEwMCU7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHRvcDogNTAlO1xyXG4gIGxlZnQ6IDUwJTtcclxuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKSByb3RhdGUoLTQ1ZGVnKTtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbn1cclxuXHJcbi5hcnJvdy1kb3duLFxyXG4uYXJyb3ctbGVmdCxcclxuLmFycm93LXJpZ2h0LFxyXG4uYXJyb3ctdXAge1xyXG4gICBvcGFjaXR5OiAwO1xyXG4gICBjb2xvcjogd2hpdGU7XHJcbiAgIGZvbnQtc2l6ZTogMjRweDtcclxufVxyXG5cclxuLmFycm93LXVwIHtcclxuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMTBweCk7XHJcbn1cclxuXHJcbi5hcnJvdy1kb3duIHtcclxuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTEwcHgpO1xyXG59XHJcblxyXG4uYXJyb3ctbGVmdCB7XHJcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDEwcHgpO1xyXG59XHJcblxyXG4uYXJyb3ctcmlnaHQge1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgtMTBweCk7XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -1878,17 +1752,6 @@ var AddComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/editor/canvas/canvas.component.css":
-/*!****************************************************!*\
-  !*** ./src/app/editor/canvas/canvas.component.css ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2VkaXRvci9jYW52YXMvY2FudmFzLmNvbXBvbmVudC5jc3MifQ== */"
-
-/***/ }),
-
 /***/ "./src/app/editor/canvas/canvas.component.html":
 /*!*****************************************************!*\
   !*** ./src/app/editor/canvas/canvas.component.html ***!
@@ -1897,6 +1760,17 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /***/ (function(module, exports) {
 
 module.exports = "<div *ngIf=\"item\" [ngStyle]=\"{'background-color': bgColor}\">      \r\n    <object #thumbObject type=\"image/svg+xml\" style=\"width: {{width}}px;height: {{height}}px;\"></object>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/editor/canvas/canvas.component.scss":
+/*!*****************************************************!*\
+  !*** ./src/app/editor/canvas/canvas.component.scss ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2VkaXRvci9jYW52YXMvY2FudmFzLmNvbXBvbmVudC5zY3NzIn0= */"
 
 /***/ }),
 
@@ -1963,10 +1837,6 @@ var CanvasComponent = /** @class */ (function () {
             }
         });
     };
-    // if (item.bgColor) {
-    //   ctx.fillStyle = item.bgColor;
-    //   ctx.fillRect(0, 0, width, height);
-    // }
     CanvasComponent.prototype.render_html_to_canvas = function (html, x, y, width, height) {
         var data = 'data:image/svg+xml;base64,' + js_base64__WEBPACK_IMPORTED_MODULE_3__["Base64"].encode('<svg xmlns="http://www.w3.org/2000/svg" width="'
             + width + '" height="' + height + '">' +
@@ -2018,7 +1888,7 @@ var CanvasComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-canvas',
             template: __webpack_require__(/*! ./canvas.component.html */ "./src/app/editor/canvas/canvas.component.html"),
-            styles: [__webpack_require__(/*! ./canvas.component.css */ "./src/app/editor/canvas/canvas.component.css")]
+            styles: [__webpack_require__(/*! ./canvas.component.scss */ "./src/app/editor/canvas/canvas.component.scss")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"]])
     ], CanvasComponent);
@@ -3319,7 +3189,7 @@ var FontsService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"drag-panel\">\r\n    <ul class=\"nav nav-tabs\">\r\n        <li class=\"nav-item\" *ngFor=\"let tab of tabs\" (click)=\"tabSelect(tab)\">\r\n            <a class=\"nav-link {{tab.selected}}\"><h6><i class=\"{{tab.icon}}\"></i> {{tab.name | translate}}</h6></a>\r\n        </li>\r\n    </ul>\r\n   \r\n\r\n    <div class=\"inner\" [appAdaptHeight]=\"175\">\r\n\r\n        <form *ngIf=\"selectedTab && tabs[1].name === selectedTab.name\">\r\n            <div class=\"form-group\">\r\n\r\n                <label>{{'PANEL.FORE_COLOR' | translate}}</label>\r\n                <input [(colorPicker)]=\"editor.color\" (colorPickerChange)=\"setColor($event)\" [cpPosition]=\"'bottom'\" class=\"form-control\" [style.background]=\"editor.color\"\r\n                />\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label>{{'PANEL.BACK_COLOR' | translate}}</label>\r\n\r\n                <input [(colorPicker)]=\"editor.bgColor\" (colorPickerChange)=\"setBgColor($event)\" [cpPosition]=\"'bottom'\" class=\"form-control\"\r\n                    [style.background]=\"editor.bgColor\" />\r\n            </div>\r\n\r\n\r\n        </form>\r\n\r\n        <div *ngIf=\"selectedTab &&  tabs[0].name === selectedTab.name && !element\">\r\n            <h2> {{'PANEL.SELECT_ELEMENT' | translate}}</h2>\r\n        </div>\r\n        <form *ngIf=\"element && selectedTab &&  tabs[0].name === selectedTab.name\">\r\n            <div class=\"form-group\">\r\n                <div class=\"input-group\">\r\n                    <div class=\"input-group-prepend\">\r\n                        <span class=\"input-group-text\" id=\"\">{{element.zIndex}}</span>\r\n                    </div>\r\n                    <div class=\"btn-group\">\r\n                        <button (click)=\"moveIndex(-1)\" class=\"btn btn-secondary\"><i class=\"fas fa-level-down-alt\"></i></button>\r\n                        <button (click)=\"moveIndex(1)\" class=\"btn btn-secondary\"><i class=\"fas fa-level-up-alt\"></i></button>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div *ngIf=\"element.type === 'image'\" class=\"t-bar\">\r\n                <div class=\"form-group\">\r\n                    <label for=\"IMAGE_WIDTH\">{{ \"PANEL.IMAGE_WIDTH\" | translate }}:</label>\r\n\r\n                    <ng5-slider [(value)]=\"element.width\" [options]=\"sliderImageOptions\"></ng5-slider>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"IMAGE_HEIGHT\">{{ \"PANEL.IMAGE_HEIGHT\" | translate }}:</label>\r\n                    <ng5-slider [(value)]=\"element.height\" [options]=\"sliderImageOptions\"></ng5-slider>\r\n\r\n                </div>\r\n\r\n            </div>\r\n            <div *ngIf=\"element.type === 'text'\" class=\"t-bar\">\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontName\">{{ \"PANEL.FONTNAME\" | translate }}:</label>\r\n                    <select class=\"form-control\" name=\"fontNameTxt\" [(ngModel)]=\"element.font\" (change)=\"selectFont($event)\">\r\n                        <option *ngFor=\"let c of fonts\" [ngValue]=\"c\">{{c}}</option>\r\n                    </select>\r\n                    <small id=\"fontHelp\" class=\"form-text text-muted\">{{ \"PANEL.FONTNAME_HELP\" | translate }}</small>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontName\">{{ \"PANEL.FONTSIZE\" | translate }}:</label>\r\n                    <ng5-slider [(value)]=\"element.fontSize\" [options]=\"sliderOptions\"></ng5-slider>\r\n                    <small id=\"fontSize\" class=\"form-text text-muted\">{{ \"PANEL.FONTSIZE_HELP\" | translate }}</small>\r\n                </div>\r\n\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontColor\">{{ \"PANEL.FONTCOLOR\" | translate }}:</label>\r\n                    <input class=\"form-control\" name=\"fontColorTxt\" [cpPosition]=\"'left'\" [(colorPicker)]=\"element.color\" [style.background]=\"element.color\"\r\n                    />\r\n                </div>\r\n\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontColor\">{{ \"PANEL.POSITIONX\" | translate }}:</label>\r\n                    <input class=\"form-control\" name=\"position_x\" [(ngModel)]=\"element.position.x\" />\r\n\r\n                    <label for=\"fontColor\">{{ \"PANEL.POSITIONY\" | translate }}:</label>\r\n                    <input class=\"form-control\" name=\"position_y\" [(ngModel)]=\"element.position.y\" />\r\n                </div>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>\r\n"
+module.exports = "<div class=\"drag-panel\">\r\n    <ul class=\"nav nav-tabs\">\r\n        <li class=\"nav-item\" *ngFor=\"let tab of tabs\" (click)=\"tabSelect(tab)\">\r\n            <a class=\"nav-link {{tab.selected}}\"><h6><i class=\"{{tab.icon}}\"></i> {{tab.name | translate}}</h6></a>\r\n        </li>\r\n    </ul>\r\n   \r\n\r\n    <div class=\"inner\" [appAdaptHeight]=\"175\">\r\n\r\n        <form *ngIf=\"selectedTab && tabs[1].name === selectedTab.name\">\r\n            <div class=\"form-group\">\r\n\r\n                <label>{{'PANEL.FORE_COLOR' | translate}}</label>\r\n                <input [(colorPicker)]=\"editor.color\"  [detectChanges]=\"true\" (colorPickerChange)=\"setColor($event)\" [cpPosition]=\"'bottom'\" class=\"form-control\" [style.background]=\"editor.color\"\r\n                />\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label>{{'PANEL.BACK_COLOR' | translate}}</label>\r\n\r\n                <input [(colorPicker)]=\"editor.bgColor\"  [detectChanges]=\"true\" (colorPickerChange)=\"setBgColor($event)\" [cpPosition]=\"'bottom'\" class=\"form-control\"\r\n                    [style.background]=\"editor.bgColor\" />\r\n            </div>\r\n\r\n\r\n        </form>\r\n\r\n        <div *ngIf=\"selectedTab &&  tabs[0].name === selectedTab.name && !element\">\r\n            <h2> {{'PANEL.SELECT_ELEMENT' | translate}}</h2>\r\n        </div>\r\n        <form *ngIf=\"element && selectedTab &&  tabs[0].name === selectedTab.name\">\r\n            <div class=\"form-group\">\r\n                <div class=\"input-group\">\r\n                    <div class=\"input-group-prepend\">\r\n                        <span class=\"input-group-text\" id=\"\">{{element.zIndex}}</span>\r\n                    </div>\r\n                    <div class=\"btn-group\">\r\n                        <button (click)=\"moveIndex(-1)\" class=\"btn btn-secondary\"><i class=\"fas fa-level-down-alt\"></i></button>\r\n                        <button (click)=\"moveIndex(1)\" class=\"btn btn-secondary\"><i class=\"fas fa-level-up-alt\"></i></button>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div *ngIf=\"element.type === 'image'\" class=\"t-bar\">\r\n                <div class=\"form-group\">\r\n                    <label for=\"IMAGE_WIDTH\">{{ \"PANEL.IMAGE_WIDTH\" | translate }}:</label>\r\n\r\n                    <ng5-slider [(value)]=\"element.width\" [options]=\"sliderImageOptions\"></ng5-slider>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"IMAGE_HEIGHT\">{{ \"PANEL.IMAGE_HEIGHT\" | translate }}:</label>\r\n                    <ng5-slider [(value)]=\"element.height\" [options]=\"sliderImageOptions\"></ng5-slider>\r\n\r\n                </div>\r\n\r\n            </div>\r\n            <div *ngIf=\"element.type === 'text'\" class=\"t-bar\">\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontName\">{{ \"PANEL.FONTNAME\" | translate }}:</label>\r\n                    <select  [detectChanges]=\"true\" class=\"form-control\" name=\"fontNameTxt\" [(ngModel)]=\"element.font\" (change)=\"selectFont($event)\">\r\n                        <option *ngFor=\"let c of fonts\" [ngValue]=\"c\">{{c}}</option>\r\n                    </select>\r\n                    <small id=\"fontHelp\" class=\"form-text text-muted\">{{ \"PANEL.FONTNAME_HELP\" | translate }}</small>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontName\">{{ \"PANEL.FONTSIZE\" | translate }}:</label>\r\n                    <ng5-slider  [detectChanges]=\"true\" [(value)]=\"element.fontSize\" [options]=\"sliderOptions\"></ng5-slider>\r\n                    <small id=\"fontSize\" class=\"form-text text-muted\">{{ \"PANEL.FONTSIZE_HELP\" | translate }}</small>\r\n                </div>\r\n\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontColor\">{{ \"PANEL.FONTCOLOR\" | translate }}:</label>\r\n                    <input  [detectChanges]=\"true\" class=\"form-control\" name=\"fontColorTxt\" [cpPosition]=\"'top'\" [(colorPicker)]=\"element.color\" [style.background]=\"element.color\"\r\n                    />\r\n                </div>\r\n\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontColor\">{{ \"PANEL.POSITIONX\" | translate }}:</label>\r\n                    <input class=\"form-control\" name=\"position_x\" [(ngModel)]=\"element.position.x\" />\r\n\r\n                    <label for=\"fontColor\">{{ \"PANEL.POSITIONY\" | translate }}:</label>\r\n                    <input class=\"form-control\" name=\"position_y\" [(ngModel)]=\"element.position.y\" />\r\n                </div>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -3330,7 +3200,7 @@ module.exports = "<div class=\"drag-panel\">\r\n    <ul class=\"nav nav-tabs\">\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".drag-panel {\n  width: 300px;\n  margin-right: 20px; }\n  .drag-panel .inner {\n    position: relative;\n    top: -1px;\n    height: 100%;\n    border: 1px solid #2a4563;\n    padding: 10px;\n    background: #264356;\n    background: linear-gradient(90deg, #264356 0%, #e3e4e5 99%); }\n  .drag-panel .inner h2 {\n      text-align: center;\n      margin: auto;\n      line-height: 15em; }\n  .nav-link.true {\n  background-color: #e3e4e5;\n  border-color: #2a4563; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL3BhbmVsL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcZWRpdG9yXFxwYW5lbFxccGFuZWwuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2VkaXRvci9wYW5lbC9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxzYXNzXFxfdmFyaWFibGVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBR0E7RUFLSSxZQUFZO0VBaUJaLGtCQUFrQixFQUFBO0VBdEJ0QjtJQVFRLGtCQUFrQjtJQUNsQixTQUFRO0lBQ1IsWUFBWTtJQUNaLHlCQ1hpQjtJRFlqQixhQUFhO0lBQ2IsbUJDWmtCO0lEYWxCLDJEQUF5RSxFQUFBO0VBZGpGO01BZ0JZLGtCQUFrQjtNQUNsQixZQUFXO01BQ1gsaUJBQWlCLEVBQUE7RUFPN0I7RUFDSSx5QkM1QmdCO0VENkJoQixxQkMzQnFCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9lZGl0b3IvcGFuZWwvcGFuZWwuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLi8uLi8uLi9zYXNzL192YXJpYWJsZXMnO1xyXG5cclxuXHJcbi5kcmFnLXBhbmVsXHJcbntcclxuICBcclxuICAgIFxyXG4gIFxyXG4gICAgd2lkdGg6IDMwMHB4O1xyXG4gICBcclxuICAgIC5pbm5lcntcclxuICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICAgICAgdG9wOi0xcHg7XHJcbiAgICAgICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkICRjb2xvci1kYXJrYmx1ZTI7XHJcbiAgICAgICAgcGFkZGluZzogMTBweDtcclxuICAgICAgICBiYWNrZ3JvdW5kOiAkY29sb3ItbGlnaHRibHVlMTtcclxuICAgICAgICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoOTBkZWcsICRjb2xvci1saWdodGJsdWUxIDAlLCAkY29sb3ItZ3JheSA5OSUpO1xyXG4gICAgICAgIGgye1xyXG4gICAgICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7ICAgICAgICAgICAgXHJcbiAgICAgICAgICAgIG1hcmdpbjphdXRvO1xyXG4gICAgICAgICAgICBsaW5lLWhlaWdodDogMTVlbTtcclxuXHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG4gICAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xyXG59XHJcblxyXG4ubmF2LWxpbmsudHJ1ZXtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICRjb2xvci1ncmF5O1xyXG4gICAgYm9yZGVyLWNvbG9yOiAkY29sb3ItZGFya2JsdWUyO1xyXG59IiwiXHJcbiRjb2xvci1ncmF5OiAjZTNlNGU1O1xyXG4kY29sb3ItZGFya2JsdWUxOiAjMTYyNDMzO1xyXG4kY29sb3ItZGFya2JsdWUyOiAjMmE0NTYzO1xyXG4kY29sb3ItbGlnaHRibHVlMTogIzI2NDM1NjtcclxuJGNvbG9yLWxpZ2h0Ymx1ZTI6ICMzYzczOTk7XHJcbiRjb2xvci1vcmFuZ2U6ICNmYzY2MDA7XHJcbiRjb2xvci1jeWFuOiAjMDBmZmY2O1xyXG4kY29sb3Itc2NyZWVuOiAjMDBjZmZmO1xyXG4kY29sb3Itc2NyZWVuLWdyb3VwOiAjMDBmZmY2O1xyXG4kY29sb3ItbGlicmFyeTogIzk2ZmYwMDtcclxuJGNvbG9yLXllbGxvdzogI2ZmZmYwMDtcclxuJGNvbG9yLXB1cnBsZTogI2ZmMDBkYjtcclxuXHJcbiBcclxuXHJcbiAiXX0= */"
+module.exports = ".drag-panel {\n  width: 300px;\n  margin-right: 20px; }\n  .drag-panel .inner {\n    position: relative;\n    top: -1px;\n    height: 100%;\n    border: 1px solid #2a4563;\n    padding: 10px;\n    background: #264356;\n    background: linear-gradient(90deg, #264356 0%, #e3e4e5 99%); }\n  .drag-panel .inner h2 {\n      text-align: center;\n      margin: auto;\n      line-height: 15em; }\n  .nav-link.true {\n  background-color: #e3e4e5;\n  border-color: #2a4563; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL3BhbmVsL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcZWRpdG9yXFxwYW5lbFxccGFuZWwuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2VkaXRvci9wYW5lbC9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxzYXNzXFxfdmFyaWFibGVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBR0E7RUFLSSxZQUFZO0VBaUJaLGtCQUFrQixFQUFBO0VBdEJ0QjtJQVFRLGtCQUFrQjtJQUNsQixTQUFRO0lBQ1IsWUFBWTtJQUNaLHlCQ1hpQjtJRFlqQixhQUFhO0lBQ2IsbUJDWmtCO0lEYWxCLDJEQUF5RSxFQUFBO0VBZGpGO01BZ0JZLGtCQUFrQjtNQUNsQixZQUFXO01BQ1gsaUJBQWlCLEVBQUE7RUFPN0I7RUFDSSx5QkM1QmdCO0VENkJoQixxQkMzQnFCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9lZGl0b3IvcGFuZWwvcGFuZWwuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLi8uLi8uLi9zYXNzL192YXJpYWJsZXMnO1xyXG5cclxuXHJcbi5kcmFnLXBhbmVsXHJcbntcclxuICBcclxuICAgIFxyXG4gIFxyXG4gICAgd2lkdGg6IDMwMHB4O1xyXG4gICBcclxuICAgIC5pbm5lcntcclxuICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICAgICAgdG9wOi0xcHg7XHJcbiAgICAgICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkICRjb2xvci1kYXJrYmx1ZTI7XHJcbiAgICAgICAgcGFkZGluZzogMTBweDtcclxuICAgICAgICBiYWNrZ3JvdW5kOiAkY29sb3ItbGlnaHRibHVlMTtcclxuICAgICAgICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoOTBkZWcsICRjb2xvci1saWdodGJsdWUxIDAlLCAkY29sb3ItZ3JheSA5OSUpO1xyXG4gICAgICAgIGgye1xyXG4gICAgICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7ICAgICAgICAgICAgXHJcbiAgICAgICAgICAgIG1hcmdpbjphdXRvO1xyXG4gICAgICAgICAgICBsaW5lLWhlaWdodDogMTVlbTtcclxuXHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG4gICAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xyXG59XHJcblxyXG4ubmF2LWxpbmsudHJ1ZXtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICRjb2xvci1ncmF5O1xyXG4gICAgYm9yZGVyLWNvbG9yOiAkY29sb3ItZGFya2JsdWUyO1xyXG59IiwiXHJcbiRjb2xvci1ncmF5OiAjZTNlNGU1O1xyXG4kY29sb3ItZGFya2JsdWUxOiAjMTYyNDMzO1xyXG4kY29sb3ItZGFya2JsdWUyOiAjMmE0NTYzO1xyXG4kY29sb3ItbGlnaHRibHVlMTogIzI2NDM1NjtcclxuJGNvbG9yLWxpZ2h0Ymx1ZTI6ICMzYzczOTk7XHJcbiRjb2xvci1vcmFuZ2U6ICNmYzY2MDA7XHJcbiRjb2xvci1jeWFuOiAjMDBmZmY2O1xyXG4kY29sb3Itc2NyZWVuOiAjMDBjZmZmO1xyXG4kY29sb3Itc2NyZWVuLWdyb3VwOiAjMDBmZmY2O1xyXG4kY29sb3ItbGlicmFyeTogIzk2ZmYwMDtcclxuJGNvbG9yLXllbGxvdzogI2ZmZmYwMDtcclxuJGNvbG9yLXB1cnBsZTogI2YzYjdlYjtcclxuJGNvbG9yLWdyZWVuOiAjOTZmZjAwO1xyXG4gXHJcblxyXG4gIl19 */"
 
 /***/ }),
 
@@ -3481,6 +3351,7 @@ var SelectionService = /** @class */ (function () {
     function SelectionService() {
         this.selection = [];
         this.elements = [];
+        this.selectElement = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     SelectionService.prototype.unselect = function () {
         var all = document.querySelectorAll('.element');
@@ -3496,7 +3367,10 @@ var SelectionService = /** @class */ (function () {
         }
         this.elements.forEach(function (item) { return item.selected = false; });
         elementItem.selected = true;
-        eventElement.currentTarget.className = eventElement.currentTarget.className + ' selected';
+        this.selectElement.emit(elementItem);
+        if (eventElement) {
+            eventElement.currentTarget.className = eventElement.currentTarget.className + ' selected';
+        }
     };
     SelectionService.prototype.load = function (document) {
         this.document = document;
@@ -3535,7 +3409,7 @@ var SelectionService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = " \n\n<div *ngIf=\"item\" style=\"position: relative;\">\n  <app-changes [item]=\"item\"></app-changes>\n  <app-slide-header title=\"NAVBAR.SLIDES\"   closeFn=\"true\" mode=\"inline\" [enableSave]='true' (save)=\"saveProxy($event)\"\n    iconClass=\"far fa-object-group\" className=\"library-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n  <div class=\"row pt20\">\n    <div class=\"col-3\">\n      <app-add (selected)=\"addElement($event)\"></app-add>\n      <app-panel [(element)]=\"selectedElement\" [editor]=\"editor\" (editorChanged)=\"setEditor($event)\"></app-panel>\n    </div>\n    <div class=\"col-9\">\n      <div class=\"row slide-editor\" id=\"worksapce\" style=\"direction: ltr;\">\n\n        <app-rulers></app-rulers><br />\n        <div class=\"editor-plate small\" [ngStyle]=\"{'background-color': item.bgColor }\">\n\n          <app-element *ngFor=\"let el of selectionService.elements\" (selected)=\"designerFocus($event,el)\" (removed)=\"removeBlock(el)\"\n            [element]=\"el\"></app-element>\n\n        </div>\n      </div>\n    </div>\n\n  </div>\n</div>\n<app-finder [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
+module.exports = " \n\n<div *ngIf=\"item\" style=\"position: relative;\">\n  <app-changes [item]=\"selectionService.elements\"></app-changes>\n  <app-slide-header [title]=\"'NAVBAR.SLIDES'\"   closeFn=\"true\" mode=\"inline\" [enableSave]='true' (save)=\"saveProxy($event)\"\n    iconClass=\"far fa-object-group\" className=\"library-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n  <div class=\"row pt20\">\n    <div class=\"col-3\">\n      <app-add (selected)=\"addElement($event)\"></app-add>\n      <app-panel [(element)]=\"selectedElement\" [editor]=\"editor\" (editorChanged)=\"setEditor($event)\"></app-panel>\n    </div>\n    <div class=\"col-9\">\n      <div class=\"row slide-editor\" id=\"worksapce\" style=\"direction: ltr;\">\n\n        <app-rulers></app-rulers><br />\n        <div class=\"editor-plate small\" [ngStyle]=\"{'background-color': item.bgColor }\">\n\n          <app-element *ngFor=\"let el of selectionService.elements\" (selected)=\"designerFocus($event,el)\" (removed)=\"removeBlock(el)\"\n            [element]=\"el\"></app-element>\n\n        </div>\n      </div>\n    </div>\n\n  </div>\n</div>\n<app-finder [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
 
 /***/ }),
 
@@ -3570,6 +3444,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _selection_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../selection.service */ "./src/app/editor/selection.service.ts");
 /* harmony import */ var _services_name_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../services/name.service */ "./src/app/services/name.service.ts");
 /* harmony import */ var _fonts_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../fonts.service */ "./src/app/editor/fonts.service.ts");
+/* harmony import */ var _services_dirty_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../services/dirty.service */ "./src/app/services/dirty.service.ts");
+
 
 
 
@@ -3581,8 +3457,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var SlideEditorComponent = /** @class */ (function (_super) {
     tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](SlideEditorComponent, _super);
-    function SlideEditorComponent(_ngZone, translateService, nameService, selectionService, fontService, router, route) {
-        var _this = _super.call(this, _ngZone, translateService) || this;
+    function SlideEditorComponent(_ngZone, translateService, nameService, selectionService, fontService, router, route, dirtyService) {
+        var _this = _super.call(this, _ngZone, translateService, dirtyService) || this;
         _this._ngZone = _ngZone;
         _this.translateService = translateService;
         _this.nameService = nameService;
@@ -3590,6 +3466,7 @@ var SlideEditorComponent = /** @class */ (function (_super) {
         _this.fontService = fontService;
         _this.router = router;
         _this.route = route;
+        _this.dirtyService = dirtyService;
         _this.tabs = [{ name: 'SLIDES.DESIGNER', selected: true }, { name: 'SLIDES.SOURCE', selected: false }];
         _this.finderActive = 'closing';
         _this.editor = {
@@ -3614,6 +3491,9 @@ var SlideEditorComponent = /** @class */ (function (_super) {
         };
         _this.DataController = _signnature_client__WEBPACK_IMPORTED_MODULE_4__["SlidesDataController"];
         _this.addToList.bind(_this);
+        _this.selectionService.selectElement.subscribe(function (element) {
+            _this.selectedElement = element;
+        });
         return _this;
     }
     SlideEditorComponent.prototype.setEditor = function (editor) {
@@ -3741,7 +3621,7 @@ var SlideEditorComponent = /** @class */ (function (_super) {
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_5__["TranslateService"], _services_name_service__WEBPACK_IMPORTED_MODULE_7__["NameService"],
             _selection_service__WEBPACK_IMPORTED_MODULE_6__["SelectionService"], _fonts_service__WEBPACK_IMPORTED_MODULE_8__["FontsService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _services_dirty_service__WEBPACK_IMPORTED_MODULE_9__["DirtyService"]])
     ], SlideEditorComponent);
     return SlideEditorComponent;
 }(_data_component__WEBPACK_IMPORTED_MODULE_3__["DataComponent"]));
@@ -3757,7 +3637,7 @@ var SlideEditorComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"slider-container-wide {{active}} shadow\">\n\n  <dialog open= {{active}}>\n    <app-slide-header  closeFn=\"true\" title=\"NAVBAR.FINDER\" className=\"lemon-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n    <div class=\"input-group pt50\">\n      <input type=\"text\" name=\"searchPhrase\" class=\"form-control\" />\n      <div class=\"input-group-prepend\">\n        <button class=\"btn btn-outline-secondary\" type=\"button\"> <i class=\"fas fa-search\"></i></button>\n      </div>\n    </div>\n    <ul class=\"nav nav-tabs\">\n      <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n        <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n      </li>\n    </ul>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias !=='slide'\">\n      <app-lobby [items]=\"filteredItems()\" mode=\"media-finder\" (selectItem)=\"selectItem($event)\" (deleteItem)=\"deleteItem($event)\"\n        (newItem)=\"newItem($event)\"></app-lobby>\n    </div>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias ==='slide'\">\n      <app-lobby [items]=\"slides\" mode=\"object-finder\" (selectItem)=\"selectItem($event)\" (deleteItem)=\"deleteItem($event)\"\n        (newItem)=\"newItem($event)\"></app-lobby>\n    </div>\n    <app-slide-footer className=\"lemon-cat\"></app-slide-footer>\n  </dialog>\n</div>\n"
+module.exports = "<div class=\"slider-container-wide {{active}} shadow\">\n\n  <dialog open= {{active}}>\n    <app-slide-header  closeFn=\"true\" title=\"NAVBAR.FINDER\" className=\"library-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n    <div class=\"input-group pt50\">\n      <input type=\"text\" name=\"searchPhrase\" class=\"form-control\" />\n      <div class=\"input-group-prepend\">\n        <button class=\"btn btn-outline-secondary\" type=\"button\"> <i class=\"fas fa-search\"></i></button>\n      </div>\n    </div>\n    <ul class=\"nav nav-tabs\">\n      <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n        <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n      </li>\n    </ul>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias !=='slide'\">\n      <app-lobby [items]=\"filteredItems()\" mode=\"media-finder\" (selectItem)=\"selectItem($event)\" (deleteItem)=\"deleteItem($event)\"\n        (newItem)=\"newItem($event)\"></app-lobby>\n    </div>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias ==='slide'\">\n      <app-lobby [items]=\"slides\" mode=\"object-finder\" (selectItem)=\"selectItem($event)\" (deleteItem)=\"deleteItem($event)\"\n        (newItem)=\"newItem($event)\"></app-lobby>\n    </div>\n    <app-slide-footer className=\"library-cat\"></app-slide-footer>\n  </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -3902,7 +3782,7 @@ var FinderComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-lobby [items]=\"items\" [iconClass]=\"'fas fa-font'\" [mode]=\"'object'\" (editItem)=\"editItem($event)\" (deleteItem)=\"deleteItem($event)\"\n  (newItem)=\"newItem()\"></app-lobby>\n<div class=\"slider-container {{displayModalNew}} shadow \">\n  <dialog open= {{displayModalNew}}>\n    <app-slide-header title=\"NAVBAR.FONTS\" closeFn=\"true\" iconClass=\"fas fa-images\" [enableSave]='true' (save)=\"saveProxy($event)\"\n      className=\"lemon-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n    <div class=\"pt50\"></div>\n    <div class=\"scroller\">\n      <form *ngIf=\"item\">\n        <div class=\"form-group\">\n          <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n          <input type=\"text\" name=\"libraryName\" class=\"form-control\" [(ngModel)]=\"item.Name\">\n          <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"embedCode\">{{ \"LIBRARY.EMBED\" | translate }}:</label>\n          <textarea id=\"embedCode\" name=\"embedCode\" class=\"form-control\" [(ngModel)]=\"item.Embed\"></textarea>\n          <small id=\"embedHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.EMBED_HELP\" | translate }}</small>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"libraryFile\">{{ \"LIBRARY.RESOURCE\" | translate }}</label>\n          <app-upload [item]=\"item\" (change)=\"change($event)\"></app-upload>\n        </div>\n      </form>\n    </div>\n    <app-slide-footer className=\"lemon-cat\"></app-slide-footer>\n  </dialog>\n</div>\n"
+module.exports = "<app-lobby [items]=\"items\" [iconClass]=\"'fas fa-font'\" [mode]=\"'object'\" (editItem)=\"editItem($event)\" (deleteItem)=\"deleteItem($event)\"\n  (newItem)=\"newItem()\"></app-lobby>\n<div class=\"slider-container {{displayModalNew}} shadow \">\n  <dialog open= {{displayModalNew}}>\n    <app-slide-header title=\"NAVBAR.FONTS\" closeFn=\"true\" iconClass=\"fas fa-images\" [enableSave]='true' (save)=\"saveProxy($event)\"\n      className=\"library-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n    <div class=\"pt50\"></div>\n    <div class=\"scroller\">\n      <form *ngIf=\"item\">\n        <div class=\"form-group\">\n          <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n          <input type=\"text\" name=\"libraryName\" class=\"form-control\" [(ngModel)]=\"item.Name\">\n          <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"embedCode\">{{ \"LIBRARY.EMBED\" | translate }}:</label>\n          <textarea id=\"embedCode\" name=\"embedCode\" class=\"form-control\" [(ngModel)]=\"item.Embed\"></textarea>\n          <small id=\"embedHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.EMBED_HELP\" | translate }}</small>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"libraryFile\">{{ \"LIBRARY.RESOURCE\" | translate }}</label>\n          <app-upload [item]=\"item\" (change)=\"change($event)\"></app-upload>\n        </div>\n      </form>\n    </div>\n    <app-slide-footer className=\"library-cat\"></app-slide-footer>\n  </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -3995,7 +3875,7 @@ var FontsComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-lobby *ngIf=\"items\" [items]=\"items\" mode=\"media\" (editItem)=\"editItem($event)\" (deleteItem)=\"deleteItem($event)\" (newItem)=\"newItem($event)\"></app-lobby>\n<div class=\"slider-container {{displayModalNew}} shadow \">\n  <dialog open= {{displayModalNew}}>\n    <app-slide-header title=\"NAVBAR.IMAGES\" iconClass=\"fas fa-images\" closeFn=\"true\" \n    [enableSave]='true' (save)=\"saveProxy($event)\"\n      className=\"lemon-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n    <div class=\"pt50\"></div>\n    <div class=\"scroller\">\n      <form *ngIf=\"item\">\n        <div class=\"form-group\">\n          <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n          <input type=\"text\" name=\"libraryName\" class=\"form-control\" [(ngModel)]=\"item.Name\">\n          <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n        </div>\n        <div class=\"form-group\">\n          <label for=\"libraryFile\">{{ \"LIBRARY.RESOURCE\" | translate }}</label>\n          <img *ngIf=\"item.thumb && !uploading\" [src]=\"item.thumb\" class=\"fancy-image\">\n          <p><a href=\"{{item.thumb}}\" target=\"_blank\" class=\"form-text text-muted\"><small>{{item.thumb}}</small></a></p>\n          <app-upload [item]=\"item\" (change)=\"change($event)\"></app-upload>\n          <small id=\" screenHelp \" class=\"form-text text-muted \">{{ \"LIBRARY.IMAGE_DESCRIPTION\" | translate }}</small>\n        </div>\n      </form>\n    </div>\n    <app-slide-footer className=\"lemon-cat\"></app-slide-footer>\n  </dialog>\n</div>\n"
+module.exports = "<app-lobby *ngIf=\"items\" [items]=\"items\" mode=\"media\" (editItem)=\"editItem($event)\" (deleteItem)=\"deleteItem($event)\" (newItem)=\"newItem($event)\"></app-lobby>\n<div class=\"slider-container {{displayModalNew}} shadow \">\n  <dialog open= {{displayModalNew}}>\n    <app-slide-header title=\"NAVBAR.IMAGES\" iconClass=\"fas fa-images\" closeFn=\"true\" \n    [enableSave]='true' (save)=\"saveProxy($event)\"\n      className=\"library-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n    <div class=\"pt50\"></div>\n    <div class=\"scroller\">\n      <form *ngIf=\"item\">\n        <div class=\"form-group\">\n          <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n          <input type=\"text\" name=\"libraryName\" class=\"form-control\" [(ngModel)]=\"item.Name\">\n          <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n        </div>\n        <div class=\"form-group\">\n          <label for=\"libraryFile\">{{ \"LIBRARY.RESOURCE\" | translate }}</label>\n          <img *ngIf=\"item.thumb && !uploading\" [src]=\"item.thumb\" class=\"fancy-image\">\n          <p><a href=\"{{item.thumb}}\" target=\"_blank\" class=\"form-text text-muted\"><small>{{item.thumb}}</small></a></p>\n          <app-upload [item]=\"item\" (change)=\"change($event)\"></app-upload>\n          <small id=\" screenHelp \" class=\"form-text text-muted \">{{ \"LIBRARY.IMAGE_DESCRIPTION\" | translate }}</small>\n        </div>\n      </form>\n    </div>\n    <app-slide-footer className=\"library-cat\"></app-slide-footer>\n  </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -4406,7 +4286,7 @@ var SlidesComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-lobby [items]=\"items\" mode=\"object\" (editItem)=\"editItem($event)\" (deleteItem)=\"deleteItem($event)\" (newItem)=\"newItem()\"></app-lobby>\n\n<div class=\"slider-container {{displayModalNew}} shadow \">\n  <dialog open= {{displayModalNew}}>\n    <app-slide-header title=\"NAVBAR.FONTS\" closeFn=\"true\" iconClass=\"fas fa-images\" [enableSave]='true' (save)=\"saveProxy($event)\"\n      className=\"lemon-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n    <div class=\"scroller\">\n      <form *ngIf=\"item\">\n        <div class=\"form-group\">\n          <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n          <input type=\"text\" name=\"libraryName\" class=\"form-control\" [(ngModel)]=\"item.Name\">\n          <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n        </div>\n        <div class=\"form-group\">\n          <label for=\"libraryFile\">{{ \"LIBRARY.RESOURCE\" | translate }}</label>\n          <app-upload [item]=\"item\"></app-upload>\n        </div>\n\n      </form>\n    </div>\n    <button *ngIf=\"item && item._id\" class=\"btn btn-primary\" (click)=\"saveLibrary()\">{{ \"LIBRARY.UPDATE\" | translate }}</button>\n    <button *ngIf=\"!item || !item._id\" class=\"btn btn-primary\" (click)=\"createLibrary()\">{{ \"LIBRARY.CREATE\" | translate }}</button>\n  </dialog>\n</div>\n"
+module.exports = "<app-lobby [items]=\"items\" mode=\"object\" (editItem)=\"editItem($event)\" (deleteItem)=\"deleteItem($event)\" (newItem)=\"newItem()\"></app-lobby>\n\n<div class=\"slider-container {{displayModalNew}} shadow \">\n  <dialog open= {{displayModalNew}}>\n    <app-slide-header title=\"NAVBAR.FONTS\" closeFn=\"true\" iconClass=\"fas fa-images\" [enableSave]='true' (save)=\"saveProxy($event)\"\n      className=\"library-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n    <div class=\"scroller\">\n      <form *ngIf=\"item\">\n        <div class=\"form-group\">\n          <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n          <input type=\"text\" name=\"libraryName\" class=\"form-control\" [(ngModel)]=\"item.Name\">\n          <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n        </div>\n        <div class=\"form-group\">\n          <label for=\"libraryFile\">{{ \"LIBRARY.RESOURCE\" | translate }}</label>\n          <app-upload [item]=\"item\"></app-upload>\n        </div>\n\n      </form>\n    </div>\n    <button *ngIf=\"item && item._id\" class=\"btn btn-primary\" (click)=\"saveLibrary()\">{{ \"LIBRARY.UPDATE\" | translate }}</button>\n    <button *ngIf=\"!item || !item._id\" class=\"btn btn-primary\" (click)=\"createLibrary()\">{{ \"LIBRARY.CREATE\" | translate }}</button>\n  </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -4683,7 +4563,7 @@ var UploadComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-lobby [items]=\"items\" mode=\"media\" (editItem)=\"editItem($event)\" (deleteItem)=\"deleteItem($event)\" (newItem)=\"newItem()\"></app-lobby>\n\n<div class=\"slider-container {{displayModalNew}} shadow \">\n  <dialog open= {{displayModalNew}}>\n    <app-slide-header title=\"NAVBAR.VIDEOS\" closeFn=\"true\" iconClass=\"fas fa-video\" \n    [enableSave]='true' (save)=\"saveProxy($event)\"\n    className=\"lemon-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n    <div class=\"pt50\"></div>\n    <div class=\"scroller\">\n      <form *ngIf=\"item\">\n        <div class=\"form-group\">\n          <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n          <input type=\"text\" name=\"libraryName\" class=\"form-control\"   [(ngModel)]=\"item.Name\">\n          <small id=\"nameHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n        </div>\n        <div class=\"form-group\">\n          <label for=\"embedCode\">{{ \"LIBRARY.EMBED\" | translate }}:</label>\n          <textarea id=\"embedCode\" name=\"embedCode\" class=\"form-control\" [(ngModel)]=\"item.Embed\"></textarea>\n          <small id=\"embedHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.EMBED_HELP\" | translate }}</small>\n        </div>\n      </form>\n    </div>\n       <app-slide-footer className=\"lemon-cat\"></app-slide-footer>\n\n  </dialog>\n</div>\n"
+module.exports = "<app-lobby [items]=\"items\" mode=\"media\" (editItem)=\"editItem($event)\" (deleteItem)=\"deleteItem($event)\" (newItem)=\"newItem()\"></app-lobby>\n\n<div class=\"slider-container {{displayModalNew}} shadow \">\n  <dialog open= {{displayModalNew}}>\n    <app-slide-header title=\"NAVBAR.VIDEOS\" closeFn=\"true\" iconClass=\"fas fa-video\" \n    [enableSave]='true' (save)=\"saveProxy($event)\"\n    className=\"library-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n    <div class=\"pt50\"></div>\n    <div class=\"scroller\">\n      <form *ngIf=\"item\">\n        <div class=\"form-group\">\n          <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n          <input type=\"text\" name=\"libraryName\" class=\"form-control\"   [(ngModel)]=\"item.Name\">\n          <small id=\"nameHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n        </div>\n        <div class=\"form-group\">\n          <label for=\"embedCode\">{{ \"LIBRARY.EMBED\" | translate }}:</label>\n          <textarea id=\"embedCode\" name=\"embedCode\" class=\"form-control\" [(ngModel)]=\"item.Embed\"></textarea>\n          <small id=\"embedHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.EMBED_HELP\" | translate }}</small>\n        </div>\n      </form>\n    </div>\n       <app-slide-footer className=\"library-cat\"></app-slide-footer>\n\n  </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -4777,7 +4657,7 @@ var VideosComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<dialog open style=\"position: relative;\" class=\"playlist\">\n  <ng-template #toolbar let-item=\"item\">\n    <div class=\"btn-group\" data-toggle=\"buttons\">\n      <button class=\"btn-tool btn-play\" (click)=\"preview()\"> <i class=\"fas fa-play\"></i></button>\n    </div>\n  </ng-template>\n\n\n  <app-slide-header title=\"NAVBAR.PLAYLISTS\" mode=\"inline\" [enableSave]='true' (save)=\"saveProxy()\" iconClass=\"fas fa-step-forward\"\n    className=\"purple-cat\" [closeFn]=\"true\" [toolbar]=\"toolbar\" (closed)=\"closeSlider()\"></app-slide-header>\n  <form *ngIf=\"item\" class=\"pad\">\n    <app-changes [item]=\"item\"></app-changes>\n\n    <app-playlist-player *ngIf=\"previewOn\" [playerPlan]=\"item\"></app-playlist-player>\n\n    <div [appAdaptHeight]=\"previewHeight\">\n      <div class=\"form-group\">\n        <label for=\"itemName\">{{ \"PLAYLISTS.NAME\" | translate }}:</label>\n        <input type=\"text\" name=\"itemName\" class=\"form-control\" id=\"itemName\" [(ngModel)]=\"item.Name\">\n        <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"PLAYLISTS.NAME_HELP\" | translate }}</small>\n      </div>\n      <ul class=\"nav nav-tabs\">\n        <li class=\"nav-item {{tab.class}}\" *ngFor=\"let tab of tabs\">\n          <a class=\"nav-link\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n        </li>\n      </ul>\n      <div *ngIf=\"tabs[0].selected\">\n\n\n        <div class=\"form-group\" class=\"sortable\">\n          <div class=\"shadow btn-long\" (click)=\"finder()\"><i class=\"fas fa-plus-circle\"></i> {{\"PLAYLISTS.ADDTOLIST\" | translate}}</div>\n\n          <div *ngIf=\"playlistMode==='normal'\" [class]=\"playlistMode\">\n\n            <div class=\"horizontal-scroller purple-cat\" dragula=\"DRAGULA_FACTS\" [(dragulaModel)]=\"item.list\" (dropModel)=\"drop($event)\"\n              style=\"direction: ltr;\">\n              <div *ngFor=\"let listitem of item.list; let i = index\" class=\"slot shadow\" [ngStyle]=\"{'left': (i)*260 + 'px', 'top':'20px'}\">\n                <app-lobby-item *ngIf=\"listitem\" [item]=\"listitem\"></app-lobby-item>\n                <ul class=\"sqr-toolbar btn-group direction\" role=\"group\">\n                  <li>\n                    <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"removeListItem(item);\"> <i class=\"fas fa-trash\"></i>\n                    </button>\n                  </li>\n                  <li>\n                    <input type=\"number\" [(ngModel)]=\"listitem.duration\" name=\"duration\">\n                  </li>\n                  <li>\n                    <select [(ngModel)]=\"listitem.transition\" name=\"transition\">\n                      <option *ngFor=\"let c of effects\" [ngValue]=\"c\">{{c}}</option>\n                    </select>\n                  </li>\n                </ul>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div *ngIf=\"tabs[1].selected\">\n        <div class=\"form-group shadow\">\n          <div class=\"btn-long\" (click)=\"schedule()\"><i class=\"fas fa-plus-circle\"></i> {{\"PLAYLISTS.ADDTIME\" | translate}}</div>\n          <div id=\"timeSlots\" *ngIf=\"editTime && selectedTimeEl\">\n            <div class=\"form-row\">\n              <div class=\"form-group col-md-6\">\n                <label for=\"itemName\">{{ \"PLAYLISTS.SCHEDULE\" | translate }}:</label>\n                <select [(ngModel)]=\"selectedTimeEl.timeslot\" name=\"timeSlotOptions\" [compareWith]=\"compareFnId\" class=\"form-control\">\n                  <option *ngFor=\"let c of timeSlotOptions\" [ngValue]=\"c\">{{c.name | translate}}</option>\n                </select>\n              </div>\n              <div class=\"form-group col-md-6\">\n                <label for=\"ScreenGroup\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n                <select [(ngModel)]=\"selectedTimeEl.screenGroup\" name=\"ScreenGroup\" [compareWith]=\"compareFn_id\" class=\"form-control\">\n                  <option *ngFor=\"let c of groups\" [ngValue]=\"c\">{{c.Name}}</option>\n                </select>\n              </div>\n              <button class=\"btn btn-primary\" (click)=\"addTimeSlot()\">{{ \"PLAYLISTS.SETTIME\" | translate}}</button>\n            </div>\n          </div>\n        </div>\n\n        <div class=\"container\">\n\n          <div *ngFor=\"let timeslotEl of item.TimeSlots\" class=\"sqr short shadow\">\n            <label>{{timeslotEl.timeslot.name | translate}}</label>\n            <small>{{timeslotEl.screenGroup.Name}}</small>\n            <ul class=\"sqr-toolbar\">\n              <li>\n                <button class=\"btn btn-md btn-danger\" (click)=\"deleteTimeslot(timeslotEl);\"> <i class=\"fas fa-trash\"></i>\n                </button>\n              </li>\n              <li>\n                <button class=\"btn btn-md btn-primary\" (click)=\"editTimeslot(timeslotEl);\"> <i class=\"fas fa-edit\"></i> </button>\n              </li>\n            </ul>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <hr />\n\n  </form>\n\n  <app-slide-footer className=\"purple-cat\"></app-slide-footer>\n</dialog>\n\n\n\n\n\n<app-finder [types]=\"['image','video','slide']\" [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
+module.exports = "<dialog open style=\"position: relative;\" class=\"playlist\">\n  <ng-template #toolbar let-item=\"item\">\n    <div class=\"btn-group\" data-toggle=\"buttons\">\n      <button class=\"btn-tool btn-play\" (click)=\"preview()\"> <i class=\"fas fa-play\"></i></button>\n    </div>\n  </ng-template>\n\n\n  <app-slide-header title=\"NAVBAR.PLAYLISTS\" mode=\"inline\" [enableSave]='true' (save)=\"saveProxy()\" iconClass=\"fas fa-step-forward\"\n    className=\"playlist-cat\" [closeFn]=\"true\" [toolbar]=\"toolbar\" (closed)=\"closeSlider()\"></app-slide-header>\n  <form *ngIf=\"item\" class=\"pad\">\n    <app-changes [item]=\"item\"></app-changes>\n\n    <app-playlist-player *ngIf=\"previewOn\" [playerPlan]=\"item\"></app-playlist-player>\n    <div [appAdaptHeight]=\"previewHeight\">\n      <div class=\"form-group\">\n        <label for=\"itemName\">{{ \"PLAYLISTS.NAME\" | translate }}:</label>\n        <input type=\"text\" name=\"itemName\" class=\"form-control\" id=\"itemName\" [(ngModel)]=\"item.Name\">\n        <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"PLAYLISTS.NAME_HELP\" | translate }}</small>\n      </div>\n      <ul class=\"nav nav-tabs\">\n        <li class=\"nav-item {{tab.class}}\" *ngFor=\"let tab of tabs\">\n          <a class=\"nav-link\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n        </li>\n      </ul>\n      <div *ngIf=\"tabs[0].selected\">\n\n\n        <div class=\"form-group\" class=\"sortable\">\n          <div class=\"shadow btn-long\" (click)=\"finder()\"><i class=\"fas fa-plus-circle\"></i> {{\"PLAYLISTS.ADDTOLIST\" | translate}}</div>\n\n          <div *ngIf=\"playlistMode==='normal'\" [class]=\"playlistMode\">\n\n            <div class=\"horizontal-scroller playlist-cat\" dragula=\"DRAGULA_FACTS\" [(dragulaModel)]=\"item.list\" (dropModel)=\"drop($event)\"\n              style=\"direction: ltr;\">\n              <div *ngFor=\"let listitem of item.list; let i = index\" class=\"slot shadow\" [ngStyle]=\"{'left': (i)*260 + 'px', 'top':'20px'}\">\n                <app-lobby-item *ngIf=\"listitem\" [item]=\"listitem\"></app-lobby-item>\n                <ul class=\"sqr-toolbar btn-group direction\" role=\"group\">\n                  <li>\n                    <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"removeListItem(item);\"> <i class=\"fas fa-trash\"></i>\n                    </button>\n                  </li>\n                  <li>\n                    <input type=\"number\" [detectChanges]=\"true\" [(ngModel)]=\"listitem.duration\" name=\"duration\">\n                  </li>\n                  <li>\n                    <select [detectChanges]=\"true\" [(ngModel)]=\"listitem.transition\" name=\"transition\">\n                      <option *ngFor=\"let c of effects\" [ngValue]=\"c\">{{c}}</option>\n                    </select>\n                  </li>\n                </ul>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div *ngIf=\"tabs[1].selected\">\n        <div class=\"form-group shadow\">\n          <div class=\"btn-long\" (click)=\"schedule()\"><i class=\"fas fa-plus-circle\"></i> {{\"PLAYLISTS.ADDTIME\" | translate}}</div>\n          <div id=\"timeSlots\" *ngIf=\"editTime && selectedTimeEl\">\n            <div class=\"form-row\">\n              <div class=\"form-group col-md-6\">\n                <label for=\"itemName\">{{ \"PLAYLISTS.SCHEDULE\" | translate }}:</label>\n                <select [(ngModel)]=\"selectedTimeEl.timeslot\" name=\"timeSlotOptions\" [compareWith]=\"compareFnId\" class=\"form-control\">\n                  <option *ngFor=\"let c of timeSlotOptions\" [ngValue]=\"c\">{{c.name | translate}}</option>\n                </select>\n              </div>\n              <div class=\"form-group col-md-6\">\n                <label for=\"ScreenGroup\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n                <select [(ngModel)]=\"selectedTimeEl.screenGroup\" name=\"ScreenGroup\" [compareWith]=\"compareFn_id\" class=\"form-control\">\n                  <option *ngFor=\"let c of groups\" [ngValue]=\"c\">{{c.Name}}</option>\n                </select>\n              </div>\n              <button class=\"btn btn-primary\" (click)=\"addTimeSlot()\">{{ \"PLAYLISTS.SETTIME\" | translate}}</button>\n            </div>\n          </div>\n        </div>\n\n        <div class=\"container\">\n\n          <div *ngFor=\"let timeslotEl of item.TimeSlots\" class=\"sqr short shadow\">\n            <label>{{timeslotEl.timeslot.name | translate}}</label>\n            <small>{{timeslotEl.screenGroup.Name}}</small>\n            <ul class=\"sqr-toolbar\">\n              <li>\n                <button class=\"btn btn-md btn-danger\" (click)=\"deleteTimeslot(timeslotEl);\"> <i class=\"fas fa-trash\"></i>\n                </button>\n              </li>\n              <li>\n                <button class=\"btn btn-md btn-primary\" (click)=\"editTimeslot(timeslotEl);\"> <i class=\"fas fa-edit\"></i> </button>\n              </li>\n            </ul>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <hr />\n\n  </form>\n\n  <app-slide-footer className=\"playlist-cat\"></app-slide-footer>\n</dialog>\n\n\n\n\n\n<app-finder [types]=\"['image','video','slide']\" [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
 
 /***/ }),
 
@@ -4838,7 +4718,7 @@ var PlaylistComponent = /** @class */ (function (_super) {
             width: '100%',
             height: '400px',
         };
-        _this.tabs = [{ name: 'PLAYLISTS.LIST', selected: true, class: 'purple-cat' }, { name: 'PLAYLISTS.TIME', selected: false }];
+        _this.tabs = [{ name: 'PLAYLISTS.LIST', selected: true, class: 'playlist-cat' }, { name: 'PLAYLISTS.TIME', selected: false }];
         _this.timeSlotOptions = [{ id: 'ALL', name: 'TIMES.ALL' }, { id: '8TO8', name: 'TIMES.8TO8' }];
         _this.displayDrawer = 'closing';
         _this.finderActive = 'closing';
@@ -4861,7 +4741,7 @@ var PlaylistComponent = /** @class */ (function (_super) {
     PlaylistComponent.prototype.tabSelect = function (tab) {
         this.tabs.forEach(function (tabItem) { tabItem.selected = false; tabItem.class = ''; });
         tab.selected = true;
-        tab.class = 'purple-cat';
+        tab.class = 'playlist-cat';
     };
     PlaylistComponent.prototype.compareFnId = function (a, b) {
         if (b) {
@@ -4872,13 +4752,6 @@ var PlaylistComponent = /** @class */ (function (_super) {
         if (b) {
             return a._id === b._id;
         }
-    };
-    PlaylistComponent.prototype.beforeUpdate = function (item) {
-        item.list.forEach(function (li) {
-            delete li.template;
-        });
-    };
-    PlaylistComponent.prototype.afterUpdate = function (item) {
     };
     PlaylistComponent.prototype.drop = function (event) {
     };
@@ -4961,27 +4834,6 @@ var PlaylistComponent = /** @class */ (function (_super) {
                 return [2 /*return*/];
             });
         }); });
-    };
-    PlaylistComponent.prototype.onMoving = function (event) {
-        var boxWidth = 150;
-        var boxHeight = 60;
-        // if (this.positionA.x < this.positionB.x &&
-        //   event.x + boxWidth >= this.positionB.x + boxWidth / 2 &&
-        //   event.x <= this.positionB.x + boxWidth &&
-        //   event.y + boxHeight >= this.positionA.y &&
-        //   event.y <= this.positionA.y + boxHeight) {
-        //   const tmp = this.positionB;
-        //   this.positionB = this.positionA;
-        //   this.positionA = tmp;
-        // } else if (this.positionA.x >= this.positionB.x &&
-        //   event.x <= this.positionB.x + boxWidth / 2 &&
-        //   event.x + boxWidth >= this.positionB.x &&
-        //   event.y + boxHeight >= this.positionA.y &&
-        //   event.y <= this.positionA.y + boxHeight) {
-        //   const tmp = this.positionB;
-        //   this.positionB = this.positionA;
-        //   this.positionA = tmp;
-        // }
     };
     PlaylistComponent.prototype.editListItem = function () {
     };
@@ -5081,6 +4933,11 @@ var PlaylistPlayerComponent = /** @class */ (function () {
     }
     PlaylistPlayerComponent.prototype.redraw = function (event) {
     };
+    PlaylistPlayerComponent.prototype.compareFn = function (a, b) {
+        if (b) {
+            return a.width === b.width && a.height === b.height;
+        }
+    };
     PlaylistPlayerComponent.prototype.paint = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var width, height, element, ctx;
@@ -5138,7 +4995,7 @@ var PlaylistPlayerComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-slide-header title=\"NAVBAR.PLAYLISTS\" mode=\"inline\"  iconClass=\"fas fa-step-forward\"\nclassName=\"purple-cat\"></app-slide-header>\n\n\n\n<app-lobby [items]=\"items\" mode=\"object\" model=\"playlist\" (editItem)=\"editItem($event)\" (deleteItem)=\"deleteItem($event)\" \n(newItem)=\"newItem()\"></app-lobby>\n\n \n\n\n "
+module.exports = "<app-slide-header title=\"NAVBAR.PLAYLISTS\" mode=\"inline\"  iconClass=\"fas fa-step-forward\"\nclassName=\"playlist-cat\"></app-slide-header>\n\n\n\n<app-lobby [items]=\"items\" mode=\"object\" model=\"playlist\" (editItem)=\"editItem($event)\" (deleteItem)=\"deleteItem($event)\" \n(newItem)=\"newItem()\"></app-lobby>\n\n \n\n\n "
 
 /***/ }),
 
@@ -5274,7 +5131,8 @@ var PlaylistsModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"]
             ],
             entryComponents: [_playlist_playlists_component__WEBPACK_IMPORTED_MODULE_4__["PlaylistsComponent"]],
-            declarations: [_playlist_playlists_component__WEBPACK_IMPORTED_MODULE_4__["PlaylistsComponent"], _schedules_schedules_component__WEBPACK_IMPORTED_MODULE_5__["SchedulesComponent"], _playlist_item_playlist_component__WEBPACK_IMPORTED_MODULE_6__["PlaylistComponent"], _playlist_player_playlist_player_component__WEBPACK_IMPORTED_MODULE_7__["PlaylistPlayerComponent"]]
+            declarations: [_playlist_playlists_component__WEBPACK_IMPORTED_MODULE_4__["PlaylistsComponent"], _schedules_schedules_component__WEBPACK_IMPORTED_MODULE_5__["SchedulesComponent"],
+                _playlist_item_playlist_component__WEBPACK_IMPORTED_MODULE_6__["PlaylistComponent"], _playlist_player_playlist_player_component__WEBPACK_IMPORTED_MODULE_7__["PlaylistPlayerComponent"]]
         })
     ], PlaylistsModule);
     return PlaylistsModule;
@@ -5594,13 +5452,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DirtyService", function() { return DirtyService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
-
 
 
 var DirtyService = /** @class */ (function () {
-    function DirtyService(translate) {
-        this.translate = translate;
+    function DirtyService() {
+        this.detect = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.dirty = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.saving = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
@@ -5620,9 +5476,14 @@ var DirtyService = /** @class */ (function () {
         this._saving = false;
         this.saving.emit(false);
     };
+    DirtyService.prototype.detectChanges = function () {
+        if (!this._dirty) {
+            this.detect.emit();
+        }
+    };
     DirtyService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], DirtyService);
     return DirtyService;
 }());
@@ -5885,62 +5746,6 @@ var UserService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/settings/settings.component.css":
-/*!*************************************************!*\
-  !*** ./src/app/settings/settings.component.css ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NldHRpbmdzL3NldHRpbmdzLmNvbXBvbmVudC5jc3MifQ== */"
-
-/***/ }),
-
-/***/ "./src/app/settings/settings.component.html":
-/*!**************************************************!*\
-  !*** ./src/app/settings/settings.component.html ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  settings works!\n</p>\n"
-
-/***/ }),
-
-/***/ "./src/app/settings/settings.component.ts":
-/*!************************************************!*\
-  !*** ./src/app/settings/settings.component.ts ***!
-  \************************************************/
-/*! exports provided: SettingsComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SettingsComponent", function() { return SettingsComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var SettingsComponent = /** @class */ (function () {
-    function SettingsComponent() {
-    }
-    SettingsComponent.prototype.ngOnInit = function () {
-    };
-    SettingsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-settings',
-            template: __webpack_require__(/*! ./settings.component.html */ "./src/app/settings/settings.component.html"),
-            styles: [__webpack_require__(/*! ./settings.component.css */ "./src/app/settings/settings.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-    ], SettingsComponent);
-    return SettingsComponent;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/shared.module.ts":
 /*!**********************************!*\
   !*** ./src/app/shared.module.ts ***!
@@ -5965,20 +5770,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./library/finder/finder.component */ "./src/app/library/finder/finder.component.ts");
 /* harmony import */ var _common_slide_header_slide_header_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./common/slide-header/slide-header.component */ "./src/app/common/slide-header/slide-header.component.ts");
 /* harmony import */ var _common_slide_footer_slide_footer_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./common/slide-footer/slide-footer.component */ "./src/app/common/slide-footer/slide-footer.component.ts");
-/* harmony import */ var _common_bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./common/bread-crumbs/bread-crumbs.component */ "./src/app/common/bread-crumbs/bread-crumbs.component.ts");
-/* harmony import */ var _common_lobby_lobby_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./common/lobby/lobby.component */ "./src/app/common/lobby/lobby.component.ts");
-/* harmony import */ var _directives_adapt_height__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./directives/adapt-height */ "./src/app/directives/adapt-height.ts");
-/* harmony import */ var ng2_dragula__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ng2-dragula */ "./node_modules/ng2-dragula/dist/fesm5/ng2-dragula.js");
-/* harmony import */ var ngx_color_picker__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ngx-color-picker */ "./node_modules/ngx-color-picker/dist/ngx-color-picker.es5.js");
-/* harmony import */ var _common_rulers_rulers_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./common/rulers/rulers.component */ "./src/app/common/rulers/rulers.component.ts");
-/* harmony import */ var _editor_canvas_canvas_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./editor/canvas/canvas.component */ "./src/app/editor/canvas/canvas.component.ts");
-/* harmony import */ var _player_slide_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../player/slide.service */ "./src/player/slide.service.ts");
-/* harmony import */ var _directives_stop_prop__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./directives/stop-prop */ "./src/app/directives/stop-prop.ts");
-/* harmony import */ var _common_lobby_item_lobby_item_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./common/lobby.item/lobby.item.component */ "./src/app/common/lobby.item/lobby.item.component.ts");
-/* harmony import */ var _services_dirty_service__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./services/dirty.service */ "./src/app/services/dirty.service.ts");
-/* harmony import */ var _directives_adapt_width__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./directives/adapt-width */ "./src/app/directives/adapt-width.ts");
-/* harmony import */ var _services_responsive_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./services/responsive.service */ "./src/app/services/responsive.service.ts");
-/* harmony import */ var _common_change_change_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./common/change/change.component */ "./src/app/common/change/change.component.ts");
+/* harmony import */ var _common_lobby_lobby_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./common/lobby/lobby.component */ "./src/app/common/lobby/lobby.component.ts");
+/* harmony import */ var _directives_adapt_height__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./directives/adapt-height */ "./src/app/directives/adapt-height.ts");
+/* harmony import */ var ng2_dragula__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ng2-dragula */ "./node_modules/ng2-dragula/dist/fesm5/ng2-dragula.js");
+/* harmony import */ var ngx_color_picker__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ngx-color-picker */ "./node_modules/ngx-color-picker/dist/ngx-color-picker.es5.js");
+/* harmony import */ var _common_rulers_rulers_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./common/rulers/rulers.component */ "./src/app/common/rulers/rulers.component.ts");
+/* harmony import */ var _editor_canvas_canvas_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./editor/canvas/canvas.component */ "./src/app/editor/canvas/canvas.component.ts");
+/* harmony import */ var _player_slide_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../player/slide.service */ "./src/player/slide.service.ts");
+/* harmony import */ var _directives_stop_prop__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./directives/stop-prop */ "./src/app/directives/stop-prop.ts");
+/* harmony import */ var _common_lobby_item_lobby_item_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./common/lobby.item/lobby.item.component */ "./src/app/common/lobby.item/lobby.item.component.ts");
+/* harmony import */ var _services_dirty_service__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./services/dirty.service */ "./src/app/services/dirty.service.ts");
+/* harmony import */ var _directives_adapt_width__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./directives/adapt-width */ "./src/app/directives/adapt-width.ts");
+/* harmony import */ var _services_responsive_service__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./services/responsive.service */ "./src/app/services/responsive.service.ts");
+/* harmony import */ var _common_change_change_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./common/change/change.component */ "./src/app/common/change/change.component.ts");
+/* harmony import */ var _directives_change_directive__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./directives/change.directive */ "./src/app/directives/change.directive.ts");
 
 
 
@@ -6025,44 +5830,44 @@ var SharedModule = /** @class */ (function () {
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_10__["CommonModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"],
-                ng2_dragula__WEBPACK_IMPORTED_MODULE_17__["DragulaModule"],
-                ngx_color_picker__WEBPACK_IMPORTED_MODULE_18__["ColorPickerModule"],
+                ng2_dragula__WEBPACK_IMPORTED_MODULE_16__["DragulaModule"],
+                ngx_color_picker__WEBPACK_IMPORTED_MODULE_17__["ColorPickerModule"],
                 _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateModule"].forChild(),
                 ngx_file_drop__WEBPACK_IMPORTED_MODULE_6__["FileDropModule"],
                 ngx_bootstrap__WEBPACK_IMPORTED_MODULE_3__["BsDropdownModule"].forRoot(),
                 angular2_draggable__WEBPACK_IMPORTED_MODULE_7__["AngularDraggableModule"]
             ],
-            declarations: [_editor_canvas_canvas_component__WEBPACK_IMPORTED_MODULE_20__["CanvasComponent"],
-                _directives_adapt_height__WEBPACK_IMPORTED_MODULE_16__["AdaptHeightDirective"],
-                _directives_adapt_width__WEBPACK_IMPORTED_MODULE_25__["AdaptWidthDirective"],
-                _directives_stop_prop__WEBPACK_IMPORTED_MODULE_22__["ClickStopPropagationDirective"],
-                _common_change_change_component__WEBPACK_IMPORTED_MODULE_27__["ChangeComponent"],
+            declarations: [_editor_canvas_canvas_component__WEBPACK_IMPORTED_MODULE_19__["CanvasComponent"],
+                _directives_adapt_height__WEBPACK_IMPORTED_MODULE_15__["AdaptHeightDirective"],
+                _directives_adapt_width__WEBPACK_IMPORTED_MODULE_24__["AdaptWidthDirective"],
+                _directives_stop_prop__WEBPACK_IMPORTED_MODULE_21__["ClickStopPropagationDirective"],
+                _directives_change_directive__WEBPACK_IMPORTED_MODULE_27__["DetectChangesDirective"],
+                _common_change_change_component__WEBPACK_IMPORTED_MODULE_26__["ChangeComponent"],
                 _common_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_8__["LanguageBarComponent"],
                 _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_11__["FinderComponent"],
-                _common_rulers_rulers_component__WEBPACK_IMPORTED_MODULE_19__["RulersComponent"],
+                _common_rulers_rulers_component__WEBPACK_IMPORTED_MODULE_18__["RulersComponent"],
                 _common_slide_header_slide_header_component__WEBPACK_IMPORTED_MODULE_12__["SlideHeaderComponent"],
                 _common_slide_footer_slide_footer_component__WEBPACK_IMPORTED_MODULE_13__["SlideFooterComponent"],
-                _common_bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_14__["BreadCrumbsComponent"],
-                _common_lobby_lobby_component__WEBPACK_IMPORTED_MODULE_15__["LobbyComponent"],
-                _common_lobby_item_lobby_item_component__WEBPACK_IMPORTED_MODULE_23__["LobbyItemComponent"]],
-            providers: [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"], _services_language_dictionary_service__WEBPACK_IMPORTED_MODULE_4__["DictionaryService"], _services_name_service__WEBPACK_IMPORTED_MODULE_5__["NameService"], _player_slide_service__WEBPACK_IMPORTED_MODULE_21__["SlideService"], _services_dirty_service__WEBPACK_IMPORTED_MODULE_24__["DirtyService"], _services_responsive_service__WEBPACK_IMPORTED_MODULE_26__["ResponsiveService"]],
-            exports: [_editor_canvas_canvas_component__WEBPACK_IMPORTED_MODULE_20__["CanvasComponent"],
+                _common_lobby_lobby_component__WEBPACK_IMPORTED_MODULE_14__["LobbyComponent"],
+                _common_lobby_item_lobby_item_component__WEBPACK_IMPORTED_MODULE_22__["LobbyItemComponent"]],
+            providers: [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"], _services_language_dictionary_service__WEBPACK_IMPORTED_MODULE_4__["DictionaryService"], _services_name_service__WEBPACK_IMPORTED_MODULE_5__["NameService"], _player_slide_service__WEBPACK_IMPORTED_MODULE_20__["SlideService"], _services_dirty_service__WEBPACK_IMPORTED_MODULE_23__["DirtyService"], _services_responsive_service__WEBPACK_IMPORTED_MODULE_25__["ResponsiveService"]],
+            exports: [_editor_canvas_canvas_component__WEBPACK_IMPORTED_MODULE_19__["CanvasComponent"],
                 _common_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_8__["LanguageBarComponent"],
-                _common_lobby_lobby_component__WEBPACK_IMPORTED_MODULE_15__["LobbyComponent"],
-                _common_lobby_item_lobby_item_component__WEBPACK_IMPORTED_MODULE_23__["LobbyItemComponent"],
+                _common_lobby_lobby_component__WEBPACK_IMPORTED_MODULE_14__["LobbyComponent"],
+                _common_lobby_item_lobby_item_component__WEBPACK_IMPORTED_MODULE_22__["LobbyItemComponent"],
                 _library_finder_finder_component__WEBPACK_IMPORTED_MODULE_11__["FinderComponent"],
                 _common_slide_header_slide_header_component__WEBPACK_IMPORTED_MODULE_12__["SlideHeaderComponent"],
-                _common_rulers_rulers_component__WEBPACK_IMPORTED_MODULE_19__["RulersComponent"],
+                _common_rulers_rulers_component__WEBPACK_IMPORTED_MODULE_18__["RulersComponent"],
                 _common_slide_footer_slide_footer_component__WEBPACK_IMPORTED_MODULE_13__["SlideFooterComponent"],
-                _common_bread_crumbs_bread_crumbs_component__WEBPACK_IMPORTED_MODULE_14__["BreadCrumbsComponent"],
                 _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateModule"],
                 ngx_file_drop__WEBPACK_IMPORTED_MODULE_6__["FileDropModule"],
-                ngx_color_picker__WEBPACK_IMPORTED_MODULE_18__["ColorPickerModule"],
-                _directives_adapt_height__WEBPACK_IMPORTED_MODULE_16__["AdaptHeightDirective"],
-                _directives_adapt_width__WEBPACK_IMPORTED_MODULE_25__["AdaptWidthDirective"],
+                ngx_color_picker__WEBPACK_IMPORTED_MODULE_17__["ColorPickerModule"],
+                _directives_adapt_height__WEBPACK_IMPORTED_MODULE_15__["AdaptHeightDirective"],
+                _directives_adapt_width__WEBPACK_IMPORTED_MODULE_24__["AdaptWidthDirective"],
                 angular2_draggable__WEBPACK_IMPORTED_MODULE_7__["AngularDraggableModule"],
-                _common_change_change_component__WEBPACK_IMPORTED_MODULE_27__["ChangeComponent"],
-                ng2_dragula__WEBPACK_IMPORTED_MODULE_17__["DragulaDirective"]],
+                _directives_change_directive__WEBPACK_IMPORTED_MODULE_27__["DetectChangesDirective"],
+                _common_change_change_component__WEBPACK_IMPORTED_MODULE_26__["ChangeComponent"],
+                ng2_dragula__WEBPACK_IMPORTED_MODULE_16__["DragulaDirective"]],
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"]])
     ], SharedModule);
@@ -6492,6 +6297,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./login/login.component */ "./src/app/user/login/login.component.ts");
 /* harmony import */ var _signup_signup_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./signup/signup.component */ "./src/app/user/signup/signup.component.ts");
 /* harmony import */ var _user_info_user_info_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./user-info/user-info.component */ "./src/app/user/user-info/user-info.component.ts");
+/* harmony import */ var _services_user_context_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../services/user.context.service */ "./src/app/services/user.context.service.ts");
+/* harmony import */ var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @auth0/angular-jwt */ "./node_modules/@auth0/angular-jwt/index.js");
+
+
 
 
 
@@ -6513,10 +6322,12 @@ var UserModule = /** @class */ (function () {
             imports: [
                 _shared_module__WEBPACK_IMPORTED_MODULE_3__["SharedModule"],
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"]
+                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
+                _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_9__["JwtModule"]
             ],
             declarations: [_user_info_user_info_component__WEBPACK_IMPORTED_MODULE_7__["UserInfoComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_5__["LoginComponent"], _signup_signup_component__WEBPACK_IMPORTED_MODULE_6__["SignupComponent"]],
             entryComponents: [_login_login_component__WEBPACK_IMPORTED_MODULE_5__["LoginComponent"]],
+            providers: [_services_user_context_service__WEBPACK_IMPORTED_MODULE_8__["UserService"], _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_9__["JwtHelperService"]],
             exports: []
         })
     ], UserModule);
@@ -6821,13 +6632,16 @@ var SlideService = /** @class */ (function () {
         }
         this.list = this.playerPlan[0].list;
         prerender(this.list[this.itemIndex]);
+        debugger;
         var frameDuration = (this.list[this.itemIndex].duration) ? this.list[this.itemIndex].duration * 1000 : 5000;
         this.itemIndex++;
+        console.log('frame duration', frameDuration);
         if (mode !== 'single') {
             setInterval(function () {
                 if (_this.itemIndex >= _this.list.length) {
                     _this.itemIndex = 0;
                 }
+                console.log('frame duration', frameDuration);
                 prerender(_this.list[_this.itemIndex]);
                 _this.itemIndex++;
             }, frameDuration);
