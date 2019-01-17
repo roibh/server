@@ -6632,7 +6632,6 @@ var SlideService = /** @class */ (function () {
         }
         this.list = this.playerPlan[0].list;
         prerender(this.list[this.itemIndex]);
-        debugger;
         var frameDuration = (this.list[this.itemIndex].duration) ? this.list[this.itemIndex].duration * 1000 : 5000;
         this.itemIndex++;
         console.log('frame duration', frameDuration);
