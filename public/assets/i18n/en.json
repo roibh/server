@@ -95,17 +95,18 @@
     "ALL": "All the time"
   },
   "PANEL": {
+    "SLIDE_NAME":"Slide name",
     "FONTNAME": "Font family",
-    "FONTNAME_HELP": "ניתן לבחור גופנים מספריית גוגל",
-    "FONTSIZE": "גודל גופן",
-    "FONTSIZE_HELP": "הגודל משנה",
-    "FONTCOLOR": "צבע טקסט",
-    "POSITIONX": "מיקום X",
-    "POSITIONY": "מיקום Y",
-    "SELECT_ELEMENT": "אין בחירה",
+    "FONTNAME_HELP": "Use any font from the google library",
+    "FONTSIZE": "Font size",
+    "FONTSIZE_HELP": "Size matters",
+    "FONTCOLOR": "Font color",
+    "POSITIONX": "X position",
+    "POSITIONY": "Y position",
+    "SELECT_ELEMENT": "Select an element",
     "GENERAL": "General",
     "ELEMENT":"Selection",
-    "FORE_COLOR": "Foer color",
+    "FORE_COLOR": "Fore color",
     "BACK_COLOR":"Back color"
   }
 }
