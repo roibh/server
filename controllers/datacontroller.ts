@@ -1,6 +1,6 @@
-import { MethodConfigBase, Method, Param, MethodResult, Body, SecurityContext, MethodError } from '@methodus/server';
+import { MethodConfigBase, Method, Param, MethodResult, Body, SecurityContext, MethodError, Query } from '@methodus/server';
 import { Verbs } from '@methodus/server/src/rest';
-import { Query as DataQuery } from '@methodus/data';
+import { Query as DataQuery, ObjectId, Odm } from '@methodus/data';
 
 @MethodConfigBase('DataController')
 export class DataController {
@@ -10,6 +10,18 @@ export class DataController {
         const repo = (this as any).repository;
         const item = await repo.get(id);
         return new MethodResult(item);
+    }
+
+    @Method(Verbs.Get, '/ids/:ids')
+    public static async getSet(@Param('ids') ids: string, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
+        // extract repository
+        const repo = (this as any).repository;
+        const queryX = new DataQuery(repo.odm.collectionName);
+        const idsArr = ids.split(',').map((item) => Odm.applyObjectID(item));
+        queryX.in('_id', idsArr);
+        //.filter({ user_id: securityContext._id });
+        const results = await queryX.run();
+        return new MethodResult(results);
     }
 
     @Method(Verbs.Post, '/insert')

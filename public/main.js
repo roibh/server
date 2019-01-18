@@ -4723,6 +4723,7 @@ var PlaylistComponent = /** @class */ (function (_super) {
         _this.displayDrawer = 'closing';
         _this.finderActive = 'closing';
         _this.previewHeight = 100;
+        _this.freshSlides = {};
         _this.addToList = function (resource) {
             if (!_this.item.list) {
                 _this.item.list = [];
@@ -4773,7 +4774,8 @@ var PlaylistComponent = /** @class */ (function (_super) {
                 switch (_a.label) {
                     case 0:
                         this.route.params.subscribe(function (data) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
-                            var _a;
+                            var _a, idsArr, set, index;
+                            var _this = this;
                             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
                                 switch (_b.label) {
                                     case 0:
@@ -4786,7 +4788,21 @@ var PlaylistComponent = /** @class */ (function (_super) {
                                     case 2:
                                         this.item = { list: [] };
                                         _b.label = 3;
-                                    case 3: return [2 /*return*/];
+                                    case 3: return [4 /*yield*/, this.item.list.map(function (item) { return item._id; })];
+                                    case 4:
+                                        idsArr = _b.sent();
+                                        return [4 /*yield*/, _signnature_client__WEBPACK_IMPORTED_MODULE_2__["SlidesDataController"].getSet(idsArr)];
+                                    case 5:
+                                        set = _b.sent();
+                                        set.forEach(function (item) {
+                                            _this.freshSlides[item._id] = item;
+                                        });
+                                        for (index = 0; index < this.item.list.length; index++) {
+                                            if (this.freshSlides[this.item.list[index]._id]) {
+                                                this.item.list[index] = this.freshSlides[this.item.list[index]._id];
+                                            }
+                                        }
+                                        return [2 /*return*/];
                                 }
                             });
                         }); });
