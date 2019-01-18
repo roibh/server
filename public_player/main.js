@@ -222,7 +222,7 @@ var LanguageBarComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-template [ngTemplateOutlet]=\"template || defaultTemplate\" [ngTemplateOutletContext]=\"{item: item}\">\n</ng-template>\n\n\n<ng-template #defaultTemplate let-item=\"item\">\n  <div class=\"m10\">\n    <span class=\"label\">{{item.Name}}</span>\n  </div>\n</ng-template>\n\n\n<ng-template #imageTemplate let-item=\"item\">\n  <div class=\"fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    <span class=\"label\">{{item.Name}}</span>\n  </div>\n</ng-template>\n\n<ng-template #playlistTemplate let-item=\"item\">\n  <div class=\"m10\">\n    <span class=\"label\">{{item.Name}}</span>\n    <span class=\"label\">({{item.list.length}})</span>\n  </div>\n</ng-template>\n\n\n<ng-template #slideTemplate let-item=\"item\">\n  <div class=\"canvas-bg\">\n    <app-canvas [item]=\"item\" [width]=\"230\" [height]=\"150\" [scale]=\"0.3\"></app-canvas>\n  </div>\n  <i class=\"{{iconClass}} icon\"></i> <span class=\"label\">{{item.Name}}</span>\n</ng-template>\n"
+module.exports = "<ng-template [ngTemplateOutlet]=\"template || defaultTemplate\" [ngTemplateOutletContext]=\"{item: item}\">\n</ng-template>\n\n\n<ng-template #defaultTemplate let-item=\"item\">\n  <div class=\"m10\">\n    <span class=\"label\">{{item.Name}}</span>\n  </div>\n</ng-template>\n\n\n<ng-template #imageTemplate let-item=\"item\">\n  <div class=\"fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    <span class=\"label\">{{item.Name}}</span>\n  </div>\n</ng-template>\n\n<ng-template #playlistTemplate let-item=\"item\">\n  <div class=\"m10\">\n    <span class=\"label\">{{item.Name}}</span>\n    <span class=\"label\">({{item.list.length}})</span>\n  </div>\n</ng-template>\n\n\n<ng-template #slideTemplate let-item=\"item\">\n  <div class=\"canvas-bg\">\n    <app-canvas [item]=\"item\" [width]=\"200\" [height]=\"150\" [scale]=\"0.25\"></app-canvas>\n    <span class=\"label\">{{item.Name}}</span>\n  </div>\n</ng-template>\n"
 
 /***/ }),
 
@@ -1252,7 +1252,7 @@ var CanvasComponent = /** @class */ (function () {
     function CanvasComponent(_ngZone, sanitizer) {
         this._ngZone = _ngZone;
         this.sanitizer = sanitizer;
-        this.scale = 0.5;
+        this.scale = 0.2;
     }
     CanvasComponent.prototype.ngOnInit = function () {
         this.bgColor = this.item.bgColor;
@@ -1288,7 +1288,7 @@ var CanvasComponent = /** @class */ (function () {
                     return "<img src=\"" + element.src + "\" style=\"position: absolute; top: " + _this.downsize(element.position.y) + "px;left: " + _this.downsize(element.position.x) + "px;width:" + _this.downsize(element.width) + "px;height:" + _this.downsize(element.height) + "px\"/>";
                 // return `<img src="${element.src}" style="position: absolute; top: ${element.position.y}px;left: ${element.position.x}px;" />`;
                 case 'text':
-                    return "<div style=\"color: " + element.color + ";font-family:'" + element.font + "';position: absolute; top: " + element.position.y + "px;left: " + element.position.x + "px;\">" + element.text + "</div>";
+                    return "<div style=\"font-size:" + _this.downsize(element.fontSize) + "px; color: " + element.color + ";font-family:'" + element.font + "';position: absolute; top: " + element.position.y + "px;left: " + element.position.x + "px;\">" + element.text + "</div>";
             }
         });
     };
@@ -2321,6 +2321,8 @@ var SlideService = /** @class */ (function () {
                     if (Object.keys(fontsArr_1).length > 0) {
                         console.log('loading fonts:', Object.keys(fontsArr_1));
                         window.WebFont.load({
+                            loading: function () {
+                            },
                             google: {
                                 families: Object.keys(fontsArr_1)
                             }
@@ -2337,7 +2339,8 @@ var SlideService = /** @class */ (function () {
         var _this = this;
         var player = this;
         function factor(screen, x, y) {
-            return { x: x * (width / screen.width), y: y * (height / screen.height) };
+            return { x: x, y: y };
+            // return { x: x * (width / screen.width), y: y * (height / screen.height) };
         }
         function prerender(item) {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
@@ -2347,10 +2350,6 @@ var SlideService = /** @class */ (function () {
                         case 0:
                             if (item.elements) {
                                 item.type = 'slide';
-                            }
-                            if (item.bgColor) {
-                                ctx.fillStyle = item.bgColor;
-                                ctx.fillRect(0, 0, width, height);
                             }
                             _a = item.type;
                             switch (_a) {
@@ -2377,6 +2376,32 @@ var SlideService = /** @class */ (function () {
                 });
             });
         }
+        // window.setInterval(playLoadingAnimation, 1000 / 30);
+        var start = new Date();
+        var lines = 16;
+        function playLoadingAnimation() {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+                var rotation, i;
+                return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                    rotation = ((new Date() - start) / 1000) * lines / lines;
+                    ctx.save();
+                    ctx.clearRect(0, 0, width, height);
+                    ctx.translate(width / 2, height / 2);
+                    ctx.rotate(Math.PI * 2 * rotation);
+                    for (i = 0; i < lines; i++) {
+                        ctx.beginPath();
+                        ctx.rotate(Math.PI * 2 / lines);
+                        ctx.moveTo(width / 10, 0);
+                        ctx.lineTo(width / 4, 0);
+                        ctx.lineWidth = width / 30;
+                        ctx.strokeStyle = 'rgba(0, 0, 0,' + i / lines + ')';
+                        ctx.stroke();
+                    }
+                    ctx.restore();
+                    return [2 /*return*/];
+                });
+            });
+        }
         function playDefaultPlan() {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
                 return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
@@ -2397,6 +2422,10 @@ var SlideService = /** @class */ (function () {
                     switch (_b.label) {
                         case 0:
                             ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+                            if (item.bgColor) {
+                                ctx.fillStyle = item.bgColor;
+                                ctx.fillRect(0, 0, width, height);
+                            }
                             item.elements.sort(function (a, b) {
                                 return a.zIndex - b.zIndex;
                             });
@@ -2444,7 +2473,8 @@ var SlideService = /** @class */ (function () {
                     if (element.text) {
                         ctx.font = element.fontSize + "px " + element.font;
                         ctx.fillStyle = "" + element.color;
-                        position = factor(item.Screen, element.position.x, element.position.y);
+                        position = factor(item.Screen, element.position.x, (Number(element.position.y) + element.fontSize));
+                        // ctx.fillText(JSON.stringify({ x: position.x, y: position.y }), position.x, position.y);
                         ctx.fillText(element.text, position.x, position.y);
                     }
                     return [2 /*return*/];
@@ -2512,6 +2542,8 @@ var SlideService = /** @class */ (function () {
             html = (new XMLSerializer).serializeToString(doc.body);
             return html;
         }
+        // window.setInterval(playLoadingAnimation, 1000 / 10);
+        // return;
         this.playerPlan = playerPlan;
         var images = [];
         if (!this.playerPlan || this.playerPlan.length === 0) {
