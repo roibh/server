@@ -1282,7 +1282,6 @@ var CanvasComponent = /** @class */ (function () {
     CanvasComponent.prototype.renderElementsToTags = function (elements) {
         var _this = this;
         return elements.map(function (element) {
-            console.log(element.zIndex, element.type);
             switch (element.type) {
                 case 'image':
                     return "<img src=\"" + element.src + "\" style=\"position: absolute; top: " + _this.downsize(element.position.y) + "px;left: " + _this.downsize(element.position.x) + "px;width:" + _this.downsize(element.width) + "px;height:" + _this.downsize(element.height) + "px\"/>";
@@ -1348,6 +1347,101 @@ var CanvasComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"]])
     ], CanvasComponent);
     return CanvasComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/editor/fonts.service.ts":
+/*!*****************************************!*\
+  !*** ./src/app/editor/fonts.service.ts ***!
+  \*****************************************/
+/*! exports provided: FontsService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FontsService", function() { return FontsService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
+// 'Almendra', Almendra
+var KEY = 'AIzaSyDwRFeD5sLu69-hJ20KICyhh9Huz-o3Ic8';
+
+
+var log = console.log;
+var FontsService = /** @class */ (function () {
+    function FontsService(http) {
+        this.http = http;
+        this.fonts = [];
+        this.loadedFonts = {};
+    }
+    FontsService.prototype.getFonts = function () {
+        return this.fonts;
+    };
+    FontsService.prototype.loadFontsForRender = function (fontsArr) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                return [2 /*return*/, new Promise(function (resolve, reject) {
+                        log('@fonts.service-loadFontsForRender-start');
+                        var finalFontsForLoad = [];
+                        fontsArr.forEach(function (item) {
+                            if (!_this.loadedFonts[item]) {
+                                finalFontsForLoad.push(item);
+                            }
+                        });
+                        if (finalFontsForLoad.length > 0) {
+                            window.WebFont.load({
+                                active: function () {
+                                    log('@fonts.service-loadFontsForRender-active');
+                                    resolve();
+                                },
+                                loading: function () {
+                                    finalFontsForLoad.forEach(function (item) {
+                                        _this.loadedFonts[item] = item;
+                                    });
+                                    log('@fonts.service-loadFontsForRender-end');
+                                },
+                                google: {
+                                    families: finalFontsForLoad
+                                }
+                            });
+                        }
+                        else {
+                            log('@fonts.service-loadFontsForRender-skip');
+                        }
+                    })];
+            });
+        });
+    };
+    FontsService.prototype.loadFontsForLanguage = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var url;
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                url = "https://www.googleapis.com/webfonts/v1/webfonts?key=" + KEY;
+                return [2 /*return*/, new Promise(function (resolve, reject) {
+                        if (_this.fonts.length > 0) {
+                            return resolve(_this.fonts);
+                        }
+                        _this.http.get(url).subscribe(function (data) {
+                            _this.fonts = data.items.map(function (font) {
+                                return font.family;
+                            });
+                            resolve(_this.fonts);
+                        });
+                    })];
+            });
+        });
+    };
+    FontsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    ], FontsService);
+    return FontsService;
 }());
 
 
@@ -1972,6 +2066,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var log = console.log;
 var PlayerComponent = /** @class */ (function () {
     function PlayerComponent(slideService, translate, _ngZone, route, changeDetector) {
         this.slideService = slideService;
@@ -1985,20 +2080,20 @@ var PlayerComponent = /** @class */ (function () {
     }
     PlayerComponent.prototype.paint = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var _this = this;
+            var width, height, nativeEl, ctx;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                this.playerCanvas.changes.subscribe(function (data) {
-                    var width = window.innerWidth
-                        || document.documentElement.clientWidth
-                        || document.body.clientWidth;
-                    var height = window.innerHeight
-                        || document.documentElement.clientHeight
-                        || document.body.clientHeight;
-                    data.first.nativeElement.width = width;
-                    data.first.nativeElement.height = height;
-                    var ctx = data.first.nativeElement.getContext('2d');
-                    _this.slideService.play(_this.playerPlan, ctx, width, height);
-                });
+                log('@paint');
+                width = window.innerWidth
+                    || document.documentElement.clientWidth
+                    || document.body.clientWidth;
+                height = window.innerHeight
+                    || document.documentElement.clientHeight
+                    || document.body.clientHeight;
+                nativeEl = this.playerCanvas.first.nativeElement;
+                nativeEl.width = width;
+                nativeEl.height = height;
+                ctx = nativeEl.getContext('2d');
+                this.slideService.play(this.playerPlan, ctx, width, height);
                 return [2 /*return*/];
             });
         });
@@ -2009,11 +2104,14 @@ var PlayerComponent = /** @class */ (function () {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
                 switch (_b.label) {
                     case 0:
+                        log('@updatePlayerPlan');
                         _a = this;
                         return [4 /*yield*/, _signnature_client__WEBPACK_IMPORTED_MODULE_4__["PlayerController"].runPlayer(this.playerInfo.Group._id)];
                     case 1:
                         _a.playerPlan = _b.sent();
-                        this.slideService.updatePlayerPlan(this.playerPlan);
+                        return [4 /*yield*/, this.slideService.updatePlayerPlan(this.playerPlan)];
+                    case 2:
+                        _b.sent();
                         return [2 /*return*/];
                 }
             });
@@ -2023,13 +2121,15 @@ var PlayerComponent = /** @class */ (function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.updatePlayerPlan()];
+                    case 0:
+                        log('@getPlayerPlan');
+                        return [4 /*yield*/, this.updatePlayerPlan()];
                     case 1:
                         _a.sent();
                         if (this.playerPlan) {
                             this.bodyClass = 'body-play';
                             this.paint();
-                            setInterval(this.updatePlayerPlan.bind(this), 1000 * 10);
+                            setInterval(this.updatePlayerPlan.bind(this), 1000 * 30);
                         }
                         else {
                             this.bodyClass = 'body-token';
@@ -2044,7 +2144,9 @@ var PlayerComponent = /** @class */ (function () {
             var playerInformation;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, _signnature_client__WEBPACK_IMPORTED_MODULE_4__["PlayerController"].validatePlayer(this.Token)];
+                    case 0:
+                        log('@validateScreen');
+                        return [4 /*yield*/, _signnature_client__WEBPACK_IMPORTED_MODULE_4__["PlayerController"].validatePlayer(this.Token)];
                     case 1:
                         playerInformation = _a.sent();
                         if (playerInformation.Status === 'pending') {
@@ -2065,7 +2167,9 @@ var PlayerComponent = /** @class */ (function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, _signnature_client__WEBPACK_IMPORTED_MODULE_4__["PlayerController"].registerPlayer(this.Token)];
+                    case 0:
+                        log('@registerScreen');
+                        return [4 /*yield*/, _signnature_client__WEBPACK_IMPORTED_MODULE_4__["PlayerController"].registerPlayer(this.Token)];
                     case 1:
                         _a.sent();
                         setTimeout(this.validateScreen.bind(this), 10 * 1000);
@@ -2081,6 +2185,7 @@ var PlayerComponent = /** @class */ (function () {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        log('@start player');
                         str = localStorage.getItem('playerInfo');
                         if (!str) return [3 /*break*/, 2];
                         this.playerInfo = JSON.parse(str);
@@ -2165,14 +2270,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ngx-translate/http-loader */ "./node_modules/@ngx-translate/http-loader/esm5/ngx-translate-http-loader.js");
 /* harmony import */ var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @auth0/angular-jwt */ "./node_modules/@auth0/angular-jwt/index.js");
 /* harmony import */ var _slide_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./slide.service */ "./src/player/slide.service.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _app_shared_module__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../app/shared.module */ "./src/app/shared.module.ts");
-/* harmony import */ var _root_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./root.component */ "./src/player/root.component.ts");
+/* harmony import */ var _app_editor_fonts_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../app/editor/fonts.service */ "./src/app/editor/fonts.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _app_shared_module__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../app/shared.module */ "./src/app/shared.module.ts");
+/* harmony import */ var _root_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./root.component */ "./src/player/root.component.ts");
 
 
 
 
 // import { DynamicFormsCoreModule } from '@ng-dynamic-forms/core';
+
 
 
 
@@ -2207,20 +2314,20 @@ var PlayerModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
                 _player_component__WEBPACK_IMPORTED_MODULE_10__["PlayerComponent"],
-                _root_component__WEBPACK_IMPORTED_MODULE_19__["PlayerEntryComponent"],
+                _root_component__WEBPACK_IMPORTED_MODULE_20__["PlayerEntryComponent"],
             ],
-            providers: [_slide_service__WEBPACK_IMPORTED_MODULE_16__["SlideService"]],
+            providers: [_slide_service__WEBPACK_IMPORTED_MODULE_16__["SlideService"], _app_editor_fonts_service__WEBPACK_IMPORTED_MODULE_17__["FontsService"]],
             imports: [
                 _ngx_translate_core__WEBPACK_IMPORTED_MODULE_13__["TranslateModule"].forRoot({
                     loader: {
                         provide: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_13__["TranslateLoader"],
                         useFactory: HttpLoaderFactory,
-                        deps: [_angular_common_http__WEBPACK_IMPORTED_MODULE_17__["HttpClient"]]
+                        deps: [_angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpClient"]]
                     }
                 }),
-                _app_shared_module__WEBPACK_IMPORTED_MODULE_18__["SharedModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_17__["HttpClientModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_11__["RouterModule"].forRoot(appRoutes, { enableTracing: true, useHash: true } // <-- debugging purposes only
+                _app_shared_module__WEBPACK_IMPORTED_MODULE_19__["SharedModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpClientModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_11__["RouterModule"].forRoot(appRoutes, { enableTracing: false, useHash: true } // <-- debugging purposes only
                 ),
                 ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_9__["TabsModule"].forRoot(),
                 ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_8__["ModalModule"].forRoot(),
@@ -2238,7 +2345,7 @@ var PlayerModule = /** @class */ (function () {
                     }
                 })
             ],
-            bootstrap: [_root_component__WEBPACK_IMPORTED_MODULE_19__["PlayerEntryComponent"]]
+            bootstrap: [_root_component__WEBPACK_IMPORTED_MODULE_20__["PlayerEntryComponent"]]
         })
     ], PlayerModule);
     return PlayerModule;
@@ -2294,53 +2401,53 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var image_promise__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! image-promise */ "./node_modules/image-promise/dist/image-promise.common-js.js");
 /* harmony import */ var image_promise__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(image_promise__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _app_editor_fonts_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../app/editor/fonts.service */ "./src/app/editor/fonts.service.ts");
 
 
 
+
+var log = console.log;
 var SlideService = /** @class */ (function () {
-    function SlideService() {
+    function SlideService(fontService) {
+        this.fontService = fontService;
         this.itemIndex = 0;
     }
     SlideService.prototype.updatePlayerPlan = function (playerPlan) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var fontsArr_1;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                this.playerPlan = playerPlan;
-                if (this.playerPlan && this.playerPlan.length > 0) {
-                    this.list = this.playerPlan[0].list;
-                    fontsArr_1 = {};
-                    this.list.forEach(function (item) {
-                        if (item.elements) {
-                            item.elements.forEach(function (element) {
-                                if (element.font) {
-                                    fontsArr_1[element.font] = element.font;
-                                }
-                            });
-                        }
-                    });
-                    if (Object.keys(fontsArr_1).length > 0) {
-                        console.log('loading fonts:', Object.keys(fontsArr_1));
-                        window.WebFont.load({
-                            loading: function () {
-                            },
-                            google: {
-                                families: Object.keys(fontsArr_1)
+                switch (_a.label) {
+                    case 0:
+                        this.playerPlan = playerPlan;
+                        if (!(this.playerPlan && this.playerPlan.length > 0)) return [3 /*break*/, 2];
+                        this.list = this.playerPlan[0].list;
+                        fontsArr_1 = {};
+                        this.list.forEach(function (item) {
+                            if (item.elements) {
+                                item.elements.forEach(function (element) {
+                                    if (element.font) {
+                                        fontsArr_1[element.font] = element.font;
+                                    }
+                                });
                             }
                         });
-                    }
+                        return [4 /*yield*/, this.fontService.loadFontsForRender(Object.keys(fontsArr_1))];
+                    case 1:
+                        _a.sent();
+                        return [3 /*break*/, 2];
+                    case 2: return [2 /*return*/];
                 }
-                else {
-                }
-                return [2 /*return*/];
             });
         });
     };
     SlideService.prototype.play = function (playerPlan, ctx, width, height, mode) {
         var _this = this;
+        log('@slide.service-play');
         var player = this;
+        var start = new Date();
+        var lines = 16;
         function factor(screen, x, y) {
-            return { x: x, y: y };
-            // return { x: x * (width / screen.width), y: y * (height / screen.height) };
+            return { x: x * (width / screen.width), y: y * (height / screen.height) };
         }
         function prerender(item) {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
@@ -2348,6 +2455,7 @@ var SlideService = /** @class */ (function () {
                 return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
                     switch (_b.label) {
                         case 0:
+                            log('@slide.service-prerender');
                             if (item.elements) {
                                 item.type = 'slide';
                             }
@@ -2377,8 +2485,6 @@ var SlideService = /** @class */ (function () {
             });
         }
         // window.setInterval(playLoadingAnimation, 1000 / 30);
-        var start = new Date();
-        var lines = 16;
         function playLoadingAnimation() {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
                 var rotation, i;
@@ -2421,6 +2527,7 @@ var SlideService = /** @class */ (function () {
                 return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
                     switch (_b.label) {
                         case 0:
+                            log('@slide.service-renderElementsToTags');
                             ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
                             if (item.bgColor) {
                                 ctx.fillStyle = item.bgColor;
@@ -2434,14 +2541,13 @@ var SlideService = /** @class */ (function () {
                         case 1:
                             if (!(index < item.elements.length)) return [3 /*break*/, 6];
                             element = item.elements[index];
-                            console.log(element.zIndex, element.type);
                             _a = element.type;
                             switch (_a) {
                                 case 'image': return [3 /*break*/, 2];
                                 case 'text': return [3 /*break*/, 4];
                             }
                             return [3 /*break*/, 5];
-                        case 2: return [4 /*yield*/, render_image_to_canvas(element.src, element.position.x, element.position.y, element.width, element.height)];
+                        case 2: return [4 /*yield*/, render_image_to_canvas(item, element)];
                         case 3:
                             _b.sent();
                             return [3 /*break*/, 5];
@@ -2470,12 +2576,18 @@ var SlideService = /** @class */ (function () {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
                 var position;
                 return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                    log('@slide.service-render_text_to_canvas');
                     if (element.text) {
                         ctx.font = element.fontSize + "px " + element.font;
                         ctx.fillStyle = "" + element.color;
+                        ctx.save();
+                        if (element.opacity) {
+                            ctx.globalAlpha = element.opacity;
+                        }
                         position = factor(item.Screen, element.position.x, (Number(element.position.y) + element.fontSize));
                         // ctx.fillText(JSON.stringify({ x: position.x, y: position.y }), position.x, position.y);
                         ctx.fillText(element.text, position.x, position.y);
+                        ctx.restore();
                     }
                     return [2 /*return*/];
                 });
@@ -2485,6 +2597,7 @@ var SlideService = /** @class */ (function () {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
                 var _this = this;
                 return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                    log('@slide.service-render_fullimage_to_canvas');
                     return [2 /*return*/, new Promise(function (resolve, reject) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
                             var img;
                             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
@@ -2510,12 +2623,19 @@ var SlideService = /** @class */ (function () {
                 });
             });
         }
-        function render_image_to_canvas(url, x, y, _width, _height) {
+        function render_image_to_canvas(item, element) {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+                var url, x, y, _width, _height;
                 var _this = this;
                 return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                    url = element.src;
+                    x = element.position.x;
+                    y = element.position.y;
+                    _width = element.width;
+                    _height = element.height;
+                    log('@slide.service-render_image_to_canvas');
                     return [2 /*return*/, new Promise(function (resolve, reject) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
-                            var img;
+                            var img, sizes;
                             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                                 switch (_a.label) {
                                     case 0: return [4 /*yield*/, image_promise__WEBPACK_IMPORTED_MODULE_2___default()([url])];
@@ -2525,7 +2645,13 @@ var SlideService = /** @class */ (function () {
                                             img = img[0];
                                         }
                                         images.push(img);
-                                        ctx.drawImage(img, x, y);
+                                        sizes = factor(item.Screen, _width, _height);
+                                        ctx.save();
+                                        if (element.opacity) {
+                                            ctx.globalAlpha = element.opacity;
+                                        }
+                                        ctx.drawImage(img, x, y, sizes.x, sizes.y);
+                                        ctx.restore();
                                         resolve(img);
                                         return [2 /*return*/];
                                 }
@@ -2542,8 +2668,6 @@ var SlideService = /** @class */ (function () {
             html = (new XMLSerializer).serializeToString(doc.body);
             return html;
         }
-        // window.setInterval(playLoadingAnimation, 1000 / 10);
-        // return;
         this.playerPlan = playerPlan;
         var images = [];
         if (!this.playerPlan || this.playerPlan.length === 0) {
@@ -2554,13 +2678,11 @@ var SlideService = /** @class */ (function () {
         prerender(this.list[this.itemIndex]);
         var frameDuration = (this.list[this.itemIndex].duration) ? this.list[this.itemIndex].duration * 1000 : 5000;
         this.itemIndex++;
-        console.log('frame duration', frameDuration);
         if (mode !== 'single') {
             setInterval(function () {
                 if (_this.itemIndex >= _this.list.length) {
                     _this.itemIndex = 0;
                 }
-                console.log('frame duration', frameDuration);
                 prerender(_this.list[_this.itemIndex]);
                 _this.itemIndex++;
             }, frameDuration);
@@ -2568,7 +2690,7 @@ var SlideService = /** @class */ (function () {
     };
     SlideService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_app_editor_fonts_service__WEBPACK_IMPORTED_MODULE_3__["FontsService"]])
     ], SlideService);
     return SlideService;
 }());
