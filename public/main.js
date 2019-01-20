@@ -1679,7 +1679,7 @@ module.exports = "<div class=\"cube-container\">\r\n    <div class=\"cube\">\r\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".cube-container {\n  position: absolute;\n  top: 0;\n  z-index: 2000; }\n\n:host-context(.ltr) .cube-container {\n  right: 0; }\n\n:host-context(.rtl) .cube-container {\n  left: 0; }\n\n.cube {\n  width: 60px;\n  height: 60px;\n  background: #f45c41;\n  border-radius: 6px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  position: relative;\n  cursor: pointer;\n  transition: background 0.2s; }\n\n.plus-vertical,\n.plus-horizontal {\n  background: #fff;\n  border-radius: 4px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  z-index: 10; }\n\n.plus-vertical {\n  height: 50%;\n  width: 5px; }\n\n.plus-horizontal {\n  width: 50%;\n  height: 5px; }\n\n.quadrant {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-wrap: wrap;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%); }\n\n.quadrant__item {\n  width: 50%;\n  height: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: #f45c41;\n  border-radius: 6px;\n  position: relative; }\n\n.quadrant__item__content {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%) rotate(-45deg);\n          transform: translate(-50%, -50%) rotate(-45deg);\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\n.arrow-down,\n.arrow-left,\n.arrow-right,\n.arrow-up {\n  opacity: 0;\n  color: white;\n  font-size: 24px; }\n\n.arrow-up {\n  -webkit-transform: translateY(10px);\n          transform: translateY(10px); }\n\n.arrow-down {\n  -webkit-transform: translateY(-10px);\n          transform: translateY(-10px); }\n\n.arrow-left {\n  -webkit-transform: translateX(10px);\n          transform: translateX(10px); }\n\n.arrow-right {\n  -webkit-transform: translateX(-10px);\n          transform: translateX(-10px); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL2FkZC9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXGVkaXRvclxcYWRkXFxhZGQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDSSxrQkFBa0I7RUFFbEIsTUFBSztFQUNMLGFBQWEsRUFBQTs7QUFHakI7RUFJTSxRQUFRLEVBQUE7O0FBR1o7RUFJTSxPQUFPLEVBQUE7O0FBR2Y7RUFDRSxXQUFXO0VBQ1gsWUFBWTtFQUNaLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsa0JBQWtCO0VBQ2xCLGVBQWU7RUFDZiwyQkFBMkIsRUFBQTs7QUFHN0I7O0VBRUUsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtFQUNsQixrQkFBa0I7RUFDbEIsUUFBUTtFQUNSLFNBQVM7RUFDVCx3Q0FBZ0M7VUFBaEMsZ0NBQWdDO0VBQ2hDLFdBQVcsRUFBQTs7QUFHYjtFQUNFLFdBQVc7RUFDWCxVQUFVLEVBQUE7O0FBR1o7RUFDRSxVQUFVO0VBQ1YsV0FBVyxFQUFBOztBQUdiO0VBQ0Usa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxZQUFZO0VBQ1osYUFBYTtFQUNiLGVBQWU7RUFDZixRQUFRO0VBQ1IsU0FBUztFQUNULHdDQUFnQztVQUFoQyxnQ0FBZ0MsRUFBQTs7QUFHbEM7RUFDRSxVQUFVO0VBQ1YsV0FBVztFQUNYLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsa0JBQWtCLEVBQUE7O0FBR3BCO0VBQ0UsV0FBVztFQUNYLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIsUUFBUTtFQUNSLFNBQVM7RUFDVCx1REFBK0M7VUFBL0MsK0NBQStDO0VBQy9DLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsdUJBQXVCLEVBQUE7O0FBR3pCOzs7O0VBSUcsVUFBVTtFQUNWLFlBQVk7RUFDWixlQUFlLEVBQUE7O0FBR2xCO0VBQ0UsbUNBQTJCO1VBQTNCLDJCQUEyQixFQUFBOztBQUc3QjtFQUNFLG9DQUE0QjtVQUE1Qiw0QkFBNEIsRUFBQTs7QUFHOUI7RUFDRSxtQ0FBMkI7VUFBM0IsMkJBQTJCLEVBQUE7O0FBRzdCO0VBQ0Usb0NBQTRCO1VBQTVCLDRCQUE0QixFQUFBIiwiZmlsZSI6InNyYy9hcHAvZWRpdG9yL2FkZC9hZGQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIgXHJcbi5jdWJlLWNvbnRhaW5lcntcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgXHJcbiAgICB0b3A6MDtcclxuICAgIHotaW5kZXg6IDIwMDA7XHJcbn1cclxuXHJcbjpob3N0LWNvbnRleHQoLmx0cilcclxue1xyXG4gIC5jdWJlLWNvbnRhaW5lclxyXG4gICAge1xyXG4gICAgICByaWdodDogMDtcclxuICAgIH1cclxuICB9XHJcbiAgOmhvc3QtY29udGV4dCgucnRsKVxyXG4gIHtcclxuICAgIC5jdWJlLWNvbnRhaW5lclxyXG4gICAgICB7XHJcbiAgICAgICAgbGVmdDogMDtcclxuICAgICAgfVxyXG4gICAgfVxyXG4uY3ViZSB7XHJcbiAgd2lkdGg6IDYwcHg7XHJcbiAgaGVpZ2h0OiA2MHB4O1xyXG4gIGJhY2tncm91bmQ6ICNmNDVjNDE7XHJcbiAgYm9yZGVyLXJhZGl1czogNnB4O1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIHRyYW5zaXRpb246IGJhY2tncm91bmQgMC4ycztcclxufVxyXG5cclxuLnBsdXMtdmVydGljYWwsXHJcbi5wbHVzLWhvcml6b250YWwge1xyXG4gIGJhY2tncm91bmQ6ICNmZmY7XHJcbiAgYm9yZGVyLXJhZGl1czogNHB4O1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICB0b3A6IDUwJTtcclxuICBsZWZ0OiA1MCU7XHJcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XHJcbiAgei1pbmRleDogMTA7XHJcbn1cclxuXHJcbi5wbHVzLXZlcnRpY2FsIHtcclxuICBoZWlnaHQ6IDUwJTtcclxuICB3aWR0aDogNXB4O1xyXG59XHJcblxyXG4ucGx1cy1ob3Jpem9udGFsIHtcclxuICB3aWR0aDogNTAlO1xyXG4gIGhlaWdodDogNXB4O1xyXG59XHJcblxyXG4ucXVhZHJhbnQge1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICB3aWR0aDogMTAwJTtcclxuICBoZWlnaHQ6IDEwMCU7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBmbGV4LXdyYXA6IHdyYXA7XHJcbiAgdG9wOiA1MCU7XHJcbiAgbGVmdDogNTAlO1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xyXG59XHJcblxyXG4ucXVhZHJhbnRfX2l0ZW0ge1xyXG4gIHdpZHRoOiA1MCU7XHJcbiAgaGVpZ2h0OiA1MCU7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIGJhY2tncm91bmQ6ICNmNDVjNDE7XHJcbiAgYm9yZGVyLXJhZGl1czogNnB4O1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxufVxyXG5cclxuLnF1YWRyYW50X19pdGVtX19jb250ZW50IHtcclxuICB3aWR0aDogMTAwJTtcclxuICBoZWlnaHQ6IDEwMCU7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHRvcDogNTAlO1xyXG4gIGxlZnQ6IDUwJTtcclxuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKSByb3RhdGUoLTQ1ZGVnKTtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbn1cclxuXHJcbi5hcnJvdy1kb3duLFxyXG4uYXJyb3ctbGVmdCxcclxuLmFycm93LXJpZ2h0LFxyXG4uYXJyb3ctdXAge1xyXG4gICBvcGFjaXR5OiAwO1xyXG4gICBjb2xvcjogd2hpdGU7XHJcbiAgIGZvbnQtc2l6ZTogMjRweDtcclxufVxyXG5cclxuLmFycm93LXVwIHtcclxuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMTBweCk7XHJcbn1cclxuXHJcbi5hcnJvdy1kb3duIHtcclxuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTEwcHgpO1xyXG59XHJcblxyXG4uYXJyb3ctbGVmdCB7XHJcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDEwcHgpO1xyXG59XHJcblxyXG4uYXJyb3ctcmlnaHQge1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgtMTBweCk7XHJcbn0iXX0= */"
+module.exports = ".cube-container {\n  position: absolute;\n  top: 0;\n  z-index: 1050; }\n\n:host-context(.ltr) .cube-container {\n  right: 0; }\n\n:host-context(.rtl) .cube-container {\n  left: 0; }\n\n.cube {\n  width: 60px;\n  height: 60px;\n  background: #f45c41;\n  border-radius: 6px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  position: relative;\n  cursor: pointer;\n  transition: background 0.2s; }\n\n.plus-vertical,\n.plus-horizontal {\n  background: #fff;\n  border-radius: 4px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  z-index: 10; }\n\n.plus-vertical {\n  height: 50%;\n  width: 5px; }\n\n.plus-horizontal {\n  width: 50%;\n  height: 5px; }\n\n.quadrant {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-wrap: wrap;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%); }\n\n.quadrant__item {\n  width: 50%;\n  height: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: #f45c41;\n  border-radius: 6px;\n  position: relative; }\n\n.quadrant__item__content {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%) rotate(-45deg);\n          transform: translate(-50%, -50%) rotate(-45deg);\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\n.arrow-down,\n.arrow-left,\n.arrow-right,\n.arrow-up {\n  opacity: 0;\n  color: white;\n  font-size: 24px; }\n\n.arrow-up {\n  -webkit-transform: translateY(10px);\n          transform: translateY(10px); }\n\n.arrow-down {\n  -webkit-transform: translateY(-10px);\n          transform: translateY(-10px); }\n\n.arrow-left {\n  -webkit-transform: translateX(10px);\n          transform: translateX(10px); }\n\n.arrow-right {\n  -webkit-transform: translateX(-10px);\n          transform: translateX(-10px); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL2FkZC9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXGVkaXRvclxcYWRkXFxhZGQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDSSxrQkFBa0I7RUFDbEIsTUFBSztFQUNMLGFBQWEsRUFBQTs7QUFHakI7RUFJTSxRQUFRLEVBQUE7O0FBR1o7RUFJTSxPQUFPLEVBQUE7O0FBR2Y7RUFDRSxXQUFXO0VBQ1gsWUFBWTtFQUNaLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsa0JBQWtCO0VBQ2xCLGVBQWU7RUFDZiwyQkFBMkIsRUFBQTs7QUFHN0I7O0VBRUUsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtFQUNsQixrQkFBa0I7RUFDbEIsUUFBUTtFQUNSLFNBQVM7RUFDVCx3Q0FBZ0M7VUFBaEMsZ0NBQWdDO0VBQ2hDLFdBQVcsRUFBQTs7QUFHYjtFQUNFLFdBQVc7RUFDWCxVQUFVLEVBQUE7O0FBR1o7RUFDRSxVQUFVO0VBQ1YsV0FBVyxFQUFBOztBQUdiO0VBQ0Usa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxZQUFZO0VBQ1osYUFBYTtFQUNiLGVBQWU7RUFDZixRQUFRO0VBQ1IsU0FBUztFQUNULHdDQUFnQztVQUFoQyxnQ0FBZ0MsRUFBQTs7QUFHbEM7RUFDRSxVQUFVO0VBQ1YsV0FBVztFQUNYLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsa0JBQWtCLEVBQUE7O0FBR3BCO0VBQ0UsV0FBVztFQUNYLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIsUUFBUTtFQUNSLFNBQVM7RUFDVCx1REFBK0M7VUFBL0MsK0NBQStDO0VBQy9DLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsdUJBQXVCLEVBQUE7O0FBR3pCOzs7O0VBSUcsVUFBVTtFQUNWLFlBQVk7RUFDWixlQUFlLEVBQUE7O0FBR2xCO0VBQ0UsbUNBQTJCO1VBQTNCLDJCQUEyQixFQUFBOztBQUc3QjtFQUNFLG9DQUE0QjtVQUE1Qiw0QkFBNEIsRUFBQTs7QUFHOUI7RUFDRSxtQ0FBMkI7VUFBM0IsMkJBQTJCLEVBQUE7O0FBRzdCO0VBQ0Usb0NBQTRCO1VBQTVCLDRCQUE0QixFQUFBIiwiZmlsZSI6InNyYy9hcHAvZWRpdG9yL2FkZC9hZGQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIgXHJcbi5jdWJlLWNvbnRhaW5lcntcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTsgICBcclxuICAgIHRvcDowO1xyXG4gICAgei1pbmRleDogMTA1MDtcclxufVxyXG5cclxuOmhvc3QtY29udGV4dCgubHRyKVxyXG57XHJcbiAgLmN1YmUtY29udGFpbmVyXHJcbiAgICB7XHJcbiAgICAgIHJpZ2h0OiAwO1xyXG4gICAgfVxyXG4gIH1cclxuICA6aG9zdC1jb250ZXh0KC5ydGwpXHJcbiAge1xyXG4gICAgLmN1YmUtY29udGFpbmVyXHJcbiAgICAgIHtcclxuICAgICAgICBsZWZ0OiAwO1xyXG4gICAgICB9XHJcbiAgICB9XHJcbi5jdWJlIHtcclxuICB3aWR0aDogNjBweDtcclxuICBoZWlnaHQ6IDYwcHg7XHJcbiAgYmFja2dyb3VuZDogI2Y0NWM0MTtcclxuICBib3JkZXItcmFkaXVzOiA2cHg7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgdHJhbnNpdGlvbjogYmFja2dyb3VuZCAwLjJzO1xyXG59XHJcblxyXG4ucGx1cy12ZXJ0aWNhbCxcclxuLnBsdXMtaG9yaXpvbnRhbCB7XHJcbiAgYmFja2dyb3VuZDogI2ZmZjtcclxuICBib3JkZXItcmFkaXVzOiA0cHg7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHRvcDogNTAlO1xyXG4gIGxlZnQ6IDUwJTtcclxuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcclxuICB6LWluZGV4OiAxMDtcclxufVxyXG5cclxuLnBsdXMtdmVydGljYWwge1xyXG4gIGhlaWdodDogNTAlO1xyXG4gIHdpZHRoOiA1cHg7XHJcbn1cclxuXHJcbi5wbHVzLWhvcml6b250YWwge1xyXG4gIHdpZHRoOiA1MCU7XHJcbiAgaGVpZ2h0OiA1cHg7XHJcbn1cclxuXHJcbi5xdWFkcmFudCB7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGhlaWdodDogMTAwJTtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtd3JhcDogd3JhcDtcclxuICB0b3A6IDUwJTtcclxuICBsZWZ0OiA1MCU7XHJcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XHJcbn1cclxuXHJcbi5xdWFkcmFudF9faXRlbSB7XHJcbiAgd2lkdGg6IDUwJTtcclxuICBoZWlnaHQ6IDUwJTtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgYmFja2dyb3VuZDogI2Y0NWM0MTtcclxuICBib3JkZXItcmFkaXVzOiA2cHg7XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcblxyXG4ucXVhZHJhbnRfX2l0ZW1fX2NvbnRlbnQge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGhlaWdodDogMTAwJTtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgdG9wOiA1MCU7XHJcbiAgbGVmdDogNTAlO1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpIHJvdGF0ZSgtNDVkZWcpO1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxufVxyXG5cclxuLmFycm93LWRvd24sXHJcbi5hcnJvdy1sZWZ0LFxyXG4uYXJyb3ctcmlnaHQsXHJcbi5hcnJvdy11cCB7XHJcbiAgIG9wYWNpdHk6IDA7XHJcbiAgIGNvbG9yOiB3aGl0ZTtcclxuICAgZm9udC1zaXplOiAyNHB4O1xyXG59XHJcblxyXG4uYXJyb3ctdXAge1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxMHB4KTtcclxufVxyXG5cclxuLmFycm93LWRvd24ge1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtMTBweCk7XHJcbn1cclxuXHJcbi5hcnJvdy1sZWZ0IHtcclxuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMTBweCk7XHJcbn1cclxuXHJcbi5hcnJvdy1yaWdodCB7XHJcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKC0xMHB4KTtcclxufSJdfQ== */"
 
 /***/ }),
 
@@ -1770,7 +1770,7 @@ var AddComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"item\" [ngStyle]=\"{'background-color': bgColor}\">      \r\n    <object #thumbObject type=\"image/svg+xml\" style=\"width: {{width}}px;height: {{height}}px;\"></object>\r\n</div>\r\n"
+module.exports = "<div *ngIf=\"item\" [ngStyle]=\"{'background-color': bgColor}\">      \r\n    <!-- <object #thumbObject type=\"image/svg+xml\"></object> -->\r\n    <canvas #thumbObject height=\"{{height}}\" width=\"{{width}}\"></canvas>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1800,14 +1800,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var js_base64__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! js-base64 */ "./node_modules/js-base64/base64.js");
 /* harmony import */ var js_base64__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(js_base64__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _player_slide_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../player/slide.service */ "./src/player/slide.service.ts");
+
 
 
 
 
 var CanvasComponent = /** @class */ (function () {
-    function CanvasComponent(_ngZone, sanitizer) {
+    function CanvasComponent(_ngZone, sanitizer, slideService) {
         this._ngZone = _ngZone;
         this.sanitizer = sanitizer;
+        this.slideService = slideService;
         this.scale = 0.2;
     }
     CanvasComponent.prototype.ngOnInit = function () {
@@ -1818,10 +1821,14 @@ var CanvasComponent = /** @class */ (function () {
             var _this = this;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 this._ngZone.run(function () { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
-                    var html;
+                    var element, ctx;
                     return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                        html = this.renderElementsToTags(this.item.elements).join('');
-                        this.render_html_to_canvas(html, 0, 0, this.width, this.height);
+                        element = this.thumbObject.first.nativeElement;
+                        element.width = this.width;
+                        element.height = this.height;
+                        ctx = element.getContext('2d');
+                        debugger;
+                        this.slideService.play([this.item], ctx, this.width, this.height, 'single');
                         return [2 /*return*/];
                     });
                 }); });
@@ -1844,9 +1851,8 @@ var CanvasComponent = /** @class */ (function () {
             switch (element.type) {
                 case 'image':
                     return "<img src=\"" + element.src + "\" style=\"position: absolute; top: " + _this.downsize(element.position.y) + "px;left: " + _this.downsize(element.position.x) + "px;width:" + _this.downsize(element.width) + "px;height:" + _this.downsize(element.height) + "px\"/>";
-                // return `<img src="${element.src}" style="position: absolute; top: ${element.position.y}px;left: ${element.position.x}px;" />`;
                 case 'text':
-                    return "<div style=\"font-size:" + _this.downsize(element.fontSize) + "px; color: " + element.color + ";font-family:'" + element.font + "';position: absolute; top: " + element.position.y + "px;left: " + element.position.x + "px;\">" + element.text + "</div>";
+                    return "<div style=\"font-size:" + _this.downsize(element.fontSize) + "px; color: " + element.color + ";font-family:" + element.font + ";position: absolute; top: " + element.position.y + "px;left: " + element.position.x + "px;\">" + element.text + "</div>";
             }
         });
     };
@@ -1903,7 +1909,7 @@ var CanvasComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./canvas.component.html */ "./src/app/editor/canvas/canvas.component.html"),
             styles: [__webpack_require__(/*! ./canvas.component.scss */ "./src/app/editor/canvas/canvas.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"], _player_slide_service__WEBPACK_IMPORTED_MODULE_4__["SlideService"]])
     ], CanvasComponent);
     return CanvasComponent;
 }());
@@ -2055,6 +2061,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _panel_panel_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./panel/panel.component */ "./src/app/editor/panel/panel.component.ts");
 /* harmony import */ var ng5_slider__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ng5-slider */ "./node_modules/ng5-slider/esm5/ng5-slider.js");
 /* harmony import */ var _add_add_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./add/add.component */ "./src/app/editor/add/add.component.ts");
+/* harmony import */ var _fonts_fonts_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./fonts/fonts.component */ "./src/app/editor/fonts/fonts.component.ts");
+
 
 
 
@@ -2081,7 +2089,8 @@ var EditorModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
                 ng5_slider__WEBPACK_IMPORTED_MODULE_12__["Ng5SliderModule"]
             ],
-            declarations: [_contenteditable_directive__WEBPACK_IMPORTED_MODULE_7__["ContenteditableDirective"], _element_element_component__WEBPACK_IMPORTED_MODULE_6__["ElementComponent"], _add_add_component__WEBPACK_IMPORTED_MODULE_13__["AddComponent"], _slide_editor_slide_editor_component__WEBPACK_IMPORTED_MODULE_10__["SlideEditorComponent"], _panel_panel_component__WEBPACK_IMPORTED_MODULE_11__["PanelComponent"]],
+            entryComponents: [_fonts_fonts_component__WEBPACK_IMPORTED_MODULE_14__["FontsSelectComponent"]],
+            declarations: [_contenteditable_directive__WEBPACK_IMPORTED_MODULE_7__["ContenteditableDirective"], _element_element_component__WEBPACK_IMPORTED_MODULE_6__["ElementComponent"], _add_add_component__WEBPACK_IMPORTED_MODULE_13__["AddComponent"], _slide_editor_slide_editor_component__WEBPACK_IMPORTED_MODULE_10__["SlideEditorComponent"], _panel_panel_component__WEBPACK_IMPORTED_MODULE_11__["PanelComponent"], _fonts_fonts_component__WEBPACK_IMPORTED_MODULE_14__["FontsSelectComponent"]],
             providers: [_fonts_service__WEBPACK_IMPORTED_MODULE_9__["FontsService"], _selection_service__WEBPACK_IMPORTED_MODULE_8__["SelectionService"]]
         })
     ], EditorModule);
@@ -2355,6 +2364,7 @@ var FontsService = /** @class */ (function () {
                         }
                         else {
                             log('@fonts.service-loadFontsForRender-skip');
+                            return resolve(_this.fonts);
                         }
                     })];
             });
@@ -2391,6 +2401,106 @@ var FontsService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/editor/fonts/fonts.component.html":
+/*!***************************************************!*\
+  !*** ./src/app/editor/fonts/fonts.component.html ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"modal-header\">\r\n    <h4 class=\"modal-title pull-left\">{{title}}</h4>\r\n    <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"bsModalRef.hide()\">\r\n        <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n</div>\r\n<div class=\"modal-body\">\r\n    <div class=\"font-scroll\">\r\n        <ul *ngIf=\"fonts\">\r\n            <li *ngFor=\"let font of fonts\" (click)=\"applyFont(font)\">{{font}}</li>\r\n        </ul>\r\n\r\n    </div>\r\n\r\n\r\n    <div class=\"font-Preview\" [ngStyle]=\"{'font-family':font}\">\r\n        <div>{{font}}</div>\r\n        {{text}}\r\n    </div>\r\n    <div class=\"text-Preview\">\r\n        <textarea [(ngModel)]=\"text\"></textarea>\r\n    </div>\r\n</div>\r\n<div class=\"modal-footer\">\r\n    <button type=\"button\" class=\"btn btn-default\" (click)=\"bsModalRef.hide()\">{{closeBtnName}}</button>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/editor/fonts/fonts.component.scss":
+/*!***************************************************!*\
+  !*** ./src/app/editor/fonts/fonts.component.scss ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".font-scroll {\n  width: 50%;\n  height: 400px;\n  overflow-y: auto;\n  float: left; }\n\n.font-Preview {\n  padding: 10px;\n  width: 50%;\n  height: 400px;\n  overflow-y: auto;\n  float: left;\n  font-size: 44px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL2ZvbnRzL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcZWRpdG9yXFxmb250c1xcZm9udHMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxVQUFVO0VBQ1YsYUFBYTtFQUNiLGdCQUFnQjtFQUNoQixXQUFXLEVBQUE7O0FBR2I7RUFDRSxhQUFhO0VBQ2IsVUFBVTtFQUNWLGFBQWE7RUFDYixnQkFBZ0I7RUFDaEIsV0FBVztFQUNYLGVBQWUsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2VkaXRvci9mb250cy9mb250cy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5mb250LXNjcm9sbHtcclxuICB3aWR0aDogNTAlO1xyXG4gIGhlaWdodDogNDAwcHg7XHJcbiAgb3ZlcmZsb3cteTogYXV0bztcclxuICBmbG9hdDogbGVmdDtcclxufVxyXG5cclxuLmZvbnQtUHJldmlld3tcclxuICBwYWRkaW5nOiAxMHB4O1xyXG4gIHdpZHRoOiA1MCU7XHJcbiAgaGVpZ2h0OiA0MDBweDtcclxuICBvdmVyZmxvdy15OiBhdXRvO1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIGZvbnQtc2l6ZTogNDRweDtcclxufVxyXG4iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/editor/fonts/fonts.component.ts":
+/*!*************************************************!*\
+  !*** ./src/app/editor/fonts/fonts.component.ts ***!
+  \*************************************************/
+/*! exports provided: FontsSelectComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FontsSelectComponent", function() { return FontsSelectComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _fonts_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../fonts.service */ "./src/app/editor/fonts.service.ts");
+/* harmony import */ var ngx_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-bootstrap */ "./node_modules/ngx-bootstrap/index.js");
+
+
+
+
+
+var FontsSelectComponent = /** @class */ (function () {
+    function FontsSelectComponent(_ngZone, sanitizer, fontsService, bsModalRef) {
+        this._ngZone = _ngZone;
+        this.sanitizer = sanitizer;
+        this.fontsService = fontsService;
+        this.bsModalRef = bsModalRef;
+        this.text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+        this.list = [];
+    }
+    FontsSelectComponent.prototype.ngOnInit = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _a;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _a = this;
+                        return [4 /*yield*/, this.fontsService.loadFontsForLanguage()];
+                    case 1:
+                        _a.fonts = _b.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    FontsSelectComponent.prototype.applyFont = function (font) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.fontsService.loadFontsForRender([font])];
+                    case 1:
+                        _a.sent();
+                        this.font = font;
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Array)
+    ], FontsSelectComponent.prototype, "selectedFonts", void 0);
+    FontsSelectComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-fonts-selection',
+            template: __webpack_require__(/*! ./fonts.component.html */ "./src/app/editor/fonts/fonts.component.html"),
+            styles: [__webpack_require__(/*! ./fonts.component.scss */ "./src/app/editor/fonts/fonts.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"],
+            _fonts_service__WEBPACK_IMPORTED_MODULE_3__["FontsService"],
+            ngx_bootstrap__WEBPACK_IMPORTED_MODULE_4__["BsModalRef"]])
+    ], FontsSelectComponent);
+    return FontsSelectComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/editor/panel/panel.component.html":
 /*!***************************************************!*\
   !*** ./src/app/editor/panel/panel.component.html ***!
@@ -2398,7 +2508,7 @@ var FontsService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"drag-panel\">\r\n    <ul class=\"nav nav-tabs\">\r\n        <li class=\"nav-item\" *ngFor=\"let tab of tabs\" (click)=\"tabSelect(tab)\">\r\n            <a class=\"nav-link {{tab.selected}}\"><h6><i class=\"{{tab.icon}}\"></i> {{tab.name | translate}}</h6></a>\r\n        </li>\r\n    </ul>\r\n\r\n\r\n    <div class=\"inner\" [appAdaptHeight]=\"175\">\r\n\r\n        <form *ngIf=\"selectedTab && tabs[1].name === selectedTab.name\">\r\n\r\n            <div class=\"form-group\">\r\n                <label>{{'PANEL.SLIDE_NAME' | translate}}</label>\r\n                <input [(ngModel)]=\"item.Name\" name=\"slideName\" [detectChanges]=\"true\" class=\"form-control\" />\r\n            </div>\r\n\r\n\r\n            <div class=\"form-group\">\r\n\r\n                <label>{{'PANEL.FORE_COLOR' | translate}}</label>\r\n                <input [(colorPicker)]=\"editor.color\" [detectChanges]=\"true\" (colorPickerChange)=\"setColor($event)\" [cpPosition]=\"'bottom'\"\r\n                    class=\"form-control\" [style.background]=\"editor.color\" />\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label>{{'PANEL.BACK_COLOR' | translate}}</label>\r\n\r\n                <input [(colorPicker)]=\"editor.bgColor\" [detectChanges]=\"true\" (colorPickerChange)=\"setBgColor($event)\" [cpPosition]=\"'bottom'\"\r\n                    class=\"form-control\" [style.background]=\"editor.bgColor\" />\r\n            </div>\r\n\r\n\r\n        </form>\r\n\r\n        <div *ngIf=\"selectedTab &&  tabs[0].name === selectedTab.name && !element\" class=\"no-selection\">\r\n            <div></div>\r\n            <div>\r\n                <h2> {{'PANEL.SELECT_ELEMENT' | translate}}</h2>\r\n            </div>\r\n            <div></div>\r\n\r\n        </div>\r\n        <form *ngIf=\"element && selectedTab &&  tabs[0].name === selectedTab.name\">\r\n            <div class=\"form-group\">\r\n                <label>{{'PANEL.ELEMENT_NAME' | translate}}</label>\r\n                <input [(ngModel)]=\"element.varName\" name=\"elementName\" [detectChanges]=\"true\" class=\"form-control\" />\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n                <div class=\"input-group\">\r\n                    <div class=\"input-group-prepend\">\r\n                        <span class=\"input-group-text\" id=\"\">{{element.zIndex}}</span>\r\n                    </div>\r\n                    <div class=\"btn-group\">\r\n                        <button (click)=\"moveIndex(-1)\" class=\"btn btn-secondary\"><i class=\"fas fa-level-down-alt\"></i></button>\r\n                        <button (click)=\"moveIndex(1)\" class=\"btn btn-secondary\"><i class=\"fas fa-level-up-alt\"></i></button>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                    <label  >{{ \"PANEL.IMAGE_OPACITY\" | translate }}:</label>\r\n                    <ng5-slider [(value)]=\"element.opacity\" [options]=\"sliderImageOpacityOptions\"></ng5-slider>\r\n                </div>\r\n\r\n            <div *ngIf=\"element.type === 'image'\" class=\"t-bar\">           \r\n\r\n                <div class=\"form-group\">\r\n                    <label for=\"IMAGE_WIDTH\">{{ \"PANEL.IMAGE_WIDTH\" | translate }}:</label>\r\n                    <ng5-slider [(value)]=\"element.width\" [options]=\"sliderImageOptions\"></ng5-slider>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"IMAGE_HEIGHT\">{{ \"PANEL.IMAGE_HEIGHT\" | translate }}:</label>\r\n                    <ng5-slider [(value)]=\"element.height\" [options]=\"sliderImageOptions\"></ng5-slider>\r\n\r\n                </div>\r\n                <div class=\"form-group row\">\r\n                        <div class=\"col-6\">\r\n                            <label for=\"fontColor\">{{ \"PANEL.POSITIONX\" | translate }}:</label>\r\n                            <input class=\"form-control\" name=\"position_x\" (change)=\"detect($event)\" [detectChanges]=\"true\" [(ngModel)]=\"element.position.x\" />\r\n                        </div>\r\n                        <div class=\"col-6\">\r\n                            <label for=\"fontColor\">{{ \"PANEL.POSITIONY\" | translate }}:</label>\r\n                            <input class=\"form-control\" name=\"position_y\" (change)=\"detect($event)\" [detectChanges]=\"true\" [(ngModel)]=\"element.position.y\" />\r\n                        </div>\r\n                    </div>\r\n\r\n            </div>\r\n            <div *ngIf=\"element.type === 'text'\" class=\"t-bar\">\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontName\">{{ \"PANEL.FONTNAME\" | translate }}:</label>\r\n                    <select [detectChanges]=\"true\" class=\"form-control\" name=\"fontNameTxt\" [detectChanges]=\"true\" [(ngModel)]=\"element.font\" (change)=\"selectFont($event)\">\r\n                        <option *ngFor=\"let c of fonts\" [ngValue]=\"c\">{{c}}</option>\r\n                    </select>\r\n                    <small id=\"fontHelp\" class=\"form-text text-muted\">{{ \"PANEL.FONTNAME_HELP\" | translate }}</small>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontName\">{{ \"PANEL.FONTSIZE\" | translate }}:</label>\r\n                    <ng5-slider [detectChanges]=\"true\" [(value)]=\"element.fontSize\" [options]=\"sliderOptions\"></ng5-slider>\r\n                    <small id=\"fontSize\" class=\"form-text text-muted\">{{ \"PANEL.FONTSIZE_HELP\" | translate }}</small>\r\n                </div>\r\n\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontColor\">{{ \"PANEL.FONTCOLOR\" | translate }}:</label>\r\n                    <input [detectChanges]=\"true\" class=\"form-control\" name=\"fontColorTxt\" [cpPosition]=\"'top'\" [(colorPicker)]=\"element.color\"\r\n                        [style.background]=\"element.color\" />\r\n                </div>\r\n\r\n                <div class=\"form-group row\">\r\n                    <div class=\"col-6\">\r\n                        <label for=\"fontColor\">{{ \"PANEL.POSITIONX\" | translate }}:</label>\r\n                        <input class=\"form-control\" name=\"position_x\" (change)=\"detect($event)\" [detectChanges]=\"true\" [(ngModel)]=\"element.position.x\" />\r\n                    </div>\r\n                    <div class=\"col-6\">\r\n                        <label for=\"fontColor\">{{ \"PANEL.POSITIONY\" | translate }}:</label>\r\n                        <input class=\"form-control\" name=\"position_y\" (change)=\"detect($event)\" [detectChanges]=\"true\" [(ngModel)]=\"element.position.y\" />\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>\r\n"
+module.exports = "<div class=\"drag-panel\">\r\n    <ul class=\"nav nav-tabs\">\r\n        <li class=\"nav-item\" *ngFor=\"let tab of tabs\" (click)=\"tabSelect(tab)\">\r\n            <a class=\"nav-link {{tab.selected}}\"><h6><i class=\"{{tab.icon}}\"></i> {{tab.name | translate}}</h6></a>\r\n        </li>\r\n    </ul>\r\n\r\n\r\n    <div class=\"inner\" [appAdaptHeight]=\"175\">\r\n\r\n        <form *ngIf=\"selectedTab && tabs[1].name === selectedTab.name\">\r\n\r\n            <div class=\"form-group\">\r\n                <label>{{'PANEL.SLIDE_NAME' | translate}}</label>\r\n                <input [(ngModel)]=\"item.Name\" name=\"slideName\" [detectChanges]=\"true\" class=\"form-control\" />\r\n            </div>\r\n\r\n\r\n            <div class=\"form-group\">\r\n\r\n                <label>{{'PANEL.FORE_COLOR' | translate}}</label>\r\n                <input [(colorPicker)]=\"editor.color\" [detectChanges]=\"true\" (colorPickerChange)=\"setColor($event)\" [cpPosition]=\"'bottom'\"\r\n                    class=\"form-control\" [style.background]=\"editor.color\" />\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label>{{'PANEL.BACK_COLOR' | translate}}</label>\r\n\r\n                <input [(colorPicker)]=\"editor.bgColor\" [detectChanges]=\"true\" (colorPickerChange)=\"setBgColor($event)\" [cpPosition]=\"'bottom'\"\r\n                    class=\"form-control\" [style.background]=\"editor.bgColor\" />\r\n            </div>\r\n\r\n\r\n        </form>\r\n\r\n        <div *ngIf=\"selectedTab &&  tabs[0].name === selectedTab.name && !element\" class=\"no-selection\">\r\n            <div></div>\r\n            <div>\r\n                <h2> {{'PANEL.SELECT_ELEMENT' | translate}}</h2>\r\n            </div>\r\n            <div></div>\r\n\r\n        </div>\r\n        <form *ngIf=\"element && selectedTab &&  tabs[0].name === selectedTab.name\">\r\n            <div class=\"form-group\">\r\n                <label>{{'PANEL.ELEMENT_NAME' | translate}}</label>\r\n                <input [(ngModel)]=\"element.varName\" name=\"elementName\" [detectChanges]=\"true\" class=\"form-control\" />\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n                <div class=\"input-group\">\r\n                    <div class=\"input-group-prepend\">\r\n                        <span class=\"input-group-text\" id=\"\">{{element.zIndex}}</span>\r\n                    </div>\r\n                    <div class=\"btn-group\">\r\n                        <button (click)=\"moveIndex(-1)\" class=\"btn btn-secondary\"><i class=\"fas fa-level-down-alt\"></i></button>\r\n                        <button (click)=\"moveIndex(1)\" class=\"btn btn-secondary\"><i class=\"fas fa-level-up-alt\"></i></button>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label>{{ \"PANEL.IMAGE_OPACITY\" | translate }}:</label>\r\n                <ng5-slider [(value)]=\"element.opacity\" [options]=\"sliderImageOpacityOptions\"></ng5-slider>\r\n            </div>\r\n\r\n            <div *ngIf=\"element.type === 'image'\" class=\"t-bar\">\r\n\r\n                <div class=\"form-group\">\r\n                    <label for=\"IMAGE_WIDTH\">{{ \"PANEL.IMAGE_WIDTH\" | translate }}:</label>\r\n                    <ng5-slider [(value)]=\"element.width\" [options]=\"sliderImageOptions\"></ng5-slider>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"IMAGE_HEIGHT\">{{ \"PANEL.IMAGE_HEIGHT\" | translate }}:</label>\r\n                    <ng5-slider [(value)]=\"element.height\" [options]=\"sliderImageOptions\"></ng5-slider>\r\n\r\n                </div>\r\n                <div class=\"form-group row\">\r\n                    <div class=\"col-6\">\r\n                        <label for=\"fontColor\">{{ \"PANEL.POSITIONX\" | translate }}:</label>\r\n                        <input class=\"form-control\" name=\"position_x\" (change)=\"detect($event)\" [detectChanges]=\"true\" [(ngModel)]=\"element.position.x\"\r\n                        />\r\n                    </div>\r\n                    <div class=\"col-6\">\r\n                        <label for=\"fontColor\">{{ \"PANEL.POSITIONY\" | translate }}:</label>\r\n                        <input class=\"form-control\" name=\"position_y\" (change)=\"detect($event)\" [detectChanges]=\"true\" [(ngModel)]=\"element.position.y\"\r\n                        />\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n            <div *ngIf=\"element.type === 'text'\" class=\"t-bar\">\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontName\">{{ \"PANEL.FONTNAME\" | translate }}:</label>\r\n                    <div class=\"input-group mb-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                              \r\n\r\n                            <button class=\"btn btn-outline-secondary\" type=\"button\" (click)=\"openModalWithComponent()\">Pick</button>\r\n                        </div>\r\n                        <select [detectChanges]=\"true\" class=\"form-control\" name=\"fontNameTxt\" [detectChanges]=\"true\" [(ngModel)]=\"element.font\"\r\n                            (change)=\"selectFont($event)\">\r\n                            <option *ngFor=\"let c of editor.fonts\" [ngValue]=\"c\">{{c}}</option>\r\n                        </select>\r\n                    </div>\r\n                    <small id=\"fontHelp\" class=\"form-text text-muted\">{{ \"PANEL.FONTNAME_HELP\" | translate }}</small>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontName\">{{ \"PANEL.FONTSIZE\" | translate }}:</label>\r\n                    <ng5-slider [detectChanges]=\"true\" [(value)]=\"element.fontSize\" [options]=\"sliderOptions\"></ng5-slider>\r\n                    <small id=\"fontSize\" class=\"form-text text-muted\">{{ \"PANEL.FONTSIZE_HELP\" | translate }}</small>\r\n                </div>\r\n\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontColor\">{{ \"PANEL.FONTCOLOR\" | translate }}:</label>\r\n                    <input [detectChanges]=\"true\" class=\"form-control\" name=\"fontColorTxt\" [cpPosition]=\"'top'\" [(colorPicker)]=\"element.color\"\r\n                        [style.background]=\"element.color\" />\r\n                </div>\r\n\r\n                <div class=\"form-group row\">\r\n                    <div class=\"col-6\">\r\n                        <label for=\"fontColor\">{{ \"PANEL.POSITIONX\" | translate }}:</label>\r\n                        <input class=\"form-control\" name=\"position_x\" (change)=\"detect($event)\" [detectChanges]=\"true\" [(ngModel)]=\"element.position.x\"\r\n                        />\r\n                    </div>\r\n                    <div class=\"col-6\">\r\n                        <label for=\"fontColor\">{{ \"PANEL.POSITIONY\" | translate }}:</label>\r\n                        <input class=\"form-control\" name=\"position_y\" (change)=\"detect($event)\" [detectChanges]=\"true\" [(ngModel)]=\"element.position.y\"\r\n                        />\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -2409,7 +2519,7 @@ module.exports = "<div class=\"drag-panel\">\r\n    <ul class=\"nav nav-tabs\">\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".drag-panel {\n  width: 300px;\n  margin-right: 20px; }\n  .drag-panel label {\n    color: #e3e4e5; }\n  .drag-panel .no-selection {\n    display: flex;\n    flex-direction: column;\n    flex-wrap: nowrap;\n    justify-content: flex-start;\n    align-items: stretch;\n    align-content: stretch;\n    height: 100%; }\n  .drag-panel .inner {\n    position: relative;\n    top: -1px;\n    height: 100%;\n    border: 1px solid #2a4563;\n    padding: 10px;\n    background: #264356;\n    background: linear-gradient(90deg, #264356 0%, #e3e4e5 99%); }\n  .drag-panel .inner h2 {\n      text-align: center;\n      margin: auto; }\n  .nav-link.true {\n  background-color: #e3e4e5;\n  border-color: #2a4563; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL3BhbmVsL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcZWRpdG9yXFxwYW5lbFxccGFuZWwuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2VkaXRvci9wYW5lbC9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxzYXNzXFxfdmFyaWFibGVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBR0E7RUFnQkksWUFBWTtFQWlCWixrQkFBa0IsRUFBQTtFQWpDdEI7SUFHTSxjQ0xjLEVBQUE7RURFcEI7SUFNUSxhQUFhO0lBQ3BCLHNCQUFzQjtJQUN0QixpQkFBaUI7SUFDakIsMkJBQTJCO0lBQzNCLG9CQUFvQjtJQUNqQixzQkFBc0I7SUFDdEIsWUFBWSxFQUFBO0VBWmhCO0lBbUJRLGtCQUFrQjtJQUNsQixTQUFRO0lBQ1IsWUFBWTtJQUNaLHlCQ3RCaUI7SUR1QmpCLGFBQWE7SUFDYixtQkN2QmtCO0lEd0JsQiwyREFBeUUsRUFBQTtFQXpCakY7TUEyQlksa0JBQWtCO01BQ2xCLFlBQVcsRUFBQTtFQVF2QjtFQUNJLHlCQ3ZDZ0I7RUR3Q2hCLHFCQ3RDcUIsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2VkaXRvci9wYW5lbC9wYW5lbC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJy4uLy4uLy4uL3Nhc3MvX3ZhcmlhYmxlcyc7XHJcblxyXG5cclxuLmRyYWctcGFuZWxcclxue1xyXG4gIGxhYmVse1xyXG4gICAgICBjb2xvcjogJGNvbG9yLWdyYXk7XHJcbiAgfVxyXG4gICAgLm5vLXNlbGVjdGlvbiB7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuXHRmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG5cdGZsZXgtd3JhcDogbm93cmFwO1xyXG5cdGp1c3RpZnktY29udGVudDogZmxleC1zdGFydDtcclxuXHRhbGlnbi1pdGVtczogc3RyZXRjaDtcclxuICAgIGFsaWduLWNvbnRlbnQ6IHN0cmV0Y2g7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICBcclxuICAgIH1cclxuICBcclxuICAgIHdpZHRoOiAzMDBweDtcclxuICAgXHJcbiAgICAuaW5uZXJ7XHJcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICAgIHRvcDotMXB4O1xyXG4gICAgICAgIGhlaWdodDogMTAwJTtcclxuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCAkY29sb3ItZGFya2JsdWUyO1xyXG4gICAgICAgIHBhZGRpbmc6IDEwcHg7XHJcbiAgICAgICAgYmFja2dyb3VuZDogJGNvbG9yLWxpZ2h0Ymx1ZTE7XHJcbiAgICAgICAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDkwZGVnLCAkY29sb3ItbGlnaHRibHVlMSAwJSwgJGNvbG9yLWdyYXkgOTklKTtcclxuICAgICAgICBoMntcclxuICAgICAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyOyAgICAgICAgICAgIFxyXG4gICAgICAgICAgICBtYXJnaW46YXV0bztcclxuICAgICAgICAgICAgXHJcblxyXG4gICAgICAgIH1cclxuICAgIH1cclxuICAgIG1hcmdpbi1yaWdodDogMjBweDtcclxufVxyXG5cclxuLm5hdi1saW5rLnRydWV7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAkY29sb3ItZ3JheTtcclxuICAgIGJvcmRlci1jb2xvcjogJGNvbG9yLWRhcmtibHVlMjtcclxufSIsIlxyXG4kY29sb3ItZ3JheTogI2UzZTRlNTtcclxuJGNvbG9yLWRhcmtibHVlMTogIzE2MjQzMztcclxuJGNvbG9yLWRhcmtibHVlMjogIzJhNDU2MztcclxuJGNvbG9yLWxpZ2h0Ymx1ZTE6ICMyNjQzNTY7XHJcbiRjb2xvci1saWdodGJsdWUyOiAjM2M3Mzk5O1xyXG4kY29sb3Itb3JhbmdlOiAjZmM2NjAwO1xyXG4kY29sb3ItY3lhbjogIzAwZmZmNjtcclxuJGNvbG9yLXNjcmVlbjogIzAwY2ZmZjtcclxuJGNvbG9yLXNjcmVlbi1ncm91cDogIzAwZmZmNjtcclxuJGNvbG9yLWxpYnJhcnk6ICM5NmZmMDA7XHJcbiRjb2xvci15ZWxsb3c6ICNmZmZmMDA7XHJcbiRjb2xvci1wdXJwbGU6ICNmM2I3ZWI7XHJcbiRjb2xvci1ncmVlbjogIzk2ZmYwMDtcclxuIFxyXG5cclxuICJdfQ== */"
+module.exports = ".drag-panel {\n  width: 300px;\n  margin-right: 20px; }\n  .drag-panel .form-group {\n    margin: 0; }\n  .drag-panel .form-control, .drag-panel .select {\n    height: 20px !important;\n    padding: 1px; }\n  .drag-panel label {\n    color: #e3e4e5; }\n  .drag-panel .no-selection {\n    display: flex;\n    flex-direction: column;\n    flex-wrap: nowrap;\n    justify-content: flex-start;\n    align-items: stretch;\n    align-content: stretch;\n    height: 100%; }\n  .drag-panel .inner {\n    position: relative;\n    top: -1px;\n    height: 100%;\n    border: 1px solid #2a4563;\n    padding: 10px;\n    background: #264356;\n    background: linear-gradient(90deg, #264356 0%, #e3e4e5 99%); }\n  .drag-panel .inner h2 {\n      text-align: center;\n      margin: auto; }\n  .nav-link.true {\n  background-color: #e3e4e5;\n  border-color: #2a4563; }\n  .modal-lg {\n  width: 70% !important;\n  max-width: 1000px !important; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL3BhbmVsL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcZWRpdG9yXFxwYW5lbFxccGFuZWwuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2VkaXRvci9wYW5lbC9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxzYXNzXFxfdmFyaWFibGVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBR0E7RUF1QkksWUFBWTtFQWlCWixrQkFBa0IsRUFBQTtFQXhDdEI7SUFHUSxTQUFRLEVBQUE7RUFIaEI7SUFNUSx1QkFBc0I7SUFDdEIsWUFBWSxFQUFBO0VBUHBCO0lBVU0sY0NaYyxFQUFBO0VERXBCO0lBYVEsYUFBYTtJQUNwQixzQkFBc0I7SUFDdEIsaUJBQWlCO0lBQ2pCLDJCQUEyQjtJQUMzQixvQkFBb0I7SUFDakIsc0JBQXNCO0lBQ3RCLFlBQVksRUFBQTtFQW5CaEI7SUEwQlEsa0JBQWtCO0lBQ2xCLFNBQVE7SUFDUixZQUFZO0lBQ1oseUJDN0JpQjtJRDhCakIsYUFBYTtJQUNiLG1CQzlCa0I7SUQrQmxCLDJEQUF5RSxFQUFBO0VBaENqRjtNQWtDWSxrQkFBa0I7TUFDbEIsWUFBVyxFQUFBO0VBUXZCO0VBQ0kseUJDOUNnQjtFRCtDaEIscUJDN0NxQixFQUFBO0VEZ0R6QjtFQUNJLHFCQUFvQjtFQUNwQiw0QkFBMkIsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2VkaXRvci9wYW5lbC9wYW5lbC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJy4uLy4uLy4uL3Nhc3MvX3ZhcmlhYmxlcyc7XHJcblxyXG5cclxuLmRyYWctcGFuZWxcclxue1xyXG4gICAgLmZvcm0tZ3JvdXB7XHJcbiAgICAgICAgbWFyZ2luOjA7XHJcbiAgICB9XHJcbiAgICAuZm9ybS1jb250cm9sLCAuc2VsZWN0e1xyXG4gICAgICAgIGhlaWdodDogMjBweCFpbXBvcnRhbnQ7XHJcbiAgICAgICAgcGFkZGluZzogMXB4O1xyXG4gICAgfVxyXG4gIGxhYmVse1xyXG4gICAgICBjb2xvcjogJGNvbG9yLWdyYXk7XHJcbiAgfVxyXG4gICAgLm5vLXNlbGVjdGlvbiB7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuXHRmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG5cdGZsZXgtd3JhcDogbm93cmFwO1xyXG5cdGp1c3RpZnktY29udGVudDogZmxleC1zdGFydDtcclxuXHRhbGlnbi1pdGVtczogc3RyZXRjaDtcclxuICAgIGFsaWduLWNvbnRlbnQ6IHN0cmV0Y2g7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICBcclxuICAgIH1cclxuICBcclxuICAgIHdpZHRoOiAzMDBweDtcclxuICAgXHJcbiAgICAuaW5uZXJ7XHJcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICAgIHRvcDotMXB4O1xyXG4gICAgICAgIGhlaWdodDogMTAwJTtcclxuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCAkY29sb3ItZGFya2JsdWUyO1xyXG4gICAgICAgIHBhZGRpbmc6IDEwcHg7XHJcbiAgICAgICAgYmFja2dyb3VuZDogJGNvbG9yLWxpZ2h0Ymx1ZTE7XHJcbiAgICAgICAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDkwZGVnLCAkY29sb3ItbGlnaHRibHVlMSAwJSwgJGNvbG9yLWdyYXkgOTklKTtcclxuICAgICAgICBoMntcclxuICAgICAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyOyAgICAgICAgICAgIFxyXG4gICAgICAgICAgICBtYXJnaW46YXV0bztcclxuICAgICAgICAgICAgXHJcblxyXG4gICAgICAgIH1cclxuICAgIH1cclxuICAgIG1hcmdpbi1yaWdodDogMjBweDtcclxufVxyXG5cclxuLm5hdi1saW5rLnRydWV7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAkY29sb3ItZ3JheTtcclxuICAgIGJvcmRlci1jb2xvcjogJGNvbG9yLWRhcmtibHVlMjtcclxufVxyXG5cclxuLm1vZGFsLWxne1xyXG4gICAgd2lkdGg6IDcwJSFpbXBvcnRhbnQ7XHJcbiAgICBtYXgtd2lkdGg6IDEwMDBweCFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gICIsIlxyXG4kY29sb3ItZ3JheTogI2UzZTRlNTtcclxuJGNvbG9yLWRhcmtibHVlMTogIzE2MjQzMztcclxuJGNvbG9yLWRhcmtibHVlMjogIzJhNDU2MztcclxuJGNvbG9yLWxpZ2h0Ymx1ZTE6ICMyNjQzNTY7XHJcbiRjb2xvci1saWdodGJsdWUyOiAjM2M3Mzk5O1xyXG4kY29sb3Itb3JhbmdlOiAjZmM2NjAwO1xyXG4kY29sb3ItY3lhbjogIzAwZmZmNjtcclxuJGNvbG9yLXNjcmVlbjogIzAwY2ZmZjtcclxuJGNvbG9yLXNjcmVlbi1ncm91cDogIzAwZmZmNjtcclxuJGNvbG9yLWxpYnJhcnk6ICM5NmZmMDA7XHJcbiRjb2xvci15ZWxsb3c6ICNmZmZmMDA7XHJcbiRjb2xvci1wdXJwbGU6ICNmM2I3ZWI7XHJcbiRjb2xvci1ncmVlbjogIzk2ZmYwMDtcclxuIFxyXG5cclxuICJdfQ== */"
 
 /***/ }),
 
@@ -2426,17 +2536,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var _fonts_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../fonts.service */ "./src/app/editor/fonts.service.ts");
+/* harmony import */ var ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-bootstrap/modal */ "./node_modules/ngx-bootstrap/modal/index.js");
+/* harmony import */ var _fonts_fonts_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../fonts/fonts.component */ "./src/app/editor/fonts/fonts.component.ts");
+
 
 
 
 
 var PanelComponent = /** @class */ (function () {
-    function PanelComponent(_ngZone, sanitizer, fontService, changeDetector) {
+    function PanelComponent(_ngZone, sanitizer, modalService) {
         this._ngZone = _ngZone;
         this.sanitizer = sanitizer;
-        this.fontService = fontService;
-        this.changeDetector = changeDetector;
+        this.modalService = modalService;
         this.sliderOptions = {
             floor: 0,
             ceil: 250
@@ -2453,11 +2564,19 @@ var PanelComponent = /** @class */ (function () {
         this.editorChanged = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.elementChanged = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.editor = {
+            fonts: ['arial'],
             color: '#fff',
             bgColor: '#000'
         };
         this.tabs = [{ name: 'PANEL.ELEMENT', icon: '', selected: true }, { name: 'PANEL.GENERAL', icon: '', selected: false }];
     }
+    PanelComponent.prototype.openModalWithComponent = function () {
+        var initialState = {
+            selectedFonts: this.editor.fonts
+        };
+        this.bsModalRef = this.modalService.show(_fonts_fonts_component__WEBPACK_IMPORTED_MODULE_4__["FontsSelectComponent"], { initialState: initialState, class: 'modal-lg' });
+        this.bsModalRef.content.closeBtnName = 'Close';
+    };
     PanelComponent.prototype.tabSelect = function (tab) {
         this.tabs.forEach(function (tabItem) { return tabItem.selected = false; });
         tab.selected = true;
@@ -2506,20 +2625,12 @@ var PanelComponent = /** @class */ (function () {
             var _this = this;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 this._ngZone.run(function () { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
-                    var _a;
-                    return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
-                        switch (_b.label) {
-                            case 0:
-                                this.selectedTab = this.tabs[0];
-                                _a = this;
-                                return [4 /*yield*/, this.fontService.loadFontsForLanguage()];
-                            case 1:
-                                _a.fonts = _b.sent();
-                                if (this.element) {
-                                    this.positionProjection = { 'top': this.element.position.y + 'px', 'left': (this.element.position.x * 1) + 300 + 'px' };
-                                }
-                                return [2 /*return*/];
+                    return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                        this.selectedTab = this.tabs[0];
+                        if (this.element) {
+                            this.positionProjection = { 'top': this.element.position.y + 'px', 'left': (this.element.position.x * 1) + 300 + 'px' };
                         }
+                        return [2 /*return*/];
                     });
                 }); });
                 return [2 /*return*/];
@@ -2552,8 +2663,8 @@ var PanelComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./panel.component.html */ "./src/app/editor/panel/panel.component.html"),
             styles: [__webpack_require__(/*! ./panel.component.scss */ "./src/app/editor/panel/panel.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"], _fonts_service__WEBPACK_IMPORTED_MODULE_3__["FontsService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"],
+            ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_3__["BsModalService"]])
     ], PanelComponent);
     return PanelComponent;
 }());
@@ -2699,6 +2810,7 @@ var SlideEditorComponent = /** @class */ (function (_super) {
         _this.tabs = [{ name: 'SLIDES.DESIGNER', selected: true }, { name: 'SLIDES.SOURCE', selected: false }];
         _this.finderActive = 'closing';
         _this.editor = {
+            fonts: ['arial'],
             color: '#fff',
             bgColor: '#000'
         };
@@ -5696,260 +5808,284 @@ var SlideService = /** @class */ (function () {
         });
     };
     SlideService.prototype.play = function (playerPlan, ctx, width, height, mode) {
-        var _this = this;
-        var stage = new _createjs_easeljs__WEBPACK_IMPORTED_MODULE_4__["Stage"](ctx.canvas);
-        log('@slide.service-play');
-        var player = this;
-        var start = new Date();
-        var lines = 16;
-        function factor(screen, x, y) {
-            if (!y) {
-                return Math.floor(x * (width / screen.width));
-            }
-            else {
-                return { x: x * (width / screen.width), y: y * (height / screen.height) };
-            }
-        }
-        function prerender(item) {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-                var _a;
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
-                    switch (_b.label) {
-                        case 0:
-                            log('@slide.service-prerender');
-                            if (item.elements) {
-                                item.type = 'slide';
-                            }
-                            _a = item.type;
-                            switch (_a) {
-                                case 'image': return [3 /*break*/, 1];
-                                case 'slide': return [3 /*break*/, 3];
-                            }
-                            return [3 /*break*/, 5];
-                        case 1: return [4 /*yield*/, render_fullimage_to_canvas(item.resource, 0, 0, width, height)];
-                        case 2: return [2 /*return*/, _b.sent()];
-                        case 3: return [4 /*yield*/, renderElementsToTags(item)];
-                        case 4: return [2 /*return*/, _b.sent()];
-                        case 5: return [2 /*return*/];
-                    }
-                });
-            });
-        }
-        function playScreenError() {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                    ctx.font = "120px arial";
-                    ctx.fillStyle = "black";
-                    ctx.fillText('Screen error', width, height);
-                    return [2 /*return*/];
-                });
-            });
-        }
-        // window.setInterval(playLoadingAnimation, 1000 / 30);
-        function playLoadingAnimation() {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-                var rotation, i;
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                    rotation = ((new Date() - start) / 1000) * lines / lines;
-                    ctx.save();
-                    ctx.clearRect(0, 0, width, height);
-                    ctx.translate(width / 2, height / 2);
-                    ctx.rotate(Math.PI * 2 * rotation);
-                    for (i = 0; i < lines; i++) {
-                        ctx.beginPath();
-                        ctx.rotate(Math.PI * 2 / lines);
-                        ctx.moveTo(width / 10, 0);
-                        ctx.lineTo(width / 4, 0);
-                        ctx.lineWidth = width / 30;
-                        ctx.strokeStyle = 'rgba(0, 0, 0,' + i / lines + ')';
-                        ctx.stroke();
-                    }
-                    ctx.restore();
-                    return [2 /*return*/];
-                });
-            });
-        }
-        function playDefaultPlan() {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                    ctx.font = "120px arial";
-                    ctx.fillStyle = "black";
-                    ctx.fillText('Nothing to play', width / 4, height / 2);
-                    setTimeout(function () {
-                        player.play(player.playerPlan, ctx, width, height);
-                    }, 10 * 1000);
-                    return [2 /*return*/];
-                });
-            });
-        }
-        function renderElementsToTags(item) {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-                var shape, index, element, _a;
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
-                    switch (_b.label) {
-                        case 0:
-                            log('@slide.service-renderElementsToTags');
-                            stage.clear(0, 0, stage.canvas.width, stage.canvas.height);
-                            if (item.bgColor) {
-                                shape = new _createjs_easeljs__WEBPACK_IMPORTED_MODULE_4__["Shape"]();
-                                shape.graphics.beginFill(item.bgColor).drawRect(0, 0, width, height);
-                                stage.addChild(shape);
-                                stage.update();
-                            }
-                            item.elements.sort(function (a, b) {
-                                return a.zIndex - b.zIndex;
-                            });
-                            index = 0;
-                            _b.label = 1;
-                        case 1:
-                            if (!(index < item.elements.length)) return [3 /*break*/, 6];
-                            element = item.elements[index];
-                            _a = element.type;
-                            switch (_a) {
-                                case 'image': return [3 /*break*/, 2];
-                                case 'text': return [3 /*break*/, 4];
-                            }
-                            return [3 /*break*/, 5];
-                        case 2: return [4 /*yield*/, render_image_to_canvas(item, element)];
-                        case 3:
-                            _b.sent();
-                            return [3 /*break*/, 5];
-                        case 4:
-                            render_text_to_canvas(item, element);
-                            return [3 /*break*/, 5];
-                        case 5:
-                            index++;
-                            return [3 /*break*/, 1];
-                        case 6: return [2 /*return*/];
-                    }
-                });
-            });
-        }
-        function loadImageUrl(url) {
-            return new Promise(function (resolve, reject) {
-                var img = new Image();
-                img.addEventListener('load', function (e) { return resolve(img); });
-                img.addEventListener('error', function () {
-                    reject(new Error("Failed to load image's URL: " + url));
-                });
-                img.src = url;
-            });
-        }
-        function render_text_to_canvas(item, element) {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-                var position;
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                    log('@slide.service-render_text_to_canvas');
-                    if (element.text) {
-                        ctx.font = factor(item.Screen, element.fontSize) + "px " + element.font;
-                        ctx.fillStyle = "" + element.color;
-                        ctx.save();
-                        if (element.opacity) {
-                            ctx.globalAlpha = element.opacity;
-                        }
-                        position = factor(item.Screen, element.position.x, (Number(element.position.y) + element.fontSize));
-                        // ctx.fillText(JSON.stringify({ x: position.x, y: position.y }), position.x, position.y);
-                        ctx.fillText(element.text, position.x, position.y);
-                        ctx.restore();
-                    }
-                    return [2 /*return*/];
-                });
-            });
-        }
-        function render_fullimage_to_canvas(url, x, y, _width, _height) {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-                var _this = this;
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                    log('@slide.service-render_fullimage_to_canvas');
-                    return [2 /*return*/, new Promise(function (resolve, reject) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
-                            var img;
-                            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                                switch (_a.label) {
-                                    case 0: return [4 /*yield*/, image_promise__WEBPACK_IMPORTED_MODULE_2___default()([url])];
-                                    case 1:
-                                        img = _a.sent();
-                                        if (img.length && img.length > 0) {
-                                            img = img[0];
-                                        }
-                                        if (img) {
-                                            img.width = ctx.canvas.width;
-                                            img.height = ctx.canvas.height;
-                                            images.push(img);
-                                            ctx.clearRect(0, 0, _width, _height);
-                                            ctx.drawImage(img, x, y, _width, _height);
-                                        }
-                                        resolve(img);
-                                        return [2 /*return*/];
-                                }
-                            });
-                        }); })];
-                });
-            });
-        }
-        function render_image_to_canvas(item, element) {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-                var url, x, y, _width, _height;
-                var _this = this;
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                    url = element.src;
-                    x = element.position.x;
-                    y = element.position.y;
-                    _width = element.width;
-                    _height = element.height;
-                    log('@slide.service-render_image_to_canvas');
-                    return [2 /*return*/, new Promise(function (resolve, reject) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
-                            var img, sizes;
-                            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                                switch (_a.label) {
-                                    case 0: return [4 /*yield*/, image_promise__WEBPACK_IMPORTED_MODULE_2___default()([url])];
-                                    case 1:
-                                        img = _a.sent();
-                                        if (img && img.length && img.length > 0) {
-                                            img = img[0];
-                                        }
-                                        images.push(img);
-                                        sizes = factor(item.Screen, _width, _height);
-                                        ctx.save();
-                                        if (element.opacity) {
-                                            ctx.globalAlpha = element.opacity;
-                                        }
-                                        ctx.drawImage(img, x, y, sizes.x, sizes.y);
-                                        ctx.restore();
-                                        resolve(img);
-                                        return [2 /*return*/];
-                                }
-                            });
-                        }); })];
-                });
-            });
-        }
-        function html_to_xml(html) {
-            var doc = document.implementation.createHTMLDocument('');
-            doc.write(html);
-            doc.documentElement.setAttribute('xmlns', doc.documentElement.namespaceURI);
-            // Get well-formed markup
-            html = (new XMLSerializer).serializeToString(doc.body);
-            return html;
-        }
-        this.playerPlan = playerPlan;
-        var images = [];
-        if (!this.playerPlan || this.playerPlan.length === 0) {
-            playDefaultPlan();
-            return;
-        }
-        this.list = this.playerPlan[0].list;
-        prerender(this.list[this.itemIndex]);
-        var frameDuration = (this.list[this.itemIndex].duration) ? this.list[this.itemIndex].duration * 1000 : 5000;
-        this.itemIndex++;
-        if (mode !== 'single') {
-            setInterval(function () {
-                if (_this.itemIndex >= _this.list.length) {
-                    _this.itemIndex = 0;
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            function factor(screen, x, y) {
+                if (!y) {
+                    return Math.floor(x * (width / screen.width));
                 }
-                prerender(_this.list[_this.itemIndex]);
-                _this.itemIndex++;
-            }, frameDuration);
-        }
+                else {
+                    return { x: x * (width / screen.width), y: y * (height / screen.height) };
+                }
+            }
+            function prerender(item) {
+                return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+                    var _a;
+                    return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
+                        switch (_b.label) {
+                            case 0:
+                                log('@slide.service-prerender');
+                                if (item.elements) {
+                                    item.type = 'slide';
+                                }
+                                _a = item.type;
+                                switch (_a) {
+                                    case 'image': return [3 /*break*/, 1];
+                                    case 'slide': return [3 /*break*/, 3];
+                                }
+                                return [3 /*break*/, 5];
+                            case 1: return [4 /*yield*/, render_fullimage_to_canvas(item.resource, 0, 0, width, height)];
+                            case 2: return [2 /*return*/, _b.sent()];
+                            case 3: return [4 /*yield*/, renderElementsToTags(item)];
+                            case 4: return [2 /*return*/, _b.sent()];
+                            case 5: return [2 /*return*/];
+                        }
+                    });
+                });
+            }
+            function playScreenError() {
+                return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+                    return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                        ctx.font = "120px arial";
+                        ctx.fillStyle = "black";
+                        ctx.fillText('Screen error', width, height);
+                        return [2 /*return*/];
+                    });
+                });
+            }
+            // window.setInterval(playLoadingAnimation, 1000 / 30);
+            function playLoadingAnimation() {
+                return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+                    var rotation, i;
+                    return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                        rotation = ((new Date() - start) / 1000) * lines / lines;
+                        ctx.save();
+                        ctx.clearRect(0, 0, width, height);
+                        ctx.translate(width / 2, height / 2);
+                        ctx.rotate(Math.PI * 2 * rotation);
+                        for (i = 0; i < lines; i++) {
+                            ctx.beginPath();
+                            ctx.rotate(Math.PI * 2 / lines);
+                            ctx.moveTo(width / 10, 0);
+                            ctx.lineTo(width / 4, 0);
+                            ctx.lineWidth = width / 30;
+                            ctx.strokeStyle = 'rgba(0, 0, 0,' + i / lines + ')';
+                            ctx.stroke();
+                        }
+                        ctx.restore();
+                        return [2 /*return*/];
+                    });
+                });
+            }
+            function playDefaultPlan() {
+                return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+                    return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                        ctx.font = "120px arial";
+                        ctx.fillStyle = "black";
+                        ctx.fillText('Nothing to play', width / 4, height / 2);
+                        setTimeout(function () {
+                            player.play(player.playerPlan, ctx, width, height);
+                        }, 10 * 1000);
+                        return [2 /*return*/];
+                    });
+                });
+            }
+            function renderElementsToTags(item) {
+                return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+                    var shape, index, element, _a;
+                    return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
+                        switch (_b.label) {
+                            case 0:
+                                log('@slide.service-renderElementsToTags');
+                                stage.clear(0, 0, stage.canvas.width, stage.canvas.height);
+                                if (item.bgColor) {
+                                    shape = new _createjs_easeljs__WEBPACK_IMPORTED_MODULE_4__["Shape"]();
+                                    shape.graphics.beginFill(item.bgColor).drawRect(0, 0, width, height);
+                                    stage.addChild(shape);
+                                    stage.update();
+                                }
+                                item.elements.sort(function (a, b) {
+                                    return a.zIndex - b.zIndex;
+                                });
+                                index = 0;
+                                _b.label = 1;
+                            case 1:
+                                if (!(index < item.elements.length)) return [3 /*break*/, 6];
+                                element = item.elements[index];
+                                _a = element.type;
+                                switch (_a) {
+                                    case 'image': return [3 /*break*/, 2];
+                                    case 'text': return [3 /*break*/, 4];
+                                }
+                                return [3 /*break*/, 5];
+                            case 2: return [4 /*yield*/, render_image_to_canvas(item, element)];
+                            case 3:
+                                _b.sent();
+                                return [3 /*break*/, 5];
+                            case 4:
+                                render_text_to_canvas(item, element);
+                                return [3 /*break*/, 5];
+                            case 5:
+                                index++;
+                                return [3 /*break*/, 1];
+                            case 6: return [2 /*return*/];
+                        }
+                    });
+                });
+            }
+            function loadImageUrl(url) {
+                return new Promise(function (resolve, reject) {
+                    var img = new Image();
+                    img.addEventListener('load', function (e) { return resolve(img); });
+                    img.addEventListener('error', function () {
+                        reject(new Error("Failed to load image's URL: " + url));
+                    });
+                    img.src = url;
+                });
+            }
+            function render_text_to_canvas(item, element) {
+                return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+                    var position;
+                    return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                        log('@slide.service-render_text_to_canvas');
+                        if (element.text) {
+                            ctx.font = factor(item.Screen, element.fontSize) + "px " + element.font;
+                            ctx.fillStyle = "" + element.color;
+                            ctx.save();
+                            if (element.opacity) {
+                                ctx.globalAlpha = element.opacity;
+                            }
+                            position = factor(item.Screen, element.position.x, (Number(element.position.y) + element.fontSize));
+                            // ctx.fillText(JSON.stringify({ x: position.x, y: position.y }), position.x, position.y);
+                            ctx.fillText(element.text, position.x, position.y);
+                            ctx.restore();
+                        }
+                        return [2 /*return*/];
+                    });
+                });
+            }
+            function render_fullimage_to_canvas(url, x, y, _width, _height) {
+                return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+                    var _this = this;
+                    return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                        log('@slide.service-render_fullimage_to_canvas');
+                        return [2 /*return*/, new Promise(function (resolve, reject) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
+                                var img;
+                                return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                                    switch (_a.label) {
+                                        case 0: return [4 /*yield*/, image_promise__WEBPACK_IMPORTED_MODULE_2___default()([url])];
+                                        case 1:
+                                            img = _a.sent();
+                                            if (img.length && img.length > 0) {
+                                                img = img[0];
+                                            }
+                                            if (img) {
+                                                img.width = ctx.canvas.width;
+                                                img.height = ctx.canvas.height;
+                                                images.push(img);
+                                                ctx.clearRect(0, 0, _width, _height);
+                                                ctx.drawImage(img, x, y, _width, _height);
+                                            }
+                                            resolve(img);
+                                            return [2 /*return*/];
+                                    }
+                                });
+                            }); })];
+                    });
+                });
+            }
+            function render_image_to_canvas(item, element) {
+                return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+                    var url, x, y, _width, _height;
+                    var _this = this;
+                    return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                        url = element.src;
+                        x = element.position.x;
+                        y = element.position.y;
+                        _width = element.width;
+                        _height = element.height;
+                        log('@slide.service-render_image_to_canvas');
+                        return [2 /*return*/, new Promise(function (resolve, reject) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
+                                var img, sizes;
+                                return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                                    switch (_a.label) {
+                                        case 0: return [4 /*yield*/, image_promise__WEBPACK_IMPORTED_MODULE_2___default()([url])];
+                                        case 1:
+                                            img = _a.sent();
+                                            if (img && img.length && img.length > 0) {
+                                                img = img[0];
+                                            }
+                                            images.push(img);
+                                            sizes = factor(item.Screen, _width, _height);
+                                            ctx.save();
+                                            if (element.opacity) {
+                                                ctx.globalAlpha = element.opacity;
+                                            }
+                                            ctx.drawImage(img, x, y, sizes.x, sizes.y);
+                                            ctx.restore();
+                                            resolve(img);
+                                            return [2 /*return*/];
+                                    }
+                                });
+                            }); })];
+                    });
+                });
+            }
+            function html_to_xml(html) {
+                var doc = document.implementation.createHTMLDocument('');
+                doc.write(html);
+                doc.documentElement.setAttribute('xmlns', doc.documentElement.namespaceURI);
+                // Get well-formed markup
+                html = (new XMLSerializer).serializeToString(doc.body);
+                return html;
+            }
+            var stage, player, start, lines, images, fontsArr_2, frameDuration;
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        stage = new _createjs_easeljs__WEBPACK_IMPORTED_MODULE_4__["Stage"](ctx.canvas);
+                        log('@slide.service-play');
+                        player = this;
+                        start = new Date();
+                        lines = 16;
+                        this.playerPlan = playerPlan;
+                        images = [];
+                        if (!this.playerPlan || this.playerPlan.length === 0) {
+                            playDefaultPlan();
+                            return [2 /*return*/];
+                        }
+                        if (!(mode === 'single')) return [3 /*break*/, 2];
+                        fontsArr_2 = {};
+                        if (this.playerPlan[0].elements) {
+                            this.playerPlan[0].elements.forEach(function (element) {
+                                if (element.font) {
+                                    fontsArr_2[element.font] = element.font;
+                                }
+                            });
+                        }
+                        return [4 /*yield*/, this.fontService.loadFontsForRender(Object.keys(fontsArr_2))];
+                    case 1:
+                        _a.sent();
+                        prerender(this.playerPlan[0]);
+                        return [2 /*return*/];
+                    case 2:
+                        this.list = this.playerPlan[0].list;
+                        prerender(this.list[this.itemIndex]);
+                        frameDuration = (this.list[this.itemIndex].duration) ? this.list[this.itemIndex].duration * 1000 : 5000;
+                        this.itemIndex++;
+                        if (mode !== 'single') {
+                            setInterval(function () {
+                                if (_this.itemIndex >= _this.list.length) {
+                                    _this.itemIndex = 0;
+                                }
+                                prerender(_this.list[_this.itemIndex]);
+                                _this.itemIndex++;
+                            }, frameDuration);
+                        }
+                        return [2 /*return*/];
+                }
+            });
+        });
     };
     SlideService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),

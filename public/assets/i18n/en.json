@@ -107,6 +107,7 @@
     "GENERAL": "General",
     "ELEMENT":"Selection",
     "FORE_COLOR": "Fore color",
-    "BACK_COLOR":"Back color"
+    "BACK_COLOR":"Back color",
+    "ELEMENT_NAME":"Element name"
   }
 }

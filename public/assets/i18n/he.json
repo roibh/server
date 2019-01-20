@@ -110,6 +110,7 @@
     "GENERAL": "כללי",
     "ELEMENT":"בחירה",
     "FORE_COLOR": "צבע קידמה",
-    "BACK_COLOR":"צבע רקע"
+    "BACK_COLOR":"צבע רקע",
+    "ELEMENT_NAME":"שם"
   }
 }
