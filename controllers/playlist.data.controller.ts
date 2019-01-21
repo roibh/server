@@ -6,7 +6,7 @@ import { AuthMiddleware } from './auth.middleware';
 import { DataController } from './datacontroller';
 /*end custom*/
 @MethodConfig('Playlist', [AuthMiddleware], PlaylistModel)
-@MethodConfigExtend(DataController,'Playlist')
+@MethodConfigExtend(DataController, 'Playlist')
 export class Playlist extends DataController {
 
 }

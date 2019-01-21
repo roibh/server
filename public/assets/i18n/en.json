@@ -12,7 +12,8 @@
     "VIDEOS": "Videos",
     "AUDIO": "Sounds",
     "SLIDES": "Slides",
-    "FINDER": "Finder"
+    "FINDER": "Finder",
+    "SHARED": "Templates"
   },
   "LOGIN": {
     "TITLE": "Login",
@@ -95,7 +96,7 @@
     "ALL": "All the time"
   },
   "PANEL": {
-    "SLIDE_NAME":"Slide name",
+    "SLIDE_NAME": "Slide name",
     "FONTNAME": "Font family",
     "FONTNAME_HELP": "Use any font from the google library",
     "FONTSIZE": "Font size",
@@ -105,9 +106,14 @@
     "POSITIONY": "Y position",
     "SELECT_ELEMENT": "Select an element",
     "GENERAL": "General",
-    "ELEMENT":"Selection",
+    "ELEMENT": "Selection",
     "FORE_COLOR": "Fore color",
-    "BACK_COLOR":"Back color",
-    "ELEMENT_NAME":"Element name"
+    "BACK_COLOR": "Back color",
+    "ELEMENT_NAME": "Element name",
+    "PICK": "Pick",
+    "FONT_SEARCH": "Font search",
+    "IMAGE_OPACITY": "Opacity",
+    "IMAGE_WIDTH": "Width",
+    "IMAGE_HEIGHT": "Height"
   }
 }

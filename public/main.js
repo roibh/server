@@ -422,7 +422,9 @@ var ChangeComponent = /** @class */ (function () {
         }
     };
     ChangeComponent.prototype.ngOnChanges = function (changes) {
-        this.orgItem = JSON.parse(Object(fast_stringify__WEBPACK_IMPORTED_MODULE_3__["default"])(this.item));
+        if (this.item) {
+            this.orgItem = JSON.parse(Object(fast_stringify__WEBPACK_IMPORTED_MODULE_3__["default"])(this.item));
+        }
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
@@ -593,7 +595,7 @@ var LoaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-template [ngTemplateOutlet]=\"template || defaultTemplate\" [ngTemplateOutletContext]=\"{item: item}\">\n</ng-template>\n\n\n<ng-template #defaultTemplate let-item=\"item\">\n  <div class=\"m10\">\n    <span class=\"label\">{{item.Name}}</span>\n  </div>\n</ng-template>\n\n\n<ng-template #imageTemplate let-item=\"item\">\n  <div class=\"fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    <span class=\"label\">{{item.Name}}</span>\n  </div>\n</ng-template>\n\n<ng-template #playlistTemplate let-item=\"item\">\n  <div class=\"m10\">\n    <span class=\"label\">{{item.Name}}</span>\n    <span class=\"label\">({{item.list.length}})</span>\n  </div>\n</ng-template>\n\n\n<ng-template #slideTemplate let-item=\"item\">\n  <div class=\"canvas-bg\">\n    <app-canvas [item]=\"item\" [width]=\"200\" [height]=\"150\" [scale]=\"0.25\"></app-canvas>\n    <span class=\"label\">{{item.Name}}</span>\n  </div>\n</ng-template>\n"
+module.exports = "<ng-template [ngTemplateOutlet]=\"template || defaultTemplate\" [ngTemplateOutletContext]=\"{item: item}\">\n</ng-template>\n\n\n<ng-template #defaultTemplate let-item=\"item\">\n  <div class=\"m10\">\n    <span class=\"label\">{{item.Name}}</span>\n  </div>\n</ng-template>\n\n\n<ng-template #imageTemplate let-item=\"item\">\n  <div class=\"fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    <span class=\"label\">{{item.Name}}</span>\n  </div>\n</ng-template>\n\n<ng-template #playlistTemplate let-item=\"item\">\n  <div class=\"m10\">\n    <span class=\"label\">{{item.Name}}</span>\n    <span class=\"label\">({{item.list.length}})</span>\n  </div>\n</ng-template>\n\n\n<ng-template #slideTemplate let-item=\"item\">\n  <div class=\"canvas-bg\">\n    <app-canvas [item]=\"item\" [width]=\"230\" [height]=\"150\" [scale]=\"0.25\"></app-canvas>\n    <span class=\"label\">{{item.Name}}</span>\n  </div>\n</ng-template>\n"
 
 /***/ }),
 
@@ -692,7 +694,7 @@ var LobbyItemComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"lobby mt10\" *ngIf=\"mode==='media'\">\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn\" (click)=\"newItemHandler()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{item._meta_active}}\"  (click)=\"selectItemHandler(item)\">\n     \n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\" aria-label=\"Basic example\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"deleteItemHandler(item);\"> <i class=\"fas fa-trash\"></i>\n        </button>\n      </li>\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"editItemHandler(item);\"> <i class=\"fas fa-edit\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"lobby \" *ngIf=\"mode==='media-finder'\">\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{item._meta_active}}\">\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"selectItemHandler(item);\"> <i class=\"fas fa-plus-square\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"lobby \" *ngIf=\"mode==='object-finder'\">\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"selectItemHandler(item);\"> <i class=\"fas fa-plus-square\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"lobby  mt10\" *ngIf=\"mode==='object'\">\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn\" (click)=\"newItemHandler()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{item._meta_active}}\" (click)=\"selectItemHandler(item)\">\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\n\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"deleteItemHandler(item);\"> <i class=\"fas fa-trash\"></i>\n        </button>\n      </li>\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"editItemHandler(item);\"> <i class=\"fas fa-edit\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n "
+module.exports = "<ng-template #defaultToolbar let-item=\"item\">\n  <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n    <li>\n      <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"deleteItemHandler(item);\"> <i class=\"fas fa-trash\"></i>\n      </button>\n    </li>\n    <li>\n      <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"editItemHandler(item);\"> <i class=\"fas fa-edit\"></i>\n      </button>\n    </li>\n  </ul>\n</ng-template>\n\n\n<div class=\"lobby mt10\" *ngIf=\"mode==='media'\">\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn\" (click)=\"newItemHandler()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{item._meta_active}}\" (click)=\"selectItemHandler(item)\">\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\n    <ng-template [ngTemplateOutlet]=\"toolbar || defaultToolbar\" [ngTemplateOutletContext]=\"{item: item}\">\n    </ng-template>\n  </div>\n</div>\n\n<div class=\"lobby \" *ngIf=\"mode==='media-finder'\">\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{item._meta_active}}\">\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"selectItemHandler(item);\"> <i class=\"fas fa-plus-square\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"lobby \" *ngIf=\"mode==='object-finder'\">\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"selectItemHandler(item);\"> <i class=\"fas fa-plus-square\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"lobby  mt10\" *ngIf=\"mode==='object'\">\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn\" (click)=\"newItemHandler()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{item._meta_active}}\" (click)=\"selectItemHandler(item)\">\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\n\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"deleteItemHandler(item);\"> <i class=\"fas fa-trash\"></i>\n        </button>\n      </li>\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"editItemHandler(item);\"> <i class=\"fas fa-edit\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -775,6 +777,10 @@ var LobbyComponent = /** @class */ (function () {
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"])
+    ], LobbyComponent.prototype, "toolbar", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"])
     ], LobbyComponent.prototype, "template", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
@@ -823,14 +829,6 @@ var LobbyComponent = /** @class */ (function () {
     return LobbyComponent;
 }());
 
-// else {
-//   if (item.type === 'slide' || item.elements) {
-//     item.template = this.slideTemplate;
-//   }
-//   if (item.type === 'image') {
-//     item.template = this.imageTemplate;
-//   }
-// }
 
 
 /***/ }),
@@ -1797,25 +1795,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CanvasComponent", function() { return CanvasComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var js_base64__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! js-base64 */ "./node_modules/js-base64/base64.js");
-/* harmony import */ var js_base64__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(js_base64__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _player_slide_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../player/slide.service */ "./src/player/slide.service.ts");
-
-
+/* harmony import */ var _player_slide_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../player/slide.service */ "./src/player/slide.service.ts");
 
 
 
 var CanvasComponent = /** @class */ (function () {
-    function CanvasComponent(_ngZone, sanitizer, slideService) {
+    function CanvasComponent(_ngZone, slideService) {
         this._ngZone = _ngZone;
-        this.sanitizer = sanitizer;
         this.slideService = slideService;
         this.scale = 0.2;
     }
-    CanvasComponent.prototype.ngOnInit = function () {
-        this.bgColor = this.item.bgColor;
-    };
     CanvasComponent.prototype.paint = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var _this = this;
@@ -1827,7 +1816,6 @@ var CanvasComponent = /** @class */ (function () {
                         element.width = this.width;
                         element.height = this.height;
                         ctx = element.getContext('2d');
-                        debugger;
                         this.slideService.play([this.item], ctx, this.width, this.height, 'single');
                         return [2 /*return*/];
                     });
@@ -1838,50 +1826,6 @@ var CanvasComponent = /** @class */ (function () {
     };
     CanvasComponent.prototype.ngAfterViewInit = function () {
         this.paint();
-    };
-    CanvasComponent.prototype.downsize = function (size) {
-        return size; // * this.scale;
-    };
-    CanvasComponent.prototype.renderElementsToTags = function (elements) {
-        var _this = this;
-        elements.sort(function (a, b) {
-            return a.zIndex - b.zIndex;
-        });
-        return elements.map(function (element) {
-            switch (element.type) {
-                case 'image':
-                    return "<img src=\"" + element.src + "\" style=\"position: absolute; top: " + _this.downsize(element.position.y) + "px;left: " + _this.downsize(element.position.x) + "px;width:" + _this.downsize(element.width) + "px;height:" + _this.downsize(element.height) + "px\"/>";
-                case 'text':
-                    return "<div style=\"font-size:" + _this.downsize(element.fontSize) + "px; color: " + element.color + ";font-family:" + element.font + ";position: absolute; top: " + element.position.y + "px;left: " + element.position.x + "px;\">" + element.text + "</div>";
-            }
-        });
-    };
-    CanvasComponent.prototype.render_html_to_canvas = function (html, x, y, width, height) {
-        var data = 'data:image/svg+xml;base64,' + js_base64__WEBPACK_IMPORTED_MODULE_3__["Base64"].encode('<svg xmlns="http://www.w3.org/2000/svg" width="'
-            + width + '" height="' + height + '">' +
-            '<style>' +
-            'foreignObject { fill: black }' +
-            '</style>' +
-            ("<g transform=\"scale(" + this.scale + ")\">") +
-            '<foreignObject width="800" height="600">' +
-            this.html_to_xml(html) +
-            '</foreignObject>' +
-            '</g>' +
-            '</svg>');
-        this.svg = data;
-        this.thumbObject.first.nativeElement.data = data;
-    };
-    CanvasComponent.prototype.html_to_xml = function (html) {
-        var doc = document.implementation.createHTMLDocument('');
-        doc.write(html);
-        // You must manually set the xmlns if you intend to immediately serialize
-        // the HTML document to a string as opposed to appending it to a
-        // <foreignObject> in the DOM
-        doc.documentElement.setAttribute('xmlns', doc.documentElement.namespaceURI);
-        // Get well-formed markup
-        doc.body.style.backgroundColor = '#000';
-        html = (new XMLSerializer).serializeToString(doc.body);
-        return html;
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
@@ -1909,7 +1853,7 @@ var CanvasComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./canvas.component.html */ "./src/app/editor/canvas/canvas.component.html"),
             styles: [__webpack_require__(/*! ./canvas.component.scss */ "./src/app/editor/canvas/canvas.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"], _player_slide_service__WEBPACK_IMPORTED_MODULE_4__["SlideService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _player_slide_service__WEBPACK_IMPORTED_MODULE_2__["SlideService"]])
     ], CanvasComponent);
     return CanvasComponent;
 }());
@@ -1938,7 +1882,7 @@ var ContenteditableDirective = /** @class */ (function () {
     function ContenteditableDirective(elementRef, renderer) {
         this.elementRef = elementRef;
         this.renderer = renderer;
-        this.propValueAccessor = 'textContent';
+        this.propValueAccessor = 'innerText';
         this.updateComplete = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     ContenteditableDirective_1 = ContenteditableDirective;
@@ -2108,7 +2052,7 @@ var EditorModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div ngDraggable [zIndex]=\"element.zIndex\" [position]=\"element.position\" class=\"drag-block element {{isSelected}}\" (edge)=\"checkEdge($event)\"\n  (started)=\"onStart($event)\" (stopped)=\"onStop($event)\" (movingOffset)=\"onMoving($event)\" [preventDefaultEvent]=\"false\" (endOffset)=\"onMoveEnd($event)\"\n  (click)=\"focus($event, element)\">\n  \n  <div class=\"drag-tag\">\n    {{element.varName}} (<small>{{element.type}}</small>)\n    <button class=\"del-button\" (click)=\"remove(element);\"><i class=\"far fa-window-close \"></i></button>\n  </div>\n\n  <div [ngStyle]=\"{'font-family': element.font ? element.font: 'arial', 'opacity': element.opacity,\n   'font-size': element.fontSize +'px',\n  'color': element.color }\" contenteditable=\"true\" (updateComplete)=\"updateComplete($event)\" [(ngModel)]=\"element.text\"\n    *ngIf=\"element.type === 'text'\"></div>\n\n  <img [src]=\"element.src\" ngResizable class=\"image-element shadow\" [ngStyle]=\"{'width': element.width+'px','height': element.height+'px', 'opacity': element.opacity }\"\n    *ngIf=\"element.type === 'image'\" />\n\n</div>\n"
+module.exports = "<div ngDraggable [zIndex]=\"element.zIndex\" [position]=\"element.position\" class=\"drag-block element {{isSelected}}\" (edge)=\"checkEdge($event)\"\n  (started)=\"onStart($event)\" (stopped)=\"onStop($event)\" (movingOffset)=\"onMoving($event)\" [preventDefaultEvent]=\"false\" (endOffset)=\"onMoveEnd($event)\"\n  (click)=\"focus($event, element)\">\n  \n  <div class=\"drag-tag\">\n    {{element.varName}} (<small>{{element.type}}</small>)\n    <button class=\"del-button\" (click)=\"remove(element);\"><i class=\"far fa-window-close \"></i></button>\n  </div>\n\n  <div [ngStyle]=\"{'font-family': element.font ? element.font: 'arial', 'opacity': element.opacity,\n   'font-size': element.fontSize +'px',\n  'color': element.color }\" contenteditable=\"true\" (callOnChange)=\"updateComplete($event)\" (updateComplete)=\"updateComplete($event)\" [(ngModel)]=\"element.text\"\n    *ngIf=\"element.type === 'text'\"></div>\n\n  <img [src]=\"element.src\" ngResizable class=\"image-element shadow\" [ngStyle]=\"{'width': element.width+'px','height': element.height+'px', 'opacity': element.opacity }\"\n    *ngIf=\"element.type === 'image'\" />\n\n</div>\n"
 
 /***/ }),
 
@@ -2163,14 +2107,10 @@ var ElementComponent = /** @class */ (function () {
             _this.isSelected = (_this.element === element);
         });
     }
-    ElementComponent.prototype.updateComplete = function (event) {
+    ElementComponent.prototype.updateComplete = function (textElement) {
+        console.log(textElement.innerText);
+        // this.element.text = textElement.innerText;
         clearTimeout(this.updateTimeout);
-        if (!this.lastSvg) {
-            this.lastSvg = '';
-        }
-        function render() {
-            this.render_html_to_canvas(this.domElement.innerHTML, 0, 0, 85, 85);
-        }
     };
     ElementComponent.prototype.paint = function () {
     };
@@ -2408,7 +2348,7 @@ var FontsService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\r\n    <h4 class=\"modal-title pull-left\">{{title}}</h4>\r\n    <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"bsModalRef.hide()\">\r\n        <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n</div>\r\n<div class=\"modal-body\">\r\n    <div class=\"font-scroll\">\r\n        <ul *ngIf=\"fonts\">\r\n            <li *ngFor=\"let font of fonts\" (click)=\"applyFont(font)\">{{font}}</li>\r\n        </ul>\r\n\r\n    </div>\r\n\r\n\r\n    <div class=\"font-Preview\" [ngStyle]=\"{'font-family':font}\">\r\n        <div>{{font}}</div>\r\n        {{text}}\r\n    </div>\r\n    <div class=\"text-Preview\">\r\n        <textarea [(ngModel)]=\"text\"></textarea>\r\n    </div>\r\n</div>\r\n<div class=\"modal-footer\">\r\n    <button type=\"button\" class=\"btn btn-default\" (click)=\"bsModalRef.hide()\">{{closeBtnName}}</button>\r\n</div>\r\n"
+module.exports = "<div class=\"modal-header\">\r\n\r\n    <div class=\"search\">\r\n        <input type=\"text\" [(ngModel)]=\"searchTerm\" name=\"searchTerm\" class=\"searchTerm form-control\" placeholder=\"{{'PANEL.FONT_SEARCH' | translate}}\">\r\n        <button type=\"submit\" class=\"searchButton\">\r\n            <i class=\"fa fa-search\"></i>\r\n        </button>\r\n    </div>\r\n\r\n    <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"bsModalRef.hide()\">\r\n        <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n</div>\r\n<div class=\"modal-body\">\r\n    <div class=\"font-scroll\">\r\n        <ul *ngIf=\"fonts\">\r\n            <li *ngFor=\"let font of fonts\" [ngStyle]=\"{'font-family':font.name}\" (click)=\"applyFont(font)\">{{font.name}}\r\n                <i *ngIf=\"font.selected\" class=\"fas fa-check\"></i>\r\n            </li>\r\n        </ul>\r\n    </div>\r\n    <div class=\"font-Preview\" *ngIf=\"font\" [ngStyle]=\"{'font-family':font.name}\">\r\n        <div>{{font.name}}</div>\r\n        <button class=\"btn btn-primary\" *ngIf=\"!font.selected\" (click)=\"addToSlide(font)\">{{\"PANEL.PICK\" | translate}}</button>\r\n        <button class=\"btn btn-danger\" *ngIf=\"font.selected\" (click)=\"removeFromSlide(font)\">{{\"PANEL.REMOVE\" | translate}}</button>\r\n        {{text}}\r\n    </div>\r\n    <div class=\"text-Preview\">\r\n        <textarea [(ngModel)]=\"text\"></textarea>\r\n    </div>\r\n</div>\r\n<div class=\"modal-footer\">\r\n    <button type=\"button\" class=\"btn btn-default\" (click)=\"bsModalRef.hide()\">{{closeBtnName}}</button>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -2419,7 +2359,7 @@ module.exports = "<div class=\"modal-header\">\r\n    <h4 class=\"modal-title pu
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".font-scroll {\n  width: 50%;\n  height: 400px;\n  overflow-y: auto;\n  float: left; }\n\n.font-Preview {\n  padding: 10px;\n  width: 50%;\n  height: 400px;\n  overflow-y: auto;\n  float: left;\n  font-size: 44px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL2ZvbnRzL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcZWRpdG9yXFxmb250c1xcZm9udHMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxVQUFVO0VBQ1YsYUFBYTtFQUNiLGdCQUFnQjtFQUNoQixXQUFXLEVBQUE7O0FBR2I7RUFDRSxhQUFhO0VBQ2IsVUFBVTtFQUNWLGFBQWE7RUFDYixnQkFBZ0I7RUFDaEIsV0FBVztFQUNYLGVBQWUsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2VkaXRvci9mb250cy9mb250cy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5mb250LXNjcm9sbHtcclxuICB3aWR0aDogNTAlO1xyXG4gIGhlaWdodDogNDAwcHg7XHJcbiAgb3ZlcmZsb3cteTogYXV0bztcclxuICBmbG9hdDogbGVmdDtcclxufVxyXG5cclxuLmZvbnQtUHJldmlld3tcclxuICBwYWRkaW5nOiAxMHB4O1xyXG4gIHdpZHRoOiA1MCU7XHJcbiAgaGVpZ2h0OiA0MDBweDtcclxuICBvdmVyZmxvdy15OiBhdXRvO1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIGZvbnQtc2l6ZTogNDRweDtcclxufVxyXG4iXX0= */"
+module.exports = ".font-scroll {\n  width: 50%;\n  height: 400px;\n  overflow-y: auto;\n  float: left; }\n\n.font-Preview {\n  padding: 10px;\n  width: 50%;\n  height: 400px;\n  overflow-y: auto;\n  float: left;\n  font-size: 44px; }\n\n.search {\n  width: 80%;\n  position: relative; }\n\n.searchTerm {\n  float: left;\n  width: 100%;\n  padding: 5px;\n  height: 37px;\n  border-radius: 5px;\n  outline: none; }\n\n.searchButton {\n  position: absolute;\n  right: -50px;\n  width: 40px;\n  height: 36px;\n  border: 1px solid #00B4CC;\n  background: #00B4CC;\n  text-align: center;\n  color: #fff;\n  border-radius: 5px;\n  cursor: pointer;\n  font-size: 20px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL2ZvbnRzL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcZWRpdG9yXFxmb250c1xcZm9udHMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxVQUFVO0VBQ1YsYUFBYTtFQUNiLGdCQUFnQjtFQUNoQixXQUFXLEVBQUE7O0FBR2I7RUFDRSxhQUFhO0VBQ2IsVUFBVTtFQUNWLGFBQWE7RUFDYixnQkFBZ0I7RUFDaEIsV0FBVztFQUNYLGVBQWUsRUFBQTs7QUFNakI7RUFDRSxVQUFVO0VBQ1Ysa0JBQ0YsRUFBQTs7QUFFQTtFQUNFLFdBQVc7RUFDWCxXQUFXO0VBQ1gsWUFBWTtFQUNaLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIsYUFBYSxFQUFBOztBQUtmO0VBQ0Usa0JBQWtCO0VBQ2xCLFlBQVk7RUFDWixXQUFXO0VBQ1gsWUFBWTtFQUNaLHlCQUF5QjtFQUN6QixtQkFBbUI7RUFDbkIsa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxrQkFBa0I7RUFDbEIsZUFBZTtFQUNmLGVBQWUsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2VkaXRvci9mb250cy9mb250cy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5mb250LXNjcm9sbHtcclxuICB3aWR0aDogNTAlO1xyXG4gIGhlaWdodDogNDAwcHg7XHJcbiAgb3ZlcmZsb3cteTogYXV0bztcclxuICBmbG9hdDogbGVmdDtcclxufVxyXG5cclxuLmZvbnQtUHJldmlld3tcclxuICBwYWRkaW5nOiAxMHB4O1xyXG4gIHdpZHRoOiA1MCU7XHJcbiAgaGVpZ2h0OiA0MDBweDtcclxuICBvdmVyZmxvdy15OiBhdXRvO1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIGZvbnQtc2l6ZTogNDRweDtcclxufVxyXG5cclxuXHJcbiBcclxuXHJcbi5zZWFyY2gge1xyXG4gIHdpZHRoOiA4MCU7XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlXHJcbn1cclxuXHJcbi5zZWFyY2hUZXJtIHtcclxuICBmbG9hdDogbGVmdDtcclxuICB3aWR0aDogMTAwJTsgIFxyXG4gIHBhZGRpbmc6IDVweDtcclxuICBoZWlnaHQ6IDM3cHg7XHJcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gIG91dGxpbmU6IG5vbmU7XHJcbiBcclxufVxyXG4gXHJcblxyXG4uc2VhcmNoQnV0dG9uIHtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7ICBcclxuICByaWdodDogLTUwcHg7XHJcbiAgd2lkdGg6IDQwcHg7XHJcbiAgaGVpZ2h0OiAzNnB4O1xyXG4gIGJvcmRlcjogMXB4IHNvbGlkICMwMEI0Q0M7XHJcbiAgYmFja2dyb3VuZDogIzAwQjRDQztcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgY29sb3I6ICNmZmY7XHJcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICBmb250LXNpemU6IDIwcHg7XHJcbn1cclxuXHJcbiAiXX0= */"
 
 /***/ }),
 
@@ -2455,6 +2395,7 @@ var FontsSelectComponent = /** @class */ (function () {
     FontsSelectComponent.prototype.ngOnInit = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var _a;
+            var _this = this;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
                 switch (_b.label) {
                     case 0:
@@ -2462,16 +2403,33 @@ var FontsSelectComponent = /** @class */ (function () {
                         return [4 /*yield*/, this.fontsService.loadFontsForLanguage()];
                     case 1:
                         _a.fonts = _b.sent();
+                        this.fonts = this.fonts.map(function (item) {
+                            return { name: item, selected: _this.selectedFonts.indexOf(item) > -1 };
+                        });
+                        this.font = this.fonts[0];
                         return [2 /*return*/];
                 }
             });
         });
     };
+    FontsSelectComponent.prototype.addToSlide = function (font) {
+        var _this = this;
+        this._ngZone.run(function () { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                this.selectedFonts.push(font.name);
+                this.fonts[this.fonts.indexOf(font)].selected = true;
+                return [2 /*return*/];
+            });
+        }); });
+    };
+    FontsSelectComponent.prototype.removeFromSlide = function (font) {
+        this.selectedFonts.splice(this.selectedFonts.indexOf(font), 1);
+    };
     FontsSelectComponent.prototype.applyFont = function (font) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.fontsService.loadFontsForRender([font])];
+                    case 0: return [4 /*yield*/, this.fontsService.loadFontsForRender([font.name])];
                     case 1:
                         _a.sent();
                         this.font = font;
@@ -2508,7 +2466,7 @@ var FontsSelectComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"drag-panel\">\r\n    <ul class=\"nav nav-tabs\">\r\n        <li class=\"nav-item\" *ngFor=\"let tab of tabs\" (click)=\"tabSelect(tab)\">\r\n            <a class=\"nav-link {{tab.selected}}\"><h6><i class=\"{{tab.icon}}\"></i> {{tab.name | translate}}</h6></a>\r\n        </li>\r\n    </ul>\r\n\r\n\r\n    <div class=\"inner\" [appAdaptHeight]=\"175\">\r\n\r\n        <form *ngIf=\"selectedTab && tabs[1].name === selectedTab.name\">\r\n\r\n            <div class=\"form-group\">\r\n                <label>{{'PANEL.SLIDE_NAME' | translate}}</label>\r\n                <input [(ngModel)]=\"item.Name\" name=\"slideName\" [detectChanges]=\"true\" class=\"form-control\" />\r\n            </div>\r\n\r\n\r\n            <div class=\"form-group\">\r\n\r\n                <label>{{'PANEL.FORE_COLOR' | translate}}</label>\r\n                <input [(colorPicker)]=\"editor.color\" [detectChanges]=\"true\" (colorPickerChange)=\"setColor($event)\" [cpPosition]=\"'bottom'\"\r\n                    class=\"form-control\" [style.background]=\"editor.color\" />\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label>{{'PANEL.BACK_COLOR' | translate}}</label>\r\n\r\n                <input [(colorPicker)]=\"editor.bgColor\" [detectChanges]=\"true\" (colorPickerChange)=\"setBgColor($event)\" [cpPosition]=\"'bottom'\"\r\n                    class=\"form-control\" [style.background]=\"editor.bgColor\" />\r\n            </div>\r\n\r\n\r\n        </form>\r\n\r\n        <div *ngIf=\"selectedTab &&  tabs[0].name === selectedTab.name && !element\" class=\"no-selection\">\r\n            <div></div>\r\n            <div>\r\n                <h2> {{'PANEL.SELECT_ELEMENT' | translate}}</h2>\r\n            </div>\r\n            <div></div>\r\n\r\n        </div>\r\n        <form *ngIf=\"element && selectedTab &&  tabs[0].name === selectedTab.name\">\r\n            <div class=\"form-group\">\r\n                <label>{{'PANEL.ELEMENT_NAME' | translate}}</label>\r\n                <input [(ngModel)]=\"element.varName\" name=\"elementName\" [detectChanges]=\"true\" class=\"form-control\" />\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n                <div class=\"input-group\">\r\n                    <div class=\"input-group-prepend\">\r\n                        <span class=\"input-group-text\" id=\"\">{{element.zIndex}}</span>\r\n                    </div>\r\n                    <div class=\"btn-group\">\r\n                        <button (click)=\"moveIndex(-1)\" class=\"btn btn-secondary\"><i class=\"fas fa-level-down-alt\"></i></button>\r\n                        <button (click)=\"moveIndex(1)\" class=\"btn btn-secondary\"><i class=\"fas fa-level-up-alt\"></i></button>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label>{{ \"PANEL.IMAGE_OPACITY\" | translate }}:</label>\r\n                <ng5-slider [(value)]=\"element.opacity\" [options]=\"sliderImageOpacityOptions\"></ng5-slider>\r\n            </div>\r\n\r\n            <div *ngIf=\"element.type === 'image'\" class=\"t-bar\">\r\n\r\n                <div class=\"form-group\">\r\n                    <label for=\"IMAGE_WIDTH\">{{ \"PANEL.IMAGE_WIDTH\" | translate }}:</label>\r\n                    <ng5-slider [(value)]=\"element.width\" [options]=\"sliderImageOptions\"></ng5-slider>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"IMAGE_HEIGHT\">{{ \"PANEL.IMAGE_HEIGHT\" | translate }}:</label>\r\n                    <ng5-slider [(value)]=\"element.height\" [options]=\"sliderImageOptions\"></ng5-slider>\r\n\r\n                </div>\r\n                <div class=\"form-group row\">\r\n                    <div class=\"col-6\">\r\n                        <label for=\"fontColor\">{{ \"PANEL.POSITIONX\" | translate }}:</label>\r\n                        <input class=\"form-control\" name=\"position_x\" (change)=\"detect($event)\" [detectChanges]=\"true\" [(ngModel)]=\"element.position.x\"\r\n                        />\r\n                    </div>\r\n                    <div class=\"col-6\">\r\n                        <label for=\"fontColor\">{{ \"PANEL.POSITIONY\" | translate }}:</label>\r\n                        <input class=\"form-control\" name=\"position_y\" (change)=\"detect($event)\" [detectChanges]=\"true\" [(ngModel)]=\"element.position.y\"\r\n                        />\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n            <div *ngIf=\"element.type === 'text'\" class=\"t-bar\">\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontName\">{{ \"PANEL.FONTNAME\" | translate }}:</label>\r\n                    <div class=\"input-group mb-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                              \r\n\r\n                            <button class=\"btn btn-outline-secondary\" type=\"button\" (click)=\"openModalWithComponent()\">Pick</button>\r\n                        </div>\r\n                        <select [detectChanges]=\"true\" class=\"form-control\" name=\"fontNameTxt\" [detectChanges]=\"true\" [(ngModel)]=\"element.font\"\r\n                            (change)=\"selectFont($event)\">\r\n                            <option *ngFor=\"let c of editor.fonts\" [ngValue]=\"c\">{{c}}</option>\r\n                        </select>\r\n                    </div>\r\n                    <small id=\"fontHelp\" class=\"form-text text-muted\">{{ \"PANEL.FONTNAME_HELP\" | translate }}</small>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontName\">{{ \"PANEL.FONTSIZE\" | translate }}:</label>\r\n                    <ng5-slider [detectChanges]=\"true\" [(value)]=\"element.fontSize\" [options]=\"sliderOptions\"></ng5-slider>\r\n                    <small id=\"fontSize\" class=\"form-text text-muted\">{{ \"PANEL.FONTSIZE_HELP\" | translate }}</small>\r\n                </div>\r\n\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontColor\">{{ \"PANEL.FONTCOLOR\" | translate }}:</label>\r\n                    <input [detectChanges]=\"true\" class=\"form-control\" name=\"fontColorTxt\" [cpPosition]=\"'top'\" [(colorPicker)]=\"element.color\"\r\n                        [style.background]=\"element.color\" />\r\n                </div>\r\n\r\n                <div class=\"form-group row\">\r\n                    <div class=\"col-6\">\r\n                        <label for=\"fontColor\">{{ \"PANEL.POSITIONX\" | translate }}:</label>\r\n                        <input class=\"form-control\" name=\"position_x\" (change)=\"detect($event)\" [detectChanges]=\"true\" [(ngModel)]=\"element.position.x\"\r\n                        />\r\n                    </div>\r\n                    <div class=\"col-6\">\r\n                        <label for=\"fontColor\">{{ \"PANEL.POSITIONY\" | translate }}:</label>\r\n                        <input class=\"form-control\" name=\"position_y\" (change)=\"detect($event)\" [detectChanges]=\"true\" [(ngModel)]=\"element.position.y\"\r\n                        />\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>\r\n"
+module.exports = "<div class=\"drag-panel\">\r\n    <ul class=\"nav nav-tabs\">\r\n        <li class=\"nav-item\" *ngFor=\"let tab of tabs\" (click)=\"tabSelect(tab)\">\r\n            <a class=\"nav-link {{tab.selected}}\"><h6><i class=\"{{tab.icon}}\"></i> {{tab.name | translate}}</h6></a>\r\n        </li>\r\n    </ul>\r\n\r\n\r\n    <div class=\"inner\" [appAdaptHeight]=\"175\">\r\n\r\n        <form *ngIf=\"selectedTab && tabs[1].name === selectedTab.name\">\r\n\r\n            <div class=\"form-group\">\r\n                <label>{{'PANEL.SLIDE_NAME' | translate}}</label>\r\n                <input [(ngModel)]=\"item.Name\" name=\"slideName\" [detectChanges]=\"true\" class=\"form-control\" />\r\n            </div>\r\n\r\n\r\n            <div class=\"form-group\">\r\n\r\n                <label>{{'PANEL.FORE_COLOR' | translate}}</label>\r\n                <input [(colorPicker)]=\"editor.color\" [detectChanges]=\"true\" (colorPickerChange)=\"setColor($event)\" [cpPosition]=\"'bottom'\"\r\n                    class=\"form-control\" [style.background]=\"editor.color\" />\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label>{{'PANEL.BACK_COLOR' | translate}}</label>\r\n\r\n                <input [(colorPicker)]=\"editor.bgColor\" [detectChanges]=\"true\" (colorPickerChange)=\"setBgColor($event)\" [cpPosition]=\"'bottom'\"\r\n                    class=\"form-control\" [style.background]=\"editor.bgColor\" />\r\n            </div>\r\n\r\n\r\n        </form>\r\n\r\n        <div *ngIf=\"selectedTab &&  tabs[0].name === selectedTab.name && !element\" class=\"no-selection\">\r\n            <div></div>\r\n            <div>\r\n                <h2> {{'PANEL.SELECT_ELEMENT' | translate}}</h2>\r\n            </div>\r\n            <div></div>\r\n\r\n        </div>\r\n        <form *ngIf=\"element && selectedTab &&  tabs[0].name === selectedTab.name\">\r\n\r\n            <div class=\"form-group\">\r\n                <label>{{'PANEL.ELEMENT_NAME' | translate}}</label>\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n                <div class=\"input-group\">\r\n                    <div class=\"input-group-prepend\">\r\n                        <input [(ngModel)]=\"element.varName\" name=\"elementName\" [detectChanges]=\"true\" class=\"form-control name-control\" />\r\n                    </div>\r\n\r\n                    <div class=\"btn-group\">\r\n                        <button class=\"input-group-text btn-md\" id=\"\">{{element.zIndex}}</button>\r\n                        <button (click)=\"moveIndex(-1)\" class=\"btn btn-secondary btn-md\"><i class=\"fas fa-level-down-alt\"></i></button>\r\n                        <button (click)=\"moveIndex(1)\" class=\"btn btn-secondary btn-md\"><i class=\"fas fa-level-up-alt\"></i></button>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label>{{ \"PANEL.IMAGE_OPACITY\" | translate }}:</label>\r\n                <ng5-slider [(value)]=\"element.opacity\" [options]=\"sliderImageOpacityOptions\"></ng5-slider>\r\n            </div>\r\n\r\n            <div *ngIf=\"element.type === 'image'\" class=\"t-bar\">\r\n\r\n                <div class=\"form-group\">\r\n                    <label for=\"IMAGE_WIDTH\">{{ \"PANEL.IMAGE_WIDTH\" | translate }}:</label>\r\n                    <ng5-slider [(value)]=\"element.width\" [options]=\"sliderImageOptions\"></ng5-slider>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"IMAGE_HEIGHT\">{{ \"PANEL.IMAGE_HEIGHT\" | translate }}:</label>\r\n                    <ng5-slider [(value)]=\"element.height\" [options]=\"sliderImageOptions\"></ng5-slider>\r\n\r\n                </div>\r\n                <div class=\"form-group row\">\r\n                    <div class=\"col-6\">\r\n                        <label for=\"position_x\">{{ \"PANEL.POSITIONX\" | translate }}:</label>\r\n                        <input class=\"form-control\" name=\"position_x\" (change)=\"detect($event)\" [detectChanges]=\"true\" [(ngModel)]=\"element.position.x\"\r\n                        />\r\n                    </div>\r\n                    <div class=\"col-6\">\r\n                        <label for=\"position_y\">{{ \"PANEL.POSITIONY\" | translate }}:</label>\r\n                        <input class=\"form-control\" name=\"position_y\" (change)=\"detect($event)\" [detectChanges]=\"true\" [(ngModel)]=\"element.position.y\"\r\n                        />\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n            <div *ngIf=\"element.type === 'text'\" class=\"t-bar\">\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontName\">{{ \"PANEL.FONTNAME\" | translate }}:</label>\r\n                    <div class=\"input-group mb-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                            <button class=\"btn btn-success btn-md\" type=\"button\" (click)=\"openModalWithComponent()\">{{ \"PANEL.PICK\" | translate }}</button>\r\n                        </div>\r\n                        <select [detectChanges]=\"true\" class=\"form-control fontbox\" name=\"fontNameTxt\" [(ngModel)]=\"element.font\" (change)=\"selectFont($event)\">\r\n                            <option *ngFor=\"let c of editor.fonts\" [ngValue]=\"c\" [ngStyle]=\"{'font-family': c}\">{{c}}</option>\r\n                        </select>\r\n                    </div>\r\n                    <small id=\"fontHelp\" class=\"form-text text-muted\">{{ \"PANEL.FONTNAME_HELP\" | translate }}</small>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontName\">{{ \"PANEL.FONTSIZE\" | translate }}:</label>\r\n                    <ng5-slider [detectChanges]=\"true\" [(value)]=\"element.fontSize\" [options]=\"sliderOptions\"></ng5-slider>\r\n                    <small id=\"fontSize\" class=\"form-text text-muted\">{{ \"PANEL.FONTSIZE_HELP\" | translate }}</small>\r\n                </div>\r\n\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontColor\">{{ \"PANEL.FONTCOLOR\" | translate }}:</label>\r\n                    <input [detectChanges]=\"true\" class=\"form-control\" name=\"fontColorTxt\" [cpPosition]=\"'top'\" [(colorPicker)]=\"element.color\"\r\n                        [style.background]=\"element.color\" />\r\n                </div>\r\n\r\n                <div class=\"form-group row\">\r\n                    <div class=\"col-6\">\r\n                        <label for=\"fontColor\">{{ \"PANEL.POSITIONX\" | translate }}:</label>\r\n                        <input class=\"form-control\" name=\"position_x\" (change)=\"detect($event)\" [detectChanges]=\"true\" [(ngModel)]=\"element.position.x\"\r\n                        />\r\n                    </div>\r\n                    <div class=\"col-6\">\r\n                        <label for=\"fontColor\">{{ \"PANEL.POSITIONY\" | translate }}:</label>\r\n                        <input class=\"form-control\" name=\"position_y\" (change)=\"detect($event)\" [detectChanges]=\"true\" [(ngModel)]=\"element.position.y\"\r\n                        />\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -2519,7 +2477,7 @@ module.exports = "<div class=\"drag-panel\">\r\n    <ul class=\"nav nav-tabs\">\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".drag-panel {\n  width: 300px;\n  margin-right: 20px; }\n  .drag-panel .form-group {\n    margin: 0; }\n  .drag-panel .form-control, .drag-panel .select {\n    height: 20px !important;\n    padding: 1px; }\n  .drag-panel label {\n    color: #e3e4e5; }\n  .drag-panel .no-selection {\n    display: flex;\n    flex-direction: column;\n    flex-wrap: nowrap;\n    justify-content: flex-start;\n    align-items: stretch;\n    align-content: stretch;\n    height: 100%; }\n  .drag-panel .inner {\n    position: relative;\n    top: -1px;\n    height: 100%;\n    border: 1px solid #2a4563;\n    padding: 10px;\n    background: #264356;\n    background: linear-gradient(90deg, #264356 0%, #e3e4e5 99%); }\n  .drag-panel .inner h2 {\n      text-align: center;\n      margin: auto; }\n  .nav-link.true {\n  background-color: #e3e4e5;\n  border-color: #2a4563; }\n  .modal-lg {\n  width: 70% !important;\n  max-width: 1000px !important; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL3BhbmVsL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcZWRpdG9yXFxwYW5lbFxccGFuZWwuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2VkaXRvci9wYW5lbC9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxzYXNzXFxfdmFyaWFibGVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBR0E7RUF1QkksWUFBWTtFQWlCWixrQkFBa0IsRUFBQTtFQXhDdEI7SUFHUSxTQUFRLEVBQUE7RUFIaEI7SUFNUSx1QkFBc0I7SUFDdEIsWUFBWSxFQUFBO0VBUHBCO0lBVU0sY0NaYyxFQUFBO0VERXBCO0lBYVEsYUFBYTtJQUNwQixzQkFBc0I7SUFDdEIsaUJBQWlCO0lBQ2pCLDJCQUEyQjtJQUMzQixvQkFBb0I7SUFDakIsc0JBQXNCO0lBQ3RCLFlBQVksRUFBQTtFQW5CaEI7SUEwQlEsa0JBQWtCO0lBQ2xCLFNBQVE7SUFDUixZQUFZO0lBQ1oseUJDN0JpQjtJRDhCakIsYUFBYTtJQUNiLG1CQzlCa0I7SUQrQmxCLDJEQUF5RSxFQUFBO0VBaENqRjtNQWtDWSxrQkFBa0I7TUFDbEIsWUFBVyxFQUFBO0VBUXZCO0VBQ0kseUJDOUNnQjtFRCtDaEIscUJDN0NxQixFQUFBO0VEZ0R6QjtFQUNJLHFCQUFvQjtFQUNwQiw0QkFBMkIsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2VkaXRvci9wYW5lbC9wYW5lbC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJy4uLy4uLy4uL3Nhc3MvX3ZhcmlhYmxlcyc7XHJcblxyXG5cclxuLmRyYWctcGFuZWxcclxue1xyXG4gICAgLmZvcm0tZ3JvdXB7XHJcbiAgICAgICAgbWFyZ2luOjA7XHJcbiAgICB9XHJcbiAgICAuZm9ybS1jb250cm9sLCAuc2VsZWN0e1xyXG4gICAgICAgIGhlaWdodDogMjBweCFpbXBvcnRhbnQ7XHJcbiAgICAgICAgcGFkZGluZzogMXB4O1xyXG4gICAgfVxyXG4gIGxhYmVse1xyXG4gICAgICBjb2xvcjogJGNvbG9yLWdyYXk7XHJcbiAgfVxyXG4gICAgLm5vLXNlbGVjdGlvbiB7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuXHRmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG5cdGZsZXgtd3JhcDogbm93cmFwO1xyXG5cdGp1c3RpZnktY29udGVudDogZmxleC1zdGFydDtcclxuXHRhbGlnbi1pdGVtczogc3RyZXRjaDtcclxuICAgIGFsaWduLWNvbnRlbnQ6IHN0cmV0Y2g7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICBcclxuICAgIH1cclxuICBcclxuICAgIHdpZHRoOiAzMDBweDtcclxuICAgXHJcbiAgICAuaW5uZXJ7XHJcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICAgIHRvcDotMXB4O1xyXG4gICAgICAgIGhlaWdodDogMTAwJTtcclxuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCAkY29sb3ItZGFya2JsdWUyO1xyXG4gICAgICAgIHBhZGRpbmc6IDEwcHg7XHJcbiAgICAgICAgYmFja2dyb3VuZDogJGNvbG9yLWxpZ2h0Ymx1ZTE7XHJcbiAgICAgICAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDkwZGVnLCAkY29sb3ItbGlnaHRibHVlMSAwJSwgJGNvbG9yLWdyYXkgOTklKTtcclxuICAgICAgICBoMntcclxuICAgICAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyOyAgICAgICAgICAgIFxyXG4gICAgICAgICAgICBtYXJnaW46YXV0bztcclxuICAgICAgICAgICAgXHJcblxyXG4gICAgICAgIH1cclxuICAgIH1cclxuICAgIG1hcmdpbi1yaWdodDogMjBweDtcclxufVxyXG5cclxuLm5hdi1saW5rLnRydWV7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAkY29sb3ItZ3JheTtcclxuICAgIGJvcmRlci1jb2xvcjogJGNvbG9yLWRhcmtibHVlMjtcclxufVxyXG5cclxuLm1vZGFsLWxne1xyXG4gICAgd2lkdGg6IDcwJSFpbXBvcnRhbnQ7XHJcbiAgICBtYXgtd2lkdGg6IDEwMDBweCFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gICIsIlxyXG4kY29sb3ItZ3JheTogI2UzZTRlNTtcclxuJGNvbG9yLWRhcmtibHVlMTogIzE2MjQzMztcclxuJGNvbG9yLWRhcmtibHVlMjogIzJhNDU2MztcclxuJGNvbG9yLWxpZ2h0Ymx1ZTE6ICMyNjQzNTY7XHJcbiRjb2xvci1saWdodGJsdWUyOiAjM2M3Mzk5O1xyXG4kY29sb3Itb3JhbmdlOiAjZmM2NjAwO1xyXG4kY29sb3ItY3lhbjogIzAwZmZmNjtcclxuJGNvbG9yLXNjcmVlbjogIzAwY2ZmZjtcclxuJGNvbG9yLXNjcmVlbi1ncm91cDogIzAwZmZmNjtcclxuJGNvbG9yLWxpYnJhcnk6ICM5NmZmMDA7XHJcbiRjb2xvci15ZWxsb3c6ICNmZmZmMDA7XHJcbiRjb2xvci1wdXJwbGU6ICNmM2I3ZWI7XHJcbiRjb2xvci1ncmVlbjogIzk2ZmYwMDtcclxuIFxyXG5cclxuICJdfQ== */"
+module.exports = ".drag-panel {\n  width: 300px;\n  margin-right: 20px; }\n  .drag-panel .form-group {\n    margin: 0; }\n  .drag-panel .form-control {\n    height: 30px !important;\n    padding: 1px; }\n  .drag-panel .fontbox {\n    height: 30px !important; }\n  .drag-panel .name-control {\n    width: 204px; }\n  .drag-panel label {\n    color: #e3e4e5; }\n  .drag-panel .no-selection {\n    display: flex;\n    flex-direction: column;\n    flex-wrap: nowrap;\n    justify-content: flex-start;\n    align-items: stretch;\n    align-content: stretch;\n    height: 100%; }\n  .drag-panel .inner {\n    position: relative;\n    top: -1px;\n    height: 100%;\n    border: 1px solid #2a4563;\n    padding: 10px;\n    background: #264356;\n    background: linear-gradient(90deg, #264356 0%, #e3e4e5 99%); }\n  .drag-panel .inner h2 {\n      text-align: center;\n      margin: auto; }\n  .nav-link.true {\n  background-color: #e3e4e5;\n  border-color: #2a4563; }\n  .modal-lg {\n  width: 70% !important;\n  max-width: 1000px !important; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL3BhbmVsL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcZWRpdG9yXFxwYW5lbFxccGFuZWwuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2VkaXRvci9wYW5lbC9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxzYXNzXFxfdmFyaWFibGVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBR0E7RUErQkksWUFBWTtFQWlCWixrQkFBa0IsRUFBQTtFQWhEdEI7SUFHUSxTQUFRLEVBQUE7RUFIaEI7SUFNUSx1QkFBc0I7SUFDdEIsWUFBWSxFQUFBO0VBUHBCO0lBV1EsdUJBQXNCLEVBQUE7RUFYOUI7SUFlUSxZQUFZLEVBQUE7RUFmcEI7SUFrQk0sY0NwQmMsRUFBQTtFREVwQjtJQXFCUSxhQUFhO0lBQ3BCLHNCQUFzQjtJQUN0QixpQkFBaUI7SUFDakIsMkJBQTJCO0lBQzNCLG9CQUFvQjtJQUNqQixzQkFBc0I7SUFDdEIsWUFBWSxFQUFBO0VBM0JoQjtJQWtDUSxrQkFBa0I7SUFDbEIsU0FBUTtJQUNSLFlBQVk7SUFDWix5QkNyQ2lCO0lEc0NqQixhQUFhO0lBQ2IsbUJDdENrQjtJRHVDbEIsMkRBQXlFLEVBQUE7RUF4Q2pGO01BMENZLGtCQUFrQjtNQUNsQixZQUFXLEVBQUE7RUFRdkI7RUFDSSx5QkN0RGdCO0VEdURoQixxQkNyRHFCLEVBQUE7RUR3RHpCO0VBQ0kscUJBQW9CO0VBQ3BCLDRCQUEyQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvZWRpdG9yL3BhbmVsL3BhbmVsLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAnLi4vLi4vLi4vc2Fzcy9fdmFyaWFibGVzJztcclxuXHJcblxyXG4uZHJhZy1wYW5lbFxyXG57XHJcbiAgICAuZm9ybS1ncm91cHtcclxuICAgICAgICBtYXJnaW46MDtcclxuICAgIH1cclxuICAgIC5mb3JtLWNvbnRyb2x7XHJcbiAgICAgICAgaGVpZ2h0OiAzMHB4IWltcG9ydGFudDtcclxuICAgICAgICBwYWRkaW5nOiAxcHg7XHJcbiAgICB9XHJcbiAgICAuZm9udGJveFxyXG4gICAge1xyXG4gICAgICAgIGhlaWdodDogMzBweCFpbXBvcnRhbnQ7XHJcbiAgICB9XHJcblxyXG4gICAgLm5hbWUtY29udHJvbHtcclxuICAgICAgICB3aWR0aDogMjA0cHg7XHJcbiAgICB9XHJcbiAgbGFiZWx7XHJcbiAgICAgIGNvbG9yOiAkY29sb3ItZ3JheTtcclxuICB9XHJcbiAgICAubm8tc2VsZWN0aW9uIHtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG5cdGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcblx0ZmxleC13cmFwOiBub3dyYXA7XHJcblx0anVzdGlmeS1jb250ZW50OiBmbGV4LXN0YXJ0O1xyXG5cdGFsaWduLWl0ZW1zOiBzdHJldGNoO1xyXG4gICAgYWxpZ24tY29udGVudDogc3RyZXRjaDtcclxuICAgIGhlaWdodDogMTAwJTtcclxuICAgIFxyXG4gICAgfVxyXG4gIFxyXG4gICAgd2lkdGg6IDMwMHB4O1xyXG4gICBcclxuICAgIC5pbm5lcntcclxuICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICAgICAgdG9wOi0xcHg7XHJcbiAgICAgICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkICRjb2xvci1kYXJrYmx1ZTI7XHJcbiAgICAgICAgcGFkZGluZzogMTBweDtcclxuICAgICAgICBiYWNrZ3JvdW5kOiAkY29sb3ItbGlnaHRibHVlMTtcclxuICAgICAgICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoOTBkZWcsICRjb2xvci1saWdodGJsdWUxIDAlLCAkY29sb3ItZ3JheSA5OSUpO1xyXG4gICAgICAgIGgye1xyXG4gICAgICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7ICAgICAgICAgICAgXHJcbiAgICAgICAgICAgIG1hcmdpbjphdXRvO1xyXG4gICAgICAgICAgICBcclxuXHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG4gICAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xyXG59XHJcblxyXG4ubmF2LWxpbmsudHJ1ZXtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICRjb2xvci1ncmF5O1xyXG4gICAgYm9yZGVyLWNvbG9yOiAkY29sb3ItZGFya2JsdWUyO1xyXG59XHJcblxyXG4ubW9kYWwtbGd7XHJcbiAgICB3aWR0aDogNzAlIWltcG9ydGFudDtcclxuICAgIG1heC13aWR0aDogMTAwMHB4IWltcG9ydGFudDtcclxuICB9XHJcbiAgIiwiXHJcbiRjb2xvci1ncmF5OiAjZTNlNGU1O1xyXG4kY29sb3ItZGFya2JsdWUxOiAjMTYyNDMzO1xyXG4kY29sb3ItZGFya2JsdWUyOiAjMmE0NTYzO1xyXG4kY29sb3ItbGlnaHRibHVlMTogIzI2NDM1NjtcclxuJGNvbG9yLWxpZ2h0Ymx1ZTI6ICMzYzczOTk7XHJcbiRjb2xvci1vcmFuZ2U6ICNmYzY2MDA7XHJcbiRjb2xvci1jeWFuOiAjMDBmZmY2O1xyXG4kY29sb3Itc2NyZWVuOiAjMDBjZmZmO1xyXG4kY29sb3Itc2NyZWVuLWdyb3VwOiAjMDBmZmY2O1xyXG4kY29sb3ItbGlicmFyeTogIzk2ZmYwMDtcclxuJGNvbG9yLXllbGxvdzogI2ZmZmYwMDtcclxuJGNvbG9yLXB1cnBsZTogI2YzYjdlYjtcclxuJGNvbG9yLWdyZWVuOiAjOTZmZjAwO1xyXG4gXHJcblxyXG4gIl19 */"
 
 /***/ }),
 
@@ -2538,16 +2496,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-bootstrap/modal */ "./node_modules/ngx-bootstrap/modal/index.js");
 /* harmony import */ var _fonts_fonts_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../fonts/fonts.component */ "./src/app/editor/fonts/fonts.component.ts");
+/* harmony import */ var _services_dirty_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/dirty.service */ "./src/app/services/dirty.service.ts");
+
 
 
 
 
 
 var PanelComponent = /** @class */ (function () {
-    function PanelComponent(_ngZone, sanitizer, modalService) {
+    function PanelComponent(_ngZone, sanitizer, modalService, dirtyService) {
         this._ngZone = _ngZone;
         this.sanitizer = sanitizer;
         this.modalService = modalService;
+        this.dirtyService = dirtyService;
         this.sliderOptions = {
             floor: 0,
             ceil: 250
@@ -2571,11 +2532,15 @@ var PanelComponent = /** @class */ (function () {
         this.tabs = [{ name: 'PANEL.ELEMENT', icon: '', selected: true }, { name: 'PANEL.GENERAL', icon: '', selected: false }];
     }
     PanelComponent.prototype.openModalWithComponent = function () {
+        var _this = this;
         var initialState = {
             selectedFonts: this.editor.fonts
         };
         this.bsModalRef = this.modalService.show(_fonts_fonts_component__WEBPACK_IMPORTED_MODULE_4__["FontsSelectComponent"], { initialState: initialState, class: 'modal-lg' });
         this.bsModalRef.content.closeBtnName = 'Close';
+        this.modalService.onHide.subscribe(function (reason) {
+            _this.editorChanged.emit(_this.editor);
+        });
     };
     PanelComponent.prototype.tabSelect = function (tab) {
         this.tabs.forEach(function (tabItem) { return tabItem.selected = false; });
@@ -2616,6 +2581,7 @@ var PanelComponent = /** @class */ (function () {
                 families: [this.element.font]
             }
         });
+        this.dirtyService.setDirty();
     };
     PanelComponent.prototype.moveIndex = function (delta) {
         this.element.zIndex = this.element.zIndex + delta;
@@ -2664,7 +2630,7 @@ var PanelComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./panel.component.scss */ "./src/app/editor/panel/panel.component.scss")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"],
-            ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_3__["BsModalService"]])
+            ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_3__["BsModalService"], _services_dirty_service__WEBPACK_IMPORTED_MODULE_5__["DirtyService"]])
     ], PanelComponent);
     return PanelComponent;
 }());
@@ -2749,7 +2715,7 @@ var SelectionService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = " \n\n<div *ngIf=\"item\" style=\"position: relative;\" >\n  <app-changes [item]=\"selectionService.elements\"></app-changes>\n  <app-slide-header [title]=\"'NAVBAR.SLIDES'\"   closeFn=\"true\" mode=\"inline\" [enableSave]='true' (save)=\"saveProxy($event)\"\n    iconClass=\"far fa-object-group\" className=\"library-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n  <div class=\"row p10\">\n    <div class=\"col-3\">\n      <app-add (selected)=\"addElement($event)\"></app-add>\n      <app-panel [(element)]=\"selectedElement\" [editor]=\"editor\" [item]=\"item\" (elementChanged)=\"setElement(element)\" (editorChanged)=\"setEditor($event)\"></app-panel>\n    </div>\n    <div class=\"col-9\">\n      <div class=\"row slide-editor\" id=\"worksapce\" style=\"direction: ltr;\">\n\n        <app-rulers></app-rulers><br />\n        <div class=\"editor-plate small\" [ngStyle]=\"{'background-color': item.bgColor }\">\n\n          <app-element *ngFor=\"let el of selectionService.elements\"\n            [element]=\"el\"></app-element>\n\n        </div>\n      </div>\n    </div>\n\n  </div>\n</div>\n<app-finder [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
+module.exports = " \n  <ng-template #toolbar let-item=\"item\">\n    <div class=\"btn-group\" data-toggle=\"buttons\">\n      <button class=\"btn-tool btn-play\" (click)=\"publish()\"> <i class=\"fas fa-bolt\"></i></button>\n    </div>\n  </ng-template>\n\n\n<div *ngIf=\"item\" style=\"position: relative;\" >\n  <app-changes [item]=\"selectionService.elements\"></app-changes>\n  <app-slide-header [title]=\"'NAVBAR.SLIDES'\" [toolbar]=\"toolbar\"  closeFn=\"true\" mode=\"inline\" [enableSave]='true' (save)=\"saveProxy($event)\"\n    iconClass=\"far fa-object-group\" className=\"library-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n\n\n\n\n  <div class=\"row p10\">\n    <div class=\"col-3\">\n      <app-add (selected)=\"addElement($event)\"></app-add>\n      <app-panel [(element)]=\"selectedElement\" [editor]=\"editor\" [item]=\"item\" (elementChanged)=\"setElement(element)\" (editorChanged)=\"setEditor($event)\"></app-panel>\n    </div>\n    <div class=\"col-9\">\n      <div class=\"row slide-editor\" id=\"worksapce\" style=\"direction: ltr;\">\n\n        <app-rulers></app-rulers><br />\n        <div class=\"editor-plate small\" [ngStyle]=\"{'background-color': item.bgColor }\">\n\n          <app-element *ngFor=\"let el of selectionService.elements\"\n            [element]=\"el\"></app-element>\n\n        </div>\n      </div>\n    </div>\n\n  </div>\n</div>\n<app-finder [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
 
 /***/ }),
 
@@ -2843,6 +2809,30 @@ var SlideEditorComponent = /** @class */ (function (_super) {
     SlideEditorComponent.prototype.setEditor = function (editor) {
         this.item.color = editor.color;
         this.item.bgColor = editor.bgColor;
+        this.item.fonts = editor.fonts;
+        this.dirtyService.setDirty();
+    };
+    SlideEditorComponent.prototype.publish = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var sharedItem;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (!this.item.publish_id) return [3 /*break*/, 2];
+                        return [4 /*yield*/, _signnature_client__WEBPACK_IMPORTED_MODULE_4__["ShareDataController"].update(this.item.publish_id, this.item)];
+                    case 1:
+                        _a.sent();
+                        return [3 /*break*/, 4];
+                    case 2: return [4 /*yield*/, _signnature_client__WEBPACK_IMPORTED_MODULE_4__["ShareDataController"].create(this.item)];
+                    case 3:
+                        sharedItem = _a.sent();
+                        this.item.publish_id = sharedItem._id;
+                        this.saveProxy();
+                        _a.label = 4;
+                    case 4: return [2 /*return*/];
+                }
+            });
+        });
     };
     SlideEditorComponent.prototype.finder = function (finderMode) {
         this.finderMode = finderMode;
@@ -2880,23 +2870,37 @@ var SlideEditorComponent = /** @class */ (function (_super) {
         var _this = this;
         if (!this.item) {
             this.route.params.subscribe(function (data) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
-                var _a;
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
-                    switch (_b.label) {
+                var _a, _b;
+                return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_c) {
+                    switch (_c.label) {
                         case 0:
                             if (!(data.id !== '0')) return [3 /*break*/, 2];
                             _a = this;
                             return [4 /*yield*/, _signnature_client__WEBPACK_IMPORTED_MODULE_4__["SlidesDataController"].get(data.id)];
                         case 1:
-                            _a.item = _b.sent();
+                            _a.item = _c.sent();
                             this.nameService.setName(this.item.Name);
+                            this.editor.fonts = this.item.fonts;
                             this.editor.bgColor = this.item.bgColor;
                             this.editor.color = this.item.color;
                             return [3 /*break*/, 3];
                         case 2:
                             this.item = { elements: [] };
-                            _b.label = 3;
+                            _c.label = 3;
                         case 3:
+                            if (!data.template) return [3 /*break*/, 5];
+                            _b = this;
+                            return [4 /*yield*/, _signnature_client__WEBPACK_IMPORTED_MODULE_4__["ShareDataController"].get(data.template)];
+                        case 4:
+                            _b.item = _c.sent();
+                            this.item.publish_id = this.item._id;
+                            delete this.item._id;
+                            this.nameService.setName(this.item.Name);
+                            this.editor.fonts = this.item.fonts;
+                            this.editor.bgColor = this.item.bgColor;
+                            this.editor.color = this.item.color;
+                            _c.label = 5;
+                        case 5:
                             this.selectionService.load(this.item);
                             return [2 /*return*/];
                     }
@@ -3358,7 +3362,7 @@ var LibraryComponent = /** @class */ (function (_super) {
         _this._ngZone = _ngZone;
         _this.translateService = translateService;
         _this.router = router;
-        _this.types = ['image', 'video', 'slide'];
+        _this.types = ['image', 'video', 'slide', 'shares'];
         _this.tabsCollection = {
             'image': {
                 name: 'NAVBAR.IMAGES', icon: 'fas fa-images'
@@ -3371,15 +3375,14 @@ var LibraryComponent = /** @class */ (function (_super) {
             // },
             'slide': {
                 name: 'NAVBAR.SLIDES', icon: 'far fa-object-group'
+            }, 'shares': {
+                name: 'NAVBAR.SHARED', icon: 'fas fa-bolt'
             },
         };
         _this.tabs = [];
         _this.DataController = _signnature_client__WEBPACK_IMPORTED_MODULE_4__["LibraryDataController"];
         return _this;
     }
-    // [{ name: 'NAVBAR.IMAGES', selected: true, alias: 'image' },
-    // { name: 'NAVBAR.VIDEOS', selected: false, alias: 'video' },
-    // { name: 'NAVBAR.SLIDES', selected: false, alias: 'slide' }];
     LibraryComponent.prototype.tabSelect = function (tab) {
         this.router.navigate(['/dashboard/library/', tab.alias]);
         this.tabs.forEach(function (tabItem) { return tabItem.selected = false; });
@@ -3471,6 +3474,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _upload_upload_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./upload/upload.component */ "./src/app/library/upload/upload.component.ts");
 /* harmony import */ var _editor_slide_editor_slide_editor_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../editor/slide-editor/slide-editor.component */ "./src/app/editor/slide-editor/slide-editor.component.ts");
 /* harmony import */ var _fonts_fonts_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./fonts/fonts.component */ "./src/app/library/fonts/fonts.component.ts");
+/* harmony import */ var _shares_shares_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./shares/shares.component */ "./src/app/library/shares/shares.component.ts");
+
 
 
 
@@ -3498,11 +3503,12 @@ var libraryRoutes = [
             { path: 'image', component: _images_images_component__WEBPACK_IMPORTED_MODULE_6__["ImagesComponent"] },
             { path: 'video', component: _videos_videos_component__WEBPACK_IMPORTED_MODULE_7__["VideosComponent"] },
             { path: 'audio', component: _sounds_sounds_component__WEBPACK_IMPORTED_MODULE_8__["SoundsComponent"] },
-            { path: 'font', component: _fonts_fonts_component__WEBPACK_IMPORTED_MODULE_14__["FontsComponent"] },
+            { path: 'shares', component: _shares_shares_component__WEBPACK_IMPORTED_MODULE_15__["SharesComponent"] },
             { path: 'slide', component: _slides_slides_component__WEBPACK_IMPORTED_MODULE_9__["SlidesComponent"] },
         ]
     },
     { path: 'library/slide/:id', component: _editor_slide_editor_slide_editor_component__WEBPACK_IMPORTED_MODULE_13__["SlideEditorComponent"] },
+    { path: 'library/slide/:id/template/:template', component: _editor_slide_editor_slide_editor_component__WEBPACK_IMPORTED_MODULE_13__["SlideEditorComponent"] },
 ];
 var LibraryModule = /** @class */ (function () {
     function LibraryModule() {
@@ -3521,13 +3527,102 @@ var LibraryModule = /** @class */ (function () {
             declarations: [_images_images_component__WEBPACK_IMPORTED_MODULE_6__["ImagesComponent"],
                 _fonts_fonts_component__WEBPACK_IMPORTED_MODULE_14__["FontsComponent"],
                 _videos_videos_component__WEBPACK_IMPORTED_MODULE_7__["VideosComponent"], _sounds_sounds_component__WEBPACK_IMPORTED_MODULE_8__["SoundsComponent"], _slides_slides_component__WEBPACK_IMPORTED_MODULE_9__["SlidesComponent"],
-                _library_component__WEBPACK_IMPORTED_MODULE_10__["LibraryComponent"], _upload_upload_component__WEBPACK_IMPORTED_MODULE_12__["UploadComponent"]
+                _library_component__WEBPACK_IMPORTED_MODULE_10__["LibraryComponent"], _upload_upload_component__WEBPACK_IMPORTED_MODULE_12__["UploadComponent"], _shares_shares_component__WEBPACK_IMPORTED_MODULE_15__["SharesComponent"]
             ],
             providers: []
         })
     ], LibraryModule);
     return LibraryModule;
 }());
+
+
+
+/***/ }),
+
+/***/ "./src/app/library/shares/shares.component.html":
+/*!******************************************************!*\
+  !*** ./src/app/library/shares/shares.component.html ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ng-template #toolbarTemplate let-item=\"item\">\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n        <li>\n            <button class=\"btn btn-secondary btn-md btn-success\" (click)=\"startFromTemplate(item);\"> <i class=\"fas fa-bolt\"></i>\n            </button>\n        </li>\n        <li>\n          \n        </li>\n    </ul>\n</ng-template>\n\n<app-lobby [items]=\"items\" mode='media' [toolbar]=\"toolbarTemplate\" [noNew]=\"true\">\n\n</app-lobby>\n"
+
+/***/ }),
+
+/***/ "./src/app/library/shares/shares.component.scss":
+/*!******************************************************!*\
+  !*** ./src/app/library/shares/shares.component.scss ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".slide-canvas {\n  border: 1px solid #66cc66; }\n\n.h1 {\n  font-size: 24px;\n  font-weight: bold; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGlicmFyeS9zaGFyZXMvQzpcXHByb2plY3RzXFxzaWduLW5hdHVyZVxcd2ViL3NyY1xcYXBwXFxsaWJyYXJ5XFxzaGFyZXNcXHNoYXJlcy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUVFLHlCQUF5QixFQUFBOztBQUkzQjtFQUNFLGVBQWU7RUFDZixpQkFBaUIsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2xpYnJhcnkvc2hhcmVzL3NoYXJlcy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zbGlkZS1jYW52YXN7XHJcbiAgLy9wb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgYm9yZGVyOiAxcHggc29saWQgIzY2Y2M2NjtcclxufVxyXG5cclxuXHJcbi5oMXtcclxuICBmb250LXNpemU6IDI0cHg7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbn0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/library/shares/shares.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/library/shares/shares.component.ts ***!
+  \****************************************************/
+/*! exports provided: SharesComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SharesComponent", function() { return SharesComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _data_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../data.component */ "./src/app/data.component.ts");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+
+
+var SharesComponent = /** @class */ (function (_super) {
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](SharesComponent, _super);
+    function SharesComponent(_ngZone, translateService, router) {
+        var _this = _super.call(this, _ngZone, translateService) || this;
+        _this._ngZone = _ngZone;
+        _this.translateService = translateService;
+        _this.router = router;
+        _this.DataController = _signnature_client__WEBPACK_IMPORTED_MODULE_3__["ShareDataController"];
+        return _this;
+        // this.DataModel = PlaylistModel;
+    }
+    SharesComponent.prototype.startFromTemplate = function (item) {
+        this.router.navigate(['/dashboard/library/slide/0/template/', item._id]);
+    };
+    SharesComponent.prototype.ngOnInit = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _a;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _a = this;
+                        return [4 /*yield*/, _signnature_client__WEBPACK_IMPORTED_MODULE_3__["ShareDataController"].search({})];
+                    case 1:
+                        _a.items = _b.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    SharesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-shares',
+            template: __webpack_require__(/*! ./shares.component.html */ "./src/app/library/shares/shares.component.html"),
+            styles: [__webpack_require__(/*! ./shares.component.scss */ "./src/app/library/shares/shares.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__["TranslateService"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]])
+    ], SharesComponent);
+    return SharesComponent;
+}(_data_component__WEBPACK_IMPORTED_MODULE_2__["DataComponent"]));
 
 
 
@@ -3997,7 +4092,7 @@ var VideosComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<dialog open style=\"position: relative;\" class=\"playlist\">\n  <ng-template #toolbar let-item=\"item\">\n    <div class=\"btn-group\" data-toggle=\"buttons\">\n      <button class=\"btn-tool btn-play\" (click)=\"preview()\"> <i class=\"fas fa-play\"></i></button>\n    </div>\n  </ng-template>\n\n\n  <app-slide-header [title]=\"'NAVBAR.PLAYLISTS'\" mode=\"inline\" [enableSave]='true' (save)=\"saveProxy()\" iconClass=\"fas fa-step-forward\"\n    className=\"playlist-cat\" [closeFn]=\"true\" [toolbar]=\"toolbar\" (closed)=\"closeSlider()\"></app-slide-header>\n  <form *ngIf=\"item\" class=\"pad\">\n    <app-changes [item]=\"item\"></app-changes>\n\n    <app-playlist-player *ngIf=\"previewOn\" [playerPlan]=\"item\"></app-playlist-player>\n    <div [appAdaptHeight]=\"previewHeight\">\n      <div class=\"form-group\">\n        <label for=\"itemName\">{{ \"PLAYLISTS.NAME\" | translate }}:</label>\n        <input type=\"text\" name=\"itemName\" class=\"form-control\" id=\"itemName\" [(ngModel)]=\"item.Name\">\n        <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"PLAYLISTS.NAME_HELP\" | translate }}</small>\n      </div>\n      <ul class=\"nav nav-tabs\">\n        <li class=\"nav-item {{tab.class}}\" *ngFor=\"let tab of tabs\">\n          <a class=\"nav-link\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n        </li>\n      </ul>\n      <div *ngIf=\"tabs[0].selected\">\n\n\n        <div class=\"form-group\" class=\"sortable\">\n          <div class=\"shadow btn-long\" (click)=\"finder()\"><i class=\"fas fa-plus-circle\"></i> {{\"PLAYLISTS.ADDTOLIST\" | translate}}</div>\n\n          <div *ngIf=\"playlistMode==='normal'\" [class]=\"playlistMode\">\n\n            <div class=\"horizontal-scroller playlist-cat\" dragula=\"DRAGULA_FACTS\" [(dragulaModel)]=\"item.list\" (dropModel)=\"drop($event)\"\n              style=\"direction: ltr;\">\n              <div *ngFor=\"let listitem of item.list; let i = index\" class=\"slot shadow\" [ngStyle]=\"{'left': (20 + (i)*220) + 'px', 'top':'20px'}\">\n                <app-lobby-item *ngIf=\"listitem\" [item]=\"listitem\"></app-lobby-item>\n                <ul class=\"sqr-toolbar btn-group direction\" role=\"group\">\n                  <li>\n                    <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"removeListItem(item);\"> <i class=\"fas fa-trash\"></i>\n                    </button>\n                  </li>\n                  <li>\n                    <input type=\"number\" [detectChanges]=\"true\" [(ngModel)]=\"listitem.duration\" name=\"duration\">\n                  </li>\n                  <li>\n                    <select [detectChanges]=\"true\" [(ngModel)]=\"listitem.transition\" name=\"transition\">\n                      <option *ngFor=\"let c of effects\" [ngValue]=\"c\">{{c}}</option>\n                    </select>\n                  </li>\n                </ul>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div *ngIf=\"tabs[1].selected\">\n        <div class=\"form-group shadow\">\n          <div class=\"btn-long\" (click)=\"schedule()\"><i class=\"fas fa-plus-circle\"></i> {{\"PLAYLISTS.ADDTIME\" | translate}}</div>\n          <div id=\"timeSlots\" *ngIf=\"editTime && selectedTimeEl\">\n            <div class=\"form-row\">\n              <div class=\"form-group col-md-6\">\n                <label for=\"itemName\">{{ \"PLAYLISTS.SCHEDULE\" | translate }}:</label>\n                <select [(ngModel)]=\"selectedTimeEl.timeslot\" name=\"timeSlotOptions\" [compareWith]=\"compareFnId\" class=\"form-control\">\n                  <option *ngFor=\"let c of timeSlotOptions\" [ngValue]=\"c\">{{c.name | translate}}</option>\n                </select>\n              </div>\n              <div class=\"form-group col-md-6\">\n                <label for=\"ScreenGroup\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n                <select [(ngModel)]=\"selectedTimeEl.screenGroup\" name=\"ScreenGroup\" [compareWith]=\"compareFn_id\" class=\"form-control\">\n                  <option *ngFor=\"let c of groups\" [ngValue]=\"c\">{{c.Name}}</option>\n                </select>\n              </div>\n              <button class=\"btn btn-primary\" (click)=\"addTimeSlot()\">{{ \"PLAYLISTS.SETTIME\" | translate}}</button>\n            </div>\n          </div>\n        </div>\n\n        <div class=\"container\">\n\n          <div *ngFor=\"let timeslotEl of item.TimeSlots\" class=\"sqr short shadow\">\n            <label>{{timeslotEl.timeslot.name | translate}}</label>\n            <small>{{timeslotEl.screenGroup.Name}}</small>\n            <ul class=\"sqr-toolbar\">\n              <li>\n                <button class=\"btn btn-md btn-danger\" (click)=\"deleteTimeslot(timeslotEl);\"> <i class=\"fas fa-trash\"></i>\n                </button>\n              </li>\n              <li>\n                <button class=\"btn btn-md btn-primary\" (click)=\"editTimeslot(timeslotEl);\"> <i class=\"fas fa-edit\"></i> </button>\n              </li>\n            </ul>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <hr />\n\n  </form>\n\n  <app-slide-footer className=\"playlist-cat\"></app-slide-footer>\n</dialog>\n\n\n\n\n\n<app-finder [types]=\"['image','video','slide']\" [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
+module.exports = "<dialog open style=\"position: relative;\" class=\"playlist\">\n  <ng-template #toolbar let-item=\"item\">\n    <div class=\"btn-group\" data-toggle=\"buttons\">\n      <button class=\"btn-tool btn-play\" (click)=\"preview()\"> <i class=\"fas fa-play\"></i></button>\n    </div>\n  </ng-template>\n\n\n  <app-slide-header [title]=\"'NAVBAR.PLAYLISTS'\" mode=\"inline\" [enableSave]='true' (save)=\"saveProxy()\" iconClass=\"fas fa-step-forward\"\n    className=\"playlist-cat\" [closeFn]=\"true\" [toolbar]=\"toolbar\" (closed)=\"closeSlider()\"></app-slide-header>\n  <form *ngIf=\"item\" class=\"pad\">\n    <app-changes [item]=\"item\"></app-changes>\n\n    <app-playlist-player *ngIf=\"previewOn\" [playerPlan]=\"item\"></app-playlist-player>\n    <div [appAdaptHeight]=\"previewHeight\">\n      <div class=\"form-group\">\n        <label for=\"itemName\">{{ \"PLAYLISTS.NAME\" | translate }}:</label>\n        <input type=\"text\" name=\"itemName\" class=\"form-control\" id=\"itemName\" [(ngModel)]=\"item.Name\">\n        <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"PLAYLISTS.NAME_HELP\" | translate }}</small>\n      </div>\n      <ul class=\"nav nav-tabs\">\n        <li class=\"nav-item {{tab.class}}\" *ngFor=\"let tab of tabs\">\n          <a class=\"nav-link\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n        </li>\n      </ul>\n      <div *ngIf=\"tabs[0].selected\">\n\n\n        <div class=\"form-group\" class=\"sortable\">\n          <div class=\"shadow btn-long\" (click)=\"finder()\"><i class=\"fas fa-plus-circle\"></i> {{\"PLAYLISTS.ADDTOLIST\" | translate}}</div>\n\n          <div *ngIf=\"playlistMode==='normal'\" [class]=\"playlistMode\">\n\n            <div class=\"horizontal-scroller playlist-cat\" dragula=\"DRAGULA_FACTS\" [(dragulaModel)]=\"item.list\" (dropModel)=\"drop($event)\"\n              style=\"direction: ltr;\">\n              <div *ngFor=\"let listitem of item.list; let i = index\" class=\"slot shadow\" [ngStyle]=\"{'left': (20 + (i)*240) + 'px', 'top':'20px'}\">\n                <app-lobby-item *ngIf=\"listitem\" [item]=\"listitem\"></app-lobby-item>\n                <ul class=\"sqr-toolbar btn-group direction\" role=\"group\">\n                  <li>\n                    <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"removeListItem(item);\"> <i class=\"fas fa-trash\"></i>\n                    </button>\n                  </li>\n                  <li>\n                    <input type=\"number\" [detectChanges]=\"true\" [(ngModel)]=\"listitem.duration\" name=\"duration\">\n                  </li>\n                  <li>\n                    <select [detectChanges]=\"true\" [(ngModel)]=\"listitem.transition\" name=\"transition\">\n                      <option *ngFor=\"let c of effects\" [ngValue]=\"c\">{{c}}</option>\n                    </select>\n                  </li>\n                </ul>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div *ngIf=\"tabs[1].selected\">\n        <div class=\"form-group shadow\">\n          <div class=\"btn-long\" (click)=\"schedule()\"><i class=\"fas fa-plus-circle\"></i> {{\"PLAYLISTS.ADDTIME\" | translate}}</div>\n          <div id=\"timeSlots\" *ngIf=\"editTime && selectedTimeEl\">\n            <div class=\"form-row\">\n              <div class=\"form-group col-md-6\">\n                <label for=\"itemName\">{{ \"PLAYLISTS.SCHEDULE\" | translate }}:</label>\n                <select [(ngModel)]=\"selectedTimeEl.timeslot\" name=\"timeSlotOptions\" [compareWith]=\"compareFnId\" class=\"form-control\">\n                  <option *ngFor=\"let c of timeSlotOptions\" [ngValue]=\"c\">{{c.name | translate}}</option>\n                </select>\n              </div>\n              <div class=\"form-group col-md-6\">\n                <label for=\"ScreenGroup\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n                <select [(ngModel)]=\"selectedTimeEl.screenGroup\" name=\"ScreenGroup\" [compareWith]=\"compareFn_id\" class=\"form-control\">\n                  <option *ngFor=\"let c of groups\" [ngValue]=\"c\">{{c.Name}}</option>\n                </select>\n              </div>\n              <button class=\"btn btn-primary\" (click)=\"addTimeSlot()\">{{ \"PLAYLISTS.SETTIME\" | translate}}</button>\n            </div>\n          </div>\n        </div>\n\n        <div class=\"container\">\n\n          <div *ngFor=\"let timeslotEl of item.TimeSlots\" class=\"sqr short shadow\">\n            <label>{{timeslotEl.timeslot.name | translate}}</label>\n            <small>{{timeslotEl.screenGroup.Name}}</small>\n            <ul class=\"sqr-toolbar\">\n              <li>\n                <button class=\"btn btn-md btn-danger\" (click)=\"deleteTimeslot(timeslotEl);\"> <i class=\"fas fa-trash\"></i>\n                </button>\n              </li>\n              <li>\n                <button class=\"btn btn-md btn-primary\" (click)=\"editTimeslot(timeslotEl);\"> <i class=\"fas fa-edit\"></i> </button>\n              </li>\n            </ul>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <hr />\n\n  </form>\n\n  <app-slide-footer className=\"playlist-cat\"></app-slide-footer>\n</dialog>\n\n\n\n\n\n<app-finder [types]=\"['image','video','slide']\" [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
 
 /***/ }),
 
@@ -4008,7 +4103,7 @@ module.exports = "<dialog open style=\"position: relative;\" class=\"playlist\">
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".pad {\n  padding-top: 20px;\n  padding-right: 30px;\n  padding-left: 30px; }\n\n.short {\n  height: 90px; }\n\n.box-container {\n  position: relative;\n  height: 150px;\n  padding: 45px 0; }\n\n.box-swap {\n  position: absolute;\n  text-align: center;\n  width: 150px;\n  height: 60px;\n  padding: 15px 35px;\n  line-height: 30px; }\n\n.box-swap.static-block {\n    transition: all 0.3s ease-out; }\n\n/* in-flight clone */\n\n.gu-mirror {\n  position: fixed !important;\n  margin: 0 !important;\n  z-index: 9999 !important;\n  opacity: 0.8;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)\";\n  filter: alpha(opacity=80);\n  pointer-events: none; }\n\n/* high-performance display:none; helper */\n\n.gu-hide {\n  left: -9999px !important; }\n\n/* added to mirrorContainer (default = body) while dragging */\n\n.gu-unselectable {\n  -webkit-user-select: none !important;\n  -moz-user-select: none !important;\n  -ms-user-select: none !important;\n  user-select: none !important; }\n\n/* added to the source element while its mirror is dragged */\n\n.gu-transit {\n  opacity: 0.2;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)\";\n  filter: alpha(opacity=20); }\n\n.horizontal-scroller {\n  margin-right: 4px;\n  margin-left: 4px;\n  width: 100%;\n  overflow-y: hidden;\n  overflow-x: auto;\n  direction: ltr;\n  position: relative;\n  height: 300px; }\n\n.slot {\n  position: absolute;\n  width: 200px;\n  height: 200px; }\n\n.slot .sqr-toolbar {\n    width: 192px;\n    visibility: visible; }\n\n.slot .sqr-toolbar input {\n      width: 50px;\n      height: 24px; }\n\n.slot .sqr-toolbar select {\n      width: 100px;\n      height: 24px; }\n\n.canvas-bg {\n  position: absolute;\n  z-index: 0; }\n\n.sqr-btn {\n  font-size: 84px;\n  text-align: center;\n  vertical-align: middle; }\n\n.sqr-btn .sqr-toolbar {\n    visibility: visible; }\n\n.sqr-btn:hover, .sqr:hover {\n  opacity: 1; }\n\n.sqr-btn:hover .sqr-toolbar, .sqr:hover .sqr-toolbar {\n    visibility: visible; }\n\n.sqr-btn:hover .sqr-toolbar input, .sqr:hover .sqr-toolbar input {\n      width: 50px;\n      height: 30px; }\n\n.sqr-btn:hover .sqr-toolbar select, .sqr:hover .sqr-toolbar select {\n      height: 30px; }\n\n.fancy-thumb {\n  z-index: 1000; }\n\n.extended-padding {\n  padding: 50px; }\n\n.extended {\n  overflow: hidden;\n  padding: 30px;\n  height: 400px;\n  background-color: white;\n  position: absolute;\n  top: 200px;\n  right: 50px;\n  left: 50px;\n  border: 1px solid red; }\n\n.extended .topper {\n    pointer-events: none;\n    z-index: 0;\n    height: 65px;\n    opacity: 0.8;\n    position: absolute;\n    padding-top: 30px;\n    top: -30px;\n    left: 0;\n    right: 0; }\n\n.extended .topper .icon {\n      margin: 8px;\n      vertical-align: top; }\n\n.extended .topper h4 {\n      display: inline;\n      vertical-align: top; }\n\n.extended .topper .bar-icon {\n      margin-left: 15px; }\n\n:host-context(.ltr) .btn-play {\n  float: left; }\n\n:host-context(.ltr) .btn-play {\n  float: right; }\n\n.btn-play {\n  width: 52px;\n  height: 52px;\n  background-color: #f3b7eb;\n  color: white;\n  cursor: pointer; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGxheWxpc3RzL3BsYXlsaXN0Lml0ZW0vQzpcXHByb2plY3RzXFxzaWduLW5hdHVyZVxcd2ViL3NyY1xcYXBwXFxwbGF5bGlzdHNcXHBsYXlsaXN0Lml0ZW1cXHBsYXlsaXN0LmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9wbGF5bGlzdHMvcGxheWxpc3QuaXRlbS9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxzYXNzXFxfdmFyaWFibGVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBR0E7RUFDRSxpQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLGtCQUFrQixFQUFBOztBQUdwQjtFQUNLLFlBQVcsRUFBQTs7QUFHZjtFQUNHLGtCQUFrQjtFQUNsQixhQUFhO0VBQ2IsZUFBZSxFQUFBOztBQUdqQjtFQUNFLGtCQUFrQjtFQUNsQixrQkFBa0I7RUFDbEIsWUFBWTtFQUNaLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIsaUJBQWlCLEVBQUE7O0FBTm5CO0lBU0ksNkJBQTZCLEVBQUE7O0FBS2pDLG9CQUFBOztBQUNGO0VBQ0ksMEJBQTBCO0VBQzFCLG9CQUFvQjtFQUNwQix3QkFBd0I7RUFDeEIsWUFBWTtFQUNaLGlFQUFpRTtFQUNqRSx5QkFBeUI7RUFDekIsb0JBQW9CLEVBQUE7O0FBRXRCLDBDQUFBOztBQUNBO0VBQ0Usd0JBQXdCLEVBQUE7O0FBRTFCLDZEQUFBOztBQUNBO0VBQ0Usb0NBQW9DO0VBQ3BDLGlDQUFpQztFQUNqQyxnQ0FBZ0M7RUFDaEMsNEJBQTRCLEVBQUE7O0FBRTlCLDREQUFBOztBQUNBO0VBQ0UsWUFBWTtFQUNaLGlFQUFpRTtFQUNqRSx5QkFBeUIsRUFBQTs7QUFFN0I7RUFDRSxpQkFBaUI7RUFDakIsZ0JBQWdCO0VBQ2hCLFdBQVc7RUFFWCxrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLGNBQWM7RUFFZCxrQkFBa0I7RUFDbEIsYUFBYSxFQUFBOztBQUVmO0VBQ0ksa0JBQWtCO0VBQ2xCLFlBQVk7RUFDWixhQUFhLEVBQUE7O0FBSGpCO0lBS00sWUFBWTtJQUNaLG1CQUFtQixFQUFBOztBQU56QjtNQU9hLFdBQVc7TUFBQyxZQUFXLEVBQUE7O0FBUHBDO01BUWMsWUFBWTtNQUFFLFlBQVksRUFBQTs7QUFJeEM7RUFDRSxrQkFBa0I7RUFDbEIsVUFBVSxFQUFBOztBQUlWO0VBSUUsZUFBZTtFQUNmLGtCQUFrQjtFQUNsQixzQkFBc0IsRUFBQTs7QUFOeEI7SUFFRSxtQkFBbUIsRUFBQTs7QUFNdkI7RUFDSSxVQUFVLEVBQUE7O0FBRGQ7SUFHUSxtQkFBbUIsRUFBQTs7QUFIM0I7TUFJZSxXQUFXO01BQUMsWUFBVyxFQUFBOztBQUp0QztNQUtpQixZQUFZLEVBQUE7O0FBRzdCO0VBRUUsYUFBWSxFQUFBOztBQUlkO0VBQ0UsYUFBYSxFQUFBOztBQUVmO0VBQ0UsZ0JBQWdCO0VBRWhCLGFBQWE7RUFDYixhQUFhO0VBQ2IsdUJBQXVCO0VBRXZCLGtCQUFrQjtFQUNsQixVQUFVO0VBQ1YsV0FBVztFQUNYLFVBQVU7RUFDVixxQkFBcUIsRUFBQTs7QUFYdkI7SUFjSSxvQkFBb0I7SUFDcEIsVUFBVTtJQUNWLFlBQVk7SUFDWixZQUFZO0lBQ1osa0JBQWtCO0lBQ2xCLGlCQUFpQjtJQUNqQixVQUFVO0lBQ1YsT0FBTztJQUNQLFFBQVEsRUFBQTs7QUF0Qlo7TUF3QlEsV0FBVztNQUNYLG1CQUFtQixFQUFBOztBQXpCM0I7TUE0QlEsZUFBZTtNQUNmLG1CQUFtQixFQUFBOztBQTdCM0I7TUFnQ1EsaUJBQWlCLEVBQUE7O0FBTXpCO0VBR0ksV0FBVyxFQUFBOztBQUlmO0VBR0ksWUFBWSxFQUFBOztBQUloQjtFQUNFLFdBQVc7RUFDWCxZQUFZO0VBQ1oseUJDOUpvQjtFRCtKcEIsWUFBWTtFQUNaLGVBQWUsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BsYXlsaXN0cy9wbGF5bGlzdC5pdGVtL3BsYXlsaXN0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAnLi4vLi4vLi4vc2Fzcy9fdmFyaWFibGVzJztcclxuXHJcblxyXG4ucGFke1xyXG4gIHBhZGRpbmctdG9wOiAyMHB4O1xyXG4gIHBhZGRpbmctcmlnaHQ6IDMwcHg7IFxyXG4gIHBhZGRpbmctbGVmdDogMzBweDsgXHJcbn1cclxuXHJcbi5zaG9ydHtcclxuICAgICBoZWlnaHQ6OTBweDtcclxuIH1cclxuXHJcbiAuYm94LWNvbnRhaW5lciB7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBoZWlnaHQ6IDE1MHB4O1xyXG4gICAgcGFkZGluZzogNDVweCAwO1xyXG4gIH1cclxuICBcclxuICAuYm94LXN3YXAge1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgd2lkdGg6IDE1MHB4O1xyXG4gICAgaGVpZ2h0OiA2MHB4O1xyXG4gICAgcGFkZGluZzogMTVweCAzNXB4O1xyXG4gICAgbGluZS1oZWlnaHQ6IDMwcHg7XHJcbiAgXHJcbiAgICAmLnN0YXRpYy1ibG9jayB7XHJcbiAgICAgIHRyYW5zaXRpb246IGFsbCAwLjNzIGVhc2Utb3V0O1xyXG4gICAgfVxyXG4gIH1cclxuXHJcblxyXG4gIC8qIGluLWZsaWdodCBjbG9uZSAqL1xyXG4uZ3UtbWlycm9yIHtcclxuICAgIHBvc2l0aW9uOiBmaXhlZCAhaW1wb3J0YW50O1xyXG4gICAgbWFyZ2luOiAwICFpbXBvcnRhbnQ7XHJcbiAgICB6LWluZGV4OiA5OTk5ICFpbXBvcnRhbnQ7XHJcbiAgICBvcGFjaXR5OiAwLjg7XHJcbiAgICAtbXMtZmlsdGVyOiBcInByb2dpZDpEWEltYWdlVHJhbnNmb3JtLk1pY3Jvc29mdC5BbHBoYShPcGFjaXR5PTgwKVwiO1xyXG4gICAgZmlsdGVyOiBhbHBoYShvcGFjaXR5PTgwKTtcclxuICAgIHBvaW50ZXItZXZlbnRzOiBub25lO1xyXG4gIH1cclxuICAvKiBoaWdoLXBlcmZvcm1hbmNlIGRpc3BsYXk6bm9uZTsgaGVscGVyICovXHJcbiAgLmd1LWhpZGUge1xyXG4gICAgbGVmdDogLTk5OTlweCAhaW1wb3J0YW50O1xyXG4gIH1cclxuICAvKiBhZGRlZCB0byBtaXJyb3JDb250YWluZXIgKGRlZmF1bHQgPSBib2R5KSB3aGlsZSBkcmFnZ2luZyAqL1xyXG4gIC5ndS11bnNlbGVjdGFibGUge1xyXG4gICAgLXdlYmtpdC11c2VyLXNlbGVjdDogbm9uZSAhaW1wb3J0YW50O1xyXG4gICAgLW1vei11c2VyLXNlbGVjdDogbm9uZSAhaW1wb3J0YW50O1xyXG4gICAgLW1zLXVzZXItc2VsZWN0OiBub25lICFpbXBvcnRhbnQ7XHJcbiAgICB1c2VyLXNlbGVjdDogbm9uZSAhaW1wb3J0YW50O1xyXG4gIH1cclxuICAvKiBhZGRlZCB0byB0aGUgc291cmNlIGVsZW1lbnQgd2hpbGUgaXRzIG1pcnJvciBpcyBkcmFnZ2VkICovXHJcbiAgLmd1LXRyYW5zaXQge1xyXG4gICAgb3BhY2l0eTogMC4yO1xyXG4gICAgLW1zLWZpbHRlcjogXCJwcm9naWQ6RFhJbWFnZVRyYW5zZm9ybS5NaWNyb3NvZnQuQWxwaGEoT3BhY2l0eT0yMClcIjtcclxuICAgIGZpbHRlcjogYWxwaGEob3BhY2l0eT0yMCk7XHJcbiAgfVxyXG4uaG9yaXpvbnRhbC1zY3JvbGxlcntcclxuICBtYXJnaW4tcmlnaHQ6IDRweDtcclxuICBtYXJnaW4tbGVmdDogNHB4O1xyXG4gIHdpZHRoOiAxMDAlO1xyXG5cclxuICBvdmVyZmxvdy15OiBoaWRkZW47XHJcbiAgb3ZlcmZsb3cteDogYXV0bztcclxuICBkaXJlY3Rpb246IGx0cjtcclxuICBcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgaGVpZ2h0OiAzMDBweDtcclxufVxyXG4uc2xvdHtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHdpZHRoOiAyMDBweDtcclxuICAgIGhlaWdodDogMjAwcHg7XHJcbiAgICAuc3FyLXRvb2xiYXJ7XHJcbiAgICAgIHdpZHRoOiAxOTJweDtcclxuICAgICAgdmlzaWJpbGl0eTogdmlzaWJsZTtcclxuICAgICAgaW5wdXR7IHdpZHRoOiA1MHB4O2hlaWdodDoyNHB4O31cclxuICAgICAgc2VsZWN0IHt3aWR0aDogMTAwcHg7IGhlaWdodDogMjRweDt9XHJcbiAgfVxyXG59XHJcblxyXG4uY2FudmFzLWJne1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICB6LWluZGV4OiAwO1xyXG59XHJcblxyXG4gXHJcbiAgLnNxci1idG57XHJcbiAgICAuc3FyLXRvb2xiYXJ7XHJcbiAgICB2aXNpYmlsaXR5OiB2aXNpYmxlO1xyXG4gICAgfVxyXG4gICAgZm9udC1zaXplOiA4NHB4O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxufVxyXG4uc3FyLWJ0bjpob3Zlciwuc3FyOmhvdmVye1xyXG4gICAgb3BhY2l0eTogMTtcclxuICAgIC5zcXItdG9vbGJhcntcclxuICAgICAgICB2aXNpYmlsaXR5OiB2aXNpYmxlO1xyXG4gICAgICAgIGlucHV0eyB3aWR0aDogNTBweDtoZWlnaHQ6MzBweDt9XHJcbiAgICAgICAgc2VsZWN0IHsgaGVpZ2h0OiAzMHB4O31cclxuICAgIH1cclxufVxyXG4uZmFuY3ktdGh1bWJcclxue1xyXG4gIHotaW5kZXg6MTAwMDtcclxufVxyXG4gXHJcbiBcclxuLmV4dGVuZGVkLXBhZGRpbmd7XHJcbiAgcGFkZGluZzogNTBweDtcclxufVxyXG4uZXh0ZW5kZWR7XHJcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuIFxyXG4gIHBhZGRpbmc6IDMwcHg7XHJcbiAgaGVpZ2h0OiA0MDBweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICBcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgdG9wOiAyMDBweDtcclxuICByaWdodDogNTBweDtcclxuICBsZWZ0OiA1MHB4O1xyXG4gIGJvcmRlcjogMXB4IHNvbGlkIHJlZDtcclxuXHJcbiAgLnRvcHBlcntcclxuICAgIHBvaW50ZXItZXZlbnRzOiBub25lOyBcclxuICAgIHotaW5kZXg6IDA7XHJcbiAgICBoZWlnaHQ6IDY1cHg7ICAgXHJcbiAgICBvcGFjaXR5OiAwLjg7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7ICAgICBcclxuICAgIHBhZGRpbmctdG9wOiAzMHB4O1xyXG4gICAgdG9wOiAtMzBweDtcclxuICAgIGxlZnQ6IDA7XHJcbiAgICByaWdodDogMDtcclxuICAgIC5pY29ue1xyXG4gICAgICAgIG1hcmdpbjogOHB4OyAgICAgIFxyXG4gICAgICAgIHZlcnRpY2FsLWFsaWduOiB0b3A7XHJcbiAgICB9XHJcbiAgICBoNHtcclxuICAgICAgICBkaXNwbGF5OiBpbmxpbmU7XHJcbiAgICAgICAgdmVydGljYWwtYWxpZ246IHRvcDtcclxuICAgIH1cclxuICAgIC5iYXItaWNvbntcclxuICAgICAgICBtYXJnaW4tbGVmdDogMTVweDtcclxuICAgIH1cclxufSAgXHJcblxyXG59XHJcblxyXG46aG9zdC1jb250ZXh0KC5sdHIpXHJcbntcclxuICAuYnRuLXBsYXl7XHJcbiAgICBmbG9hdDogbGVmdDtcclxuICB9XHJcbn1cclxuXHJcbjpob3N0LWNvbnRleHQoLmx0cilcclxue1xyXG4gIC5idG4tcGxheXtcclxuICAgIGZsb2F0OiByaWdodDtcclxuICB9XHJcbn1cclxuXHJcbi5idG4tcGxheXtcclxuICB3aWR0aDogNTJweDtcclxuICBoZWlnaHQ6IDUycHg7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogJGNvbG9yLXB1cnBsZTtcclxuICBjb2xvcjogd2hpdGU7XHJcbiAgY3Vyc29yOiBwb2ludGVyOyBcclxufVxyXG4gIiwiXHJcbiRjb2xvci1ncmF5OiAjZTNlNGU1O1xyXG4kY29sb3ItZGFya2JsdWUxOiAjMTYyNDMzO1xyXG4kY29sb3ItZGFya2JsdWUyOiAjMmE0NTYzO1xyXG4kY29sb3ItbGlnaHRibHVlMTogIzI2NDM1NjtcclxuJGNvbG9yLWxpZ2h0Ymx1ZTI6ICMzYzczOTk7XHJcbiRjb2xvci1vcmFuZ2U6ICNmYzY2MDA7XHJcbiRjb2xvci1jeWFuOiAjMDBmZmY2O1xyXG4kY29sb3Itc2NyZWVuOiAjMDBjZmZmO1xyXG4kY29sb3Itc2NyZWVuLWdyb3VwOiAjMDBmZmY2O1xyXG4kY29sb3ItbGlicmFyeTogIzk2ZmYwMDtcclxuJGNvbG9yLXllbGxvdzogI2ZmZmYwMDtcclxuJGNvbG9yLXB1cnBsZTogI2YzYjdlYjtcclxuJGNvbG9yLWdyZWVuOiAjOTZmZjAwO1xyXG4gXHJcblxyXG4gIl19 */"
+module.exports = ".pad {\n  padding-top: 20px;\n  padding-right: 30px;\n  padding-left: 30px; }\n\n.short {\n  height: 90px; }\n\n.box-container {\n  position: relative;\n  height: 150px;\n  padding: 45px 0; }\n\n.box-swap {\n  position: absolute;\n  text-align: center;\n  width: 150px;\n  height: 60px;\n  padding: 15px 35px;\n  line-height: 30px; }\n\n.box-swap.static-block {\n    transition: all 0.3s ease-out; }\n\n/* in-flight clone */\n\n.gu-mirror {\n  position: fixed !important;\n  margin: 0 !important;\n  z-index: 9999 !important;\n  opacity: 0.8;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)\";\n  filter: alpha(opacity=80);\n  pointer-events: none; }\n\n/* high-performance display:none; helper */\n\n.gu-hide {\n  left: -9999px !important; }\n\n/* added to mirrorContainer (default = body) while dragging */\n\n.gu-unselectable {\n  -webkit-user-select: none !important;\n  -moz-user-select: none !important;\n  -ms-user-select: none !important;\n  user-select: none !important; }\n\n/* added to the source element while its mirror is dragged */\n\n.gu-transit {\n  opacity: 0.2;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)\";\n  filter: alpha(opacity=20); }\n\n.horizontal-scroller {\n  margin-right: 4px;\n  margin-left: 4px;\n  width: 100%;\n  overflow-y: hidden;\n  overflow-x: auto;\n  direction: ltr;\n  position: relative;\n  height: 250px; }\n\n.slot {\n  position: absolute;\n  width: 230px;\n  height: 200px; }\n\n.slot .sqr-toolbar {\n    background-color: #e3e4e5;\n    width: 222px;\n    visibility: visible; }\n\n.slot .sqr-toolbar input {\n      width: 50px;\n      height: 24px; }\n\n.slot .sqr-toolbar select {\n      width: 100px;\n      height: 24px; }\n\n.canvas-bg {\n  position: absolute;\n  z-index: 0; }\n\n.sqr-btn {\n  font-size: 84px;\n  text-align: center;\n  vertical-align: middle; }\n\n.sqr-btn .sqr-toolbar {\n    visibility: visible; }\n\n.sqr-btn:hover, .sqr:hover {\n  opacity: 1; }\n\n.sqr-btn:hover .sqr-toolbar, .sqr:hover .sqr-toolbar {\n    visibility: visible; }\n\n.sqr-btn:hover .sqr-toolbar input, .sqr:hover .sqr-toolbar input {\n      width: 50px;\n      height: 30px; }\n\n.sqr-btn:hover .sqr-toolbar select, .sqr:hover .sqr-toolbar select {\n      height: 30px; }\n\n.fancy-thumb {\n  z-index: 1000; }\n\n.extended-padding {\n  padding: 50px; }\n\n.extended {\n  overflow: hidden;\n  padding: 30px;\n  height: 400px;\n  background-color: white;\n  position: absolute;\n  top: 200px;\n  right: 50px;\n  left: 50px;\n  border: 1px solid red; }\n\n.extended .topper {\n    pointer-events: none;\n    z-index: 0;\n    height: 65px;\n    opacity: 0.8;\n    position: absolute;\n    padding-top: 30px;\n    top: -30px;\n    left: 0;\n    right: 0; }\n\n.extended .topper .icon {\n      margin: 8px;\n      vertical-align: top; }\n\n.extended .topper h4 {\n      display: inline;\n      vertical-align: top; }\n\n.extended .topper .bar-icon {\n      margin-left: 15px; }\n\n:host-context(.ltr) .btn-play {\n  float: left; }\n\n:host-context(.ltr) .btn-play {\n  float: right; }\n\n.btn-play {\n  width: 52px;\n  height: 52px;\n  background-color: #f3b7eb;\n  color: white;\n  cursor: pointer; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGxheWxpc3RzL3BsYXlsaXN0Lml0ZW0vQzpcXHByb2plY3RzXFxzaWduLW5hdHVyZVxcd2ViL3NyY1xcYXBwXFxwbGF5bGlzdHNcXHBsYXlsaXN0Lml0ZW1cXHBsYXlsaXN0LmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9wbGF5bGlzdHMvcGxheWxpc3QuaXRlbS9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxzYXNzXFxfdmFyaWFibGVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBR0E7RUFDRSxpQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLGtCQUFrQixFQUFBOztBQUdwQjtFQUNLLFlBQVcsRUFBQTs7QUFHZjtFQUNHLGtCQUFrQjtFQUNsQixhQUFhO0VBQ2IsZUFBZSxFQUFBOztBQUdqQjtFQUNFLGtCQUFrQjtFQUNsQixrQkFBa0I7RUFDbEIsWUFBWTtFQUNaLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIsaUJBQWlCLEVBQUE7O0FBTm5CO0lBU0ksNkJBQTZCLEVBQUE7O0FBS2pDLG9CQUFBOztBQUNGO0VBQ0ksMEJBQTBCO0VBQzFCLG9CQUFvQjtFQUNwQix3QkFBd0I7RUFDeEIsWUFBWTtFQUNaLGlFQUFpRTtFQUNqRSx5QkFBeUI7RUFDekIsb0JBQW9CLEVBQUE7O0FBRXRCLDBDQUFBOztBQUNBO0VBQ0Usd0JBQXdCLEVBQUE7O0FBRTFCLDZEQUFBOztBQUNBO0VBQ0Usb0NBQW9DO0VBQ3BDLGlDQUFpQztFQUNqQyxnQ0FBZ0M7RUFDaEMsNEJBQTRCLEVBQUE7O0FBRTlCLDREQUFBOztBQUNBO0VBQ0UsWUFBWTtFQUNaLGlFQUFpRTtFQUNqRSx5QkFBeUIsRUFBQTs7QUFFN0I7RUFDRSxpQkFBaUI7RUFDakIsZ0JBQWdCO0VBQ2hCLFdBQVc7RUFDWCxrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLGNBQWM7RUFDZCxrQkFBa0I7RUFDbEIsYUFBYSxFQUFBOztBQUVmO0VBQ0ksa0JBQWtCO0VBQ2xCLFlBQVk7RUFDWixhQUFhLEVBQUE7O0FBSGpCO0lBS00seUJDMUVjO0lEMkVkLFlBQVk7SUFDWixtQkFBbUIsRUFBQTs7QUFQekI7TUFRYSxXQUFXO01BQUMsWUFBVyxFQUFBOztBQVJwQztNQVNjLFlBQVk7TUFBRSxZQUFZLEVBQUE7O0FBSXhDO0VBQ0Usa0JBQWtCO0VBQ2xCLFVBQVUsRUFBQTs7QUFJVjtFQUlFLGVBQWU7RUFDZixrQkFBa0I7RUFDbEIsc0JBQXNCLEVBQUE7O0FBTnhCO0lBRUUsbUJBQW1CLEVBQUE7O0FBTXZCO0VBQ0ksVUFBVSxFQUFBOztBQURkO0lBR1EsbUJBQW1CLEVBQUE7O0FBSDNCO01BSWUsV0FBVztNQUFDLFlBQVcsRUFBQTs7QUFKdEM7TUFLaUIsWUFBWSxFQUFBOztBQUc3QjtFQUVFLGFBQVksRUFBQTs7QUFJZDtFQUNFLGFBQWEsRUFBQTs7QUFFZjtFQUNFLGdCQUFnQjtFQUVoQixhQUFhO0VBQ2IsYUFBYTtFQUNiLHVCQUF1QjtFQUV2QixrQkFBa0I7RUFDbEIsVUFBVTtFQUNWLFdBQVc7RUFDWCxVQUFVO0VBQ1YscUJBQXFCLEVBQUE7O0FBWHZCO0lBY0ksb0JBQW9CO0lBQ3BCLFVBQVU7SUFDVixZQUFZO0lBQ1osWUFBWTtJQUNaLGtCQUFrQjtJQUNsQixpQkFBaUI7SUFDakIsVUFBVTtJQUNWLE9BQU87SUFDUCxRQUFRLEVBQUE7O0FBdEJaO01Bd0JRLFdBQVc7TUFDWCxtQkFBbUIsRUFBQTs7QUF6QjNCO01BNEJRLGVBQWU7TUFDZixtQkFBbUIsRUFBQTs7QUE3QjNCO01BZ0NRLGlCQUFpQixFQUFBOztBQU16QjtFQUdJLFdBQVcsRUFBQTs7QUFJZjtFQUdJLFlBQVksRUFBQTs7QUFJaEI7RUFDRSxXQUFXO0VBQ1gsWUFBWTtFQUNaLHlCQzdKb0I7RUQ4SnBCLFlBQVk7RUFDWixlQUFlLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9wbGF5bGlzdHMvcGxheWxpc3QuaXRlbS9wbGF5bGlzdC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJy4uLy4uLy4uL3Nhc3MvX3ZhcmlhYmxlcyc7XHJcblxyXG5cclxuLnBhZHtcclxuICBwYWRkaW5nLXRvcDogMjBweDtcclxuICBwYWRkaW5nLXJpZ2h0OiAzMHB4OyBcclxuICBwYWRkaW5nLWxlZnQ6IDMwcHg7IFxyXG59XHJcblxyXG4uc2hvcnR7XHJcbiAgICAgaGVpZ2h0OjkwcHg7XHJcbiB9XHJcblxyXG4gLmJveC1jb250YWluZXIge1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgaGVpZ2h0OiAxNTBweDtcclxuICAgIHBhZGRpbmc6IDQ1cHggMDtcclxuICB9XHJcbiAgXHJcbiAgLmJveC1zd2FwIHtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHdpZHRoOiAxNTBweDtcclxuICAgIGhlaWdodDogNjBweDtcclxuICAgIHBhZGRpbmc6IDE1cHggMzVweDtcclxuICAgIGxpbmUtaGVpZ2h0OiAzMHB4O1xyXG4gIFxyXG4gICAgJi5zdGF0aWMtYmxvY2sge1xyXG4gICAgICB0cmFuc2l0aW9uOiBhbGwgMC4zcyBlYXNlLW91dDtcclxuICAgIH1cclxuICB9XHJcblxyXG5cclxuICAvKiBpbi1mbGlnaHQgY2xvbmUgKi9cclxuLmd1LW1pcnJvciB7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQgIWltcG9ydGFudDtcclxuICAgIG1hcmdpbjogMCAhaW1wb3J0YW50O1xyXG4gICAgei1pbmRleDogOTk5OSAhaW1wb3J0YW50O1xyXG4gICAgb3BhY2l0eTogMC44O1xyXG4gICAgLW1zLWZpbHRlcjogXCJwcm9naWQ6RFhJbWFnZVRyYW5zZm9ybS5NaWNyb3NvZnQuQWxwaGEoT3BhY2l0eT04MClcIjtcclxuICAgIGZpbHRlcjogYWxwaGEob3BhY2l0eT04MCk7XHJcbiAgICBwb2ludGVyLWV2ZW50czogbm9uZTtcclxuICB9XHJcbiAgLyogaGlnaC1wZXJmb3JtYW5jZSBkaXNwbGF5Om5vbmU7IGhlbHBlciAqL1xyXG4gIC5ndS1oaWRlIHtcclxuICAgIGxlZnQ6IC05OTk5cHggIWltcG9ydGFudDtcclxuICB9XHJcbiAgLyogYWRkZWQgdG8gbWlycm9yQ29udGFpbmVyIChkZWZhdWx0ID0gYm9keSkgd2hpbGUgZHJhZ2dpbmcgKi9cclxuICAuZ3UtdW5zZWxlY3RhYmxlIHtcclxuICAgIC13ZWJraXQtdXNlci1zZWxlY3Q6IG5vbmUgIWltcG9ydGFudDtcclxuICAgIC1tb3otdXNlci1zZWxlY3Q6IG5vbmUgIWltcG9ydGFudDtcclxuICAgIC1tcy11c2VyLXNlbGVjdDogbm9uZSAhaW1wb3J0YW50O1xyXG4gICAgdXNlci1zZWxlY3Q6IG5vbmUgIWltcG9ydGFudDtcclxuICB9XHJcbiAgLyogYWRkZWQgdG8gdGhlIHNvdXJjZSBlbGVtZW50IHdoaWxlIGl0cyBtaXJyb3IgaXMgZHJhZ2dlZCAqL1xyXG4gIC5ndS10cmFuc2l0IHtcclxuICAgIG9wYWNpdHk6IDAuMjtcclxuICAgIC1tcy1maWx0ZXI6IFwicHJvZ2lkOkRYSW1hZ2VUcmFuc2Zvcm0uTWljcm9zb2Z0LkFscGhhKE9wYWNpdHk9MjApXCI7XHJcbiAgICBmaWx0ZXI6IGFscGhhKG9wYWNpdHk9MjApO1xyXG4gIH1cclxuLmhvcml6b250YWwtc2Nyb2xsZXJ7XHJcbiAgbWFyZ2luLXJpZ2h0OiA0cHg7XHJcbiAgbWFyZ2luLWxlZnQ6IDRweDtcclxuICB3aWR0aDogMTAwJTtcclxuICBvdmVyZmxvdy15OiBoaWRkZW47XHJcbiAgb3ZlcmZsb3cteDogYXV0bztcclxuICBkaXJlY3Rpb246IGx0cjsgIFxyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICBoZWlnaHQ6IDI1MHB4O1xyXG59XHJcbi5zbG90e1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgd2lkdGg6IDIzMHB4O1xyXG4gICAgaGVpZ2h0OiAyMDBweDtcclxuICAgIC5zcXItdG9vbGJhcntcclxuICAgICAgYmFja2dyb3VuZC1jb2xvcjogJGNvbG9yLWdyYXk7XHJcbiAgICAgIHdpZHRoOiAyMjJweDtcclxuICAgICAgdmlzaWJpbGl0eTogdmlzaWJsZTtcclxuICAgICAgaW5wdXR7IHdpZHRoOiA1MHB4O2hlaWdodDoyNHB4O31cclxuICAgICAgc2VsZWN0IHt3aWR0aDogMTAwcHg7IGhlaWdodDogMjRweDt9XHJcbiAgfVxyXG59XHJcblxyXG4uY2FudmFzLWJne1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICB6LWluZGV4OiAwO1xyXG59XHJcblxyXG4gXHJcbiAgLnNxci1idG57XHJcbiAgICAuc3FyLXRvb2xiYXJ7XHJcbiAgICB2aXNpYmlsaXR5OiB2aXNpYmxlO1xyXG4gICAgfVxyXG4gICAgZm9udC1zaXplOiA4NHB4O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxufVxyXG4uc3FyLWJ0bjpob3Zlciwuc3FyOmhvdmVye1xyXG4gICAgb3BhY2l0eTogMTtcclxuICAgIC5zcXItdG9vbGJhcntcclxuICAgICAgICB2aXNpYmlsaXR5OiB2aXNpYmxlO1xyXG4gICAgICAgIGlucHV0eyB3aWR0aDogNTBweDtoZWlnaHQ6MzBweDt9XHJcbiAgICAgICAgc2VsZWN0IHsgaGVpZ2h0OiAzMHB4O31cclxuICAgIH1cclxufVxyXG4uZmFuY3ktdGh1bWJcclxue1xyXG4gIHotaW5kZXg6MTAwMDtcclxufVxyXG4gXHJcbiBcclxuLmV4dGVuZGVkLXBhZGRpbmd7XHJcbiAgcGFkZGluZzogNTBweDtcclxufVxyXG4uZXh0ZW5kZWR7XHJcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuIFxyXG4gIHBhZGRpbmc6IDMwcHg7XHJcbiAgaGVpZ2h0OiA0MDBweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICBcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgdG9wOiAyMDBweDtcclxuICByaWdodDogNTBweDtcclxuICBsZWZ0OiA1MHB4O1xyXG4gIGJvcmRlcjogMXB4IHNvbGlkIHJlZDtcclxuXHJcbiAgLnRvcHBlcntcclxuICAgIHBvaW50ZXItZXZlbnRzOiBub25lOyBcclxuICAgIHotaW5kZXg6IDA7XHJcbiAgICBoZWlnaHQ6IDY1cHg7ICAgXHJcbiAgICBvcGFjaXR5OiAwLjg7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7ICAgICBcclxuICAgIHBhZGRpbmctdG9wOiAzMHB4O1xyXG4gICAgdG9wOiAtMzBweDtcclxuICAgIGxlZnQ6IDA7XHJcbiAgICByaWdodDogMDtcclxuICAgIC5pY29ue1xyXG4gICAgICAgIG1hcmdpbjogOHB4OyAgICAgIFxyXG4gICAgICAgIHZlcnRpY2FsLWFsaWduOiB0b3A7XHJcbiAgICB9XHJcbiAgICBoNHtcclxuICAgICAgICBkaXNwbGF5OiBpbmxpbmU7XHJcbiAgICAgICAgdmVydGljYWwtYWxpZ246IHRvcDtcclxuICAgIH1cclxuICAgIC5iYXItaWNvbntcclxuICAgICAgICBtYXJnaW4tbGVmdDogMTVweDtcclxuICAgIH1cclxufSAgXHJcblxyXG59XHJcblxyXG46aG9zdC1jb250ZXh0KC5sdHIpXHJcbntcclxuICAuYnRuLXBsYXl7XHJcbiAgICBmbG9hdDogbGVmdDtcclxuICB9XHJcbn1cclxuXHJcbjpob3N0LWNvbnRleHQoLmx0cilcclxue1xyXG4gIC5idG4tcGxheXtcclxuICAgIGZsb2F0OiByaWdodDtcclxuICB9XHJcbn1cclxuXHJcbi5idG4tcGxheXtcclxuICB3aWR0aDogNTJweDtcclxuICBoZWlnaHQ6IDUycHg7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogJGNvbG9yLXB1cnBsZTtcclxuICBjb2xvcjogd2hpdGU7XHJcbiAgY3Vyc29yOiBwb2ludGVyOyBcclxufVxyXG4gIiwiXHJcbiRjb2xvci1ncmF5OiAjZTNlNGU1O1xyXG4kY29sb3ItZGFya2JsdWUxOiAjMTYyNDMzO1xyXG4kY29sb3ItZGFya2JsdWUyOiAjMmE0NTYzO1xyXG4kY29sb3ItbGlnaHRibHVlMTogIzI2NDM1NjtcclxuJGNvbG9yLWxpZ2h0Ymx1ZTI6ICMzYzczOTk7XHJcbiRjb2xvci1vcmFuZ2U6ICNmYzY2MDA7XHJcbiRjb2xvci1jeWFuOiAjMDBmZmY2O1xyXG4kY29sb3Itc2NyZWVuOiAjMDBjZmZmO1xyXG4kY29sb3Itc2NyZWVuLWdyb3VwOiAjMDBmZmY2O1xyXG4kY29sb3ItbGlicmFyeTogIzk2ZmYwMDtcclxuJGNvbG9yLXllbGxvdzogI2ZmZmYwMDtcclxuJGNvbG9yLXB1cnBsZTogI2YzYjdlYjtcclxuJGNvbG9yLWdyZWVuOiAjOTZmZjAwO1xyXG4gXHJcblxyXG4gIl19 */"
 
 /***/ }),
 
@@ -5790,11 +5885,9 @@ var SlideService = /** @class */ (function () {
                         this.list = this.playerPlan[0].list;
                         fontsArr_1 = {};
                         this.list.forEach(function (item) {
-                            if (item.elements) {
-                                item.elements.forEach(function (element) {
-                                    if (element.font) {
-                                        fontsArr_1[element.font] = element.font;
-                                    }
+                            if (item.fonts) {
+                                item.fonts.forEach(function (font) {
+                                    fontsArr_1[font] = font;
                                 });
                             }
                         });
@@ -5932,31 +6025,27 @@ var SlideService = /** @class */ (function () {
                     });
                 });
             }
-            function loadImageUrl(url) {
-                return new Promise(function (resolve, reject) {
-                    var img = new Image();
-                    img.addEventListener('load', function (e) { return resolve(img); });
-                    img.addEventListener('error', function () {
-                        reject(new Error("Failed to load image's URL: " + url));
-                    });
-                    img.src = url;
-                });
-            }
             function render_text_to_canvas(item, element) {
                 return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-                    var position;
+                    var fontFactor_1, lineIndex_1;
                     return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                         log('@slide.service-render_text_to_canvas');
                         if (element.text) {
-                            ctx.font = factor(item.Screen, element.fontSize) + "px " + element.font;
+                            fontFactor_1 = factor(item.Screen, element.fontSize);
+                            ctx.font = fontFactor_1 + "px " + element.font;
                             ctx.fillStyle = "" + element.color;
                             ctx.save();
                             if (element.opacity) {
                                 ctx.globalAlpha = element.opacity;
                             }
-                            position = factor(item.Screen, element.position.x, (Number(element.position.y) + element.fontSize));
-                            // ctx.fillText(JSON.stringify({ x: position.x, y: position.y }), position.x, position.y);
-                            ctx.fillText(element.text, position.x, position.y);
+                            lineIndex_1 = 0;
+                            element.text.split('\n').forEach(function (line) {
+                                var position = factor(item.Screen, element.position.x, (Number(element.position.y) + element.fontSize));
+                                var linePosition = position.y + (lineIndex_1 * fontFactor_1);
+                                console.log(linePosition, fontFactor_1, lineIndex_1);
+                                ctx.fillText(line, position.x, linePosition);
+                                lineIndex_1++;
+                            });
                             ctx.restore();
                         }
                         return [2 /*return*/];
@@ -6030,15 +6119,7 @@ var SlideService = /** @class */ (function () {
                     });
                 });
             }
-            function html_to_xml(html) {
-                var doc = document.implementation.createHTMLDocument('');
-                doc.write(html);
-                doc.documentElement.setAttribute('xmlns', doc.documentElement.namespaceURI);
-                // Get well-formed markup
-                html = (new XMLSerializer).serializeToString(doc.body);
-                return html;
-            }
-            var stage, player, start, lines, images, fontsArr_2, frameDuration;
+            var stage, player, start, lines, images, frameDuration;
             var _this = this;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
@@ -6048,27 +6129,21 @@ var SlideService = /** @class */ (function () {
                         player = this;
                         start = new Date();
                         lines = 16;
-                        this.playerPlan = playerPlan;
                         images = [];
+                        if (!(mode === 'single')) return [3 /*break*/, 2];
+                        return [4 /*yield*/, this.fontService.loadFontsForRender(playerPlan[0].fonts)];
+                    case 1:
+                        _a.sent();
+                        prerender(playerPlan[0]);
+                        return [2 /*return*/];
+                    case 2:
+                        this.playerPlan = playerPlan;
                         if (!this.playerPlan || this.playerPlan.length === 0) {
                             playDefaultPlan();
                             return [2 /*return*/];
                         }
-                        if (!(mode === 'single')) return [3 /*break*/, 2];
-                        fontsArr_2 = {};
-                        if (this.playerPlan[0].elements) {
-                            this.playerPlan[0].elements.forEach(function (element) {
-                                if (element.font) {
-                                    fontsArr_2[element.font] = element.font;
-                                }
-                            });
-                        }
-                        return [4 /*yield*/, this.fontService.loadFontsForRender(Object.keys(fontsArr_2))];
-                    case 1:
-                        _a.sent();
-                        prerender(this.playerPlan[0]);
-                        return [2 /*return*/];
-                    case 2:
+                        _a.label = 3;
+                    case 3:
                         this.list = this.playerPlan[0].list;
                         prerender(this.list[this.itemIndex]);
                         frameDuration = (this.list[this.itemIndex].duration) ? this.list[this.itemIndex].duration * 1000 : 5000;

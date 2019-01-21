@@ -50,6 +50,23 @@ export class DataController {
         return new MethodResult(item);
     }
 
+    @Method(Verbs.Post, '/search')
+    public static async search(@Body('query') queryObject: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
+        // extract repository
+        if (!queryObject) {
+            queryObject = {};
+        }
+        const repo = (this as any).repository;
+        const queryX = new DataQuery(repo.odm.collectionName);
+        queryX.filter(queryObject);
+        try {
+            const results = await queryX.run();
+            return new MethodResult(results);
+        } catch (error) {
+            throw (new MethodError(error));
+        }
+    }
+    
     @Method(Verbs.Post, '/query')
     // tslint:disable-next-line:max-line-length
     public static async query(@Body('query') queryObject: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
