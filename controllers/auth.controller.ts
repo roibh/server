@@ -32,14 +32,14 @@ export class AuthController {
             const query = new DataQuery(UserModel);
             const logedInUser = await query.filter({
                 Email: userOptions.Email,
-
             }).run(ReturnType.Single);
             if (logedInUser) {
                 throw new MethodError(`user exists`, 403);
             } else {
                 // insert into user collection
                 const result = await UserModel.insert(userOptions);
-                return new MethodResult(result);
+                const token = jwt.sign(result, privateKEY, signOptions);
+                return new MethodResult({ token });
             }
         } catch (error) {
             throw new MethodError(error, 500);

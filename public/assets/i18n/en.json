@@ -114,6 +114,7 @@
     "FONT_SEARCH": "Font search",
     "IMAGE_OPACITY": "Opacity",
     "IMAGE_WIDTH": "Width",
-    "IMAGE_HEIGHT": "Height"
+    "IMAGE_HEIGHT": "Height",
+    "CENTER": "Center"
   }
 }

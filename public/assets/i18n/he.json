@@ -13,7 +13,8 @@
     "AUDIO": "צלילים",
     "SLIDES": "שקפים",
     "FONTS": "גופנים",
-    "FINDER": "המאתר"
+    "FINDER": "המאתר",
+    "SHARED": "תבניות"
   },
   "LOGIN": {
     "TITLE": "כניסה",
@@ -98,7 +99,7 @@
     "ALL": "כל הזמן"
   },
   "PANEL": {
-    "SLIDE_NAME":"שם שקופית",
+    "SLIDE_NAME": "שם שקופית",
     "FONTNAME": "גופן",
     "FONTNAME_HELP": "ניתן לבחור גופנים מספריית גוגל",
     "FONTSIZE": "גודל גופן",
@@ -108,9 +109,14 @@
     "POSITIONY": "מיקום Y",
     "SELECT_ELEMENT": "אין בחירה",
     "GENERAL": "כללי",
-    "ELEMENT":"בחירה",
+    "ELEMENT": "בחירה",
     "FORE_COLOR": "צבע קידמה",
-    "BACK_COLOR":"צבע רקע",
-    "ELEMENT_NAME":"שם"
+    "BACK_COLOR": "צבע רקע",
+    "ELEMENT_NAME": "שם",
+    "FONT_SEARCH": "חיפוש גופן",
+    "IMAGE_OPACITY": "שקיפות",
+    "IMAGE_WIDTH": "רוחב",
+    "IMAGE_HEIGHT": "גובה",
+    "CENTER": "מירכוז"
   }
 }
