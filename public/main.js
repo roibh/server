@@ -1194,7 +1194,7 @@ var SlideHeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper\">\n    <nav id=\"sidebar\" [class]=\"activeClass\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <ul class=\"sidebar-header-bar\">\n                <li class=\"nav-item\" class=\"language-bar\">\n                    <app-language-bar></app-language-bar>\n                </li>\n                <li class=\"nav-item\">\n                    <button type=\"button\" (click)=\"toggleSidebar()\" id=\"sidebarCollapse\" class=\"btn-collapse\">\n                        <i class=\"fas fa-align-justify\"></i>\n                    </button>\n                </li>\n            </ul>\n            <strong>\n                <img src=\"assets/signnature_icon.png\" width=\"40\">\n            </strong>\n        </div>\n        <ul class=\"list-unstyled components\">\n            <li>\n                <a routerLink=\"/\" title=\"{{'NAVBAR.HOME' | translate}}\">\n                    <i class=\"fas fa-home\"></i>\n                    <span>\n                        {{\"NAVBAR.HOME\" | translate}}</span>\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"screens\" routerLinkActive=\"screen-cat\" title=\"{{'NAVBAR.SCREENS' | translate}}\">\n                    <i class=\"fas fa-desktop\"></i>\n                    <span>\n                        {{\"NAVBAR.SCREENS\" | translate}}</span>\n\n                </a></li>\n            <li>\n                <a routerLink=\"screen-groups\" routerLinkActive=\"screen-group-cat\" title=\"{{'NAVBAR.SCREEN-GROUPS' | translate}}\">\n                    <i class=\"fas fa-clone\"></i> <span>\n                        {{\"NAVBAR.SCREEN-GROUPS\" | translate}}</span>\n\n                </a></li>\n            <li>\n                <a routerLinkActive=\"library-cat\" routerLink=\"library\" title=\"{{'NAVBAR.LIBRARY' | translate}}\">\n                    <i class=\"fas fa-copy\"></i> <span>\n                        {{\"NAVBAR.LIBRARY\" | translate}}</span>\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"playlists\" routerLinkActive=\"playlist-cat\" title=\"{{'NAVBAR.PLAYLISTS' | translate}}\">\n                    <i class=\"fas fa-step-forward\"></i> <span>\n                        {{\"NAVBAR.PLAYLISTS\" | translate}}</span>\n\n                </a>\n            </li>\n\n        </ul>\n    </nav>\n\n    <div id=\"content\">\n        <div class=\"library-cat\"></div>\n        <router-outlet></router-outlet>\n    </div>\n    <footer class=\"footer closed\">\n        {{'DASHBOARD.FOOTER' | translate}}\n    </footer>\n</div>\n"
+module.exports = "<div class=\"wrapper\">\n    <nav id=\"sidebar\" [class]=\"activeClass\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <ul class=\"sidebar-header-bar\">\n                <li class=\"nav-item\" class=\"language-bar\">\n                    <app-language-bar></app-language-bar>\n                </li>\n                <li class=\"nav-item\">\n                    <button type=\"button\" (click)=\"toggleSidebar()\" id=\"sidebarCollapse\" class=\"btn-collapse\">\n                        <i class=\"fas fa-align-justify\"></i>\n                    </button>\n                </li>\n            </ul>\n            <strong>\n                <img src=\"assets/signnature_icon.png\" width=\"40\">\n            </strong>\n        </div>\n        <ul class=\"list-unstyled components\">\n            <li>\n                <a routerLink=\"/\" title=\"{{'NAVBAR.HOME' | translate}}\">\n                    <i class=\"fas fa-home\"></i>&nbsp;\n                    <span>\n                        {{\"NAVBAR.HOME\" | translate}}</span>\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"screens\" routerLinkActive=\"screen-cat\" title=\"{{'NAVBAR.SCREENS' | translate}}\">\n                    <i class=\"fas fa-desktop\"></i>&nbsp;\n                    <span class=\"nav-text\">\n                        {{\"NAVBAR.SCREENS\" | translate}}</span>\n\n                </a></li>\n            <li>\n                <a routerLink=\"screen-groups\" routerLinkActive=\"screen-group-cat\" title=\"{{'NAVBAR.SCREEN-GROUPS' | translate}}\">\n                    <i class=\"fas fa-clone\"></i>&nbsp;  <span class=\"nav-text\">\n                        {{\"NAVBAR.SCREEN-GROUPS\" | translate}}</span>\n\n                </a></li>\n            <li>\n                <a routerLinkActive=\"library-cat\" routerLink=\"library\" title=\"{{'NAVBAR.LIBRARY' | translate}}\">\n                    <i class=\"fas fa-copy\"></i>&nbsp;   <span class=\"nav-text\">\n                        {{\"NAVBAR.LIBRARY\" | translate}}</span>\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"playlists\" routerLinkActive=\"playlist-cat\" title=\"{{'NAVBAR.PLAYLISTS' | translate}}\">\n                    <i class=\"fas fa-step-forward\"></i>&nbsp;  <span class=\"nav-text\">\n                        {{\"NAVBAR.PLAYLISTS\" | translate}}</span>\n\n                </a>\n            </li>\n\n        </ul>\n    </nav>\n\n    <div id=\"content\" class=\"content-bg\">\n        <div class=\"library-cat\"></div>\n        <router-outlet></router-outlet>\n    </div>\n    <footer class=\"footer closed\">\n        {{'DASHBOARD.FOOTER' | translate}}\n    </footer>\n</div>\n"
 
 /***/ }),
 
@@ -1205,7 +1205,7 @@ module.exports = "<div class=\"wrapper\">\n    <nav id=\"sidebar\" [class]=\"act
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#sidebar.active .components span {\n  display: none; }\n\n.active-link {\n  color: #c5c5c5;\n  background: #3f5efb;\n  background: radial-gradient(circle, #3f5efb 0%, #fc466b 100%); }\n\n.active-link #LibrarySubmenu {\n    display: block !important; }\n\n.sidebar-header-bar {\n  clear: both;\n  background-color: #162433; }\n\n.sidebar-header-bar li {\n    float: right; }\n\n.sidebar-header-bar li.language-bar {\n    width: 150px; }\n\n.btn-collapse {\n  color: #3c7399;\n  background-color: transparent;\n  margin-right: 7px;\n  width: 40px;\n  height: 40px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGFzaGJvYXJkL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcZGFzaGJvYXJkXFxkYXNoYm9hcmQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2Rhc2hib2FyZC9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxzYXNzXFxfdmFyaWFibGVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUFHWSxhQUFhLEVBQUE7O0FBSXpCO0VBQ0ksY0FBYztFQUNkLG1CQUEwQjtFQUMxQiw2REFBa0YsRUFBQTs7QUFIdEY7SUFLUSx5QkFBd0IsRUFBQTs7QUFLaEM7RUFDSSxXQUFXO0VBQ1gseUJDbkJxQixFQUFBOztBRGlCekI7SUFJUSxZQUFZLEVBQUE7O0FBSnBCO0lBT1EsWUFBWSxFQUFBOztBQUdwQjtFQUdJLGNDM0JzQjtFRDRCdEIsNkJBQTZCO0VBQzdCLGlCQUFpQjtFQUNqQixXQUFXO0VBQ1gsWUFBWSxFQUFBIiwiZmlsZSI6InNyYy9hcHAvZGFzaGJvYXJkL2Rhc2hib2FyZC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJy4uLy4uL3Nhc3MvX3ZhcmlhYmxlcyc7XHJcblxyXG4jc2lkZWJhci5hY3RpdmUge1xyXG4gICAgLmNvbXBvbmVudHN7XHJcbiAgICAgICAgc3BhbntcclxuICAgICAgICAgICAgZGlzcGxheTogbm9uZTtcclxuICAgICAgICB9XHJcbiAgICB9XHJcbn1cclxuLmFjdGl2ZS1saW5re1xyXG4gICAgY29sb3I6ICNjNWM1YzU7XHJcbiAgICBiYWNrZ3JvdW5kOiByZ2IoNjMsOTQsMjUxKTtcclxuICAgIGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudChjaXJjbGUsIHJnYmEoNjMsOTQsMjUxLDEpIDAlLCByZ2JhKDI1Miw3MCwxMDcsMSkgMTAwJSk7XHJcbiAgICAjTGlicmFyeVN1Ym1lbnV7XHJcbiAgICAgICAgZGlzcGxheTogYmxvY2shaW1wb3J0YW50O1xyXG4gICAgfVxyXG59XHJcblxyXG4gXHJcbi5zaWRlYmFyLWhlYWRlci1iYXJ7XHJcbiAgICBjbGVhcjogYm90aDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICRjb2xvci1kYXJrYmx1ZTE7XHJcbiAgICBsaXtcclxuICAgICAgICBmbG9hdDogcmlnaHQ7XHJcbiAgICB9XHJcbiAgICBsaS5sYW5ndWFnZS1iYXJ7XHJcbiAgICAgICAgd2lkdGg6IDE1MHB4O1xyXG4gICAgfVxyXG59XHJcbi5idG4tY29sbGFwc2V7ICBcclxuICAgXHJcbiAgICBcclxuICAgIGNvbG9yOiRjb2xvci1saWdodGJsdWUyO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDdweDtcclxuICAgIHdpZHRoOiA0MHB4O1xyXG4gICAgaGVpZ2h0OiA0MHB4O1xyXG59XHJcblxyXG4iLCJcclxuJGNvbG9yLWdyYXk6ICNlM2U0ZTU7XHJcbiRjb2xvci1kYXJrYmx1ZTE6ICMxNjI0MzM7XHJcbiRjb2xvci1kYXJrYmx1ZTI6ICMyYTQ1NjM7XHJcbiRjb2xvci1saWdodGJsdWUxOiAjMjY0MzU2O1xyXG4kY29sb3ItbGlnaHRibHVlMjogIzNjNzM5OTtcclxuJGNvbG9yLW9yYW5nZTogI2ZjNjYwMDtcclxuJGNvbG9yLWN5YW46ICMwMGZmZjY7XHJcbiRjb2xvci1zY3JlZW46ICMwMGNmZmY7XHJcbiRjb2xvci1zY3JlZW4tZ3JvdXA6ICMwMGZmZjY7XHJcbiRjb2xvci1saWJyYXJ5OiAjOTZmZjAwO1xyXG4kY29sb3IteWVsbG93OiAjZmZmZjAwO1xyXG4kY29sb3ItcHVycGxlOiAjZjNiN2ViO1xyXG4kY29sb3ItZ3JlZW46ICM5NmZmMDA7XHJcbiBcclxuXHJcbiAiXX0= */"
+module.exports = "#sidebar .nav-text {\n  display: inline-block; }\n\n#sidebar.active .nav-text {\n  display: none; }\n\n.active-link {\n  color: #c5c5c5;\n  background: #3f5efb;\n  background: radial-gradient(circle, #3f5efb 0%, #fc466b 100%); }\n\n.active-link #LibrarySubmenu {\n    display: block !important; }\n\n.sidebar-header-bar {\n  clear: both;\n  background-color: #162433; }\n\n.sidebar-header-bar li {\n    float: right; }\n\n.sidebar-header-bar li.language-bar {\n    width: 150px; }\n\n.btn-collapse {\n  color: #3c7399;\n  background-color: transparent;\n  margin-right: 7px;\n  width: 40px;\n  height: 40px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGFzaGJvYXJkL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcZGFzaGJvYXJkXFxkYXNoYm9hcmQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2Rhc2hib2FyZC9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxzYXNzXFxfdmFyaWFibGVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUFHUSxxQkFBcUIsRUFBQTs7QUFPN0I7RUFHWSxhQUFhLEVBQUE7O0FBSXpCO0VBQ0ksY0FBYztFQUNkLG1CQUEwQjtFQUMxQiw2REFBa0YsRUFBQTs7QUFIdEY7SUFLUSx5QkFBd0IsRUFBQTs7QUFLaEM7RUFDSSxXQUFXO0VBQ1gseUJDN0JxQixFQUFBOztBRDJCekI7SUFJUSxZQUFZLEVBQUE7O0FBSnBCO0lBT1EsWUFBWSxFQUFBOztBQUdwQjtFQUdJLGNDckNzQjtFRHNDdEIsNkJBQTZCO0VBQzdCLGlCQUFpQjtFQUNqQixXQUFXO0VBQ1gsWUFBWSxFQUFBIiwiZmlsZSI6InNyYy9hcHAvZGFzaGJvYXJkL2Rhc2hib2FyZC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJy4uLy4uL3Nhc3MvX3ZhcmlhYmxlcyc7XHJcblxyXG4jc2lkZWJhciB7XHJcbiAgICAubmF2LXRleHR7XHJcbiAgICAgICAgXHJcbiAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgfVxyXG5cclxuICAgIFxyXG59XHJcblxyXG5cclxuI3NpZGViYXIuYWN0aXZlIHtcclxuICAgXHJcbiAgICAgICAgLm5hdi10ZXh0e1xyXG4gICAgICAgICAgICBkaXNwbGF5OiBub25lO1xyXG4gICAgICAgIH1cclxuICAgXHJcbn1cclxuLmFjdGl2ZS1saW5re1xyXG4gICAgY29sb3I6ICNjNWM1YzU7XHJcbiAgICBiYWNrZ3JvdW5kOiByZ2IoNjMsOTQsMjUxKTtcclxuICAgIGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudChjaXJjbGUsIHJnYmEoNjMsOTQsMjUxLDEpIDAlLCByZ2JhKDI1Miw3MCwxMDcsMSkgMTAwJSk7XHJcbiAgICAjTGlicmFyeVN1Ym1lbnV7XHJcbiAgICAgICAgZGlzcGxheTogYmxvY2shaW1wb3J0YW50O1xyXG4gICAgfVxyXG59XHJcblxyXG4gXHJcbi5zaWRlYmFyLWhlYWRlci1iYXJ7XHJcbiAgICBjbGVhcjogYm90aDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICRjb2xvci1kYXJrYmx1ZTE7XHJcbiAgICBsaXtcclxuICAgICAgICBmbG9hdDogcmlnaHQ7XHJcbiAgICB9XHJcbiAgICBsaS5sYW5ndWFnZS1iYXJ7XHJcbiAgICAgICAgd2lkdGg6IDE1MHB4O1xyXG4gICAgfVxyXG59XHJcbi5idG4tY29sbGFwc2V7ICBcclxuICAgXHJcbiAgICBcclxuICAgIGNvbG9yOiRjb2xvci1saWdodGJsdWUyO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDdweDtcclxuICAgIHdpZHRoOiA0MHB4O1xyXG4gICAgaGVpZ2h0OiA0MHB4O1xyXG59XHJcblxyXG4iLCJcclxuJGNvbG9yLWdyYXk6ICNlM2U0ZTU7XHJcbiRjb2xvci1kYXJrYmx1ZTE6ICMxNjI0MzM7XHJcbiRjb2xvci1kYXJrYmx1ZTI6ICMyYTQ1NjM7XHJcbiRjb2xvci1saWdodGJsdWUxOiAjMjY0MzU2O1xyXG4kY29sb3ItbGlnaHRibHVlMjogIzNjNzM5OTtcclxuJGNvbG9yLW9yYW5nZTogI2ZjNjYwMDtcclxuJGNvbG9yLWN5YW46ICMwMGZmZjY7XHJcbiRjb2xvci1zY3JlZW46ICMwMGNmZmY7XHJcbiRjb2xvci1zY3JlZW4tZ3JvdXA6ICMwMGZmZjY7XHJcbiRjb2xvci1saWJyYXJ5OiAjOTZmZjAwO1xyXG4kY29sb3IteWVsbG93OiAjZmZmZjAwO1xyXG4kY29sb3ItcHVycGxlOiAjZjNiN2ViO1xyXG4kY29sb3ItZ3JlZW46ICM5NmZmMDA7XHJcbiBcclxuXHJcbiAiXX0= */"
 
 /***/ }),
 
@@ -2955,7 +2955,7 @@ module.exports = "<ng-template #toolbar let-item=\"item\">\n  <div class=\"btn-g
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".slide-editor {\n  position: absolute;\n  left: 10%; }\n  .slide-editor .editor-plate {\n    position: relative;\n    top: 15px;\n    left: 15px; }\n  .slide-editor .small {\n    width: 800px;\n    height: 600px;\n    overflow: hidden; }\n  .slide-editor .small-portrait {\n    width: 600px;\n    height: 800px; }\n  .toolbar-end {\n  float: left; }\n  .p10 {\n  padding: 10px; }\n  .selected, .true {\n  border: 1px dotted #cc66dd !important; }\n  .layers {\n  z-index: 2000;\n  background-color: gray;\n  position: absolute;\n  width: 300px;\n  height: 400px; }\n  .click-back {\n  z-index: 0;\n  position: absolute;\n  background-color: darkviolet;\n  width: 100%;\n  height: 100%; }\n  .btn-tool {\n  color: white;\n  cursor: pointer;\n  border: 1px solid #bbb;\n  float: right;\n  width: 52px;\n  height: 52px;\n  cursor: pointer; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL3NsaWRlLWVkaXRvci9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXGVkaXRvclxcc2xpZGUtZWRpdG9yXFxzbGlkZS1lZGl0b3IuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFpQkksa0JBQWtCO0VBQ2xCLFNBQVMsRUFBQTtFQWxCYjtJQUlRLGtCQUFrQjtJQUNsQixTQUFTO0lBQ1QsVUFBVSxFQUFBO0VBTmxCO0lBU1EsWUFBWTtJQUNaLGFBQWE7SUFDYixnQkFBZ0IsRUFBQTtFQVh4QjtJQWNRLFlBQVk7SUFDWixhQUFhLEVBQUE7RUFPckI7RUFDSSxXQUFXLEVBQUE7RUFFZjtFQUNJLGFBQWEsRUFBQTtFQUtqQjtFQUNJLHFDQUFvQyxFQUFBO0VBR3hDO0VBQ0ksYUFBWTtFQUNaLHNCQUFzQjtFQUN0QixrQkFBa0I7RUFDbEIsWUFBWTtFQUNaLGFBQWEsRUFBQTtFQUtqQjtFQUNJLFVBQVU7RUFDVixrQkFBa0I7RUFDbEIsNEJBQTRCO0VBQzVCLFdBQVc7RUFDWCxZQUFZLEVBQUE7RUFHaEI7RUFFSSxZQUFZO0VBQ1osZUFBZTtFQUNkLHNCQUFxQjtFQUN0QixZQUFZO0VBQ1osV0FBVztFQUNYLFlBQVk7RUFDWixlQUFlLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9lZGl0b3Ivc2xpZGUtZWRpdG9yL3NsaWRlLWVkaXRvci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zbGlkZS1lZGl0b3J7XHJcblxyXG4gICAgLmVkaXRvci1wbGF0ZVxyXG4gICAge1xyXG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgICAgICB0b3A6IDE1cHg7XHJcbiAgICAgICAgbGVmdDogMTVweDtcclxuICAgIH1cclxuICAgIC5zbWFsbHtcclxuICAgICAgICB3aWR0aDogODAwcHg7ICAgXHJcbiAgICAgICAgaGVpZ2h0OiA2MDBweDsgIFxyXG4gICAgICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgICB9XHJcbiAgICAuc21hbGwtcG9ydHJhaXR7XHJcbiAgICAgICAgd2lkdGg6IDYwMHB4OyAgIFxyXG4gICAgICAgIGhlaWdodDogODAwcHg7ICBcclxuICAgIH1cclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIGxlZnQ6IDEwJTtcclxufVxyXG5cclxuIFxyXG4udG9vbGJhci1lbmR7XHJcbiAgICBmbG9hdDogbGVmdDtcclxufVxyXG4ucDEwe1xyXG4gICAgcGFkZGluZzogMTBweDtcclxufVxyXG4jd29ya3NhcGNle1xyXG4gICAgLy9wYWRkaW5nOjMwcHg7XHJcbn1cclxuLnNlbGVjdGVkLC50cnVle1xyXG4gICAgYm9yZGVyOiAxcHggZG90dGVkICNjYzY2ZGQhaW1wb3J0YW50O1xyXG59XHJcbiBcclxuLmxheWVyc3tcclxuICAgIHotaW5kZXg6MjAwMDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGdyYXk7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB3aWR0aDogMzAwcHg7XHJcbiAgICBoZWlnaHQ6IDQwMHB4O1xyXG59XHJcblxyXG4gXHJcbiBcclxuLmNsaWNrLWJhY2t7XHJcbiAgICB6LWluZGV4OiAwO1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogZGFya3Zpb2xldDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG59XHJcblxyXG4uYnRuLXRvb2xcclxue1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgIGJvcmRlcjoxcHggc29saWQgI2JiYjtcclxuICAgIGZsb2F0OiByaWdodDsgICAgXHJcbiAgICB3aWR0aDogNTJweDtcclxuICAgIGhlaWdodDogNTJweDsgICBcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIFxyXG59XHJcbiJdfQ== */"
+module.exports = ".slide-editor {\n  position: absolute;\n  left: 10%;\n  z-index: 100; }\n  .slide-editor .editor-plate {\n    position: relative;\n    top: 15px;\n    left: 15px; }\n  .slide-editor .small {\n    width: 800px;\n    height: 600px;\n    overflow: hidden; }\n  .slide-editor .small-portrait {\n    width: 600px;\n    height: 800px; }\n  .toolbar-end {\n  float: left; }\n  .p10 {\n  padding: 10px; }\n  .selected, .true {\n  border: 1px dotted #cc66dd !important; }\n  .layers {\n  z-index: 2000;\n  background-color: gray;\n  position: absolute;\n  width: 300px;\n  height: 400px; }\n  .click-back {\n  z-index: 0;\n  position: absolute;\n  background-color: darkviolet;\n  width: 100%;\n  height: 100%; }\n  .btn-tool {\n  color: white;\n  cursor: pointer;\n  border: 1px solid #bbb;\n  float: right;\n  width: 52px;\n  height: 52px;\n  cursor: pointer; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL3NsaWRlLWVkaXRvci9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXGVkaXRvclxcc2xpZGUtZWRpdG9yXFxzbGlkZS1lZGl0b3IuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFpQkksa0JBQWtCO0VBQ2xCLFNBQVM7RUFDVCxZQUFZLEVBQUE7RUFuQmhCO0lBSVEsa0JBQWtCO0lBQ2xCLFNBQVM7SUFDVCxVQUFVLEVBQUE7RUFObEI7SUFTUSxZQUFZO0lBQ1osYUFBYTtJQUNiLGdCQUFnQixFQUFBO0VBWHhCO0lBY1EsWUFBWTtJQUNaLGFBQWEsRUFBQTtFQVFyQjtFQUNJLFdBQVcsRUFBQTtFQUVmO0VBQ0ksYUFBYSxFQUFBO0VBS2pCO0VBQ0kscUNBQW9DLEVBQUE7RUFHeEM7RUFDSSxhQUFZO0VBQ1osc0JBQXNCO0VBQ3RCLGtCQUFrQjtFQUNsQixZQUFZO0VBQ1osYUFBYSxFQUFBO0VBS2pCO0VBQ0ksVUFBVTtFQUNWLGtCQUFrQjtFQUNsQiw0QkFBNEI7RUFDNUIsV0FBVztFQUNYLFlBQVksRUFBQTtFQUdoQjtFQUVJLFlBQVk7RUFDWixlQUFlO0VBQ2Qsc0JBQXFCO0VBQ3RCLFlBQVk7RUFDWixXQUFXO0VBQ1gsWUFBWTtFQUNaLGVBQWUsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2VkaXRvci9zbGlkZS1lZGl0b3Ivc2xpZGUtZWRpdG9yLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnNsaWRlLWVkaXRvcntcclxuXHJcbiAgICAuZWRpdG9yLXBsYXRlXHJcbiAgICB7XHJcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICAgIHRvcDogMTVweDtcclxuICAgICAgICBsZWZ0OiAxNXB4O1xyXG4gICAgfVxyXG4gICAgLnNtYWxse1xyXG4gICAgICAgIHdpZHRoOiA4MDBweDsgICBcclxuICAgICAgICBoZWlnaHQ6IDYwMHB4OyAgXHJcbiAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICAgIH1cclxuICAgIC5zbWFsbC1wb3J0cmFpdHtcclxuICAgICAgICB3aWR0aDogNjAwcHg7ICAgXHJcbiAgICAgICAgaGVpZ2h0OiA4MDBweDsgIFxyXG4gICAgfVxyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgbGVmdDogMTAlO1xyXG4gICAgei1pbmRleDogMTAwO1xyXG59XHJcblxyXG4gXHJcbi50b29sYmFyLWVuZHtcclxuICAgIGZsb2F0OiBsZWZ0O1xyXG59XHJcbi5wMTB7XHJcbiAgICBwYWRkaW5nOiAxMHB4O1xyXG59XHJcbiN3b3Jrc2FwY2V7XHJcbiAgICAvL3BhZGRpbmc6MzBweDtcclxufVxyXG4uc2VsZWN0ZWQsLnRydWV7XHJcbiAgICBib3JkZXI6IDFweCBkb3R0ZWQgI2NjNjZkZCFpbXBvcnRhbnQ7XHJcbn1cclxuIFxyXG4ubGF5ZXJze1xyXG4gICAgei1pbmRleDoyMDAwO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogZ3JheTtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHdpZHRoOiAzMDBweDtcclxuICAgIGhlaWdodDogNDAwcHg7XHJcbn1cclxuXHJcbiBcclxuIFxyXG4uY2xpY2stYmFja3tcclxuICAgIHotaW5kZXg6IDA7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBkYXJrdmlvbGV0O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbn1cclxuXHJcbi5idG4tdG9vbFxyXG57XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICAgYm9yZGVyOjFweCBzb2xpZCAjYmJiO1xyXG4gICAgZmxvYXQ6IHJpZ2h0OyAgICBcclxuICAgIHdpZHRoOiA1MnB4O1xyXG4gICAgaGVpZ2h0OiA1MnB4OyAgIFxyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgXHJcbn1cclxuIl19 */"
 
 /***/ }),
 
@@ -3219,7 +3219,7 @@ var SlideEditorComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"slider-container-wide {{active}} shadow\">\n\n  <dialog open= {{active}}>\n    <app-slide-header  closeFn=\"true\" title=\"NAVBAR.FINDER\" className=\"library-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n    <div class=\"input-group pt50\">\n      <input type=\"text\" name=\"searchPhrase\" class=\"form-control\" />\n      <div class=\"input-group-prepend\">\n        <button class=\"btn btn-outline-secondary\" type=\"button\"> <i class=\"fas fa-search\"></i></button>\n      </div>\n    </div>\n    <ul class=\"nav nav-tabs\">\n      <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n        <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n      </li>\n    </ul>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias !=='slide'\">\n      <app-lobby [items]=\"filteredItems()\" mode=\"media-finder\" (selectItem)=\"selectItem($event)\" (deleteItem)=\"deleteItem($event)\"\n        ></app-lobby>\n    </div>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias ==='slide'\">\n      <app-lobby [items]=\"slides\" mode=\"object-finder\" (selectItem)=\"selectItem($event)\" (deleteItem)=\"deleteItem($event)\"\n       ></app-lobby>\n    </div>\n    <app-slide-footer className=\"library-cat\"></app-slide-footer>\n  </dialog>\n</div>\n"
+module.exports = "<div class=\"slider-container-wide {{active}} shadow\">\n\n  <dialog open= {{active}}>\n    <app-slide-header  closeFn=\"true\" title=\"NAVBAR.FINDER\" className=\"library-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n    <div class=\"input-group pt50\">\n      <input type=\"text\" name=\"searchPhrase\" class=\"form-control\" />\n      <div class=\"input-group-prepend\">\n        <button class=\"btn btn-outline-secondary\" type=\"button\"> <i class=\"fas fa-search\"></i></button>\n      </div>\n    </div>\n    <ul class=\"nav nav-tabs\">\n      <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n        <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n      </li>\n    </ul>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias !=='slide'\"  [appAdaptHeight]=\"220\">\n      <app-lobby [items]=\"items\" mode=\"media-finder\" (selectItem)=\"selectItem($event)\" (deleteItem)=\"deleteItem($event)\"\n        ></app-lobby>\n    </div>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias ==='slide'\"  [appAdaptHeight]=\"220\">\n      <app-lobby [items]=\"slides\" mode=\"object-finder\" (selectItem)=\"selectItem($event)\" (deleteItem)=\"deleteItem($event)\"\n       ></app-lobby>\n    </div>\n    <app-slide-footer className=\"library-cat\"></app-slide-footer>\n  </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -3261,10 +3261,9 @@ var FinderComponent = /** @class */ (function (_super) {
         var _this = _super.call(this, _ngZone, translateService, null) || this;
         _this._ngZone = _ngZone;
         _this.translateService = translateService;
-        _this.types = ['image', 'video'];
+        _this.types = ['media', 'slide'];
         _this.tabsCollection = {
-            'image': 'NAVBAR.IMAGES',
-            'video': 'NAVBAR.VIDEOS',
+            'media': 'NAVBAR.MEDIA',
             'slide': 'NAVBAR.SLIDES',
         };
         _this.tabs = [];
@@ -3274,9 +3273,6 @@ var FinderComponent = /** @class */ (function (_super) {
         _this.DataController = _signnature_client__WEBPACK_IMPORTED_MODULE_3__["LibraryDataController"];
         return _this;
     }
-    // [{ name: 'NAVBAR.IMAGES', selected: true, alias: 'image' },
-    // { name: 'NAVBAR.VIDEOS', selected: false, alias: 'video' },
-    // { name: 'NAVBAR.SLIDES', selected: false, alias: 'slide' }];
     FinderComponent.prototype.tabSelect = function (tab) {
         this.tabs.forEach(function (tabItem) { return tabItem.selected = false; });
         tab.selected = true;
@@ -3450,104 +3446,6 @@ var FontsComponent = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ "./src/app/library/images/images.component.html":
-/*!******************************************************!*\
-  !*** ./src/app/library/images/images.component.html ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<app-lobby *ngIf=\"items\" [items]=\"items\" mode=\"media\" (editItem)=\"editItem($event)\" (deleteItem)=\"deleteItem($event)\" (newItem)=\"newItem({type:'image'})\"></app-lobby>\n<div class=\"slider-container {{displayModalNew}} shadow \">\n  <dialog open= {{displayModalNew}}>\n    <app-slide-header title=\"NAVBAR.IMAGES\" iconClass=\"fas fa-images\" closeFn=\"true\" [enableSave]='true' (save)=\"saveProxy()\"\n      className=\"library-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n    <div class=\"pt50\"></div>\n    <div class=\"scroller\">\n      <form *ngIf=\"item\">\n        <div class=\"form-group\">\n          <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n          <input type=\"text\"  [detectChanges]=\"true\" name=\"libraryName\" class=\"form-control\" [(ngModel)]=\"item.Name\">\n          <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n        </div>\n        <div class=\"form-group\">\n          <label for=\"libraryFile\">{{ \"LIBRARY.RESOURCE\" | translate }}</label>\n          <img *ngIf=\"item.thumb && !uploading\" [src]=\"item.thumb\" class=\"fancy-image\">\n          <p><a href=\"{{item.thumb}}\" target=\"_blank\" class=\"form-text text-muted\"><small>{{item.thumb}}</small></a></p>\n          <app-upload [item]=\"item\" [detectChanges]=\"true\" (change)=\"change($event)\"></app-upload>\n          <small id=\" screenHelp \" class=\"form-text text-muted \">{{ \"LIBRARY.IMAGE_DESCRIPTION\" | translate }}</small>\n        </div>\n      </form>\n    </div>\n    <app-slide-footer className=\"library-cat\"></app-slide-footer>\n  </dialog>\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/library/images/images.component.scss":
-/*!******************************************************!*\
-  !*** ./src/app/library/images/images.component.scss ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".fancy-thumb {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0; }\n\n.fancy-image {\n  width: 100%;\n  height: 250px;\n  background-size: cover !important;\n  background-repeat: no-repeat !important; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGlicmFyeS9pbWFnZXMvQzpcXHByb2plY3RzXFxzaWduLW5hdHVyZVxcd2ViL3NyY1xcYXBwXFxsaWJyYXJ5XFxpbWFnZXNcXGltYWdlcy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUdJLGtCQUFrQjtFQUNsQixXQUFXO0VBQ1gsWUFBWTtFQUNaLE1BQU07RUFDTixPQUFPLEVBQUE7O0FBR1g7RUFFSSxXQUFVO0VBQ1YsYUFBYTtFQUNiLGlDQUFnQztFQUNoQyx1Q0FBc0MsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2xpYnJhcnkvaW1hZ2VzL2ltYWdlcy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG5cclxuLmZhbmN5LXRodW1iXHJcbnsgICBcclxuICAgXHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogMTAwJTtcclxuICAgIHRvcDogMDtcclxuICAgIGxlZnQ6IDA7XHJcbn1cclxuXHJcbi5mYW5jeS1pbWFnZVxyXG57XHJcbiAgICB3aWR0aDoxMDAlO1xyXG4gICAgaGVpZ2h0OiAyNTBweDtcclxuICAgIGJhY2tncm91bmQtc2l6ZTogY292ZXIhaW1wb3J0YW50OyAgICAgXHJcbiAgICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0IWltcG9ydGFudDtcclxufVxyXG4iXX0= */"
-
-/***/ }),
-
-/***/ "./src/app/library/images/images.component.ts":
-/*!****************************************************!*\
-  !*** ./src/app/library/images/images.component.ts ***!
-  \****************************************************/
-/*! exports provided: ImagesComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ImagesComponent", function() { return ImagesComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _data_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../data.component */ "./src/app/data.component.ts");
-/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
-/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
-
-
-
-
-
-var ImagesComponent = /** @class */ (function (_super) {
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](ImagesComponent, _super);
-    function ImagesComponent(_ngZone, translateService) {
-        var _this = _super.call(this, _ngZone, translateService) || this;
-        _this._ngZone = _ngZone;
-        _this.translateService = translateService;
-        _this.uploading = false;
-        _this.DataController = _signnature_client__WEBPACK_IMPORTED_MODULE_3__["LibraryDataController"];
-        return _this;
-        // this.DataModel = PlaylistModel;
-    }
-    ImagesComponent.prototype.ngOnInit = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                this.loadItems({ type: 'image' });
-                return [2 /*return*/];
-            });
-        });
-    };
-    ImagesComponent.prototype.saveLibrary = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                this.item.type = 'image';
-                this.updateItem();
-                return [2 /*return*/];
-            });
-        });
-    };
-    ImagesComponent.prototype.createLibrary = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                this.item.type = 'image';
-                this.createItem();
-                return [2 /*return*/];
-            });
-        });
-    };
-    ImagesComponent.prototype.change = function (state) {
-        this.uploading = state === 'start' ? true : false;
-    };
-    ImagesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-images',
-            template: __webpack_require__(/*! ./images.component.html */ "./src/app/library/images/images.component.html"),
-            styles: [__webpack_require__(/*! ./images.component.scss */ "./src/app/library/images/images.component.scss")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__["TranslateService"]])
-    ], ImagesComponent);
-    return ImagesComponent;
-}(_data_component__WEBPACK_IMPORTED_MODULE_2__["DataComponent"]));
-
-
-
-/***/ }),
-
 /***/ "./src/app/library/library.component.css":
 /*!***********************************************!*\
   !*** ./src/app/library/library.component.css ***!
@@ -3566,7 +3464,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-slide-header title=\"NAVBAR.LIBRARY\" mode=\"inline\" iconClass=\"fas fa-clone\" className=\"library-cat\"></app-slide-header>\n\n<div style=\"padding: 3px;\">\n    <ul class=\"nav nav-tabs\">\n        <li class=\"nav-item\" *ngFor=\"let tab of tabs\" [routerLink]=\"['/dashboard/library/', tab.alias]\" routerLinkActive=\"library-cat\">\n            <a class=\"nav-link {{tab.selected}}\"><h4><i class=\"{{tab.icon}}\"></i> {{tab.name | translate}}</h4></a>\n        </li>\n    </ul>\n    <div style=\"padding:10px;\">\n        <router-outlet></router-outlet>\n\n    </div>\n</div>\n"
+module.exports = "<app-slide-header title=\"NAVBAR.LIBRARY\" mode=\"inline\" iconClass=\"fas fa-clone\" className=\"library-cat\"></app-slide-header>\n<div style=\"padding: 3px;\">\n    <ul class=\"nav nav-tabs\">\n        <li class=\"nav-item\" *ngFor=\"let tab of tabs\" [routerLink]=\"['/dashboard/library/', tab.alias]\" routerLinkActive=\"library-cat\">\n            <a class=\"nav-link {{tab.selected}}\"><h5><i class=\"{{tab.icon}}\"></i> {{tab.name | translate}}</h5></a>\n        </li>\n    </ul>\n    <div style=\"padding:5px;\"  [appAdaptHeight]=\"120\">\n        <router-outlet></router-outlet>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -3600,17 +3498,11 @@ var LibraryComponent = /** @class */ (function (_super) {
         _this._ngZone = _ngZone;
         _this.translateService = translateService;
         _this.router = router;
-        _this.types = ['image', 'video', 'slide', 'shares'];
+        _this.types = ['media', 'slide', 'shares'];
         _this.tabsCollection = {
-            'image': {
-                name: 'NAVBAR.IMAGES', icon: 'fas fa-images'
+            'media': {
+                name: 'NAVBAR.MEDIA', icon: 'fas fa-images'
             },
-            'video': {
-                name: 'NAVBAR.VIDEOS', icon: 'fas fa-video'
-            },
-            // 'audio': {
-            //   name: 'NAVBAR.AUDIO', icon: 'fas fa-music'
-            // },
             'slide': {
                 name: 'NAVBAR.SLIDES', icon: 'far fa-object-group'
             }, 'shares': {
@@ -3703,7 +3595,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _shared_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared.module */ "./src/app/shared.module.ts");
-/* harmony import */ var _images_images_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./images/images.component */ "./src/app/library/images/images.component.ts");
+/* harmony import */ var _media_media_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./media/media.component */ "./src/app/library/media/media.component.ts");
 /* harmony import */ var _videos_videos_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./videos/videos.component */ "./src/app/library/videos/videos.component.ts");
 /* harmony import */ var _sounds_sounds_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./sounds/sounds.component */ "./src/app/library/sounds/sounds.component.ts");
 /* harmony import */ var _slides_slides_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./slides/slides.component */ "./src/app/library/slides/slides.component.ts");
@@ -3736,11 +3628,9 @@ var libraryRoutes = [
             {
                 path: '',
                 pathMatch: 'full',
-                redirectTo: 'image'
+                redirectTo: 'media'
             },
-            { path: 'image', component: _images_images_component__WEBPACK_IMPORTED_MODULE_6__["ImagesComponent"] },
-            { path: 'video', component: _videos_videos_component__WEBPACK_IMPORTED_MODULE_7__["VideosComponent"] },
-            { path: 'audio', component: _sounds_sounds_component__WEBPACK_IMPORTED_MODULE_8__["SoundsComponent"] },
+            { path: 'media', component: _media_media_component__WEBPACK_IMPORTED_MODULE_6__["MediaComponent"] },
             { path: 'shares', component: _shares_shares_component__WEBPACK_IMPORTED_MODULE_15__["SharesComponent"] },
             { path: 'slide', component: _slides_slides_component__WEBPACK_IMPORTED_MODULE_9__["SlidesComponent"] },
         ]
@@ -3762,7 +3652,7 @@ var LibraryModule = /** @class */ (function () {
             ],
             exports: [_library_component__WEBPACK_IMPORTED_MODULE_10__["LibraryComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"]],
             entryComponents: [_library_component__WEBPACK_IMPORTED_MODULE_10__["LibraryComponent"]],
-            declarations: [_images_images_component__WEBPACK_IMPORTED_MODULE_6__["ImagesComponent"],
+            declarations: [_media_media_component__WEBPACK_IMPORTED_MODULE_6__["MediaComponent"],
                 _fonts_fonts_component__WEBPACK_IMPORTED_MODULE_14__["FontsComponent"],
                 _videos_videos_component__WEBPACK_IMPORTED_MODULE_7__["VideosComponent"], _sounds_sounds_component__WEBPACK_IMPORTED_MODULE_8__["SoundsComponent"], _slides_slides_component__WEBPACK_IMPORTED_MODULE_9__["SlidesComponent"],
                 _library_component__WEBPACK_IMPORTED_MODULE_10__["LibraryComponent"], _upload_upload_component__WEBPACK_IMPORTED_MODULE_12__["UploadComponent"], _shares_shares_component__WEBPACK_IMPORTED_MODULE_15__["SharesComponent"]
@@ -3772,6 +3662,104 @@ var LibraryModule = /** @class */ (function () {
     ], LibraryModule);
     return LibraryModule;
 }());
+
+
+
+/***/ }),
+
+/***/ "./src/app/library/media/media.component.html":
+/*!****************************************************!*\
+  !*** ./src/app/library/media/media.component.html ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<app-lobby *ngIf=\"items\" [items]=\"items\" mode=\"media\" (editItem)=\"editItem($event)\" (deleteItem)=\"deleteItem($event)\" (newItem)=\"newItem({type:'image'})\"></app-lobby>\n<div class=\"slider-container {{displayModalNew}} shadow \">\n  <dialog open= {{displayModalNew}}>\n    <app-slide-header title=\"NAVBAR.MEDIA\" iconClass=\"fas fa-images\" closeFn=\"true\" [enableSave]='true' (save)=\"saveProxy()\"\n      className=\"library-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n    <div class=\"pt50\"></div>\n    <div class=\"scroller\">\n      <form *ngIf=\"item\">\n        <div class=\"form-group\">\n          <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n          <input type=\"text\" [detectChanges]=\"true\" name=\"libraryName\" class=\"form-control\" [(ngModel)]=\"item.Name\">\n          <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n        </div>\n        <div class=\"form-group\">\n          <app-upload [item]=\"item\" [detectChanges]=\"true\" (change)=\"change($event)\"></app-upload>\n          <small id=\" screenHelp \" class=\"form-text text-muted \">{{ \"LIBRARY.IMAGE_DESCRIPTION\" | translate }}</small>\n        </div>\n      </form>\n\n      <!-- <img *ngIf=\"item.thumb && !uploading\" [src]=\"item.thumb\" class=\"fancy-image\">\n      <p><a href=\"{{item.thumb}}\" target=\"_blank\" class=\"form-text text-muted\"><small>{{item.thumb}}</small></a></p> -->\n\n\n    </div>\n    <app-slide-footer className=\"library-cat\"></app-slide-footer>\n  </dialog>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/library/media/media.component.scss":
+/*!****************************************************!*\
+  !*** ./src/app/library/media/media.component.scss ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".fancy-thumb {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0; }\n\n.fancy-image {\n  width: 100%;\n  height: 250px;\n  background-size: cover !important;\n  background-repeat: no-repeat !important; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGlicmFyeS9tZWRpYS9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXGxpYnJhcnlcXG1lZGlhXFxtZWRpYS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUdJLGtCQUFrQjtFQUNsQixXQUFXO0VBQ1gsWUFBWTtFQUNaLE1BQU07RUFDTixPQUFPLEVBQUE7O0FBR1g7RUFFSSxXQUFVO0VBQ1YsYUFBYTtFQUNiLGlDQUFnQztFQUNoQyx1Q0FBc0MsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2xpYnJhcnkvbWVkaWEvbWVkaWEuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcclxuXHJcbi5mYW5jeS10aHVtYlxyXG57ICAgXHJcbiAgIFxyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICB0b3A6IDA7XHJcbiAgICBsZWZ0OiAwO1xyXG59XHJcblxyXG4uZmFuY3ktaW1hZ2Vcclxue1xyXG4gICAgd2lkdGg6MTAwJTtcclxuICAgIGhlaWdodDogMjUwcHg7XHJcbiAgICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyIWltcG9ydGFudDsgICAgIFxyXG4gICAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdCFpbXBvcnRhbnQ7XHJcbn1cclxuIl19 */"
+
+/***/ }),
+
+/***/ "./src/app/library/media/media.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/library/media/media.component.ts ***!
+  \**************************************************/
+/*! exports provided: MediaComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MediaComponent", function() { return MediaComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _data_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../data.component */ "./src/app/data.component.ts");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
+
+
+
+
+
+var MediaComponent = /** @class */ (function (_super) {
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](MediaComponent, _super);
+    function MediaComponent(_ngZone, translateService) {
+        var _this = _super.call(this, _ngZone, translateService) || this;
+        _this._ngZone = _ngZone;
+        _this.translateService = translateService;
+        _this.uploading = false;
+        _this.DataController = _signnature_client__WEBPACK_IMPORTED_MODULE_3__["LibraryDataController"];
+        return _this;
+        // this.DataModel = PlaylistModel;
+    }
+    MediaComponent.prototype.ngOnInit = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                this.loadItems({});
+                return [2 /*return*/];
+            });
+        });
+    };
+    MediaComponent.prototype.saveLibrary = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                this.item.type = 'image';
+                this.updateItem();
+                return [2 /*return*/];
+            });
+        });
+    };
+    MediaComponent.prototype.createLibrary = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                this.item.type = 'image';
+                this.createItem();
+                return [2 /*return*/];
+            });
+        });
+    };
+    MediaComponent.prototype.change = function (state) {
+        this.uploading = state === 'start' ? true : false;
+    };
+    MediaComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-media',
+            template: __webpack_require__(/*! ./media.component.html */ "./src/app/library/media/media.component.html"),
+            styles: [__webpack_require__(/*! ./media.component.scss */ "./src/app/library/media/media.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__["TranslateService"]])
+    ], MediaComponent);
+    return MediaComponent;
+}(_data_component__WEBPACK_IMPORTED_MODULE_2__["DataComponent"]));
 
 
 
@@ -4057,7 +4045,7 @@ var SoundsComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div (click)=\"addFiles()\" class=\"btn btn-default\">\n  <file-drop headertext=\"Drop files here\" customstyle=\"dropzone\" (onFileDrop)=\"dropped($event)\">\n  </file-drop>\n</div>\n<input type=\"file\" #file style=\"display: none\" (change)=\"selected()\" />\n\n\n<div>\n  <div class=\"loader\" *ngIf=\"loading\">Loading...</div>\n  <img [src]=\"thumb\" (load)=\"clearUpload()\" #imgIndicator id=\"imgIndicator\" />\n\n</div>\n"
+module.exports = "<!-- <div (click)=\"addFiles()\" class=\"btn btn-default\">\n  <file-drop headertext=\"Drop files here\" customstyle=\"dropzone\" (onFileDrop)=\"dropped($event)\">\n  </file-drop>\n</div> -->\n\n\n\n<div>\n  <div class=\"loader\" *ngIf=\"loading\">Loading...</div>\n  <img [src]=\"thumb\" (load)=\"clearUpload()\" #imgIndicator id=\"imgIndicator\" style=\"display: none;\" />\n\n</div>\n\n\n<div class=\"input-group\">\n  <file-drop headertext=\"Drop files here\" customstyle=\"dropzone\" (onFileDrop)=\"dropped($event)\">\n  </file-drop>\n\n  <div class=\"input-group-prepend\">\n    <label for=\"libraryFile\" class=\"input-group-text\" (click)=\"addFiles()\">{{ \"LIBRARY.RESOURCE\" | translate }}</label>\n  </div>\n  <div class=\"custom-file\">\n    <input type=\"file\" #file class=\"custom-file-input\" (change)=\"selected()\" />\n\n    <label class=\"custom-file-label\" for=\"inputGroupFile01\">Choose file</label>\n  </div>\n</div>\n"
 
 /***/ }),
 

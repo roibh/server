@@ -1412,7 +1412,7 @@ var FontsService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"slider-container-wide {{active}} shadow\">\n\n  <dialog open= {{active}}>\n    <app-slide-header  closeFn=\"true\" title=\"NAVBAR.FINDER\" className=\"library-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n    <div class=\"input-group pt50\">\n      <input type=\"text\" name=\"searchPhrase\" class=\"form-control\" />\n      <div class=\"input-group-prepend\">\n        <button class=\"btn btn-outline-secondary\" type=\"button\"> <i class=\"fas fa-search\"></i></button>\n      </div>\n    </div>\n    <ul class=\"nav nav-tabs\">\n      <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n        <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n      </li>\n    </ul>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias !=='slide'\">\n      <app-lobby [items]=\"filteredItems()\" mode=\"media-finder\" (selectItem)=\"selectItem($event)\" (deleteItem)=\"deleteItem($event)\"\n        ></app-lobby>\n    </div>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias ==='slide'\">\n      <app-lobby [items]=\"slides\" mode=\"object-finder\" (selectItem)=\"selectItem($event)\" (deleteItem)=\"deleteItem($event)\"\n       ></app-lobby>\n    </div>\n    <app-slide-footer className=\"library-cat\"></app-slide-footer>\n  </dialog>\n</div>\n"
+module.exports = "<div class=\"slider-container-wide {{active}} shadow\">\n\n  <dialog open= {{active}}>\n    <app-slide-header  closeFn=\"true\" title=\"NAVBAR.FINDER\" className=\"library-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n    <div class=\"input-group pt50\">\n      <input type=\"text\" name=\"searchPhrase\" class=\"form-control\" />\n      <div class=\"input-group-prepend\">\n        <button class=\"btn btn-outline-secondary\" type=\"button\"> <i class=\"fas fa-search\"></i></button>\n      </div>\n    </div>\n    <ul class=\"nav nav-tabs\">\n      <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n        <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n      </li>\n    </ul>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias !=='slide'\"  [appAdaptHeight]=\"220\">\n      <app-lobby [items]=\"items\" mode=\"media-finder\" (selectItem)=\"selectItem($event)\" (deleteItem)=\"deleteItem($event)\"\n        ></app-lobby>\n    </div>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias ==='slide'\"  [appAdaptHeight]=\"220\">\n      <app-lobby [items]=\"slides\" mode=\"object-finder\" (selectItem)=\"selectItem($event)\" (deleteItem)=\"deleteItem($event)\"\n       ></app-lobby>\n    </div>\n    <app-slide-footer className=\"library-cat\"></app-slide-footer>\n  </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -1454,10 +1454,9 @@ var FinderComponent = /** @class */ (function (_super) {
         var _this = _super.call(this, _ngZone, translateService, null) || this;
         _this._ngZone = _ngZone;
         _this.translateService = translateService;
-        _this.types = ['image', 'video'];
+        _this.types = ['media', 'slide'];
         _this.tabsCollection = {
-            'image': 'NAVBAR.IMAGES',
-            'video': 'NAVBAR.VIDEOS',
+            'media': 'NAVBAR.MEDIA',
             'slide': 'NAVBAR.SLIDES',
         };
         _this.tabs = [];
@@ -1467,9 +1466,6 @@ var FinderComponent = /** @class */ (function (_super) {
         _this.DataController = _signnature_client__WEBPACK_IMPORTED_MODULE_3__["LibraryDataController"];
         return _this;
     }
-    // [{ name: 'NAVBAR.IMAGES', selected: true, alias: 'image' },
-    // { name: 'NAVBAR.VIDEOS', selected: false, alias: 'video' },
-    // { name: 'NAVBAR.SLIDES', selected: false, alias: 'slide' }];
     FinderComponent.prototype.tabSelect = function (tab) {
         this.tabs.forEach(function (tabItem) { return tabItem.selected = false; });
         tab.selected = true;
