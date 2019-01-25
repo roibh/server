@@ -1194,7 +1194,7 @@ var SlideHeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper\">\n    <nav id=\"sidebar\" [class]=\"activeClass\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <ul class=\"sidebar-header-bar\">\n                <li class=\"nav-item\" class=\"language-bar\" >\n                    <app-language-bar></app-language-bar>\n                </li>\n                <li class=\"nav-item\">\n                    <button type=\"button\" (click)=\"toggleSidebar()\" id=\"sidebarCollapse\" class=\"btn-collapse\">\n                        <i class=\"fas fa-align-justify\"></i>\n                    </button>\n                </li>\n            </ul>\n            <strong>                \n                <img src=\"assets/signnature_icon.png\" width=\"40\">\n            </strong>\n        </div>\n        <ul class=\"list-unstyled components\">\n            <li>\n                <a routerLink=\"/\">\n                    <i class=\"fas fa-home\"></i>\n                    {{\"NAVBAR.HOME\" | translate}}\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"screens\" routerLinkActive=\"screen-cat\">\n                    <i class=\"fas fa-desktop\"></i>\n                    {{\"NAVBAR.SCREENS\" | translate}}\n\n                </a></li>\n            <li>\n                <a routerLink=\"screen-groups\" routerLinkActive=\"screen-group-cat\">\n                    <i class=\"fas fa-clone\"></i>\n                    {{\"NAVBAR.SCREEN-GROUPS\" | translate}}\n\n                </a></li>\n            <li>\n                <a routerLinkActive=\"library-cat\" routerLink=\"library\">\n                    <i class=\"fas fa-copy\"></i>\n                    {{\"NAVBAR.LIBRARY\" | translate}}\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"playlists\" routerLinkActive=\"playlist-cat\">\n                    <i class=\"fas fa-step-forward\"></i>\n                    {{\"NAVBAR.PLAYLISTS\" | translate}}\n\n                </a>\n            </li>\n            <!-- <li>\n                <a routerLink=\"schedules\" routerLinkActive=\"active-link\">\n                    <i class=\"fas fa-calendar-alt\"></i>\n                    {{\"NAVBAR.SCHEDULES\" | translate}}\n\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"settings\" routerLinkActive=\"active-link\">\n                    <i class=\"fas fa-cogs\"></i>\n                    {{\"NAVBAR.SETTINGS\" | translate}}\n\n                </a>\n            </li> -->\n        </ul>\n    </nav>\n    <!-- Page Content  -->\n    <!-- <app-bread-crumbs (Toggled)=\"toggleSidebar()\"></app-bread-crumbs> -->\n    <div id=\"content\">      \n        <div class=\"library-cat\"></div>\n        <router-outlet></router-outlet>\n    </div>\n    <footer class=\"footer closed\">\n        {{'DASHBOARD.FOOTER' | translate}}\n    </footer>\n</div>\n"
+module.exports = "<div class=\"wrapper\">\n    <nav id=\"sidebar\" [class]=\"activeClass\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <ul class=\"sidebar-header-bar\">\n                <li class=\"nav-item\" class=\"language-bar\">\n                    <app-language-bar></app-language-bar>\n                </li>\n                <li class=\"nav-item\">\n                    <button type=\"button\" (click)=\"toggleSidebar()\" id=\"sidebarCollapse\" class=\"btn-collapse\">\n                        <i class=\"fas fa-align-justify\"></i>\n                    </button>\n                </li>\n            </ul>\n            <strong>\n                <img src=\"assets/signnature_icon.png\" width=\"40\">\n            </strong>\n        </div>\n        <ul class=\"list-unstyled components\">\n            <li>\n                <a routerLink=\"/\" title=\"{{'NAVBAR.HOME' | translate}}\">\n                    <i class=\"fas fa-home\"></i>\n                    <span>\n                        {{\"NAVBAR.HOME\" | translate}}</span>\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"screens\" routerLinkActive=\"screen-cat\" title=\"{{'NAVBAR.SCREENS' | translate}}\">\n                    <i class=\"fas fa-desktop\"></i>\n                    <span>\n                        {{\"NAVBAR.SCREENS\" | translate}}</span>\n\n                </a></li>\n            <li>\n                <a routerLink=\"screen-groups\" routerLinkActive=\"screen-group-cat\" title=\"{{'NAVBAR.SCREEN-GROUPS' | translate}}\">\n                    <i class=\"fas fa-clone\"></i> <span>\n                        {{\"NAVBAR.SCREEN-GROUPS\" | translate}}</span>\n\n                </a></li>\n            <li>\n                <a routerLinkActive=\"library-cat\" routerLink=\"library\" title=\"{{'NAVBAR.LIBRARY' | translate}}\">\n                    <i class=\"fas fa-copy\"></i> <span>\n                        {{\"NAVBAR.LIBRARY\" | translate}}</span>\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"playlists\" routerLinkActive=\"playlist-cat\" title=\"{{'NAVBAR.PLAYLISTS' | translate}}\">\n                    <i class=\"fas fa-step-forward\"></i> <span>\n                        {{\"NAVBAR.PLAYLISTS\" | translate}}</span>\n\n                </a>\n            </li>\n\n        </ul>\n    </nav>\n\n    <div id=\"content\">\n        <div class=\"library-cat\"></div>\n        <router-outlet></router-outlet>\n    </div>\n    <footer class=\"footer closed\">\n        {{'DASHBOARD.FOOTER' | translate}}\n    </footer>\n</div>\n"
 
 /***/ }),
 
@@ -1205,7 +1205,7 @@ module.exports = "<div class=\"wrapper\">\n    <nav id=\"sidebar\" [class]=\"act
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".active-link {\n  color: #c5c5c5;\n  background: #3f5efb;\n  background: radial-gradient(circle, #3f5efb 0%, #fc466b 100%); }\n  .active-link #LibrarySubmenu {\n    display: block !important; }\n  .sidebar-header-bar {\n  clear: both;\n  background-color: #162433; }\n  .sidebar-header-bar li {\n    float: right; }\n  .sidebar-header-bar li.language-bar {\n    width: 150px; }\n  .btn-collapse {\n  color: #3c7399;\n  background-color: transparent;\n  margin-right: 7px;\n  width: 40px;\n  height: 40px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGFzaGJvYXJkL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcZGFzaGJvYXJkXFxkYXNoYm9hcmQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2Rhc2hib2FyZC9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxzYXNzXFxfdmFyaWFibGVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBR0E7RUFDSSxjQUFjO0VBQ2QsbUJBQTBCO0VBQzFCLDZEQUFrRixFQUFBO0VBSHRGO0lBS1EseUJBQXdCLEVBQUE7RUFLaEM7RUFDSSxXQUFXO0VBQ1gseUJDYnFCLEVBQUE7RURXekI7SUFJUSxZQUFZLEVBQUE7RUFKcEI7SUFPUSxZQUFZLEVBQUE7RUFHcEI7RUFHSSxjQ3JCc0I7RURzQnRCLDZCQUE2QjtFQUM3QixpQkFBaUI7RUFDakIsV0FBVztFQUNYLFlBQVksRUFBQSIsImZpbGUiOiJzcmMvYXBwL2Rhc2hib2FyZC9kYXNoYm9hcmQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLi8uLi9zYXNzL192YXJpYWJsZXMnO1xyXG5cclxuXHJcbi5hY3RpdmUtbGlua3tcclxuICAgIGNvbG9yOiAjYzVjNWM1O1xyXG4gICAgYmFja2dyb3VuZDogcmdiKDYzLDk0LDI1MSk7XHJcbiAgICBiYWNrZ3JvdW5kOiByYWRpYWwtZ3JhZGllbnQoY2lyY2xlLCByZ2JhKDYzLDk0LDI1MSwxKSAwJSwgcmdiYSgyNTIsNzAsMTA3LDEpIDEwMCUpO1xyXG4gICAgI0xpYnJhcnlTdWJtZW51e1xyXG4gICAgICAgIGRpc3BsYXk6IGJsb2NrIWltcG9ydGFudDtcclxuICAgIH1cclxufVxyXG5cclxuIFxyXG4uc2lkZWJhci1oZWFkZXItYmFye1xyXG4gICAgY2xlYXI6IGJvdGg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAkY29sb3ItZGFya2JsdWUxO1xyXG4gICAgbGl7XHJcbiAgICAgICAgZmxvYXQ6IHJpZ2h0O1xyXG4gICAgfVxyXG4gICAgbGkubGFuZ3VhZ2UtYmFye1xyXG4gICAgICAgIHdpZHRoOiAxNTBweDtcclxuICAgIH1cclxufVxyXG4uYnRuLWNvbGxhcHNleyAgXHJcbiAgIFxyXG4gICAgXHJcbiAgICBjb2xvcjokY29sb3ItbGlnaHRibHVlMjtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xyXG4gICAgbWFyZ2luLXJpZ2h0OiA3cHg7XHJcbiAgICB3aWR0aDogNDBweDtcclxuICAgIGhlaWdodDogNDBweDtcclxufVxyXG5cclxuIiwiXHJcbiRjb2xvci1ncmF5OiAjZTNlNGU1O1xyXG4kY29sb3ItZGFya2JsdWUxOiAjMTYyNDMzO1xyXG4kY29sb3ItZGFya2JsdWUyOiAjMmE0NTYzO1xyXG4kY29sb3ItbGlnaHRibHVlMTogIzI2NDM1NjtcclxuJGNvbG9yLWxpZ2h0Ymx1ZTI6ICMzYzczOTk7XHJcbiRjb2xvci1vcmFuZ2U6ICNmYzY2MDA7XHJcbiRjb2xvci1jeWFuOiAjMDBmZmY2O1xyXG4kY29sb3Itc2NyZWVuOiAjMDBjZmZmO1xyXG4kY29sb3Itc2NyZWVuLWdyb3VwOiAjMDBmZmY2O1xyXG4kY29sb3ItbGlicmFyeTogIzk2ZmYwMDtcclxuJGNvbG9yLXllbGxvdzogI2ZmZmYwMDtcclxuJGNvbG9yLXB1cnBsZTogI2YzYjdlYjtcclxuJGNvbG9yLWdyZWVuOiAjOTZmZjAwO1xyXG4gXHJcblxyXG4gIl19 */"
+module.exports = "#sidebar.active .components span {\n  display: none; }\n\n.active-link {\n  color: #c5c5c5;\n  background: #3f5efb;\n  background: radial-gradient(circle, #3f5efb 0%, #fc466b 100%); }\n\n.active-link #LibrarySubmenu {\n    display: block !important; }\n\n.sidebar-header-bar {\n  clear: both;\n  background-color: #162433; }\n\n.sidebar-header-bar li {\n    float: right; }\n\n.sidebar-header-bar li.language-bar {\n    width: 150px; }\n\n.btn-collapse {\n  color: #3c7399;\n  background-color: transparent;\n  margin-right: 7px;\n  width: 40px;\n  height: 40px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGFzaGJvYXJkL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcZGFzaGJvYXJkXFxkYXNoYm9hcmQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2Rhc2hib2FyZC9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxzYXNzXFxfdmFyaWFibGVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUFHWSxhQUFhLEVBQUE7O0FBSXpCO0VBQ0ksY0FBYztFQUNkLG1CQUEwQjtFQUMxQiw2REFBa0YsRUFBQTs7QUFIdEY7SUFLUSx5QkFBd0IsRUFBQTs7QUFLaEM7RUFDSSxXQUFXO0VBQ1gseUJDbkJxQixFQUFBOztBRGlCekI7SUFJUSxZQUFZLEVBQUE7O0FBSnBCO0lBT1EsWUFBWSxFQUFBOztBQUdwQjtFQUdJLGNDM0JzQjtFRDRCdEIsNkJBQTZCO0VBQzdCLGlCQUFpQjtFQUNqQixXQUFXO0VBQ1gsWUFBWSxFQUFBIiwiZmlsZSI6InNyYy9hcHAvZGFzaGJvYXJkL2Rhc2hib2FyZC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJy4uLy4uL3Nhc3MvX3ZhcmlhYmxlcyc7XHJcblxyXG4jc2lkZWJhci5hY3RpdmUge1xyXG4gICAgLmNvbXBvbmVudHN7XHJcbiAgICAgICAgc3BhbntcclxuICAgICAgICAgICAgZGlzcGxheTogbm9uZTtcclxuICAgICAgICB9XHJcbiAgICB9XHJcbn1cclxuLmFjdGl2ZS1saW5re1xyXG4gICAgY29sb3I6ICNjNWM1YzU7XHJcbiAgICBiYWNrZ3JvdW5kOiByZ2IoNjMsOTQsMjUxKTtcclxuICAgIGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudChjaXJjbGUsIHJnYmEoNjMsOTQsMjUxLDEpIDAlLCByZ2JhKDI1Miw3MCwxMDcsMSkgMTAwJSk7XHJcbiAgICAjTGlicmFyeVN1Ym1lbnV7XHJcbiAgICAgICAgZGlzcGxheTogYmxvY2shaW1wb3J0YW50O1xyXG4gICAgfVxyXG59XHJcblxyXG4gXHJcbi5zaWRlYmFyLWhlYWRlci1iYXJ7XHJcbiAgICBjbGVhcjogYm90aDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICRjb2xvci1kYXJrYmx1ZTE7XHJcbiAgICBsaXtcclxuICAgICAgICBmbG9hdDogcmlnaHQ7XHJcbiAgICB9XHJcbiAgICBsaS5sYW5ndWFnZS1iYXJ7XHJcbiAgICAgICAgd2lkdGg6IDE1MHB4O1xyXG4gICAgfVxyXG59XHJcbi5idG4tY29sbGFwc2V7ICBcclxuICAgXHJcbiAgICBcclxuICAgIGNvbG9yOiRjb2xvci1saWdodGJsdWUyO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDdweDtcclxuICAgIHdpZHRoOiA0MHB4O1xyXG4gICAgaGVpZ2h0OiA0MHB4O1xyXG59XHJcblxyXG4iLCJcclxuJGNvbG9yLWdyYXk6ICNlM2U0ZTU7XHJcbiRjb2xvci1kYXJrYmx1ZTE6ICMxNjI0MzM7XHJcbiRjb2xvci1kYXJrYmx1ZTI6ICMyYTQ1NjM7XHJcbiRjb2xvci1saWdodGJsdWUxOiAjMjY0MzU2O1xyXG4kY29sb3ItbGlnaHRibHVlMjogIzNjNzM5OTtcclxuJGNvbG9yLW9yYW5nZTogI2ZjNjYwMDtcclxuJGNvbG9yLWN5YW46ICMwMGZmZjY7XHJcbiRjb2xvci1zY3JlZW46ICMwMGNmZmY7XHJcbiRjb2xvci1zY3JlZW4tZ3JvdXA6ICMwMGZmZjY7XHJcbiRjb2xvci1saWJyYXJ5OiAjOTZmZjAwO1xyXG4kY29sb3IteWVsbG93OiAjZmZmZjAwO1xyXG4kY29sb3ItcHVycGxlOiAjZjNiN2ViO1xyXG4kY29sb3ItZ3JlZW46ICM5NmZmMDA7XHJcbiBcclxuXHJcbiAiXX0= */"
 
 /***/ }),
 
@@ -1862,6 +1862,184 @@ var CanvasComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/editor/code-editor/code-editor.component.html":
+/*!***************************************************************!*\
+  !*** ./src/app/editor/code-editor/code-editor.component.html ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = " \n<ngx-monaco-editor (onInit)=\"onInit($event)\" class=\"high my-code-editor\" [options]=\"editorOptions\" [(ngModel)]=\"_code\">\n</ngx-monaco-editor>\n \n"
+
+/***/ }),
+
+/***/ "./src/app/editor/code-editor/code-editor.component.scss":
+/*!***************************************************************!*\
+  !*** ./src/app/editor/code-editor/code-editor.component.scss ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".my-code-editor {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  width: 100%;\n  height: 100%; }\n\n.my-code-editor .editorContainer {\n  height: calc(100vh - 100px); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL2NvZGUtZWRpdG9yL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcZWRpdG9yXFxjb2RlLWVkaXRvclxcY29kZS1lZGl0b3IuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxTQUFTO0VBQ1QsVUFBVTtFQUNWLFNBQVM7RUFDVCxXQUFXO0VBQ1gsWUFBWSxFQUFBOztBQUVkO0VBRUksMkJBQTJCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9lZGl0b3IvY29kZS1lZGl0b3IvY29kZS1lZGl0b3IuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubXktY29kZS1lZGl0b3Ige1xyXG4gICAgbWFyZ2luOiAwO1xyXG4gICAgcGFkZGluZzogMDtcclxuICAgIGJvcmRlcjogMDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gIH1cclxuICAubXktY29kZS1lZGl0b3Ige1xyXG4gICAgLmVkaXRvckNvbnRhaW5lciB7XHJcbiAgICAgIGhlaWdodDogY2FsYygxMDB2aCAtIDEwMHB4KTtcclxuICAgIH1cclxuICB9Il19 */"
+
+/***/ }),
+
+/***/ "./src/app/editor/code-editor/code-editor.component.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/editor/code-editor/code-editor.component.ts ***!
+  \*************************************************************/
+/*! exports provided: CodeEditorComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CodeEditorComponent", function() { return CodeEditorComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var CodeEditorComponent = /** @class */ (function () {
+    function CodeEditorComponent() {
+        var _this = this;
+        this.dummy = true;
+        this.notify = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.options = { printMargin: false };
+        this.onChange = function (data) {
+            _this.code = data;
+        };
+    }
+    Object.defineProperty(CodeEditorComponent.prototype, "code", {
+        set: function (code) {
+            if (code !== this._code) {
+                this._code = code;
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    CodeEditorComponent.prototype.ngOnChanges = function (changes) {
+        this.notify.emit(changes.currentValue);
+    };
+    CodeEditorComponent.prototype.fullEdit = function () {
+        window.open('assets/monaco.html');
+    };
+    CodeEditorComponent.prototype.onInit = function (editor) {
+        var _this = this;
+        this.editor = editor;
+        this.editor.onKeyUp(function (change) {
+            console.log(_this.editor.getValue());
+            _this.notify.emit(_this.editor.getValue());
+        });
+    };
+    CodeEditorComponent.prototype.ngOnInit = function () {
+        this.editorOptions = { automaticLayout: true, theme: 'vs-dark', language: 'javascript' };
+        // const interval = setInterval(() => {
+        //   if (!(window as any).monaco) {
+        //     return;
+        //   }
+        //   clearInterval(interval);
+        // const fileName = `types/${this.scriptName}.d.ts`;
+        // const javascriptDefaults = (window as any).monaco.languages.typescript.javascriptDefaults;
+        // javascriptDefaults._extraLibs = {};
+        // // extra libraries
+        // if (!javascriptDefaults._extraLibs[fileName]) {
+        //   if (!this.variables || !Array.isArray(this.variables)) {
+        //     this.variables = [];
+        //   }
+        //   javascriptDefaults.addExtraLib([
+        //     'declare class SkriboEnv {',
+        //     ...this.variables.map((item) => {
+        //       return `public static ${item.name}:any;`;
+        //     }),
+        //     'declare class Logger {',
+        //     'static log(item:any, item1?:any, item2?:any, item3?:any):void;',
+        //     '}',
+        //     'declare class Util {',
+        //     'static timespanToRange(timespan:string):{start: string, end:string};',
+        //     '}',
+        //     'declare class MccApp {',
+        //     'static accounts();',
+        //     'static select(account);',
+        //     '}',
+        //     'declare class Analytics {',
+        //     'static Management: any ;',
+        //     '};',
+        //     'declare class AdWordsApp {',
+        //     'static ads();',
+        //     'static adGroups();',
+        //     'static campaigns();',
+        //     'static keywords();',
+        //     'static report(query: string, options?:any);',
+        //     'static currentAccount();',
+        //     'static createLabel(label: string, description: string);',
+        //     '};',
+        //     'declare function SkriboPostResults(objectString:string);',
+        //     'declare function SkriboLog(obj: any);',
+        //     'declare function SkriboForAccounts(cb: Function, limit: number);',
+        //     'declare const SkriboSyncUrl:string;',
+        //     'declare class UrlFetchApp {',
+        //     'static fetch(url:string, options: any)',
+        //     '}',
+        //     'declare class Utilities {',
+        //     'static formatDate(date, timeZone, format)',
+        //     '}',
+        //     'declare class SpreadsheetApp {',
+        //     'static create(name:string, cols?:number,rows?:number)',
+        //     'static open(name:string)',
+        //     'static openByUrl(SPREADSHEET_URL);',
+        //     '}',
+        //     'declare class DriveApp {',
+        //     'static getFileById(name:string)',
+        //     'static getRootFolder()',
+        //     '}',
+        //     'declare class Charts {',
+        //     'static Position:any',
+        //     '}'
+        //   ].join('\n'), fileName);
+        // }
+        // this.editor = (window as any).monaco.editor.create(document.getElementById('monacocontainer'), {
+        //   value: this._code,
+        //   language: 'javascript',
+        //   automaticLayout: true, theme: 'vs-dark',
+        // });
+        // this.editor.onKeyUp((change) => {
+        //   console.log(this.editor.getValue());
+        //   this.notify.emit(this.editor.getValue());
+        // });
+        // }, 500);
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])('script-name'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
+    ], CodeEditorComponent.prototype, "scriptName", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"])
+    ], CodeEditorComponent.prototype, "notify", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [String])
+    ], CodeEditorComponent.prototype, "code", null);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], CodeEditorComponent.prototype, "variables", void 0);
+    CodeEditorComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-code-editor',
+            template: __webpack_require__(/*! ./code-editor.component.html */ "./src/app/editor/code-editor/code-editor.component.html"),
+            styles: [__webpack_require__(/*! ./code-editor.component.scss */ "./src/app/editor/code-editor/code-editor.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], CodeEditorComponent);
+    return CodeEditorComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/editor/contenteditable.directive.ts":
 /*!*****************************************************!*\
   !*** ./src/app/editor/contenteditable.directive.ts ***!
@@ -1999,13 +2177,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared.module */ "./src/app/shared.module.ts");
 /* harmony import */ var _element_element_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./element/element.component */ "./src/app/editor/element/element.component.ts");
 /* harmony import */ var _contenteditable_directive__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./contenteditable.directive */ "./src/app/editor/contenteditable.directive.ts");
-/* harmony import */ var _selection_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./selection.service */ "./src/app/editor/selection.service.ts");
-/* harmony import */ var _fonts_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./fonts.service */ "./src/app/editor/fonts.service.ts");
-/* harmony import */ var _slide_editor_slide_editor_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./slide-editor/slide-editor.component */ "./src/app/editor/slide-editor/slide-editor.component.ts");
-/* harmony import */ var _panel_panel_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./panel/panel.component */ "./src/app/editor/panel/panel.component.ts");
-/* harmony import */ var ng5_slider__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ng5-slider */ "./node_modules/ng5-slider/esm5/ng5-slider.js");
-/* harmony import */ var _add_add_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./add/add.component */ "./src/app/editor/add/add.component.ts");
-/* harmony import */ var _fonts_fonts_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./fonts/fonts.component */ "./src/app/editor/fonts/fonts.component.ts");
+/* harmony import */ var ngx_monaco_editor__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ngx-monaco-editor */ "./node_modules/ngx-monaco-editor/index.js");
+/* harmony import */ var _selection_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./selection.service */ "./src/app/editor/selection.service.ts");
+/* harmony import */ var _fonts_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./fonts.service */ "./src/app/editor/fonts.service.ts");
+/* harmony import */ var _slide_editor_slide_editor_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./slide-editor/slide-editor.component */ "./src/app/editor/slide-editor/slide-editor.component.ts");
+/* harmony import */ var _panel_panel_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./panel/panel.component */ "./src/app/editor/panel/panel.component.ts");
+/* harmony import */ var ng5_slider__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ng5-slider */ "./node_modules/ng5-slider/esm5/ng5-slider.js");
+/* harmony import */ var _add_add_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./add/add.component */ "./src/app/editor/add/add.component.ts");
+/* harmony import */ var _fonts_fonts_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./fonts/fonts.component */ "./src/app/editor/fonts/fonts.component.ts");
+/* harmony import */ var _code_editor_code_editor_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./code-editor/code-editor.component */ "./src/app/editor/code-editor/code-editor.component.ts");
 
 
 
@@ -2021,6 +2201,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+var monacoConfig = {
+    baseUrl: '/assets/',
+    defaultOptions: { scrollBeyondLastLine: false },
+    onMonacoLoad: function () {
+        var _monaco = window.monaco;
+        // validation settings
+        _monaco.languages.typescript.javascriptDefaults.setDiagnosticsOptions({
+            noSemanticValidation: false,
+            noSyntaxValidation: false
+        });
+        // compiler options
+        _monaco.languages.typescript.javascriptDefaults.setCompilerOptions({
+            target: monaco.languages.typescript.ScriptTarget.ES5,
+            allowNonTsExtensions: true
+        });
+    } // here monaco object will be available as window.monaco use this function to extend monaco editor functionality.
+};
 var EditorModule = /** @class */ (function () {
     function EditorModule() {
     }
@@ -2031,11 +2230,14 @@ var EditorModule = /** @class */ (function () {
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
-                ng5_slider__WEBPACK_IMPORTED_MODULE_12__["Ng5SliderModule"]
+                ng5_slider__WEBPACK_IMPORTED_MODULE_13__["Ng5SliderModule"],
+                ngx_monaco_editor__WEBPACK_IMPORTED_MODULE_8__["MonacoEditorModule"].forRoot(monacoConfig)
             ],
-            entryComponents: [_fonts_fonts_component__WEBPACK_IMPORTED_MODULE_14__["FontsSelectComponent"]],
-            declarations: [_contenteditable_directive__WEBPACK_IMPORTED_MODULE_7__["ContenteditableDirective"], _element_element_component__WEBPACK_IMPORTED_MODULE_6__["ElementComponent"], _add_add_component__WEBPACK_IMPORTED_MODULE_13__["AddComponent"], _slide_editor_slide_editor_component__WEBPACK_IMPORTED_MODULE_10__["SlideEditorComponent"], _panel_panel_component__WEBPACK_IMPORTED_MODULE_11__["PanelComponent"], _fonts_fonts_component__WEBPACK_IMPORTED_MODULE_14__["FontsSelectComponent"]],
-            providers: [_fonts_service__WEBPACK_IMPORTED_MODULE_9__["FontsService"], _selection_service__WEBPACK_IMPORTED_MODULE_8__["SelectionService"]]
+            entryComponents: [_fonts_fonts_component__WEBPACK_IMPORTED_MODULE_15__["FontsSelectComponent"]],
+            declarations: [_contenteditable_directive__WEBPACK_IMPORTED_MODULE_7__["ContenteditableDirective"], _element_element_component__WEBPACK_IMPORTED_MODULE_6__["ElementComponent"], _add_add_component__WEBPACK_IMPORTED_MODULE_14__["AddComponent"],
+                _slide_editor_slide_editor_component__WEBPACK_IMPORTED_MODULE_11__["SlideEditorComponent"], _panel_panel_component__WEBPACK_IMPORTED_MODULE_12__["PanelComponent"], _fonts_fonts_component__WEBPACK_IMPORTED_MODULE_15__["FontsSelectComponent"],
+                _code_editor_code_editor_component__WEBPACK_IMPORTED_MODULE_16__["CodeEditorComponent"]],
+            providers: [_fonts_service__WEBPACK_IMPORTED_MODULE_10__["FontsService"], _selection_service__WEBPACK_IMPORTED_MODULE_9__["SelectionService"]]
         })
     ], EditorModule);
     return EditorModule;
@@ -2289,6 +2491,9 @@ var FontsService = /** @class */ (function () {
                             window.WebFont.load({
                                 active: function () {
                                     log('@fonts.service-loadFontsForRender-active');
+                                },
+                                fontloading: function (item) {
+                                    _this.loadedFonts[item] = item;
                                     resolve();
                                 },
                                 loading: function () {
@@ -2470,7 +2675,7 @@ var FontsSelectComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"drag-panel\">\r\n    <ul class=\"nav nav-tabs\">\r\n        <li class=\"nav-item\" *ngFor=\"let tab of tabs\" (click)=\"tabSelect(tab)\">\r\n            <a class=\"nav-link {{tab.selected}}\"><h6><i class=\"{{tab.icon}}\"></i> {{tab.name | translate}}</h6></a>\r\n        </li>\r\n    </ul>\r\n\r\n\r\n    <div class=\"inner\" [appAdaptHeight]=\"175\">\r\n\r\n        <form *ngIf=\"selectedTab && tabs[1].name === selectedTab.name\">\r\n\r\n            <div class=\"form-group\">\r\n                <label>{{'PANEL.SLIDE_NAME' | translate}}</label>\r\n                <input [(ngModel)]=\"item.Name\" name=\"slideName\" [detectChanges]=\"true\" class=\"form-control\" />\r\n            </div>\r\n\r\n\r\n            <div class=\"form-group\">\r\n\r\n                <label>{{'PANEL.FORE_COLOR' | translate}}</label>\r\n                <input [(colorPicker)]=\"editor.color\" [detectChanges]=\"true\" (colorPickerChange)=\"setColor($event)\" [cpPosition]=\"'bottom'\"\r\n                    class=\"form-control\" [style.background]=\"editor.color\" />\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label>{{'PANEL.BACK_COLOR' | translate}}</label>\r\n\r\n                <input [(colorPicker)]=\"editor.bgColor\" [detectChanges]=\"true\" (colorPickerChange)=\"setBgColor($event)\" [cpPosition]=\"'bottom'\"\r\n                    class=\"form-control\" [style.background]=\"editor.bgColor\" />\r\n            </div>\r\n\r\n\r\n        </form>\r\n\r\n        <div *ngIf=\"selectedTab &&  tabs[0].name === selectedTab.name && !element\" class=\"no-selection\">\r\n            <div></div>\r\n            <div>\r\n                <h2> {{'PANEL.SELECT_ELEMENT' | translate}}</h2>\r\n            </div>\r\n            <div></div>\r\n\r\n        </div>\r\n        <form *ngIf=\"element && selectedTab &&  tabs[0].name === selectedTab.name\">\r\n\r\n            <div class=\"form-group\">\r\n                <label>{{'PANEL.ELEMENT_NAME' | translate}}</label>\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n                <div class=\"input-group\">\r\n                    <div class=\"input-group-prepend\">\r\n                        <input [(ngModel)]=\"element.varName\" name=\"elementName\" [detectChanges]=\"true\" class=\"form-control name-control\" />\r\n                    </div>\r\n\r\n                    <div class=\"btn-group\">\r\n                        <button class=\"input-group-text btn-md\" id=\"\">{{element.zIndex}}</button>\r\n                        <button (click)=\"moveIndex(-1)\" class=\"btn btn-secondary btn-md\"><i class=\"fas fa-level-down-alt\"></i></button>\r\n                        <button (click)=\"moveIndex(1)\" class=\"btn btn-secondary btn-md\"><i class=\"fas fa-level-up-alt\"></i></button>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label>{{ \"PANEL.IMAGE_OPACITY\" | translate }}:</label>\r\n                <ng5-slider [(value)]=\"element.opacity\" [options]=\"sliderImageOpacityOptions\"></ng5-slider>\r\n            </div>\r\n\r\n            <div *ngIf=\"element.type === 'image'\" class=\"t-bar\">\r\n\r\n                <div class=\"form-group\">\r\n                    <label for=\"IMAGE_WIDTH\">{{ \"PANEL.IMAGE_WIDTH\" | translate }}:</label>\r\n                    <ng5-slider [(value)]=\"element.width\" [options]=\"sliderImageOptions\"></ng5-slider>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"IMAGE_HEIGHT\">{{ \"PANEL.IMAGE_HEIGHT\" | translate }}:</label>\r\n                    <ng5-slider [(value)]=\"element.height\" [options]=\"sliderImageOptions\"></ng5-slider>\r\n\r\n                </div>\r\n                <div class=\"form-group row\">\r\n                    <div class=\"col-5\">\r\n                        <label for=\"position_x\">{{ \"PANEL.POSITIONX\" | translate }}:</label>\r\n                        <input class=\"form-control\" name=\"position_x\" (change)=\"detect($event)\" [detectChanges]=\"true\" [(ngModel)]=\"element.position.x\"\r\n                        />\r\n                    </div>\r\n                    <div class=\"col-5\">\r\n                        <label for=\"position_y\">{{ \"PANEL.POSITIONY\" | translate }}:</label>\r\n                        <input class=\"form-control\" name=\"position_y\" (change)=\"detect($event)\" [detectChanges]=\"true\" [(ngModel)]=\"element.position.y\"\r\n                        />\r\n                    </div>\r\n                    <div class=\"col-2\">\r\n\r\n                    </div>\r\n\r\n                </div>\r\n\r\n            </div>\r\n            <div *ngIf=\"element.type === 'text'\" class=\"t-bar\">\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontName\">{{ \"PANEL.FONTNAME\" | translate }}:</label>\r\n                    <div class=\"input-group mb-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                            <button class=\"btn btn-success btn-md\" type=\"button\" (click)=\"openModalWithComponent()\">{{ \"PANEL.PICK\" | translate }}</button>\r\n                        </div>\r\n                        <select [detectChanges]=\"true\" class=\"form-control fontbox\" name=\"fontNameTxt\" [(ngModel)]=\"element.font\" (change)=\"selectFont($event)\">\r\n                            <option *ngFor=\"let c of editor.fonts\" [ngValue]=\"c\" [ngStyle]=\"{'font-family': c}\">{{c}}</option>\r\n                        </select>\r\n                    </div>\r\n                    <small id=\"fontHelp\" class=\"form-text text-muted\">{{ \"PANEL.FONTNAME_HELP\" | translate }}</small>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontName\">{{ \"PANEL.FONTSIZE\" | translate }}:</label>\r\n                    <ng5-slider [detectChanges]=\"true\" [(value)]=\"element.fontSize\" [options]=\"sliderOptions\"></ng5-slider>\r\n                    <small id=\"fontSize\" class=\"form-text text-muted\">{{ \"PANEL.FONTSIZE_HELP\" | translate }}</small>\r\n                </div>\r\n\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontColor\">{{ \"PANEL.FONTCOLOR\" | translate }}:</label>\r\n                    <input [detectChanges]=\"true\" class=\"form-control\" name=\"fontColorTxt\" [cpPosition]=\"'top'\" [(colorPicker)]=\"element.color\"\r\n                        [style.background]=\"element.color\" />\r\n                </div>\r\n\r\n                <div class=\"form-group\">\r\n                    <div class=\"input-group mb-3 position\">\r\n                        <div class=\"input-group-prepend\">\r\n                            <span for=\"POSITIONX\">{{ \"PANEL.POSITIONX\" | translate }}:</span>\r\n                        </div>\r\n                        <input class=\"form-control\" name=\"position_x\" (change)=\"detect($event)\" [detectChanges]=\"true\" [(ngModel)]=\"element.position.x\"\r\n                        />\r\n                        <div class=\"input-group-prepend\">\r\n                            <span for=\"POSITIONY\">{{ \"PANEL.POSITIONY\" | translate }}:</span>\r\n                        </div>\r\n                        <input class=\"form-control\" name=\"position_y\" (change)=\"detect($event)\" [detectChanges]=\"true\" [(ngModel)]=\"element.position.y\"\r\n                        />\r\n\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"form-group\">\r\n                    <div class=\"input-group mb-3 position\">\r\n                        <div class=\"input-group-append\">\r\n\r\n\r\n                            <button class=\"btn btn-success btn-md\" type=\"button\" (click)=\"align('left')\" title=\"{{ 'PANEL.LEFT' | translate }}\"><i\r\n                                class=\"fas fa-align-left\"></i></button>\r\n                            <button class=\"btn btn-success btn-md\" type=\"button\" (click)=\"align('center')\" title=\"{{ 'PANEL.CENTER' | translate }}\"><i\r\n                                    class=\"fas fa-align-center\"></i></button>\r\n                            <button class=\"btn btn-success btn-md\" type=\"button\" (click)=\"align('right')\" title=\"{{ 'PANEL.RIGHT' | translate }}\"><i\r\n                                class=\"fas fa-align-right\"></i></button>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>\r\n"
+module.exports = "<div class=\"drag-panel\">\r\n    <ul class=\"nav nav-tabs\">\r\n        <li class=\"nav-item\" *ngFor=\"let tab of tabs\" (click)=\"tabSelect(tab)\">\r\n            <a class=\"nav-link {{tab.selected}}\"><h6><i class=\"{{tab.icon}}\"></i> {{tab.name | translate}}</h6></a>\r\n        </li>\r\n    </ul>\r\n\r\n\r\n    <div class=\"inner\" [appAdaptHeight]=\"175\">\r\n\r\n        <form *ngIf=\"selectedTab && tabs[1].name === selectedTab.name\">\r\n\r\n            <div class=\"form-group\">\r\n                <label>{{'PANEL.SLIDE_NAME' | translate}}</label>\r\n                <input [(ngModel)]=\"item.Name\" name=\"slideName\" [detectChanges]=\"true\" class=\"form-control\" />\r\n            </div>\r\n\r\n\r\n            <div class=\"form-group\">\r\n\r\n                <label>{{'PANEL.FORE_COLOR' | translate}}</label>\r\n                <input [(colorPicker)]=\"editor.color\" [detectChanges]=\"true\" (colorPickerChange)=\"setColor($event)\" [cpPosition]=\"'bottom'\"\r\n                    class=\"form-control\" [style.background]=\"editor.color\" />\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label>{{'PANEL.BACK_COLOR' | translate}}</label>\r\n\r\n                <input [(colorPicker)]=\"editor.bgColor\" [detectChanges]=\"true\" (colorPickerChange)=\"setBgColor($event)\" [cpPosition]=\"'bottom'\"\r\n                    class=\"form-control\" [style.background]=\"editor.bgColor\" />\r\n            </div>\r\n\r\n\r\n        </form>\r\n\r\n        <div *ngIf=\"selectedTab &&  tabs[0].name === selectedTab.name && !element\" class=\"no-selection\">\r\n            <div></div>\r\n            <div>\r\n                <h2> {{'PANEL.SELECT_ELEMENT' | translate}}</h2>\r\n            </div>\r\n            <div></div>\r\n\r\n        </div>\r\n        <form *ngIf=\"element && selectedTab &&  tabs[0].name === selectedTab.name\">\r\n\r\n            <div class=\"form-group\">\r\n                <label>{{'PANEL.ELEMENT_NAME' | translate}}</label>\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n                <div class=\"input-group\">\r\n                    <div class=\"input-group-prepend\">\r\n                        <input [(ngModel)]=\"element.varName\" name=\"elementName\" [detectChanges]=\"true\" class=\"form-control name-control\" />\r\n                    </div>\r\n\r\n                    <div class=\"btn-group\">\r\n                        <button class=\"input-group-text btn-md\" id=\"\">{{element.zIndex}}</button>\r\n                        <button (click)=\"moveIndex(-1)\" class=\"btn btn-secondary btn-md\"><i class=\"fas fa-level-down-alt\"></i></button>\r\n                        <button (click)=\"moveIndex(1)\" class=\"btn btn-secondary btn-md\"><i class=\"fas fa-level-up-alt\"></i></button>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label>{{ \"PANEL.IMAGE_OPACITY\" | translate }}:</label>\r\n                <ng5-slider [(value)]=\"element.opacity\" [options]=\"sliderImageOpacityOptions\"></ng5-slider>\r\n            </div>\r\n\r\n            <div *ngIf=\"element.type === 'image'\" class=\"t-bar\">\r\n\r\n                <div class=\"form-group\">\r\n                    <label for=\"IMAGE_WIDTH\">{{ \"PANEL.IMAGE_WIDTH\" | translate }}:</label>\r\n                    <ng5-slider [(value)]=\"element.width\" [options]=\"sliderImageOptions\"></ng5-slider>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"IMAGE_HEIGHT\">{{ \"PANEL.IMAGE_HEIGHT\" | translate }}:</label>\r\n                    <ng5-slider [(value)]=\"element.height\" [options]=\"sliderImageOptions\"></ng5-slider>\r\n\r\n                </div>\r\n                <div class=\"form-group row\">\r\n                    <div class=\"col-5\">\r\n                        <label for=\"position_x\">{{ \"PANEL.POSITIONX\" | translate }}:</label>\r\n                        <input class=\"form-control\" name=\"position_x\" (change)=\"detect($event)\" [detectChanges]=\"true\" [(ngModel)]=\"element.position.x\"\r\n                        />\r\n                    </div>\r\n                    <div class=\"col-5\">\r\n                        <label for=\"position_y\">{{ \"PANEL.POSITIONY\" | translate }}:</label>\r\n                        <input class=\"form-control\" name=\"position_y\" (change)=\"detect($event)\" [detectChanges]=\"true\" [(ngModel)]=\"element.position.y\"\r\n                        />\r\n                    </div>\r\n                    <div class=\"col-2\">\r\n\r\n                    </div>\r\n\r\n                </div>\r\n\r\n            </div>\r\n            <div *ngIf=\"element.type === 'text'\" class=\"t-bar\">\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontName\">{{ \"PANEL.FONTNAME\" | translate }}:</label>\r\n                    <div class=\"input-group mb-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                            <button class=\"btn btn-success btn-md\" type=\"button\" (click)=\"openModalWithComponent()\">{{ \"PANEL.PICK\" | translate }}</button>\r\n                        </div>\r\n                        <select [detectChanges]=\"true\" class=\"form-control fontbox\" name=\"fontNameTxt\" [(ngModel)]=\"element.font\" (change)=\"selectFont($event)\">\r\n                            <option *ngFor=\"let c of editor.fonts\" [ngValue]=\"c\" [ngStyle]=\"{'font-family': c}\">{{c}}</option>\r\n                        </select>\r\n                    </div>\r\n                    <small id=\"fontHelp\" class=\"form-text text-muted\">{{ \"PANEL.FONTNAME_HELP\" | translate }}</small>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontName\">{{ \"PANEL.FONTSIZE\" | translate }}:</label>\r\n                    <ng5-slider [detectChanges]=\"true\" [(value)]=\"element.fontSize\" [options]=\"sliderOptions\"></ng5-slider>\r\n                    <small id=\"fontSize\" class=\"form-text text-muted\">{{ \"PANEL.FONTSIZE_HELP\" | translate }}</small>\r\n                </div>\r\n\r\n                <div class=\"form-group\">\r\n                    <label for=\"fontColor\">{{ \"PANEL.FONTCOLOR\" | translate }}:</label>\r\n                    <input [detectChanges]=\"true\" class=\"form-control\" name=\"fontColorTxt\" [cpPosition]=\"'top'\" [(colorPicker)]=\"element.color\"\r\n                        [style.background]=\"element.color\" />\r\n                </div>\r\n\r\n                <div class=\"form-group\">\r\n                    <div class=\"input-group mb-3 position\">\r\n                        <div class=\"input-group-prepend \">\r\n                            <span for=\"POSITIONX\" class=\"start\">{{ \"PANEL.POSITIONX\" | translate }}:</span>\r\n                        </div>\r\n                        <input type=\"number\" class=\"form-control no\" name=\"position_x\" (change)=\"detect($event)\" [detectChanges]=\"true\" [(ngModel)]=\"element.position.x\"\r\n                        />\r\n                        <div class=\"input-group-prepend\">\r\n                            <span for=\"POSITIONY\">{{ \"PANEL.POSITIONY\" | translate }}:</span>\r\n                        </div>\r\n                        <input type=\"number\" class=\"form-control end\" name=\"position_y\" (change)=\"detect($event)\" [detectChanges]=\"true\" [(ngModel)]=\"element.position.y\"\r\n                        />\r\n\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"form-group\">\r\n                    <div class=\"input-group mb-3 position\">\r\n                        <div class=\"input-group-append\">\r\n                            <button class=\"btn btn-success btn-md\" type=\"button\" (click)=\"align('right')\" title=\"{{ 'PANEL.RIGHT' | translate }}\"><i\r\n                                    class=\"fas fa-align-right\"></i></button>\r\n                        </div>\r\n                        <div class=\"input-group-append\">\r\n                            <button class=\"btn btn-success btn-md\" type=\"button\" (click)=\"align('center')\" title=\"{{ 'PANEL.CENTER' | translate }}\"><i\r\n                                    class=\"fas fa-align-center\"></i></button>\r\n                        </div>\r\n                        <div class=\"input-group-append\">\r\n                            <button class=\"btn btn-success btn-md\" type=\"button\" (click)=\"align('left')\" title=\"{{ 'PANEL.LEFT' | translate }}\"><i\r\n                                    class=\"fas fa-align-left\"></i></button>\r\n                        </div>\r\n                        <div class=\"input-group-append\">\r\n                            <button class=\"btn btn-success btn-md\" type=\"button\" (click)=\"align('top')\" title=\"{{ 'PANEL.LEFT' | translate }}\"><i\r\n                                    class=\"fas fa-angle-double-up\"></i></button>\r\n                        </div>\r\n                        <div class=\"input-group-append\">\r\n                            <button class=\"btn btn-success btn-md\" type=\"button\" (click)=\"align('bottom')\" title=\"{{ 'PANEL.LEFT' | translate }}\"><i\r\n                                    class=\"fas fa-angle-double-down\"></i></button>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -2481,7 +2686,7 @@ module.exports = "<div class=\"drag-panel\">\r\n    <ul class=\"nav nav-tabs\">\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".position .input-group-prepend span {\n  padding: 3px;\n  font-size: 12px;\n  background-color: #e3e4e5; }\n\n.position .form-control {\n  border-radius: 0 !important; }\n\n.drag-panel {\n  width: 300px;\n  margin-right: 20px; }\n\n.drag-panel .form-group {\n    margin: 0; }\n\n.drag-panel .form-control {\n    height: 30px !important;\n    padding: 1px; }\n\n.drag-panel .fontbox {\n    height: 30px !important; }\n\n.drag-panel .name-control {\n    width: 204px; }\n\n.drag-panel label {\n    color: #e3e4e5; }\n\n.drag-panel .no-selection {\n    display: flex;\n    flex-direction: column;\n    flex-wrap: nowrap;\n    justify-content: flex-start;\n    align-items: stretch;\n    align-content: stretch;\n    height: 100%; }\n\n.drag-panel .inner {\n    position: relative;\n    top: -1px;\n    height: 100%;\n    border: 1px solid #2a4563;\n    padding: 10px;\n    background: #264356;\n    background: linear-gradient(90deg, #264356 0%, #e3e4e5 99%); }\n\n.drag-panel .inner h2 {\n      text-align: center;\n      margin: auto; }\n\n.nav-link.true {\n  background-color: #e3e4e5;\n  border-color: #2a4563; }\n\n.modal-lg {\n  width: 70% !important;\n  max-width: 1000px !important; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL3BhbmVsL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcZWRpdG9yXFxwYW5lbFxccGFuZWwuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2VkaXRvci9wYW5lbC9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxzYXNzXFxfdmFyaWFibGVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBSUE7RUFLWSxZQUFZO0VBQ1osZUFBYztFQUNkLHlCQ1ZRLEVBQUE7O0FER3BCO0VBV1EsMkJBQTBCLEVBQUE7O0FBS2xDO0VBK0JJLFlBQVk7RUFpQlosa0JBQWtCLEVBQUE7O0FBaER0QjtJQUdRLFNBQVEsRUFBQTs7QUFIaEI7SUFNUSx1QkFBc0I7SUFDdEIsWUFBWSxFQUFBOztBQVBwQjtJQVdRLHVCQUFzQixFQUFBOztBQVg5QjtJQWVRLFlBQVksRUFBQTs7QUFmcEI7SUFrQk0sY0NyQ2MsRUFBQTs7QURtQnBCO0lBcUJRLGFBQWE7SUFDcEIsc0JBQXNCO0lBQ3RCLGlCQUFpQjtJQUNqQiwyQkFBMkI7SUFDM0Isb0JBQW9CO0lBQ2pCLHNCQUFzQjtJQUN0QixZQUFZLEVBQUE7O0FBM0JoQjtJQWtDUSxrQkFBa0I7SUFDbEIsU0FBUTtJQUNSLFlBQVk7SUFDWix5QkN0RGlCO0lEdURqQixhQUFhO0lBQ2IsbUJDdkRrQjtJRHdEbEIsMkRBQXlFLEVBQUE7O0FBeENqRjtNQTBDWSxrQkFBa0I7TUFDbEIsWUFBVyxFQUFBOztBQVF2QjtFQUNJLHlCQ3ZFZ0I7RUR3RWhCLHFCQ3RFcUIsRUFBQTs7QUR5RXpCO0VBQ0kscUJBQW9CO0VBQ3BCLDRCQUEyQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvZWRpdG9yL3BhbmVsL3BhbmVsLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAnLi4vLi4vLi4vc2Fzcy9fdmFyaWFibGVzJztcclxuXHJcblxyXG5cclxuLnBvc2l0aW9ue1xyXG5cclxuICAgIC5pbnB1dC1ncm91cC1wcmVwZW5kXHJcbiAgICB7XHJcbiAgICAgICAgc3BhbntcclxuICAgICAgICAgICAgcGFkZGluZzogM3B4O1xyXG4gICAgICAgICAgICBmb250LXNpemU6MTJweDtcclxuICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogJGNvbG9yLWdyYXk7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG4gICAgLmZvcm0tY29udHJvbHtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiAwIWltcG9ydGFudDtcclxuICAgIH1cclxufVxyXG5cclxuXHJcbi5kcmFnLXBhbmVsXHJcbntcclxuICAgIC5mb3JtLWdyb3Vwe1xyXG4gICAgICAgIG1hcmdpbjowO1xyXG4gICAgfVxyXG4gICAgLmZvcm0tY29udHJvbHtcclxuICAgICAgICBoZWlnaHQ6IDMwcHghaW1wb3J0YW50O1xyXG4gICAgICAgIHBhZGRpbmc6IDFweDtcclxuICAgIH1cclxuICAgIC5mb250Ym94XHJcbiAgICB7XHJcbiAgICAgICAgaGVpZ2h0OiAzMHB4IWltcG9ydGFudDtcclxuICAgIH1cclxuXHJcbiAgICAubmFtZS1jb250cm9se1xyXG4gICAgICAgIHdpZHRoOiAyMDRweDtcclxuICAgIH1cclxuICBsYWJlbHtcclxuICAgICAgY29sb3I6ICRjb2xvci1ncmF5O1xyXG4gIH1cclxuICAgIC5uby1zZWxlY3Rpb24ge1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcblx0ZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuXHRmbGV4LXdyYXA6IG5vd3JhcDtcclxuXHRqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtc3RhcnQ7XHJcblx0YWxpZ24taXRlbXM6IHN0cmV0Y2g7XHJcbiAgICBhbGlnbi1jb250ZW50OiBzdHJldGNoO1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgXHJcbiAgICB9XHJcbiAgXHJcbiAgICB3aWR0aDogMzAwcHg7XHJcbiAgIFxyXG4gICAgLmlubmVye1xyXG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgICAgICB0b3A6LTFweDtcclxuICAgICAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgJGNvbG9yLWRhcmtibHVlMjtcclxuICAgICAgICBwYWRkaW5nOiAxMHB4O1xyXG4gICAgICAgIGJhY2tncm91bmQ6ICRjb2xvci1saWdodGJsdWUxO1xyXG4gICAgICAgIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCg5MGRlZywgJGNvbG9yLWxpZ2h0Ymx1ZTEgMCUsICRjb2xvci1ncmF5IDk5JSk7XHJcbiAgICAgICAgaDJ7XHJcbiAgICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjsgICAgICAgICAgICBcclxuICAgICAgICAgICAgbWFyZ2luOmF1dG87XHJcbiAgICAgICAgICAgIFxyXG5cclxuICAgICAgICB9XHJcbiAgICB9XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDIwcHg7XHJcbn1cclxuXHJcbi5uYXYtbGluay50cnVle1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogJGNvbG9yLWdyYXk7XHJcbiAgICBib3JkZXItY29sb3I6ICRjb2xvci1kYXJrYmx1ZTI7XHJcbn1cclxuXHJcbi5tb2RhbC1sZ3tcclxuICAgIHdpZHRoOiA3MCUhaW1wb3J0YW50O1xyXG4gICAgbWF4LXdpZHRoOiAxMDAwcHghaW1wb3J0YW50O1xyXG4gIH1cclxuICAiLCJcclxuJGNvbG9yLWdyYXk6ICNlM2U0ZTU7XHJcbiRjb2xvci1kYXJrYmx1ZTE6ICMxNjI0MzM7XHJcbiRjb2xvci1kYXJrYmx1ZTI6ICMyYTQ1NjM7XHJcbiRjb2xvci1saWdodGJsdWUxOiAjMjY0MzU2O1xyXG4kY29sb3ItbGlnaHRibHVlMjogIzNjNzM5OTtcclxuJGNvbG9yLW9yYW5nZTogI2ZjNjYwMDtcclxuJGNvbG9yLWN5YW46ICMwMGZmZjY7XHJcbiRjb2xvci1zY3JlZW46ICMwMGNmZmY7XHJcbiRjb2xvci1zY3JlZW4tZ3JvdXA6ICMwMGZmZjY7XHJcbiRjb2xvci1saWJyYXJ5OiAjOTZmZjAwO1xyXG4kY29sb3IteWVsbG93OiAjZmZmZjAwO1xyXG4kY29sb3ItcHVycGxlOiAjZjNiN2ViO1xyXG4kY29sb3ItZ3JlZW46ICM5NmZmMDA7XHJcbiBcclxuXHJcbiAiXX0= */"
+module.exports = ".position {\n  margin-top: 10px; }\n  .position .input-group-prepend span {\n    padding: 3px;\n    font-size: 12px;\n    background-color: #e3e4e5; }\n  .position .form-control.no {\n    border-radius: 0 !important; }\n  .start {\n  border-top-right-radius: 5px !important;\n  border-bottom-right-radius: 5px !important; }\n  .end {\n  border-top-left-radius: 5px !important;\n  border-bottom-left-radius: 5px !important; }\n  .drag-panel {\n  width: 300px;\n  margin-right: 20px; }\n  .drag-panel .form-group {\n    margin: 0; }\n  .drag-panel .form-control {\n    height: 30px !important;\n    padding: 1px; }\n  .drag-panel .fontbox {\n    height: 30px !important; }\n  .drag-panel .name-control {\n    width: 204px; }\n  .drag-panel label {\n    color: #e3e4e5; }\n  .drag-panel .no-selection {\n    display: flex;\n    flex-direction: column;\n    flex-wrap: nowrap;\n    justify-content: flex-start;\n    align-items: stretch;\n    align-content: stretch;\n    height: 100%; }\n  .drag-panel .inner {\n    position: relative;\n    top: -1px;\n    height: 100%;\n    border: 1px solid #2a4563;\n    padding: 10px;\n    background: #264356;\n    background: linear-gradient(90deg, #264356 0%, #e3e4e5 99%); }\n  .drag-panel .inner h2 {\n      text-align: center;\n      margin: auto; }\n  .nav-link.true {\n  background-color: #e3e4e5;\n  border-color: #2a4563; }\n  .modal-lg {\n  width: 70% !important;\n  max-width: 1000px !important; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdG9yL3BhbmVsL0M6XFxwcm9qZWN0c1xcc2lnbi1uYXR1cmVcXHdlYi9zcmNcXGFwcFxcZWRpdG9yXFxwYW5lbFxccGFuZWwuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2VkaXRvci9wYW5lbC9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxzYXNzXFxfdmFyaWFibGVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBSUE7RUFDSSxnQkFBZ0IsRUFBQTtFQURwQjtJQUtZLFlBQVk7SUFDWixlQUFjO0lBQ2QseUJDVlEsRUFBQTtFREdwQjtJQVdRLDJCQUEwQixFQUFBO0VBR2xDO0VBQ0ksdUNBQXNDO0VBQ3RDLDBDQUF3QyxFQUFBO0VBRTVDO0VBQ0ksc0NBQXFDO0VBQ3JDLHlDQUF1QyxFQUFBO0VBRTNDO0VBK0JJLFlBQVk7RUFpQlosa0JBQWtCLEVBQUE7RUFoRHRCO0lBR1EsU0FBUSxFQUFBO0VBSGhCO0lBTVEsdUJBQXNCO0lBQ3RCLFlBQVksRUFBQTtFQVBwQjtJQVdRLHVCQUFzQixFQUFBO0VBWDlCO0lBZVEsWUFBWSxFQUFBO0VBZnBCO0lBa0JNLGNDM0NjLEVBQUE7RUR5QnBCO0lBcUJRLGFBQWE7SUFDcEIsc0JBQXNCO0lBQ3RCLGlCQUFpQjtJQUNqQiwyQkFBMkI7SUFDM0Isb0JBQW9CO0lBQ2pCLHNCQUFzQjtJQUN0QixZQUFZLEVBQUE7RUEzQmhCO0lBa0NRLGtCQUFrQjtJQUNsQixTQUFRO0lBQ1IsWUFBWTtJQUNaLHlCQzVEaUI7SUQ2RGpCLGFBQWE7SUFDYixtQkM3RGtCO0lEOERsQiwyREFBeUUsRUFBQTtFQXhDakY7TUEwQ1ksa0JBQWtCO01BQ2xCLFlBQVcsRUFBQTtFQVF2QjtFQUNJLHlCQzdFZ0I7RUQ4RWhCLHFCQzVFcUIsRUFBQTtFRCtFekI7RUFDSSxxQkFBb0I7RUFDcEIsNEJBQTJCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9lZGl0b3IvcGFuZWwvcGFuZWwuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLi8uLi8uLi9zYXNzL192YXJpYWJsZXMnO1xyXG5cclxuXHJcblxyXG4ucG9zaXRpb257XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gICAgLmlucHV0LWdyb3VwLXByZXBlbmRcclxuICAgIHtcclxuICAgICAgICBzcGFue1xyXG4gICAgICAgICAgICBwYWRkaW5nOiAzcHg7XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZToxMnB4O1xyXG4gICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAkY29sb3ItZ3JheTtcclxuICAgICAgICB9XHJcbiAgICB9XHJcbiAgICAuZm9ybS1jb250cm9sLm5ve1xyXG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDAhaW1wb3J0YW50O1xyXG4gICAgfVxyXG59XHJcbi5zdGFydHtcclxuICAgIGJvcmRlci10b3AtcmlnaHQtcmFkaXVzOiA1cHghaW1wb3J0YW50O1xyXG4gICAgYm9yZGVyLWJvdHRvbS1yaWdodC1yYWRpdXM6NXB4IWltcG9ydGFudDtcclxufVxyXG4uZW5ke1xyXG4gICAgYm9yZGVyLXRvcC1sZWZ0LXJhZGl1czogNXB4IWltcG9ydGFudDtcclxuICAgIGJvcmRlci1ib3R0b20tbGVmdC1yYWRpdXM6NXB4IWltcG9ydGFudDtcclxufVxyXG4uZHJhZy1wYW5lbFxyXG57XHJcbiAgICAuZm9ybS1ncm91cHtcclxuICAgICAgICBtYXJnaW46MDtcclxuICAgIH1cclxuICAgIC5mb3JtLWNvbnRyb2x7XHJcbiAgICAgICAgaGVpZ2h0OiAzMHB4IWltcG9ydGFudDtcclxuICAgICAgICBwYWRkaW5nOiAxcHg7XHJcbiAgICB9XHJcbiAgICAuZm9udGJveFxyXG4gICAge1xyXG4gICAgICAgIGhlaWdodDogMzBweCFpbXBvcnRhbnQ7XHJcbiAgICB9XHJcblxyXG4gICAgLm5hbWUtY29udHJvbHtcclxuICAgICAgICB3aWR0aDogMjA0cHg7XHJcbiAgICB9XHJcbiAgbGFiZWx7XHJcbiAgICAgIGNvbG9yOiAkY29sb3ItZ3JheTtcclxuICB9XHJcbiAgICAubm8tc2VsZWN0aW9uIHtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG5cdGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcblx0ZmxleC13cmFwOiBub3dyYXA7XHJcblx0anVzdGlmeS1jb250ZW50OiBmbGV4LXN0YXJ0O1xyXG5cdGFsaWduLWl0ZW1zOiBzdHJldGNoO1xyXG4gICAgYWxpZ24tY29udGVudDogc3RyZXRjaDtcclxuICAgIGhlaWdodDogMTAwJTtcclxuICAgIFxyXG4gICAgfVxyXG4gIFxyXG4gICAgd2lkdGg6IDMwMHB4O1xyXG4gICBcclxuICAgIC5pbm5lcntcclxuICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICAgICAgdG9wOi0xcHg7XHJcbiAgICAgICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkICRjb2xvci1kYXJrYmx1ZTI7XHJcbiAgICAgICAgcGFkZGluZzogMTBweDtcclxuICAgICAgICBiYWNrZ3JvdW5kOiAkY29sb3ItbGlnaHRibHVlMTtcclxuICAgICAgICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoOTBkZWcsICRjb2xvci1saWdodGJsdWUxIDAlLCAkY29sb3ItZ3JheSA5OSUpO1xyXG4gICAgICAgIGgye1xyXG4gICAgICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7ICAgICAgICAgICAgXHJcbiAgICAgICAgICAgIG1hcmdpbjphdXRvO1xyXG4gICAgICAgICAgICBcclxuXHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG4gICAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xyXG59XHJcblxyXG4ubmF2LWxpbmsudHJ1ZXtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICRjb2xvci1ncmF5O1xyXG4gICAgYm9yZGVyLWNvbG9yOiAkY29sb3ItZGFya2JsdWUyO1xyXG59XHJcblxyXG4ubW9kYWwtbGd7XHJcbiAgICB3aWR0aDogNzAlIWltcG9ydGFudDtcclxuICAgIG1heC13aWR0aDogMTAwMHB4IWltcG9ydGFudDtcclxuICB9XHJcbiAgIiwiXHJcbiRjb2xvci1ncmF5OiAjZTNlNGU1O1xyXG4kY29sb3ItZGFya2JsdWUxOiAjMTYyNDMzO1xyXG4kY29sb3ItZGFya2JsdWUyOiAjMmE0NTYzO1xyXG4kY29sb3ItbGlnaHRibHVlMTogIzI2NDM1NjtcclxuJGNvbG9yLWxpZ2h0Ymx1ZTI6ICMzYzczOTk7XHJcbiRjb2xvci1vcmFuZ2U6ICNmYzY2MDA7XHJcbiRjb2xvci1jeWFuOiAjMDBmZmY2O1xyXG4kY29sb3Itc2NyZWVuOiAjMDBjZmZmO1xyXG4kY29sb3Itc2NyZWVuLWdyb3VwOiAjMDBmZmY2O1xyXG4kY29sb3ItbGlicmFyeTogIzk2ZmYwMDtcclxuJGNvbG9yLXllbGxvdzogI2ZmZmYwMDtcclxuJGNvbG9yLXB1cnBsZTogI2YzYjdlYjtcclxuJGNvbG9yLWdyZWVuOiAjOTZmZjAwO1xyXG4gXHJcblxyXG4gIl19 */"
 
 /***/ }),
 
@@ -2559,6 +2764,12 @@ var PanelComponent = /** @class */ (function () {
                 break;
             case 'left':
                 this.element.position = { x: 0, y: this.element.position.y };
+                break;
+            case 'top':
+                this.element.position = { x: this.element.position.x, y: 0 };
+                break;
+            case 'bottom':
+                this.element.position = { x: this.element.position.x, y: this.item.Screen.height - this.element.height };
                 break;
         }
         this.elementChanged.emit(this.element);
@@ -2733,7 +2944,7 @@ var SelectionService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = " \n  <ng-template #toolbar let-item=\"item\">\n    <div class=\"btn-group\" data-toggle=\"buttons\">\n      <button class=\"btn-tool btn-play\" (click)=\"publish()\"> <i class=\"fas fa-bolt\"></i></button>\n    </div>\n  </ng-template>\n\n\n<div *ngIf=\"item\" style=\"position: relative;\" >\n  <app-changes [item]=\"selectionService.elements\"></app-changes>\n  <app-slide-header [title]=\"'NAVBAR.SLIDES'\" [toolbar]=\"toolbar\"  closeFn=\"true\" mode=\"inline\" [enableSave]='true' (save)=\"saveProxy($event)\"\n    iconClass=\"far fa-object-group\" className=\"library-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n\n\n\n\n  <div class=\"row p10\">\n    <div class=\"col-3\">\n      <app-add (selected)=\"addElement($event)\"></app-add>\n      <app-panel [(element)]=\"selectedElement\" [editor]=\"editor\" [item]=\"item\" (elementChanged)=\"setElement(element)\" (editorChanged)=\"setEditor($event)\"></app-panel>\n    </div>\n    <div class=\"col-9\">\n      <div class=\"row slide-editor\" id=\"worksapce\" style=\"direction: ltr;\">\n\n        <app-rulers></app-rulers><br />\n        <div class=\"editor-plate small\" [ngStyle]=\"{'background-color': item.bgColor }\">\n\n          <app-element *ngFor=\"let el of selectionService.elements\"\n            [element]=\"el\"></app-element>\n\n        </div>\n      </div>\n    </div>\n\n  </div>\n</div>\n<app-finder [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
+module.exports = "<ng-template #toolbar let-item=\"item\">\n  <div class=\"btn-group\" data-toggle=\"buttons\">\n    <button class=\"btn-tool btn-play\" (click)=\"publish()\"> <i class=\"fas fa-bolt\"></i></button>\n  </div>\n</ng-template>\n\n\n<div *ngIf=\"item\" style=\"position: relative;\">\n  <app-changes [item]=\"selectionService.elements\"></app-changes>\n  <app-slide-header [title]=\"'NAVBAR.SLIDES'\" [toolbar]=\"toolbar\" closeFn=\"true\" mode=\"inline\" [enableSave]='true' (save)=\"saveProxy($event)\"\n    iconClass=\"far fa-object-group\" className=\"library-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n\n  <ul class=\"nav nav-tabs\">\n    <li class=\"nav-item\" *ngFor=\"let tab of tabs\" (click)=\"tabSelect(tab)\">\n      <a class=\"nav-link {{tab.selected}}\"><h6><i class=\"{{tab.icon}}\"></i> {{tab.name | translate}}</h6></a>\n    </li>\n  </ul>\n\n  <div *ngIf=\"tabs[1].selected\" [appAdaptHeight]=\"100\">\n    <div style=\"height: 50%;padding: 10px;\">\n      <app-code-editor [code]=\"slideScript\" (notify)=\"onCode($event, 'script')\" [script-name]=\"'script.js'\" [variables]=\"item.elements\"></app-code-editor>\n    </div>\n    <div style=\"height: 50%;padding: 10px;\">\n      <app-code-editor [code]=\"slidePlayer\" (notify)=\"onCode($event,'player')\" [script-name]=\"'player.js'\" [variables]=\"item.elements\"></app-code-editor>\n    </div>\n  </div>\n\n  <div class=\"row p10\" *ngIf=\"tabs[0].selected\">\n    <div class=\"col-3\">\n      <app-add (selected)=\"addElement($event)\"></app-add>\n      <app-panel [(element)]=\"selectedElement\" [editor]=\"editor\" [item]=\"item\" (elementChanged)=\"setElement(element)\" (editorChanged)=\"setEditor($event)\"></app-panel>\n    </div>\n    <div class=\"col-9\">\n      <div class=\"row slide-editor\" id=\"worksapce\" style=\"direction: ltr;\">\n\n        <app-rulers></app-rulers><br />\n        <div class=\"editor-plate small\" [ngStyle]=\"{'background-color': item.bgColor }\">\n\n          <app-element *ngFor=\"let el of selectionService.elements\" [element]=\"el\"></app-element>\n\n        </div>\n      </div>\n    </div>\n\n  </div>\n</div>\n<app-finder [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
 
 /***/ }),
 
@@ -2769,6 +2980,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_name_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../services/name.service */ "./src/app/services/name.service.ts");
 /* harmony import */ var _fonts_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../fonts.service */ "./src/app/editor/fonts.service.ts");
 /* harmony import */ var _services_dirty_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../services/dirty.service */ "./src/app/services/dirty.service.ts");
+/* harmony import */ var _services_history_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../services/history.service */ "./src/app/services/history.service.ts");
+
 
 
 
@@ -2781,7 +2994,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var SlideEditorComponent = /** @class */ (function (_super) {
     tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](SlideEditorComponent, _super);
-    function SlideEditorComponent(_ngZone, translateService, nameService, selectionService, fontService, router, route, dirtyService) {
+    function SlideEditorComponent(_ngZone, translateService, nameService, selectionService, fontService, router, route, dirtyService, previousRouteService) {
         var _this = _super.call(this, _ngZone, translateService, dirtyService) || this;
         _this._ngZone = _ngZone;
         _this.translateService = translateService;
@@ -2791,6 +3004,7 @@ var SlideEditorComponent = /** @class */ (function (_super) {
         _this.router = router;
         _this.route = route;
         _this.dirtyService = dirtyService;
+        _this.previousRouteService = previousRouteService;
         _this.tabs = [{ name: 'SLIDES.DESIGNER', selected: true }, { name: 'SLIDES.SOURCE', selected: false }];
         _this.finderActive = 'closing';
         _this.editor = {
@@ -2829,6 +3043,9 @@ var SlideEditorComponent = /** @class */ (function (_super) {
         this.item.bgColor = editor.bgColor;
         this.item.fonts = editor.fonts;
         this.dirtyService.setDirty();
+    };
+    SlideEditorComponent.prototype.onCode = function ($event, type) {
+        this.item[type] = $event;
     };
     SlideEditorComponent.prototype.publish = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
@@ -2881,7 +3098,8 @@ var SlideEditorComponent = /** @class */ (function (_super) {
         item.Screen = { width: 800, height: 600 };
     };
     SlideEditorComponent.prototype.closeSlider = function () {
-        this.router.navigate(['/dashboard/library/slide']);
+        console.log(this.previousRouteService.getPreviousUrl());
+        this.router.navigate([this.previousRouteService.getPreviousUrl()]);
         this.displayModalNew = 'closing';
     };
     SlideEditorComponent.prototype.ngOnInit = function () {
@@ -2901,6 +3119,8 @@ var SlideEditorComponent = /** @class */ (function (_super) {
                             this.editor.fonts = this.item.fonts;
                             this.editor.bgColor = this.item.bgColor;
                             this.editor.color = this.item.color;
+                            this.slideScript = this.item.script;
+                            this.slidePlayer = this.item.player;
                             return [3 /*break*/, 3];
                         case 2:
                             this.item = { elements: [] };
@@ -2983,7 +3203,7 @@ var SlideEditorComponent = /** @class */ (function (_super) {
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_5__["TranslateService"], _services_name_service__WEBPACK_IMPORTED_MODULE_7__["NameService"],
             _selection_service__WEBPACK_IMPORTED_MODULE_6__["SelectionService"], _fonts_service__WEBPACK_IMPORTED_MODULE_8__["FontsService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _services_dirty_service__WEBPACK_IMPORTED_MODULE_9__["DirtyService"]])
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _services_dirty_service__WEBPACK_IMPORTED_MODULE_9__["DirtyService"], _services_history_service__WEBPACK_IMPORTED_MODULE_10__["PreviousRouteService"]])
     ], SlideEditorComponent);
     return SlideEditorComponent;
 }(_data_component__WEBPACK_IMPORTED_MODULE_3__["DataComponent"]));
@@ -3685,6 +3905,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_history_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../services/history.service */ "./src/app/services/history.service.ts");
+
 
 
 
@@ -3693,12 +3915,14 @@ __webpack_require__.r(__webpack_exports__);
 
 var SlidesComponent = /** @class */ (function (_super) {
     tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](SlidesComponent, _super);
-    function SlidesComponent(_ngZone, translateService, router) {
+    function SlidesComponent(_ngZone, translateService, router, previousRouteService) {
         var _this = _super.call(this, _ngZone, translateService) || this;
         _this._ngZone = _ngZone;
         _this.translateService = translateService;
         _this.router = router;
+        _this.previousRouteService = previousRouteService;
         _this.DataController = _signnature_client__WEBPACK_IMPORTED_MODULE_3__["SlidesDataController"];
+        console.log(_this.previousRouteService.getPreviousUrl());
         return _this;
         // this.DataModel = PlaylistModel;
     }
@@ -3723,7 +3947,8 @@ var SlidesComponent = /** @class */ (function (_super) {
             template: __webpack_require__(/*! ./slides.component.html */ "./src/app/library/slides/slides.component.html"),
             styles: [__webpack_require__(/*! ./slides.component.scss */ "./src/app/library/slides/slides.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__["TranslateService"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__["TranslateService"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"],
+            _services_history_service__WEBPACK_IMPORTED_MODULE_6__["PreviousRouteService"]])
     ], SlidesComponent);
     return SlidesComponent;
 }(_data_component__WEBPACK_IMPORTED_MODULE_2__["DataComponent"]));
@@ -4151,7 +4376,7 @@ var FilterPipe = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<dialog open style=\"position: relative;\" class=\"playlist\">\n  <ng-template #toolbar let-item=\"item\">\n    <div class=\"btn-group\" data-toggle=\"buttons\">\n      <button class=\"btn-tool btn-play\" (click)=\"preview()\"> <i class=\"fas fa-play\"></i></button>\n    </div>\n  </ng-template>\n\n\n  <app-slide-header [title]=\"'NAVBAR.PLAYLISTS'\" mode=\"inline\" [enableSave]='true' (save)=\"saveProxy()\" iconClass=\"fas fa-step-forward\"\n    className=\"playlist-cat\" [closeFn]=\"true\" [toolbar]=\"toolbar\" (closed)=\"closeSlider()\"></app-slide-header>\n  <form *ngIf=\"item\" class=\"pad\">\n    <app-changes [item]=\"item\"></app-changes>\n\n    <app-playlist-player *ngIf=\"previewOn\" [playerPlan]=\"item\"></app-playlist-player>\n    <div [appAdaptHeight]=\"previewHeight\">\n      <div class=\"form-group\">\n        <label for=\"itemName\">{{ \"PLAYLISTS.NAME\" | translate }}:</label>\n        <input type=\"text\" name=\"itemName\" class=\"form-control\" id=\"itemName\" [(ngModel)]=\"item.Name\">\n        <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"PLAYLISTS.NAME_HELP\" | translate }}</small>\n      </div>\n      <ul class=\"nav nav-tabs\">\n        <li class=\"nav-item {{tab.class}}\" *ngFor=\"let tab of tabs\">\n          <a class=\"nav-link\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n        </li>\n      </ul>\n      <div *ngIf=\"tabs[0].selected\">\n\n\n        <div class=\"form-group\" class=\"sortable\">\n          <div class=\"shadow btn-long\" (click)=\"finder()\"><i class=\"fas fa-plus-circle\"></i> {{\"PLAYLISTS.ADDTOLIST\" | translate}}</div>\n\n          <div *ngIf=\"playlistMode==='normal'\" [class]=\"playlistMode\">\n\n            <div class=\"horizontal-scroller playlist-cat\" dragula=\"DRAGULA_FACTS\" [(dragulaModel)]=\"item.list\" (dropModel)=\"drop($event)\"\n              style=\"direction: ltr;\">\n              <div *ngFor=\"let listitem of item.list; let i = index\" class=\"slot shadow\" [ngStyle]=\"{'left': (20 + (i)*240) + 'px', 'top':'20px'}\">\n                <app-lobby-item *ngIf=\"listitem\" [item]=\"listitem\"></app-lobby-item>\n                <ul class=\"sqr-toolbar btn-group direction\" role=\"group\">\n                  <li>\n                    <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"removeListItem(item);\"> <i class=\"fas fa-trash\"></i>\n                    </button>\n                  </li>\n                  <li>\n                    <input type=\"number\" [detectChanges]=\"true\" [(ngModel)]=\"listitem.duration\" name=\"duration\">\n                  </li>\n                  <li>\n                    <select [detectChanges]=\"true\" [(ngModel)]=\"listitem.transition\" name=\"transition\">\n                      <option *ngFor=\"let c of effects\" [ngValue]=\"c\">{{c}}</option>\n                    </select>\n                  </li>\n                </ul>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div *ngIf=\"tabs[1].selected\">\n        <div class=\"form-group shadow\">\n          <div class=\"btn-long\" (click)=\"schedule()\"><i class=\"fas fa-plus-circle\"></i> {{\"PLAYLISTS.ADDTIME\" | translate}}</div>\n          <div id=\"timeSlots\" *ngIf=\"editTime && selectedTimeEl\">\n            <div class=\"form-row\">\n              <div class=\"form-group col-md-6\">\n                <label for=\"itemName\">{{ \"PLAYLISTS.SCHEDULE\" | translate }}:</label>\n                <select [(ngModel)]=\"selectedTimeEl.timeslot\" name=\"timeSlotOptions\" [compareWith]=\"compareFnId\" class=\"form-control\">\n                  <option *ngFor=\"let c of timeSlotOptions\" [ngValue]=\"c\">{{c.name | translate}}</option>\n                </select>\n              </div>\n              <div class=\"form-group col-md-6\">\n                <label for=\"ScreenGroup\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n                <select [(ngModel)]=\"selectedTimeEl.screenGroup\" name=\"ScreenGroup\" [compareWith]=\"compareFn_id\" class=\"form-control\">\n                  <option *ngFor=\"let c of groups\" [ngValue]=\"c\">{{c.Name}}</option>\n                </select>\n              </div>\n              <button class=\"btn btn-primary\" (click)=\"addTimeSlot()\">{{ \"PLAYLISTS.SETTIME\" | translate}}</button>\n            </div>\n          </div>\n        </div>\n\n        <div class=\"container\">\n\n          <div *ngFor=\"let timeslotEl of item.TimeSlots\" class=\"sqr short shadow\">\n            <label>{{timeslotEl.timeslot.name | translate}}</label>\n            <small>{{timeslotEl.screenGroup.Name}}</small>\n            <ul class=\"sqr-toolbar\">\n              <li>\n                <button class=\"btn btn-md btn-danger\" (click)=\"deleteTimeslot(timeslotEl);\"> <i class=\"fas fa-trash\"></i>\n                </button>\n              </li>\n              <li>\n                <button class=\"btn btn-md btn-primary\" (click)=\"editTimeslot(timeslotEl);\"> <i class=\"fas fa-edit\"></i> </button>\n              </li>\n            </ul>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <hr />\n\n  </form>\n\n  <app-slide-footer className=\"playlist-cat\"></app-slide-footer>\n</dialog>\n\n\n\n\n\n<app-finder [types]=\"['image','video','slide']\" [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
+module.exports = "<dialog open style=\"position: relative;\" class=\"playlist\">\n  <ng-template #toolbar let-item=\"item\">\n    <div class=\"btn-group\" data-toggle=\"buttons\">\n      <button class=\"btn-tool btn-play\" (click)=\"preview()\"> <i class=\"fas fa-play\"></i></button>\n    </div>\n  </ng-template>\n\n\n  <app-slide-header [title]=\"'NAVBAR.PLAYLISTS'\" mode=\"inline\" [enableSave]='true' (save)=\"saveProxy()\" iconClass=\"fas fa-step-forward\"\n    className=\"playlist-cat\" [closeFn]=\"true\" [toolbar]=\"toolbar\" (closed)=\"closeSlider()\"></app-slide-header>\n  <form *ngIf=\"item\" class=\"pad\">\n    <app-changes [item]=\"item\"></app-changes>\n\n    <app-playlist-player *ngIf=\"previewOn\" [playerPlan]=\"item\"></app-playlist-player>\n    <div [appAdaptHeight]=\"previewHeight\">\n      <div class=\"form-group\">\n        <label for=\"itemName\">{{ \"PLAYLISTS.NAME\" | translate }}:</label>\n        <input type=\"text\" name=\"itemName\" class=\"form-control\" id=\"itemName\" [(ngModel)]=\"item.Name\">\n        <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"PLAYLISTS.NAME_HELP\" | translate }}</small>\n      </div>\n      <ul class=\"nav nav-tabs\">\n        <li class=\"nav-item {{tab.class}}\" *ngFor=\"let tab of tabs\">\n          <a class=\"nav-link\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n        </li>\n      </ul>\n      <div *ngIf=\"tabs[0].selected\">\n\n        <div class=\"form-group\" class=\"sortable\">\n          <div class=\"shadow btn-long\" (click)=\"finder()\"><i class=\"fas fa-plus-circle\"></i> {{\"PLAYLISTS.ADDTOLIST\" | translate}}</div>\n          <div *ngIf=\"playlistMode==='normal'\" [class]=\"playlistMode\">\n\n            <div class=\"horizontal-scroller playlist-cat\" dragula=\"DRAGULA_FACTS\" [(dragulaModel)]=\"item.list\" (dropModel)=\"drop($event)\"\n              style=\"direction: ltr;\">\n              <div *ngFor=\"let listitem of item.list; let i = index\" class=\"slot shadow\" [ngStyle]=\"{'left': (20 + (i)*240) + 'px', 'top':'20px'}\">\n                <app-lobby-item *ngIf=\"listitem\" [item]=\"listitem\"></app-lobby-item>\n                <ul class=\"sqr-toolbar btn-group direction\" role=\"group\">\n                  <li>\n\n                    <button class=\"btn btn-secondary btn-md btn-default\" (click)=\"editListItem(listitem);\"> <i class=\"fas fa-edit\"></i>\n                    </button>\n\n\n                    <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"removeListItem(listitem);\"> <i class=\"fas fa-trash\"></i>\n                    </button>\n\n\n\n                  </li>\n                  <li>\n                    <input type=\"number\" [detectChanges]=\"true\" [(ngModel)]=\"listitem.duration\" name=\"duration\">\n                  </li>\n                  <li>\n                    <select [detectChanges]=\"true\" [(ngModel)]=\"listitem.transition\" name=\"transition\">\n                      <option *ngFor=\"let c of effects\" [ngValue]=\"c\">{{c}}</option>\n                    </select>\n                  </li>\n                </ul>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div *ngIf=\"tabs[1].selected\">\n        <div class=\"form-group shadow\">\n          <div class=\"btn-long\" (click)=\"schedule()\"><i class=\"fas fa-plus-circle\"></i> {{\"PLAYLISTS.ADDTIME\" | translate}}</div>\n          <div id=\"timeSlots\" *ngIf=\"editTime && selectedTimeEl\">\n            <div class=\"form-row\">\n              <div class=\"form-group col-md-6\">\n                <label for=\"itemName\">{{ \"PLAYLISTS.SCHEDULE\" | translate }}:</label>\n                <select [(ngModel)]=\"selectedTimeEl.timeslot\" name=\"timeSlotOptions\" [compareWith]=\"compareFnId\" class=\"form-control\">\n                  <option *ngFor=\"let c of timeSlotOptions\" [ngValue]=\"c\">{{c.name | translate}}</option>\n                </select>\n              </div>\n              <div class=\"form-group col-md-6\">\n                <label for=\"ScreenGroup\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n                <select [(ngModel)]=\"selectedTimeEl.screenGroup\" name=\"ScreenGroup\" [compareWith]=\"compareFn_id\" class=\"form-control\">\n                  <option *ngFor=\"let c of groups\" [ngValue]=\"c\">{{c.Name}}</option>\n                </select>\n              </div>\n              <button class=\"btn btn-primary\" (click)=\"addTimeSlot()\">{{ \"PLAYLISTS.SETTIME\" | translate}}</button>\n            </div>\n          </div>\n        </div>\n\n        <div class=\"container\">\n\n          <div *ngFor=\"let timeslotEl of item.TimeSlots\" class=\"sqr short shadow\">\n            <label>{{timeslotEl.timeslot.name | translate}}</label>\n            <small>{{timeslotEl.screenGroup.Name}}</small>\n            <ul class=\"sqr-toolbar\">\n              <li>\n                <button class=\"btn btn-md btn-danger\" (click)=\"deleteTimeslot(timeslotEl);\"> <i class=\"fas fa-trash\"></i>\n                </button>\n              </li>\n              <li>\n                <button class=\"btn btn-md btn-primary\" (click)=\"editTimeslot(timeslotEl);\"> <i class=\"fas fa-edit\"></i> </button>\n              </li>\n            </ul>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <hr />\n\n  </form>\n\n  <app-slide-footer className=\"playlist-cat\"></app-slide-footer>\n</dialog>\n\n\n\n\n\n<app-finder [types]=\"['image','video','slide']\" [active]=\"finderActive\" [selector]=\"addToList\"></app-finder>\n"
 
 /***/ }),
 
@@ -4186,6 +4411,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ng2_dragula__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ng2-dragula */ "./node_modules/ng2-dragula/dist/fesm5/ng2-dragula.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 /* harmony import */ var _services_dirty_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../services/dirty.service */ "./src/app/services/dirty.service.ts");
+/* harmony import */ var _services_history_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../services/history.service */ "./src/app/services/history.service.ts");
+
 
 
 
@@ -4197,7 +4424,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var PlaylistComponent = /** @class */ (function (_super) {
     tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](PlaylistComponent, _super);
-    function PlaylistComponent(_ngZone, translateService, dragulaService, route, router, dirtyService) {
+    function PlaylistComponent(_ngZone, translateService, dragulaService, route, router, dirtyService, previousRouteService) {
         var _this = _super.call(this, _ngZone, translateService, dirtyService) || this;
         _this._ngZone = _ngZone;
         _this.translateService = translateService;
@@ -4205,6 +4432,7 @@ var PlaylistComponent = /** @class */ (function (_super) {
         _this.route = route;
         _this.router = router;
         _this.dirtyService = dirtyService;
+        _this.previousRouteService = previousRouteService;
         _this.subs = new rxjs__WEBPACK_IMPORTED_MODULE_7__["Subscription"]();
         _this.effects = ['slide-in', 'slide-out'];
         _this.playlistMode = 'normal';
@@ -4350,7 +4578,10 @@ var PlaylistComponent = /** @class */ (function (_super) {
             });
         }); });
     };
-    PlaylistComponent.prototype.editListItem = function () {
+    PlaylistComponent.prototype.editListItem = function (item) {
+        if (item.type === 'slide') {
+            this.router.navigate(['/dashboard/library/slide/', item._id]);
+        }
     };
     PlaylistComponent.prototype.removeListItem = function (item) {
         this.item.list.splice(this.item.list.indexOf(item), 1);
@@ -4387,7 +4618,7 @@ var PlaylistComponent = /** @class */ (function (_super) {
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__["TranslateService"],
             ng2_dragula__WEBPACK_IMPORTED_MODULE_6__["DragulaService"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"],
-            _services_dirty_service__WEBPACK_IMPORTED_MODULE_8__["DirtyService"]])
+            _services_dirty_service__WEBPACK_IMPORTED_MODULE_8__["DirtyService"], _services_history_service__WEBPACK_IMPORTED_MODULE_9__["PreviousRouteService"]])
     ], PlaylistComponent);
     return PlaylistComponent;
 }(_data_component__WEBPACK_IMPORTED_MODULE_3__["DataComponent"]));
@@ -5008,6 +5239,48 @@ var DirtyService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/services/history.service.ts":
+/*!*********************************************!*\
+  !*** ./src/app/services/history.service.ts ***!
+  \*********************************************/
+/*! exports provided: PreviousRouteService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PreviousRouteService", function() { return PreviousRouteService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+var PreviousRouteService = /** @class */ (function () {
+    function PreviousRouteService(router) {
+        var _this = this;
+        this.router = router;
+        this.currentUrl = this.router.url;
+        router.events.subscribe(function (event) {
+            if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"]) {
+                _this.previousUrl = _this.currentUrl;
+                _this.currentUrl = event.url;
+            }
+        });
+    }
+    PreviousRouteService.prototype.getPreviousUrl = function () {
+        return this.previousUrl;
+    };
+    PreviousRouteService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+    ], PreviousRouteService);
+    return PreviousRouteService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/services/language.service.ts":
 /*!**********************************************!*\
   !*** ./src/app/services/language.service.ts ***!
@@ -5301,6 +5574,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _common_change_change_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./common/change/change.component */ "./src/app/common/change/change.component.ts");
 /* harmony import */ var _directives_change_directive__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./directives/change.directive */ "./src/app/directives/change.directive.ts");
 /* harmony import */ var _pipes_filter_pipe__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./pipes/filter.pipe */ "./src/app/pipes/filter.pipe.ts");
+/* harmony import */ var _services_history_service__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./services/history.service */ "./src/app/services/history.service.ts");
+
 
 
 
@@ -5369,7 +5644,7 @@ var SharedModule = /** @class */ (function () {
                 _common_lobby_lobby_component__WEBPACK_IMPORTED_MODULE_14__["LobbyComponent"],
                 _common_lobby_item_lobby_item_component__WEBPACK_IMPORTED_MODULE_22__["LobbyItemComponent"],
                 _pipes_filter_pipe__WEBPACK_IMPORTED_MODULE_28__["FilterPipe"]],
-            providers: [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"], _services_language_dictionary_service__WEBPACK_IMPORTED_MODULE_4__["DictionaryService"], _services_name_service__WEBPACK_IMPORTED_MODULE_5__["NameService"], _player_slide_service__WEBPACK_IMPORTED_MODULE_20__["SlideService"], _services_dirty_service__WEBPACK_IMPORTED_MODULE_23__["DirtyService"], _services_responsive_service__WEBPACK_IMPORTED_MODULE_25__["ResponsiveService"]],
+            providers: [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"], _services_language_dictionary_service__WEBPACK_IMPORTED_MODULE_4__["DictionaryService"], _services_name_service__WEBPACK_IMPORTED_MODULE_5__["NameService"], _player_slide_service__WEBPACK_IMPORTED_MODULE_20__["SlideService"], _services_dirty_service__WEBPACK_IMPORTED_MODULE_23__["DirtyService"], _services_responsive_service__WEBPACK_IMPORTED_MODULE_25__["ResponsiveService"], _services_history_service__WEBPACK_IMPORTED_MODULE_29__["PreviousRouteService"]],
             exports: [_editor_canvas_canvas_component__WEBPACK_IMPORTED_MODULE_19__["CanvasComponent"],
                 _common_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_8__["LanguageBarComponent"],
                 _common_lobby_lobby_component__WEBPACK_IMPORTED_MODULE_14__["LobbyComponent"],
@@ -5924,15 +6199,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SlideService", function() { return SlideService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var image_promise__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! image-promise */ "./node_modules/image-promise/dist/image-promise.common-js.js");
-/* harmony import */ var image_promise__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(image_promise__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _app_editor_fonts_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../app/editor/fonts.service */ "./src/app/editor/fonts.service.ts");
-/* harmony import */ var _createjs_easeljs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @createjs/easeljs */ "./node_modules/@createjs/easeljs/src/main.js");
+/* harmony import */ var _app_editor_fonts_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../app/editor/fonts.service */ "./src/app/editor/fonts.service.ts");
+/* harmony import */ var _slide_worker__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./slide.worker */ "./src/player/slide.worker.ts");
 
 
 
 
-
+// import { Stage, Shape, } from '@createjs/easeljs';
+var Eval = eval;
 var log = console.log;
 var SlideService = /** @class */ (function () {
     function SlideService(fontService) {
@@ -5965,260 +6239,290 @@ var SlideService = /** @class */ (function () {
             });
         });
     };
+    SlideService.prototype.createWorker = function (playerPlan, ctx, width, height, mode) {
+    };
     SlideService.prototype.play = function (playerPlan, ctx, width, height, mode) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            function factor(screen, x, y) {
-                if (!y) {
-                    return Math.floor(x * (width / screen.width));
+            var playX;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                playX = new _slide_worker__WEBPACK_IMPORTED_MODULE_3__["SlideWorker"](this.fontService, playerPlan, ctx, width, height, mode);
+                playX.play();
+                return [2 /*return*/];
+            });
+        });
+    };
+    SlideService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_app_editor_fonts_service__WEBPACK_IMPORTED_MODULE_2__["FontsService"]])
+    ], SlideService);
+    return SlideService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/player/slide.worker.ts":
+/*!************************************!*\
+  !*** ./src/player/slide.worker.ts ***!
+  \************************************/
+/*! exports provided: SlideWorker */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SlideWorker", function() { return SlideWorker; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var image_promise__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! image-promise */ "./node_modules/image-promise/dist/image-promise.common-js.js");
+/* harmony import */ var image_promise__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(image_promise__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _createjs_easeljs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @createjs/easeljs */ "./node_modules/@createjs/easeljs/src/main.js");
+
+
+
+var Eval = eval;
+var log = console.log;
+var SlideWorker = /** @class */ (function () {
+    function SlideWorker(fontService, playerPlan, ctx, width, height, mode) {
+        this.fontService = fontService;
+        this.playerPlan = playerPlan;
+        this.ctx = ctx;
+        this.width = width;
+        this.height = height;
+        this.mode = mode;
+        this.start = new Date();
+        this.images = [];
+        this.itemIndex = 0;
+    }
+    SlideWorker.prototype.factor = function (screen, x, y) {
+        if (!y) {
+            return Math.floor(x * (this.width / screen.width));
+        }
+        else {
+            return { x: x * (this.width / screen.width), y: y * (this.height / screen.height) };
+        }
+    };
+    SlideWorker.prototype.prerender = function (item) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _a;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        log('@slide.service-prerender');
+                        if (item.elements) {
+                            item.type = 'slide';
+                        }
+                        _a = item.type;
+                        switch (_a) {
+                            case 'image': return [3 /*break*/, 1];
+                            case 'slide': return [3 /*break*/, 3];
+                        }
+                        return [3 /*break*/, 5];
+                    case 1: return [4 /*yield*/, this.render_fullimage_to_canvas(item.resource, 0, 0, this.width, this.height)];
+                    case 2: return [2 /*return*/, _b.sent()];
+                    case 3: return [4 /*yield*/, this.renderElementsToTags(item)];
+                    case 4: return [2 /*return*/, _b.sent()];
+                    case 5: return [2 /*return*/];
                 }
-                else {
-                    return { x: x * (width / screen.width), y: y * (height / screen.height) };
-                }
-            }
-            function prerender(item) {
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-                    var _a;
-                    return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
-                        switch (_b.label) {
-                            case 0:
-                                log('@slide.service-prerender');
-                                if (item.elements) {
-                                    item.type = 'slide';
-                                }
-                                _a = item.type;
-                                switch (_a) {
-                                    case 'image': return [3 /*break*/, 1];
-                                    case 'slide': return [3 /*break*/, 3];
-                                }
-                                return [3 /*break*/, 5];
-                            case 1: return [4 /*yield*/, render_fullimage_to_canvas(item.resource, 0, 0, width, height)];
-                            case 2: return [2 /*return*/, _b.sent()];
-                            case 3: return [4 /*yield*/, renderElementsToTags(item)];
-                            case 4: return [2 /*return*/, _b.sent()];
-                            case 5: return [2 /*return*/];
-                        }
-                    });
-                });
-            }
-            function playScreenError() {
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-                    return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                        ctx.font = "120px arial";
-                        ctx.fillStyle = "black";
-                        ctx.fillText('Screen error', width, height);
-                        return [2 /*return*/];
-                    });
-                });
-            }
-            // window.setInterval(playLoadingAnimation, 1000 / 30);
-            function playLoadingAnimation() {
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-                    var rotation, i;
-                    return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                        rotation = ((new Date() - start) / 1000) * lines / lines;
-                        ctx.save();
-                        ctx.clearRect(0, 0, width, height);
-                        ctx.translate(width / 2, height / 2);
-                        ctx.rotate(Math.PI * 2 * rotation);
-                        for (i = 0; i < lines; i++) {
-                            ctx.beginPath();
-                            ctx.rotate(Math.PI * 2 / lines);
-                            ctx.moveTo(width / 10, 0);
-                            ctx.lineTo(width / 4, 0);
-                            ctx.lineWidth = width / 30;
-                            ctx.strokeStyle = 'rgba(0, 0, 0,' + i / lines + ')';
-                            ctx.stroke();
-                        }
-                        ctx.restore();
-                        return [2 /*return*/];
-                    });
-                });
-            }
-            function playDefaultPlan() {
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-                    return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                        ctx.font = "120px arial";
-                        ctx.fillStyle = "black";
-                        ctx.fillText('Nothing to play', width / 4, height / 2);
-                        setTimeout(function () {
-                            player.play(player.playerPlan, ctx, width, height);
-                        }, 10 * 1000);
-                        return [2 /*return*/];
-                    });
-                });
-            }
-            function renderElementsToTags(item) {
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-                    var shape, index, element, _a;
-                    return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
-                        switch (_b.label) {
-                            case 0:
-                                log('@slide.service-renderElementsToTags');
-                                stage.clear(0, 0, stage.canvas.width, stage.canvas.height);
-                                if (item.bgColor) {
-                                    shape = new _createjs_easeljs__WEBPACK_IMPORTED_MODULE_4__["Shape"]();
-                                    shape.graphics.beginFill(item.bgColor).drawRect(0, 0, width, height);
-                                    stage.addChild(shape);
-                                    stage.update();
-                                }
-                                item.elements.sort(function (a, b) {
-                                    return a.zIndex - b.zIndex;
-                                });
-                                index = 0;
-                                _b.label = 1;
-                            case 1:
-                                if (!(index < item.elements.length)) return [3 /*break*/, 6];
-                                element = item.elements[index];
-                                _a = element.type;
-                                switch (_a) {
-                                    case 'image': return [3 /*break*/, 2];
-                                    case 'text': return [3 /*break*/, 4];
-                                }
-                                return [3 /*break*/, 5];
-                            case 2: return [4 /*yield*/, render_image_to_canvas(item, element)];
-                            case 3:
-                                _b.sent();
-                                return [3 /*break*/, 5];
-                            case 4:
-                                render_text_to_canvas(item, element);
-                                return [3 /*break*/, 5];
-                            case 5:
-                                index++;
-                                return [3 /*break*/, 1];
-                            case 6: return [2 /*return*/];
-                        }
-                    });
-                });
-            }
-            function render_text_to_canvas(item, element) {
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-                    var fontFactor_1, lineIndex_1;
-                    return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                        log('@slide.service-render_text_to_canvas');
-                        if (element.text) {
-                            fontFactor_1 = factor(item.Screen, element.fontSize);
-                            ctx.font = fontFactor_1 + "px " + element.font;
-                            ctx.fillStyle = "" + element.color;
-                            ctx.save();
-                            if (element.opacity) {
-                                ctx.globalAlpha = element.opacity;
+            });
+        });
+    };
+    SlideWorker.prototype.playDefaultPlan = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                this.ctx.font = "120px arial";
+                this.ctx.fillStyle = "black";
+                this.ctx.fillText('Nothing to play', this.width / 4, this.height / 2);
+                setTimeout(function () {
+                    _this.player.play(_this.player.playerPlan, _this.ctx, _this.width, _this.height);
+                }, 10 * 1000);
+                return [2 /*return*/];
+            });
+        });
+    };
+    SlideWorker.prototype.render_fullimage_to_canvas = function (url, x, y, _width, _height) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                log('@slide.service-render_fullimage_to_canvas');
+                return [2 /*return*/, new Promise(function (resolve, reject) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
+                        var img;
+                        return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                            switch (_a.label) {
+                                case 0: return [4 /*yield*/, image_promise__WEBPACK_IMPORTED_MODULE_1___default()([url])];
+                                case 1:
+                                    img = _a.sent();
+                                    if (img.length && img.length > 0) {
+                                        img = img[0];
+                                    }
+                                    if (img) {
+                                        img.width = this.ctx.canvas.width;
+                                        img.height = this.ctx.canvas.height;
+                                        this.images.push(img);
+                                        this.ctx.clearRect(0, 0, _width, _height);
+                                        this.ctx.drawImage(img, x, y, _width, _height);
+                                    }
+                                    resolve(img);
+                                    return [2 /*return*/];
                             }
-                            lineIndex_1 = 0;
-                            element.text.split('\n').forEach(function (line) {
-                                var position = factor(item.Screen, element.position.x, (Number(element.position.y) + element.fontSize));
-                                var linePosition = position.y + (lineIndex_1 * fontFactor_1);
-                                console.log(linePosition, fontFactor_1, lineIndex_1);
-                                ctx.fillText(line, position.x, linePosition);
-                                lineIndex_1++;
-                            });
-                            ctx.restore();
+                        });
+                    }); })];
+            });
+        });
+    };
+    SlideWorker.prototype.render_image_to_canvas = function (item, element) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var url, x, y, _width, _height;
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                url = element.src;
+                x = element.position.x;
+                y = element.position.y;
+                _width = element.width;
+                _height = element.height;
+                log('@slide.service-render_image_to_canvas');
+                return [2 /*return*/, new Promise(function (resolve, reject) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
+                        var img, sizes;
+                        return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                            switch (_a.label) {
+                                case 0: return [4 /*yield*/, image_promise__WEBPACK_IMPORTED_MODULE_1___default()([url])];
+                                case 1:
+                                    img = _a.sent();
+                                    if (img && img.length && img.length > 0) {
+                                        img = img[0];
+                                    }
+                                    this.images.push(img);
+                                    sizes = this.factor(item.Screen, _width, _height);
+                                    this.ctx.save();
+                                    if (element.opacity) {
+                                        this.ctx.globalAlpha = element.opacity;
+                                    }
+                                    this.ctx.drawImage(img, x, y, sizes.x, sizes.y);
+                                    this.ctx.restore();
+                                    resolve(img);
+                                    return [2 /*return*/];
+                            }
+                        });
+                    }); })];
+            });
+        });
+    };
+    SlideWorker.prototype.renderElementsToTags = function (item) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var shape, index, element, _a;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        log('@slide.service-renderElementsToTags');
+                        this.stage.clear(0, 0, this.stage.canvas.width, this.stage.canvas.height);
+                        if (item.bgColor) {
+                            shape = new _createjs_easeljs__WEBPACK_IMPORTED_MODULE_2__["Shape"]();
+                            shape.graphics.beginFill(item.bgColor).drawRect(0, 0, this.width, this.height);
+                            this.stage.addChild(shape);
+                            this.stage.update();
                         }
-                        return [2 /*return*/];
+                        if (item.script && this.mode !== 'single') {
+                            Eval(item.script);
+                            Eval(item.player);
+                            return [2 /*return*/];
+                        }
+                        item.elements.sort(function (a, b) {
+                            return a.zIndex - b.zIndex;
+                        });
+                        index = 0;
+                        _b.label = 1;
+                    case 1:
+                        if (!(index < item.elements.length)) return [3 /*break*/, 6];
+                        element = item.elements[index];
+                        _a = element.type;
+                        switch (_a) {
+                            case 'image': return [3 /*break*/, 2];
+                            case 'text': return [3 /*break*/, 4];
+                        }
+                        return [3 /*break*/, 5];
+                    case 2: return [4 /*yield*/, this.render_image_to_canvas(item, element)];
+                    case 3:
+                        _b.sent();
+                        return [3 /*break*/, 5];
+                    case 4:
+                        this.render_text_to_canvas(item, element);
+                        return [3 /*break*/, 5];
+                    case 5:
+                        index++;
+                        return [3 /*break*/, 1];
+                    case 6: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    SlideWorker.prototype.render_text_to_canvas = function (item, element) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var fontFactor_1, lineIndex_1;
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                log('@slide.service-render_text_to_canvas');
+                if (element.text) {
+                    fontFactor_1 = this.factor(item.Screen, element.fontSize);
+                    this.ctx.font = fontFactor_1 + "px " + element.font;
+                    this.ctx.fillStyle = "" + element.color;
+                    this.ctx.save();
+                    if (element.opacity) {
+                        this.ctx.globalAlpha = element.opacity;
+                    }
+                    lineIndex_1 = 0;
+                    element.text.split('\n').forEach(function (line) {
+                        var position = _this.factor(item.Screen, element.position.x, (Number(element.position.y) + element.fontSize));
+                        var linePosition = position.y + (lineIndex_1 * fontFactor_1);
+                        console.log(linePosition, fontFactor_1, lineIndex_1);
+                        _this.ctx.fillText(line, position.x, linePosition);
+                        lineIndex_1++;
                     });
-                });
-            }
-            function render_fullimage_to_canvas(url, x, y, _width, _height) {
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-                    var _this = this;
-                    return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                        log('@slide.service-render_fullimage_to_canvas');
-                        return [2 /*return*/, new Promise(function (resolve, reject) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
-                                var img;
-                                return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                                    switch (_a.label) {
-                                        case 0: return [4 /*yield*/, image_promise__WEBPACK_IMPORTED_MODULE_2___default()([url])];
-                                        case 1:
-                                            img = _a.sent();
-                                            if (img.length && img.length > 0) {
-                                                img = img[0];
-                                            }
-                                            if (img) {
-                                                img.width = ctx.canvas.width;
-                                                img.height = ctx.canvas.height;
-                                                images.push(img);
-                                                ctx.clearRect(0, 0, _width, _height);
-                                                ctx.drawImage(img, x, y, _width, _height);
-                                            }
-                                            resolve(img);
-                                            return [2 /*return*/];
-                                    }
-                                });
-                            }); })];
-                    });
-                });
-            }
-            function render_image_to_canvas(item, element) {
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-                    var url, x, y, _width, _height;
-                    var _this = this;
-                    return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                        url = element.src;
-                        x = element.position.x;
-                        y = element.position.y;
-                        _width = element.width;
-                        _height = element.height;
-                        log('@slide.service-render_image_to_canvas');
-                        return [2 /*return*/, new Promise(function (resolve, reject) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
-                                var img, sizes;
-                                return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                                    switch (_a.label) {
-                                        case 0: return [4 /*yield*/, image_promise__WEBPACK_IMPORTED_MODULE_2___default()([url])];
-                                        case 1:
-                                            img = _a.sent();
-                                            if (img && img.length && img.length > 0) {
-                                                img = img[0];
-                                            }
-                                            images.push(img);
-                                            sizes = factor(item.Screen, _width, _height);
-                                            ctx.save();
-                                            if (element.opacity) {
-                                                ctx.globalAlpha = element.opacity;
-                                            }
-                                            ctx.drawImage(img, x, y, sizes.x, sizes.y);
-                                            ctx.restore();
-                                            resolve(img);
-                                            return [2 /*return*/];
-                                    }
-                                });
-                            }); })];
-                    });
-                });
-            }
-            var stage, player, start, lines, images, frameDuration;
+                    this.ctx.restore();
+                }
+                return [2 /*return*/];
+            });
+        });
+    };
+    SlideWorker.prototype.playScreenError = function () {
+        this.ctx.font = "120px arial";
+        this.ctx.fillStyle = "black";
+        this.ctx.fillText('Screen error', this.width, this.height);
+    };
+    SlideWorker.prototype.play = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var frameDuration;
             var _this = this;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        stage = new _createjs_easeljs__WEBPACK_IMPORTED_MODULE_4__["Stage"](ctx.canvas);
+                        this.stage = new _createjs_easeljs__WEBPACK_IMPORTED_MODULE_2__["Stage"](this.ctx.canvas);
                         log('@slide.service-play');
-                        player = this;
-                        start = new Date();
-                        lines = 16;
-                        images = [];
-                        if (!(mode === 'single')) return [3 /*break*/, 2];
-                        return [4 /*yield*/, this.fontService.loadFontsForRender(playerPlan[0].fonts)];
+                        if (!(this.mode === 'single')) return [3 /*break*/, 2];
+                        console.log(this.playerPlan[0].fonts);
+                        return [4 /*yield*/, this.fontService.loadFontsForRender(this.playerPlan[0].fonts)];
                     case 1:
                         _a.sent();
-                        prerender(playerPlan[0]);
+                        console.log(this.playerPlan[0]);
+                        this.prerender(this.playerPlan[0]);
                         return [2 /*return*/];
                     case 2:
-                        this.playerPlan = playerPlan;
+                        this.playerPlan = this.playerPlan;
                         if (!this.playerPlan || this.playerPlan.length === 0) {
-                            playDefaultPlan();
+                            this.playDefaultPlan();
                             return [2 /*return*/];
                         }
                         _a.label = 3;
                     case 3:
                         this.list = this.playerPlan[0].list;
-                        prerender(this.list[this.itemIndex]);
+                        this.prerender(this.list[this.itemIndex]);
                         frameDuration = (this.list[this.itemIndex].duration) ? this.list[this.itemIndex].duration * 1000 : 5000;
                         this.itemIndex++;
-                        if (mode !== 'single') {
+                        if (this.mode !== 'single') {
                             setInterval(function () {
                                 if (_this.itemIndex >= _this.list.length) {
                                     _this.itemIndex = 0;
                                 }
-                                prerender(_this.list[_this.itemIndex]);
+                                _this.prerender(_this.list[_this.itemIndex]);
                                 _this.itemIndex++;
                             }, frameDuration);
                         }
@@ -6227,11 +6531,7 @@ var SlideService = /** @class */ (function () {
             });
         });
     };
-    SlideService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_app_editor_fonts_service__WEBPACK_IMPORTED_MODULE_3__["FontsService"]])
-    ], SlideService);
-    return SlideService;
+    return SlideWorker;
 }());
 
 

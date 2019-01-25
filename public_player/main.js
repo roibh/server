@@ -111,7 +111,9 @@ var ChangeComponent = /** @class */ (function () {
         }
     };
     ChangeComponent.prototype.ngOnChanges = function (changes) {
-        this.orgItem = JSON.parse(Object(fast_stringify__WEBPACK_IMPORTED_MODULE_3__["default"])(this.item));
+        if (this.item) {
+            this.orgItem = JSON.parse(Object(fast_stringify__WEBPACK_IMPORTED_MODULE_3__["default"])(this.item));
+        }
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
@@ -222,7 +224,7 @@ var LanguageBarComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-template [ngTemplateOutlet]=\"template || defaultTemplate\" [ngTemplateOutletContext]=\"{item: item}\">\n</ng-template>\n\n\n<ng-template #defaultTemplate let-item=\"item\">\n  <div class=\"m10\">\n    <span class=\"label\">{{item.Name}}</span>\n  </div>\n</ng-template>\n\n\n<ng-template #imageTemplate let-item=\"item\">\n  <div class=\"fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    <span class=\"label\">{{item.Name}}</span>\n  </div>\n</ng-template>\n\n<ng-template #playlistTemplate let-item=\"item\">\n  <div class=\"m10\">\n    <span class=\"label\">{{item.Name}}</span>\n    <span class=\"label\">({{item.list.length}})</span>\n  </div>\n</ng-template>\n\n\n<ng-template #slideTemplate let-item=\"item\">\n  <div class=\"canvas-bg\">\n    <app-canvas [item]=\"item\" [width]=\"200\" [height]=\"150\" [scale]=\"0.25\"></app-canvas>\n    <span class=\"label\">{{item.Name}}</span>\n  </div>\n</ng-template>\n"
+module.exports = "<ng-template [ngTemplateOutlet]=\"template || defaultTemplate\" [ngTemplateOutletContext]=\"{item: item}\">\n</ng-template>\n\n\n<ng-template #defaultTemplate let-item=\"item\">\n  <div class=\"m10\">\n    <span class=\"label\">{{item.Name}}</span>\n  </div>\n</ng-template>\n\n\n<ng-template #imageTemplate let-item=\"item\">\n  <div class=\"fancy-thumb\" [ngStyle]=\"{background: 'url(' + item.thumb + ')'}\">\n    <span class=\"label\">{{item.Name}}</span>\n  </div>\n</ng-template>\n\n<ng-template #playlistTemplate let-item=\"item\">\n  <div class=\"m10\">\n    <span class=\"label\">{{item.Name}}</span>\n    <span class=\"label\">({{item.list.length}})</span>\n  </div>\n</ng-template>\n\n\n<ng-template #slideTemplate let-item=\"item\">\n  <div class=\"canvas-bg\">\n    <app-canvas [item]=\"item\" [width]=\"230\" [height]=\"150\" [scale]=\"0.25\"></app-canvas>\n    <span class=\"label\">{{item.Name}}</span>\n  </div>\n</ng-template>\n"
 
 /***/ }),
 
@@ -321,7 +323,7 @@ var LobbyItemComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"lobby mt10\" *ngIf=\"mode==='media'\">\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn\" (click)=\"newItemHandler()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{item._meta_active}}\"  (click)=\"selectItemHandler(item)\">\n     \n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\" aria-label=\"Basic example\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"deleteItemHandler(item);\"> <i class=\"fas fa-trash\"></i>\n        </button>\n      </li>\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"editItemHandler(item);\"> <i class=\"fas fa-edit\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"lobby \" *ngIf=\"mode==='media-finder'\">\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{item._meta_active}}\">\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"selectItemHandler(item);\"> <i class=\"fas fa-plus-square\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"lobby \" *ngIf=\"mode==='object-finder'\">\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"selectItemHandler(item);\"> <i class=\"fas fa-plus-square\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"lobby  mt10\" *ngIf=\"mode==='object'\">\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn\" (click)=\"newItemHandler()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{item._meta_active}}\" (click)=\"selectItemHandler(item)\">\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\n\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"deleteItemHandler(item);\"> <i class=\"fas fa-trash\"></i>\n        </button>\n      </li>\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"editItemHandler(item);\"> <i class=\"fas fa-edit\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n "
+module.exports = "<ng-template #defaultToolbar let-item=\"item\">\n  <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n    <li>\n      <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"deleteItemHandler(item);\"> <i class=\"fas fa-trash\"></i>\n      </button>\n    </li>\n    <li>\n      <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"editItemHandler(item);\"> <i class=\"fas fa-edit\"></i>\n      </button>\n    </li>\n  </ul>\n</ng-template>\n\n\n<div class=\"lobby mt10\" *ngIf=\"mode==='media'\">\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn\" (click)=\"newItemHandler()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{item._meta_active}}\" (click)=\"selectItemHandler(item)\">\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\n    <ng-template [ngTemplateOutlet]=\"toolbar || defaultToolbar\" [ngTemplateOutletContext]=\"{item: item}\">\n    </ng-template>\n  </div>\n</div>\n\n<div class=\"lobby \" *ngIf=\"mode==='media-finder'\">\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{item._meta_active}}\">\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"selectItemHandler(item);\"> <i class=\"fas fa-plus-square\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"lobby \" *ngIf=\"mode==='object-finder'\">\n  <div *ngFor=\"let item of items\" class=\"sqr shadow\">\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"selectItemHandler(item);\"> <i class=\"fas fa-plus-square\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"lobby  mt10\" *ngIf=\"mode==='object'\">\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn\" (click)=\"newItemHandler()\"><i class=\"fas fa-plus-circle\"></i></div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{item._meta_active}}\" (click)=\"selectItemHandler(item)\">\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\n\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-danger\" (click)=\"deleteItemHandler(item);\"> <i class=\"fas fa-trash\"></i>\n        </button>\n      </li>\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"editItemHandler(item);\"> <i class=\"fas fa-edit\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -404,6 +406,10 @@ var LobbyComponent = /** @class */ (function () {
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"])
+    ], LobbyComponent.prototype, "toolbar", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"])
     ], LobbyComponent.prototype, "template", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
@@ -452,14 +458,6 @@ var LobbyComponent = /** @class */ (function () {
     return LobbyComponent;
 }());
 
-// else {
-//   if (item.type === 'slide' || item.elements) {
-//     item.template = this.slideTemplate;
-//   }
-//   if (item.type === 'image') {
-//     item.template = this.imageTemplate;
-//   }
-// }
 
 
 /***/ }),
@@ -943,7 +941,7 @@ var DataComponent = /** @class */ (function () {
             });
         });
     };
-    DataComponent.prototype.createItem = function () {
+    DataComponent.prototype.createItem = function (obj) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var _a;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
@@ -968,8 +966,8 @@ var DataComponent = /** @class */ (function () {
             });
         });
     };
-    DataComponent.prototype.newItem = function () {
-        this.item = {};
+    DataComponent.prototype.newItem = function (obj) {
+        this.item = obj || {};
         this.displayModalNew = 'active';
     };
     DataComponent.prototype.editItem = function (item) {
@@ -1214,7 +1212,7 @@ var ClickStopPropagationDirective = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"item\" [ngStyle]=\"{'background-color': bgColor}\">      \r\n    <object #thumbObject type=\"image/svg+xml\" style=\"width: {{width}}px;height: {{height}}px;\"></object>\r\n</div>\r\n"
+module.exports = "<div *ngIf=\"item\" [ngStyle]=\"{'background-color': bgColor}\">      \r\n    <!-- <object #thumbObject type=\"image/svg+xml\"></object> -->\r\n    <canvas #thumbObject height=\"{{height}}\" width=\"{{width}}\"></canvas>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1241,31 +1239,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CanvasComponent", function() { return CanvasComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var js_base64__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! js-base64 */ "./node_modules/js-base64/base64.js");
-/* harmony import */ var js_base64__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(js_base64__WEBPACK_IMPORTED_MODULE_3__);
-
+/* harmony import */ var _player_slide_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../player/slide.service */ "./src/player/slide.service.ts");
 
 
 
 var CanvasComponent = /** @class */ (function () {
-    function CanvasComponent(_ngZone, sanitizer) {
+    function CanvasComponent(_ngZone, slideService) {
         this._ngZone = _ngZone;
-        this.sanitizer = sanitizer;
+        this.slideService = slideService;
         this.scale = 0.2;
     }
-    CanvasComponent.prototype.ngOnInit = function () {
-        this.bgColor = this.item.bgColor;
-    };
     CanvasComponent.prototype.paint = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var _this = this;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 this._ngZone.run(function () { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
-                    var html;
+                    var element, ctx;
                     return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                        html = this.renderElementsToTags(this.item.elements).join('');
-                        this.render_html_to_canvas(html, 0, 0, this.width, this.height);
+                        element = this.thumbObject.first.nativeElement;
+                        element.width = this.width;
+                        element.height = this.height;
+                        ctx = element.getContext('2d');
+                        this.slideService.play([this.item], ctx, this.width, this.height, 'single');
                         return [2 /*return*/];
                     });
                 }); });
@@ -1275,48 +1270,6 @@ var CanvasComponent = /** @class */ (function () {
     };
     CanvasComponent.prototype.ngAfterViewInit = function () {
         this.paint();
-    };
-    CanvasComponent.prototype.downsize = function (size) {
-        return size * this.scale;
-    };
-    CanvasComponent.prototype.renderElementsToTags = function (elements) {
-        var _this = this;
-        return elements.map(function (element) {
-            switch (element.type) {
-                case 'image':
-                    return "<img src=\"" + element.src + "\" style=\"position: absolute; top: " + _this.downsize(element.position.y) + "px;left: " + _this.downsize(element.position.x) + "px;width:" + _this.downsize(element.width) + "px;height:" + _this.downsize(element.height) + "px\"/>";
-                // return `<img src="${element.src}" style="position: absolute; top: ${element.position.y}px;left: ${element.position.x}px;" />`;
-                case 'text':
-                    return "<div style=\"font-size:" + _this.downsize(element.fontSize) + "px; color: " + element.color + ";font-family:'" + element.font + "';position: absolute; top: " + element.position.y + "px;left: " + element.position.x + "px;\">" + element.text + "</div>";
-            }
-        });
-    };
-    CanvasComponent.prototype.render_html_to_canvas = function (html, x, y, width, height) {
-        var data = 'data:image/svg+xml;base64,' + js_base64__WEBPACK_IMPORTED_MODULE_3__["Base64"].encode('<svg xmlns="http://www.w3.org/2000/svg" width="'
-            + width + '" height="' + height + '">' +
-            '<style>' +
-            'foreignObject { fill: black }' +
-            '</style>' +
-            ("<g transform=\"scale(" + this.scale + ")\">") +
-            '<foreignObject width="800" height="600">' +
-            this.html_to_xml(html) +
-            '</foreignObject>' +
-            '</g>' +
-            '</svg>');
-        this.svg = data;
-        this.thumbObject.first.nativeElement.data = data;
-    };
-    CanvasComponent.prototype.html_to_xml = function (html) {
-        var doc = document.implementation.createHTMLDocument('');
-        doc.write(html);
-        // You must manually set the xmlns if you intend to immediately serialize
-        // the HTML document to a string as opposed to appending it to a
-        // <foreignObject> in the DOM
-        doc.documentElement.setAttribute('xmlns', doc.documentElement.namespaceURI);
-        // Get well-formed markup
-        doc.body.style.backgroundColor = '#000';
-        html = (new XMLSerializer).serializeToString(doc.body);
-        return html;
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
@@ -1344,7 +1297,7 @@ var CanvasComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./canvas.component.html */ "./src/app/editor/canvas/canvas.component.html"),
             styles: [__webpack_require__(/*! ./canvas.component.scss */ "./src/app/editor/canvas/canvas.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _player_slide_service__WEBPACK_IMPORTED_MODULE_2__["SlideService"]])
     ], CanvasComponent);
     return CanvasComponent;
 }());
@@ -1397,6 +1350,9 @@ var FontsService = /** @class */ (function () {
                             window.WebFont.load({
                                 active: function () {
                                     log('@fonts.service-loadFontsForRender-active');
+                                },
+                                fontloading: function (item) {
+                                    _this.loadedFonts[item] = item;
                                     resolve();
                                 },
                                 loading: function () {
@@ -1412,6 +1368,7 @@ var FontsService = /** @class */ (function () {
                         }
                         else {
                             log('@fonts.service-loadFontsForRender-skip');
+                            return resolve(_this.fonts);
                         }
                     })];
             });
@@ -1455,7 +1412,7 @@ var FontsService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"slider-container-wide {{active}} shadow\">\n\n  <dialog open= {{active}}>\n    <app-slide-header  closeFn=\"true\" title=\"NAVBAR.FINDER\" className=\"library-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n    <div class=\"input-group pt50\">\n      <input type=\"text\" name=\"searchPhrase\" class=\"form-control\" />\n      <div class=\"input-group-prepend\">\n        <button class=\"btn btn-outline-secondary\" type=\"button\"> <i class=\"fas fa-search\"></i></button>\n      </div>\n    </div>\n    <ul class=\"nav nav-tabs\">\n      <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n        <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n      </li>\n    </ul>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias !=='slide'\">\n      <app-lobby [items]=\"filteredItems()\" mode=\"media-finder\" (selectItem)=\"selectItem($event)\" (deleteItem)=\"deleteItem($event)\"\n        (newItem)=\"newItem($event)\"></app-lobby>\n    </div>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias ==='slide'\">\n      <app-lobby [items]=\"slides\" mode=\"object-finder\" (selectItem)=\"selectItem($event)\" (deleteItem)=\"deleteItem($event)\"\n        (newItem)=\"newItem($event)\"></app-lobby>\n    </div>\n    <app-slide-footer className=\"library-cat\"></app-slide-footer>\n  </dialog>\n</div>\n"
+module.exports = "<div class=\"slider-container-wide {{active}} shadow\">\n\n  <dialog open= {{active}}>\n    <app-slide-header  closeFn=\"true\" title=\"NAVBAR.FINDER\" className=\"library-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n    <div class=\"input-group pt50\">\n      <input type=\"text\" name=\"searchPhrase\" class=\"form-control\" />\n      <div class=\"input-group-prepend\">\n        <button class=\"btn btn-outline-secondary\" type=\"button\"> <i class=\"fas fa-search\"></i></button>\n      </div>\n    </div>\n    <ul class=\"nav nav-tabs\">\n      <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n        <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n      </li>\n    </ul>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias !=='slide'\">\n      <app-lobby [items]=\"filteredItems()\" mode=\"media-finder\" (selectItem)=\"selectItem($event)\" (deleteItem)=\"deleteItem($event)\"\n        ></app-lobby>\n    </div>\n    <div class=\"container no-margin\" *ngIf=\"selectedTab && selectedTab.alias ==='slide'\">\n      <app-lobby [items]=\"slides\" mode=\"object-finder\" (selectItem)=\"selectItem($event)\" (deleteItem)=\"deleteItem($event)\"\n       ></app-lobby>\n    </div>\n    <app-slide-footer className=\"library-cat\"></app-slide-footer>\n  </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -1593,6 +1550,47 @@ var FinderComponent = /** @class */ (function (_super) {
 
 /***/ }),
 
+/***/ "./src/app/pipes/filter.pipe.ts":
+/*!**************************************!*\
+  !*** ./src/app/pipes/filter.pipe.ts ***!
+  \**************************************/
+/*! exports provided: FilterPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FilterPipe", function() { return FilterPipe; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var FilterPipe = /** @class */ (function () {
+    function FilterPipe() {
+    }
+    FilterPipe.prototype.transform = function (items, searchText) {
+        if (!items) {
+            return [];
+        }
+        if (!searchText) {
+            return items;
+        }
+        searchText = searchText.toLowerCase();
+        return items.filter(function (it) {
+            return it.name.toLowerCase().includes(searchText);
+        });
+    };
+    FilterPipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+            name: 'filter'
+        })
+    ], FilterPipe);
+    return FilterPipe;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/services/dirty.service.ts":
 /*!*******************************************!*\
   !*** ./src/app/services/dirty.service.ts ***!
@@ -1639,6 +1637,48 @@ var DirtyService = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], DirtyService);
     return DirtyService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/history.service.ts":
+/*!*********************************************!*\
+  !*** ./src/app/services/history.service.ts ***!
+  \*********************************************/
+/*! exports provided: PreviousRouteService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PreviousRouteService", function() { return PreviousRouteService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+var PreviousRouteService = /** @class */ (function () {
+    function PreviousRouteService(router) {
+        var _this = this;
+        this.router = router;
+        this.currentUrl = this.router.url;
+        router.events.subscribe(function (event) {
+            if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"]) {
+                _this.previousUrl = _this.currentUrl;
+                _this.currentUrl = event.url;
+            }
+        });
+    }
+    PreviousRouteService.prototype.getPreviousUrl = function () {
+        return this.previousUrl;
+    };
+    PreviousRouteService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+    ], PreviousRouteService);
+    return PreviousRouteService;
 }());
 
 
@@ -1868,6 +1908,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_responsive_service__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./services/responsive.service */ "./src/app/services/responsive.service.ts");
 /* harmony import */ var _common_change_change_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./common/change/change.component */ "./src/app/common/change/change.component.ts");
 /* harmony import */ var _directives_change_directive__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./directives/change.directive */ "./src/app/directives/change.directive.ts");
+/* harmony import */ var _pipes_filter_pipe__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./pipes/filter.pipe */ "./src/app/pipes/filter.pipe.ts");
+/* harmony import */ var _services_history_service__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./services/history.service */ "./src/app/services/history.service.ts");
+
+
 
 
 
@@ -1933,8 +1977,9 @@ var SharedModule = /** @class */ (function () {
                 _common_slide_header_slide_header_component__WEBPACK_IMPORTED_MODULE_12__["SlideHeaderComponent"],
                 _common_slide_footer_slide_footer_component__WEBPACK_IMPORTED_MODULE_13__["SlideFooterComponent"],
                 _common_lobby_lobby_component__WEBPACK_IMPORTED_MODULE_14__["LobbyComponent"],
-                _common_lobby_item_lobby_item_component__WEBPACK_IMPORTED_MODULE_22__["LobbyItemComponent"]],
-            providers: [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"], _services_language_dictionary_service__WEBPACK_IMPORTED_MODULE_4__["DictionaryService"], _services_name_service__WEBPACK_IMPORTED_MODULE_5__["NameService"], _player_slide_service__WEBPACK_IMPORTED_MODULE_20__["SlideService"], _services_dirty_service__WEBPACK_IMPORTED_MODULE_23__["DirtyService"], _services_responsive_service__WEBPACK_IMPORTED_MODULE_25__["ResponsiveService"]],
+                _common_lobby_item_lobby_item_component__WEBPACK_IMPORTED_MODULE_22__["LobbyItemComponent"],
+                _pipes_filter_pipe__WEBPACK_IMPORTED_MODULE_28__["FilterPipe"]],
+            providers: [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"], _services_language_dictionary_service__WEBPACK_IMPORTED_MODULE_4__["DictionaryService"], _services_name_service__WEBPACK_IMPORTED_MODULE_5__["NameService"], _player_slide_service__WEBPACK_IMPORTED_MODULE_20__["SlideService"], _services_dirty_service__WEBPACK_IMPORTED_MODULE_23__["DirtyService"], _services_responsive_service__WEBPACK_IMPORTED_MODULE_25__["ResponsiveService"], _services_history_service__WEBPACK_IMPORTED_MODULE_29__["PreviousRouteService"]],
             exports: [_editor_canvas_canvas_component__WEBPACK_IMPORTED_MODULE_19__["CanvasComponent"],
                 _common_language_bar_language_bar_component__WEBPACK_IMPORTED_MODULE_8__["LanguageBarComponent"],
                 _common_lobby_lobby_component__WEBPACK_IMPORTED_MODULE_14__["LobbyComponent"],
@@ -1951,7 +1996,8 @@ var SharedModule = /** @class */ (function () {
                 angular2_draggable__WEBPACK_IMPORTED_MODULE_7__["AngularDraggableModule"],
                 _directives_change_directive__WEBPACK_IMPORTED_MODULE_27__["DetectChangesDirective"],
                 _common_change_change_component__WEBPACK_IMPORTED_MODULE_26__["ChangeComponent"],
-                ng2_dragula__WEBPACK_IMPORTED_MODULE_16__["DragulaDirective"]],
+                ng2_dragula__WEBPACK_IMPORTED_MODULE_16__["DragulaDirective"],
+                _pipes_filter_pipe__WEBPACK_IMPORTED_MODULE_28__["FilterPipe"]],
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"]])
     ], SharedModule);
@@ -2028,7 +2074,7 @@ module.exports = "\r\n<router-outlet></router-outlet>"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"{{bodyClass}}\">\r\n    <label *ngIf=\"!playerPlan\" class=\"huge\">{{Token}}</label>\r\n    <div class=\"screen\">\r\n        <canvas *ngIf=\"playerPlan\" #playerCanvas id=\"playerCanvas\"></canvas>\r\n    </div>\r\n</div>\r\n"
+module.exports = "<div class=\"{{bodyClass}}\">\r\n    {{playerPlan | json}}\r\n    <label *ngIf=\"!playerPlan\" class=\"huge\">{{Token}}</label>\r\n    <div *ngIf=\"playerPlan\" class=\"screen\">\r\n        <div id=\"animation_container\">\r\n            <canvas #playerCanvas id=\"playerCanvas\" width=\"100%\" height=\"100%\" style=\"position: absolute; display: block; background-color:rgba(0, 0, 0, 1.00);\"></canvas>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -2399,13 +2445,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SlideService", function() { return SlideService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var image_promise__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! image-promise */ "./node_modules/image-promise/dist/image-promise.common-js.js");
-/* harmony import */ var image_promise__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(image_promise__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _app_editor_fonts_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../app/editor/fonts.service */ "./src/app/editor/fonts.service.ts");
+/* harmony import */ var _app_editor_fonts_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../app/editor/fonts.service */ "./src/app/editor/fonts.service.ts");
+/* harmony import */ var _slide_worker__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./slide.worker */ "./src/player/slide.worker.ts");
 
 
 
 
+// import { Stage, Shape, } from '@createjs/easeljs';
+var Eval = eval;
 var log = console.log;
 var SlideService = /** @class */ (function () {
     function SlideService(fontService) {
@@ -2423,11 +2470,9 @@ var SlideService = /** @class */ (function () {
                         this.list = this.playerPlan[0].list;
                         fontsArr_1 = {};
                         this.list.forEach(function (item) {
-                            if (item.elements) {
-                                item.elements.forEach(function (element) {
-                                    if (element.font) {
-                                        fontsArr_1[element.font] = element.font;
-                                    }
+                            if (item.fonts) {
+                                item.fonts.forEach(function (font) {
+                                    fontsArr_1[font] = font;
                                 });
                             }
                         });
@@ -2440,259 +2485,299 @@ var SlideService = /** @class */ (function () {
             });
         });
     };
+    SlideService.prototype.createWorker = function (playerPlan, ctx, width, height, mode) {
+    };
     SlideService.prototype.play = function (playerPlan, ctx, width, height, mode) {
-        var _this = this;
-        log('@slide.service-play');
-        var player = this;
-        var start = new Date();
-        var lines = 16;
-        function factor(screen, x, y) {
-            return { x: x * (width / screen.width), y: y * (height / screen.height) };
-        }
-        function prerender(item) {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-                var _a;
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
-                    switch (_b.label) {
-                        case 0:
-                            log('@slide.service-prerender');
-                            if (item.elements) {
-                                item.type = 'slide';
-                            }
-                            _a = item.type;
-                            switch (_a) {
-                                case 'image': return [3 /*break*/, 1];
-                                case 'slide': return [3 /*break*/, 3];
-                            }
-                            return [3 /*break*/, 5];
-                        case 1: return [4 /*yield*/, render_fullimage_to_canvas(item.resource, 0, 0, width, height)];
-                        case 2: return [2 /*return*/, _b.sent()];
-                        case 3: return [4 /*yield*/, renderElementsToTags(item)];
-                        case 4: return [2 /*return*/, _b.sent()];
-                        case 5: return [2 /*return*/];
-                    }
-                });
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var playX;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                playX = new _slide_worker__WEBPACK_IMPORTED_MODULE_3__["SlideWorker"](this.fontService, playerPlan, ctx, width, height, mode);
+                playX.play();
+                return [2 /*return*/];
             });
-        }
-        function playScreenError() {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                    ctx.font = "120px arial";
-                    ctx.fillStyle = "black";
-                    ctx.fillText('Screen error', width, height);
-                    return [2 /*return*/];
-                });
-            });
-        }
-        // window.setInterval(playLoadingAnimation, 1000 / 30);
-        function playLoadingAnimation() {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-                var rotation, i;
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                    rotation = ((new Date() - start) / 1000) * lines / lines;
-                    ctx.save();
-                    ctx.clearRect(0, 0, width, height);
-                    ctx.translate(width / 2, height / 2);
-                    ctx.rotate(Math.PI * 2 * rotation);
-                    for (i = 0; i < lines; i++) {
-                        ctx.beginPath();
-                        ctx.rotate(Math.PI * 2 / lines);
-                        ctx.moveTo(width / 10, 0);
-                        ctx.lineTo(width / 4, 0);
-                        ctx.lineWidth = width / 30;
-                        ctx.strokeStyle = 'rgba(0, 0, 0,' + i / lines + ')';
-                        ctx.stroke();
-                    }
-                    ctx.restore();
-                    return [2 /*return*/];
-                });
-            });
-        }
-        function playDefaultPlan() {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                    ctx.font = "120px arial";
-                    ctx.fillStyle = "black";
-                    ctx.fillText('Nothing to play', width / 4, height / 2);
-                    setTimeout(function () {
-                        player.play(player.playerPlan, ctx, width, height);
-                    }, 10 * 1000);
-                    return [2 /*return*/];
-                });
-            });
-        }
-        function renderElementsToTags(item) {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-                var index, element, _a;
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
-                    switch (_b.label) {
-                        case 0:
-                            log('@slide.service-renderElementsToTags');
-                            ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-                            if (item.bgColor) {
-                                ctx.fillStyle = item.bgColor;
-                                ctx.fillRect(0, 0, width, height);
-                            }
-                            item.elements.sort(function (a, b) {
-                                return a.zIndex - b.zIndex;
-                            });
-                            index = 0;
-                            _b.label = 1;
-                        case 1:
-                            if (!(index < item.elements.length)) return [3 /*break*/, 6];
-                            element = item.elements[index];
-                            _a = element.type;
-                            switch (_a) {
-                                case 'image': return [3 /*break*/, 2];
-                                case 'text': return [3 /*break*/, 4];
-                            }
-                            return [3 /*break*/, 5];
-                        case 2: return [4 /*yield*/, render_image_to_canvas(item, element)];
-                        case 3:
-                            _b.sent();
-                            return [3 /*break*/, 5];
-                        case 4:
-                            render_text_to_canvas(item, element);
-                            return [3 /*break*/, 5];
-                        case 5:
-                            index++;
-                            return [3 /*break*/, 1];
-                        case 6: return [2 /*return*/];
-                    }
-                });
-            });
-        }
-        function loadImageUrl(url) {
-            return new Promise(function (resolve, reject) {
-                var img = new Image();
-                img.addEventListener('load', function (e) { return resolve(img); });
-                img.addEventListener('error', function () {
-                    reject(new Error("Failed to load image's URL: " + url));
-                });
-                img.src = url;
-            });
-        }
-        function render_text_to_canvas(item, element) {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-                var position;
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                    log('@slide.service-render_text_to_canvas');
-                    if (element.text) {
-                        ctx.font = element.fontSize + "px " + element.font;
-                        ctx.fillStyle = "" + element.color;
-                        ctx.save();
-                        if (element.opacity) {
-                            ctx.globalAlpha = element.opacity;
-                        }
-                        position = factor(item.Screen, element.position.x, (Number(element.position.y) + element.fontSize));
-                        // ctx.fillText(JSON.stringify({ x: position.x, y: position.y }), position.x, position.y);
-                        ctx.fillText(element.text, position.x, position.y);
-                        ctx.restore();
-                    }
-                    return [2 /*return*/];
-                });
-            });
-        }
-        function render_fullimage_to_canvas(url, x, y, _width, _height) {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-                var _this = this;
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                    log('@slide.service-render_fullimage_to_canvas');
-                    return [2 /*return*/, new Promise(function (resolve, reject) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
-                            var img;
-                            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                                switch (_a.label) {
-                                    case 0: return [4 /*yield*/, image_promise__WEBPACK_IMPORTED_MODULE_2___default()([url])];
-                                    case 1:
-                                        img = _a.sent();
-                                        if (img.length && img.length > 0) {
-                                            img = img[0];
-                                        }
-                                        if (img) {
-                                            img.width = ctx.canvas.width;
-                                            img.height = ctx.canvas.height;
-                                            images.push(img);
-                                            ctx.clearRect(0, 0, _width, _height);
-                                            ctx.drawImage(img, x, y, _width, _height);
-                                        }
-                                        resolve(img);
-                                        return [2 /*return*/];
-                                }
-                            });
-                        }); })];
-                });
-            });
-        }
-        function render_image_to_canvas(item, element) {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-                var url, x, y, _width, _height;
-                var _this = this;
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                    url = element.src;
-                    x = element.position.x;
-                    y = element.position.y;
-                    _width = element.width;
-                    _height = element.height;
-                    log('@slide.service-render_image_to_canvas');
-                    return [2 /*return*/, new Promise(function (resolve, reject) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
-                            var img, sizes;
-                            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                                switch (_a.label) {
-                                    case 0: return [4 /*yield*/, image_promise__WEBPACK_IMPORTED_MODULE_2___default()([url])];
-                                    case 1:
-                                        img = _a.sent();
-                                        if (img && img.length && img.length > 0) {
-                                            img = img[0];
-                                        }
-                                        images.push(img);
-                                        sizes = factor(item.Screen, _width, _height);
-                                        ctx.save();
-                                        if (element.opacity) {
-                                            ctx.globalAlpha = element.opacity;
-                                        }
-                                        ctx.drawImage(img, x, y, sizes.x, sizes.y);
-                                        ctx.restore();
-                                        resolve(img);
-                                        return [2 /*return*/];
-                                }
-                            });
-                        }); })];
-                });
-            });
-        }
-        function html_to_xml(html) {
-            var doc = document.implementation.createHTMLDocument('');
-            doc.write(html);
-            doc.documentElement.setAttribute('xmlns', doc.documentElement.namespaceURI);
-            // Get well-formed markup
-            html = (new XMLSerializer).serializeToString(doc.body);
-            return html;
-        }
-        this.playerPlan = playerPlan;
-        var images = [];
-        if (!this.playerPlan || this.playerPlan.length === 0) {
-            playDefaultPlan();
-            return;
-        }
-        this.list = this.playerPlan[0].list;
-        prerender(this.list[this.itemIndex]);
-        var frameDuration = (this.list[this.itemIndex].duration) ? this.list[this.itemIndex].duration * 1000 : 5000;
-        this.itemIndex++;
-        if (mode !== 'single') {
-            setInterval(function () {
-                if (_this.itemIndex >= _this.list.length) {
-                    _this.itemIndex = 0;
-                }
-                prerender(_this.list[_this.itemIndex]);
-                _this.itemIndex++;
-            }, frameDuration);
-        }
+        });
     };
     SlideService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_app_editor_fonts_service__WEBPACK_IMPORTED_MODULE_3__["FontsService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_app_editor_fonts_service__WEBPACK_IMPORTED_MODULE_2__["FontsService"]])
     ], SlideService);
     return SlideService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/player/slide.worker.ts":
+/*!************************************!*\
+  !*** ./src/player/slide.worker.ts ***!
+  \************************************/
+/*! exports provided: SlideWorker */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SlideWorker", function() { return SlideWorker; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var image_promise__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! image-promise */ "./node_modules/image-promise/dist/image-promise.common-js.js");
+/* harmony import */ var image_promise__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(image_promise__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _createjs_easeljs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @createjs/easeljs */ "./node_modules/@createjs/easeljs/src/main.js");
+
+
+
+var Eval = eval;
+var log = console.log;
+var SlideWorker = /** @class */ (function () {
+    function SlideWorker(fontService, playerPlan, ctx, width, height, mode) {
+        this.fontService = fontService;
+        this.playerPlan = playerPlan;
+        this.ctx = ctx;
+        this.width = width;
+        this.height = height;
+        this.mode = mode;
+        this.start = new Date();
+        this.images = [];
+        this.itemIndex = 0;
+    }
+    SlideWorker.prototype.factor = function (screen, x, y) {
+        if (!y) {
+            return Math.floor(x * (this.width / screen.width));
+        }
+        else {
+            return { x: x * (this.width / screen.width), y: y * (this.height / screen.height) };
+        }
+    };
+    SlideWorker.prototype.prerender = function (item) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _a;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        log('@slide.service-prerender');
+                        if (item.elements) {
+                            item.type = 'slide';
+                        }
+                        _a = item.type;
+                        switch (_a) {
+                            case 'image': return [3 /*break*/, 1];
+                            case 'slide': return [3 /*break*/, 3];
+                        }
+                        return [3 /*break*/, 5];
+                    case 1: return [4 /*yield*/, this.render_fullimage_to_canvas(item.resource, 0, 0, this.width, this.height)];
+                    case 2: return [2 /*return*/, _b.sent()];
+                    case 3: return [4 /*yield*/, this.renderElementsToTags(item)];
+                    case 4: return [2 /*return*/, _b.sent()];
+                    case 5: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    SlideWorker.prototype.playDefaultPlan = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                this.ctx.font = "120px arial";
+                this.ctx.fillStyle = "black";
+                this.ctx.fillText('Nothing to play', this.width / 4, this.height / 2);
+                setTimeout(function () {
+                    _this.player.play(_this.player.playerPlan, _this.ctx, _this.width, _this.height);
+                }, 10 * 1000);
+                return [2 /*return*/];
+            });
+        });
+    };
+    SlideWorker.prototype.render_fullimage_to_canvas = function (url, x, y, _width, _height) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                log('@slide.service-render_fullimage_to_canvas');
+                return [2 /*return*/, new Promise(function (resolve, reject) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
+                        var img;
+                        return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                            switch (_a.label) {
+                                case 0: return [4 /*yield*/, image_promise__WEBPACK_IMPORTED_MODULE_1___default()([url])];
+                                case 1:
+                                    img = _a.sent();
+                                    if (img.length && img.length > 0) {
+                                        img = img[0];
+                                    }
+                                    if (img) {
+                                        img.width = this.ctx.canvas.width;
+                                        img.height = this.ctx.canvas.height;
+                                        this.images.push(img);
+                                        this.ctx.clearRect(0, 0, _width, _height);
+                                        this.ctx.drawImage(img, x, y, _width, _height);
+                                    }
+                                    resolve(img);
+                                    return [2 /*return*/];
+                            }
+                        });
+                    }); })];
+            });
+        });
+    };
+    SlideWorker.prototype.render_image_to_canvas = function (item, element) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var url, x, y, _width, _height;
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                url = element.src;
+                x = element.position.x;
+                y = element.position.y;
+                _width = element.width;
+                _height = element.height;
+                log('@slide.service-render_image_to_canvas');
+                return [2 /*return*/, new Promise(function (resolve, reject) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
+                        var img, sizes;
+                        return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                            switch (_a.label) {
+                                case 0: return [4 /*yield*/, image_promise__WEBPACK_IMPORTED_MODULE_1___default()([url])];
+                                case 1:
+                                    img = _a.sent();
+                                    if (img && img.length && img.length > 0) {
+                                        img = img[0];
+                                    }
+                                    this.images.push(img);
+                                    sizes = this.factor(item.Screen, _width, _height);
+                                    this.ctx.save();
+                                    if (element.opacity) {
+                                        this.ctx.globalAlpha = element.opacity;
+                                    }
+                                    this.ctx.drawImage(img, x, y, sizes.x, sizes.y);
+                                    this.ctx.restore();
+                                    resolve(img);
+                                    return [2 /*return*/];
+                            }
+                        });
+                    }); })];
+            });
+        });
+    };
+    SlideWorker.prototype.renderElementsToTags = function (item) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var shape, index, element, _a;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        log('@slide.service-renderElementsToTags');
+                        this.stage.clear(0, 0, this.stage.canvas.width, this.stage.canvas.height);
+                        if (item.bgColor) {
+                            shape = new _createjs_easeljs__WEBPACK_IMPORTED_MODULE_2__["Shape"]();
+                            shape.graphics.beginFill(item.bgColor).drawRect(0, 0, this.width, this.height);
+                            this.stage.addChild(shape);
+                            this.stage.update();
+                        }
+                        if (item.script && this.mode !== 'single') {
+                            Eval(item.script);
+                            Eval(item.player);
+                            return [2 /*return*/];
+                        }
+                        item.elements.sort(function (a, b) {
+                            return a.zIndex - b.zIndex;
+                        });
+                        index = 0;
+                        _b.label = 1;
+                    case 1:
+                        if (!(index < item.elements.length)) return [3 /*break*/, 6];
+                        element = item.elements[index];
+                        _a = element.type;
+                        switch (_a) {
+                            case 'image': return [3 /*break*/, 2];
+                            case 'text': return [3 /*break*/, 4];
+                        }
+                        return [3 /*break*/, 5];
+                    case 2: return [4 /*yield*/, this.render_image_to_canvas(item, element)];
+                    case 3:
+                        _b.sent();
+                        return [3 /*break*/, 5];
+                    case 4:
+                        this.render_text_to_canvas(item, element);
+                        return [3 /*break*/, 5];
+                    case 5:
+                        index++;
+                        return [3 /*break*/, 1];
+                    case 6: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    SlideWorker.prototype.render_text_to_canvas = function (item, element) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var fontFactor_1, lineIndex_1;
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                log('@slide.service-render_text_to_canvas');
+                if (element.text) {
+                    fontFactor_1 = this.factor(item.Screen, element.fontSize);
+                    this.ctx.font = fontFactor_1 + "px " + element.font;
+                    this.ctx.fillStyle = "" + element.color;
+                    this.ctx.save();
+                    if (element.opacity) {
+                        this.ctx.globalAlpha = element.opacity;
+                    }
+                    lineIndex_1 = 0;
+                    element.text.split('\n').forEach(function (line) {
+                        var position = _this.factor(item.Screen, element.position.x, (Number(element.position.y) + element.fontSize));
+                        var linePosition = position.y + (lineIndex_1 * fontFactor_1);
+                        console.log(linePosition, fontFactor_1, lineIndex_1);
+                        _this.ctx.fillText(line, position.x, linePosition);
+                        lineIndex_1++;
+                    });
+                    this.ctx.restore();
+                }
+                return [2 /*return*/];
+            });
+        });
+    };
+    SlideWorker.prototype.playScreenError = function () {
+        this.ctx.font = "120px arial";
+        this.ctx.fillStyle = "black";
+        this.ctx.fillText('Screen error', this.width, this.height);
+    };
+    SlideWorker.prototype.play = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var frameDuration;
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.stage = new _createjs_easeljs__WEBPACK_IMPORTED_MODULE_2__["Stage"](this.ctx.canvas);
+                        log('@slide.service-play');
+                        if (!(this.mode === 'single')) return [3 /*break*/, 2];
+                        console.log(this.playerPlan[0].fonts);
+                        return [4 /*yield*/, this.fontService.loadFontsForRender(this.playerPlan[0].fonts)];
+                    case 1:
+                        _a.sent();
+                        console.log(this.playerPlan[0]);
+                        this.prerender(this.playerPlan[0]);
+                        return [2 /*return*/];
+                    case 2:
+                        this.playerPlan = this.playerPlan;
+                        if (!this.playerPlan || this.playerPlan.length === 0) {
+                            this.playDefaultPlan();
+                            return [2 /*return*/];
+                        }
+                        _a.label = 3;
+                    case 3:
+                        this.list = this.playerPlan[0].list;
+                        this.prerender(this.list[this.itemIndex]);
+                        frameDuration = (this.list[this.itemIndex].duration) ? this.list[this.itemIndex].duration * 1000 : 5000;
+                        this.itemIndex++;
+                        if (this.mode !== 'single') {
+                            setInterval(function () {
+                                if (_this.itemIndex >= _this.list.length) {
+                                    _this.itemIndex = 0;
+                                }
+                                _this.prerender(_this.list[_this.itemIndex]);
+                                _this.itemIndex++;
+                            }, frameDuration);
+                        }
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    return SlideWorker;
 }());
 
 
