@@ -2590,6 +2590,9 @@ var FontsSelectComponent = /** @class */ (function () {
         var _this = this;
         this._ngZone.run(function () { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                if (!this.selectedFonts) {
+                    this.selectedFonts = [];
+                }
                 this.selectedFonts.push(font.name);
                 this.fonts[this.fonts.indexOf(font)].selected = true;
                 return [2 /*return*/];
