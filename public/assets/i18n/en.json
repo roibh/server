@@ -115,6 +115,7 @@
     "IMAGE_OPACITY": "Opacity",
     "IMAGE_WIDTH": "Width",
     "IMAGE_HEIGHT": "Height",
-    "CENTER": "Center"
+    "CENTER": "Center",
+    "REMOVE":"Remove"
   }
 }
