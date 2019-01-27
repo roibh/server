@@ -2578,7 +2578,7 @@ var FontsSelectComponent = /** @class */ (function () {
                     case 1:
                         _a.fonts = _b.sent();
                         this.fonts = this.fonts.map(function (item) {
-                            return { name: item, selected: _this.selectedFonts.indexOf(item) > -1 };
+                            return { name: item, selected: _this.selectedFonts && _this.selectedFonts.indexOf(item) > -1 };
                         });
                         this.font = this.fonts[0];
                         return [2 /*return*/];
