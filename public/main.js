@@ -1194,7 +1194,7 @@ var SlideHeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper\">\n    <nav id=\"sidebar\" [class]=\"activeClass\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <ul class=\"sidebar-header-bar\">\n                <li class=\"nav-item\" class=\"language-bar\">\n                    <app-language-bar></app-language-bar>\n                </li>\n                <li class=\"nav-item\">\n                    <button type=\"button\" (click)=\"toggleSidebar()\" id=\"sidebarCollapse\" class=\"btn-collapse\">\n                        <i class=\"fas fa-align-justify\"></i>\n                    </button>\n                </li>\n            </ul>\n            <strong>\n                <img src=\"assets/signnature_icon.png\" width=\"40\">\n            </strong>\n        </div>\n        <ul class=\"list-unstyled components\">\n            <li>\n                <a routerLink=\"/\" title=\"{{'NAVBAR.HOME' | translate}}\">\n                    <i class=\"fas fa-home\"></i>&nbsp;\n                    <span>\n                        {{\"NAVBAR.HOME\" | translate}}</span>\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"screens\" routerLinkActive=\"screen-cat\" title=\"{{'NAVBAR.SCREENS' | translate}}\">\n                    <i class=\"fas fa-desktop\"></i>&nbsp;\n                    <span class=\"nav-text\">\n                        {{\"NAVBAR.SCREENS\" | translate}}</span>\n\n                </a></li>\n            <li>\n                <a routerLink=\"screen-groups\" routerLinkActive=\"screen-group-cat\" title=\"{{'NAVBAR.SCREEN-GROUPS' | translate}}\">\n                    <i class=\"fas fa-clone\"></i>&nbsp;  <span class=\"nav-text\">\n                        {{\"NAVBAR.SCREEN-GROUPS\" | translate}}</span>\n\n                </a></li>\n            <li>\n                <a routerLinkActive=\"library-cat\" routerLink=\"library\" title=\"{{'NAVBAR.LIBRARY' | translate}}\">\n                    <i class=\"fas fa-copy\"></i>&nbsp;   <span class=\"nav-text\">\n                        {{\"NAVBAR.LIBRARY\" | translate}}</span>\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"playlists\" routerLinkActive=\"playlist-cat\" title=\"{{'NAVBAR.PLAYLISTS' | translate}}\">\n                    <i class=\"fas fa-step-forward\"></i>&nbsp;  <span class=\"nav-text\">\n                        {{\"NAVBAR.PLAYLISTS\" | translate}}</span>\n\n                </a>\n            </li>\n\n        </ul>\n    </nav>\n\n    <div id=\"content\" class=\"content-bg\">\n        <div class=\"library-cat\"></div>\n        <router-outlet></router-outlet>\n    </div>\n    <footer class=\"footer closed\">\n        {{'DASHBOARD.FOOTER' | translate}}\n    </footer>\n</div>\n"
+module.exports = "<div class=\"wrapper\">\n    <nav id=\"sidebar\" [class]=\"activeClass\">\n        <div class=\"sidebar-header\">\n            <h3>Sign-Nature</h3>\n            <ul class=\"sidebar-header-bar\">\n                <li class=\"nav-item\" class=\"language-bar\">\n                    <app-language-bar></app-language-bar>\n                </li>\n                <li class=\"nav-item\">\n                    <button type=\"button\" (click)=\"toggleSidebar()\" id=\"sidebarCollapse\" class=\"btn-collapse\">\n                        <i class=\"fas fa-align-justify\"></i>\n                    </button>\n                </li>\n            </ul>\n            <strong>\n                <img src=\"assets/signnature_icon.png\" width=\"40\">\n            </strong>\n        </div>\n        <ul class=\"list-unstyled components\">\n            <li>\n                <a routerLink=\"/\" title=\"{{'NAVBAR.HOME' | translate}}\">\n                    <i class=\"fas fa-home\"></i>&nbsp;\n                    <span>\n                        {{\"NAVBAR.HOME\" | translate}}</span>\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"screen\" routerLinkActive=\"screen-cat\" title=\"{{'NAVBAR.SCREENS' | translate}}\">\n                    <i class=\"fas fa-desktop\"></i>&nbsp;\n                    <span class=\"nav-text\">\n                        {{\"NAVBAR.SCREENS\" | translate}}</span>\n\n                </a></li>\n           \n            <li>\n                <a routerLinkActive=\"library-cat\" routerLink=\"library\" title=\"{{'NAVBAR.LIBRARY' | translate}}\">\n                    <i class=\"fas fa-copy\"></i>&nbsp;   <span class=\"nav-text\">\n                        {{\"NAVBAR.LIBRARY\" | translate}}</span>\n                </a>\n            </li>\n            <li>\n                <a routerLink=\"playlists\" routerLinkActive=\"playlist-cat\" title=\"{{'NAVBAR.PLAYLISTS' | translate}}\">\n                    <i class=\"fas fa-step-forward\"></i>&nbsp;  <span class=\"nav-text\">\n                        {{\"NAVBAR.PLAYLISTS\" | translate}}</span>\n\n                </a>\n            </li>\n\n        </ul>\n    </nav>\n\n    <div id=\"content\" class=\"content-bg\">\n        <div class=\"library-cat\"></div>\n        <router-outlet></router-outlet>\n    </div>\n    <footer class=\"footer closed\">\n        {{'DASHBOARD.FOOTER' | translate}}\n    </footer>\n</div>\n"
 
 /***/ }),
 
@@ -5084,7 +5084,7 @@ var SchedulesComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-slide-header mode=\"inline\" [title]=\"'NAVBAR.SCREEN-GROUPS'\" [iconClass]=\"'fas fa-clone'\" [className]=\"'screen-group-cat'\">\n</app-slide-header>\n\n<app-lobby [items]=\"items\" [mode]=\"'object'\" (editItem)=\"editItem($event)\" (deleteItem)=\"deleteItem($event)\" (newItem)=\"newItem()\"></app-lobby>\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n    <dialog open= {{displayModalNew}}>\n        <app-slide-header *ngIf=\"item\" [title]=\"item.Name\" closeFn=\"true\" [iconClass]=\"'fas fa-clone'\" [enableSave]='true' (save)=\"saveProxy($event)\"\n            [className]=\"'screen-group-cat'\" (closed)=\"close()\"></app-slide-header>\n        <form *ngIf=\"item\" class=\"pt50\">\n            <div class=\"form-group\">\n                <label for=\"screenName\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n                <input type=\"text\" name=\"screenName\" class=\"form-control\" [(ngModel)]=\"item.Name\">\n                <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n            </div>\n        </form>\n        <app-slide-footer [iconClass]=\"'fas fa-clone'\" [className]=\"'screen-group-cat'\"></app-slide-footer>\n\n    </dialog>\n</div>\n"
+module.exports = "<!-- <app-slide-header mode=\"inline\" [title]=\"'NAVBAR.SCREEN-GROUPS'\" [iconClass]=\"'fas fa-clone'\" [className]=\"'screen-group-cat'\">\n</app-slide-header> -->\n\n<app-lobby [items]=\"items\" [mode]=\"'object'\" (editItem)=\"editItem($event)\" (deleteItem)=\"deleteItem($event)\" (newItem)=\"newItem()\"></app-lobby>\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n    <dialog open= {{displayModalNew}}>\n        <app-slide-header *ngIf=\"item\" [title]=\"item.Name\" closeFn=\"true\" [iconClass]=\"'fas fa-clone'\" [enableSave]='true' (save)=\"saveProxy($event)\"\n            [className]=\"'screen-group-cat'\" (closed)=\"close()\"></app-slide-header>\n        <form *ngIf=\"item\" class=\"pt50\">\n            <div class=\"form-group\">\n                <label for=\"screenName\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n                <input type=\"text\" name=\"screenName\" class=\"form-control\" [(ngModel)]=\"item.Name\">\n                <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n            </div>\n        </form>\n        <app-slide-footer [iconClass]=\"'fas fa-clone'\" [className]=\"'screen-group-cat'\"></app-slide-footer>\n\n    </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -5155,6 +5155,88 @@ var ScreenGroupComponent = /** @class */ (function (_super) {
 
 /***/ }),
 
+/***/ "./src/app/screens/screen.component.html":
+/*!***********************************************!*\
+  !*** ./src/app/screens/screen.component.html ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<app-slide-header title=\"NAVBAR.SCREENS\" mode=\"inline\" iconClass=\"fas fa-desktop\" className=\"screen-cat\"></app-slide-header>\n<div style=\"padding: 10px;\">\n    <ul class=\"nav nav-tabs\">\n        <li class=\"nav-item\" *ngFor=\"let tab of tabs\" [routerLink]=\"[tab.alias]\" routerLinkActive=\"screen-group-cat\">\n            <a class=\"nav-link {{tab.selected}}\"><h5><i class=\"{{tab.icon}}\"></i> {{tab.name | translate}}</h5></a>\n        </li>\n    </ul>\n    <div class=\"nav-tabs-bar\"></div>\n    <div [appAdaptHeight]=\"120\">\n        <router-outlet></router-outlet>\n    </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/screens/screen.component.scss":
+/*!***********************************************!*\
+  !*** ./src/app/screens/screen.component.scss ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".nav.nav-tabs {\n  height: 40px; }\n\n.nav-tabs-bar {\n  width: 100%;\n  height: 4px;\n  background: #264356;\n  background: linear-gradient(90deg, #264356 0%, #3c7399 99%); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2NyZWVucy9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXHNjcmVlbnNcXHNjcmVlbi5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvc2NyZWVucy9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxzYXNzXFxfdmFyaWFibGVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBS0E7RUFDSSxZQUFZLEVBQUE7O0FBRWhCO0VBRUksV0FBVztFQUNYLFdBQVc7RUFDWCxtQkNSc0I7RURTdEIsMkRBQStFLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9zY3JlZW5zL3NjcmVlbi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG5cclxuQGltcG9ydCAnLi4vLi4vc2Fzcy9fdmFyaWFibGVzJztcclxuXHJcblxyXG4ubmF2Lm5hdi10YWJze1xyXG4gICAgaGVpZ2h0OiA0MHB4OyAgICBcclxufVxyXG4ubmF2LXRhYnMtYmFyXHJcbntcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgaGVpZ2h0OiA0cHg7XHJcbiAgICBiYWNrZ3JvdW5kOiRjb2xvci1saWdodGJsdWUxO1xyXG4gICAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDkwZGVnLCAkY29sb3ItbGlnaHRibHVlMSAwJSwgJGNvbG9yLWxpZ2h0Ymx1ZTIgOTklKTtcclxufSIsIlxyXG4kY29sb3ItZ3JheTogI2UzZTRlNTtcclxuJGNvbG9yLWRhcmtibHVlMTogIzE2MjQzMztcclxuJGNvbG9yLWRhcmtibHVlMjogIzJhNDU2MztcclxuJGNvbG9yLWxpZ2h0Ymx1ZTE6ICMyNjQzNTY7XHJcbiRjb2xvci1saWdodGJsdWUyOiAjM2M3Mzk5O1xyXG4kY29sb3Itb3JhbmdlOiAjZmM2NjAwO1xyXG4kY29sb3ItY3lhbjogIzAwZmZmNjtcclxuJGNvbG9yLXNjcmVlbjogIzAwY2ZmZjtcclxuJGNvbG9yLXNjcmVlbi1ncm91cDogIzAwZmZmNjtcclxuJGNvbG9yLWxpYnJhcnk6ICM5NmZmMDA7XHJcbiRjb2xvci15ZWxsb3c6ICNmZmZmMDA7XHJcbiRjb2xvci1wdXJwbGU6ICNmM2I3ZWI7XHJcbiRjb2xvci1ncmVlbjogIzk2ZmYwMDtcclxuJGNvbG9yLWJsYWNrOiAjMjIyO1xyXG4kY29sb3ItZ3JheXdoaXRlOiAjRkZFO1xyXG4gXHJcblxyXG4gIl19 */"
+
+/***/ }),
+
+/***/ "./src/app/screens/screen.component.ts":
+/*!*********************************************!*\
+  !*** ./src/app/screens/screen.component.ts ***!
+  \*********************************************/
+/*! exports provided: ScreenComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScreenComponent", function() { return ScreenComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+var ScreenComponent = /** @class */ (function () {
+    function ScreenComponent(_ngZone, translateService, router) {
+        this._ngZone = _ngZone;
+        this.translateService = translateService;
+        this.router = router;
+        this.tabs = [{
+                alias: 'screens',
+                name: 'NAVBAR.SCREENS', icon: 'fas fa-desktop', selected: true
+            },
+            {
+                alias: 'screen-group',
+                name: 'NAVBAR.SCREEN-GROUPS', icon: 'fas fa-clone', selected: false
+            }];
+    }
+    // tabSelect(tab) {
+    //   this.router.navigate([tab.alias]);
+    //   this.tabs.forEach(tabItem => tabItem.selected = false);
+    //   tab.selected = true;
+    //   this.selectedTab = tab;
+    // }
+    ScreenComponent.prototype.ngOnInit = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                return [2 /*return*/];
+            });
+        });
+    };
+    ScreenComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-screen',
+            template: __webpack_require__(/*! ./screen.component.html */ "./src/app/screens/screen.component.html"),
+            styles: [__webpack_require__(/*! ./screen.component.scss */ "./src/app/screens/screen.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+    ], ScreenComponent);
+    return ScreenComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/screens/screens.module.ts":
 /*!*******************************************!*\
   !*** ./src/app/screens/screens.module.ts ***!
@@ -5172,9 +5254,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _screens_screens_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./screens/screens.component */ "./src/app/screens/screens/screens.component.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ScreensComponent", function() { return _screens_screens_component__WEBPACK_IMPORTED_MODULE_3__["ScreensComponent"]; });
 
-/* harmony import */ var _shared_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../shared.module */ "./src/app/shared.module.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _screen_group_screen_group_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./screen-group/screen-group.component */ "./src/app/screens/screen-group/screen-group.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _shared_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared.module */ "./src/app/shared.module.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _screen_group_screen_group_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./screen-group/screen-group.component */ "./src/app/screens/screen-group/screen-group.component.ts");
+/* harmony import */ var _screen_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./screen.component */ "./src/app/screens/screen.component.ts");
+
+
 
 
 
@@ -5184,8 +5270,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var screenRoutes = [
-    { path: 'screens', component: _screens_screens_component__WEBPACK_IMPORTED_MODULE_3__["ScreensComponent"] },
-    { path: 'screen-groups', component: _screen_group_screen_group_component__WEBPACK_IMPORTED_MODULE_6__["ScreenGroupComponent"] }
+    {
+        path: 'screen', component: _screen_component__WEBPACK_IMPORTED_MODULE_8__["ScreenComponent"],
+        children: [
+            { path: 'screens', component: _screens_screens_component__WEBPACK_IMPORTED_MODULE_3__["ScreensComponent"] },
+            { path: 'screen-group', component: _screen_group_screen_group_component__WEBPACK_IMPORTED_MODULE_7__["ScreenGroupComponent"] }
+        ]
+    },
 ];
 var ScreensModule = /** @class */ (function () {
     function ScreensModule() {
@@ -5193,13 +5284,14 @@ var ScreensModule = /** @class */ (function () {
     ScreensModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             imports: [
-                _shared_module__WEBPACK_IMPORTED_MODULE_4__["SharedModule"],
+                _shared_module__WEBPACK_IMPORTED_MODULE_5__["SharedModule"],
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"]
+                _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormsModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"]
             ],
-            declarations: [_screens_screens_component__WEBPACK_IMPORTED_MODULE_3__["ScreensComponent"], _screen_group_screen_group_component__WEBPACK_IMPORTED_MODULE_6__["ScreenGroupComponent"]],
+            declarations: [_screens_screens_component__WEBPACK_IMPORTED_MODULE_3__["ScreensComponent"], _screen_group_screen_group_component__WEBPACK_IMPORTED_MODULE_7__["ScreenGroupComponent"], _screen_component__WEBPACK_IMPORTED_MODULE_8__["ScreenComponent"]],
             entryComponents: [_screens_screens_component__WEBPACK_IMPORTED_MODULE_3__["ScreensComponent"]],
-            exports: [_screens_screens_component__WEBPACK_IMPORTED_MODULE_3__["ScreensComponent"], _screen_group_screen_group_component__WEBPACK_IMPORTED_MODULE_6__["ScreenGroupComponent"]]
+            exports: [_screens_screens_component__WEBPACK_IMPORTED_MODULE_3__["ScreensComponent"], _screen_group_screen_group_component__WEBPACK_IMPORTED_MODULE_7__["ScreenGroupComponent"]]
         })
     ], ScreensModule);
     return ScreensModule;
@@ -5216,7 +5308,7 @@ var ScreensModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-slide-header mode=\"inline\" [title]=\"'NAVBAR.SCREENS'\" [iconClass]=\"'fas fa-desktop'\" [className]=\"'screen-cat'\"></app-slide-header>\n<app-lobby [items]=\"items\" [template]=\"lobbyTemplate\" [iconClass]=\"'fas fa-desktop'\" [mode]=\"'object'\" (editItem)=\"editItem($event)\"\n    (deleteItem)=\"deleteItem($event)\" (newItem)=\"newItem()\"></app-lobby>\n\n<ng-template #lobbyTemplate let-item=\"item\">\n    <i class=\"fas fa-desktop icon\"></i> <span class=\"label\">{{item.Name}} </span>\n    <div><small *ngIf=\"item.Group\">({{item.Group.Name}})</small></div>\n</ng-template>\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n    <dialog open= {{displayModalNew}}>\n        <app-slide-header *ngIf=\"item\" [title]=\"item.Name\" closeFn=\"true\" [enableSave]='true' (save)=\"saveProxy($event)\" [iconClass]=\"'fas fa-desktop'\"\n        className=\"screen-cat\" (closed)=\"close()\"></app-slide-header>\n        <form *ngIf=\"item\" class=\"pt50\">\n            <div class=\"form-group\">\n                <label for=\"screenName\">{{ \"SCREENS.NAME\" | translate }}:</label>\n                <input type=\"text\" name=\"screenName\" class=\"form-control\" [(ngModel)]=\"item.Name\">\n                <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"ScreenGroup\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n                <select [(ngModel)]=\"item.Group\" name=\"ScreenGroup\" [compareWith]=\"compareFn\" class=\"form-control\">\n                    <option *ngFor=\"let c of groups\" [ngValue]=\"c\">{{c.Name}}</option>\n                </select>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"exampleInputPassword1\">{{ \"SCREENS.TOKEN\" | translate }}</label>\n                <input type=\"text\" [(ngModel)]=\"item.Token\" name=\"txtToken\" class=\"form-control\" id=\"txtToken\" placeholder=\"{{'SCREENS.TOKEN' | translate}}\">\n            </div>\n        </form>\n        <app-slide-footer [title]=\"'NAVBAR.SCREENS'\" [iconClass]=\"'fas fa-desktop'\" [className]=\"'screen-cat'\" (closed)=\"close()\"></app-slide-footer>\n    </dialog>\n</div>\n"
+module.exports = "<!-- <app-slide-header mode=\"inline\" [title]=\"'NAVBAR.SCREENS'\" [iconClass]=\"'fas fa-desktop'\" [className]=\"'screen-cat'\"></app-slide-header> -->\n\n\n<app-lobby [items]=\"items\" [template]=\"lobbyTemplate\" [iconClass]=\"'fas fa-desktop'\" [mode]=\"'object'\" (editItem)=\"editItem($event)\"\n    (deleteItem)=\"deleteItem($event)\" (newItem)=\"newItem()\"></app-lobby>\n\n<ng-template #lobbyTemplate let-item=\"item\">\n    <i class=\"fas fa-desktop icon\"></i> <span class=\"label\">{{item.Name}} </span>\n    <div><small *ngIf=\"item.Group\">({{item.Group.Name}})</small></div>\n</ng-template>\n\n<div class=\"slider-container {{displayModalNew}} shadow\">\n    <dialog open= {{displayModalNew}}>\n        <app-slide-header *ngIf=\"item\" [title]=\"item.Name\" closeFn=\"true\" [enableSave]='true' (save)=\"saveProxy($event)\" [iconClass]=\"'fas fa-desktop'\"\n        className=\"screen-cat\" (closed)=\"close()\"></app-slide-header>\n        <form *ngIf=\"item\" class=\"pt50\">\n            <div class=\"form-group\">\n                <label for=\"screenName\">{{ \"SCREENS.NAME\" | translate }}:</label>\n                <input type=\"text\" name=\"screenName\" class=\"form-control\" [(ngModel)]=\"item.Name\">\n                <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"SCREENS.NAME_HELP\" | translate }}</small>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"ScreenGroup\">{{ \"SCREENS.GROUP_NAME\" | translate }}:</label>\n                <select [(ngModel)]=\"item.Group\" name=\"ScreenGroup\" [compareWith]=\"compareFn\" class=\"form-control\">\n                    <option *ngFor=\"let c of groups\" [ngValue]=\"c\">{{c.Name}}</option>\n                </select>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"exampleInputPassword1\">{{ \"SCREENS.TOKEN\" | translate }}</label>\n                <input type=\"text\" [(ngModel)]=\"item.Token\" name=\"txtToken\" class=\"form-control\" id=\"txtToken\" placeholder=\"{{'SCREENS.TOKEN' | translate}}\">\n            </div>\n        </form>\n        <app-slide-footer [title]=\"'NAVBAR.SCREENS'\" [iconClass]=\"'fas fa-desktop'\" [className]=\"'screen-cat'\" (closed)=\"close()\"></app-slide-footer>\n    </dialog>\n</div>\n"
 
 /***/ }),
 
