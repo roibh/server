@@ -3799,7 +3799,7 @@ var LibraryModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-lobby *ngIf=\"items\" [items]=\"items\" mode=\"media\" (editItem)=\"editItem($event)\" (deleteItem)=\"deleteItem($event)\" (newItem)=\"newItem({type:'image'})\"></app-lobby>\n<div class=\"slider-container {{displayModalNew}} shadow \">\n  <dialog open= {{displayModalNew}}>\n    <app-slide-header title=\"NAVBAR.MEDIA\" iconClass=\"fas fa-images\" closeFn=\"true\" [enableSave]='true' (save)=\"saveProxy()\"\n      className=\"library-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n    <div class=\"pt50\"></div>\n    <div class=\"scroller\">\n      <form *ngIf=\"item\">\n        <div class=\"form-group\">\n          <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n          <input type=\"text\" [detectChanges]=\"true\" name=\"libraryName\" class=\"form-control\" [(ngModel)]=\"item.Name\">\n          <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n        </div>\n        <div class=\"form-group\">\n          <app-upload [item]=\"item\" [detectChanges]=\"true\" (change)=\"change($event)\"></app-upload>\n          <small id=\" screenHelp \" class=\"form-text text-muted \">{{ \"LIBRARY.IMAGE_DESCRIPTION\" | translate }}</small>\n        </div>\n      </form>\n\n      <!-- <img *ngIf=\"item.thumb && !uploading\" [src]=\"item.thumb\" class=\"fancy-image\">\n      <p><a href=\"{{item.thumb}}\" target=\"_blank\" class=\"form-text text-muted\"><small>{{item.thumb}}</small></a></p> -->\n\n\n    </div>\n    <app-slide-footer className=\"library-cat\"></app-slide-footer>\n  </dialog>\n</div>\n"
+module.exports = "<app-lobby *ngIf=\"items\" [items]=\"items\" mode=\"media\" (editItem)=\"editItem($event)\" (deleteItem)=\"deleteItem($event)\" (newItem)=\"newItem({mediaType: {name: 'image'}})\"></app-lobby>\n<div class=\"slider-container {{displayModalNew}} shadow \">\n  <dialog open= {{displayModalNew}}>\n    <app-slide-header title=\"NAVBAR.MEDIA\" iconClass=\"fas fa-images\" closeFn=\"true\" [enableSave]='true' (save)=\"saveProxy()\"\n      className=\"library-cat\" (closed)=\"closeSlider()\"></app-slide-header>\n    <div class=\"pt50\"></div>\n    <div class=\"scroller\">\n      <form *ngIf=\"item\">\n        <div class=\"form-group\">\n          <label for=\"libraryName\">{{ \"LIBRARY.NAME\" | translate }}:</label>\n          <input type=\"text\" [detectChanges]=\"true\" name=\"libraryName\" class=\"form-control\" [(ngModel)]=\"item.Name\">\n          <small id=\"screenHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.NAME_HELP\" | translate }}</small>\n        </div>\n\n        <div class=\"form-group\">\n          {{item.mediaType.name}}\n          <label for=\"libraryName\">{{ \"LIBRARY.MEDIATYPE\" | translate }}:</label>\n          <select [(ngModel)]=\"item.mediaType\" name=\"mediaType\" class=\"form-control\" (change)=\"selectType()\" [compareWith]=\"compareFn\">\n            <option *ngFor=\"let c of types\" [ngValue]=\"c\">{{c.name}}</option>\n          </select>\n        </div>\n\n\n        <div class=\"form-group\" *ngIf=\"item.mediaType.name==='image'\">\n          <app-upload [item]=\"item\" [detectChanges]=\"true\" (change)=\"change($event)\"></app-upload>\n          <small id=\"screenHelp\" class=\"form-text text-muted \">{{ \"LIBRARY.IMAGE_DESCRIPTION\" | translate }}</small>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"embedCode\">{{ \"LIBRARY.EMBED\" | translate }}:</label>\n          <textarea id=\"embedCode\" name=\"embedCode\" class=\"form-control\" [(ngModel)]=\"item.Embed\"></textarea>\n          <small id=\"embedHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.EMBED_HELP\" | translate }}</small>\n        </div>\n\n\n        <div class=\"form-group\">\n          <label for=\"urlCode\">{{ \"LIBRARY.URL\" | translate }}:</label>\n          <textarea id=\"urlCode\" name=\"urlCode\" class=\"form-control\" [(ngModel)]=\"item.Url\"></textarea>\n          <small id=\"urlHelp\" class=\"form-text text-muted\">{{ \"LIBRARY.URL_HELP\" | translate }}</small>\n        </div>\n\n      </form>\n\n      <!-- <img *ngIf=\"item.thumb && !uploading\" [src]=\"item.thumb\" class=\"fancy-image\">\n      <p><a href=\"{{item.thumb}}\" target=\"_blank\" class=\"form-text text-muted\"><small>{{item.thumb}}</small></a></p> -->\n\n\n    </div>\n    <app-slide-footer className=\"library-cat\"></app-slide-footer>\n  </dialog>\n</div>\n"
 
 /***/ }),
 
@@ -3841,6 +3841,7 @@ var MediaComponent = /** @class */ (function (_super) {
         var _this = _super.call(this, _ngZone, translateService) || this;
         _this._ngZone = _ngZone;
         _this.translateService = translateService;
+        _this.types = [{ name: 'image' }, { name: 'video' }, { name: 'url' }];
         _this.uploading = false;
         _this.DataController = _signnature_client__WEBPACK_IMPORTED_MODULE_3__["LibraryDataController"];
         return _this;
@@ -3857,7 +3858,6 @@ var MediaComponent = /** @class */ (function (_super) {
     MediaComponent.prototype.saveLibrary = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                this.item.type = 'image';
                 this.updateItem();
                 return [2 /*return*/];
             });
@@ -3866,11 +3866,17 @@ var MediaComponent = /** @class */ (function (_super) {
     MediaComponent.prototype.createLibrary = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                this.item.type = 'image';
                 this.createItem();
                 return [2 /*return*/];
             });
         });
+    };
+    MediaComponent.prototype.compareFn = function (a, b) {
+        if (b) {
+            return a.name === b.name;
+        }
+    };
+    MediaComponent.prototype.selectType = function () {
     };
     MediaComponent.prototype.change = function (state) {
         this.uploading = state === 'start' ? true : false;
@@ -5273,6 +5279,7 @@ var screenRoutes = [
     {
         path: 'screen', component: _screen_component__WEBPACK_IMPORTED_MODULE_8__["ScreenComponent"],
         children: [
+            { path: '', component: _screens_screens_component__WEBPACK_IMPORTED_MODULE_3__["ScreensComponent"] },
             { path: 'screens', component: _screens_screens_component__WEBPACK_IMPORTED_MODULE_3__["ScreensComponent"] },
             { path: 'screen-group', component: _screen_group_screen_group_component__WEBPACK_IMPORTED_MODULE_7__["ScreenGroupComponent"] }
         ]
