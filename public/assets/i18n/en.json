@@ -62,7 +62,9 @@
     "VIDEO_DESCRIPTION": "videos (mp4)",
     "AUDIO_DESCRIPTION": "audio (mp3)",
     "CREATE": "Create",
-    "UPDATE": "Update"
+    "UPDATE": "Update",
+    "MEDIATYPE": "Type",
+    "URL": "Url"
   },
   "SLIDES": {
     "NAME": "Name your slide",
@@ -116,6 +118,6 @@
     "IMAGE_WIDTH": "Width",
     "IMAGE_HEIGHT": "Height",
     "CENTER": "Center",
-    "REMOVE":"Remove"
+    "REMOVE": "Remove"
   }
 }

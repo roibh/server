@@ -68,7 +68,9 @@
     "VIDEO_DESCRIPTION": "סרטונים (mp4)",
     "AUDIO_DESCRIPTION": "שמע (mp3)",
     "CREATE": "חדש",
-    "UPDATE": "עידכון"
+    "UPDATE": "עידכון",
+    "MEDIATYPE":"סוג",
+    "URL":"כתובת"
   },
   "SLIDES": {
     "NAME": "Name your slide",
