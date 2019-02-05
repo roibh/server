@@ -64,7 +64,8 @@
     "CREATE": "Create",
     "UPDATE": "Update",
     "MEDIATYPE": "Type",
-    "URL": "Url"
+    "URL": "Url",
+    "URL_HELP": "Paste any page url address."
   },
   "SLIDES": {
     "NAME": "Name your slide",
@@ -104,8 +105,8 @@
     "FONTSIZE": "Font size",
     "FONTSIZE_HELP": "Size matters",
     "FONTCOLOR": "Font color",
-    "POSITIONX": "X position",
-    "POSITIONY": "Y position",
+    "POSITIONX": "X",
+    "POSITIONY": "Y",
     "SELECT_ELEMENT": "Select an element",
     "GENERAL": "General",
     "ELEMENT": "Selection",
@@ -118,6 +119,9 @@
     "IMAGE_WIDTH": "Width",
     "IMAGE_HEIGHT": "Height",
     "CENTER": "Center",
-    "REMOVE": "Remove"
+    "REMOVE": "Remove",
+    "DEPTH":"Depth",
+    "ALIGN":"Align",
+    "POSITION":"Position"
   }
 }

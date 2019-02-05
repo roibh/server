@@ -120,6 +120,7 @@
     "IMAGE_WIDTH": "רוחב",
     "IMAGE_HEIGHT": "גובה",
     "CENTER": "מירכוז",
-    "REMOVE":"הסרה"
+    "REMOVE":"הסרה",
+    "DEPTH":"עומק"
   }
 }
