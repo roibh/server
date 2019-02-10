@@ -31,6 +31,15 @@ export class Upload {
             files.forEach((file) => {
                 const dateKey = moment().format('MM_YYYY');
 
+                let ActiveBucket = S3_BUCKET_MIN;
+                // grab extension
+                const arr = file.name.split('.');
+                const ext = arr[arr.length - 1];
+                const resizeArr = ['jpg', 'png', 'gif' ];
+                if (resizeArr.indexOf(ext) === -1) {
+                    ActiveBucket = S3_BUCKET;
+                }
+
                 const persist_filename = securityContext._id + '/' + dateKey + '/' + `${uuidv1()}_${file.name}`;
                 const s3Params = {
                     ACL: 'public-read',
@@ -42,7 +51,7 @@ export class Upload {
                 s3.getSignedUrl('getObject', s3Params, (rawErr: any, rawData: any) => {
                     const s3ThumbParams = {
                         ACL: 'public-read',
-                        Bucket: S3_BUCKET_MIN,
+                        Bucket: ActiveBucket,
                         ContentType: file.mimetype,
                         // Expires: 60,
                         Key: persist_filename,
@@ -50,7 +59,7 @@ export class Upload {
                     s3.getSignedUrl('getObject', s3ThumbParams, (thumberr: any, thumbData: any) => {
                         const returnData = {
                             signedRequest: rawData,
-                            thumb: `https://s3.amazonaws.com/${S3_BUCKET_MIN}/${persist_filename}`,
+                            thumb: `https://s3.${S3_REGION}.amazonaws.com/${ActiveBucket}/${persist_filename}`,
                             thumbSignedRequest: thumbData,
                             url: `https://s3.${S3_REGION}.amazonaws.com/${S3_BUCKET}/${persist_filename}`,
                         };
