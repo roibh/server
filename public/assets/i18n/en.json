@@ -65,7 +65,8 @@
     "UPDATE": "Update",
     "MEDIATYPE": "Type",
     "URL": "Url",
-    "URL_HELP": "Paste any page url address."
+    "URL_HELP": "Paste any page url address.",
+    "SEARCHTERM":"Keyword"
   },
   "SLIDES": {
     "NAME": "Name your slide",

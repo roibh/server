@@ -70,7 +70,8 @@
     "CREATE": "חדש",
     "UPDATE": "עידכון",
     "MEDIATYPE":"סוג",
-    "URL":"כתובת"
+    "URL":"כתובת",
+    "SEARCHTERM":"חיפוש טקסט"
   },
   "SLIDES": {
     "NAME": "Name your slide",
