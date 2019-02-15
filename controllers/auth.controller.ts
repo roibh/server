@@ -55,8 +55,9 @@ export class AuthController {
                 Password: userOptions.Password,
             }).run(ReturnType.Single);
             if (logedInUser) {
+                delete logedInUser.password;
                 const token = jwt.sign(logedInUser, privateKEY, signOptions);
-                return new MethodResult({ token });
+                return new MethodResult({ token, user: logedInUser });
             } else {
                 return new MethodResultStatus({ message: 'user not found' }, 404) as MethodResult;
             }
