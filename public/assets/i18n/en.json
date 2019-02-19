@@ -66,7 +66,7 @@
     "MEDIATYPE": "Type",
     "URL": "Url",
     "URL_HELP": "Paste any page url address.",
-    "SEARCHTERM":"Keyword"
+    "SEARCHTERM": "Keyword"
   },
   "SLIDES": {
     "NAME": "Name your slide",
@@ -121,8 +121,22 @@
     "IMAGE_HEIGHT": "Height",
     "CENTER": "Center",
     "REMOVE": "Remove",
-    "DEPTH":"Depth",
-    "ALIGN":"Align",
-    "POSITION":"Position"
+    "DEPTH": "Depth",
+    "ALIGN": "Align",
+    "POSITION": "Position"
+  },
+  "TOUR": {
+    "WELCOME": {
+      "TITLE": "Welcome to SignNature Editor",
+      "CONTENT": "Here you will manage your screens, content and signage flows."
+    },
+    "SCREENS": {
+      "TITLE": "Screens",
+      "CONTENT": "Any screen will do, so go ahead and load the following url on your sign device.\n\rhttps://sign-nature.herokuapp.com/_player/"
+    },
+    "SCREENGROUPS": {
+      "TITLE": "Screen Groups",
+      "CONTENT": "Your new screen needs a group, go ahead and create one."
+    }
   }
 }
