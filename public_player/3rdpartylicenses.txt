@@ -1121,6 +1121,9 @@ SOFTWARE.
 @angular/router
 MIT
 
+ngx-joyride
+MIT
+
 rxjs-compat
 Apache-2.0
                                Apache License
