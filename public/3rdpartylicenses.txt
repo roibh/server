@@ -508,10 +508,13 @@ ISC
 @methodus/client
 ISC
 
-@angular/forms
+angular-6-social-login
 MIT
 
 @angular/platform-browser
+MIT
+
+@angular/forms
 MIT
 
 angular2-hotkeys
@@ -917,6 +920,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
+gsap
+Standard 'no charge' license: https://greensock.com/standard-license. Club GreenSock members get more: https://greensock.com/licensing/. Why GreenSock doesn't employ an MIT license: https://greensock.com/why-license/
+
 dragula
 MIT
 The MIT License (MIT)
@@ -1173,10 +1179,13 @@ SOFTWARE.
 
 
 
-@ngx-translate/http-loader
+@angular/router
 MIT
 
-@angular/router
+ngx-joyride
+MIT
+
+@ngx-translate/http-loader
 MIT
 
 ngx-color-picker

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?58l2vp');
-  src:  url('fonts/icomoon.eot?58l2vp#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?58l2vp') format('truetype'),
-    url('fonts/icomoon.woff?58l2vp') format('woff'),
-    url('fonts/icomoon.svg?58l2vp#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?z88r04');
+  src:  url('fonts/icomoon.eot?z88r04#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?z88r04') format('truetype'),
+    url('fonts/icomoon.woff?z88r04') format('woff'),
+    url('fonts/icomoon.svg?z88r04#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -35,6 +35,9 @@
 }
 .icon-eye1:before {
   content: "\e90f";
+}
+.icon-user2:before {
+  content: "\e91a";
 }
 .icon-loop:before {
   content: "\e903";
@@ -237,6 +240,12 @@
 .icon-new-tab:before {
   content: "\ea7e";
 }
+.icon-google:before {
+  content: "\ea88";
+}
+.icon-google2:before {
+  content: "\ea89";
+}
 .icon-video:before {
   content: "\e011";
 }
@@ -257,6 +266,9 @@
 }
 .icon-document-star:before {
   content: "\e906";
+}
+.icon-user3:before {
+  content: "\e91b";
 }
 .icon-resize:before {
   content: "\e904";
@@ -285,6 +297,15 @@
 .icon-save-disk:before {
   content: "\e909";
 }
+.icon-user4:before {
+  content: "\e91c";
+}
+.icon-user-solid-circle:before {
+  content: "\e91d";
+}
+.icon-user-solid-square:before {
+  content: "\e91e";
+}
 .icon-archive:before {
   content: "\e907";
 }
@@ -293,6 +314,12 @@
 }
 .icon-flat-brush:before {
   content: "\e917";
+}
+.icon-help-with-circle:before {
+  content: "\e91f";
+}
+.icon-lifebuoy:before {
+  content: "\e921";
 }
 .icon-palette:before {
   content: "\e901";
@@ -384,6 +411,9 @@
 .icon-camera-retro:before {
   content: "\f083";
 }
+.icon-sign-out:before {
+  content: "\f08b";
+}
 .icon-group:before {
   content: "\f0c0";
 }
@@ -467,6 +497,9 @@
 }
 .icon-calendar-plus-o:before {
   content: "\f271";
+}
+.icon-user-circle:before {
+  content: "\f2bd";
 }
 .icon-times-rectangle:before {
   content: "\f2d3";

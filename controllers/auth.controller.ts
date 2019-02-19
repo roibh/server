@@ -30,12 +30,23 @@ export class AuthController {
     public static async signup(@Body('userOptions') userOptions: any): Promise<MethodResult<any>> {
         try {
             const query = new DataQuery(UserModel);
-            const logedInUser = await query.filter({
-                Email: userOptions.Email,
-            }).run(ReturnType.Single);
+            let logedInUser = null;
+            if (userOptions.provider) {
+                logedInUser = await query.filter({
+                    Email: userOptions.email,
+                }).run(ReturnType.Single);
+            } else {
+                logedInUser = await query.filter({
+                    Email: userOptions.Email,
+                }).run(ReturnType.Single);
+            }
             if (logedInUser) {
                 throw new MethodError(`user exists`, 403);
             } else {
+                if (userOptions.provider) {
+                    userOptions.Email = userOptions.email;
+                    delete userOptions.email;
+                }
                 // insert into user collection
                 const result = await UserModel.insert(userOptions);
                 const token = jwt.sign(result, privateKEY, signOptions);
@@ -49,11 +60,22 @@ export class AuthController {
     @Method(Verbs.Post, '/api/auth/token')
     public static async token(@Body('userOptions') userOptions: any): Promise<MethodResult<any>> {
         try {
+            let logedInUser = null;
             const query = new DataQuery(UserModel);
-            const logedInUser = await query.filter({
-                Email: userOptions.Email,
-                Password: userOptions.Password,
-            }).run(ReturnType.Single);
+
+            if (userOptions.provider) {
+                logedInUser = await query.filter({
+                    Email: userOptions.email,
+                    id: userOptions.id,
+                }).run(ReturnType.Single);
+            } else {
+
+                logedInUser = await query.filter({
+                    Email: userOptions.Email,
+                    Password: userOptions.Password,
+                }).run(ReturnType.Single);
+            }
+
             if (logedInUser) {
                 delete logedInUser.password;
                 const token = jwt.sign(logedInUser, privateKEY, signOptions);
