@@ -137,6 +137,11 @@
     "SCREENGROUPS": {
       "TITLE": "Screen Groups",
       "CONTENT": "Your new screen needs a group, go ahead and create one."
+    },
+    "ADD":
+    {
+      "TITLE": "Add item",
+      "CONTENT": "Add a new item for this type (click the plus)"
     }
   }
 }
