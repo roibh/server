@@ -1,6 +1,6 @@
 {
   "name": "@signnature/server",
-  "version": "0.0.31",
+  "version": "0.0.37",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -32,7 +32,7 @@
     "uuid": "^3.2.1"
   },
   "devDependencies": {
-    "@methodus/contracts": "latest",
+    "@methodus/contracts": "^1.0.14",
     "alsatian": "^2.3.0",
     "nyc": "^12.0.2",
     "tslint": "^5.11.0",

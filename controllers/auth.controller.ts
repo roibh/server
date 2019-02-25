@@ -1,9 +1,10 @@
 
-import { Body, Method, MethodConfig, Verbs, MethodError, MethodResult, MethodResultStatus } from '@methodus/server';
+import { Body, Method, MethodConfig, Verbs, MethodError, MethodResult, MethodResultStatus, MethodMock } from '@methodus/server';
 import { Query as DataQuery, ReturnType } from '@methodus/data';
 import * as jwt from 'jsonwebtoken';
 import * as fs from 'fs';
 import { UserModel } from '..';
+import { Mocks } from './mocks';
 
 // PRIVATE and PUBLIC key
 const enum SignOptions {
@@ -27,6 +28,7 @@ const publicKEY = fs.readFileSync('./certs/public.key', 'utf8');
 @MethodConfig('AuthController')
 export class AuthController {
     @Method(Verbs.Post, '/api/auth/signup')
+    @MethodMock(Mocks.AUTH.signup)
     public static async signup(@Body('userOptions') userOptions: any): Promise<MethodResult<any>> {
         try {
             const query = new DataQuery(UserModel);
@@ -58,6 +60,7 @@ export class AuthController {
     }
 
     @Method(Verbs.Post, '/api/auth/token')
+    @MethodMock(Mocks.AUTH.token)
     public static async token(@Body('userOptions') userOptions: any): Promise<MethodResult<any>> {
         try {
             let logedInUser = null;
@@ -89,19 +92,9 @@ export class AuthController {
         }
     }
 
-    // @Method(Verbs.Get, '/auth/verify')
-    // public static async verify(): Promise<MethodResult<any>> {
-    //     try {
-    //         const token = jwt.verify(payload, privateKEY, signOptions);
-
-    //         return new MethodResult(token);
-    //     } catch (error) {
-    //         throw new MethodError(error, 500);
-    //     }
-    // }
-
     @Method(Verbs.Get, '/api/auth/verify')
-    public static async decode(@Body('token') token: string): Promise<MethodResult<any>> {
+    @MethodMock(Mocks.AUTH.verify)
+    public static async verify(@Body('token') token: string): Promise<MethodResult<any>> {
         try {
             return new MethodResult(jwt.decode(token, { complete: true }));
         } catch (error) {

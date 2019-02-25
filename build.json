@@ -72,6 +72,9 @@
             }
         },
         "includes": {
+            "Mocks": {
+                "path": "./controllers/mocks/index.ts"
+            },
             "UserMock": {
                 "path": "./mocks/user.mock.ts"
             }

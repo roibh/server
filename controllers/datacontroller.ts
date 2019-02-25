@@ -1,6 +1,7 @@
-import { MethodConfigBase, Method, Param, MethodResult, Body, SecurityContext, MethodError, Query } from '@methodus/server';
+import { MethodConfigBase, Method, Param, MethodResult, Body, SecurityContext, MethodError, Query, MethodMock } from '@methodus/server';
 import { Verbs } from '@methodus/server/src/rest';
 import { Query as DataQuery, ObjectId, Odm } from '@methodus/data';
+import { Mocks } from './mocks';
 
 @MethodConfigBase('DataController')
 export class DataController {
@@ -19,7 +20,7 @@ export class DataController {
         const queryX = new DataQuery(repo.odm.collectionName);
         const idsArr = ids.split(',').map((item) => Odm.applyObjectID(item));
         queryX.in('_id', idsArr);
-        //.filter({ user_id: securityContext._id });
+        // .filter({ user_id: securityContext._id });
         const results = await queryX.run();
         return new MethodResult(results);
     }
@@ -51,6 +52,7 @@ export class DataController {
     }
 
     @Method(Verbs.Post, '/search')
+    @MethodMock(Mocks.DATA.search.bind(this))
     public static async search(@Body('query') queryObject: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
         // extract repository
         if (!queryObject) {
@@ -66,8 +68,9 @@ export class DataController {
             throw (new MethodError(error));
         }
     }
-    
+
     @Method(Verbs.Post, '/query')
+    @MethodMock(Mocks.DATA.query.bind(this))
     // tslint:disable-next-line:max-line-length
     public static async query(@Body('query') queryObject: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
         // extract repository

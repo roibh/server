@@ -138,10 +138,57 @@
       "TITLE": "Screen Groups",
       "CONTENT": "Your new screen needs a group, go ahead and create one."
     },
-    "ADD":
-    {
+    "ADD": {
       "TITLE": "Add item",
       "CONTENT": "Add a new item for this type (click the plus)"
+    }
+  },
+  "PUBLIC": {
+    "FEATURES": {
+      "TITLE": "Mass Digital Signage Service",
+      "SUBHEADER": "Manage store signs like a pro",
+      "STARTFORFREE": "Start for free",
+      "HEADER1": "Signs are the eyes to your store.",
+      "CONTENT1": "xxxx",
+      "HEADER2": "Everywhere, Anytime.",
+      "CONTENT2": "xxxx",
+      "HEADER3": "Everywhere, Anytime.",
+      "CONTENT3": "xxxx",
+      "HEADER4": "Everywhere, Anytime.",
+      "CONTENT4": "xxxx"
+    },
+    "LINKS": {
+      "FEATURES": "Features"
+    },
+    "PRICING": {
+      "TITLE": "Pricing",
+      "CONTENT": "Pricing",
+      "PRICES": {
+        "FREE": {
+          "NAME": "Free",
+          "PRICE": "$0",
+          "LINE1": "1 Screen included",
+          "LINE2": "2 Custom slides",
+          "LINE3": "Free library items",
+          "SIGNUPBTN": "Sign up for free"
+        },
+        "BASIC": {
+          "NAME": "Basic",
+          "PRICE": "$9",
+          "LINE1": "2 Screens included",
+          "LINE2": "Unlimited Custom slides",
+          "LINE3": "Premium library items",
+          "SIGNUPBTN": "Sign up now"
+        },
+        "UNLIMITED": {
+          "NAME": "Unlimited",
+          "PRICE": "$30",
+          "LINE1": "1 Screen included",
+          "LINE2": "2 Custom slides",
+          "LINE3": "Free library items",
+          "SIGNUPBTN": "Sign up for free"
+        }
+      }
     }
   }
 }
