@@ -40,6 +40,9 @@
             },
             "ShareDataController": {
                 "path": "./controllers/share.data.controller.ts"
+            },
+            "MediaPack": {
+                "path": "./controllers/media-pack.data.controller.ts"
             }
         },
         "models": {
@@ -69,6 +72,12 @@
             },
             "ShareModel": {
                 "path": "./models/share.model.ts"
+            },
+            "SubscriptionModel": {
+                "path": "./models/subscription.model.ts"
+            },
+            "MediaPackModel": {
+                "path": "./models/media-pack.model.ts"
             }
         },
         "includes": {

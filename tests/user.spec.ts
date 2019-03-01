@@ -22,11 +22,10 @@ import { UserController } from '../controllers/user.data.controller';
 @TestFixture('Test Embeds')
 export class TestsOfUsers {
 
-
     @AsyncTest('user_list')
     @Timeout(10000)
     public async user_list() {
-        const result = await UserController.query({}, {});
+        const result = await UserController.query('User', {}, {});
         Expect(result).toBeDefined();
     }
 
@@ -59,8 +58,6 @@ export class TestsOfUsers {
     //         Expect(embedData).toBe(null);
     //     }
     // }
-
-
 
     // @AsyncTest('embed_get')
     // @Timeout(10000)

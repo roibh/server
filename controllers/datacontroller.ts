@@ -1,65 +1,65 @@
-import { MethodConfigBase, Method, Param, MethodResult, Body, SecurityContext, MethodError, Query, MethodMock } from '@methodus/server';
+import { MethodConfigBase, Method, Param, MethodResult, Body, Query, SecurityContext, MethodError, MethodMock } from '@methodus/server';
 import { Verbs } from '@methodus/server/src/rest';
-import { Query as DataQuery, ObjectId, Odm } from '@methodus/data';
+import { Query as DataQuery, ObjectId, Odm, DBHandler, ReturnType } from '@methodus/data';
 import { Mocks } from './mocks';
 
 @MethodConfigBase('DataController')
 export class DataController {
-    @Method(Verbs.Get, '/id/:id')
-    public static async get(@Param('id') id: string): Promise<MethodResult<any>> {
-        // extract repository
-        const repo = (this as any).repository;
-        const item = await repo.get(id);
+    @Method(Verbs.Get, '/data/:collection/id/:id')
+    public static async get(@Param('collection') collectionName: string, @Param('id') id: string): Promise<MethodResult> {
+        const queryX = new DataQuery(collectionName).filter({ _id: Odm.applyObjectID(id) });
+        const item = await queryX.run(ReturnType.Single);
         return new MethodResult(item);
     }
 
-    @Method(Verbs.Get, '/ids/:ids')
-    public static async getSet(@Param('ids') ids: string, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
-        // extract repository
-        const repo = (this as any).repository;
-        const queryX = new DataQuery(repo.odm.collectionName);
+    @Method(Verbs.Get, '/data/:collection/ids/:ids')
+    public static async getSet(@Param('collection') collectionName: string, @Param('ids') ids: string, @SecurityContext() securityContext: any): Promise<MethodResult> {
+        const queryX = new DataQuery(collectionName);
         const idsArr = ids.split(',').map((item) => Odm.applyObjectID(item));
         queryX.in('_id', idsArr);
-        // .filter({ user_id: securityContext._id });
+
         const results = await queryX.run();
         return new MethodResult(results);
     }
 
-    @Method(Verbs.Post, '/insert')
-    // tslint:disable-next-line:max-line-length
-    public static async create(@Body('record') record: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
-        // extract repository
-        const repo = (this as any).repository;
+    @Method(Verbs.Post, '/data/:collection/insert')
+    public static async create(@Param('collection') collectionName: string, @Body('record') record: any, @SecurityContext() securityContext: any): Promise<MethodResult> {
+
         record.user_id = securityContext._id;
-        const item = await repo.insert(record);
+        const dbConnection = await DBHandler.getConnection();
+        const item = await dbConnection.collection(collectionName).insertOne(record);
+        return new MethodResult(item.ops[0]);
+
+    }
+
+    @Method(Verbs.Post, '/data/:collection/id/:id')
+    public static async update(@Param('collection') collectionName: string, @Param('id') id: string, @Body('record') record: any): Promise<MethodResult> {
+        delete record._id;
+        const dbConnection = await DBHandler.getConnection();
+        const item = await dbConnection.collection(collectionName).findOneAndUpdate({
+            _id: Odm.applyObjectID(id),
+        },
+            { $set: record }, { returnOriginal: true, upsert: true });
         return new MethodResult(item);
     }
 
-    @Method(Verbs.Post, '/id/:id')
-    public static async update(@Param('id') id: string, @Body('record') record: any): Promise<MethodResult<any>> {
+    @Method(Verbs.Delete, '/data/:collection/id/:id')
+    public static async delete(@Param('collection') collectionName: string, @Param('id') id: string): Promise<MethodResult> {
         // extract repository
-        const repo = (this as any).repository;
-        const item = await repo.update({ _id: id }, record);
+        const dbConnection = await DBHandler.getConnection();
+        const item = await dbConnection.collection(collectionName).deleteOne({ _id: Odm.applyObjectID(id) });
         return new MethodResult(item);
     }
 
-    @Method(Verbs.Delete, '/id/:id')
-    public static async delete(@Param('id') id: string): Promise<MethodResult<any>> {
-        // extract repository
-        const repo = (this as any).repository;
-        const item = await repo.delete({ _id: id });
-        return new MethodResult(item);
-    }
-
-    @Method(Verbs.Post, '/search')
+    @Method(Verbs.Post, '/data/:collection/search')
     @MethodMock(Mocks.DATA.search.bind(this))
-    public static async search(@Body('query') queryObject: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
+    public static async search(@Param('collection') collectionName: string, @Body('query') queryObject: any, @SecurityContext() securityContext: any): Promise<MethodResult> {
         // extract repository
         if (!queryObject) {
             queryObject = {};
         }
-        const repo = (this as any).repository;
-        const queryX = new DataQuery(repo.odm.collectionName);
+
+        const queryX = new DataQuery(collectionName);
         queryX.filter(queryObject);
         try {
             const results = await queryX.run();
@@ -69,16 +69,15 @@ export class DataController {
         }
     }
 
-    @Method(Verbs.Post, '/query')
+    @Method(Verbs.Get, '/data/:collection/')
     @MethodMock(Mocks.DATA.query.bind(this))
-    // tslint:disable-next-line:max-line-length
-    public static async query(@Body('query') queryObject: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
-        // extract repository
+    public static async query(@Param('collection') collectionName: string, @Query('query') queryObject: any, @SecurityContext() securityContext: any): Promise<MethodResult> {
+
         if (!queryObject) {
             queryObject = {};
         }
-        const repo = (this as any).repository;
-        const queryX = new DataQuery(repo.odm.collectionName);
+
+        const queryX = new DataQuery(collectionName);
         queryX.filter(queryObject).filter({ user_id: securityContext._id });
         try {
             const results = await queryX.run();

@@ -309,6 +309,9 @@ SOFTWARE.
 
 
 
+@angular/core
+MIT
+
 tslib
 Apache-2.0
 Apache License
@@ -367,9 +370,6 @@ If the Work includes a "NOTICE" text file as part of its distribution, then any 
 
 END OF TERMS AND CONDITIONS
 
-
-@angular/core
-MIT
 
 url
 MIT
@@ -528,17 +528,14 @@ END OF TERMS AND CONDITIONS
 @angular/common
 MIT
 
+@angular/platform-browser
+MIT
+
 @signnature/client
 ISC
 
 @methodus/client
 ISC
-
-angular-6-social-login
-MIT
-
-@angular/platform-browser
-MIT
 
 @angular/forms
 MIT
@@ -764,6 +761,9 @@ prospectively choose to deem waived or otherwise exclude such Section(s) of
 the License, but only in their entirety and only with respect to the Combined
 Software.
 
+
+angular-6-social-login
+MIT
 
 youtube-thumbnail
 MIT
@@ -1266,9 +1266,6 @@ SOFTWARE.
 @ngx-translate/core
 MIT
 
-ngx-page-scroll-core
-MIT
-
 rxjs-compat
 Apache-2.0
                                Apache License
@@ -1637,6 +1634,9 @@ MIT
 @angular/animations
 MIT
 
+ngx-page-scroll-core
+MIT
+
 ngx-order-pipe
 MIT
 MIT License
@@ -1661,6 +1661,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+
+ngx-page-scroll
+MIT
 
 ngx-monaco-editor
 MIT

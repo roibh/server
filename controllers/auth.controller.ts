@@ -3,7 +3,7 @@ import { Body, Method, MethodConfig, Verbs, MethodError, MethodResult, MethodRes
 import { Query as DataQuery, ReturnType } from '@methodus/data';
 import * as jwt from 'jsonwebtoken';
 import * as fs from 'fs';
-import { UserModel } from '..';
+import { UserModel, SubscriptionModel } from '..';
 import { Mocks } from './mocks';
 
 // PRIVATE and PUBLIC key
@@ -43,14 +43,21 @@ export class AuthController {
                 }).run(ReturnType.Single);
             }
             if (logedInUser) {
-                throw new MethodError(`user exists`, 403);
+                throw new MethodError(`USER_EXISTS`, 403);
             } else {
                 if (userOptions.provider) {
                     userOptions.Email = userOptions.email;
                     delete userOptions.email;
                 }
                 // insert into user collection
-                const result = await UserModel.insert(userOptions);
+                const result: any = await UserModel.insert(userOptions);
+
+                const subResult = await SubscriptionModel.insert(new SubscriptionModel({
+                    Date: new Date(),
+                    Plan: 'free',
+                    UserId: result._id,
+                }));
+
                 const token = jwt.sign(result, privateKEY, signOptions);
                 return new MethodResult({ token });
             }
@@ -80,11 +87,16 @@ export class AuthController {
             }
 
             if (logedInUser) {
+
+                const subscriptionQuery = new DataQuery(SubscriptionModel).filter({ UserId: logedInUser._id });
+                const subscription = await subscriptionQuery.run(ReturnType.Single);
+
                 delete logedInUser.password;
+                logedInUser.subscription = subscription;
                 const token = jwt.sign(logedInUser, privateKEY, signOptions);
                 return new MethodResult({ token, user: logedInUser });
             } else {
-                return new MethodResultStatus({ message: 'user not found' }, 404) as MethodResult;
+                throw new MethodError('USER_NOT_FOUND', 404);
             }
 
         } catch (error) {

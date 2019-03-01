@@ -12,7 +12,7 @@ import {ShareDataController, ScreenGroupDataController,
     LibraryDataController, Playlist, AuthController, UserController,
     ScreensDataController, Upload, SlidesDataController, PlayerController, ScheduleDataController,
 } from './controllers/';
-
+import { MediaPack } from './controllers/media-pack.data.controller';
 
 DBHandler.config = configuration;
 
@@ -23,6 +23,7 @@ DBHandler.config = configuration;
 @ClientConfiguration(AuthController, MethodType.Local, ServerType.Express)
 @ClientConfiguration(Playlist, MethodType.Local, ServerType.Express)
 @ClientConfiguration(ScreensDataController, MethodType.Local, ServerType.Express)
+@ClientConfiguration(MediaPack, MethodType.Local, ServerType.Express)
 @ClientConfiguration(LibraryDataController, MethodType.Local, ServerType.Express)
 @ClientConfiguration(Upload, MethodType.Local, ServerType.Express)
 @ClientConfiguration(SlidesDataController, MethodType.Local, ServerType.Express)

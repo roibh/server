@@ -15,6 +15,9 @@
     "FINDER": "Finder",
     "SHARED": "Templates"
   },
+  "ERRORS": {
+    "USER_EXISTS": "A user with this email already exists, try to login."
+  },
   "LOGIN": {
     "TITLE": "Login",
     "INSERT_USERNAME": "Please enter a username",
@@ -25,7 +28,9 @@
     "REMEMBER_ME": "Remember me",
     "LOGIN_BTN": "Login",
     "NOTAMEMBER": "Not a member?",
-    "SIGNUP": "Sign up now"
+    "SIGNUP": "Sign up now",
+    "GOOGLE_SIGNIN": "Sign in",
+    "GOOGLE_SIGNUP": "Sign up"
   },
   "SIGNUP": {
     "TITLE": "Signup",
@@ -66,7 +71,8 @@
     "MEDIATYPE": "Type",
     "URL": "Url",
     "URL_HELP": "Paste any page url address.",
-    "SEARCHTERM": "Keyword"
+    "SEARCHTERM": "Keyword",
+    "MEDIAPACK": "Media pack"
   },
   "SLIDES": {
     "NAME": "Name your slide",
