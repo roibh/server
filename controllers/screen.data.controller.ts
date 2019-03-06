@@ -1,4 +1,4 @@
-import { MethodConfig, Method, Verbs, MethodConfigExtend } from '@methodus/server';
+import { MethodConfig, Method, Verbs, MethodResult, MethodConfigExtend, Body, Param, SecurityContext } from '@methodus/server';
 import { ScreenModel } from '../models';
 import { AuthMiddleware } from './auth.middleware';
 

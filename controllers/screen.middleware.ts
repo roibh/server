@@ -1,5 +1,5 @@
 import * as jwt from 'jsonwebtoken';
-export async function AuthMiddleware(req, res, next) {
+export async function ScreenMiddleware(req, res, next) {
     if (req.headers.authorization) {
         const decoded = jwt.decode(req.headers.authorization.replace('Bearer ', ''), { complete: true });
         if (decoded) {
