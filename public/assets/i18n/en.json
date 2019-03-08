@@ -129,7 +129,18 @@
     "REMOVE": "Remove",
     "DEPTH": "Depth",
     "ALIGN": "Align",
-    "POSITION": "Position"
+    "POSITION": "Position",
+    "POSITION_OPTIONS":{
+      "FORWARD":"Forward",
+      "FRONT":"Front",
+      "BACKWARD":"Backward",
+      "BACK":"Back",
+      "LEFT":"Left",
+      "CENTER":"Center",
+      "RIGHT":"Right",
+      "BOTTOM":"Bottom",
+      "TOP":"Top"
+    }
   },
   "TOUR": {
     "WELCOME": {
