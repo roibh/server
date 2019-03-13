@@ -23,7 +23,11 @@
                 "NODE_CONFIG_VAR": "vars.json",
                 "MONGO_NAME": "signnature",
                 "MONGO_PATH": "localhost:27017",
-                "PORT": "6200"
+                "PORT": "6200",
+                "AWS_ACCESS_KEY_ID": "AKIAJIS7LQZ3MVZVHWTA",
+                "AWS_SECRET_ACCESS_KEY": "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",
+                "S3_BUCKET": "sign-nature-raw",
+                "S3_BUCKET_MIN": "sign-nature"
             }
         },
         {
@@ -49,7 +53,6 @@
                 "PORT": "6200"
             }
         },
-
         {
             "request": "launch",
             "console": "internalConsole",
@@ -73,7 +76,6 @@
             // Environment variables passed to the program.
             "env": {
                 "PORT": "2092",
-              
                 "NODE_ENV": "debug",
                 "NODE_CONFIG_ENV": "local",
                 "NODE_LOG_LEVEL": "trace",
@@ -93,7 +95,6 @@
             "console": "internalConsole",
             "sourceMaps": true,
             "env": {
-                
                 "NODE_ENV": "debug",
                 "NODE_LOG_LEVEL": "debug",
                 "NODE_CONFIG_ENV": "local",

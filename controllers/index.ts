@@ -13,3 +13,4 @@ export * from './share.data.controller';
 export * from './font.data.controller';
 export * from './clipart.data.controller';
 export * from './css.controller';
+export * from './admin.controller';

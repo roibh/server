@@ -5,6 +5,9 @@
         "buildPath": "../",
         "path": "./",
         "contracts": {
+            "Admin": {
+                "path": "./controllers/admin.controller.ts"
+            },
             "DataController": {
                 "path": "./controllers/datacontroller.ts"
             },

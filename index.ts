@@ -13,7 +13,7 @@ import {
     LibraryDataController, Playlist, AuthController, UserController,
     ScreensDataController, Upload, SlidesDataController,
     PlayerController, ScheduleDataController, Css,
-    ClipArt, Font,
+    ClipArt, Font, Admin,
 } from './controllers/';
 import { MediaPack } from './controllers/media-pack.data.controller';
 
@@ -37,6 +37,7 @@ DBHandler.config = configuration;
 @ClientConfiguration(Font, MethodType.Local, ServerType.Express)
 @ClientConfiguration(ClipArt, MethodType.Local, ServerType.Express)
 @ClientConfiguration(Css, MethodType.Local, ServerType.Express)
+@ClientConfiguration(Admin, MethodType.Local, ServerType.Express)
 class SetupServer extends ConfiguredServer {
     constructor() {
         super(SetupServer);

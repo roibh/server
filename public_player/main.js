@@ -1360,17 +1360,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @signnature/client */ "./node_modules/@signnature/client/index.js");
+/* harmony import */ var _signnature_client__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_signnature_client__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _services_user_context_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/user.context.service */ "./src/app/services/user.context.service.ts");
 
 // 'Almendra', Almendra
 var KEY = 'AIzaSyDwRFeD5sLu69-hJ20KICyhh9Huz-o3Ic8';
 
 
+
+
 var log = console.log;
 var FontsService = /** @class */ (function () {
-    function FontsService(http) {
+    function FontsService(http, userService) {
         this.http = http;
+        this.userService = userService;
         this.fonts = [];
         this.loadedFonts = {};
+        this.user_id = userService.getUser()._id;
     }
     FontsService.prototype.getFonts = function () {
         return this.fonts;
@@ -1417,6 +1424,26 @@ var FontsService = /** @class */ (function () {
             });
         });
     };
+    FontsService.prototype.loadLocalFonts = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                return [2 /*return*/, new Promise(function (resolve, reject) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
+                        var finalFontsForLoad;
+                        return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                            switch (_a.label) {
+                                case 0: return [4 /*yield*/, _signnature_client__WEBPACK_IMPORTED_MODULE_3__["Font"].query('Font', {})];
+                                case 1:
+                                    finalFontsForLoad = (_a.sent()).map(function (item) { return ({ 'name': item.Name }); });
+                                    document.getElementById('api_css_placeholder').setAttribute('href', "/api/css/" + this.user_id);
+                                    resolve(finalFontsForLoad);
+                                    return [2 /*return*/];
+                            }
+                        });
+                    }); })];
+            });
+        });
+    };
     FontsService.prototype.loadFontsForLanguage = function (lng) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var url;
@@ -1444,7 +1471,7 @@ var FontsService = /** @class */ (function () {
     };
     FontsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _services_user_context_service__WEBPACK_IMPORTED_MODULE_4__["UserService"]])
     ], FontsService);
     return FontsService;
 }());
@@ -1945,9 +1972,9 @@ var DotToImage = /** @class */ (function () {
         }
         function makeSvgDataUri(nodeSvg, width, height) {
             return Promise.resolve(nodeSvg)
-                .then(function (nodeSvg) {
-                nodeSvg.setAttribute('xmlns', 'http://www.w3.org/1999/xhtml');
-                return new XMLSerializer().serializeToString(nodeSvg);
+                .then(function (loadedSvg) {
+                loadedSvg.setAttribute('xmlns', 'http://www.w3.org/1999/xhtml');
+                return new XMLSerializer().serializeToString(loadedSvg);
             })
                 .then(util.escapeXhtml)
                 .then(function (xhtml) {
@@ -1958,7 +1985,6 @@ var DotToImage = /** @class */ (function () {
                     foreignObject + '</svg>';
             })
                 .then(function (svg) {
-                console.log(svg);
                 return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
             });
         }
@@ -2911,6 +2937,78 @@ var TourService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/services/user.context.service.ts":
+/*!**************************************************!*\
+  !*** ./src/app/services/user.context.service.ts ***!
+  \**************************************************/
+/*! exports provided: UserService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserService", function() { return UserService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @auth0/angular-jwt */ "./node_modules/@auth0/angular-jwt/index.js");
+
+
+
+var UserService = /** @class */ (function () {
+    function UserService(jwtHelper) {
+        this.jwtHelper = jwtHelper;
+        this.groupChanges = [];
+    }
+    UserService.prototype.setUser = function (user) {
+        localStorage.setItem('user', JSON.stringify(user));
+    };
+    UserService.prototype.setToken = function (token) {
+        localStorage.setItem('token', token);
+    };
+    UserService.prototype.clear = function () {
+        localStorage.removeItem('token');
+    };
+    UserService.prototype.isAuthenticated = function () {
+        var token = localStorage.getItem('token');
+        // Check whether the token is expired and return
+        // true or false
+        var isExpired = this.jwtHelper.isTokenExpired(token);
+        return !isExpired;
+    };
+    UserService.prototype.getUser = function () {
+        var str = localStorage.getItem('user');
+        if (str) {
+            return JSON.parse(str);
+        }
+    };
+    UserService.prototype.setGroup = function (group) {
+        this.group = group;
+        this.groupChanges.forEach(function (func) { return func(group); });
+    };
+    UserService.prototype.onGroupChange = function (callback) {
+        this.groupChanges.push(callback);
+    };
+    UserService.prototype.getGroup = function () {
+        return this.group;
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], UserService.prototype, "group", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], UserService.prototype, "user", void 0);
+    UserService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_2__["JwtHelperService"]])
+    ], UserService);
+    return UserService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/shared.module.ts":
 /*!**********************************!*\
   !*** ./src/app/shared.module.ts ***!
@@ -3333,6 +3431,9 @@ var PlayerComponent = /** @class */ (function () {
         }
         return text;
     };
+    PlayerComponent.prototype.loadUserFonts = function (data) {
+        document.getElementById('api_css_placeholder').setAttribute('href', "/api/css/" + data.user_id);
+    };
     PlayerComponent.prototype.ngOnInit = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var str;
@@ -3344,6 +3445,7 @@ var PlayerComponent = /** @class */ (function () {
                         str = localStorage.getItem('playerInfo');
                         if (!str) return [3 /*break*/, 2];
                         this.playerInfo = JSON.parse(str);
+                        this.loadUserFonts(this.playerInfo);
                         return [4 /*yield*/, this.getPlayerPlan()];
                     case 1:
                         _a.sent();
@@ -3359,6 +3461,7 @@ var PlayerComponent = /** @class */ (function () {
                                         if (xstr) {
                                             this.playerInfo = JSON.parse(xstr);
                                             this.getPlayerPlan();
+                                            this.loadUserFonts(this.playerInfo);
                                         }
                                         else {
                                             this.Token = data.id;
@@ -3453,6 +3556,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _app_shared_module__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../app/shared.module */ "./src/app/shared.module.ts");
 /* harmony import */ var _root_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./root.component */ "./src/player/root.component.ts");
+/* harmony import */ var _app_services_user_context_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../app/services/user.context.service */ "./src/app/services/user.context.service.ts");
 
 
 
@@ -3479,6 +3583,7 @@ function HttpLoaderFactory(http) {
 }
 
 
+
 var appRoutes = [
     { path: '', pathMatch: 'full', component: _player_component__WEBPACK_IMPORTED_MODULE_10__["PlayerComponent"] },
     { path: ':id', pathMatch: 'full', component: _player_component__WEBPACK_IMPORTED_MODULE_10__["PlayerComponent"] },
@@ -3495,7 +3600,7 @@ var PlayerModule = /** @class */ (function () {
                 _player_component__WEBPACK_IMPORTED_MODULE_10__["PlayerComponent"],
                 _root_component__WEBPACK_IMPORTED_MODULE_20__["PlayerEntryComponent"],
             ],
-            providers: [_slide_service__WEBPACK_IMPORTED_MODULE_16__["SlideService"], _app_editor_fonts_service__WEBPACK_IMPORTED_MODULE_17__["FontsService"]],
+            providers: [_slide_service__WEBPACK_IMPORTED_MODULE_16__["SlideService"], _app_editor_fonts_service__WEBPACK_IMPORTED_MODULE_17__["FontsService"], _app_services_user_context_service__WEBPACK_IMPORTED_MODULE_21__["UserService"]],
             imports: [
                 _ngx_translate_core__WEBPACK_IMPORTED_MODULE_13__["TranslateModule"].forRoot({
                     loader: {
@@ -3702,7 +3807,6 @@ var SlideWorker = /** @class */ (function () {
                                         item.type = 'slide';
                                     }
                                     if (!item.MediaType) return [3 /*break*/, 8];
-                                    debugger;
                                     _a = item.MediaType;
                                     switch (_a) {
                                         case 'image': return [3 /*break*/, 1];
