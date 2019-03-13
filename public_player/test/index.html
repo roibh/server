@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <script src="bodymovin.js"></script>
+
+
+    <script>
+        window.onload = function () {
+            debugger;
+            var animation = bodymovin.loadAnimation({
+                container: document.getElementById('lottie'), // Required
+                path: 'data.json', // Required
+                renderer: 'canvas', // Required
+                loop: true, // Optional
+                autoplay: true, // Optional
+                name: "Hello World", // Name for future reference. Optional.
+            })
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div id="lottie"></div>
+
+</body>
+
+</html>

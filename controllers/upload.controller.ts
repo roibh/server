@@ -6,12 +6,9 @@ import * as aws from 'aws-sdk';
 import { AuthMiddleware } from './auth.middleware';
 import * as moment from 'moment';
 import * as uuidv1 from 'uuid/v1';
-import * as fs from 'fs';
-
 const S3_BUCKET = process.env.S3_BUCKET;
 // const S3_BUCKET_MIN = process.env.S3_BUCKET_MIN;
 const S3_REGION = 'us-east-2';
-
 const s3 = new aws.S3({ signatureVersion: 'v4', region: 'us-east-2' });
 
 @MethodConfig('Upload', [AuthMiddleware])
@@ -59,15 +56,13 @@ export class Upload {
                 //     };
                 s3.getSignedUrl('getObject', s3Params, (rawErr: any, rawData: any) => {
                     const returnData = {
+                        key: persist_filename,
                         signedRequest: rawData,
                         url: `https://s3.${S3_REGION}.amazonaws.com/${S3_BUCKET}/${persist_filename}`,
                     };
                     const s3obj = new aws.S3({ params: s3Params });
                     s3obj.upload({ Body: file.data } as any).
                         send((err: any, data: any) => {
-                            // tslint:disable-next-line:no-console
-                            console.log(err, data);
-
                             resolve(returnData);
                         });
 

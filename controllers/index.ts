@@ -10,4 +10,6 @@ export * from './upload.controller';
 export * from './player.controller';
 export * from './screen-group.data.controller';
 export * from './share.data.controller';
-
+export * from './font.data.controller';
+export * from './clipart.data.controller';
+export * from './css.controller';

@@ -8,9 +8,12 @@ export * from './models/';
 import * as path from 'path';
 import { DBHandler } from '@methodus/data';
 import { configuration } from './db/config';
-import {ShareDataController, ScreenGroupDataController,
+import {
+    ShareDataController, ScreenGroupDataController,
     LibraryDataController, Playlist, AuthController, UserController,
-    ScreensDataController, Upload, SlidesDataController, PlayerController, ScheduleDataController,
+    ScreensDataController, Upload, SlidesDataController,
+    PlayerController, ScheduleDataController, Css,
+    ClipArt, Font,
 } from './controllers/';
 import { MediaPack } from './controllers/media-pack.data.controller';
 
@@ -31,6 +34,9 @@ DBHandler.config = configuration;
 @ClientConfiguration(ShareDataController, MethodType.Local, ServerType.Express)
 @ClientConfiguration(ScreenGroupDataController, MethodType.Local, ServerType.Express)
 @ClientConfiguration(ScheduleDataController, MethodType.Local, ServerType.Express)
+@ClientConfiguration(Font, MethodType.Local, ServerType.Express)
+@ClientConfiguration(ClipArt, MethodType.Local, ServerType.Express)
+@ClientConfiguration(Css, MethodType.Local, ServerType.Express)
 class SetupServer extends ConfiguredServer {
     constructor() {
         super(SetupServer);

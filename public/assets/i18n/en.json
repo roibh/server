@@ -13,8 +13,10 @@
     "AUDIO": "Sounds",
     "SLIDES": "Slides",
     "FINDER": "Finder",
-    "SHARED": "Templates"
+    "SHARED": "Templates",
+    "CLIPART": "Clip-Art"
   },
+ 
   "ERRORS": {
     "USER_EXISTS": "A user with this email already exists, try to login."
   },
@@ -100,6 +102,7 @@
     "SETTIME": "Set"
   },
   "DATA": {
+    "FORM_NOTSAVED": "The form was not saved, you will lose all changes.",
     "CONFIRM_DELETE": "Please confirm the delete."
   },
   "TIMES": {
@@ -130,16 +133,16 @@
     "DEPTH": "Depth",
     "ALIGN": "Align",
     "POSITION": "Position",
-    "POSITION_OPTIONS":{
-      "FORWARD":"Forward",
-      "FRONT":"Front",
-      "BACKWARD":"Backward",
-      "BACK":"Back",
-      "LEFT":"Left",
-      "CENTER":"Center",
-      "RIGHT":"Right",
-      "BOTTOM":"Bottom",
-      "TOP":"Top"
+    "POSITION_OPTIONS": {
+      "FORWARD": "Forward",
+      "FRONT": "Front",
+      "BACKWARD": "Backward",
+      "BACK": "Back",
+      "LEFT": "Left",
+      "CENTER": "Center",
+      "RIGHT": "Right",
+      "BOTTOM": "Bottom",
+      "TOP": "Top"
     }
   },
   "TOUR": {

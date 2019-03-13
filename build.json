@@ -43,6 +43,12 @@
             },
             "MediaPack": {
                 "path": "./controllers/media-pack.data.controller.ts"
+            },
+            "Font": {
+                "path": "./controllers/font.data.controller.ts"
+            },
+            "ClipArt": {
+                "path": "./controllers/clipart.data.controller.ts"
             }
         },
         "models": {
@@ -76,8 +82,11 @@
             "SubscriptionModel": {
                 "path": "./models/subscription.model.ts"
             },
-            "MediaPackModel": {
-                "path": "./models/media-pack.model.ts"
+            "ClipArtModel": {
+                "path": "./models/clipart.model.ts"
+            },
+            "FontModel": {
+                "path": "./models/font.model.ts"
             }
         },
         "includes": {
