@@ -45,8 +45,8 @@
                 "NODE_LOG_DIR": "./logs",
                 "NODE_CONFIG_VAR": "vars.json",
                 "MONGO_NAME": "signnature",
-                "MONGO_PASSWORD": "Kardigan24%25",
-                "MONGO_PATH": "ds249503.mlab.com:49503",
+               
+                
                 "PORT": "6200"
             }
         },
