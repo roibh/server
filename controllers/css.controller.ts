@@ -40,7 +40,7 @@ export class Css {
                     // forward errors
                     stream.on('error', (err: any) => {
                         // continue to the next middlewares
-
+                        console.error(err);
                     });
 
                     // Add the content type to the response (it's not propagated from the S3 SDK)

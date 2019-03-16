@@ -77,6 +77,11 @@
     "SEARCHTERM": "Keyword",
     "MEDIAPACK": "Media pack"
   },
+  "TYPES":{
+    "IMAGE":"Image",
+    "URL":"Url",
+    "VIDEO":"Video"
+  },
   "SLIDES": {
     "NAME": "Name your slide",
     "NAME_HELP": "Try using a meaningful name",
