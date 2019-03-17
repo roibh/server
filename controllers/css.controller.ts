@@ -84,10 +84,10 @@ export class Css {
                 const extension = font.key.substring(font.key.lastIndexOf('.') + 1);
                 finalString += `
 @font-face {
-    font-family: '${font.Name}';
+    font-family: "${font.Name}";
     font-style: normal;
     font-weight: normal; /* or 400 */
-    src: url(/api/font/${font._id}.${extension}) format('${extension}');
+    src: url("/api/font/${font._id}.${extension}") format("${extension}");
 }`;
             });
             const result = new MethodResult(finalString);
