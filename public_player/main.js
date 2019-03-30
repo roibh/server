@@ -147,7 +147,7 @@ var ChangeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<link rel=\"stylesheet\" [href]='cleanCssUrl' />\n<div class=\"input-group mb-3\">\n  <div class=\"input-group-prepend\">\n    <span class=\"input-group-text\" id=\"basic-addon1\"><i class=\"icon-language\"></i></span>\n  </div>\n  <select [(ngModel)]=\"selectedLanguage\" class=\"form-control\" (change)=\"selectLanguage()\" [compareWith]=\"compareFn\">\n    <option *ngFor=\"let c of languages\" [ngValue]=\"c\">{{c.name}}</option>\n  </select>\n</div>\n"
+module.exports = "<link rel=\"stylesheet\" [href]='cleanCssUrl' />\r\n<div class=\"input-group mb-3\">\r\n  <div class=\"input-group-prepend\">\r\n    <span class=\"input-group-text\" id=\"basic-addon1\"><i class=\"icon-language\"></i></span>\r\n  </div>\r\n  <select [(ngModel)]=\"selectedLanguage\" class=\"form-control\" (change)=\"selectLanguage()\" [compareWith]=\"compareFn\">\r\n    <option *ngFor=\"let c of languages\" [ngValue]=\"c\">{{c.name}}</option>\r\n  </select>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -342,7 +342,7 @@ var LobbyItemComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n \n\n<ng-template #defaultToolbar let-item=\"item\">\n  <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n    <li>\n      <button class=\"btn btn-secondary btn-md btn-primary left\" (click)=\"editItemHandler(item);\"> <i\n          class=\"icon-edit\"></i>\n      </button>\n    </li>\n    <li class=\"date-label\">{{item.Date | date}}</li>\n    <li>\n      <button class=\"btn btn-secondary btn-md btn-danger right\" (click)=\"deleteItemHandler(item);\"> <i\n          class=\"icon-trash-o\"></i>\n      </button>\n    </li>\n\n  </ul>\n</ng-template>\n\n\n\n<div class=\"lobby\" *ngIf=\"mode==='media'\">\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn {{itemClass}}\" (click)=\"newItemHandler()\" (next)=\"newItemHandler()\"\n    [joyrideStep]=\"'lobby-add'\" [stepContent]=\"lobbyContent\"><i class=\"icon-plus-alt\"></i>\n  </div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{item._meta_active}}\" (click)=\"selectItemHandler(item)\">\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\n    <ng-template [ngTemplateOutlet]=\"toolbar || defaultToolbar\" [ngTemplateOutletContext]=\"{item: item}\">\n    </ng-template>\n  </div>\n</div>\n\n<div class=\"lobby\" *ngIf=\"mode==='media-finder'\">\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{itemClass}} {{item._meta_active}}\">\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"selectItemHandler(item);\"> <i\n            class=\"icon-plus-square\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"lobby\" *ngIf=\"mode==='object-finder'\">\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{itemClass}}\">\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"selectItemHandler(item);\"> <i\n            class=\"icon-plus-square\"></i>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n<div class=\"lobby\" *ngIf=\"mode==='object'\">\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn {{itemClass}}\" \n  [joyrideStep]=\"'lobby-add'\" (next)=\"nextTourStep()\" [stepContent]=\"lobbyContent\"\n    (next)=\"newItemHandler()\"\n     (click)=\"newItemHandler()\"><i class=\"icon-plus-alt\"></i>\n  </div>\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{item._meta_active}}\" (click)=\"selectItemHandler(item)\">\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\n\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-primary left\" (click)=\"editItemHandler(item);\"> <i\n            class=\"icon-edit\"></i>\n        </button>\n      </li>\n      <li class=\"date-label\">{{item.Date | date}}</li>\n      <li>\n        <button class=\"btn btn-secondary btn-md btn-danger right\" (click)=\"deleteItemHandler(item);\"> <i\n            class=\"icon-trash-o\"></i>\n        </button>\n      </li>\n\n    </ul>\n  </div>\n</div>\n<ng-template #lobbyContent>\n    <h5> {{'TOUR.ADD.TITLE' | translate}}</h5>\n    <p>\n        {{'TOUR.ADD.CONTENT' | translate}}\n    </p>\n</ng-template>"
+module.exports = "\r\n \r\n\r\n<ng-template #defaultToolbar let-item=\"item\">\r\n  <ul class=\"sqr-toolbar btn-group\" role=\"group\">\r\n    <li>\r\n      <button class=\"btn btn-secondary btn-md btn-primary left\" (click)=\"editItemHandler(item);\"> <i\r\n          class=\"icon-edit\"></i>\r\n      </button>\r\n    </li>\r\n    <li class=\"date-label\">{{item.Date | date}}</li>\r\n    <li>\r\n      <button class=\"btn btn-secondary btn-md btn-danger right\" (click)=\"deleteItemHandler(item);\"> <i\r\n          class=\"icon-trash-o\"></i>\r\n      </button>\r\n    </li>\r\n\r\n  </ul>\r\n</ng-template>\r\n\r\n\r\n\r\n<div class=\"lobby\" *ngIf=\"mode==='media'\">\r\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn {{itemClass}}\" (click)=\"newItemHandler()\" (next)=\"newItemHandler()\"\r\n    [joyrideStep]=\"'lobby-add'\" [stepContent]=\"lobbyContent\"><i class=\"icon-plus-alt\"></i>\r\n  </div>\r\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{item._meta_active}}\" (click)=\"selectItemHandler(item)\">\r\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\r\n    <ng-template [ngTemplateOutlet]=\"toolbar || defaultToolbar\" [ngTemplateOutletContext]=\"{item: item}\">\r\n    </ng-template>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"lobby\" *ngIf=\"mode==='media-finder'\">\r\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{itemClass}} {{item._meta_active}}\">\r\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\r\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\r\n      <li>\r\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"selectItemHandler(item);\"> <i\r\n            class=\"icon-plus-square\"></i>\r\n        </button>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"lobby\" *ngIf=\"mode==='object-finder'\">\r\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{itemClass}}\">\r\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\r\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\r\n      <li>\r\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"selectItemHandler(item);\"> <i\r\n            class=\"icon-plus-square\"></i>\r\n        </button>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"lobby\" *ngIf=\"mode==='object'\">\r\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn {{itemClass}}\" \r\n  [joyrideStep]=\"'lobby-add'\" (next)=\"nextTourStep()\" [stepContent]=\"lobbyContent\"\r\n    (next)=\"newItemHandler()\"\r\n     (click)=\"newItemHandler()\"><i class=\"icon-plus-alt\"></i>\r\n  </div>\r\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{item._meta_active}}\" (click)=\"selectItemHandler(item)\">\r\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\r\n\r\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\r\n      <li>\r\n        <button class=\"btn btn-secondary btn-md btn-primary left\" (click)=\"editItemHandler(item);\"> <i\r\n            class=\"icon-edit\"></i>\r\n        </button>\r\n      </li>\r\n      <li class=\"date-label\">{{item.Date | date}}</li>\r\n      <li>\r\n        <button class=\"btn btn-secondary btn-md btn-danger right\" (click)=\"deleteItemHandler(item);\"> <i\r\n            class=\"icon-trash-o\"></i>\r\n        </button>\r\n      </li>\r\n\r\n    </ul>\r\n  </div>\r\n</div>\r\n<ng-template #lobbyContent>\r\n    <h5> {{'TOUR.ADD.TITLE' | translate}}</h5>\r\n    <p>\r\n        {{'TOUR.ADD.CONTENT' | translate}}\r\n    </p>\r\n</ng-template>"
 
 /***/ }),
 
@@ -1412,10 +1412,12 @@ var FontsService = /** @class */ (function () {
                                         _this.loadedFonts[item] = item;
                                     });
                                 },
-                                google: {
-                                    families: finalFontsForLoad
+                                custom: {
+                                    families: finalFontsForLoad,
+                                    urls: ["/css?family=" + finalFontsForLoad.join('|')]
                                 }
                             });
+                            console.log("/css?family=" + finalFontsForLoad.join('|'));
                         }
                         else {
                             return resolve(_this.fonts);
@@ -1487,7 +1489,7 @@ var FontsService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-template #toolbar let-item=\"item\">\n  <div class=\"btn-group\" data-toggle=\"buttons\">\n    <button class=\"btn-tool\" (click)=\"toggleFilterSlider()\"><span class=\"icon-search\"></span></button>\n  </div>\n</ng-template>\n\n<ng-template #toolbarTemplate let-item=\"item\">\n  <ul class=\"sqr-toolbar btn-group\" role=\"group\">\n    <li>\n      <button class=\"btn btn-secondary btn-md btn-success\" (click)=\"startFromTemplate(item);\"> <i\n          class=\"icon-insert-template\"></i>\n      </button>\n    </li>\n    <li>\n\n    </li>\n  </ul>\n</ng-template>\n\n\n\n\n<div class=\"slider-container-wide {{active}} shadow\">\n  <dialog open={{active}}>\n    <app-slide-header closeFn=\"true\" [toolbar]=\"toolbar\" title=\"NAVBAR.FINDER\" className=\"library-cat\"\n      (closed)=\"closeSlider()\"></app-slide-header>\n\n  \n\n    <div class=\"filter-slide {{filterActive}}\">\n      <div class=\"input-group pt50\">\n        <input type=\"text\" name=\"searchPhrase\" class=\"form-control\" />\n        <div class=\"input-group-prepend\">\n          <button class=\"btn btn-outline-secondary\" type=\"button\"> <i class=\"icon-search\"></i></button>\n        </div>\n      </div>\n    </div>\n\n    <ul class=\"nav nav-tabs pt50\">\n\n      <li class=\"nav-item {{tab.selected ? 'library-cat': ''}} \" *ngFor=\"let tab of tabs\" (click)=\"tabSelect(tab)\">\n        <a class=\"nav-link {{tab.selected}} \">\n          <h5><i class=\"{{tab.icon}}\"></i> {{tab.name | translate}}</h5>\n        </a>\n      </li>\n\n\n      <!-- <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n        <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\n      </li> -->\n    </ul>\n\n    <div class=\"no-margin nohor pt10\" *ngIf=\"selectedTab && selectedTab.alias === 'media'\" [appAdaptHeight]=\"220\">\n         <app-lobby [items]=\"items\" itemClass=\"small\" mode=\"media-finder\" (selectItem)=\"selectItem($event)\"\n        (deleteItem)=\"deleteItem($event)\"></app-lobby>\n    </div>\n    <div class=\"no-margin nohor pt10\" *ngIf=\"selectedTab && selectedTab.alias ==='slide'\" [appAdaptHeight]=\"220\">\n          <app-lobby [items]=\"slides\" itemClass=\"small\" mode=\"object-finder\" (selectItem)=\"selectItem($event)\"\n        (deleteItem)=\"deleteItem($event)\"></app-lobby>\n    </div>\n    <div class=\"no-margin nohor pt10\" *ngIf=\"selectedTab && selectedTab.alias === 'shares'\" [appAdaptHeight]=\"220\">\n        <app-lobby [items]=\"shares\" itemClass=\"small\" mode='media-finder' [toolbar]=\"toolbarTemplate\" [noNew]=\"true\">\n      </app-lobby>\n    </div>\n\n    <app-slide-footer className=\"library-cat\"></app-slide-footer>\n  </dialog>\n</div>\n"
+module.exports = "<ng-template #toolbar let-item=\"item\">\r\n  <div class=\"btn-group\" data-toggle=\"buttons\">\r\n    <button class=\"btn-tool\" (click)=\"toggleFilterSlider()\"><span class=\"icon-search\"></span></button>\r\n  </div>\r\n</ng-template>\r\n\r\n<ng-template #toolbarTemplate let-item=\"item\">\r\n  <ul class=\"sqr-toolbar btn-group\" role=\"group\">\r\n    <li>\r\n      <button class=\"btn btn-secondary btn-md btn-success\" (click)=\"startFromTemplate(item);\"> <i\r\n          class=\"icon-insert-template\"></i>\r\n      </button>\r\n    </li>\r\n    <li>\r\n\r\n    </li>\r\n  </ul>\r\n</ng-template>\r\n\r\n\r\n\r\n\r\n<div class=\"slider-container-wide {{active}} shadow\">\r\n  <dialog open={{active}}>\r\n    <app-slide-header closeFn=\"true\" [toolbar]=\"toolbar\" title=\"NAVBAR.FINDER\" className=\"library-cat\"\r\n      (closed)=\"closeSlider()\"></app-slide-header>\r\n\r\n  \r\n\r\n    <div class=\"filter-slide {{filterActive}}\">\r\n      <div class=\"input-group pt50\">\r\n        <input type=\"text\" name=\"searchPhrase\" class=\"form-control\" />\r\n        <div class=\"input-group-prepend\">\r\n          <button class=\"btn btn-outline-secondary\" type=\"button\"> <i class=\"icon-search\"></i></button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <ul class=\"nav nav-tabs pt50\">\r\n\r\n      <li class=\"nav-item {{tab.selected ? 'library-cat': ''}} \" *ngFor=\"let tab of tabs\" (click)=\"tabSelect(tab)\">\r\n        <a class=\"nav-link {{tab.selected}} \">\r\n          <h5><i class=\"{{tab.icon}}\"></i> {{tab.name | translate}}</h5>\r\n        </a>\r\n      </li>\r\n\r\n\r\n      <!-- <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\r\n        <a class=\"nav-link {{tab.selected}}\" (click)=\"tabSelect(tab)\">{{tab.name | translate}}</a>\r\n      </li> -->\r\n    </ul>\r\n\r\n    <div class=\"no-margin nohor pt10\" *ngIf=\"selectedTab && selectedTab.alias === 'media'\" [appAdaptHeight]=\"220\">\r\n         <app-lobby [items]=\"items\" itemClass=\"small\" mode=\"media-finder\" (selectItem)=\"selectItem($event)\"\r\n        (deleteItem)=\"deleteItem($event)\"></app-lobby>\r\n    </div>\r\n    <div class=\"no-margin nohor pt10\" *ngIf=\"selectedTab && selectedTab.alias ==='slide'\" [appAdaptHeight]=\"220\">\r\n          <app-lobby [items]=\"slides\" itemClass=\"small\" mode=\"object-finder\" (selectItem)=\"selectItem($event)\"\r\n        (deleteItem)=\"deleteItem($event)\"></app-lobby>\r\n    </div>\r\n    <div class=\"no-margin nohor pt10\" *ngIf=\"selectedTab && selectedTab.alias === 'shares'\" [appAdaptHeight]=\"220\">\r\n        <app-lobby [items]=\"shares\" itemClass=\"small\" mode='media-finder' [toolbar]=\"toolbarTemplate\" [noNew]=\"true\">\r\n      </app-lobby>\r\n    </div>\r\n\r\n    <app-slide-footer className=\"library-cat\"></app-slide-footer>\r\n  </dialog>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1972,9 +1974,9 @@ var DotToImage = /** @class */ (function () {
         }
         function makeSvgDataUri(nodeSvg, width, height) {
             return Promise.resolve(nodeSvg)
-                .then(function (loadedSvg) {
-                loadedSvg.setAttribute('xmlns', 'http://www.w3.org/1999/xhtml');
-                return new XMLSerializer().serializeToString(loadedSvg);
+                .then(function (nodeSvg) {
+                nodeSvg.setAttribute('xmlns', 'http://www.w3.org/1999/xhtml');
+                return new XMLSerializer().serializeToString(nodeSvg);
             })
                 .then(util.escapeXhtml)
                 .then(function (xhtml) {
@@ -1985,6 +1987,7 @@ var DotToImage = /** @class */ (function () {
                     foreignObject + '</svg>';
             })
                 .then(function (svg) {
+                console.log(svg);
                 return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
             });
         }
@@ -3141,7 +3144,8 @@ var SharedModule = /** @class */ (function () {
                 _common_lobby_item_lobby_item_component__WEBPACK_IMPORTED_MODULE_23__["LobbyItemComponent"],
                 _pipes_filter_pipe__WEBPACK_IMPORTED_MODULE_29__["FilterPipe"],
                 _media_preview_media_preview_component__WEBPACK_IMPORTED_MODULE_31__["MediaPreviewComponent"]],
-            providers: [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"],
+            providers: [
+                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"],
                 _services_language_dictionary_service__WEBPACK_IMPORTED_MODULE_5__["DictionaryService"],
                 _services_name_service__WEBPACK_IMPORTED_MODULE_6__["NameService"],
                 _player_slide_service__WEBPACK_IMPORTED_MODULE_21__["SlideService"],
@@ -3431,9 +3435,6 @@ var PlayerComponent = /** @class */ (function () {
         }
         return text;
     };
-    PlayerComponent.prototype.loadUserFonts = function (data) {
-        document.getElementById('api_css_placeholder').setAttribute('href', "/api/css/" + data.user_id);
-    };
     PlayerComponent.prototype.ngOnInit = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var str;
@@ -3445,7 +3446,6 @@ var PlayerComponent = /** @class */ (function () {
                         str = localStorage.getItem('playerInfo');
                         if (!str) return [3 /*break*/, 2];
                         this.playerInfo = JSON.parse(str);
-                        this.loadUserFonts(this.playerInfo);
                         return [4 /*yield*/, this.getPlayerPlan()];
                     case 1:
                         _a.sent();
@@ -3461,7 +3461,6 @@ var PlayerComponent = /** @class */ (function () {
                                         if (xstr) {
                                             this.playerInfo = JSON.parse(xstr);
                                             this.getPlayerPlan();
-                                            this.loadUserFonts(this.playerInfo);
                                         }
                                         else {
                                             this.Token = data.id;
@@ -3600,7 +3599,11 @@ var PlayerModule = /** @class */ (function () {
                 _player_component__WEBPACK_IMPORTED_MODULE_10__["PlayerComponent"],
                 _root_component__WEBPACK_IMPORTED_MODULE_20__["PlayerEntryComponent"],
             ],
-            providers: [_slide_service__WEBPACK_IMPORTED_MODULE_16__["SlideService"], _app_editor_fonts_service__WEBPACK_IMPORTED_MODULE_17__["FontsService"], _app_services_user_context_service__WEBPACK_IMPORTED_MODULE_21__["UserService"]],
+            providers: [
+                _slide_service__WEBPACK_IMPORTED_MODULE_16__["SlideService"],
+                _app_editor_fonts_service__WEBPACK_IMPORTED_MODULE_17__["FontsService"],
+                _app_services_user_context_service__WEBPACK_IMPORTED_MODULE_21__["UserService"],
+            ],
             imports: [
                 _ngx_translate_core__WEBPACK_IMPORTED_MODULE_13__["TranslateModule"].forRoot({
                     loader: {
@@ -3638,130 +3641,23 @@ var PlayerModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/player/root.component.ts":
-/*!**************************************!*\
-  !*** ./src/player/root.component.ts ***!
-  \**************************************/
-/*! exports provided: PlayerEntryComponent */
+/***/ "./src/player/renderers/canvas.ts":
+/*!****************************************!*\
+  !*** ./src/player/renderers/canvas.ts ***!
+  \****************************************/
+/*! exports provided: CanvasRenderer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlayerEntryComponent", function() { return PlayerEntryComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var PlayerEntryComponent = /** @class */ (function () {
-    function PlayerEntryComponent() {
-    }
-    PlayerEntryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'player-entry',
-            template: __webpack_require__(/*! ./player-entry.component.html */ "./src/player/player-entry.component.html"),
-            styles: [__webpack_require__(/*! ./player.component.scss */ "./src/player/player.component.scss")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-    ], PlayerEntryComponent);
-    return PlayerEntryComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/player/slide.service.ts":
-/*!*************************************!*\
-  !*** ./src/player/slide.service.ts ***!
-  \*************************************/
-/*! exports provided: SlideService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SlideService", function() { return SlideService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _app_editor_fonts_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../app/editor/fonts.service */ "./src/app/editor/fonts.service.ts");
-/* harmony import */ var _slide_worker__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./slide.worker */ "./src/player/slide.worker.ts");
-
-
-
-
-// import { Stage, Shape, } from '@createjs/easeljs';
-var Eval = eval;
-var log = console.log;
-var SlideService = /** @class */ (function () {
-    function SlideService(fontService) {
-        this.fontService = fontService;
-        this.itemIndex = 0;
-    }
-    SlideService.prototype.updatePlayerPlan = function (playerPlan) {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var fontsArr_1;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        this.playerPlan = playerPlan;
-                        if (!(this.playerPlan && this.playerPlan.length > 0)) return [3 /*break*/, 2];
-                        this.list = this.playerPlan[0].list;
-                        fontsArr_1 = {};
-                        this.list.forEach(function (item) {
-                            if (item.fonts) {
-                                item.fonts.forEach(function (font) {
-                                    fontsArr_1[font] = font;
-                                });
-                            }
-                        });
-                        return [4 /*yield*/, this.fontService.loadFontsForRender(Object.keys(fontsArr_1))];
-                    case 1:
-                        _a.sent();
-                        return [3 /*break*/, 2];
-                    case 2: return [2 /*return*/];
-                }
-            });
-        });
-    };
-    SlideService.prototype.createWorker = function (playerPlan, ctx, width, height, mode) {
-    };
-    SlideService.prototype.play = function (surfaces, playerPlan, ctx, width, height, mode) {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var playX;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                playX = new _slide_worker__WEBPACK_IMPORTED_MODULE_3__["SlideWorker"](surfaces, this.fontService, playerPlan, ctx, width, height, mode);
-                playX.play();
-                return [2 /*return*/];
-            });
-        });
-    };
-    SlideService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_app_editor_fonts_service__WEBPACK_IMPORTED_MODULE_2__["FontsService"]])
-    ], SlideService);
-    return SlideService;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/player/slide.worker.ts":
-/*!************************************!*\
-  !*** ./src/player/slide.worker.ts ***!
-  \************************************/
-/*! exports provided: SlideWorker */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SlideWorker", function() { return SlideWorker; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CanvasRenderer", function() { return CanvasRenderer; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var image_promise__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! image-promise */ "./node_modules/image-promise/dist/image-promise.common-js.js");
 /* harmony import */ var image_promise__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(image_promise__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _createjs_easeljs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @createjs/easeljs */ "./node_modules/@createjs/easeljs/src/main.js");
 /* harmony import */ var youtube_player__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! youtube-player */ "./node_modules/youtube-player/dist/index.js");
 /* harmony import */ var youtube_player__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(youtube_player__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _app_services_dottoimage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../app/services/dottoimage */ "./src/app/services/dottoimage.ts");
+/* harmony import */ var _app_services_dottoimage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../app/services/dottoimage */ "./src/app/services/dottoimage.ts");
 
 
 
@@ -3769,8 +3665,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var Eval = eval;
 var log = console.log;
-var SlideWorker = /** @class */ (function () {
-    function SlideWorker(surfaces, fontService, playerPlan, ctx, width, height, mode) {
+var CanvasRenderer = /** @class */ (function () {
+    function CanvasRenderer(surfaces, fontService, playerPlan, ctx, width, height, mode) {
         this.surfaces = surfaces;
         this.fontService = fontService;
         this.playerPlan = playerPlan;
@@ -3782,10 +3678,10 @@ var SlideWorker = /** @class */ (function () {
         this.images = [];
         this.itemIndex = 0;
     }
-    SlideWorker.prototype.factorPosition = function (screen, x, y) {
+    CanvasRenderer.prototype.factorPosition = function (screen, x, y) {
         return { x: x * (this.width / screen.width), y: y * (this.height / screen.height) };
     };
-    SlideWorker.prototype.factor = function (screen, x, y) {
+    CanvasRenderer.prototype.factor = function (screen, x, y) {
         if (!y) {
             return Math.floor(x * (this.width / screen.width));
         }
@@ -3793,7 +3689,7 @@ var SlideWorker = /** @class */ (function () {
             return { x: x * (this.width / screen.width), y: y * (this.height / screen.height) };
         }
     };
-    SlideWorker.prototype.prerender = function (item, duration) {
+    CanvasRenderer.prototype.prerender = function (item, duration) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var _this = this;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
@@ -3846,7 +3742,7 @@ var SlideWorker = /** @class */ (function () {
             });
         });
     };
-    SlideWorker.prototype.render_frame = function (url, x, y, width, height) {
+    CanvasRenderer.prototype.render_frame = function (url, x, y, width, height) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 this.surfaces.iframe.onLoad = function () {
@@ -3859,7 +3755,7 @@ var SlideWorker = /** @class */ (function () {
             });
         });
     };
-    SlideWorker.prototype.render_embededPlayer = function (embed, x, y, width, height) {
+    CanvasRenderer.prototype.render_embededPlayer = function (embed, x, y, width, height) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var _this = this;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
@@ -3887,7 +3783,7 @@ var SlideWorker = /** @class */ (function () {
             });
         });
     };
-    SlideWorker.prototype.startCounter = function (duration) {
+    CanvasRenderer.prototype.startCounter = function (duration) {
         var _this = this;
         var counterInterval = setInterval(function () {
             if (_this.surfaces.counter) {
@@ -3899,7 +3795,7 @@ var SlideWorker = /** @class */ (function () {
             }
         }, 1000);
     };
-    SlideWorker.prototype.playDefaultPlan = function () {
+    CanvasRenderer.prototype.playDefaultPlan = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 this.ctx.font = "120px arial";
@@ -3909,7 +3805,7 @@ var SlideWorker = /** @class */ (function () {
             });
         });
     };
-    SlideWorker.prototype.render_fullimage_to_canvas = function (url, x, y, _width, _height) {
+    CanvasRenderer.prototype.render_fullimage_to_canvas = function (url, x, y, _width, _height) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var _this = this;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
@@ -3939,7 +3835,7 @@ var SlideWorker = /** @class */ (function () {
             });
         });
     };
-    SlideWorker.prototype.render_image_to_canvas = function (item, element) {
+    CanvasRenderer.prototype.render_image_to_canvas = function (item, element) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var url, x, y, _width, _height;
             var _this = this;
@@ -3983,7 +3879,7 @@ var SlideWorker = /** @class */ (function () {
             });
         });
     };
-    SlideWorker.prototype.renderElementsToTags = function (item) {
+    CanvasRenderer.prototype.renderElementsToTags = function (item) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var shape, index, element, _a;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
@@ -4035,7 +3931,7 @@ var SlideWorker = /** @class */ (function () {
             });
         });
     };
-    SlideWorker.prototype.render_text_to_canvas = function (item, element) {
+    CanvasRenderer.prototype.render_text_to_canvas = function (item, element) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var dotToImage, fontFactor, x, y, _width, _height, sizes, positions_1, node, imageBlob, img_1;
             var _this = this;
@@ -4074,12 +3970,395 @@ var SlideWorker = /** @class */ (function () {
             });
         });
     };
-    SlideWorker.prototype.playScreenError = function () {
+    CanvasRenderer.prototype.playScreenError = function () {
         this.ctx.font = "120px arial";
         this.ctx.fillStyle = "black";
         this.ctx.fillText('Screen error', this.width, this.height);
     };
-    SlideWorker.prototype.play = function () {
+    CanvasRenderer.prototype.play = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var frameDuration;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (this.surfaces.embed) {
+                            this.surfaces.embed.style.display = 'none';
+                        }
+                        this.stage = new _createjs_easeljs__WEBPACK_IMPORTED_MODULE_2__["Stage"](this.ctx.canvas);
+                        if (this.mode === 'single') {
+                            // await this.fontService.loadFontsForRender(this.playerPlan[0].fonts);
+                            this.prerender(this.playerPlan[0], 0);
+                            return [2 /*return*/];
+                        }
+                        else {
+                            if (!this.playerPlan || this.playerPlan.length === 0) {
+                                this.playDefaultPlan();
+                                return [2 /*return*/];
+                            }
+                        }
+                        if (!(this.mode !== 'single')) return [3 /*break*/, 3];
+                        this.list = this.playerPlan[0].list;
+                        frameDuration = (this.list[this.itemIndex].duration) ? this.list[this.itemIndex].duration * 1000 : 5000;
+                        _a.label = 1;
+                    case 1:
+                        if (false) {}
+                        // await this.fontService.loadFontsForRender(this.list[this.itemIndex].fonts);
+                        return [4 /*yield*/, this.prerender(this.list[this.itemIndex], frameDuration)];
+                    case 2:
+                        // await this.fontService.loadFontsForRender(this.list[this.itemIndex].fonts);
+                        _a.sent();
+                        this.itemIndex++;
+                        if (this.itemIndex === this.list.length) {
+                            this.itemIndex = 0;
+                        }
+                        return [3 /*break*/, 1];
+                    case 3: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    return CanvasRenderer;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/player/renderers/html.ts":
+/*!**************************************!*\
+  !*** ./src/player/renderers/html.ts ***!
+  \**************************************/
+/*! exports provided: HtmlRenderer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HtmlRenderer", function() { return HtmlRenderer; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var image_promise__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! image-promise */ "./node_modules/image-promise/dist/image-promise.common-js.js");
+/* harmony import */ var image_promise__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(image_promise__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _createjs_easeljs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @createjs/easeljs */ "./node_modules/@createjs/easeljs/src/main.js");
+/* harmony import */ var youtube_player__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! youtube-player */ "./node_modules/youtube-player/dist/index.js");
+/* harmony import */ var youtube_player__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(youtube_player__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _app_services_dottoimage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../app/services/dottoimage */ "./src/app/services/dottoimage.ts");
+
+
+
+
+
+var Eval = eval;
+var log = console.log;
+var HtmlRenderer = /** @class */ (function () {
+    function HtmlRenderer(surfaces, fontService, playerPlan, ctx, width, height, mode) {
+        this.surfaces = surfaces;
+        this.fontService = fontService;
+        this.playerPlan = playerPlan;
+        this.ctx = ctx;
+        this.width = width;
+        this.height = height;
+        this.mode = mode;
+        this.start = new Date();
+        this.images = [];
+        this.itemIndex = 0;
+    }
+    HtmlRenderer.prototype.factorPosition = function (screen, x, y) {
+        return { x: x * (this.width / screen.width), y: y * (this.height / screen.height) };
+    };
+    HtmlRenderer.prototype.factor = function (screen, x, y) {
+        if (!y) {
+            return Math.floor(x * (this.width / screen.width));
+        }
+        else {
+            return { x: x * (this.width / screen.width), y: y * (this.height / screen.height) };
+        }
+    };
+    HtmlRenderer.prototype.prerender = function (item, duration) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                return [2 /*return*/, new Promise(function (resolve, reject) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
+                        var _a;
+                        var _this = this;
+                        return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
+                            switch (_b.label) {
+                                case 0:
+                                    if (item.elements) {
+                                        item.type = 'slide';
+                                    }
+                                    if (!item.MediaType) return [3 /*break*/, 8];
+                                    _a = item.MediaType;
+                                    switch (_a) {
+                                        case 'image': return [3 /*break*/, 1];
+                                        case 'video': return [3 /*break*/, 3];
+                                        case 'url': return [3 /*break*/, 5];
+                                    }
+                                    return [3 /*break*/, 7];
+                                case 1: return [4 /*yield*/, this.render_fullimage_to_canvas(item.resource, 0, 0, this.width, this.height)];
+                                case 2:
+                                    _b.sent();
+                                    return [3 /*break*/, 7];
+                                case 3: return [4 /*yield*/, this.render_embededPlayer(item.Embed, 0, 0, this.width, this.height)];
+                                case 4:
+                                    _b.sent();
+                                    return [3 /*break*/, 7];
+                                case 5: return [4 /*yield*/, this.render_frame(item.Url, 0, 0, this.width, this.height)];
+                                case 6:
+                                    _b.sent();
+                                    return [3 /*break*/, 7];
+                                case 7: return [3 /*break*/, 10];
+                                case 8: return [4 /*yield*/, this.renderElementsToTags(item)];
+                                case 9:
+                                    _b.sent();
+                                    _b.label = 10;
+                                case 10:
+                                    this.startCounter(duration);
+                                    setTimeout(function () {
+                                        if (_this.ytPlayer) {
+                                            _this.ytPlayer.stopVideo();
+                                        }
+                                        resolve();
+                                    }, duration);
+                                    return [2 /*return*/];
+                            }
+                        });
+                    }); })];
+            });
+        });
+    };
+    HtmlRenderer.prototype.render_frame = function (url, x, y, width, height) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                this.surfaces.iframe.onLoad = function () {
+                };
+                this.surfaces.iframe.src = url;
+                this.surfaces.iframe.style.display = 'inline-block';
+                this.surfaces.canvas.style.display = 'none';
+                this.surfaces.embed.style.display = 'none';
+                return [2 /*return*/];
+            });
+        });
+    };
+    HtmlRenderer.prototype.render_embededPlayer = function (embed, x, y, width, height) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, new Promise(function (resolve, reject) {
+                            _this.surfaces.embed.innerHTML = "<div id=\"playerEmbedInner\" style=\"position:absolute;top:" + y + "px;left:" + x + "px;\"></div>";
+                            _this.ytPlayer = youtube_player__WEBPACK_IMPORTED_MODULE_3___default()('playerEmbedInner', {
+                                width: width,
+                                height: height,
+                            });
+                            // 'loadVideoById' is queued until the player is ready to receive API calls.
+                            _this.ytPlayer.loadVideoById(embed);
+                            // 'playVideo' is queue until the player is ready to received API calls and after 'loadVideoById' has been called.
+                            _this.ytPlayer.playVideo().then(function (data) {
+                                _this.surfaces.embed.style.display = 'inline-block';
+                                _this.surfaces.canvas.style.display = 'none';
+                                _this.surfaces.iframe.style.display = 'none';
+                                resolve();
+                            });
+                        })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    HtmlRenderer.prototype.startCounter = function (duration) {
+        var _this = this;
+        var counterInterval = setInterval(function () {
+            if (_this.surfaces.counter) {
+                _this.surfaces.counter.innerHTML = duration / 1000;
+            }
+            duration -= 1000;
+            if (duration === 0) {
+                clearInterval(counterInterval);
+            }
+        }, 1000);
+    };
+    HtmlRenderer.prototype.playDefaultPlan = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                this.ctx.font = "120px arial";
+                this.ctx.fillStyle = "red";
+                this.ctx.fillText('Nothing to play', this.width / 4, this.height / 2);
+                return [2 /*return*/];
+            });
+        });
+    };
+    HtmlRenderer.prototype.render_fullimage_to_canvas = function (url, x, y, _width, _height) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                log('@slide.service-render_fullimage_to_canvas');
+                return [2 /*return*/, new Promise(function (resolve, reject) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
+                        var img;
+                        return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                            switch (_a.label) {
+                                case 0: return [4 /*yield*/, image_promise__WEBPACK_IMPORTED_MODULE_1___default()([url])];
+                                case 1:
+                                    img = _a.sent();
+                                    if (img.length && img.length > 0) {
+                                        img = img[0];
+                                    }
+                                    if (img) {
+                                        img.width = this.ctx.canvas.width;
+                                        img.height = this.ctx.canvas.height;
+                                        this.images.push(img);
+                                        this.ctx.clearRect(0, 0, _width, _height);
+                                        this.ctx.drawImage(img, x, y, _width, _height);
+                                    }
+                                    resolve(img);
+                                    return [2 /*return*/];
+                            }
+                        });
+                    }); })];
+            });
+        });
+    };
+    HtmlRenderer.prototype.render_image_to_canvas = function (item, element) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var url, x, y, _width, _height;
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                url = element.src;
+                x = element.position.x;
+                y = element.position.y;
+                _width = element.width;
+                _height = element.height;
+                log('@slide.service-render_image_to_canvas');
+                return [2 /*return*/, new Promise(function (resolve, reject) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
+                        var img, sizes, positions;
+                        return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                            switch (_a.label) {
+                                case 0: return [4 /*yield*/, image_promise__WEBPACK_IMPORTED_MODULE_1___default()([url])];
+                                case 1:
+                                    img = _a.sent();
+                                    if (img && img.length && img.length > 0) {
+                                        img = img[0];
+                                    }
+                                    this.images.push(img);
+                                    sizes = this.factor(item.Screen, _width, _height);
+                                    positions = this.factorPosition(item.Screen, x, y);
+                                    this.ctx.save();
+                                    if (element.opacity) {
+                                        this.ctx.globalAlpha = element.opacity;
+                                    }
+                                    if (element.rotation) {
+                                        this.ctx.translate(positions.x + (sizes.x / 2), positions.y + (sizes.y / 2));
+                                        this.ctx.rotate(element.rotation * Math.PI / 180);
+                                        this.ctx.translate(-(sizes.x / 2), -(sizes.y / 2));
+                                    }
+                                    this.ctx.drawImage(img, positions.x, positions.y, sizes.x, sizes.y);
+                                    this.ctx.restore();
+                                    this.ctx.setTransform(1, 0, 0, 1, 0, 0);
+                                    resolve(img);
+                                    return [2 /*return*/];
+                            }
+                        });
+                    }); })];
+            });
+        });
+    };
+    HtmlRenderer.prototype.renderElementsToTags = function (item) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var shape, index, element, _a;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        this.stage.clear(0, 0, this.stage.canvas.width, this.stage.canvas.height);
+                        if (item.bgColor) {
+                            shape = new _createjs_easeljs__WEBPACK_IMPORTED_MODULE_2__["Shape"]();
+                            shape.graphics.beginFill(item.bgColor).drawRect(0, 0, this.width, this.height);
+                            this.stage.addChild(shape);
+                            this.stage.update();
+                        }
+                        if (item.script && this.mode !== 'single') {
+                            Eval(item.script);
+                            Eval(item.player);
+                            return [2 /*return*/];
+                        }
+                        item.elements.sort(function (a, b) {
+                            return a.zIndex - b.zIndex;
+                        });
+                        index = 0;
+                        _b.label = 1;
+                    case 1:
+                        if (!(index < item.elements.length)) return [3 /*break*/, 8];
+                        element = item.elements[index];
+                        _a = element.type;
+                        switch (_a) {
+                            case 'image': return [3 /*break*/, 2];
+                            case 'text': return [3 /*break*/, 4];
+                            case 'video': return [3 /*break*/, 5];
+                        }
+                        return [3 /*break*/, 7];
+                    case 2: return [4 /*yield*/, this.render_image_to_canvas(item, element)];
+                    case 3:
+                        _b.sent();
+                        return [3 /*break*/, 7];
+                    case 4:
+                        this.render_text_to_canvas(item, element);
+                        return [3 /*break*/, 7];
+                    case 5: return [4 /*yield*/, this.render_embededPlayer(element.embed, element.position.x, element.position.y, element.width, element.height)];
+                    case 6:
+                        _b.sent();
+                        return [3 /*break*/, 7];
+                    case 7:
+                        index++;
+                        return [3 /*break*/, 1];
+                    case 8: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    HtmlRenderer.prototype.render_text_to_canvas = function (item, element) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var dotToImage, fontFactor, x, y, _width, _height, sizes, positions_1, node, imageBlob, img_1;
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        log('@slide.service-render_text_to_canvas');
+                        if (!element.text) return [3 /*break*/, 2];
+                        dotToImage = new _app_services_dottoimage__WEBPACK_IMPORTED_MODULE_4__["DotToImage"]();
+                        fontFactor = this.factor(item.Screen, element.fontSize);
+                        x = element.position.x;
+                        y = element.position.y;
+                        _width = element.width;
+                        _height = element.height;
+                        sizes = this.factor(item.Screen, _width, _height);
+                        positions_1 = this.factorPosition(item.Screen, x, y);
+                        node = this.surfaces.grid;
+                        node.innerHTML = element.text;
+                        node.style.textAlign = element.align;
+                        node.style.color = element.color;
+                        node.style.fontFamily = element.font;
+                        node.style.fontSize = element.fontSize + 'px';
+                        return [4 /*yield*/, dotToImage.toSvg(node)];
+                    case 1:
+                        imageBlob = _a.sent();
+                        img_1 = new Image();
+                        img_1.onload = function () {
+                            _this.ctx.save();
+                            _this.ctx.drawImage(img_1, positions_1.x, positions_1.y, img_1.width, img_1.height);
+                            _this.ctx.restore();
+                        };
+                        img_1.src = imageBlob;
+                        _a.label = 2;
+                    case 2: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    HtmlRenderer.prototype.playScreenError = function () {
+        this.ctx.font = "120px arial";
+        this.ctx.fillStyle = "black";
+        this.ctx.fillText('Screen error', this.width, this.height);
+    };
+    HtmlRenderer.prototype.play = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var frameDuration;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
@@ -4124,7 +4403,121 @@ var SlideWorker = /** @class */ (function () {
             });
         });
     };
-    return SlideWorker;
+    return HtmlRenderer;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/player/root.component.ts":
+/*!**************************************!*\
+  !*** ./src/player/root.component.ts ***!
+  \**************************************/
+/*! exports provided: PlayerEntryComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlayerEntryComponent", function() { return PlayerEntryComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var PlayerEntryComponent = /** @class */ (function () {
+    function PlayerEntryComponent() {
+    }
+    PlayerEntryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'player-entry',
+            template: __webpack_require__(/*! ./player-entry.component.html */ "./src/player/player-entry.component.html"),
+            styles: [__webpack_require__(/*! ./player.component.scss */ "./src/player/player.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], PlayerEntryComponent);
+    return PlayerEntryComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/player/slide.service.ts":
+/*!*************************************!*\
+  !*** ./src/player/slide.service.ts ***!
+  \*************************************/
+/*! exports provided: SlideService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SlideService", function() { return SlideService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _app_editor_fonts_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../app/editor/fonts.service */ "./src/app/editor/fonts.service.ts");
+/* harmony import */ var _renderers_canvas__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./renderers/canvas */ "./src/player/renderers/canvas.ts");
+/* harmony import */ var _renderers_html__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./renderers/html */ "./src/player/renderers/html.ts");
+
+
+
+
+
+// import { Stage, Shape, } from '@createjs/easeljs';
+var Eval = eval;
+var log = console.log;
+var SlideService = /** @class */ (function () {
+    function SlideService(fontService) {
+        this.fontService = fontService;
+        this.itemIndex = 0;
+    }
+    SlideService.prototype.updatePlayerPlan = function (playerPlan) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var fontsArr_1;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.playerPlan = playerPlan;
+                        if (!(this.playerPlan && this.playerPlan.length > 0)) return [3 /*break*/, 2];
+                        this.list = this.playerPlan[0].list;
+                        fontsArr_1 = {};
+                        this.list.forEach(function (item) {
+                            if (item.fonts) {
+                                item.fonts.filter(function (font) { return font.source === 'google'; }).forEach(function (font) {
+                                    fontsArr_1[font.name] = font.name;
+                                });
+                            }
+                        });
+                        return [4 /*yield*/, this.fontService.loadFontsForRender(Object.keys(fontsArr_1))];
+                    case 1:
+                        _a.sent();
+                        return [3 /*break*/, 2];
+                    case 2: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    SlideService.prototype.createWorker = function (playerPlan, ctx, width, height, mode) {
+    };
+    SlideService.prototype.play = function (surfaces, playerPlan, ctx, width, height, mode) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                if (!playerPlan.renderer) {
+                    playerPlan.renderer = new _renderers_canvas__WEBPACK_IMPORTED_MODULE_3__["CanvasRenderer"](surfaces, this.fontService, playerPlan, ctx, width, height, mode);
+                }
+                else {
+                    playerPlan.renderer = new _renderers_html__WEBPACK_IMPORTED_MODULE_4__["HtmlRenderer"](surfaces, this.fontService, playerPlan, ctx, width, height, mode);
+                }
+                // const playX = new SlideWorker(surfaces, this.fontService, playerPlan, ctx, width, height, mode);
+                playerPlan.renderer.play();
+                return [2 /*return*/];
+            });
+        });
+    };
+    SlideService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_app_editor_fonts_service__WEBPACK_IMPORTED_MODULE_2__["FontsService"]])
+    ], SlideService);
+    return SlideService;
 }());
 
 

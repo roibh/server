@@ -9,16 +9,16 @@
     "SCHEDULES": "Schedules",
     "SETTINGS": "Settings",
     "MEDIA": "Media",
-    "FONTS": "Fonts",
     "VIDEOS": "Videos",
     "AUDIO": "Sounds",
     "SLIDES": "Slides",
     "FINDER": "Finder",
     "SHARED": "Templates",
     "CLIPART": "Clip-Art",
-    "CREATE": "Create",
-    "MANAGE": "Manage"
+    "MANAGE":"Manage",
+    "CREATE":"Create"
   },
+ 
   "ERRORS": {
     "USER_EXISTS": "A user with this email already exists, try to login."
   },
@@ -67,10 +67,9 @@
     "RESOURCE": "Resource",
     "EMBED": "Embed code",
     "EMBED_HELP": "Copy the embed code from youtube / any other video site",
-    "IMAGE_DESCRIPTION": "Images (jpg,gif,png,svg)",
+    "IMAGE_DESCRIPTION": "Images (jpg,gif)",
     "VIDEO_DESCRIPTION": "videos (mp4)",
     "AUDIO_DESCRIPTION": "audio (mp3)",
-    "FONT_DESCRIPTOR": "Fonts (.woff, .woff2)",
     "CREATE": "Create",
     "UPDATE": "Update",
     "MEDIATYPE": "Type",
@@ -78,11 +77,6 @@
     "URL_HELP": "Paste any page url address.",
     "SEARCHTERM": "Keyword",
     "MEDIAPACK": "Media pack"
-  },
-  "TYPES":{
-    "IMAGE":"Image",
-    "URL":"Url",
-    "VIDEO":"Video"
   },
   "SLIDES": {
     "NAME": "Name your slide",

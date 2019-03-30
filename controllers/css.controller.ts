@@ -85,8 +85,8 @@ export class Css {
                 finalString += `
 @font-face {
     font-family: "${font.Name}";
-    font-style: normal;
-    font-weight: normal; /* or 400 */
+    font-style: ${font.Style};
+    font-weight: ${font.Weight}; /* or 400 */
     src: url("/api/font/${font._id}.${extension}") format("${extension}");
 }`;
             });

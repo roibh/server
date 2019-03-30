@@ -9,6 +9,10 @@ export class FontModel extends Repo<FontModel> {
     @Field()
     public Name?: string;
     @Field()
+    public Style?: string;
+    @Field()
+    public Weight?: string;
+    @Field()
     public Date?: Date;
     @Field()
     public Path?: string;

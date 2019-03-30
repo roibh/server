@@ -16,6 +16,7 @@ import {
     ClipArt, Font, Admin,
 } from './controllers/';
 import { MediaPack } from './controllers/media-pack.data.controller';
+import { WebFont } from './controllers/webfont.contract';
 
 DBHandler.config = configuration;
 
@@ -38,6 +39,7 @@ DBHandler.config = configuration;
 @ClientConfiguration(ClipArt, MethodType.Local, ServerType.Express)
 @ClientConfiguration(Css, MethodType.Local, ServerType.Express)
 @ClientConfiguration(Admin, MethodType.Local, ServerType.Express)
+@ClientConfiguration(WebFont, MethodType.Http, ServerType.Express, 'https://fonts.googleapis.com')
 class SetupServer extends ConfiguredServer {
     constructor() {
         super(SetupServer);
