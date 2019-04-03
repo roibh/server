@@ -224,7 +224,7 @@ var LanguageBarComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-template [ngTemplateOutlet]=\"template || defaultTemplate\" [ngTemplateOutletContext]=\"{item: item}\">\n</ng-template>\n\n\n<ng-template #defaultTemplate let-item=\"item\">\n  <div class=\"m10\">\n    <span class=\"fancy-thumb-label\">{{item.Name}}</span>\n  </div>\n</ng-template>\n\n\n<ng-template #imageTemplate let-item=\"item\">\n  <img class=\"fancy-thumb\" [src]=\"item.resource\" style=\"width:100%;height:100%\" />\n  <span class=\"fancy-thumb-label\"><i class=\"icon-image\"></i> {{item.Name}}</span>\n</ng-template>\n\n<ng-template #videoTemplate let-item=\"item\">\n  <span class=\"fancy-thumb-label\"><i class=\"icon-play\"></i> {{item.Name}}</span>\n  <app-media-preview [item]=\"item\"></app-media-preview>\n</ng-template>\n\n<ng-template #urlTemplate let-item=\"item\">\n  <span class=\"fancy-thumb-label\"><i class=\"icon-chain\"></i> {{item.Name}}</span>\n  <app-media-preview [item]=\"item\"></app-media-preview>\n</ng-template>\n\n\n<ng-template #playlistTemplate let-item=\"item\">\n  <div class=\"m10\">\n    <span class=\"label\">{{item.Name}}</span>\n    <span class=\"label\">({{item.list.length}})</span>\n\n    <span class=\"label\">{{item.Date | date}}</span>\n  </div>\n</ng-template>\n\n\n<ng-template #slideTemplate let-item=\"item\">\n  <div class=\"canvas-bg\">\n    <app-canvas [item]=\"item\" [width]=\"230\" [height]=\"150\" [scale]=\"0.25\"></app-canvas>\n    <span class=\"fancy-thumb-label\">{{item.Name}}</span>\n  </div>\n</ng-template>\n"
+module.exports = "<ng-template [ngTemplateOutlet]=\"template || defaultTemplate\" [ngTemplateOutletContext]=\"{item: item}\">\n</ng-template>\n\n<ng-template #defaultTemplate let-item=\"item\">\n  <div class=\"m10\">\n    <span class=\"fancy-thumb-label\">{{item.Name}}</span>\n  </div>\n</ng-template>\n\n\n<ng-template #imageTemplate let-item=\"item\">\n  <img class=\"fancy-thumb\" [src]=\"item.resource\" [width]=\"width\" [height]=\"height\" alt=\"{{item.Name}}\" />\n  <span class=\"fancy-thumb-label\"><em class=\"icon-image\"></em> {{item.Name}}</span>\n</ng-template>\n\n<ng-template #videoTemplate let-item=\"item\">\n  <span class=\"fancy-thumb-label\"><em class=\"icon-play\"></em> {{item.Name}}</span>\n  <app-media-preview [item]=\"item\"></app-media-preview>\n</ng-template>\n\n<ng-template #urlTemplate let-item=\"item\">\n  <span class=\"fancy-thumb-label\"><em class=\"icon-chain\"></em> {{item.Name}}</span>\n  <app-media-preview [item]=\"item\"></app-media-preview>\n</ng-template>\n\n\n<ng-template #playlistTemplate let-item=\"item\">\n  <div class=\"m10\">\n    <span class=\"label\">{{item.Name}}</span>\n    <span class=\"label\">({{item.list.length}})</span>\n    <span class=\"label\">{{item.Date | date}}</span>\n  </div>\n</ng-template>\n\n\n<ng-template #slideTemplate let-item=\"item\">\n  <div class=\"canvas-bg\">\n    <app-canvas [item]=\"item\" [width]=\"width\" [height]=\"height\" [scale]=\"0.25\"></app-canvas>\n    <span class=\"fancy-thumb-label\">{{item.Name}}</span>\n  </div>\n</ng-template>\n\n \n\n"
 
 /***/ }),
 
@@ -257,6 +257,10 @@ var LobbyItemComponent = /** @class */ (function () {
     function LobbyItemComponent() {
     }
     LobbyItemComponent.prototype.ngOnInit = function () {
+        if (!this.width) {
+            this.width = 230;
+            this.height = 150;
+        }
     };
     LobbyItemComponent.prototype.ngOnChanges = function (changes) {
         if (this.item) {
@@ -319,6 +323,14 @@ var LobbyItemComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
     ], LobbyItemComponent.prototype, "itemClass", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Number)
+    ], LobbyItemComponent.prototype, "width", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Number)
+    ], LobbyItemComponent.prototype, "height", void 0);
     LobbyItemComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-lobby-item',
@@ -342,7 +354,7 @@ var LobbyItemComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n \r\n\r\n<ng-template #defaultToolbar let-item=\"item\">\r\n  <ul class=\"sqr-toolbar btn-group\" role=\"group\">\r\n    <li>\r\n      <button class=\"btn btn-secondary btn-md btn-primary left\" (click)=\"editItemHandler(item);\"> <i\r\n          class=\"icon-edit\"></i>\r\n      </button>\r\n    </li>\r\n    <li class=\"date-label\">{{item.Date | date}}</li>\r\n    <li>\r\n      <button class=\"btn btn-secondary btn-md btn-danger right\" (click)=\"deleteItemHandler(item);\"> <i\r\n          class=\"icon-trash-o\"></i>\r\n      </button>\r\n    </li>\r\n\r\n  </ul>\r\n</ng-template>\r\n\r\n\r\n\r\n<div class=\"lobby\" *ngIf=\"mode==='media'\">\r\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn {{itemClass}}\" (click)=\"newItemHandler()\" (next)=\"newItemHandler()\"\r\n    [joyrideStep]=\"'lobby-add'\" [stepContent]=\"lobbyContent\"><i class=\"icon-plus-alt\"></i>\r\n  </div>\r\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{item._meta_active}}\" (click)=\"selectItemHandler(item)\">\r\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\r\n    <ng-template [ngTemplateOutlet]=\"toolbar || defaultToolbar\" [ngTemplateOutletContext]=\"{item: item}\">\r\n    </ng-template>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"lobby\" *ngIf=\"mode==='media-finder'\">\r\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{itemClass}} {{item._meta_active}}\">\r\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\r\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\r\n      <li>\r\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"selectItemHandler(item);\"> <i\r\n            class=\"icon-plus-square\"></i>\r\n        </button>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"lobby\" *ngIf=\"mode==='object-finder'\">\r\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{itemClass}}\">\r\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\r\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\r\n      <li>\r\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"selectItemHandler(item);\"> <i\r\n            class=\"icon-plus-square\"></i>\r\n        </button>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"lobby\" *ngIf=\"mode==='object'\">\r\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn {{itemClass}}\" \r\n  [joyrideStep]=\"'lobby-add'\" (next)=\"nextTourStep()\" [stepContent]=\"lobbyContent\"\r\n    (next)=\"newItemHandler()\"\r\n     (click)=\"newItemHandler()\"><i class=\"icon-plus-alt\"></i>\r\n  </div>\r\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{item._meta_active}}\" (click)=\"selectItemHandler(item)\">\r\n    <app-lobby-item [item]=\"item\" [model]=\"model\"></app-lobby-item>\r\n\r\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\r\n      <li>\r\n        <button class=\"btn btn-secondary btn-md btn-primary left\" (click)=\"editItemHandler(item);\"> <i\r\n            class=\"icon-edit\"></i>\r\n        </button>\r\n      </li>\r\n      <li class=\"date-label\">{{item.Date | date}}</li>\r\n      <li>\r\n        <button class=\"btn btn-secondary btn-md btn-danger right\" (click)=\"deleteItemHandler(item);\"> <i\r\n            class=\"icon-trash-o\"></i>\r\n        </button>\r\n      </li>\r\n\r\n    </ul>\r\n  </div>\r\n</div>\r\n<ng-template #lobbyContent>\r\n    <h5> {{'TOUR.ADD.TITLE' | translate}}</h5>\r\n    <p>\r\n        {{'TOUR.ADD.CONTENT' | translate}}\r\n    </p>\r\n</ng-template>"
+module.exports = "<ng-template #defaultToolbar let-item=\"item\">\r\n  <ul class=\"sqr-toolbar btn-group\" role=\"group\">\r\n    <li>\r\n      <button class=\"btn btn-secondary btn-md btn-primary left\" (click)=\"editItemHandler(item);\"> <em\r\n          class=\"icon-edit\"></em>\r\n      </button>\r\n    </li>\r\n    <li class=\"date-label\">{{item.Date | date}}</li>\r\n    <li>\r\n      <button class=\"btn btn-secondary btn-md btn-danger right\" (click)=\"deleteItemHandler(item);\"> <em\r\n          class=\"icon-trash-o\"></em>\r\n      </button>\r\n    </li>\r\n\r\n  </ul>\r\n</ng-template>\r\n\r\n\r\n\r\n<div class=\"lobby\" *ngIf=\"mode==='media'\">\r\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn {{itemClass}}\" (click)=\"newItemHandler()\" (next)=\"newItemHandler()\"\r\n    [joyrideStep]=\"'lobby-add'\" [stepContent]=\"lobbyContent\"><em class=\"icon-plus-alt\"></em>\r\n  </div>\r\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{item._meta_active}}\" (click)=\"selectItemHandler(item)\">\r\n    <app-lobby-item [item]=\"item\" [model]=\"model\" [width]=\"itemWidth\" [height]=\"itemHeight\"></app-lobby-item>\r\n    <ng-template [ngTemplateOutlet]=\"toolbar || defaultToolbar\" [ngTemplateOutletContext]=\"{item: item}\">\r\n    </ng-template>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"lobby\" *ngIf=\"mode==='media-finder'\">\r\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{itemClass}} {{item._meta_active}}\">\r\n    <app-lobby-item [item]=\"item\" [model]=\"model\" [width]=\"itemWidth\" [height]=\"itemHeight\"></app-lobby-item>\r\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\r\n      <li>\r\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"selectItemHandler(item);\"> <em\r\n            class=\"icon-plus-square\"></em>\r\n        </button>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"lobby\" *ngIf=\"mode==='object-finder'\">\r\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{itemClass}}\">\r\n    <app-lobby-item [item]=\"item\" [model]=\"model\" [width]=\"itemWidth\" [height]=\"itemHeight\"></app-lobby-item>\r\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\r\n      <li>\r\n        <button class=\"btn btn-secondary btn-md btn-primary\" (click)=\"selectItemHandler(item);\"> <em\r\n            class=\"icon-plus-square\"></em>\r\n        </button>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"lobby\" *ngIf=\"mode==='object'\">\r\n  <div *ngIf=\"!noNew\" class=\"sqr shadow sqr-btn {{itemClass}}\" \r\n  [joyrideStep]=\"'lobby-add'\" (next)=\"nextTourStep()\" [stepContent]=\"lobbyContent\"\r\n    (next)=\"newItemHandler()\"\r\n     (click)=\"newItemHandler()\"><em class=\"icon-plus-alt\"></em>\r\n  </div>\r\n  <div *ngFor=\"let item of items\" class=\"sqr shadow {{item._meta_active}}\" (click)=\"selectItemHandler(item)\">\r\n    <app-lobby-item [item]=\"item\" [model]=\"model\" [width]=\"itemWidth\" [height]=\"itemHeight\"></app-lobby-item>\r\n\r\n    <ul class=\"sqr-toolbar btn-group\" role=\"group\">\r\n      <li>\r\n        <button class=\"btn btn-secondary btn-md btn-primary left\" (click)=\"editItemHandler(item);\"> <em\r\n            class=\"icon-edit\"></em>\r\n        </button>\r\n      </li>\r\n      <li class=\"date-label\">{{item.Date | date}}</li>\r\n      <li>\r\n        <button class=\"btn btn-secondary btn-md btn-danger right\" (click)=\"deleteItemHandler(item);\"> <em\r\n            class=\"icon-trash-o\"></em>\r\n        </button>\r\n      </li>\r\n\r\n    </ul>\r\n  </div>\r\n</div>\r\n<ng-template #lobbyContent>\r\n    <h5> {{'TOUR.ADD.TITLE' | translate}}</h5>\r\n    <p>\r\n        {{'TOUR.ADD.CONTENT' | translate}}\r\n    </p>\r\n</ng-template>"
 
 /***/ }),
 
@@ -471,6 +483,14 @@ var LobbyComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
     ], LobbyComponent.prototype, "itemClass", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Number)
+    ], LobbyComponent.prototype, "itemWidth", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Number)
+    ], LobbyComponent.prototype, "itemHeight", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
@@ -608,7 +628,7 @@ module.exports = "<div class=\"{{class}} {{className}}\">\n    <i class=\"{{icon
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".inline-topper {\n  pointer-events: none;\n  z-index: 0;\n  height: 51px;\n  padding-top: 10px; }\n  .inline-topper .icon {\n    margin: 8px;\n    vertical-align: top; }\n  .inline-topper h4 {\n    display: inline;\n    vertical-align: top; }\n  .inline-topper .bar-icon {\n    margin-left: 15px; }\n  .topper {\n  pointer-events: none;\n  z-index: 0;\n  height: 65px;\n  position: absolute;\n  padding-top: 30px;\n  top: -30px;\n  left: -15px;\n  right: -15px; }\n  .topper .icon {\n    margin: 8px;\n    vertical-align: top; }\n  .topper h4 {\n    display: inline;\n    vertical-align: top; }\n  .topper .bar-icon {\n    margin-left: 15px; }\n  :host-context(.ltr) .close-button-topper {\n  right: -15px; }\n  :host-context(.rtl) .close-button-topper {\n  left: -15px; }\n  .close-button-topper {\n  position: absolute;\n  z-index: 2000;\n  top: -15px;\n  width: 50px;\n  height: 50px;\n  background-color: #96ff00;\n  color: white;\n  cursor: pointer; }\n  .close-button-inline-topper {\n  color: white;\n  cursor: pointer;\n  position: absolute;\n  top: 0px;\n  width: 50px;\n  height: 50px;\n  background-color: green; }\n  .save-btn-inline-topper:hover {\n  font-size: 1.5em; }\n  .save-btn-inline-topper {\n  transition: all .2s ease;\n  color: white;\n  cursor: pointer;\n  position: absolute;\n  top: 0px;\n  width: 50px;\n  height: 50px;\n  background-color: orange;\n  color: white;\n  cursor: pointer; }\n  .save-btn-inline-topper.true {\n    background-color: red;\n    color: black; }\n  .toolbar {\n  position: absolute;\n  top: 0;\n  transition: all .2s ease; }\n  :host-context(.rtl) .toolbar {\n  left: 100px; }\n  :host-context(.rtl) .save-btn-topper {\n  left: 35px; }\n  :host-context(.rtl) .save-btn-inline-topper {\n  float: right;\n  left: 50px; }\n  :host-context(.rtl) .close-button-inline-topper {\n  float: right;\n  left: 0px; }\n  :host-context(.ltr) .toolbar {\n  right: 100px; }\n  :host-context(.ltr) .save-btn-topper {\n  right: 35px; }\n  :host-context(.ltr) .save-btn-inline-topper {\n  float: left;\n  right: 50px; }\n  :host-context(.ltr) .close-button-inline-topper {\n  float: right;\n  right: 0px; }\n  .save-btn-topper {\n  color: white;\n  position: absolute;\n  top: -15px;\n  width: 50px;\n  height: 50px;\n  background-color: #fc6600;\n  cursor: pointer; }\n  .save-btn-topper.true {\n    background-color: red;\n    color: black; }\n  .save-btn-inline-topper:active,\n.save-btn-inline-topper:hover,\n.save-btn-topper:active,\n.save-btn-topper:hover,\n.btn-tool:hover,\n.btn-tool:active {\n  font-size: 1.5em; }\n  .close-button-inline-topper:active,\n.close-button-inline-topper:hover,\n.close-button-topper:active,\n.close-button-topper:hover {\n  font-size: 1.5em; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL3NsaWRlLWhlYWRlci9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXGNvbW1vblxcc2xpZGUtaGVhZGVyXFxzbGlkZS1oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbW1vbi9zbGlkZS1oZWFkZXIvQzpcXHByb2plY3RzXFxzaWduLW5hdHVyZVxcd2ViL3NyY1xcc2Fzc1xcX3ZhcmlhYmxlcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUtBO0VBQ0ksb0JBQW9CO0VBQ3BCLFVBQVU7RUFDVixZQUFZO0VBRVosaUJBQWlCLEVBQUE7RUFMckI7SUFPUSxXQUFXO0lBQ1gsbUJBQW1CLEVBQUE7RUFSM0I7SUFXUSxlQUFlO0lBQ2YsbUJBQW1CLEVBQUE7RUFaM0I7SUFlUSxpQkFBaUIsRUFBQTtFQUl6QjtFQUNJLG9CQUFvQjtFQUNwQixVQUFVO0VBQ1YsWUFBWTtFQUVaLGtCQUFrQjtFQUNsQixpQkFBaUI7RUFDakIsVUFBVTtFQUNWLFdBQVc7RUFDWCxZQUFZLEVBQUE7RUFUaEI7SUFXUSxXQUFXO0lBQ1gsbUJBQW1CLEVBQUE7RUFaM0I7SUFlUSxlQUFlO0lBQ2YsbUJBQW1CLEVBQUE7RUFoQjNCO0lBbUJRLGlCQUFpQixFQUFBO0VBSXpCO0VBSVEsWUFBWSxFQUFBO0VBR25CO0VBR08sV0FBVyxFQUFBO0VBR2Y7RUFDSSxrQkFBa0I7RUFDbEIsYUFBYTtFQUNiLFVBQVU7RUFDVixXQUFXO0VBQ1gsWUFBWTtFQUNaLHlCQ3JEYTtFRHVEYixZQUFZO0VBQ1osZUFBZSxFQUFBO0VBU3ZCO0VBQ0EsWUFBWTtFQUNaLGVBQWU7RUFDZixrQkFBa0I7RUFFbEIsUUFBUTtFQUNSLFdBQVc7RUFDWCxZQUFZO0VBQ1osdUJBQXVCLEVBQUE7RUFPbkI7RUFDSSxnQkFBZ0IsRUFBQTtFQUVwQjtFQUlJLHdCQUF3QjtFQUN4QixZQUFZO0VBQ1osZUFBZTtFQUdmLGtCQUFrQjtFQUVsQixRQUFRO0VBQ1IsV0FBVztFQUNYLFlBQVk7RUFDWix3QkFBd0I7RUFFeEIsWUFBWTtFQUNaLGVBQWUsRUFBQTtFQWpCbkI7SUFvQlEscUJBQXFCO0lBQ3JCLFlBQVksRUFBQTtFQUlwQjtFQUNJLGtCQUFrQjtFQUNsQixNQUFLO0VBR0wsd0JBQXdCLEVBQUE7RUFNNUI7RUFHUSxXQUFXLEVBQUE7RUFIbkI7RUFRUSxVQUFVLEVBQUE7RUFSbEI7RUFZUSxZQUFZO0VBQ1osVUFBVSxFQUFBO0VBYmxCO0VBa0JRLFlBQVk7RUFHWixTQUFTLEVBQUE7RUFLakI7RUFHUSxZQUFZLEVBQUE7RUFIcEI7RUFRUSxXQUFXLEVBQUE7RUFSbkI7RUFZUSxXQUFXO0VBQ1gsV0FBVyxFQUFBO0VBYm5CO0VBaUJRLFlBQVk7RUFDWixVQUFVLEVBQUE7RUFLbEI7RUFFSSxZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLFVBQVU7RUFDVixXQUFXO0VBQ1gsWUFBWTtFQUNaLHlCQ3RMYztFRHVMZCxlQUFlLEVBQUE7RUFSbkI7SUFXUSxxQkFBcUI7SUFDckIsWUFBWSxFQUFBO0VBS3BCOzs7Ozs7RUFRSSxnQkFBZ0IsRUFBQTtFQUlwQjs7OztFQU1JLGdCQUFnQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvY29tbW9uL3NsaWRlLWhlYWRlci9zbGlkZS1oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLi8uLi8uLi9zYXNzL192YXJpYWJsZXMnO1xyXG5cclxuXHJcblxyXG5cclxuLmlubGluZS10b3BwZXJ7XHJcbiAgICBwb2ludGVyLWV2ZW50czogbm9uZTsgXHJcbiAgICB6LWluZGV4OiAwO1xyXG4gICAgaGVpZ2h0OiA1MXB4OyAgIFxyXG4gICAgICAgXHJcbiAgICBwYWRkaW5nLXRvcDogMTBweDsgICAgXHJcbiAgICAuaWNvbntcclxuICAgICAgICBtYXJnaW46IDhweDsgICAgICBcclxuICAgICAgICB2ZXJ0aWNhbC1hbGlnbjogdG9wO1xyXG4gICAgfVxyXG4gICAgaDR7XHJcbiAgICAgICAgZGlzcGxheTogaW5saW5lO1xyXG4gICAgICAgIHZlcnRpY2FsLWFsaWduOiB0b3A7XHJcbiAgICB9XHJcbiAgICAuYmFyLWljb257XHJcbiAgICAgICAgbWFyZ2luLWxlZnQ6IDE1cHg7XHJcbiAgICB9XHJcbn1cclxuXHJcbi50b3BwZXJ7XHJcbiAgICBwb2ludGVyLWV2ZW50czogbm9uZTsgXHJcbiAgICB6LWluZGV4OiAwO1xyXG4gICAgaGVpZ2h0OiA2NXB4OyAgIFxyXG4gICAgXHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7ICAgICBcclxuICAgIHBhZGRpbmctdG9wOiAzMHB4O1xyXG4gICAgdG9wOiAtMzBweDtcclxuICAgIGxlZnQ6IC0xNXB4O1xyXG4gICAgcmlnaHQ6IC0xNXB4O1xyXG4gICAgLmljb257XHJcbiAgICAgICAgbWFyZ2luOiA4cHg7ICAgICAgXHJcbiAgICAgICAgdmVydGljYWwtYWxpZ246IHRvcDtcclxuICAgIH1cclxuICAgIGg0e1xyXG4gICAgICAgIGRpc3BsYXk6IGlubGluZTtcclxuICAgICAgICB2ZXJ0aWNhbC1hbGlnbjogdG9wO1xyXG4gICAgfVxyXG4gICAgLmJhci1pY29ue1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiAxNXB4O1xyXG4gICAgfVxyXG59XHJcblxyXG46aG9zdC1jb250ZXh0KC5sdHIpXHJcbiB7XHJcbiAgIFxyXG4gICAgLmNsb3NlLWJ1dHRvbi10b3BwZXJ7XHJcbiAgICAgICAgcmlnaHQ6IC0xNXB4O1xyXG4gICAgfVxyXG4gfVxyXG4gOmhvc3QtY29udGV4dCgucnRsKVxyXG4ge1xyXG4gICAgLmNsb3NlLWJ1dHRvbi10b3BwZXJ7XHJcbiAgICAgICAgbGVmdDogLTE1cHg7XHJcbiAgICB9XHJcbiB9XHJcbiAgICAuY2xvc2UtYnV0dG9uLXRvcHBlcntcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgei1pbmRleDogMjAwMDsgICAgICBcclxuICAgICAgICB0b3A6IC0xNXB4O1xyXG4gICAgICAgIHdpZHRoOiA1MHB4O1xyXG4gICAgICAgIGhlaWdodDogNTBweDtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAkY29sb3ItZ3JlZW47XHJcblxyXG4gICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICAgICAgXHJcblxyXG4gICBcclxuICAgICBcclxuICAgIH1cclxuICAgIFxyXG4gXHJcblxyXG4uY2xvc2UtYnV0dG9uLWlubGluZS10b3BwZXIgeyAgICBcclxuY29sb3I6IHdoaXRlO1xyXG5jdXJzb3I6IHBvaW50ZXI7XHJcbnBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuXHJcbnRvcDogMHB4O1xyXG53aWR0aDogNTBweDtcclxuaGVpZ2h0OiA1MHB4O1xyXG5iYWNrZ3JvdW5kLWNvbG9yOiBncmVlbjtcclxuXHJcbiBcclxuIFxyXG5cclxuXHJcbn1cclxuICAgIC5zYXZlLWJ0bi1pbmxpbmUtdG9wcGVyOmhvdmVye1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMS41ZW07XHJcbiAgICB9IFxyXG4gICAgLnNhdmUtYnRuLWlubGluZS10b3BwZXJcclxuICAgIHtcclxuICAgICAgICAtd2Via2l0LXRyYW5zaXRpb246IGFsbCAuMnMgZWFzZTtcclxuICAgICAgICAtbW96LXRyYW5zaXRpb246IGFsbCAuMnMgZWFzZTtcclxuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgLjJzIGVhc2U7XHJcbiAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgICAgICBcclxuICAgICAgXHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgXHJcbiAgICAgICAgdG9wOiAwcHg7XHJcbiAgICAgICAgd2lkdGg6IDUwcHg7XHJcbiAgICAgICAgaGVpZ2h0OiA1MHB4O1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6IG9yYW5nZTtcclxuXHJcbiAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgICAgICBcclxuICAgICAgICAmLnRydWV7XHJcbiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6IHJlZDtcclxuICAgICAgICAgICAgY29sb3I6IGJsYWNrO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAudG9vbGJhcntcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgdG9wOjA7XHJcbiAgICAgICAgLXdlYmtpdC10cmFuc2l0aW9uOiBhbGwgLjJzIGVhc2U7XHJcbiAgICAgICAgLW1vei10cmFuc2l0aW9uOiBhbGwgLjJzIGVhc2U7XHJcbiAgICAgICAgdHJhbnNpdGlvbjogYWxsIC4ycyBlYXNlO1xyXG4gICAgICAgIFxyXG4gICAgfVxyXG5cclxuICAgIFxyXG5cclxuICAgIDpob3N0LWNvbnRleHQoLnJ0bClcclxuICAgIHtcclxuICAgICAgICAudG9vbGJhcnsgICAgICAgICAgIFxyXG4gICAgICAgICAgICBsZWZ0OiAxMDBweDsgICAgIFxyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLnNhdmUtYnRuLXRvcHBlclxyXG4gICAgICAgIHtcclxuICAgICAgICAgICAgbGVmdDogMzVweDtcclxuICAgICAgICB9XHJcbiAgICAgICAgLnNhdmUtYnRuLWlubGluZS10b3BwZXJcclxuICAgICAgICB7XHJcbiAgICAgICAgICAgIGZsb2F0OiByaWdodDtcclxuICAgICAgICAgICAgbGVmdDogNTBweDtcclxuICAgICAgICB9XHJcblxyXG4gICAgICAgIC5jbG9zZS1idXR0b24taW5saW5lLXRvcHBlclxyXG4gICAgICAgIHtcclxuICAgICAgICAgICAgZmxvYXQ6IHJpZ2h0O1xyXG5cclxuXHJcbiAgICAgICAgICAgIGxlZnQ6IDBweDtcclxuXHJcbiAgICAgICAgfVxyXG5cclxuICAgIH1cclxuICAgIDpob3N0LWNvbnRleHQoLmx0cilcclxuICAgIHtcclxuICAgICAgICAudG9vbGJhcnsgICAgICAgICAgIFxyXG4gICAgICAgICAgICByaWdodDogMTAwcHg7ICAgICBcclxuICAgICAgICB9XHJcblxyXG4gICAgICAgIC5zYXZlLWJ0bi10b3BwZXJcclxuICAgICAgICB7XHJcbiAgICAgICAgICAgIHJpZ2h0OiAzNXB4O1xyXG4gICAgICAgIH1cclxuICAgICAgICAuc2F2ZS1idG4taW5saW5lLXRvcHBlclxyXG4gICAgICAgIHtcclxuICAgICAgICAgICAgZmxvYXQ6IGxlZnQ7XHJcbiAgICAgICAgICAgIHJpZ2h0OiA1MHB4O1xyXG4gICAgICAgIH1cclxuICAgICAgICAuY2xvc2UtYnV0dG9uLWlubGluZS10b3BwZXJcclxuICAgICAgICB7XHJcbiAgICAgICAgICAgIGZsb2F0OiByaWdodDtcclxuICAgICAgICAgICAgcmlnaHQ6IDBweDtcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG5cclxuICAgIC5zYXZlLWJ0bi10b3BwZXJcclxuICAgIHtcclxuICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIHRvcDogLTE1cHg7XHJcbiAgICAgICAgd2lkdGg6IDUwcHg7XHJcbiAgICAgICAgaGVpZ2h0OiA1MHB4O1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICRjb2xvci1vcmFuZ2U7XHJcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgICAgIFxyXG4gICAgICAgICYudHJ1ZXtcclxuICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogcmVkO1xyXG4gICAgICAgICAgICBjb2xvcjogYmxhY2s7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuXHJcbiAgICAuc2F2ZS1idG4taW5saW5lLXRvcHBlcjphY3RpdmUsICAgIFxyXG4gICAgLnNhdmUtYnRuLWlubGluZS10b3BwZXI6aG92ZXIsXHJcbiAgICAuc2F2ZS1idG4tdG9wcGVyOmFjdGl2ZSxcclxuICAgIC5zYXZlLWJ0bi10b3BwZXI6aG92ZXIsXHJcbiAgICAuYnRuLXRvb2w6aG92ZXIsXHJcbiAgICAuYnRuLXRvb2w6YWN0aXZlLFxyXG4gICAgeyAgIFxyXG4gICAgICAgXHJcbiAgICAgICAgZm9udC1zaXplOiAxLjVlbTtcclxuICAgICAgICBcclxuICAgIH1cclxuXHJcbiAgICAuY2xvc2UtYnV0dG9uLWlubGluZS10b3BwZXI6YWN0aXZlLCAgICBcclxuICAgIC5jbG9zZS1idXR0b24taW5saW5lLXRvcHBlcjpob3ZlcixcclxuICAgIC5jbG9zZS1idXR0b24tdG9wcGVyOmFjdGl2ZSxcclxuICAgIC5jbG9zZS1idXR0b24tdG9wcGVyOmhvdmVyXHJcbiAgICB7ICAgXHJcbiAgICAgICAgXHJcbiAgICAgICAgZm9udC1zaXplOiAxLjVlbTtcclxuICAgICAgICBcclxuICAgIH1cclxuICAgICAgICAgICBcclxuICAgICAgICBcclxuICAgIFxyXG4gXHJcbiBcclxuICIsIlxyXG4kY29sb3ItZ3JheTogI2UzZTRlNTtcclxuJGNvbG9yLWRhcmtibHVlMTogIzE2MjQzMztcclxuJGNvbG9yLWRhcmtibHVlMjogIzJhNDU2MztcclxuJGNvbG9yLWxpZ2h0Ymx1ZTE6ICMyNjQzNTY7XHJcbiRjb2xvci1saWdodGJsdWUyOiAjM2M3Mzk5O1xyXG4kY29sb3Itb3JhbmdlOiAjZmM2NjAwO1xyXG4kY29sb3ItY3lhbjogIzAwZmZmNjtcclxuJGNvbG9yLXNjcmVlbjogIzAwY2ZmZjtcclxuJGNvbG9yLXNjcmVlbi1ncm91cDogIzAwZmZmNjtcclxuJGNvbG9yLWxpYnJhcnk6ICM5NmZmMDA7XHJcbiRjb2xvci15ZWxsb3c6ICNmZmZmMDA7XHJcbiRjb2xvci1wdXJwbGU6ICNmM2I3ZWI7XHJcbiRjb2xvci1ncmVlbjogIzk2ZmYwMDtcclxuJGNvbG9yLWJsYWNrOiAjMjIyO1xyXG4kY29sb3ItZ3JheXdoaXRlOiAjRkZFO1xyXG4kY29sb3ItdG9vbGJhcjogI2Y4ZjlmYTtcclxuIFxyXG5cclxuIFxyXG5cclxuICJdfQ== */"
+module.exports = ".inline-topper {\n  pointer-events: none;\n  z-index: 0;\n  height: 51px;\n  padding-top: 10px; }\n  .inline-topper .icon {\n    margin: 8px;\n    vertical-align: top; }\n  .inline-topper h4 {\n    display: inline;\n    vertical-align: top; }\n  .inline-topper .bar-icon {\n    margin-left: 15px; }\n  .topper {\n  pointer-events: none;\n  z-index: 0;\n  height: 65px;\n  position: absolute;\n  padding-top: 30px;\n  top: -30px;\n  left: -15px;\n  right: -15px; }\n  .topper .icon {\n    margin: 8px;\n    vertical-align: top; }\n  .topper h4 {\n    display: inline;\n    vertical-align: top; }\n  .topper .bar-icon {\n    margin-left: 15px; }\n  :host-context(.ltr) .close-button-topper {\n  right: -15px; }\n  :host-context(.rtl) .close-button-topper {\n  left: -15px; }\n  .close-button-topper {\n  position: absolute;\n  z-index: 2000;\n  top: -15px;\n  width: 50px;\n  height: 50px;\n  background-color: #96ff00;\n  color: white;\n  cursor: pointer; }\n  .close-button-inline-topper {\n  color: white;\n  cursor: pointer;\n  position: absolute;\n  top: 0px;\n  width: 50px;\n  height: 50px;\n  background-color: green; }\n  .save-btn-inline-topper:hover {\n  font-size: 1.5em; }\n  .save-btn-inline-topper {\n  transition: all .2s ease;\n  color: white;\n  cursor: pointer;\n  position: absolute;\n  top: 0px;\n  width: 50px;\n  height: 50px;\n  background-color: orange;\n  color: white;\n  cursor: pointer; }\n  .save-btn-inline-topper.true {\n    background-color: red;\n    color: black; }\n  .toolbar {\n  position: absolute;\n  top: 0;\n  transition: all .2s ease; }\n  :host-context(.rtl) .toolbar {\n  left: 100px; }\n  :host-context(.rtl) .save-btn-topper {\n  left: 35px; }\n  :host-context(.rtl) .save-btn-inline-topper {\n  float: right;\n  left: 50px; }\n  :host-context(.rtl) .close-button-inline-topper {\n  float: right;\n  left: 0px; }\n  :host-context(.ltr) .toolbar {\n  right: 100px; }\n  :host-context(.ltr) .save-btn-topper {\n  right: 35px; }\n  :host-context(.ltr) .save-btn-inline-topper {\n  float: left;\n  right: 50px; }\n  :host-context(.ltr) .close-button-inline-topper {\n  float: right;\n  right: 0px; }\n  .save-btn-topper {\n  color: white;\n  position: absolute;\n  top: -15px;\n  width: 50px;\n  height: 50px;\n  background-color: #fc6600;\n  cursor: pointer; }\n  .save-btn-topper.true {\n    background-color: red;\n    color: black; }\n  .save-btn-inline-topper:active,\n.save-btn-inline-topper:hover,\n.save-btn-topper:active,\n.save-btn-topper:hover,\n.btn-tool:hover,\n.btn-tool:active {\n  font-size: 1.5em; }\n  .close-button-inline-topper:active,\n.close-button-inline-topper:hover,\n.close-button-topper:active,\n.close-button-topper:hover {\n  font-size: 1.5em; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL3NsaWRlLWhlYWRlci9DOlxccHJvamVjdHNcXHNpZ24tbmF0dXJlXFx3ZWIvc3JjXFxhcHBcXGNvbW1vblxcc2xpZGUtaGVhZGVyXFxzbGlkZS1oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbW1vbi9zbGlkZS1oZWFkZXIvQzpcXHByb2plY3RzXFxzaWduLW5hdHVyZVxcd2ViL3NyY1xcc2Fzc1xcX3ZhcmlhYmxlcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUtBO0VBQ0ksb0JBQW9CO0VBQ3BCLFVBQVU7RUFDVixZQUFZO0VBRVosaUJBQWlCLEVBQUE7RUFMckI7SUFPUSxXQUFXO0lBQ1gsbUJBQW1CLEVBQUE7RUFSM0I7SUFXUSxlQUFlO0lBQ2YsbUJBQW1CLEVBQUE7RUFaM0I7SUFlUSxpQkFBaUIsRUFBQTtFQUl6QjtFQUNJLG9CQUFvQjtFQUNwQixVQUFVO0VBQ1YsWUFBWTtFQUVaLGtCQUFrQjtFQUNsQixpQkFBaUI7RUFDakIsVUFBVTtFQUNWLFdBQVc7RUFDWCxZQUFZLEVBQUE7RUFUaEI7SUFXUSxXQUFXO0lBQ1gsbUJBQW1CLEVBQUE7RUFaM0I7SUFlUSxlQUFlO0lBQ2YsbUJBQW1CLEVBQUE7RUFoQjNCO0lBbUJRLGlCQUFpQixFQUFBO0VBSXpCO0VBSVEsWUFBWSxFQUFBO0VBR25CO0VBR08sV0FBVyxFQUFBO0VBR2Y7RUFDSSxrQkFBa0I7RUFDbEIsYUFBYTtFQUNiLFVBQVU7RUFDVixXQUFXO0VBQ1gsWUFBWTtFQUNaLHlCQ2hEYTtFRGtEYixZQUFZO0VBQ1osZUFBZSxFQUFBO0VBU3ZCO0VBQ0EsWUFBWTtFQUNaLGVBQWU7RUFDZixrQkFBa0I7RUFFbEIsUUFBUTtFQUNSLFdBQVc7RUFDWCxZQUFZO0VBQ1osdUJBQXVCLEVBQUE7RUFPbkI7RUFDSSxnQkFBZ0IsRUFBQTtFQUVwQjtFQUlJLHdCQUF3QjtFQUN4QixZQUFZO0VBQ1osZUFBZTtFQUdmLGtCQUFrQjtFQUVsQixRQUFRO0VBQ1IsV0FBVztFQUNYLFlBQVk7RUFDWix3QkFBd0I7RUFFeEIsWUFBWTtFQUNaLGVBQWUsRUFBQTtFQWpCbkI7SUFvQlEscUJBQXFCO0lBQ3JCLFlBQVksRUFBQTtFQUlwQjtFQUNJLGtCQUFrQjtFQUNsQixNQUFLO0VBR0wsd0JBQXdCLEVBQUE7RUFNNUI7RUFHUSxXQUFXLEVBQUE7RUFIbkI7RUFRUSxVQUFVLEVBQUE7RUFSbEI7RUFZUSxZQUFZO0VBQ1osVUFBVSxFQUFBO0VBYmxCO0VBa0JRLFlBQVk7RUFHWixTQUFTLEVBQUE7RUFLakI7RUFHUSxZQUFZLEVBQUE7RUFIcEI7RUFRUSxXQUFXLEVBQUE7RUFSbkI7RUFZUSxXQUFXO0VBQ1gsV0FBVyxFQUFBO0VBYm5CO0VBaUJRLFlBQVk7RUFDWixVQUFVLEVBQUE7RUFLbEI7RUFFSSxZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLFVBQVU7RUFDVixXQUFXO0VBQ1gsWUFBWTtFQUNaLHlCQ3RMYztFRHVMZCxlQUFlLEVBQUE7RUFSbkI7SUFXUSxxQkFBcUI7SUFDckIsWUFBWSxFQUFBO0VBS3BCOzs7Ozs7RUFRSSxnQkFBZ0IsRUFBQTtFQUlwQjs7OztFQU1JLGdCQUFnQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvY29tbW9uL3NsaWRlLWhlYWRlci9zbGlkZS1oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLi8uLi8uLi9zYXNzL192YXJpYWJsZXMnO1xyXG5cclxuXHJcblxyXG5cclxuLmlubGluZS10b3BwZXJ7XHJcbiAgICBwb2ludGVyLWV2ZW50czogbm9uZTsgXHJcbiAgICB6LWluZGV4OiAwO1xyXG4gICAgaGVpZ2h0OiA1MXB4OyAgIFxyXG4gICAgICAgXHJcbiAgICBwYWRkaW5nLXRvcDogMTBweDsgICAgXHJcbiAgICAuaWNvbntcclxuICAgICAgICBtYXJnaW46IDhweDsgICAgICBcclxuICAgICAgICB2ZXJ0aWNhbC1hbGlnbjogdG9wO1xyXG4gICAgfVxyXG4gICAgaDR7XHJcbiAgICAgICAgZGlzcGxheTogaW5saW5lO1xyXG4gICAgICAgIHZlcnRpY2FsLWFsaWduOiB0b3A7XHJcbiAgICB9XHJcbiAgICAuYmFyLWljb257XHJcbiAgICAgICAgbWFyZ2luLWxlZnQ6IDE1cHg7XHJcbiAgICB9XHJcbn1cclxuXHJcbi50b3BwZXJ7XHJcbiAgICBwb2ludGVyLWV2ZW50czogbm9uZTsgXHJcbiAgICB6LWluZGV4OiAwO1xyXG4gICAgaGVpZ2h0OiA2NXB4OyAgIFxyXG4gICAgXHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7ICAgICBcclxuICAgIHBhZGRpbmctdG9wOiAzMHB4O1xyXG4gICAgdG9wOiAtMzBweDtcclxuICAgIGxlZnQ6IC0xNXB4O1xyXG4gICAgcmlnaHQ6IC0xNXB4O1xyXG4gICAgLmljb257XHJcbiAgICAgICAgbWFyZ2luOiA4cHg7ICAgICAgXHJcbiAgICAgICAgdmVydGljYWwtYWxpZ246IHRvcDtcclxuICAgIH1cclxuICAgIGg0e1xyXG4gICAgICAgIGRpc3BsYXk6IGlubGluZTtcclxuICAgICAgICB2ZXJ0aWNhbC1hbGlnbjogdG9wO1xyXG4gICAgfVxyXG4gICAgLmJhci1pY29ue1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiAxNXB4O1xyXG4gICAgfVxyXG59XHJcblxyXG46aG9zdC1jb250ZXh0KC5sdHIpXHJcbiB7XHJcbiAgIFxyXG4gICAgLmNsb3NlLWJ1dHRvbi10b3BwZXJ7XHJcbiAgICAgICAgcmlnaHQ6IC0xNXB4O1xyXG4gICAgfVxyXG4gfVxyXG4gOmhvc3QtY29udGV4dCgucnRsKVxyXG4ge1xyXG4gICAgLmNsb3NlLWJ1dHRvbi10b3BwZXJ7XHJcbiAgICAgICAgbGVmdDogLTE1cHg7XHJcbiAgICB9XHJcbiB9XHJcbiAgICAuY2xvc2UtYnV0dG9uLXRvcHBlcntcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgei1pbmRleDogMjAwMDsgICAgICBcclxuICAgICAgICB0b3A6IC0xNXB4O1xyXG4gICAgICAgIHdpZHRoOiA1MHB4O1xyXG4gICAgICAgIGhlaWdodDogNTBweDtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAkY29sb3ItZ3JlZW47XHJcblxyXG4gICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICAgICAgXHJcblxyXG4gICBcclxuICAgICBcclxuICAgIH1cclxuICAgIFxyXG4gXHJcblxyXG4uY2xvc2UtYnV0dG9uLWlubGluZS10b3BwZXIgeyAgICBcclxuY29sb3I6IHdoaXRlO1xyXG5jdXJzb3I6IHBvaW50ZXI7XHJcbnBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuXHJcbnRvcDogMHB4O1xyXG53aWR0aDogNTBweDtcclxuaGVpZ2h0OiA1MHB4O1xyXG5iYWNrZ3JvdW5kLWNvbG9yOiBncmVlbjtcclxuXHJcbiBcclxuIFxyXG5cclxuXHJcbn1cclxuICAgIC5zYXZlLWJ0bi1pbmxpbmUtdG9wcGVyOmhvdmVye1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMS41ZW07XHJcbiAgICB9IFxyXG4gICAgLnNhdmUtYnRuLWlubGluZS10b3BwZXJcclxuICAgIHtcclxuICAgICAgICAtd2Via2l0LXRyYW5zaXRpb246IGFsbCAuMnMgZWFzZTtcclxuICAgICAgICAtbW96LXRyYW5zaXRpb246IGFsbCAuMnMgZWFzZTtcclxuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgLjJzIGVhc2U7XHJcbiAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgICAgICBcclxuICAgICAgXHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgXHJcbiAgICAgICAgdG9wOiAwcHg7XHJcbiAgICAgICAgd2lkdGg6IDUwcHg7XHJcbiAgICAgICAgaGVpZ2h0OiA1MHB4O1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6IG9yYW5nZTtcclxuXHJcbiAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgICAgICBcclxuICAgICAgICAmLnRydWV7XHJcbiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6IHJlZDtcclxuICAgICAgICAgICAgY29sb3I6IGJsYWNrO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAudG9vbGJhcntcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgdG9wOjA7XHJcbiAgICAgICAgLXdlYmtpdC10cmFuc2l0aW9uOiBhbGwgLjJzIGVhc2U7XHJcbiAgICAgICAgLW1vei10cmFuc2l0aW9uOiBhbGwgLjJzIGVhc2U7XHJcbiAgICAgICAgdHJhbnNpdGlvbjogYWxsIC4ycyBlYXNlO1xyXG4gICAgICAgIFxyXG4gICAgfVxyXG5cclxuICAgIFxyXG5cclxuICAgIDpob3N0LWNvbnRleHQoLnJ0bClcclxuICAgIHtcclxuICAgICAgICAudG9vbGJhcnsgICAgICAgICAgIFxyXG4gICAgICAgICAgICBsZWZ0OiAxMDBweDsgICAgIFxyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLnNhdmUtYnRuLXRvcHBlclxyXG4gICAgICAgIHtcclxuICAgICAgICAgICAgbGVmdDogMzVweDtcclxuICAgICAgICB9XHJcbiAgICAgICAgLnNhdmUtYnRuLWlubGluZS10b3BwZXJcclxuICAgICAgICB7XHJcbiAgICAgICAgICAgIGZsb2F0OiByaWdodDtcclxuICAgICAgICAgICAgbGVmdDogNTBweDtcclxuICAgICAgICB9XHJcblxyXG4gICAgICAgIC5jbG9zZS1idXR0b24taW5saW5lLXRvcHBlclxyXG4gICAgICAgIHtcclxuICAgICAgICAgICAgZmxvYXQ6IHJpZ2h0O1xyXG5cclxuXHJcbiAgICAgICAgICAgIGxlZnQ6IDBweDtcclxuXHJcbiAgICAgICAgfVxyXG5cclxuICAgIH1cclxuICAgIDpob3N0LWNvbnRleHQoLmx0cilcclxuICAgIHtcclxuICAgICAgICAudG9vbGJhcnsgICAgICAgICAgIFxyXG4gICAgICAgICAgICByaWdodDogMTAwcHg7ICAgICBcclxuICAgICAgICB9XHJcblxyXG4gICAgICAgIC5zYXZlLWJ0bi10b3BwZXJcclxuICAgICAgICB7XHJcbiAgICAgICAgICAgIHJpZ2h0OiAzNXB4O1xyXG4gICAgICAgIH1cclxuICAgICAgICAuc2F2ZS1idG4taW5saW5lLXRvcHBlclxyXG4gICAgICAgIHtcclxuICAgICAgICAgICAgZmxvYXQ6IGxlZnQ7XHJcbiAgICAgICAgICAgIHJpZ2h0OiA1MHB4O1xyXG4gICAgICAgIH1cclxuICAgICAgICAuY2xvc2UtYnV0dG9uLWlubGluZS10b3BwZXJcclxuICAgICAgICB7XHJcbiAgICAgICAgICAgIGZsb2F0OiByaWdodDtcclxuICAgICAgICAgICAgcmlnaHQ6IDBweDtcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG5cclxuICAgIC5zYXZlLWJ0bi10b3BwZXJcclxuICAgIHtcclxuICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIHRvcDogLTE1cHg7XHJcbiAgICAgICAgd2lkdGg6IDUwcHg7XHJcbiAgICAgICAgaGVpZ2h0OiA1MHB4O1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICRjb2xvci1vcmFuZ2U7XHJcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgICAgIFxyXG4gICAgICAgICYudHJ1ZXtcclxuICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogcmVkO1xyXG4gICAgICAgICAgICBjb2xvcjogYmxhY2s7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuXHJcbiAgICAuc2F2ZS1idG4taW5saW5lLXRvcHBlcjphY3RpdmUsICAgIFxyXG4gICAgLnNhdmUtYnRuLWlubGluZS10b3BwZXI6aG92ZXIsXHJcbiAgICAuc2F2ZS1idG4tdG9wcGVyOmFjdGl2ZSxcclxuICAgIC5zYXZlLWJ0bi10b3BwZXI6aG92ZXIsXHJcbiAgICAuYnRuLXRvb2w6aG92ZXIsXHJcbiAgICAuYnRuLXRvb2w6YWN0aXZlLFxyXG4gICAgeyAgIFxyXG4gICAgICAgXHJcbiAgICAgICAgZm9udC1zaXplOiAxLjVlbTtcclxuICAgICAgICBcclxuICAgIH1cclxuXHJcbiAgICAuY2xvc2UtYnV0dG9uLWlubGluZS10b3BwZXI6YWN0aXZlLCAgICBcclxuICAgIC5jbG9zZS1idXR0b24taW5saW5lLXRvcHBlcjpob3ZlcixcclxuICAgIC5jbG9zZS1idXR0b24tdG9wcGVyOmFjdGl2ZSxcclxuICAgIC5jbG9zZS1idXR0b24tdG9wcGVyOmhvdmVyXHJcbiAgICB7ICAgXHJcbiAgICAgICAgXHJcbiAgICAgICAgZm9udC1zaXplOiAxLjVlbTtcclxuICAgICAgICBcclxuICAgIH1cclxuICAgICAgICAgICBcclxuICAgICAgICBcclxuICAgIFxyXG4gXHJcbiBcclxuICIsIlxyXG4kY29sb3ItZ3JheTogI2UzZTRlNTtcclxuJGNvbG9yLWRhcmtibHVlMTogIzE2MjQzMztcclxuJGNvbG9yLWRhcmtibHVlMjogIzJhNDU2MztcclxuJGNvbG9yLWxpZ2h0Ymx1ZTE6ICMyNjQzNTY7XHJcbiRjb2xvci1saWdodGJsdWUyOiAjM2M3Mzk5O1xyXG4kY29sb3Itb3JhbmdlOiAjZmM2NjAwO1xyXG4kY29sb3ItY3lhbjogIzAwZmZmNjtcclxuJGNvbG9yLXNjcmVlbjogIzAwY2ZmZjtcclxuJGNvbG9yLXNjcmVlbi1ncm91cDogIzAwZmZmNjtcclxuJGNvbG9yLWxpYnJhcnk6ICM5NmZmMDA7XHJcbiRjb2xvci15ZWxsb3c6ICNmZmZmMDA7XHJcblxyXG5cclxuXHJcbiRjb2xvci1wdXJwbGU6ICM2MzJhNjI7XHJcblxyXG5cclxuJGNvbG9yLWdyZWVuOiAjOTZmZjAwO1xyXG4kY29sb3ItYmxhY2s6ICMyMjI7XHJcbiRjb2xvci1ncmF5d2hpdGU6ICNGRkU7XHJcbiRjb2xvci10b29sYmFyOiAjZjhmOWZhO1xyXG4gXHJcblxyXG4gXHJcblxyXG4gIl19 */"
 
 /***/ }),
 
@@ -1244,7 +1264,7 @@ var ClickStopPropagationDirective = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"item\" [ngStyle]=\"{'background-color': bgColor}\" style=\"position: relative;\">\r\n    <div #gridObject style=\"position: absolute;\"></div>\r\n    <canvas #thumbObject height=\"{{height}}\" width=\"{{width}}\" style=\"position: absolute;\"></canvas>\r\n</div>\r\n"
+module.exports = "<div *ngIf=\"item\" [ngStyle]=\"{'background-color': bgColor}\" style=\"position: relative;\">\r\n    <div #gridObject [ngStyle]=\"{'width.px': width,'height.px': height}\"\r\n        style=\"position: absolute;overflow: hidden;z-index: 0;top:0;left:0;\">\r\n    </div>\r\n    <iframe class=\"frame\" #playerIframe height=\"{{height}}\" width=\"{{width}}\" style=\"position: absolute;\"></iframe>\r\n    <canvas #thumbObject height=\"{{height}}\" width=\"{{width}}\" style=\"position: absolute;\"></canvas>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1286,17 +1306,20 @@ var CanvasComponent = /** @class */ (function () {
             var _this = this;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 this._ngZone.run(function () { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
-                    var element, grid, ctx;
+                    var canvas, grid, iframe, ctx;
                     return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                         if (this.thumbObject.first) {
-                            element = this.thumbObject.first.nativeElement;
-                            element.width = this.width;
-                            element.height = this.height;
+                            canvas = this.thumbObject.first.nativeElement;
+                            canvas.width = this.width;
+                            canvas.height = this.height;
                             grid = this.gridObject.first.nativeElement;
                             grid.width = this.width;
                             grid.height = this.height;
-                            ctx = element.getContext('2d');
-                            this.slideService.play({ canvas: element, grid: grid }, [this.item], ctx, this.width, this.height, 'single');
+                            iframe = this.playerIframe.first.nativeElement;
+                            grid.width = this.width;
+                            grid.height = this.height;
+                            ctx = canvas.getContext('2d');
+                            this.slideService.play({ canvas: canvas, grid: grid, iframe: iframe }, [this.item], ctx, this.width, this.height, 'single');
                         }
                         return [2 /*return*/];
                     });
@@ -1332,6 +1355,10 @@ var CanvasComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChildren"])('gridObject'),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["QueryList"])
     ], CanvasComponent.prototype, "gridObject", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChildren"])('playerIframe'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["QueryList"])
+    ], CanvasComponent.prototype, "playerIframe", void 0);
     CanvasComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-canvas',
@@ -1377,10 +1404,25 @@ var FontsService = /** @class */ (function () {
         this.userService = userService;
         this.fonts = [];
         this.loadedFonts = {};
-        this.user_id = userService.getUser()._id;
+        if (userService.getUser()) {
+            this.user_id = userService.getUser()._id;
+        }
     }
     FontsService.prototype.getFonts = function () {
         return this.fonts;
+    };
+    FontsService.prototype.loadGoogleFonts = function (fontsArr) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var fonts;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                fonts = {};
+                fontsArr.filter(function (font) { return font.source === 'google'; }).forEach(function (font) {
+                    fonts[font.name] = font.name;
+                });
+                this.loadFontsForRender(Object.keys(fonts));
+                return [2 /*return*/];
+            });
+        });
     };
     FontsService.prototype.loadFontsForRender = function (fontsArr) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
@@ -1412,9 +1454,8 @@ var FontsService = /** @class */ (function () {
                                         _this.loadedFonts[item] = item;
                                     });
                                 },
-                                custom: {
+                                google: {
                                     families: finalFontsForLoad,
-                                    urls: ["/css?family=" + finalFontsForLoad.join('|')]
                                 }
                             });
                             console.log("/css?family=" + finalFontsForLoad.join('|'));
@@ -1426,21 +1467,31 @@ var FontsService = /** @class */ (function () {
             });
         });
     };
+    FontsService.prototype.listLocalFonts = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var finalFontsForLoad;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, _signnature_client__WEBPACK_IMPORTED_MODULE_3__["Font"].query('Font', {})];
+                    case 1:
+                        finalFontsForLoad = (_a.sent()).map(function (item) { return ({
+                            'name': item.Name, 'source': 'local'
+                        }); });
+                        return [2 /*return*/, finalFontsForLoad];
+                }
+            });
+        });
+    };
     FontsService.prototype.loadLocalFonts = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var _this = this;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 return [2 /*return*/, new Promise(function (resolve, reject) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
-                        var finalFontsForLoad;
                         return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                            switch (_a.label) {
-                                case 0: return [4 /*yield*/, _signnature_client__WEBPACK_IMPORTED_MODULE_3__["Font"].query('Font', {})];
-                                case 1:
-                                    finalFontsForLoad = (_a.sent()).map(function (item) { return ({ 'name': item.Name }); });
-                                    document.getElementById('api_css_placeholder').setAttribute('href', "/api/css/" + this.user_id);
-                                    resolve(finalFontsForLoad);
-                                    return [2 /*return*/];
-                            }
+                            // const finalFontsForLoad = (await Font.query('Font', {})).map((item) => ({ 'name': item.Name }));
+                            document.getElementById('api_css_placeholder').setAttribute('href', "/api/css/" + this.user_id);
+                            resolve(true);
+                            return [2 /*return*/];
                         });
                     }); })];
             });
@@ -1453,9 +1504,10 @@ var FontsService = /** @class */ (function () {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 url = "https://www.googleapis.com/webfonts/v1/webfonts?key=" + KEY;
                 return [2 /*return*/, new Promise(function (resolve, reject) {
-                        // if (this.fonts.length > 0) {
-                        //   return resolve(this.fonts);
-                        // }
+                        var fontsStr = localStorage.getItem('GoogleFonts');
+                        if (fontsStr) {
+                            resolve(JSON.parse(fontsStr));
+                        }
                         _this.http.get(url).subscribe(function (data) {
                             _this.fonts = data.items.map(function (font) {
                                 return font;
@@ -1465,6 +1517,7 @@ var FontsService = /** @class */ (function () {
                                     return font.subsets.indexOf(lng.subset) > -1;
                                 });
                             }
+                            localStorage.setItem('GoogleFonts', JSON.stringify(_this.fonts));
                             resolve(_this.fonts);
                         });
                     })];
@@ -1644,8 +1697,10 @@ var FinderComponent = /** @class */ (function (_super) {
             template: __webpack_require__(/*! ./finder.component.html */ "./src/app/library/finder/finder.component.html"),
             styles: [__webpack_require__(/*! ./finder.component.scss */ "./src/app/library/finder/finder.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__["TranslateService"],
-            _services_dirty_service__WEBPACK_IMPORTED_MODULE_5__["DirtyService"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"],
+            _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__["TranslateService"],
+            _services_dirty_service__WEBPACK_IMPORTED_MODULE_5__["DirtyService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]])
     ], FinderComponent);
     return FinderComponent;
 }(_data_component__WEBPACK_IMPORTED_MODULE_2__["DataComponent"]));
@@ -1987,7 +2042,6 @@ var DotToImage = /** @class */ (function () {
                     foreignObject + '</svg>';
             })
                 .then(function (svg) {
-                console.log(svg);
                 return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
             });
         }
@@ -3267,7 +3321,7 @@ module.exports = "\r\n<router-outlet></router-outlet>"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"{{bodyClass}} {{bodyStateClass}}\">\r\n    <div class=\"counter\" #counter></div>\r\n    <div class=\"screenDicator\" #screenDicator></div>\r\n    <label *ngIf=\"!playerPlan\" class=\"huge\">{{Token}}</label>\r\n\r\n    <div class=\"screen\">\r\n        <div id=\"animation_container\">\r\n                <div #gridObject style=\"position: absolute;\"></div>\r\n            <canvas #playerCanvas id=\"playerCanvas\" width=\"100%\" height=\"100%\"\r\n                style=\"position: absolute; display: block; background-color:rgba(0, 0, 0, 1.00);\"></canvas>\r\n            <iframe class=\"frame\" #playerIframe></iframe>\r\n            <div #playerEmbed>\r\n                <div id=\"playerEmbedInner\"></div>\r\n            </div>\r\n\r\n        </div>\r\n    </div>\r\n</div>\r\n"
+module.exports = "<div class=\"{{bodyClass}} {{bodyStateClass}}\">\r\n    <div class=\"counter\" #counter></div>\r\n    <div class=\"screenDicator\" #screenDicator></div>\r\n    <label *ngIf=\"!playerPlan\" class=\"huge\">{{Token}}</label>\r\n\r\n    <div class=\"screen\">\r\n        <div id=\"animation_container\">\r\n            <div #gridObject id=\"gridObject\" style=\"position: absolute;height: 100%;width: 100%;\"></div>\r\n            <canvas #playerCanvas id=\"playerCanvas\" width=\"100%\" height=\"100%\"\r\n                style=\"position: absolute; display: block; background-color:rgba(0, 0, 0, 1.00);\"></canvas>\r\n            <iframe class=\"frame\" #playerIframe></iframe>\r\n            <div #playerEmbed>\r\n                <div id=\"playerEmbedInner\"></div>\r\n            </div>\r\n\r\n        </div>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -3278,7 +3332,7 @@ module.exports = "<div class=\"{{bodyClass}} {{bodyStateClass}}\">\r\n    <div c
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".white {\n  color: white; }\n\n.screen {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #fff; }\n\n.not-active .screen {\n  top: 1000000px; }\n\n.huge {\n  font-size: 70px;\n  padding: 40px;\n  border: 1px solid rgba(6, 19, 19, 0.932);\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  margin-top: -100px;\n  margin-left: -400px;\n  width: 800px;\n  height: 200px;\n  text-align: center;\n  font-family: 'Montserrat', 'Roboto', sans-serif;\n  background-color: rgba(255, 255, 255, 0.5); }\n\n.counter {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 2000;\n  font-size: 36px;\n  color: #fff;\n  background-color: #000; }\n\n.screenDicator {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  z-index: 2000;\n  font-size: 36px;\n  color: #fff;\n  background-color: #000; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9wbGF5ZXIvQzpcXHByb2plY3RzXFxzaWduLW5hdHVyZVxcd2ViL3NyY1xccGxheWVyXFxwbGF5ZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFBUSxZQUFZLEVBQUE7O0FBRXBCO0VBQ0Usa0JBQWtCO0VBQ2xCLE1BQU07RUFDTixPQUFRO0VBQ1IsUUFBUTtFQUNSLFNBQVM7RUFDVCxzQkFBc0IsRUFBQTs7QUFHeEI7RUFFSSxjQUFjLEVBQUE7O0FBR2xCO0VBQ0ksZUFBZTtFQUNmLGFBQVk7RUFDWix3Q0FBd0M7RUFDeEMsa0JBQWtCO0VBQ2xCLFFBQVE7RUFDUixTQUFTO0VBQ1Qsa0JBQWtCO0VBQ2xCLG1CQUFtQjtFQUNuQixZQUFZO0VBQ1osYUFBYTtFQUNiLGtCQUFrQjtFQUNsQiwrQ0FBK0M7RUFDL0MsMENBQTBDLEVBQUE7O0FBSTVDO0VBQ0Usa0JBQWlCO0VBQ2pCLE1BQUs7RUFDTCxRQUFPO0VBQ1AsYUFBYTtFQUNiLGVBQWU7RUFDZixXQUFXO0VBQ1gsc0JBQXNCLEVBQUE7O0FBSXhCO0VBQ0Usa0JBQWlCO0VBQ2pCLFNBQVE7RUFDUixRQUFPO0VBQ1AsYUFBYTtFQUNiLGVBQWU7RUFDZixXQUFXO0VBQ1gsc0JBQXNCLEVBQUEiLCJmaWxlIjoic3JjL3BsYXllci9wbGF5ZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIud2hpdGUge2NvbG9yOiB3aGl0ZTt9XHJcbiBcclxuLnNjcmVlbiB7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHRvcDogMDtcclxuICBsZWZ0IDogMDtcclxuICByaWdodDogMDtcclxuICBib3R0b206IDA7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcclxufVxyXG5cclxuLm5vdC1hY3RpdmV7XHJcbiAgLnNjcmVlbntcclxuICAgIHRvcDogMTAwMDAwMHB4O1xyXG4gIH1cclxufVxyXG4uaHVnZSB7XHJcbiAgICBmb250LXNpemU6IDcwcHg7XHJcbiAgICBwYWRkaW5nOjQwcHg7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCByZ2JhKDYsIDE5LCAxOSwgMC45MzIpO1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdG9wOiA1MCU7XHJcbiAgICBsZWZ0OiA1MCU7XHJcbiAgICBtYXJnaW4tdG9wOiAtMTAwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogLTQwMHB4O1xyXG4gICAgd2lkdGg6IDgwMHB4O1xyXG4gICAgaGVpZ2h0OiAyMDBweDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGZvbnQtZmFtaWx5OiAnTW9udHNlcnJhdCcsICdSb2JvdG8nLCBzYW5zLXNlcmlmO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjUpO1xyXG5cclxuICB9XHJcblxyXG4gIC5jb3VudGVye1xyXG4gICAgcG9zaXRpb246YWJzb2x1dGU7XHJcbiAgICB0b3A6MDtcclxuICAgIHJpZ2h0OjA7XHJcbiAgICB6LWluZGV4OiAyMDAwO1xyXG4gICAgZm9udC1zaXplOiAzNnB4O1xyXG4gICAgY29sb3I6ICNmZmY7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDAwO1xyXG4gIH1cclxuXHJcblxyXG4gIC5zY3JlZW5EaWNhdG9ye1xyXG4gICAgcG9zaXRpb246YWJzb2x1dGU7XHJcbiAgICBib3R0b206MDtcclxuICAgIHJpZ2h0OjA7XHJcbiAgICB6LWluZGV4OiAyMDAwO1xyXG4gICAgZm9udC1zaXplOiAzNnB4O1xyXG4gICAgY29sb3I6ICNmZmY7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDAwO1xyXG4gIH1cclxuXHJcblxyXG5cclxuXHJcbiJdfQ== */"
+module.exports = ".white {\n  color: white; }\n\n.screen {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0; }\n\n.not-active .screen {\n  top: 1000000px; }\n\n#playerCanvas {\n  width: 100%;\n  height: 100%; }\n\n.huge {\n  font-size: 70px;\n  padding: 40px;\n  border: 1px solid rgba(6, 19, 19, 0.932);\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  margin-top: -100px;\n  margin-left: -400px;\n  width: 800px;\n  height: 200px;\n  text-align: center;\n  font-family: 'Montserrat', 'Roboto', sans-serif;\n  background-color: rgba(255, 255, 255, 0.5); }\n\n.counter {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 2000;\n  font-size: 36px;\n  color: #fff;\n  background-color: #000; }\n\n.screenDicator {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  z-index: 2000;\n  font-size: 36px;\n  color: #fff;\n  background-color: #000; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9wbGF5ZXIvQzpcXHByb2plY3RzXFxzaWduLW5hdHVyZVxcd2ViL3NyY1xccGxheWVyXFxwbGF5ZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFBUSxZQUFZLEVBQUE7O0FBRXBCO0VBQ0Usa0JBQWtCO0VBQ2xCLE1BQU07RUFDTixPQUFRO0VBQ1IsUUFBUTtFQUNSLFNBQVMsRUFBQTs7QUFJWDtFQUVJLGNBQWMsRUFBQTs7QUFHbEI7RUFDRSxXQUFXO0VBQ1gsWUFBWSxFQUFBOztBQUVkO0VBQ0ksZUFBZTtFQUNmLGFBQVk7RUFDWix3Q0FBd0M7RUFDeEMsa0JBQWtCO0VBQ2xCLFFBQVE7RUFDUixTQUFTO0VBQ1Qsa0JBQWtCO0VBQ2xCLG1CQUFtQjtFQUNuQixZQUFZO0VBQ1osYUFBYTtFQUNiLGtCQUFrQjtFQUNsQiwrQ0FBK0M7RUFDL0MsMENBQTBDLEVBQUE7O0FBSTVDO0VBQ0Usa0JBQWlCO0VBQ2pCLE1BQUs7RUFDTCxRQUFPO0VBQ1AsYUFBYTtFQUNiLGVBQWU7RUFDZixXQUFXO0VBQ1gsc0JBQXNCLEVBQUE7O0FBSXhCO0VBQ0Usa0JBQWlCO0VBQ2pCLFNBQVE7RUFDUixRQUFPO0VBQ1AsYUFBYTtFQUNiLGVBQWU7RUFDZixXQUFXO0VBQ1gsc0JBQXNCLEVBQUEiLCJmaWxlIjoic3JjL3BsYXllci9wbGF5ZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIud2hpdGUge2NvbG9yOiB3aGl0ZTt9XHJcbiBcclxuLnNjcmVlbiB7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIHRvcDogMDtcclxuICBsZWZ0IDogMDtcclxuICByaWdodDogMDtcclxuICBib3R0b206IDA7XHJcbiBcclxufVxyXG5cclxuLm5vdC1hY3RpdmV7XHJcbiAgLnNjcmVlbntcclxuICAgIHRvcDogMTAwMDAwMHB4O1xyXG4gIH1cclxufVxyXG4jcGxheWVyQ2FudmFze1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGhlaWdodDogMTAwJTtcclxufVxyXG4uaHVnZSB7XHJcbiAgICBmb250LXNpemU6IDcwcHg7XHJcbiAgICBwYWRkaW5nOjQwcHg7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCByZ2JhKDYsIDE5LCAxOSwgMC45MzIpO1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdG9wOiA1MCU7XHJcbiAgICBsZWZ0OiA1MCU7XHJcbiAgICBtYXJnaW4tdG9wOiAtMTAwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogLTQwMHB4O1xyXG4gICAgd2lkdGg6IDgwMHB4O1xyXG4gICAgaGVpZ2h0OiAyMDBweDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGZvbnQtZmFtaWx5OiAnTW9udHNlcnJhdCcsICdSb2JvdG8nLCBzYW5zLXNlcmlmO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjUpO1xyXG5cclxuICB9XHJcblxyXG4gIC5jb3VudGVye1xyXG4gICAgcG9zaXRpb246YWJzb2x1dGU7XHJcbiAgICB0b3A6MDtcclxuICAgIHJpZ2h0OjA7XHJcbiAgICB6LWluZGV4OiAyMDAwO1xyXG4gICAgZm9udC1zaXplOiAzNnB4O1xyXG4gICAgY29sb3I6ICNmZmY7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDAwO1xyXG4gIH1cclxuXHJcblxyXG4gIC5zY3JlZW5EaWNhdG9ye1xyXG4gICAgcG9zaXRpb246YWJzb2x1dGU7XHJcbiAgICBib3R0b206MDtcclxuICAgIHJpZ2h0OjA7XHJcbiAgICB6LWluZGV4OiAyMDAwO1xyXG4gICAgZm9udC1zaXplOiAzNnB4O1xyXG4gICAgY29sb3I6ICNmZmY7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDAwO1xyXG4gIH1cclxuXHJcblxyXG5cclxuXHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -4040,8 +4094,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _createjs_easeljs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @createjs/easeljs */ "./node_modules/@createjs/easeljs/src/main.js");
 /* harmony import */ var youtube_player__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! youtube-player */ "./node_modules/youtube-player/dist/index.js");
 /* harmony import */ var youtube_player__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(youtube_player__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _app_services_dottoimage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../app/services/dottoimage */ "./src/app/services/dottoimage.ts");
-
 
 
 
@@ -4076,6 +4128,11 @@ var HtmlRenderer = /** @class */ (function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var _this = this;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                this.surfaces.iframe.style.display = 'none';
+                this.surfaces.canvas.style.display = 'none';
+                this.surfaces.grid.style.display = 'inline-block';
+                // this.surfaces.grid.style.width = '100%';
+                // this.surfaces.grid.style.height = '100%';
                 return [2 /*return*/, new Promise(function (resolve, reject) { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
                         var _a;
                         var _this = this;
@@ -4242,18 +4299,23 @@ var HtmlRenderer = /** @class */ (function () {
                                     this.images.push(img);
                                     sizes = this.factor(item.Screen, _width, _height);
                                     positions = this.factorPosition(item.Screen, x, y);
-                                    this.ctx.save();
+                                    // this.ctx.save();
                                     if (element.opacity) {
-                                        this.ctx.globalAlpha = element.opacity;
+                                        img.style.opacity = element.opacity;
                                     }
                                     if (element.rotation) {
-                                        this.ctx.translate(positions.x + (sizes.x / 2), positions.y + (sizes.y / 2));
-                                        this.ctx.rotate(element.rotation * Math.PI / 180);
-                                        this.ctx.translate(-(sizes.x / 2), -(sizes.y / 2));
+                                        img.style.transform = "rotate(" + element.rotation + "deg)";
                                     }
-                                    this.ctx.drawImage(img, positions.x, positions.y, sizes.x, sizes.y);
-                                    this.ctx.restore();
-                                    this.ctx.setTransform(1, 0, 0, 1, 0, 0);
+                                    img.style.width = sizes.x + "px";
+                                    img.style.height = sizes.y + "px";
+                                    img.style.zIndex = element.zIndex;
+                                    img.style.position = 'absolute';
+                                    img.style.top = positions.y + "px";
+                                    img.style.left = positions.x + "px";
+                                    this.surfaces.grid.appendChild(img);
+                                    // this.ctx.drawImage(img, positions.x, positions.y, sizes.x, sizes.y);
+                                    // this.ctx.restore();
+                                    // this.ctx.setTransform(1, 0, 0, 1, 0, 0);
                                     resolve(img);
                                     return [2 /*return*/];
                             }
@@ -4264,16 +4326,13 @@ var HtmlRenderer = /** @class */ (function () {
     };
     HtmlRenderer.prototype.renderElementsToTags = function (item) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var shape, index, element, _a;
+            var index, element, _a;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
                 switch (_b.label) {
                     case 0:
-                        this.stage.clear(0, 0, this.stage.canvas.width, this.stage.canvas.height);
+                        this.surfaces.grid.innerHTML = '';
                         if (item.bgColor) {
-                            shape = new _createjs_easeljs__WEBPACK_IMPORTED_MODULE_2__["Shape"]();
-                            shape.graphics.beginFill(item.bgColor).drawRect(0, 0, this.width, this.height);
-                            this.stage.addChild(shape);
-                            this.stage.update();
+                            this.surfaces.grid.style.backgroundColor = item.bgColor;
                         }
                         if (item.script && this.mode !== 'single') {
                             Eval(item.script);
@@ -4316,40 +4375,62 @@ var HtmlRenderer = /** @class */ (function () {
     };
     HtmlRenderer.prototype.render_text_to_canvas = function (item, element) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var dotToImage, fontFactor, x, y, _width, _height, sizes, positions_1, node, imageBlob, img_1;
-            var _this = this;
+            var fontFactor, x, y, _width, _height, sizes, positions, node;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        log('@slide.service-render_text_to_canvas');
-                        if (!element.text) return [3 /*break*/, 2];
-                        dotToImage = new _app_services_dottoimage__WEBPACK_IMPORTED_MODULE_4__["DotToImage"]();
-                        fontFactor = this.factor(item.Screen, element.fontSize);
-                        x = element.position.x;
-                        y = element.position.y;
-                        _width = element.width;
-                        _height = element.height;
-                        sizes = this.factor(item.Screen, _width, _height);
-                        positions_1 = this.factorPosition(item.Screen, x, y);
-                        node = this.surfaces.grid;
-                        node.innerHTML = element.text;
-                        node.style.textAlign = element.align;
-                        node.style.color = element.color;
-                        node.style.fontFamily = element.font;
-                        node.style.fontSize = element.fontSize + 'px';
-                        return [4 /*yield*/, dotToImage.toSvg(node)];
-                    case 1:
-                        imageBlob = _a.sent();
-                        img_1 = new Image();
-                        img_1.onload = function () {
-                            _this.ctx.save();
-                            _this.ctx.drawImage(img_1, positions_1.x, positions_1.y, img_1.width, img_1.height);
-                            _this.ctx.restore();
-                        };
-                        img_1.src = imageBlob;
-                        _a.label = 2;
-                    case 2: return [2 /*return*/];
+                log('@slide.service-render_text_to_canvas');
+                if (element.text) {
+                    fontFactor = this.factor(item.Screen, element.fontSize);
+                    x = element.position.x;
+                    y = element.position.y;
+                    _width = element.width;
+                    _height = element.height || element.fontSize;
+                    sizes = this.factor(item.Screen, _width, _height);
+                    positions = this.factorPosition(item.Screen, x, y);
+                    node = document.createElement('PRE');
+                    node.innerHTML = element.text;
+                    node.style.textAlign = element.align;
+                    node.style.color = element.color;
+                    if (element.font) {
+                        node.style.fontFamily = (element.font.name) ? element.font.name : element.font;
+                    }
+                    node.style.fontSize = fontFactor + 'px';
+                    node.style.position = 'absolute';
+                    node.style.left = positions.x + "px";
+                    node.style.top = positions.y + "px";
+                    // node.style.width = `${_width}px`;
+                    node.style.overflow = 'visible';
+                    // node.style.height = `${_height}px`;
+                    node.style.zIndex = element.zIndex;
+                    this.surfaces.grid.appendChild(node);
+                    // const imageBlob = await dotToImage.toSvg(node);
+                    // const img = new Image();
+                    // img.onload = () => {
+                    //     this.ctx.save();
+                    //     this.ctx.drawImage(img, positions.x, positions.y, img.width, img.height);
+                    //     this.ctx.restore();
+                    // };
+                    // img.src = imageBlob;
+                    // this.ctx.font = `${fontFactor}px ${element.font}`;
+                    // this.ctx.fillStyle = `${element.color}`;
+                    // if (element.opacity) {
+                    //     this.ctx.globalAlpha = element.opacity;
+                    // }
+                    // if (element.rotation) {
+                    //     this.ctx.translate(positions.x + (sizes.x / 2), positions.y + (sizes.y / 2));
+                    //     this.ctx.rotate(element.rotation * Math.PI / 180);
+                    //     this.ctx.translate(-(sizes.x / 2), -(sizes.y / 2));
+                    // }
+                    // this.ctx.font = `${fontFactor}px ${element.font}`;
+                    // let lineIndex = 0;
+                    // element.text.split('\n').forEach((line) => {
+                    //     const position = this.factor(item.Screen, element.position.x, (Number(element.position.y) + element.fontSize));
+                    //     const linePosition = position.y + (lineIndex * fontFactor);
+                    //     console.log(linePosition, fontFactor, lineIndex);
+                    //     this.ctx.fillText(line, position.x, linePosition);
+                    //     lineIndex++;
+                    // });
                 }
+                return [2 /*return*/];
             });
         });
     };
@@ -4368,37 +4449,34 @@ var HtmlRenderer = /** @class */ (function () {
                             this.surfaces.embed.style.display = 'none';
                         }
                         this.stage = new _createjs_easeljs__WEBPACK_IMPORTED_MODULE_2__["Stage"](this.ctx.canvas);
-                        if (!(this.mode === 'single')) return [3 /*break*/, 2];
-                        return [4 /*yield*/, this.fontService.loadFontsForRender(this.playerPlan[0].fonts)];
-                    case 1:
-                        _a.sent();
-                        this.prerender(this.playerPlan[0], 0);
-                        return [2 /*return*/];
-                    case 2:
-                        if (!this.playerPlan || this.playerPlan.length === 0) {
-                            this.playDefaultPlan();
+                        if (this.mode === 'single') {
+                            // await this.fontService.loadFontsForRender(this.playerPlan[0].fonts);
+                            this.prerender(this.playerPlan[0], 0);
                             return [2 /*return*/];
                         }
-                        _a.label = 3;
-                    case 3:
-                        if (!(this.mode !== 'single')) return [3 /*break*/, 7];
+                        else {
+                            if (!this.playerPlan || this.playerPlan.length === 0) {
+                                this.playDefaultPlan();
+                                return [2 /*return*/];
+                            }
+                        }
+                        if (!(this.mode !== 'single')) return [3 /*break*/, 3];
                         this.list = this.playerPlan[0].list;
                         frameDuration = (this.list[this.itemIndex].duration) ? this.list[this.itemIndex].duration * 1000 : 5000;
-                        _a.label = 4;
-                    case 4:
+                        _a.label = 1;
+                    case 1:
                         if (false) {}
-                        return [4 /*yield*/, this.fontService.loadFontsForRender(this.list[this.itemIndex].fonts)];
-                    case 5:
-                        _a.sent();
+                        // await this.fontService.loadFontsForRender(this.list[this.itemIndex].fonts);
                         return [4 /*yield*/, this.prerender(this.list[this.itemIndex], frameDuration)];
-                    case 6:
+                    case 2:
+                        // await this.fontService.loadFontsForRender(this.list[this.itemIndex].fonts);
                         _a.sent();
                         this.itemIndex++;
                         if (this.itemIndex === this.list.length) {
                             this.itemIndex = 0;
                         }
-                        return [3 /*break*/, 4];
-                    case 7: return [2 /*return*/];
+                        return [3 /*break*/, 1];
+                    case 3: return [2 /*return*/];
                 }
             });
         });
@@ -4477,8 +4555,9 @@ var SlideService = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         this.playerPlan = playerPlan;
-                        if (!(this.playerPlan && this.playerPlan.length > 0)) return [3 /*break*/, 2];
+                        if (!(this.playerPlan && this.playerPlan.length > 0)) return [3 /*break*/, 3];
                         this.list = this.playerPlan[0].list;
+                        this.fontService.user_id = this.playerPlan[0].user_id;
                         fontsArr_1 = {};
                         this.list.forEach(function (item) {
                             if (item.fonts) {
@@ -4487,11 +4566,14 @@ var SlideService = /** @class */ (function () {
                                 });
                             }
                         });
-                        return [4 /*yield*/, this.fontService.loadFontsForRender(Object.keys(fontsArr_1))];
+                        return [4 /*yield*/, this.fontService.loadLocalFonts()];
                     case 1:
                         _a.sent();
-                        return [3 /*break*/, 2];
-                    case 2: return [2 /*return*/];
+                        return [4 /*yield*/, this.fontService.loadFontsForRender(Object.keys(fontsArr_1))];
+                    case 2:
+                        _a.sent();
+                        return [3 /*break*/, 3];
+                    case 3: return [2 /*return*/];
                 }
             });
         });
@@ -4501,13 +4583,12 @@ var SlideService = /** @class */ (function () {
     SlideService.prototype.play = function (surfaces, playerPlan, ctx, width, height, mode) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                if (!playerPlan.renderer) {
+                if (playerPlan.renderer) {
                     playerPlan.renderer = new _renderers_canvas__WEBPACK_IMPORTED_MODULE_3__["CanvasRenderer"](surfaces, this.fontService, playerPlan, ctx, width, height, mode);
                 }
                 else {
                     playerPlan.renderer = new _renderers_html__WEBPACK_IMPORTED_MODULE_4__["HtmlRenderer"](surfaces, this.fontService, playerPlan, ctx, width, height, mode);
                 }
-                // const playX = new SlideWorker(surfaces, this.fontService, playerPlan, ctx, width, height, mode);
                 playerPlan.renderer.play();
                 return [2 /*return*/];
             });
