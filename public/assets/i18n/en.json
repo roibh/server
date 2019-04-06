@@ -15,10 +15,10 @@
     "FINDER": "Finder",
     "SHARED": "Templates",
     "CLIPART": "Clip-Art",
-    "MANAGE":"Manage",
-    "CREATE":"Create"
+    "MANAGE": "Manage",
+    "CREATE": "Create",
+    "FONTS": "Fonts"
   },
- 
   "ERRORS": {
     "USER_EXISTS": "A user with this email already exists, try to login."
   },
@@ -49,6 +49,7 @@
   },
   "SCREENS": {
     "NAME": "Name your screen",
+    "NEW_SCREEN": "New Screen",
     "NAME_HELP": "Try using a meaningful name",
     "TOKEN": "Token",
     "TYPE": "Type",
@@ -76,7 +77,9 @@
     "URL": "Url",
     "URL_HELP": "Paste any page url address.",
     "SEARCHTERM": "Keyword",
-    "MEDIAPACK": "Media pack"
+    "MEDIAPACK": "Media pack",
+    "FONT_PREVIEW": "Font Preview",
+    "FONT_LONG_PREVIEW": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
   },
   "SLIDES": {
     "NAME": "Name your slide",
@@ -105,12 +108,24 @@
   },
   "DATA": {
     "FORM_NOTSAVED": "The form was not saved, you will lose all changes.",
-    "CONFIRM_DELETE": "Please confirm the delete."
+    "CONFIRM_DELETE": "Please confirm the delete.",
+    "SELECT": "Select"
   },
   "TIMES": {
     "ALL": "All the time"
   },
   "PANEL": {
+    "FIELDSETS": {
+      "ELEMENTS": "Elements",
+      "GENERAL": "General",
+      "SLIDE": "Slide",
+      "TEXT": "Text",
+      "IMAGE": "Image",
+      "ANIMATION":"Animation",
+      "POSITION":"Position",
+      "DATA":"Data"
+
+    },
     "SLIDE_NAME": "Slide name",
     "FONTNAME": "Font family",
     "FONTNAME_HELP": "Use any font from the google library",

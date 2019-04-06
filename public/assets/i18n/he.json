@@ -14,7 +14,10 @@
     "SLIDES": "שקפים",
     "FONTS": "גופנים",
     "FINDER": "המאתר",
-    "SHARED": "תבניות"
+    "SHARED": "תבניות",
+    "CLIPART": "צורות",
+    "MANAGE": "ניהול",
+    "CREATE": "יצירה"
   },
   "LOGIN": {
     "TITLE": "כניסה",
@@ -43,6 +46,7 @@
   },
   "SCREENS": {
     "NAME": "שם למסך",
+    "NEW_SCREEN": "מסך חדש",
     "NAME_HELP": "כדאי לבחור שם בעל משמעות.",
     "TOKEN": "קוד זיהוי",
     "TYPE": "סוג",
@@ -56,7 +60,9 @@
     "FOOTER": "כל הזכויות שמורות 2018 ©"
   },
   "DATA": {
-    "CONFIRM_DELETE": "מה, למחוק?"
+    "FORM_NOTSAVED": "המידע לא נשמר, האם להמשיך ללא שמירה?",
+    "CONFIRM_DELETE": "מה, למחוק?",
+    "SELECT": "בחירה"
   },
   "LIBRARY": {
     "NAME": "שם",
@@ -69,9 +75,9 @@
     "AUDIO_DESCRIPTION": "שמע (mp3)",
     "CREATE": "חדש",
     "UPDATE": "עידכון",
-    "MEDIATYPE":"סוג",
-    "URL":"כתובת",
-    "SEARCHTERM":"חיפוש טקסט"
+    "MEDIATYPE": "סוג",
+    "URL": "כתובת",
+    "SEARCHTERM": "חיפוש טקסט"
   },
   "SLIDES": {
     "NAME": "Name your slide",
@@ -121,7 +127,7 @@
     "IMAGE_WIDTH": "רוחב",
     "IMAGE_HEIGHT": "גובה",
     "CENTER": "מירכוז",
-    "REMOVE":"הסרה",
-    "DEPTH":"עומק"
+    "REMOVE": "הסרה",
+    "DEPTH": "עומק"
   }
 }

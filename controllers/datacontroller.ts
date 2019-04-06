@@ -40,7 +40,11 @@ export class DataController {
             _id: Odm.applyObjectID(id),
         },
             { $set: record }, { returnOriginal: true, upsert: true });
-        return new MethodResult(item);
+        if (item.ok === 1) {
+            return new MethodResult(item.value);
+        } else {
+            throw new MethodError(item);
+        }
     }
 
     @Method(Verbs.Delete, '/data/:collection/id/:id')
