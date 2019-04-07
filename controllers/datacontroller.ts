@@ -82,7 +82,7 @@ export class DataController {
         }
 
         const queryX = new DataQuery(collectionName);
-        queryX.filter(queryObject).filter({ user_id: securityContext._id });
+        queryX.filter(queryObject).filter({ user_id: securityContext._id }).order('Date', 'desc');
         try {
             const results = await queryX.run();
             return new MethodResult(results);

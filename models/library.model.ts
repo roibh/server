@@ -11,8 +11,14 @@ export class LibraryModel extends Repo<LibraryModel> {
     @Field()
     public Date?: Date;
     @Field()
-    public Path?: string;
+    public user_id?: string;
+    @Field()
+    public thumb?: string;
+    @Field()
+    public resource?: string;
+    @Field()
+    public MediaType?: string;
     constructor(copyData?: any) {
-        super(copyData, LibraryModel);
-    }
+    super(copyData, LibraryModel);
+}
 }

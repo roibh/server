@@ -52,6 +52,9 @@
             },
             "ClipArt": {
                 "path": "./controllers/clipart.data.controller.ts"
+            },
+            "StockDataController": {
+                "path": "./controllers/stock.data.controller.ts"
             }
         },
         "models": {

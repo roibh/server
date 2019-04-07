@@ -42,7 +42,7 @@ DBHandler.config = configuration;
 @ClientConfiguration(Css, MethodType.Local, ServerType.Express)
 @ClientConfiguration(Admin, MethodType.Local, ServerType.Express)
 @ClientConfiguration(WebFont, MethodType.Http, ServerType.Express, 'https://fonts.googleapis.com')
-@ClientConfiguration(PixaBay, MethodType.Http, ServerType.Express, 'https://pixabay.com/api/')
+@ClientConfiguration(PixaBay, MethodType.Http, ServerType.Express, 'https://pixabay.com/api')
 @ClientConfiguration(StockDataController, MethodType.Local, ServerType.Express)
 class SetupServer extends ConfiguredServer {
     constructor() {
