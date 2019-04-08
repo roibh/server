@@ -140,10 +140,10 @@
     jquery.json-viewer "^1.1.0"
     read-last-lines "^1.6.0"
 
-"@methodus/server@^2.0.7":
-  version "2.0.12"
-  resolved "https://registry.npmjs.org/@methodus/server/-/server-2.0.12.tgz#cc1c206f224bd148595a1be2480343cea2ee0c2c"
-  integrity sha512-7kGJrsMEkzaIN/ew3W24DcCze9d4mH1CWW7olkrH52EjdQHPV0tgpP7K+0NgyBbLTcBcHOu/hEQfSVpeqLaRXQ==
+"@methodus/server@^2.0.15":
+  version "2.0.15"
+  resolved "https://registry.npmjs.org/@methodus/server/-/server-2.0.15.tgz#ec047ff251e97dd87cc536bd8a848f1883807507"
+  integrity sha512-ofb0LPgK7Nv5pZIv07pDuyrNr51G8IqSrxXAxXczUEe2lse2L7Cxtq7dO3Wn5RKCOxTyf/9+DRxP+CC+Vo4Dsw==
   dependencies:
     amqplib "^0.5.1"
     body-parser "^1.17.2"
