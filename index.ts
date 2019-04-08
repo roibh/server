@@ -19,6 +19,7 @@ import { MediaPack } from './controllers/media-pack.data.controller';
 import { WebFont } from './controllers/webfont.contract';
 import { PixaBay } from './controllers/pixabay.contract';
 import { StockDataController } from './controllers/stock.data.controller';
+import { OpenClipart } from './controllers/openclipart.contract';
 
 DBHandler.config = configuration;
 
@@ -43,6 +44,7 @@ DBHandler.config = configuration;
 @ClientConfiguration(Admin, MethodType.Local, ServerType.Express)
 @ClientConfiguration(WebFont, MethodType.Http, ServerType.Express, 'https://fonts.googleapis.com')
 @ClientConfiguration(PixaBay, MethodType.Http, ServerType.Express, 'https://pixabay.com/api')
+@ClientConfiguration(OpenClipart, MethodType.Http, ServerType.Express, 'https://openclipart.org')
 @ClientConfiguration(StockDataController, MethodType.Local, ServerType.Express)
 class SetupServer extends ConfiguredServer {
     constructor() {
