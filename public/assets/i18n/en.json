@@ -126,6 +126,8 @@
       "DATA":"Data"
 
     },
+    "IMAGE_RESET": "Reset image size",
+    "EDIT_SLIDE":"Edit Slide",
     "SLIDE_NAME": "Slide name",
     "FONTNAME": "Font family",
     "FONTNAME_HELP": "Use any font from the google library",
@@ -145,6 +147,7 @@
     "IMAGE_OPACITY": "Opacity",
     "IMAGE_WIDTH": "Width",
     "IMAGE_HEIGHT": "Height",
+    "IMAGE_FIT":"Fit to page",
     "CENTER": "Center",
     "REMOVE": "Remove",
     "DEPTH": "Depth",

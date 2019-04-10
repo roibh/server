@@ -60,6 +60,7 @@ export class StockDataController {
                     id: hit.id,
                     largeImageURL: hit.svg.url,
                     title: hit.title,
+                    thumb: hit.svg.png_thumb,
                     resource: hit.svg.url,
                     webformatURL: hit.svg.url,
                     webformatHeight: hit.dimensions.png_full_lossy.height,
