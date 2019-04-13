@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?bw28ir');
-  src:  url('fonts/icomoon.eot?bw28ir#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?bw28ir') format('truetype'),
-    url('fonts/icomoon.woff?bw28ir') format('woff'),
-    url('fonts/icomoon.svg?bw28ir#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?2cvimd');
+  src:  url('fonts/icomoon.eot?2cvimd#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?2cvimd') format('truetype'),
+    url('fonts/icomoon.woff?2cvimd') format('woff'),
+    url('fonts/icomoon.svg?2cvimd#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -128,6 +128,9 @@
 }
 .icon-price-tags:before {
   content: "\e93b";
+}
+.icon-barcode:before {
+  content: "\e949";
 }
 .icon-ticket:before {
   content: "\e939";
