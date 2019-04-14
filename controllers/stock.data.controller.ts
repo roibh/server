@@ -20,14 +20,14 @@ const s3 = new aws.S3({ signatureVersion: 'v4', region: 'us-east-2' });
 @MethodConfig('StockDataController', [AuthMiddleware])
 export class StockDataController {
     @Method(Verbs.Get, '/stock/')
-    public static async search(@Query('q') q: string,
-                               @Query('page') page: number = 1,
-                               @Query('per_page') per_page: number = 50,
-                               @Query('order') order?: string,
-                               @Query('image_type') image_type?: string,
-                               @Query('orientation') orientation?: string,
-                               @Query('category') category?: string): Promise<MethodResult<any>> {
-        const response = await PixaBay.search(process.env.PIXABAY, q);
+    public static async searchImages(@Query('q') q: string,
+                                     @Query('page') page: number = 1,
+                                     @Query('per_page') per_page: number = 50,
+                                     @Query('order') order?: string,
+                                     @Query('image_type') image_type?: string,
+                                     @Query('orientation') orientation?: string,
+                                     @Query('category') category?: string): Promise<MethodResult<any>> {
+        const response = await PixaBay.searchImage(process.env.PIXABAY, q);
         response.result.hits = response.result.hits.map((hit) => {
             return {
                 MediaType: 'image',
@@ -43,6 +43,32 @@ export class StockDataController {
         });
         return new MethodResult(response.result);
     }
+
+    @Method(Verbs.Get, '/videos/')
+    public static async searchVideos(@Query('q') q: string,
+                                     @Query('page') page: number = 1,
+                                     @Query('per_page') per_page: number = 50,
+                                     @Query('order') order?: string,
+                                     @Query('video_type') video_type?: string,
+
+                                     @Query('category') category?: string): Promise<MethodResult<any>> {
+        const response = await PixaBay.searchVideo(process.env.PIXABAY, q);
+        response.result.hits = response.result.hits.map((hit) => {
+            return {
+                MediaType: 'video',
+                id: hit.id,
+                resource: hit.videos.large.url,
+                Thumb: hit.userImageURL,
+                tags: hit.tags,
+                webformatURL: hit.userImageURL,
+                webformatHeight: hit.videos.large.height,
+                webformatWidth: hit.videos.large.width,
+
+            };
+        });
+        return new MethodResult(response.result);
+    }
+
     @Method(Verbs.Get, '/clipart/')
     public static async clipart(@Query('q') q: string,
                                 @Query('page') page: number = 1,
@@ -236,7 +262,7 @@ export class StockDataController {
             let fileName = '';
             let mimeType = '';
             request
-                .get(image.webformatURL)
+                .get(image.resource)
                 .on('response', (response) => {
                     if (response.headers['content-disposition'] &&
                         response.headers['content-disposition'] !== 'inline') {
@@ -247,6 +273,7 @@ export class StockDataController {
                     mimeType = response.headers['content-type'];
                 })
                 .pipe(bl((error, data) => {
+                    console.log(error);
 
                     const dateKey = moment().format('MM_YYYY');
                     const persist_filename = securityContext._id + '/' + dateKey + '/' + `${image.id}`;
@@ -284,10 +311,10 @@ export class StockDataController {
             user_id: securityContext._id,
             width: image.webformatWidth,
             height: image.webformatHeight,
-            thumb: uploadResult.url,
+            Thumb: image.Thumb,
             resource: uploadResult.url,
             Date: new Date(),
-            MediaType: 'image',
+            MediaType: 'video',
         });
         return new MethodResult(insertResult);
     }
