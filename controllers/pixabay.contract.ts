@@ -21,7 +21,7 @@ export class PixaBay {
                                     @Query('page') page?: number,
                                     @Query('per_page') per_page?: number,
                                     @Query('order') order?: string,
-                                    @Query('video_type') image_type?: string,
+                                    @Query('video_type') video_type?: string,
                                     @Query('category') category?: string): Promise<MethodResult<any>> {
         return new MethodResult({});
     }

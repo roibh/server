@@ -453,6 +453,27 @@ avvio@^5.8.0:
     debug "^3.1.0"
     fastq "^1.6.0"
 
+aws-s3-size@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.npmjs.org/aws-s3-size/-/aws-s3-size-0.1.0.tgz#e26dc4e60b4ff518879cdf71561077a45613985e"
+  integrity sha1-4m3E5gtP9RiHnN9xVhB3pFYTmF4=
+  dependencies:
+    aws-sdk "2.0.16"
+
+"aws-sdk-apis@>=3.1.0 <4.0.0":
+  version "3.1.10"
+  resolved "https://registry.npmjs.org/aws-sdk-apis/-/aws-sdk-apis-3.1.10.tgz#4eed97f590a16cf080fd1b8d8cfdf2472de8ab0e"
+  integrity sha1-Tu2X9ZChbPCA/RuNjP3yRy3oqw4=
+
+aws-sdk@2.0.16:
+  version "2.0.16"
+  resolved "https://registry.npmjs.org/aws-sdk/-/aws-sdk-2.0.16.tgz#6546500287e0eb4f3f1f008a1166b2daad2f2c5a"
+  integrity sha1-ZUZQAofg608/HwCKEWay2q0vLFo=
+  dependencies:
+    aws-sdk-apis ">=3.1.0 <4.0.0"
+    xml2js "0.2.6"
+    xmlbuilder "0.4.2"
+
 aws-sdk@^2.368.0:
   version "2.409.0"
   resolved "https://registry.npmjs.org/aws-sdk/-/aws-sdk-2.409.0.tgz#d017060ba9e005487c68dc34a592af74d916f295"
@@ -3610,6 +3631,11 @@ saslprep@^1.0.0:
   dependencies:
     sparse-bitfield "^3.0.3"
 
+sax@0.4.2:
+  version "0.4.2"
+  resolved "https://registry.npmjs.org/sax/-/sax-0.4.2.tgz#39f3b601733d6bec97105b242a2a40fd6978ac3c"
+  integrity sha1-OfO2AXM9a+yXEFskKipA/Wl4rDw=
+
 sax@1.2.1:
   version "1.2.1"
   resolved "https://registry.npmjs.org/sax/-/sax-1.2.1.tgz#7b8e656190b228e81a66aea748480d828cd2d37a"
@@ -4447,6 +4473,13 @@ ws@~6.1.0:
   dependencies:
     async-limiter "~1.0.0"
 
+xml2js@0.2.6:
+  version "0.2.6"
+  resolved "https://registry.npmjs.org/xml2js/-/xml2js-0.2.6.tgz#d209c4e4dda1fc9c452141ef41c077f5adfdf6c4"
+  integrity sha1-0gnE5N2h/JxFIUHvQcB39a399sQ=
+  dependencies:
+    sax "0.4.2"
+
 xml2js@0.4.19:
   version "0.4.19"
   resolved "https://registry.npmjs.org/xml2js/-/xml2js-0.4.19.tgz#686c20f213209e94abf0d1bcf1efaa291c7827a7"
@@ -4454,6 +4487,11 @@ xml2js@0.4.19:
   dependencies:
     sax ">=0.6.0"
     xmlbuilder "~9.0.1"
+
+xmlbuilder@0.4.2:
+  version "0.4.2"
+  resolved "https://registry.npmjs.org/xmlbuilder/-/xmlbuilder-0.4.2.tgz#1776d65f3fdbad470a08d8604cdeb1c4e540ff83"
+  integrity sha1-F3bWXz/brUcKCNhgTN6xxOVA/4M=
 
 xmlbuilder@~9.0.1:
   version "9.0.7"

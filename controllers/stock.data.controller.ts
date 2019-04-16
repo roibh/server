@@ -52,7 +52,7 @@ export class StockDataController {
                                      @Query('video_type') video_type?: string,
 
                                      @Query('category') category?: string): Promise<MethodResult<any>> {
-        const response = await PixaBay.searchVideo(process.env.PIXABAY, q);
+        const response = await PixaBay.searchVideo(process.env.PIXABAY, q, 1, 50, 'popularity', 'all');
         response.result.hits = response.result.hits.map((hit) => {
             return {
                 MediaType: 'video',
@@ -254,7 +254,7 @@ export class StockDataController {
     }
 
     @Method(Verbs.Post, '/stock/import/video')
-    public static async importVideo(@Body('image') image: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
+    public static async importVideo(@Body('video') video: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
 
         const promiseResult = new Promise((resolve, reject) => {
 
@@ -262,13 +262,13 @@ export class StockDataController {
             let fileName = '';
             let mimeType = '';
             request
-                .get(image.resource)
+                .get(video.resource)
                 .on('response', (response) => {
                     if (response.headers['content-disposition'] &&
                         response.headers['content-disposition'] !== 'inline') {
                         fileName = regexp.exec(response.headers['content-disposition'])[1];
                     } else {
-                        fileName = image.title;
+                        fileName = video.title;
                     }
                     mimeType = response.headers['content-type'];
                 })
@@ -276,7 +276,7 @@ export class StockDataController {
                     console.log(error);
 
                     const dateKey = moment().format('MM_YYYY');
-                    const persist_filename = securityContext._id + '/' + dateKey + '/' + `${image.id}`;
+                    const persist_filename = securityContext._id + '/' + dateKey + '/' + `${video.id}`;
 
                     const s3Params = {
                         ACL: 'public-read',
@@ -309,9 +309,9 @@ export class StockDataController {
         // insert into local library
         const insertResult = await LibraryModel.insert({
             user_id: securityContext._id,
-            width: image.webformatWidth,
-            height: image.webformatHeight,
-            Thumb: image.Thumb,
+            width: video.webformatWidth,
+            height: video.webformatHeight,
+            Thumb: video.Thumb,
             resource: uploadResult.url,
             Date: new Date(),
             MediaType: 'video',

@@ -106,6 +106,10 @@
     "UPDATE": "Update",
     "SETTIME": "Set"
   },
+  "PLAYLIST": {
+    "EFFECT": "Effect",
+    "DURATION": "Duration"
+  },
   "DATA": {
     "FORM_NOTSAVED": "The form was not saved, you will lose all changes.",
     "CONFIRM_DELETE": "Please confirm the delete.",
@@ -121,13 +125,12 @@
       "SLIDE": "Slide",
       "TEXT": "Text",
       "IMAGE": "Image",
-      "ANIMATION":"Animation",
-      "POSITION":"Position",
-      "DATA":"Data"
-
+      "ANIMATION": "Animation",
+      "POSITION": "Position",
+      "DATA": "Data"
     },
     "IMAGE_RESET": "Reset image size",
-    "EDIT_SLIDE":"Edit Slide",
+    "EDIT_SLIDE": "Edit Slide",
     "SLIDE_NAME": "Slide name",
     "FONTNAME": "Font family",
     "FONTNAME_HELP": "Use any font from the google library",
@@ -147,7 +150,7 @@
     "IMAGE_OPACITY": "Opacity",
     "IMAGE_WIDTH": "Width",
     "IMAGE_HEIGHT": "Height",
-    "IMAGE_FIT":"Fit to page",
+    "IMAGE_FIT": "Fit to page",
     "CENTER": "Center",
     "REMOVE": "Remove",
     "DEPTH": "Depth",
