@@ -54,11 +54,12 @@ export class StockDataController {
                                      @Query('category') category?: string): Promise<MethodResult<any>> {
         const response = await PixaBay.searchVideo(process.env.PIXABAY, q, 1, 50, 'popularity', 'all');
         response.result.hits = response.result.hits.map((hit) => {
+
             return {
                 MediaType: 'video',
                 id: hit.id,
                 resource: hit.videos.large.url,
-                Thumb: hit.userImageURL,
+                Thumb: `https://i.vimeocdn.com/video/${hit.picture_id}_295x166.jpg`,
                 tags: hit.tags,
                 webformatURL: hit.userImageURL,
                 webformatHeight: hit.videos.large.height,
@@ -73,7 +74,7 @@ export class StockDataController {
     public static async clipart(@Query('q') q: string,
                                 @Query('page') page: number = 1,
                                 @Query('per_page') per_page: number = 50,
-                                @Query('order') order: string= 'date',
+                                @Query('order') order: string = 'date',
                                 @Query('image_type') image_type?: string,
                                 @Query('orientation') orientation?: string,
                                 @Query('category') category?: string): Promise<MethodResult<any>> {

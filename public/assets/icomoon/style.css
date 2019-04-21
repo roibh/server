@@ -747,3 +747,8 @@
 .icon-window-close-o:before {
   content: "\f2d4";
 }
+
+
+.explain{
+  min-width: 250px;
+}

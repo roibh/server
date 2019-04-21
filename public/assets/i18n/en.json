@@ -108,7 +108,8 @@
   },
   "PLAYLIST": {
     "EFFECT": "Effect",
-    "DURATION": "Duration"
+    "DURATION": "Duration",
+    "SECONDS":"Sec."
   },
   "DATA": {
     "FORM_NOTSAVED": "The form was not saved, you will lose all changes.",
@@ -121,6 +122,7 @@
   "PANEL": {
     "FIELDSETS": {
       "ELEMENTS": "Elements",
+      "NOELEMENTS": "No elements, add one.",
       "GENERAL": "General",
       "SLIDE": "Slide",
       "TEXT": "Text",
@@ -129,6 +131,9 @@
       "POSITION": "Position",
       "DATA": "Data"
     },
+    "ORIENTATION": "Orientation",
+    "LANDSCAPE": "Landscape",
+    "PORTRAIT": "Portrait",
     "IMAGE_RESET": "Reset image size",
     "EDIT_SLIDE": "Edit Slide",
     "SLIDE_NAME": "Slide name",
@@ -190,6 +195,38 @@
     "TITLE": "Share as a Template",
     "VARNAME": "Variable name",
     "DEFAULTVALUE": "Default value"
+  },
+  "EXPLAIN": {
+    "ELEMENTS": {
+      "TEXT": {
+        "TITLE": "Text tool",
+        "CONTENT": "Insert text blocks using custom & google fonts"
+      },
+      "PLUGIN": {
+        "TITLE": "Plugin library",
+        "CONTENT": "Reuse preconfigured slides & plugins."
+      },
+      "VIDEO": {
+        "TITLE": "Video library",
+        "CONTENT": "Insert video."
+      },
+      "IMAGE": {
+        "TITLE": "Image library",
+        "CONTENT": "Import & use high-res photos and images."
+      },
+      "CLIPART": {
+        "TITLE": "Clipart library",
+        "CONTENT": "Import & use clipart elements."
+      },
+      "FRAME": {
+        "TITLE": "Frame tool",
+        "CONTENT": "Display content directly from amother website."
+      },
+      "BARCODE": {
+        "TITLE": "QRcode tool",
+        "CONTENT": "Generate QR codes and embed them in your slides."
+      }
+    }
   },
   "PUBLIC": {
     "FEATURES": {

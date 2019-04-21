@@ -2,6 +2,7 @@ import { MethodConfig, Method, Verbs, MethodError, MethodResult, Param } from '@
 import { TokenModel, ScreenModel, PlaylistModel, SlideModel } from '../models/';
 import { Query, ObjectId, Odm } from '@methodus/data';
 import { ODM } from '@methodus/data/lib/odm-models';
+import * as etag from 'etag';
 
 @MethodConfig('PlayerController', [])
 export class PlayerController {
@@ -33,8 +34,15 @@ export class PlayerController {
 
     }
 
-    @Method(Verbs.Post, '/run-player/:group')
-    public static async runPlayer(@Param('group') group: any): Promise<MethodResult> {
+    @Method(Verbs.Post, '/run-player/:group/:screen_id')
+    public static async runPlayer(@Param('group') group: any, @Param('screen_id') screen_id: any): Promise<MethodResult> {
+
+        // validate screen
+
+        const screen = await ScreenModel.get(screen_id);
+        if (!screen) {
+            throw new MethodError('invalid screen request');
+        }
         const timePlan = await PlaylistModel.query(new Query('Playlist')
             .filter({ 'TimeSlots.screenGroup._id': group }));
         const slides = [];
@@ -59,15 +67,9 @@ export class PlayerController {
                 }
             });
         });
-
-        return new MethodResult(timePlan);
-
-        // if (existing && existing.length > 0) {
-        //     const result = await TokenModel.update({ Token: token }, { Date: new Date(), Status: 'active' });
-        //     return new MethodResult(result);
-        // } else {
-        //     return new MethodResult(existing);
-        // }
+        const Etag = etag(JSON.stringify(timePlan));
+        const result = new MethodResult({ timePlan, Etag });
+        result.setHeader('ETag', Etag);
+        return result;
     }
-
 }
