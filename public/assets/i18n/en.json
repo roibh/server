@@ -62,6 +62,12 @@
   "DASHBOARD": {
     "FOOTER": "All rights reserved ©"
   },
+  "CONTEXTMENU": {
+    "COPY": "Copy",
+    "PASTE": "Paste",
+    "CUT": "Cut",
+    "DELETE": "DELETE"
+  },
   "LIBRARY": {
     "NAME": "Name",
     "NAME_HELP": "Try using a meaningful name",
@@ -109,7 +115,7 @@
   "PLAYLIST": {
     "EFFECT": "Effect",
     "DURATION": "Duration",
-    "SECONDS":"Sec."
+    "SECONDS": "Sec."
   },
   "DATA": {
     "FORM_NOTSAVED": "The form was not saved, you will lose all changes.",
