@@ -88,4 +88,37 @@ export class Upload {
         return new MethodResult(result);
     }
 
+    @Method(Verbs.Post, '/remove')
+    // tslint:disable-next-line:max-line-length
+    public static async remove(@Query('file_name') file_name: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
+        if (!file_name) {
+            throw (new MethodError('no data'));
+        }
+        let files = file_name;
+        if (!Array.isArray(file_name)) {
+            files = [file_name];
+        }
+
+        const result = await new Promise((resolve, reject) => {
+            files.forEach((file) => {
+
+                const s3Params = {
+                    Bucket: S3_BUCKET,
+                    Delete: { Objects: [{
+                        Key: file.replace('https://s3.us-east-2.amazonaws.com/sign-nature-raw/', '') }] },
+                };
+
+                s3.deleteObjects(s3Params, (err, data) => {
+                    if (err) {
+                        return reject(err);
+                    } else {
+                        resolve();
+                    }
+                });
+
+            });
+        });
+        return new MethodResult(result);
+    }
+
 }

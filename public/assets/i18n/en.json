@@ -84,8 +84,23 @@
     "URL_HELP": "Paste any page url address.",
     "SEARCHTERM": "Keyword",
     "MEDIAPACK": "Media pack",
+    "FONT_WEIGHT":"Font Weight",
+    "FONT_STYLE":"Font Style",
+    "FONT_WEIGHT_HELP":"Set your custom font weight (light - bold)",
+    "FONT_STYLE_HELP": "Set your custom font style",
     "FONT_PREVIEW": "Font Preview",
     "FONT_LONG_PREVIEW": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  "MEDIA": {
+    "TABS":{
+      "UPLOAD": "Upload",
+      "IMPORT":"Import",
+      "EMBED": "Embed code"
+    },
+    "NEW_ITEM": "Media Item",
+    "NEW_FONT":"New Font",
+    "NEW_CLIPAR":"New Graphics",
+    "IMPORT": "Import"
   },
   "SLIDES": {
     "NAME": "Name your slide",
@@ -140,7 +155,11 @@
     "ORIENTATION": "Orientation",
     "LANDSCAPE": "Landscape",
     "PORTRAIT": "Portrait",
-    "IMAGE_RESET": "Reset image size",
+    "SCALE": "Scale",
+    "IMAGE_RESET": "Original",
+    "IMAGE_RESET_TIP": "Reset to original image size",
+    "IMAGE_FIT": "Fit",
+    "IMAGE_FIT_TIP": "Fit image to page",
     "EDIT_SLIDE": "Edit Slide",
     "SLIDE_NAME": "Slide name",
     "FONTNAME": "Font family",
@@ -161,7 +180,6 @@
     "IMAGE_OPACITY": "Opacity",
     "IMAGE_WIDTH": "Width",
     "IMAGE_HEIGHT": "Height",
-    "IMAGE_FIT": "Fit to page",
     "CENTER": "Center",
     "REMOVE": "Remove",
     "DEPTH": "Depth",

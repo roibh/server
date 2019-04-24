@@ -29,17 +29,26 @@ export class StockDataController {
                                      @Query('category') category?: string): Promise<MethodResult<any>> {
         const response = await PixaBay.searchImage(process.env.PIXABAY, q);
         response.result.hits = response.result.hits.map((hit) => {
-            return {
-                MediaType: 'image',
-                id: hit.id,
-                largeImageURL: hit.largeImageURL,
-                resource: hit.previewURL,
-                tags: hit.tags,
-                webformatURL: hit.webformatURL,
-                webformatHeight: hit.webformatHeight,
-                webformatWidth: hit.webformatWidth,
+            try {
+                const arr = hit.previewURL.split('/');
 
-            };
+                return {
+                    Name: arr[arr.length - 1],
+                    MediaType: 'image',
+                    id: hit.id,
+                    imageType: hit.type,
+                    largeImageURL: hit.largeImageURL,
+                    resource: hit.previewURL,
+                    tags: hit.tags,
+                    webformatURL: hit.webformatURL,
+                    webformatHeight: hit.webformatHeight,
+                    webformatWidth: hit.webformatWidth,
+
+                };
+            } catch (ex) {
+                return null;
+            }
+
         });
         return new MethodResult(response.result);
     }
@@ -179,6 +188,7 @@ export class StockDataController {
         // insert into local library
         const insertResult = await LibraryModel.insert({
             user_id: securityContext._id,
+            Name: image.Name,
             width: image.webformatWidth,
             height: image.webformatHeight,
             thumb: uploadResult.url,
@@ -244,6 +254,7 @@ export class StockDataController {
         // insert into local library
         const insertResult = await ClipArtModel.insert({
             user_id: securityContext._id,
+            Name: image.Name,
             width: image.webformatWidth,
             height: image.webformatHeight,
             thumb: uploadResult.url,
@@ -310,6 +321,7 @@ export class StockDataController {
         // insert into local library
         const insertResult = await LibraryModel.insert({
             user_id: securityContext._id,
+            Name: video.Name,
             width: video.webformatWidth,
             height: video.webformatHeight,
             Thumb: video.Thumb,
