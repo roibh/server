@@ -21,10 +21,11 @@
   "dependencies": {
     "@methodus/data": "^1.0.1",
     "@methodus/describe": "latest",
-    "@methodus/server": "^2.0.15",
+    "@methodus/server": "^3.0.0",
     "@types/node": "^10.0.4",
     "aws-s3-size": "^0.1.0",
     "aws-sdk": "^2.368.0",
+    "bl": "^3.0.0",
     "chrome-bridge": "^0.1.2",
     "etag": "^1.8.1",
     "jsonwebtoken": "^8.4.0",

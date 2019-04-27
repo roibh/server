@@ -1,7 +1,8 @@
 import * as path from 'path';
-import * as express from 'express';
+import { BuiltInServers } from '@methodus/server';
+
 export function init(config, pluginOptions) {
-    config.run('express', {
+    config.run(BuiltInServers.Express, {
         onStart: (instance) => {
             const options = {
                 etag: true,
@@ -14,16 +15,16 @@ export function init(config, pluginOptions) {
                 },
             };
             const clientDir = path.resolve(path.join(__dirname, pluginOptions.clientPath));
-
-            instance.use(pluginOptions.path, express.static(clientDir, options));
+            console.log(clientDir);
+            instance.use(pluginOptions.path, BuiltInServers.Express.static(clientDir, options));
 
             const playerDir = path.resolve(path.join(__dirname, pluginOptions.clientPath + '_player'));
-
-            instance.use(pluginOptions.path + '_player', express.static(playerDir, options));
+            console.log(playerDir);
+            instance.use(pluginOptions.path + '_player', BuiltInServers.Express.static(playerDir, options));
 
             const adminDir = path.resolve(path.join(__dirname, pluginOptions.clientPath + '_admin'));
 
-            instance.use(pluginOptions.path + '_admin', express.static(adminDir, options));
+            instance.use(pluginOptions.path + '_admin', BuiltInServers.Express.static(adminDir, options));
 
         },
     });

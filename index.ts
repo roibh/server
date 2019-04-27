@@ -2,6 +2,8 @@
 import {
     ServerConfiguration, PluginConfiguration,
     ClientConfiguration, ConfiguredServer, MethodType, ServerType,
+    RouterConfiguration,
+    TransportType, BuiltInServers, BuiltInTransports,
 } from '@methodus/server';
 
 export * from './models/';
@@ -23,29 +25,32 @@ import { OpenClipart } from './controllers/openclipart.contract';
 
 DBHandler.config = configuration;
 
-@ServerConfiguration(ServerType.Express, { port: process.env.PORT || 6299 })
-@PluginConfiguration('@methodus/describe')
+@ServerConfiguration(BuiltInServers.Express, { port: process.env.PORT || 6299 })
+
+// @PluginConfiguration('@methodus/describe')
 @PluginConfiguration(path.join(__dirname, 'static'), { path: '/', clientPath: '/public' })
-@ClientConfiguration(UserController, MethodType.Local, ServerType.Express)
-@ClientConfiguration(AuthController, MethodType.Local, ServerType.Express)
-@ClientConfiguration(Playlist, MethodType.Local, ServerType.Express)
-@ClientConfiguration(ScreensDataController, MethodType.Local, ServerType.Express)
-@ClientConfiguration(MediaPack, MethodType.Local, ServerType.Express)
-@ClientConfiguration(LibraryDataController, MethodType.Local, ServerType.Express)
-@ClientConfiguration(Upload, MethodType.Local, ServerType.Express)
-@ClientConfiguration(SlidesDataController, MethodType.Local, ServerType.Express)
-@ClientConfiguration(PlayerController, MethodType.Local, ServerType.Express)
-@ClientConfiguration(ShareDataController, MethodType.Local, ServerType.Express)
-@ClientConfiguration(ScreenGroupDataController, MethodType.Local, ServerType.Express)
-@ClientConfiguration(ScheduleDataController, MethodType.Local, ServerType.Express)
-@ClientConfiguration(Font, MethodType.Local, ServerType.Express)
-@ClientConfiguration(ClipArt, MethodType.Local, ServerType.Express)
-@ClientConfiguration(Css, MethodType.Local, ServerType.Express)
-@ClientConfiguration(Admin, MethodType.Local, ServerType.Express)
-@ClientConfiguration(WebFont, MethodType.Http, ServerType.Express, 'https://fonts.googleapis.com')
-@ClientConfiguration(PixaBay, MethodType.Http, ServerType.Express, 'https://pixabay.com/api')
-@ClientConfiguration(OpenClipart, MethodType.Http, ServerType.Express, 'https://openclipart.org')
-@ClientConfiguration(StockDataController, MethodType.Local, ServerType.Express)
+
+@RouterConfiguration(UserController, ServerType.Express)
+@RouterConfiguration(AuthController, ServerType.Express)
+@RouterConfiguration(Playlist, ServerType.Express)
+@RouterConfiguration(ScreensDataController, ServerType.Express)
+@RouterConfiguration(MediaPack, ServerType.Express)
+@RouterConfiguration(LibraryDataController, ServerType.Express)
+@RouterConfiguration(Upload, ServerType.Express)
+@RouterConfiguration(SlidesDataController, ServerType.Express)
+@RouterConfiguration(PlayerController, ServerType.Express)
+@RouterConfiguration(ShareDataController, ServerType.Express)
+@RouterConfiguration(ScreenGroupDataController, ServerType.Express)
+@RouterConfiguration(ScheduleDataController, ServerType.Express)
+@RouterConfiguration(Font, ServerType.Express)
+@RouterConfiguration(ClipArt, ServerType.Express)
+@RouterConfiguration(Css, ServerType.Express)
+@RouterConfiguration(StockDataController, ServerType.Express)
+@RouterConfiguration(Admin, ServerType.Express)
+
+@ClientConfiguration(WebFont, BuiltInTransports.Http, 'https://fonts.googleapis.com')
+@ClientConfiguration(PixaBay, BuiltInTransports.Http, 'https://pixabay.com/api')
+@ClientConfiguration(OpenClipart, BuiltInTransports.Http, 'https://openclipart.org')
 class SetupServer extends ConfiguredServer {
     constructor() {
         super(SetupServer);
