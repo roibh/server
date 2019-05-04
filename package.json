@@ -19,8 +19,8 @@
   "author": "DO",
   "license": "ISC",
   "dependencies": {
-    "@methodus/data": "^1.0.1",
-    "@methodus/describe": "latest",
+    "@methodus/data": "^2.0.0",
+    "@methodus/describe": "^3.0.6",
     "@methodus/server": "^3.0.0",
     "@types/node": "^10.0.4",
     "aws-s3-size": "^0.1.0",
@@ -38,8 +38,8 @@
   "devDependencies": {
     "@methodus/contracts": "^1.0.14",
     "alsatian": "^2.3.0",
-    "nyc": "^12.0.2",
+    "nyc": "^13.0.0",
     "tslint": "^5.11.0",
-    "typescript": "^3.1.3"
+    "typescript": "^3.4.3"
   }
 }
