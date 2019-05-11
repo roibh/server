@@ -1,5 +1,7 @@
-import { MethodConfigBase, Method, Param, MethodResult, Body, Query, SecurityContext, MethodError, MethodMock } from '@methodus/server';
-import { Verbs } from '@methodus/server/src/rest';
+import {
+    MethodConfigBase, Method, Param, Verbs, MethodResult, Body,
+    Query, SecurityContext, MethodError, MethodMock,
+} from '@methodus/server';
 import { Query as DataQuery, ObjectId, Odm, DBHandler, ReturnType } from '@methodus/data';
 import { Mocks } from './mocks';
 import { Upload } from './upload.controller';
@@ -7,14 +9,17 @@ import { Upload } from './upload.controller';
 @MethodConfigBase('DataController')
 export class DataController {
     @Method(Verbs.Get, '/data/:collection/id/:id')
-    public static async get(@Param('collection') collectionName: string, @Param('id') id: string): Promise<MethodResult> {
+    public static async get(@Param('collection') collectionName: string,
+                            @Param('id') id: string): Promise<MethodResult> {
         const queryX = new DataQuery(collectionName).filter({ _id: Odm.applyObjectID(id) });
         const item = await queryX.run(ReturnType.Single);
         return new MethodResult(item);
     }
 
     @Method(Verbs.Get, '/data/:collection/ids/:ids')
-    public static async getSet(@Param('collection') collectionName: string, @Param('ids') ids: string, @SecurityContext() securityContext: any): Promise<MethodResult> {
+    public static async getSet(@Param('collection') collectionName: string,
+                               @Param('ids') ids: string,
+                               @SecurityContext() securityContext: any): Promise<MethodResult> {
         const queryX = new DataQuery(collectionName);
         const idsArr = ids.split(',').map((item) => Odm.applyObjectID(item));
         queryX.in('_id', idsArr);
@@ -24,7 +29,9 @@ export class DataController {
     }
 
     @Method(Verbs.Post, '/data/:collection/insert')
-    public static async create(@Param('collection') collectionName: string, @Body('record') record: any, @SecurityContext() securityContext: any): Promise<MethodResult> {
+    public static async create(@Param('collection') collectionName: string,
+                               @Body('record') record: any,
+                               @SecurityContext() securityContext: any): Promise<MethodResult> {
 
         record.user_id = securityContext._id;
         const dbConnection = await DBHandler.getConnection();
@@ -34,7 +41,10 @@ export class DataController {
     }
 
     @Method(Verbs.Post, '/data/:collection/id/:id')
-    public static async update(@Param('collection') collectionName: string, @Param('id') id: string, @Body('record') record: any, @SecurityContext() securityContext: any): Promise<MethodResult> {
+    public static async update(@Param('collection') collectionName: string,
+                               @Param('id') id: string,
+                               @Body('record') record: any,
+                               @SecurityContext() securityContext: any): Promise<MethodResult> {
         delete record._id;
         const dbConnection = await DBHandler.getConnection();
         const item = await dbConnection.collection(collectionName).findOneAndUpdate({
@@ -56,7 +66,7 @@ export class DataController {
         const item = await dbConnection.collection(collectionName).findOneAndDelete({ _id: Odm.applyObjectID(id) });
 
         if (item.value && item.value.resource) {
-           await Upload.remove(item.value.resource, securityContext);
+            await Upload.remove(item.value.resource, securityContext);
         }
         return new MethodResult(item);
     }

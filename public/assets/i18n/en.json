@@ -84,22 +84,22 @@
     "URL_HELP": "Paste any page url address.",
     "SEARCHTERM": "Keyword",
     "MEDIAPACK": "Media pack",
-    "FONT_WEIGHT":"Font Weight",
-    "FONT_STYLE":"Font Style",
-    "FONT_WEIGHT_HELP":"Set your custom font weight (light - bold)",
+    "FONT_WEIGHT": "Font Weight",
+    "FONT_STYLE": "Font Style",
+    "FONT_WEIGHT_HELP": "Set your custom font weight (light - bold)",
     "FONT_STYLE_HELP": "Set your custom font style",
     "FONT_PREVIEW": "Font Preview",
     "FONT_LONG_PREVIEW": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
   },
   "MEDIA": {
-    "TABS":{
+    "TABS": {
       "UPLOAD": "Upload",
-      "IMPORT":"Import",
+      "IMPORT": "Import",
       "EMBED": "Embed code"
     },
     "NEW_ITEM": "Media Item",
-    "NEW_FONT":"New Font",
-    "NEW_CLIPAR":"New Graphics",
+    "NEW_FONT": "New Font",
+    "NEW_CLIPAR": "New Graphics",
     "IMPORT": "Import"
   },
   "SLIDES": {
@@ -125,12 +125,16 @@
     "RESET": "Reset",
     "CREATE": "New",
     "UPDATE": "Update",
-    "SETTIME": "Set"
+    "SETTIME": "Set Time"
   },
   "PLAYLIST": {
     "EFFECT": "Effect",
     "DURATION": "Duration",
-    "SECONDS": "Sec."
+    "SECONDS": "Sec.",
+    "DISPLAYING": "Displaying",
+    "ON": "on",
+    "SHOW_SCHEDULE": "Show Schedule",
+    "SLIDE_ACTIONS": "Slide actions:"
   },
   "DATA": {
     "FORM_NOTSAVED": "The form was not saved, you will lose all changes.",
@@ -138,7 +142,9 @@
     "SELECT": "Select"
   },
   "TIMES": {
-    "ALL": "All the time"
+    "ALL": "All the time",
+    "8amTO8pm": "8am to 8pm",
+    "8pmTO8am": "8pm to 8am"
   },
   "PANEL": {
     "FIELDSETS": {
@@ -244,7 +250,7 @@
       },
       "FRAME": {
         "TITLE": "Frame tool",
-        "CONTENT": "Display content directly from amother website."
+        "CONTENT": "Display content directly from another website."
       },
       "BARCODE": {
         "TITLE": "QRcode tool",

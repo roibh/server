@@ -5,11 +5,11 @@
         "buildPath": "../",
         "path": "./",
         "contracts": {
-            "Admin": {
-                "path": "./controllers/admin.controller.ts"
-            },
             "DataController": {
                 "path": "./controllers/datacontroller.ts"
+            },
+            "Admin": {
+                "path": "./controllers/admin.controller.ts"
             },
             "Upload": {
                 "path": "./controllers/upload.controller.ts"

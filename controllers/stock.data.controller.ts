@@ -87,38 +87,28 @@ export class StockDataController {
                                 @Query('image_type') image_type?: string,
                                 @Query('orientation') orientation?: string,
                                 @Query('category') category?: string): Promise<MethodResult<any>> {
-        const response = await OpenClipart.search(q, page, per_page, order);
+        const response = await PixaBay.searchImage(process.env.PIXABAY, q, page, per_page, '', 'vector');
 
         response.result = {
-            hits: response.result.payload.map((hit) => {
+            hits: response.result.hits.map((hit) => {
+                const arr = hit.previewURL.split('/');
                 return {
+                    Name: arr[arr.length - 1],
                     MediaType: 'image',
                     id: hit.id,
-                    largeImageURL: hit.svg.url,
-                    title: hit.title,
-                    thumb: hit.svg.png_thumb,
-                    resource: hit.svg.url,
-                    webformatURL: hit.svg.url,
-                    webformatHeight: hit.dimensions.png_full_lossy.height,
-                    webformatWidth: hit.dimensions.png_full_lossy.width,
-                    tags: hit.tags_array.join(','),
+                    imageType: hit.type,
+                    largeImageURL: hit.largeImageURL,
+                    resource: hit.largeImageURL,
+                    thumb: hit.webformatURL,
+                    tags: hit.tags,
+                    webformatURL: hit.webformatURL,
+                    webformatHeight: hit.webformatHeight,
+                    webformatWidth: hit.webformatWidth,
+
                 };
             }),
         };
 
-        // response.result.hits = response.result.hits.map((hit) => {
-        //     return {
-        //         MediaType: 'image',
-        //         id: hit.id,
-        //         largeImageURL: hit.largeImageURL,
-        //         resource: hit.previewURL,
-        //         tags: hit.tags,
-        //         webformatURL: hit.webformatURL,
-        //         webformatHeight: hit.webformatHeight,
-        //         webformatWidth: hit.webformatWidth,
-
-        //     };
-        // });
         return new MethodResult(response.result);
     }
     @Method(Verbs.Get, '/stock/categories')

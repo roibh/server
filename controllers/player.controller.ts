@@ -1,7 +1,6 @@
 import { MethodConfig, Method, Verbs, MethodError, MethodResult, Param } from '@methodus/server';
 import { TokenModel, ScreenModel, PlaylistModel, SlideModel } from '../models/';
-import { Query, ObjectId, Odm } from '@methodus/data';
-import { ODM } from '@methodus/data/lib/odm-models';
+import { Query, Odm } from '@methodus/data';
 import * as etag from 'etag';
 
 @MethodConfig('PlayerController', [])
