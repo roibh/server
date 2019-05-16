@@ -4,57 +4,59 @@
         "contractNameClient": "@signnature/client",
         "buildPath": "../",
         "path": "./",
+        "buildFolder": "build",
+        "srcFolder": "src",
         "contracts": {
             "DataController": {
-                "path": "./controllers/datacontroller.ts"
+                "path": "./src/controllers/datacontroller.ts"
             },
             "Admin": {
-                "path": "./controllers/admin.controller.ts"
+                "path": "./src/controllers/admin.controller.ts"
             },
             "Upload": {
-                "path": "./controllers/upload.controller.ts"
+                "path": "./src/controllers/upload.controller.ts"
             },
             "UserController": {
-                "path": "./controllers/user.data.controller.ts"
+                "path": "./src/controllers/user.data.controller.ts"
             },
             "AuthController": {
-                "path": "./controllers/auth.controller.ts"
+                "path": "./src/controllers/auth.controller.ts"
             },
             "ScreensDataController": {
-                "path": "./controllers/screen.data.controller.ts"
+                "path": "./src/controllers/screen.data.controller.ts"
             },
             "LibraryDataController": {
-                "path": "./controllers/library.data.controller.ts"
+                "path": "./src/controllers/library.data.controller.ts"
             },
             "SlidesDataController": {
-                "path": "./controllers/slides.data.controller.ts"
+                "path": "./src/controllers/slides.data.controller.ts"
             },
             "Playlist": {
-                "path": "./controllers/playlist.data.controller.ts"
+                "path": "./src/controllers/playlist.data.controller.ts"
             },
             "PlayerController": {
-                "path": "./controllers/player.controller.ts"
+                "path": "./src/controllers/player.controller.ts"
             },
             "ScreenGroupDataController": {
-                "path": "./controllers/screen-group.data.controller.ts"
+                "path": "./src/controllers/screen-group.data.controller.ts"
             },
             "ScheduleDataController": {
-                "path": "./controllers/schedule.data.controller.ts"
+                "path": "./src/controllers/schedule.data.controller.ts"
             },
             "ShareDataController": {
-                "path": "./controllers/share.data.controller.ts"
+                "path": "./src/controllers/share.data.controller.ts"
             },
             "MediaPack": {
-                "path": "./controllers/media-pack.data.controller.ts"
+                "path": "./src/controllers/media-pack.data.controller.ts"
             },
             "Font": {
-                "path": "./controllers/font.data.controller.ts"
+                "path": "./src/controllers/font.data.controller.ts"
             },
             "ClipArt": {
-                "path": "./controllers/clipart.data.controller.ts"
+                "path": "./src/controllers/clipart.data.controller.ts"
             },
             "StockDataController": {
-                "path": "./controllers/stock.data.controller.ts"
+                "path": "./src/controllers/stock.data.controller.ts"
             }
         },
         "models": {
@@ -97,10 +99,10 @@
         },
         "includes": {
             "Mocks": {
-                "path": "./controllers/mocks/index.ts"
+                "path": "./src/controllers/mocks/index.ts"
             },
             "UserMock": {
-                "path": "./mocks/user.mock.ts"
+                "path": "./src/mocks/user.mock.ts"
             }
         },
         "dependencies": {},
