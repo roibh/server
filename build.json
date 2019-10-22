@@ -57,49 +57,53 @@
             },
             "StockDataController": {
                 "path": "./src/controllers/stock.data.controller.ts"
+            },
+            "PixaBay": {
+                "path": "./src/controllers/pixabay.contract.ts"
             }
+
         },
         "models": {
-            "UserModel": {
-                "path": "./models/user.model.ts"
-            },
-            "ScreenModel": {
-                "path": "./models/screen.model.ts"
-            },
-            "LibraryModel": {
-                "path": "./models/library.model.ts"
+            "ScheduleModel": {
+                "path": "./src/models/schedule.model.ts"
             },
             "PlaylistModel": {
-                "path": "./models/playlist.model.ts"
+                "path": "./src/models/playlist.model.ts"
+            },
+            "UserModel": {
+                "path": "./src/models/user.model.ts"
+            },
+            "ScreenModel": {
+                "path": "./src/models/screen.model.ts"
+            },
+            "LibraryModel": {
+                "path": "./src/models/library.model.ts"
             },
             "SlideModel": {
-                "path": "./models/slide.model.ts"
+                "path": "./src/models/slide.model.ts"
             },
             "TokenModel": {
-                "path": "./models/token.model.ts"
+                "path": "./src/models/token.model.ts"
             },
             "ScreenGroupModel": {
-                "path": "./models/screen-group.model.ts"
-            },
-            "ScheduleModel": {
-                "path": "./models/schedule.model.ts"
+                "path": "./src/models/screen-group.model.ts"
             },
             "ShareModel": {
-                "path": "./models/share.model.ts"
+                "path": "./src/models/share.model.ts"
             },
             "SubscriptionModel": {
-                "path": "./models/subscription.model.ts"
+                "path": "./src/models/subscription.model.ts"
             },
             "ClipArtModel": {
-                "path": "./models/clipart.model.ts"
+                "path": "./src/models/clipart.model.ts"
             },
             "FontModel": {
-                "path": "./models/font.model.ts"
+                "path": "./src/models/font.model.ts"
             }
         },
         "includes": {
             "Mocks": {
-                "path": "./src/controllers/mocks/index.ts"
+                "path": "./src/controllers/mocks/mock.ts"
             },
             "UserMock": {
                 "path": "./src/mocks/user.mock.ts"

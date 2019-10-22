@@ -1,5 +1,4 @@
 import { Repo, Field, Model, ObjectId, Transform } from '@methodus/data';
-import { DateTime } from 'aws-sdk/clients/glacier';
 
 @Model('Subscription', Transform.Automatic)
 export class SubscriptionModel extends Repo<SubscriptionModel> {
@@ -16,7 +15,7 @@ export class SubscriptionModel extends Repo<SubscriptionModel> {
     public Plan?: string;
 
     @Field()
-    public Date?: DateTime;
+    public Date?: Date;
 
     @Field()
     public Status?: string;

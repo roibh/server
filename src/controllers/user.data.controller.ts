@@ -1,11 +1,13 @@
-import { MethodConfig, MethodConfigExtend } from '@methodus/server';
+import { MethodConfig } from '@methodus/server';
 import { UserModel } from '../models';
-import { UserMock } from '../mocks/';
-/*start custom*/
-import { DataController } from './datacontroller';
-/*end custom*/
 
-@MethodConfig('UserController', [], UserModel)
-@MethodConfigExtend(DataController, 'UserController')
+import { DataController } from './datacontroller';
+
+
+@MethodConfig('UserController', [], '/data/User')
 export class UserController extends DataController {
+    constructor() {
+        super(new UserModel(),'User');
+    }
+
 }

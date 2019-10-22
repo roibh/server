@@ -6,7 +6,7 @@ export class PixaBay {
     // 'all', 'horizontal', 'vertical';
 
     @Method(Verbs.Get, '/')
-    public static async searchImage(@Query('key') key: string, @Query('q') q: string,
+    public async searchImage(@Query('key') key: string, @Query('q') q: string,
                                     @Query('page') page?: number,
                                     @Query('per_page') per_page?: number,
                                     @Query('order') order?: string,
@@ -17,7 +17,7 @@ export class PixaBay {
     }
 
     @Method(Verbs.Get, '/videos')
-    public static async searchVideo(@Query('key') key: string, @Query('q') q: string,
+    public async searchVideo(@Query('key') key: string, @Query('q') q: string,
                                     @Query('page') page?: number,
                                     @Query('per_page') per_page?: number,
                                     @Query('order') order?: string,

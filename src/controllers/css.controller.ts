@@ -15,7 +15,7 @@ const s3 = new aws.S3({ signatureVersion: 'v4', region: 'us-east-2' });
 export class Css {
 
     @MethodPipe(Verbs.Get, '/api/font/:id')
-    public static async font(@Param('id') id: string, @Response() res): Promise<MethodResult<any>> {
+    public async font(@Param('id') id: string, @Response() res): Promise<MethodResult<any>> {
         let key = '';
         const pipedResult = await new Promise<any>(async (resolve, reject) => {
 
@@ -74,7 +74,7 @@ export class Css {
     }
 
     @Method(Verbs.Get, '/api/css/:id')
-    public static async css(@Param('id') id: string, @Response() res): Promise<MethodResult<any>> {
+    public async css(@Param('id') id: string, @Response() res): Promise<MethodResult<any>> {
         const queryX = new DataQuery(FontModel);
         queryX.filter({ user_id: id });
         try {

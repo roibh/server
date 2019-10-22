@@ -17,8 +17,8 @@
   "license": "ISC",
   "dependencies": {
     "@methodus/data": "^2.0.0",
-    "@methodus/describe": "^3.0.6",
-    "@methodus/server": "^3.0.0",
+    "@methodus/describe": "^6.0.0",
+    "@methodus/server": "^4.0.0",
     "@types/node": "^10.0.4",
     "aws-s3-size": "^0.1.0",
     "aws-sdk": "^2.368.0",
@@ -26,15 +26,14 @@
     "chrome-bridge": "^0.1.2",
     "etag": "^1.8.1",
     "jsonwebtoken": "^8.4.0",
-    "logelas": "^3.0.10",
+    "logelas": "^4.1.3",
     "mime": "^2.4.0",
     "moment": "^2.22.2",
     "object-hash": "^1.3.0",
     "uuid": "^3.2.1"
   },
   "devDependencies": {
-    "@methodus/contracts": "^3.0.0",
-    "alsatian": "^2.3.0",
+    "alsatian": "^3.0.0",
     "npm-run-all": "^4.1.5",
     "nyc": "^13.0.0",
     "trash-cli": "^1.4.0",

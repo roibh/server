@@ -6,7 +6,7 @@ import * as etag from 'etag';
 @MethodConfig('PlayerController', [])
 export class PlayerController {
     @Method(Verbs.Post, '/register-player/:token')
-    public static async registerPlayer(@Param('token') token: string): Promise<MethodResult> {
+    public async registerPlayer(@Param('token') token: string): Promise<MethodResult> {
         const existing = await TokenModel.query(new Query('Token').filter({ Token: token.toString() }));
         if (!existing || existing.length === 0) {
             const result = await TokenModel.insert({ Token: token.toString(), Date: new Date(), Status: 'pending' });
@@ -17,7 +17,7 @@ export class PlayerController {
     }
 
     @Method(Verbs.Post, '/validate-player/:token')
-    public static async validatePlayer(@Param('token') token: any): Promise<MethodResult> {
+    public async validatePlayer(@Param('token') token: any): Promise<MethodResult> {
         const existing = await ScreenModel.query(new Query('Screen').filter({ Token: token.toString() }));
         if (existing && existing.length > 0) {
             await TokenModel.update({ Token: token }, { Date: new Date(), Status: 'active' });
@@ -34,7 +34,7 @@ export class PlayerController {
     }
 
     @Method(Verbs.Post, '/run-player/:group/:screen_id')
-    public static async runPlayer(@Param('group') group: any, @Param('screen_id') screen_id: any): Promise<MethodResult> {
+    public async runPlayer(@Param('group') group: any, @Param('screen_id') screen_id: any): Promise<MethodResult> {
 
         // validate screen
 

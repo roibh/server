@@ -15,7 +15,7 @@ const s3 = new aws.S3({ signatureVersion: 'v4', region: 'us-east-2' });
 @MethodConfig('Upload', [AuthMiddleware])
 export class Upload {
     @Method(Verbs.Get, '/usersize')
-    public static async usersize(@Query('z') dummy: string, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
+    public async usersize(@Query('z') dummy: string, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
         const s3Sizer = new S3Sizer(s3);
         const size = await new Promise((resolve, reject) => {
             s3Sizer.getFolderSize(S3_BUCKET, securityContext._id, (err: any, size: any) => {
@@ -31,7 +31,7 @@ export class Upload {
 
     @Method(Verbs.Post, '/upload')
     // tslint:disable-next-line:max-line-length
-    public static async capture(@Files('files') files: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
+    public async capture(@Files('files') files: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
         if (!files) {
             throw (new MethodError('no data'));
         }
@@ -90,7 +90,7 @@ export class Upload {
 
     @Method(Verbs.Post, '/remove')
     // tslint:disable-next-line:max-line-length
-    public static async remove(@Query('file_name') file_name: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
+    public async remove(@Query('file_name') file_name: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
         if (!file_name) {
             throw (new MethodError('no data'));
         }

@@ -1,13 +1,13 @@
-import { MethodConfig, MethodConfigExtend } from '@methodus/server';
+import { MethodConfig } from '@methodus/server';
 import { LibraryModel } from '../models';
-import * as aws from 'aws-sdk';
 import { AuthMiddleware } from './auth.middleware';
 /*start custom*/
 import { DataController } from './datacontroller';
 /*end custom*/
 
-@MethodConfig('LibraryDataController', [AuthMiddleware], LibraryModel)
-@MethodConfigExtend(DataController, 'LibraryDataController')
+@MethodConfig('LibraryDataController', [AuthMiddleware], '/data/Library')
 export class LibraryDataController extends DataController {
-
+    constructor() {
+        super(new LibraryModel(), 'Library');
+    }
 }

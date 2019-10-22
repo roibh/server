@@ -1,4 +1,4 @@
-import { MethodConfig, Verbs, Method, MethodResult, Query, Body, SecurityContext } from '@methodus/server';
+import { MethodConfig, Verbs, Method, MethodResult, Query, Body, SecurityContext, Inject } from '@methodus/server';
 import { AuthMiddleware } from './auth.middleware';
 import { PixaBay } from './pixabay.contract';
 import * as aws from 'aws-sdk';
@@ -19,15 +19,18 @@ const s3 = new aws.S3({ signatureVersion: 'v4', region: 'us-east-2' });
 
 @MethodConfig('StockDataController', [AuthMiddleware])
 export class StockDataController {
+    constructor(@Inject() private pixaBay: PixaBay) {
+
+    }
     @Method(Verbs.Get, '/stock/')
-    public static async searchImages(@Query('q') q: string,
-                                     @Query('page') page: number = 1,
-                                     @Query('per_page') per_page: number = 50,
-                                     @Query('order') order?: string,
-                                     @Query('image_type') image_type?: string,
-                                     @Query('orientation') orientation?: string,
-                                     @Query('category') category?: string): Promise<MethodResult<any>> {
-        const response = await PixaBay.searchImage(process.env.PIXABAY, q);
+    public async searchImages(@Query('q') q: string,
+        @Query('page') page: number = 1,
+        @Query('per_page') per_page: number = 50,
+        @Query('order') order?: string,
+        @Query('image_type') image_type?: string,
+        @Query('orientation') orientation?: string,
+        @Query('category') category?: string): Promise<MethodResult<any>> {
+        const response = await this.pixaBay.searchImage(process.env.PIXABAY, q);
         response.result.hits = response.result.hits.map((hit) => {
             try {
                 const arr = hit.previewURL.split('/');
@@ -54,14 +57,14 @@ export class StockDataController {
     }
 
     @Method(Verbs.Get, '/videos/')
-    public static async searchVideos(@Query('q') q: string,
-                                     @Query('page') page: number = 1,
-                                     @Query('per_page') per_page: number = 50,
-                                     @Query('order') order?: string,
-                                     @Query('video_type') video_type?: string,
+    public async searchVideos(@Query('q') q: string,
+        @Query('page') page: number = 1,
+        @Query('per_page') per_page: number = 50,
+        @Query('order') order?: string,
+        @Query('video_type') video_type?: string,
 
-                                     @Query('category') category?: string): Promise<MethodResult<any>> {
-        const response = await PixaBay.searchVideo(process.env.PIXABAY, q, 1, 50, 'popularity', 'all');
+        @Query('category') category?: string): Promise<MethodResult<any>> {
+        const response = await this.pixaBay.searchVideo(process.env.PIXABAY, q, 1, 50, 'popularity', 'all');
         response.result.hits = response.result.hits.map((hit) => {
 
             return {
@@ -80,14 +83,14 @@ export class StockDataController {
     }
 
     @Method(Verbs.Get, '/clipart/')
-    public static async clipart(@Query('q') q: string,
-                                @Query('page') page: number = 1,
-                                @Query('per_page') per_page: number = 50,
-                                @Query('order') order: string = 'date',
-                                @Query('image_type') image_type?: string,
-                                @Query('orientation') orientation?: string,
-                                @Query('category') category?: string): Promise<MethodResult<any>> {
-        const response = await PixaBay.searchImage(process.env.PIXABAY, q, page, per_page, '', 'vector');
+    public async clipart(@Query('q') q: string,
+        @Query('page') page: number = 1,
+        @Query('per_page') per_page: number = 50,
+        @Query('order') order: string = 'date',
+        @Query('image_type') image_type?: string,
+        @Query('orientation') orientation?: string,
+        @Query('category') category?: string): Promise<MethodResult<any>> {
+        const response = await this.pixaBay.searchImage(process.env.PIXABAY, q, page, per_page, '', 'vector');
 
         response.result = {
             hits: response.result.hits.map((hit) => {
@@ -112,7 +115,7 @@ export class StockDataController {
         return new MethodResult(response.result);
     }
     @Method(Verbs.Get, '/stock/categories')
-    public static async categories(): Promise<MethodResult<any>> {
+    public async categories(): Promise<MethodResult<any>> {
         const result = [
             'fashion', 'nature', 'backgrounds', 'science', 'education',
             'people', 'feelings', 'religion', 'health', 'places', 'animals',
@@ -124,7 +127,7 @@ export class StockDataController {
     }
 
     @Method(Verbs.Post, '/stock/import/image')
-    public static async importImage(@Body('image') image: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
+    public async importImage(@Body('image') image: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
 
         const promiseResult = new Promise((resolve, reject) => {
 
@@ -190,7 +193,7 @@ export class StockDataController {
     }
 
     @Method(Verbs.Post, '/stock/import/clipart')
-    public static async importClipart(@Body('image') image: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
+    public async importClipart(@Body('image') image: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
 
         const promiseResult = new Promise((resolve, reject) => {
 
@@ -256,7 +259,7 @@ export class StockDataController {
     }
 
     @Method(Verbs.Post, '/stock/import/video')
-    public static async importVideo(@Body('video') video: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
+    public async importVideo(@Body('video') video: any, @SecurityContext() securityContext: any): Promise<MethodResult<any>> {
 
         const promiseResult = new Promise((resolve, reject) => {
 

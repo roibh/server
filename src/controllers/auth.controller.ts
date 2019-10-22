@@ -29,7 +29,7 @@ const publicKEY = fs.readFileSync('./certs/public.key', 'utf8');
 export class AuthController {
     @Method(Verbs.Post, '/api/auth/signup')
     @MethodMock(Mocks.AUTH.signup)
-    public static async signup(@Body('userOptions') userOptions: any): Promise<MethodResult<any>> {
+    public async signup(@Body('userOptions') userOptions: any): Promise<MethodResult<any>> {
         try {
             const query = new DataQuery(UserModel);
             let logedInUser = null;
@@ -68,7 +68,7 @@ export class AuthController {
 
     @Method(Verbs.Post, '/api/auth/token')
     @MethodMock(Mocks.AUTH.token)
-    public static async token(@Body('userOptions') userOptions: any): Promise<MethodResult<any>> {
+    public async token(@Body('userOptions') userOptions: any): Promise<MethodResult<any>> {
         try {
             let logedInUser = null;
             const query = new DataQuery(UserModel);
@@ -106,7 +106,7 @@ export class AuthController {
 
     @Method(Verbs.Get, '/api/auth/verify')
     @MethodMock(Mocks.AUTH.verify)
-    public static async verify(@Body('token') token: string): Promise<MethodResult<any>> {
+    public async verify(@Body('token') token: string): Promise<MethodResult<any>> {
         try {
             return new MethodResult(jwt.decode(token, { complete: true }));
         } catch (error) {

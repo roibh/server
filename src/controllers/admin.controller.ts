@@ -7,7 +7,7 @@ import { UserModel, SubscriptionModel } from '..';
 export class Admin {
     @Method(Verbs.Post, '/admin/users')
 
-    public static async users(@Body('query') queryObject: any): Promise<MethodResult<any>> {
+    public async users(@Body('query') queryObject: any): Promise<MethodResult<any>> {
         if (!queryObject) {
             queryObject = {};
         }

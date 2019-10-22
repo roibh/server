@@ -27,7 +27,7 @@ DBHandler.config = configuration;
 
 @ServerConfiguration(BuiltInServers.Express, { port: process.env.PORT || 6299 })
 
-// @PluginConfiguration('@methodus/describe')
+@PluginConfiguration('@methodus/describe')
 @PluginConfiguration(path.join(__dirname, 'static'), { path: '/', clientPath: '/public' })
 
 @RouterConfiguration(UserController, ServerType.Express)

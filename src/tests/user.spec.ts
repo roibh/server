@@ -18,14 +18,14 @@ DBHandler.config = {
 
 };
 import { UserController } from '../controllers/user.data.controller';
+import { Injector } from '@methodus/server';
 
 @TestFixture('Test Embeds')
 export class TestsOfUsers {
-
     @AsyncTest('user_list')
     @Timeout(10000)
     public async user_list() {
-        const result = await UserController.query('User', {}, {});
+        const result = await Injector.get(UserController).query('User', {}, {});
         Expect(result).toBeDefined();
     }
 
